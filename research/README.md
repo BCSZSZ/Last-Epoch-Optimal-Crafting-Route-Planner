@@ -27,6 +27,8 @@ py -3.11 -X utf8 scripts/validate_research.py
 py -3.11 -X utf8 scripts/check_math_fixtures.py
 py -3.11 -X utf8 scripts/check_action_examples.py
 py -3.11 -X utf8 scripts/check_fp_examples.py --verify-only
+py -3.11 -X utf8 scripts/check_7710_routes.py --verify-only
+py -3.11 -X utf8 scripts/check_7710_monte_carlo.py --summary --no-timing
 py -3.11 -X utf8 -m unittest discover -s tests -v
 ```
 
@@ -41,6 +43,10 @@ py -3.11 -X utf8 -m unittest discover -s tests -v
 - `model-snapshot.json`：研究模型版本、数据修订、政策、随机假设与生产前缺口。
 - `math-fixtures.json`：明确标注为合成的小模型，用于验证通用数学，绝不作为游戏机制。
 - `fp-examples.json`：当前证据下的费用研究样例；其随机模型与完整产品求解器分开说明。
+- `7710-route-cases.json`、`7710-route-results.json`：用户完整准备路线、负例及三类FP的全预算区间曲线；正常补词、暴击、必要封印和两种浩劫一起结算。
+- `7710-native-claims.json`、`7710-monte-carlo.json`：补词／封印／等级资格附加原生证据与独立完整路线抽样验证。
 - `validation.json`：本轮实际执行的验证与范围，不替代客户端实测。
 
 原始.dll/.bundle/.dat、虚拟环境与缓存由gitignore排除。BOOTSTRAP.md与原始附件哈希一致；本轮产品修订在PRD／架构文档中记录。
+
+用户最新明确所有材料无限且不计代价，原生退款与旧合成数学夹具保留为机制／记账诊断，不继续建设材料价格、有限库存或消耗预算功能。

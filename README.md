@@ -4,7 +4,7 @@
 
 当前交付为 **Phase 0：机制研究与数学架构审阅包**。本轮基于当前安装的 1.5.3 / Steam build 26087601 重新读取游戏资源与原生代码；生产求解器、React 网页及部署在研究审阅后实施。
 
-先读 [首阶段审阅结论](docs/phase0-review.md)，再看 [产品需求](docs/PRD.md)、[机制与证据](docs/mechanics.md)及[未决事项](docs/open-questions.md)。
+先读 [首阶段审阅结论](docs/phase0-review.md)，再看 [用户7710完整准备路线校验](docs/examples/7710-to-target-double-t7.md)、[产品需求](docs/PRD.md)、[机制与证据](docs/mechanics.md)及[未决事项](docs/open-questions.md)。所有碎片、符文和雕文固定无限，材料代价不参与优化。
 
 ## 原始规范与当前政策
 
@@ -18,7 +18,7 @@
 | [机制审计入口](docs/mechanics.md) | 当前本地代码、资源和官方交叉核对 |
 | [词缀与底材数据库](docs/affix-database.md) | 1156词缀、42类型、923底材及提取边界 |
 | [概率模型](docs/probability-model.md) | 联合核、零费用闭环、奖励与精度 |
-| [状态和接口](docs/state-model.md) | 统一异步规划接口、库存与限制 |
+| [状态和接口](docs/state-model.md) | 统一异步规划接口、无限材料与操作限制 |
 | [宏动作](docs/macro-actions.md) | 固定动作、重试与失败吸收 |
 | [优化目标](docs/optimization-objective.md) | 默认1–63等权、条件统计与排序 |
 | [路线搜索](docs/route-search.md) | 有限候选语言、安全剪枝与最优性范围 |

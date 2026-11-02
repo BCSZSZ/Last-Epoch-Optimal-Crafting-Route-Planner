@@ -19,8 +19,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--game-dir", type=Path, required=True)
     parser.add_argument("--name", required=True, help="Regex matching exactly one registered method.")
+    parser.add_argument("--evidence-file", type=Path, help="Optional reviewed supplemental method spans, including extended control-flow tails.")
     args = parser.parse_args()
     registry = json.loads((ROOT / "research/native-methods.json").read_text(encoding="utf-8"))
+    if args.evidence_file:
+        supplement = json.loads(args.evidence_file.read_text(encoding="utf-8"))
+        registry = {"assemblySha256": supplement.get("assemblySha256", supplement.get("gameAssemblySha256")),
+                    "methods": supplement["methods"]}
     binary_path = args.game_dir / "GameAssembly.dll"
     if digest_file(binary_path) != registry["assemblySha256"]:
         raise ValueError("Installed binary differs from the audited method registry.")

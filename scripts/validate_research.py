@@ -116,7 +116,19 @@ def main() -> None:
         require((ROOT / relative).read_bytes() == content, f"Stale index: {relative}")
     documents = validate_documents(allow_pending_report=args.write_report)
     checks = {"math": run_example("check_math_fixtures.py"), "actions": run_example("check_action_examples.py"),
-              "fp": run_example("check_fp_examples.py", "--verify-only")}
+              "fp": run_example("check_fp_examples.py", "--verify-only"),
+              "user7710": run_example("check_7710_routes.py", "--verify-only"),
+              "user7710MonteCarlo": run_example("check_7710_monte_carlo.py", "--summary", "--no-timing")}
+    checks["user7710MonteCarlo"].pop("elapsedSeconds", None)
+    model = load_json(ROOT / "research/model-snapshot.json")
+    require(model["policies"]["materialsAvailability"] == "UNLIMITED" and
+            model["policies"]["materialCostInObjective"] is False and
+            model["policies"]["inventoryInputSupported"] is False,
+            "User's unlimited-material policy is not reflected in the model")
+    saved_mc = load_json(ROOT / "research/7710-monte-carlo.json")
+    require(saved_mc["passed"] is True and saved_mc["fixtureSha256"] == sha(ROOT / "research/7710-route-cases.json") and
+            saved_mc["referenceResultsSha256"] == sha(ROOT / "research/7710-route-results.json"),
+            "Stale complete-route Monte Carlo baseline")
     report = {"schemaVersion": 1, "auditedOn": "2026-11-03", "status": "PASS", "phase": "PHASE_0_RESEARCH_ONLY",
               "snapshot": snapshot, "documents": documents, "checks": checks,
               "claimedClientTest": False, "claimedProductionSolverTest": False,
@@ -127,6 +139,8 @@ def main() -> None:
     print(json.dumps({"status": "PASS", "snapshot": snapshot, "documents": documents,
                       "mathChecks": checks["math"]["rationalChecks"], "fpMassCases": checks["fp"]["exactUnitMassCases"],
                       "actionMonteCarloSamples": sum(row["samples"] for row in checks["actions"]["redemption"]),
+                      "user7710Scenarios": checks["user7710"]["scenarios"],
+                      "completeRouteMonteCarloSamples": checks["user7710MonteCarlo"]["totalSamples"],
                       "wroteReport": args.write_report}, ensure_ascii=False))
 
 

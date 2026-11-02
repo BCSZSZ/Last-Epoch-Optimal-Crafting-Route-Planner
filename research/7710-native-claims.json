@@ -1,0 +1,471 @@
+{
+  "auditedOn": "2026-11-03",
+  "conclusions": [
+    {
+      "confidence": "VERIFIED",
+      "evidenceRefs": [
+        "A1",
+        "A2",
+        "A3",
+        "C1"
+      ],
+      "id": "add-fee-before-rarity-update",
+      "statement": "Both ADD_A and ADD_B read pre-add rarity3 and tierParameter0, yielding base cost min1 maxExclusive18 before lucky/free/refund/clamp/preservation effects."
+    },
+    {
+      "confidence": "VERIFIED",
+      "evidenceRefs": [
+        "A1",
+        "X1",
+        "F1"
+      ],
+      "id": "critical-state-branching",
+      "statement": "ADD_A may turn A or original low J fromT1 toT2; with exactly these2 eligible low affixes and valid levels, the nominal independent model gives each half of critical mass. T7 does not enter low-tier critical pool."
+    },
+    {
+      "confidence": "VERIFIED",
+      "evidenceRefs": [
+        "S1",
+        "S2",
+        "S3",
+        "A3"
+      ],
+      "id": "seal-t1-only-when-still-t1",
+      "statement": "Four nonsealed affixes and hasExalted make currentT1 seal deterministic; originalJ may already beT2 after critical and must not be given100% chance."
+    },
+    {
+      "confidence": "VERIFIED",
+      "evidenceRefs": [
+        "H1",
+        "H2",
+        "A1"
+      ],
+      "id": "side-constraint",
+      "statement": "Havoc preserves IDs and prefix/suffix identities. Side-preparation macro needs a currentT1 non-A garbage on B side; it does not change slot sides or allow Havoc before filling the fourth affix."
+    },
+    {
+      "confidence": "VERIFIED",
+      "evidenceRefs": [
+        "S3",
+        "A3",
+        "A1",
+        "A2"
+      ],
+      "id": "sealed-slot-refill",
+      "statement": "Seal updates ordinary rarity4->3 while keeping sealed object in complete list; ADD_B fills the resulting same-side empty slot atT1 before possible critical."
+    },
+    {
+      "confidence": "VERIFIED",
+      "evidenceRefs": [
+        "L1",
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "id": "level100-fixture-valid",
+      "statement": "Current glove4:0 has base requirement0. Native after-shard tier requirement contribution is capped at90 and combined bymax with base/1; player100 covers fixture operations, including eligible extra upgrades."
+    },
+    {
+      "confidence": "VERIFIED",
+      "evidenceRefs": [
+        "A1",
+        "X1",
+        "H1",
+        "S3"
+      ],
+      "id": "tier-resource-not-identity-protection",
+      "statement": "Two ordinaryT7 tiers remain as resources on successful preparation paths, but Havoc can change their attached IDs. Protecting the original two prefixT7 identities invalidates side-adjustment preparation."
+    }
+  ],
+  "equipmentFixture": {
+    "affixDefinitions": [
+      {
+        "affixName": "Increased Melee Attack Speed",
+        "canRollOn": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14,
+          16,
+          4
+        ],
+        "classSpecificity": 0,
+        "id": 2,
+        "levelRequirement": 0,
+        "rollsOn": 0,
+        "specialAffixType": 0,
+        "type": 0
+      },
+      {
+        "affixName": "Increased Minion Damage",
+        "canRollOn": [
+          17,
+          19,
+          20,
+          21,
+          22,
+          4,
+          2
+        ],
+        "classSpecificity": 0,
+        "id": 26,
+        "levelRequirement": 0,
+        "rollsOn": 0,
+        "specialAffixType": 0,
+        "type": 0
+      },
+      {
+        "affixName": "Increased Cast Speed",
+        "canRollOn": [
+          10,
+          8,
+          6,
+          11,
+          15,
+          4,
+          19,
+          22
+        ],
+        "classSpecificity": 0,
+        "id": 4,
+        "levelRequirement": 0,
+        "rollsOn": 0,
+        "specialAffixType": 0,
+        "type": 0
+      },
+      {
+        "affixName": "Increased Critical Strike Chance",
+        "canRollOn": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          17,
+          4
+        ],
+        "classSpecificity": 0,
+        "id": 5,
+        "levelRequirement": 0,
+        "rollsOn": 0,
+        "specialAffixType": 0,
+        "type": 0
+      },
+      {
+        "affixName": "Void Resistance",
+        "canRollOn": [
+          0,
+          1,
+          2,
+          4,
+          18,
+          19,
+          20,
+          21,
+          22,
+          3,
+          17
+        ],
+        "classSpecificity": 0,
+        "id": 7,
+        "levelRequirement": 6,
+        "rollsOn": 0,
+        "specialAffixType": 0,
+        "type": 1
+      },
+      {
+        "affixName": "Necrotic Resistance",
+        "canRollOn": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          18,
+          19,
+          20,
+          21,
+          22,
+          17
+        ],
+        "classSpecificity": 0,
+        "id": 10,
+        "levelRequirement": 19,
+        "rollsOn": 0,
+        "specialAffixType": 0,
+        "type": 1
+      }
+    ],
+    "base": {
+      "baseTypeId": 4,
+      "definition": {
+        "IMSetOverrides": [],
+        "IMSetTier": 0,
+        "addedWeaponRange": 0.0,
+        "affixEffectiveness": 0,
+        "attackRate": 1.0,
+        "cannotBeUpgradedOnDrop": 0,
+        "cannotDrop": 0,
+        "cannotEquipOnPickup": 0,
+        "classRequirement": 0,
+        "displayName": "",
+        "forceAllClassesCategoryInLootFilter": 0,
+        "hideSubTypeInLootFilter": 0,
+        "hitSoundType": 0,
+        "implicits": [
+          {
+            "extraTag": 0,
+            "implicitMaxValue": 8.0,
+            "implicitValue": 8.0,
+            "property": 10,
+            "specialTag": 0,
+            "tags": 0,
+            "type": 0
+          }
+        ],
+        "isCorruptedSubtype": 0,
+        "isLegacySubType": 0,
+        "itemTags": 0,
+        "levelRequirement": 0,
+        "name": "Hide Gloves",
+        "obsoleteItem": 0,
+        "onlyDropWhenRequiringAffixEffectiveness": 0,
+        "subClassRequirement": 0,
+        "subTypeID": 0,
+        "uiItemSoundType": 1
+      },
+      "id": "4:0",
+      "sourceOrdinal": 0,
+      "subTypeId": 0
+    },
+    "materials": "UNLIMITED",
+    "playerLevel": 100,
+    "regularSealedSlotEmpty": true,
+    "uncorrupted": true
+  },
+  "evidenceKind": "current_native_static_route_qualification_not_client_test",
+  "gameAssemblySha256": "323e9183f3bee600b6c9e1c469218b9de926e9044f2ca3d44fae8a0ec9a91464",
+  "gameVersion": "1.5.3",
+  "methods": [
+    {
+      "confidence": "VERIFIED",
+      "id": "A1",
+      "length": 2995,
+      "name": "ItemData.AddAffixTier",
+      "rva": "0x11f3dd0",
+      "sha256": "4c2ff3660d4892d8151ccbfe273c29a1aac266130a579afd5ddcf21169c4de3f",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "A2",
+      "length": 963,
+      "name": "ItemData.AddAffixNoCostOrChecks",
+      "rva": "0x11f3a00",
+      "sha256": "7abb1a8e3857803bfc795e0e342426840ecaa35358fd656bbcef9057b956c2bd",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "A3",
+      "length": 226,
+      "name": "ItemData.setRarityFromAffixesForNormalMagicOrRareItem",
+      "rva": "0x1212fd0",
+      "sha256": "40dc1da0027d7dcfb3013addce57344b29caf6a8d038b773c8ebd45162dac4c8",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "C1",
+      "length": 462,
+      "name": "ItemData.applyForgingPotentialCostFromShard",
+      "rva": "0x120e1a0",
+      "sha256": "7fb84ba0fd903e1ccf930250fc2d7a79374238721fa853fff882441cdc075224",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "S1",
+      "length": 189,
+      "name": "ItemData.getChanceToSealAffix",
+      "rva": "0x120efe0",
+      "sha256": "334cccb08a38be025b2b41146fc8fe987ff42680c95a0ff83d4a08d1fae76afc",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "S2",
+      "length": 85,
+      "name": "RngElement.Roll",
+      "rva": "0xf6ad10",
+      "sha256": "583bfe30cac14fca465a2cc9925df64883eb08811dc78b761e7b20c6865c64c5",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "S3",
+      "length": 231,
+      "name": "ItemData.SealAffix",
+      "rva": "0x1209940",
+      "sha256": "5bc125c9d4b5cf1b963bf466b3151e2c1f43288dd1c45287cf7568bf526999b1",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "H1",
+      "length": 743,
+      "name": "ItemData.CraftRuneOfHavoc",
+      "rva": "0x11fbf40",
+      "sha256": "d6638a117dbad7db925d08b2c5cfe379a55c8b5d66e4e3c7f7972272d5116f45",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "H2",
+      "length": 452,
+      "name": "ItemData.canBeRuneOfHavocCrafted",
+      "rva": "0x120e9c0",
+      "sha256": "e199b7751ae79dfdf458fb11e6917f4881fe7038df457d0480a0efa62844b7ad",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "X1",
+      "length": 1777,
+      "name": "ItemData.AddExtraAffixTier",
+      "rva": "0x11f5ab0",
+      "sha256": "49c645ae74b21891e15b4a3998bf5afd5b3e0afaf53baf04cd7035e1ae736746",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "F1",
+      "length": 11703,
+      "name": "CraftingManager.Forge",
+      "rva": "0x1168790",
+      "sha256": "8d54e03a8baa387c7fab2d661d88a1f2cd001a44264db1ff837b2875416a2954",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "L1",
+      "length": 242,
+      "name": "ItemData.CalculateLevelRequirementAfterShard",
+      "rva": "0x11f9d90",
+      "sha256": "df14baff9fc5621586f7d9653087eb3b36afe8a2108045cbc39cb5311282f3f9",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "L2",
+      "kind": "extended_control_flow_and_jump_table_span",
+      "length": 1088,
+      "name": "ItemData.CalculateLevelRequirementWithAffixAtTier.extendedControlFlowSpan",
+      "reason": "Registered span stops before cap90 at0x11FA1B7 and final return/jump tables; additional bytes explicitly audited here without changing original registry.",
+      "registeredDescriptorLength": 736,
+      "rva": "0x11f9e90",
+      "sha256": "b0be3b95aff0b98ca48776e8ed43955d0f345414c4978b1000418820dc568045",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "L3",
+      "length": 7110,
+      "name": "CraftingManager.CheckForgeCapability",
+      "rva": "0x1166960",
+      "sha256": "65dc209839517bc76571d021286330c6440dc872cd609ea543eacd485f018390",
+      "verification": "Current installed native byte spans read directly; no client test."
+    },
+    {
+      "confidence": "VERIFIED",
+      "id": "L4",
+      "length": 139,
+      "name": "Affix.HasShard",
+      "rva": "0x11b44d0",
+      "sha256": "1c98cbe4e62937611448a52f13bda403365443b7c9abcad9d260eb0ebf7ec536",
+      "verification": "Current installed native byte spans read directly; no client test."
+    }
+  ],
+  "probabilityConvention": "Nominal independent threshold and uniform permutation examples require the same explicit model in the route evaluator. Native float32/grid or full seeded RNG replay are distinct labels.",
+  "routes": [
+    {
+      "id": "7710-direct",
+      "sealAlternative": "A strictJ@T1 guard is a separate route; do not silently mix its probability or costs with current-tier seal.",
+      "sequence": [
+        "ADD_A(4)",
+        "SEAL_J(2,currentTierOnce)",
+        "ADD_B(5)",
+        "HAVOC_UNTIL_A_AND_B_T7"
+      ],
+      "startingAffixes": [
+        {
+          "id": 2,
+          "tier": 1
+        },
+        {
+          "id": 7,
+          "tier": 7
+        },
+        {
+          "id": 10,
+          "tier": 7
+        }
+      ],
+      "targetIds": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "7710-side-adjustment",
+      "permittedSealIds": [
+        2,
+        26
+      ],
+      "sequence": [
+        "ADD_A(7)",
+        "HAVOC_UNTIL_NON_A_PREFIX_GARBAGE_T1",
+        "SEAL_SELECTED_T1_ONCE",
+        "ADD_B(4)",
+        "HAVOC_UNTIL_A_AND_B_T7"
+      ],
+      "startingAffixes": [
+        {
+          "id": 2,
+          "tier": 7
+        },
+        {
+          "id": 26,
+          "tier": 7
+        },
+        {
+          "id": 10,
+          "tier": 1
+        }
+      ],
+      "targetIds": [
+        7,
+        4
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "steamBuildId": 26087601
+}

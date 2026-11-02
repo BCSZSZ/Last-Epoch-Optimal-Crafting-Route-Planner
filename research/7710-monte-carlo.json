@@ -1,0 +1,499 @@
+{
+  "acceptance": "Each success frequency must lie within the DP interval plus5*sqrt(p_mid*(1-p_mid)/N)+1/N, fixed before simulation. Consumption means are reported without pass/fail assertion.",
+  "assumptions": [
+    "Python independent pseudo-random draws with nominal display parameters0.25/0.30/0.12/0.285/0.05, not native PRNG state emulation.",
+    "Havoc draws uniformly until tier sequence changes; native finite10000 rejection cap and integer-bucket bias are excluded consistently with DISPLAY reference.",
+    "Item roll values are marginalized because targets have no roll constraint. Role100/base4:0/six audited affix IDs make extra-upgrade level checks pass.",
+    "All materials are physically unlimited and have no objective cost."
+  ],
+  "baseSeed": 771020261103,
+  "comparedWithDp": true,
+  "fixtureSha256": "5e2eed34aeee3467606942e9af2f4fdd22a4b766e4627d8eaeadc13de2c0239a",
+  "method": "Independent direct-operation Monte Carlo; no evaluator import, no sampling from evaluator kernels.",
+  "model": "display_parameters_iid",
+  "passed": true,
+  "pointCount": 18,
+  "referenceResultsSha256": "de9fdc10d16f72a3ab4f361815d42f622f24d6d3a8c5c9798e04be23ef19caf6",
+  "rows": [
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0022174199741152034,
+      "caseId": "direct_prefix_targets",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.74162539534753,
+        "upper": 9.741625395347578
+      },
+      "dpSuccessLower": 0.10096741997411521,
+      "dpSuccessUpper": 0.10096741997411604,
+      "fpSpentMeanStandardError": 0.008639742176419352,
+      "fpType": "NORMAL",
+      "initialFp": 10,
+      "meanActualFpSpent": 9.73895,
+      "meanAtomicActions": 2.8789,
+      "observedSuccessProbability": 0.09875,
+      "passed": true,
+      "preRegisteredAllowance": 0.01070205379714906,
+      "routeId": "direct_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 16688496350558685144,
+      "successes": 1975,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 17644,
+        "REQUIRED_SEAL_FAILED": 381,
+        "SUCCESS": 1975
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.003938459976430886,
+      "caseId": "direct_prefix_targets",
+      "dpExpectedActualFpSpent": {
+        "lower": 25.826383568012858,
+        "upper": 25.82638356801312
+      },
+      "dpSuccessLower": 0.4647615400235625,
+      "dpSuccessUpper": 0.4647615400235691,
+      "fpSpentMeanStandardError": 0.05064507669927057,
+      "fpType": "NORMAL",
+      "initialFp": 30,
+      "meanActualFpSpent": 25.82035,
+      "meanAtomicActions": 5.33715,
+      "observedSuccessProbability": 0.4687,
+      "passed": true,
+      "preRegisteredAllowance": 0.017683712418918248,
+      "routeId": "direct_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 11209214391041101380,
+      "successes": 9374,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 10266,
+        "REQUIRED_SEAL_FAILED": 360,
+        "SUCCESS": 9374
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.00235790115754686,
+      "caseId": "direct_prefix_targets",
+      "dpExpectedActualFpSpent": {
+        "lower": 39.14118755470101,
+        "upper": 39.14118755470162
+      },
+      "dpSuccessLower": 0.7970079011575468,
+      "dpSuccessUpper": 0.797007901157563,
+      "fpSpentMeanStandardError": 0.1321612414893262,
+      "fpType": "NORMAL",
+      "initialFp": 63,
+      "meanActualFpSpent": 39.2864,
+      "meanAtomicActions": 7.05425,
+      "observedSuccessProbability": 0.79465,
+      "passed": true,
+      "preRegisteredAllowance": 0.014270860849909197,
+      "routeId": "direct_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 13364731487032184961,
+      "successes": 15893,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 3756,
+        "REQUIRED_SEAL_FAILED": 351,
+        "SUCCESS": 15893
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0017566697970030076,
+      "caseId": "direct_prefix_targets",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.173718990691011,
+        "upper": 9.173718990691066
+      },
+      "dpSuccessLower": 0.22634333020299507,
+      "dpSuccessUpper": 0.226343330202997,
+      "fpSpentMeanStandardError": 0.015781954948611412,
+      "fpType": "ICE",
+      "initialFp": 10,
+      "meanActualFpSpent": 9.1786,
+      "meanAtomicActions": 3.74635,
+      "observedSuccessProbability": 0.2281,
+      "passed": true,
+      "preRegisteredAllowance": 0.014844932708347034,
+      "routeId": "direct_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 1486069335200406953,
+      "successes": 4562,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 15098,
+        "REQUIRED_SEAL_FAILED": 340,
+        "SUCCESS": 4562
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0015532808226866868,
+      "caseId": "direct_prefix_targets",
+      "dpExpectedActualFpSpent": {
+        "lower": 21.926549774354598,
+        "upper": 21.926549774354836
+      },
+      "dpSuccessLower": 0.6287467191773045,
+      "dpSuccessUpper": 0.6287467191773133,
+      "fpSpentMeanStandardError": 0.06733679555413967,
+      "fpType": "ICE",
+      "initialFp": 30,
+      "meanActualFpSpent": 21.9077,
+      "meanAtomicActions": 6.16755,
+      "observedSuccessProbability": 0.6303,
+      "passed": true,
+      "preRegisteredAllowance": 0.017131579343736016,
+      "routeId": "direct_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 6595488344247895114,
+      "successes": 12606,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 7026,
+        "REQUIRED_SEAL_FAILED": 368,
+        "SUCCESS": 12606
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0017521429478570827,
+      "caseId": "direct_prefix_targets",
+      "dpExpectedActualFpSpent": {
+        "lower": 29.878597037801,
+        "upper": 29.878597037801445
+      },
+      "dpSuccessLower": 0.8918021429478571,
+      "dpSuccessUpper": 0.8918021429478731,
+      "fpSpentMeanStandardError": 0.13364014384486048,
+      "fpType": "ICE",
+      "initialFp": 63,
+      "meanActualFpSpent": 29.89375,
+      "meanAtomicActions": 7.5207,
+      "observedSuccessProbability": 0.89005,
+      "passed": true,
+      "preRegisteredAllowance": 0.011032433745615125,
+      "routeId": "direct_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 490751021982998566,
+      "successes": 17801,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 1826,
+        "REQUIRED_SEAL_FAILED": 373,
+        "SUCCESS": 17801
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0025512747446092554,
+      "caseId": "direct_prefix_targets",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.344190363865852,
+        "upper": 9.344190363865904
+      },
+      "dpSuccessLower": 0.14055127474460927,
+      "dpSuccessUpper": 0.14055127474461046,
+      "fpSpentMeanStandardError": 0.01492181785172303,
+      "fpType": "BLOOD",
+      "initialFp": 10,
+      "meanActualFpSpent": 9.3448,
+      "meanAtomicActions": 3.2178,
+      "observedSuccessProbability": 0.138,
+      "passed": true,
+      "preRegisteredAllowance": 0.012338033503793184,
+      "routeId": "direct_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 2218965614625372950,
+      "successes": 2760,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 16025,
+        "REQUIRED_SEAL_FAILED": 1215,
+        "SUCCESS": 2760
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0035062087938275144,
+      "caseId": "direct_prefix_targets",
+      "dpExpectedActualFpSpent": {
+        "lower": 24.010412724366024,
+        "upper": 24.01041272436628
+      },
+      "dpSuccessLower": 0.4793062087938275,
+      "dpSuccessUpper": 0.4793062087938341,
+      "fpSpentMeanStandardError": 0.06320190435323131,
+      "fpType": "BLOOD",
+      "initialFp": 30,
+      "meanActualFpSpent": 24.01165,
+      "meanAtomicActions": 5.4566,
+      "observedSuccessProbability": 0.4758,
+      "passed": true,
+      "preRegisteredAllowance": 0.01771252271780264,
+      "routeId": "direct_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 13196350764100039382,
+      "successes": 9516,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 9276,
+        "REQUIRED_SEAL_FAILED": 1208,
+        "SUCCESS": 9516
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0015922319514541927,
+      "caseId": "direct_prefix_targets",
+      "dpExpectedActualFpSpent": {
+        "lower": 35.980606737971,
+        "upper": 35.98060673797157
+      },
+      "dpSuccessLower": 0.7709422319514542,
+      "dpSuccessUpper": 0.7709422319514697,
+      "fpSpentMeanStandardError": 0.1434936510263607,
+      "fpType": "BLOOD",
+      "initialFp": 63,
+      "meanActualFpSpent": 36.03305,
+      "meanAtomicActions": 6.98695,
+      "observedSuccessProbability": 0.76935,
+      "passed": true,
+      "preRegisteredAllowance": 0.014907250205924724,
+      "routeId": "direct_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 12960293055165116286,
+      "successes": 15387,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 3451,
+        "REQUIRED_SEAL_FAILED": 1162,
+        "SUCCESS": 15387
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 3.938843893626365e-05,
+      "caseId": "opposite_side_preparation",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.943255252465653,
+        "upper": 9.94325525246571
+      },
+      "dpSuccessLower": 0.04278938843893627,
+      "dpSuccessUpper": 0.04278938843893675,
+      "fpSpentMeanStandardError": 0.003733408563230161,
+      "fpType": "NORMAL",
+      "initialFp": 10,
+      "meanActualFpSpent": 9.9389,
+      "meanAtomicActions": 2.76415,
+      "observedSuccessProbability": 0.04275,
+      "passed": true,
+      "preRegisteredAllowance": 0.007205282722922127,
+      "routeId": "prepare_havoc_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 8957040630037130288,
+      "successes": 855,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 19145,
+        "SUCCESS": 855
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0006524106623019277,
+      "caseId": "opposite_side_preparation",
+      "dpExpectedActualFpSpent": {
+        "lower": 27.870700019170236,
+        "upper": 27.870700019170567
+      },
+      "dpSuccessLower": 0.3455024106623019,
+      "dpSuccessUpper": 0.345502410662308,
+      "fpSpentMeanStandardError": 0.034449532215619506,
+      "fpType": "NORMAL",
+      "initialFp": 30,
+      "meanActualFpSpent": 27.92355,
+      "meanAtomicActions": 5.7421,
+      "observedSuccessProbability": 0.34485,
+      "passed": true,
+      "preRegisteredAllowance": 0.016862588099726086,
+      "routeId": "prepare_havoc_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 12100268187442750296,
+      "successes": 6897,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 13103,
+        "SUCCESS": 6897
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.002934545602865102,
+      "caseId": "opposite_side_preparation",
+      "dpExpectedActualFpSpent": {
+        "lower": 44.73614698116341,
+        "upper": 44.73614698116422
+      },
+      "dpSuccessLower": 0.7596345456028651,
+      "dpSuccessUpper": 0.7596345456028838,
+      "fpSpentMeanStandardError": 0.11845086607904146,
+      "fpType": "NORMAL",
+      "initialFp": 63,
+      "meanActualFpSpent": 44.90255,
+      "meanAtomicActions": 8.0014,
+      "observedSuccessProbability": 0.7567,
+      "passed": true,
+      "preRegisteredAllowance": 0.015157527210367224,
+      "routeId": "prepare_havoc_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 4926926501850635839,
+      "successes": 15134,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 4866,
+        "SUCCESS": 15134
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.001087463138376099,
+      "caseId": "opposite_side_preparation",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.592411513353246,
+        "upper": 9.592411513353316
+      },
+      "dpSuccessLower": 0.1453874631383761,
+      "dpSuccessUpper": 0.14538746313837786,
+      "fpSpentMeanStandardError": 0.010616438574211268,
+      "fpType": "ICE",
+      "initialFp": 10,
+      "meanActualFpSpent": 9.6092,
+      "meanAtomicActions": 3.7828,
+      "observedSuccessProbability": 0.1443,
+      "passed": true,
+      "preRegisteredAllowance": 0.012512441007912737,
+      "routeId": "prepare_havoc_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 7666738630943227906,
+      "successes": 2886,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 17114,
+        "SUCCESS": 2886
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.001564502743702123,
+      "caseId": "opposite_side_preparation",
+      "dpExpectedActualFpSpent": {
+        "lower": 24.357616532460558,
+        "upper": 24.357616532460863
+      },
+      "dpSuccessLower": 0.5481354972562881,
+      "dpSuccessUpper": 0.5481354972562978,
+      "fpSpentMeanStandardError": 0.05759691545451894,
+      "fpType": "ICE",
+      "initialFp": 30,
+      "meanActualFpSpent": 24.35645,
+      "meanAtomicActions": 6.8713,
+      "observedSuccessProbability": 0.5497,
+      "passed": true,
+      "preRegisteredAllowance": 0.01764555959268877,
+      "routeId": "prepare_havoc_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 6447551902126274536,
+      "successes": 10994,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 9006,
+        "SUCCESS": 10994
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.002299610517633499,
+      "caseId": "opposite_side_preparation",
+      "dpExpectedActualFpSpent": {
+        "lower": 34.55238100395286,
+        "upper": 34.552381003953464
+      },
+      "dpSuccessLower": 0.8827503894823473,
+      "dpSuccessUpper": 0.8827503894823665,
+      "fpSpentMeanStandardError": 0.13044478033060578,
+      "fpType": "ICE",
+      "initialFp": 63,
+      "meanActualFpSpent": 34.6587,
+      "meanAtomicActions": 8.64775,
+      "observedSuccessProbability": 0.88505,
+      "passed": true,
+      "preRegisteredAllowance": 0.01142443071933185,
+      "routeId": "prepare_havoc_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 13045579223914874742,
+      "successes": 17701,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 2299,
+        "SUCCESS": 17701
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.00011772457273195175,
+      "caseId": "opposite_side_preparation",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.913417006640271,
+        "upper": 9.913417006640334
+      },
+      "dpSuccessLower": 0.05928227542726738,
+      "dpSuccessUpper": 0.05928227542726805,
+      "fpSpentMeanStandardError": 0.004461186781563844,
+      "fpType": "BLOOD",
+      "initialFp": 10,
+      "meanActualFpSpent": 9.9125,
+      "meanAtomicActions": 3.11385,
+      "observedSuccessProbability": 0.0594,
+      "passed": true,
+      "preRegisteredAllowance": 0.008399243023130396,
+      "routeId": "prepare_havoc_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 18388777232729018647,
+      "successes": 1188,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 18812,
+        "SUCCESS": 1188
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0012711418618718273,
+      "caseId": "opposite_side_preparation",
+      "dpExpectedActualFpSpent": {
+        "lower": 27.46483435212454,
+        "upper": 27.464834352124864
+      },
+      "dpSuccessLower": 0.3694288581381216,
+      "dpSuccessUpper": 0.36942885813812815,
+      "fpSpentMeanStandardError": 0.03843665633220465,
+      "fpType": "BLOOD",
+      "initialFp": 30,
+      "meanActualFpSpent": 27.487,
+      "meanAtomicActions": 6.1194,
+      "observedSuccessProbability": 0.3707,
+      "passed": true,
+      "preRegisteredAllowance": 0.01711426005255158,
+      "routeId": "prepare_havoc_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 2264334764940000017,
+      "successes": 7414,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 12586,
+        "SUCCESS": 7414
+      }
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.003606395026772513,
+      "caseId": "opposite_side_preparation",
+      "dpExpectedActualFpSpent": {
+        "lower": 43.87241378371474,
+        "upper": 43.872413783715544
+      },
+      "dpSuccessLower": 0.7591563950267726,
+      "dpSuccessUpper": 0.7591563950267913,
+      "fpSpentMeanStandardError": 0.12373117582889118,
+      "fpType": "BLOOD",
+      "initialFp": 63,
+      "meanActualFpSpent": 43.8984,
+      "meanAtomicActions": 8.31225,
+      "observedSuccessProbability": 0.75555,
+      "passed": true,
+      "preRegisteredAllowance": 0.015167786003443203,
+      "routeId": "prepare_havoc_fill_seal_add_havoc",
+      "samples": 20000,
+      "seed": 260057938467910491,
+      "successes": 15111,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 4889,
+        "SUCCESS": 15111
+      }
+    }
+  ],
+  "samplesPerPoint": 20000,
+  "schemaVersion": 1,
+  "totalSamples": 360000
+}

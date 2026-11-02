@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "researchDate": "2026-11-03",
+  "kind": "CURRENT_GAME_FIXED_ROUTE_CONFORMANCE_CASES",
+  "gameVersion": "1.5.3",
+  "steamBuildId": 26087601,
+  "materials": {"availability": "UNLIMITED", "costInObjective": false},
+  "supportGlyphs": {"ADD_A": "HOPE", "ADD_B": "HOPE", "PREPARE_HAVOC": "HOPE", "FINAL_HAVOC": "HOPE", "SEAL_CURRENT_JUNK": "DESPAIR"},
+  "selector": {
+    "PREPARE_HAVOC": "Existence of an unsealed non-target junk affix at T1 on target B's prefix/suffix side.",
+    "SEAL_CURRENT_JUNK": "On B's side filter unsealed non-A/non-B affixes at T1..T4, then select minimum (currentTier, nativeListIndex).",
+    "FINAL_HAVOC": "Both exact target identities A and B are unsealed at T7."
+  },
+  "scope": "User-supplied complete preparation routes. Reference evaluation is not a production optimizer or a proof of global optimality. Rolls are marginalized because the target has no roll constraint.",
+  "cases": [
+    {
+      "id": "direct_prefix_targets",
+      "labelZh": "同侧双目标：先补A、封垃圾、补B、浩劫",
+      "baseId": "4:0",
+      "playerLevel": 100,
+      "initialAffixes": [{"id": 7, "tier": 7, "sealed": false}, {"id": 10, "tier": 7, "sealed": false}, {"id": 2, "tier": 1, "sealed": false}],
+      "targetAId": 4,
+      "targetBId": 5,
+      "routes": [
+        {"id": "direct_fill_seal_add_havoc", "primary": true, "steps": ["ADD_A", "SEAL_CURRENT_JUNK", "ADD_B", "FINAL_HAVOC"]},
+        {"id": "direct_with_prepare_guard", "primary": false, "steps": ["ADD_A", "PREPARE_HAVOC", "SEAL_CURRENT_JUNK", "ADD_B", "FINAL_HAVOC"]},
+        {"id": "seal_before_fill", "primary": false, "steps": ["SEAL_CURRENT_JUNK", "ADD_A", "ADD_B", "FINAL_HAVOC"]}
+      ]
+    },
+    {
+      "id": "opposite_side_preparation",
+      "labelZh": "跨侧目标：先补A、浩劫移T1到B侧垃圾、封印、补B、浩劫",
+      "baseId": "4:0",
+      "playerLevel": 100,
+      "initialAffixes": [{"id": 2, "tier": 7, "sealed": false}, {"id": 26, "tier": 7, "sealed": false}, {"id": 10, "tier": 1, "sealed": false}],
+      "targetAId": 7,
+      "targetBId": 4,
+      "routes": [
+        {"id": "prepare_havoc_fill_seal_add_havoc", "primary": true, "steps": ["ADD_A", "PREPARE_HAVOC", "SEAL_CURRENT_JUNK", "ADD_B", "FINAL_HAVOC"]},
+        {"id": "without_required_preparation", "primary": false, "steps": ["ADD_A", "SEAL_CURRENT_JUNK", "ADD_B", "FINAL_HAVOC"]}
+      ]
+    }
+  ],
+  "negativeCases": [
+    {"id": "both_targets_prefix_but_only_suffix_open", "baseId": "4:0", "targetAId": 4, "targetBId": 5, "initialAffixes": [{"id": 2, "tier": 7, "sealed": false}, {"id": 26, "tier": 7, "sealed": false}, {"id": 10, "tier": 1, "sealed": false}], "operation": "ADD_A", "expected": "NO_LEGAL_PREFIX_SLOT", "notGloballyImpossible": true},
+    {"id": "target_identity_already_present", "baseId": "4:0", "targetAId": 4, "targetBId": 5, "initialAffixes": [{"id": 4, "tier": 7, "sealed": false}, {"id": 10, "tier": 7, "sealed": false}, {"id": 2, "tier": 1, "sealed": false}], "operation": "ADD_A", "expected": "DUPLICATE_ID", "notGloballyImpossible": true}
+  ]
+}

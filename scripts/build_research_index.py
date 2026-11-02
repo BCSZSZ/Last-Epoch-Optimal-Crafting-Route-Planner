@@ -32,8 +32,10 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
               "interpretation": "VERIFIED refers to stated static local-code claims; not client testing or whole-engine validation.",
               "sources": sources, "claims": rows}
     required = ("research/audited-build.json", "research/affix-action-claims.json", "research/forge-fp-claims.json",
-                "research/math-fixtures.json", "research/fp-examples.json", "data/game/1.5.3/manifest.json")
-    model = {"schemaVersion": 1, "modelId": "le-1.5.3-26087601-phase0-20261103",
+                "research/math-fixtures.json", "research/fp-examples.json", "data/game/1.5.3/manifest.json",
+                "research/7710-route-cases.json", "research/7710-route-results.json", "research/7710-native-claims.json",
+                "research/7710-monte-carlo.json")
+    model = {"schemaVersion": 1, "modelId": "le-1.5.3-26087601-phase0-r2-unlimited-materials-7710",
              "phase": "PHASE_0_REVIEW", "productionReady": False,
              "gameVersion": manifest["gameVersion"], "steamBuildId": manifest["steamBuildId"],
              "dataRevision": manifest["dataRevision"],
@@ -46,10 +48,11 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
              "policies": {"failedRequiredSeal": "ABORT_AFTER_COMPLETE_NATIVE_SETTLEMENT",
                           "unacceptedRemoval": "ABORT_AFTER_COMPLETE_NATIVE_SETTLEMENT",
                           "fixedMacroOrder": True, "adaptiveReoptimization": False,
-                          "macroStageLimitDraft": 12, "inventoryDefault": "UNBOUNDED_EXPLICIT_ASSUMPTION",
-                          "usageLimitsSeparateFromInventory": True,
-                          "materialCost": "CONSUMED_INPUT_AFTER_REFUNDS; RECOVERED_OUTPUT_SEPARATE",
-                          "materialWeightsDefault": 1,
+                          "macroStageLimitDraft": 12, "materialsAvailability": "UNLIMITED",
+                          "materialCostInObjective": False, "inventoryInputSupported": False,
+                          "materialUsageLimitsSupported": False, "materialAccountingDiagnosticOnly": True,
+                          "tieBreakers": ["SUCCESS_CONDITIONAL_FP_MEAN", "FAILED_FP_WASTE", "SUCCESS_FP_P95", "SUCCESS_FP_P90", "MACRO_STAGES", "STABLE_ROUTE_ID"],
+                          "mandatoryConformanceCases": ["direct_prefix_targets", "opposite_side_preparation"],
                           "successBeforeFpExhaustion": True, "policyAbortBeforeIncidentalSuccess": True},
              "deployment": {"priority": ["GITHUB_PAGES", "STREAMLIT_IF_PYTHON_NEEDED_AND_FITS", "USER_AWS"],
                             "audience": "PUBLIC_WITHOUT_LOGIN", "publicRepositoryAuthorizedIfPagesRequiresIt": True},

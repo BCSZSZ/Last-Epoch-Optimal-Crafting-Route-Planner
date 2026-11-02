@@ -84,26 +84,43 @@
   "gameVersion": "1.5.3",
   "inputs": {
     "data/game/1.5.3/manifest.json": "f1127461629a61b3d0a6970ab26ccc2032491bceed849298849a6b842f2251b9",
+    "research/7710-monte-carlo.json": "20c81665d0c4a9f4755027baa625b09605bd4ff1777f12eed903e7a4cc49424a",
+    "research/7710-native-claims.json": "eab3c629d2762def2f4cee17830e485bba69cffcf4a7d41165a35566cf824248",
+    "research/7710-route-cases.json": "5e2eed34aeee3467606942e9af2f4fdd22a4b766e4627d8eaeadc13de2c0239a",
+    "research/7710-route-results.json": "de9fdc10d16f72a3ab4f361815d42f622f24d6d3a8c5c9798e04be23ef19caf6",
     "research/affix-action-claims.json": "d720c72a45da01dcfea09a7feb92c44087474e89d431e4378f08a7581ebe6aed",
     "research/audited-build.json": "997bdc0183fce5e9b1bf76925d1bdbdf093375e70bfc4f1013a913d2cb4de025",
     "research/forge-fp-claims.json": "618e6d5fa1db4b8db683b7fdefdfd3c4b70c17363634a36b99eb2e1cd914770c",
     "research/fp-examples.json": "ff72db932924dcd374e4c8a42af47525b34fb37c4e5e2aecda9173f85d49713e",
     "research/math-fixtures.json": "2e8f761032a1fb9710be3bdfe80d361982297d3cbf6663140f77bc517e6a978a"
   },
-  "modelId": "le-1.5.3-26087601-phase0-20261103",
+  "modelId": "le-1.5.3-26087601-phase0-r2-unlimited-materials-7710",
   "phase": "PHASE_0_REVIEW",
   "policies": {
     "adaptiveReoptimization": false,
     "failedRequiredSeal": "ABORT_AFTER_COMPLETE_NATIVE_SETTLEMENT",
     "fixedMacroOrder": true,
-    "inventoryDefault": "UNBOUNDED_EXPLICIT_ASSUMPTION",
+    "inventoryInputSupported": false,
     "macroStageLimitDraft": 12,
-    "materialCost": "CONSUMED_INPUT_AFTER_REFUNDS; RECOVERED_OUTPUT_SEPARATE",
-    "materialWeightsDefault": 1,
+    "mandatoryConformanceCases": [
+      "direct_prefix_targets",
+      "opposite_side_preparation"
+    ],
+    "materialAccountingDiagnosticOnly": true,
+    "materialCostInObjective": false,
+    "materialUsageLimitsSupported": false,
+    "materialsAvailability": "UNLIMITED",
     "policyAbortBeforeIncidentalSuccess": true,
     "successBeforeFpExhaustion": true,
-    "unacceptedRemoval": "ABORT_AFTER_COMPLETE_NATIVE_SETTLEMENT",
-    "usageLimitsSeparateFromInventory": true
+    "tieBreakers": [
+      "SUCCESS_CONDITIONAL_FP_MEAN",
+      "FAILED_FP_WASTE",
+      "SUCCESS_FP_P95",
+      "SUCCESS_FP_P90",
+      "MACRO_STAGES",
+      "STABLE_ROUTE_ID"
+    ],
+    "unacceptedRemoval": "ABORT_AFTER_COMPLETE_NATIVE_SETTLEMENT"
   },
   "productionPreconditions": [
     "LEGACY_FORGE_OVERRIDE",
@@ -117,7 +134,7 @@
     "display_parameters_iid",
     "native_uniform_grid_iid"
   ],
-  "researchRevision": "73bacb85c3b87376b32904ac308c5e906bbfab784909512cd1a9ed4f0d9eb1f9",
+  "researchRevision": "15965bfa24316e7acb4c3a7a342be7277afec5cb51909f0a87e3023b0e26965b",
   "rngQualification": "Independent primitive outputs with native grids and operations; independence is a mathematical convention, not a proved property of a seeded client stream. Weighted grid boundaries remain a production precondition.",
   "schemaVersion": 1,
   "steamBuildId": 26087601,

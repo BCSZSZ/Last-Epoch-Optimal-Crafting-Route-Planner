@@ -1,0 +1,43 @@
+{
+  "assemblySha256": "323e9183f3bee600b6c9e1c469218b9de926e9044f2ca3d44fae8a0ec9a91464",
+  "methods": [
+    {
+      "length": 1243,
+      "name": "RngElement.Shuffle<T>",
+      "rva": "0x90c590",
+      "sha256": "8762a65c7209718f6f07308eccfef3cf9fabe9eb85875c6ac69c07e729707ed4"
+    },
+    {
+      "length": 31,
+      "name": "ItemData.<canBeRuneOfRedemptionCrafted>b__168_0",
+      "rva": "0x1231610",
+      "sha256": "9775974f46aab3aca5b6fd13379ae60b92156ea2dc8aa97d234f20813a70d07b"
+    },
+    {
+      "length": 239,
+      "name": "RngElement.GetRandomWeighted<T>(IReadOnlyList,weight)",
+      "rva": "0x90b5e0",
+      "sha256": "658626347bbf165795cb938fd1c891c0ed6aa68004f683ec371b9de714f9b450"
+    },
+    {
+      "length": 85,
+      "name": "RngElement.Roll(float)",
+      "rva": "0xf6ad10",
+      "sha256": "583bfe30cac14fca465a2cc9925df64883eb08811dc78b761e7b20c6865c64c5"
+    },
+    {
+      "length": 55,
+      "name": "RngElement.NextInt(int,int)",
+      "rva": "0xf6a1d0",
+      "sha256": "9dd3314936fd3881e72af01da5c4320e43448ce6458ad70ba533b059a89e6fad"
+    },
+    {
+      "length": 43,
+      "name": "RngElement.RandomByte",
+      "rva": "0xf6a720",
+      "sha256": "97e7baf071a8309caa7872995727a77e24f269864b0eea9809ac7f72655fcfcf"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": "Additional labels from current native/Cpp2IL action audit, including LE.Core RNG and compiler-generated helper. Behavior claims remain in affix-action-claims.json."
+}

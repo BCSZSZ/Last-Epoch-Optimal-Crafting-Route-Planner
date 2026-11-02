@@ -1,0 +1,8 @@
+{
+  "interpretation": "Raw float32 resource parameters, not unconditional operation probabilities.",
+  "parameters": {
+    "bloodForgingPotentialExtraCriticalSuccessChance": 0.30000001192092896,
+    "iceForgingPotentialPreservationChance": 0.30000001192092896
+  },
+  "schemaVersion": 1
+}

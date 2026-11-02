@@ -1,0 +1,25 @@
+{
+  "auditedOn": "2026-11-03",
+  "files": {
+    "GameAssembly.dll": {
+      "bytes": 97256960,
+      "sha256": "323e9183f3bee600b6c9e1c469218b9de926e9044f2ca3d44fae8a0ec9a91464"
+    },
+    "Last Epoch_Data/StreamingAssets/LEAssetBundles/PermaLoad.bundle": {
+      "bytes": 132116289,
+      "sha256": "0322391a7464b8fd3ba07b85b65c547fea0401704ba8ed924bad7ff9fcd36fc6"
+    },
+    "Last Epoch_Data/globalgamemanagers": {
+      "bytes": 1444580,
+      "sha256": "7afac6e4baeb93b02daa481567b859dc9665046167cedc055e5e15d87574d864"
+    },
+    "Last Epoch_Data/il2cpp_data/Metadata/global-metadata.dat": {
+      "bytes": 36457932,
+      "sha256": "2a4e8440606c420345934158b6784d8f5d8b0184f32fd91af0e9e0903ba94f83"
+    }
+  },
+  "gameVersion": "1.5.3",
+  "registrationScope": "Pins installed files and address labels; individual behavioral claims require separate code review.",
+  "schemaVersion": 1,
+  "steamBuildId": 26087601
+}

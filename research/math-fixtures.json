@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "researchDate": "2026-11-03",
+  "kind": "SYNTHETIC_MATHEMATICAL_FIXTURES",
+  "notGameMechanics": true,
+  "source": "Self-derived rational toy examples for the Phase 0 mathematics; none of these probabilities are Last Epoch probabilities.",
+  "cases": [
+    {
+      "id": "last-budget-action-success",
+      "purpose": "Goal completion precedes failure caused only by zero remaining FP.",
+      "initialFP": 1,
+      "transitions": [
+        { "p": "1/4", "terminal": "SUCCESS", "requestedCost": 5, "actualFPSpent": 1, "finalFP": 0, "attempts": 1 },
+        { "p": "3/4", "terminal": "RESOURCE_EXHAUSTED", "requestedCost": 5, "actualFPSpent": 1, "finalFP": 0, "attempts": 1 }
+      ],
+      "expected": { "successProbability": "1/4", "actualFPSpentMean": "1", "successfulFPFirstMoment": "1/4", "actualFPSpentGivenSuccessMean": "1", "failedFPWaste": "3/4", "attemptsMean": "1" }
+    },
+    {
+      "id": "policy-abort-no-recovery",
+      "purpose": "A declared one-shot prerequisite failure absorbs, even if the item could physically continue crafting.",
+      "initialFP": 3,
+      "transitions": [
+        { "p": "1/3", "terminal": "SUCCESS", "policyPassed": true, "actualFPSpent": 2, "attempts": 1, "laterActions": 0 },
+        { "p": "1/3", "terminal": "POLICY_ABORT", "policyPassed": false, "actualFPSpent": 0, "attempts": 1, "laterActions": 0 },
+        { "p": "1/3", "terminal": "POLICY_ABORT", "policyPassed": false, "actualFPSpent": 1, "attempts": 1, "laterActions": 0 }
+      ],
+      "expected": { "successProbability": "1/3", "actualFPSpentMean": "1", "successfulFPFirstMoment": "2/3", "actualFPSpentGivenSuccessMean": "2", "failedFPWaste": "1/3", "attemptsMean": "1", "laterActionsMean": "0" }
+    },
+    {
+      "id": "zero-cost-state-changing-scc",
+      "purpose": "Two different item states form a zero-FP-cost SCC; scalar identical-state-loop elimination is insufficient.",
+      "initialState": "A",
+      "initialFP": 1,
+      "transitions": [
+        { "from": "A", "to": "B", "p": "1", "actualFPSpent": 0, "attempts": 1 },
+        { "from": "B", "to": "SUCCESS", "p": "1/2", "actualFPSpent": 0, "attempts": 1 },
+        { "from": "B", "to": "A", "p": "1/2", "actualFPSpent": 0, "attempts": 1 }
+      ],
+      "expected": { "successProbability": "1", "actualFPSpentMean": "0", "attemptsMeanFromA": "4", "attemptsMeanFromB": "3", "attemptCountCDFAt4FromA": "3/4", "attemptsGivenSuccessP50FromA": 2, "attemptsGivenSuccessP90FromA": 8, "attemptsGivenSuccessP95FromA": 10 }
+    },
+    {
+      "id": "nonterminating-closed-scc",
+      "purpose": "Never discard nontermination mass; zero FP cost does not imply finite attempts or material spend.",
+      "inventory": "unbounded",
+      "initialState": "A",
+      "transitions": [
+        { "from": "A", "to": "B", "p": "1", "actualFPSpent": 0, "attempts": 1, "consumed": { "toy-material": 1 } },
+        { "from": "B", "to": "A", "p": "1", "actualFPSpent": 0, "attempts": 1, "consumed": { "toy-material": 1 } }
+      ],
+      "expected": { "successProbability": "0", "nonterminationProbability": "1", "actualFPSpentMean": "0", "attemptsMean": "Infinity", "toyMaterialConsumedMean": "Infinity", "eligibleForPrimaryRecommendation": false }
+    },
+    {
+      "id": "success-conditioned-budget-mixture",
+      "purpose": "Mixing conditional means with the original budget weights gives the wrong answer.",
+      "budgets": [
+        { "F": 1, "weight": "1/2", "successProbability": "1/4", "actualFPSpentOnAllOutcomes": 1 },
+        { "F": 2, "weight": "1/2", "successProbability": "3/4", "actualFPSpentOnAllOutcomes": 2 }
+      ],
+      "expected": { "score": "1/2", "actualFPSpentMean": "3/2", "successfulFPFirstMoment": "7/8", "actualFPSpentGivenSuccessMean": "7/4", "failedFPWaste": "5/8", "actualFPSpentGivenFailureMean": "5/4", "incorrectUnreweightedConditionalMean": "3/2", "allOutcomesP50": 1, "allOutcomesP90": 2, "allOutcomesP95": 2, "givenSuccessP50": 2, "givenSuccessP90": 2, "givenSuccessP95": 2 }
+    },
+    {
+      "id": "refund-versus-extra-output",
+      "purpose": "Do not charge returned input as consumed; keep byproduct credit separate from default material cost.",
+      "transitions": [
+        { "p": "1/2", "debit": { "toy-rune": 1, "toy-glyph": 1 }, "refund": { "toy-rune": 1, "toy-glyph": 1 }, "consumed": { "toy-rune": 0, "toy-glyph": 0 }, "recovered": { "toy-shard": 3 }, "attempts": 1 },
+        { "p": "1/2", "debit": { "toy-rune": 1, "toy-glyph": 1 }, "refund": { "toy-rune": 0, "toy-glyph": 0 }, "consumed": { "toy-rune": 1, "toy-glyph": 1 }, "recovered": { "toy-shard": 3 }, "attempts": 1 }
+      ],
+      "expected": { "attemptsMean": "1", "debitCountMean": "2", "refundCountMean": "1", "consumedCountMean": "1", "recoveredToyShardMean": "3", "equalWeightMaterialCost": "1" }
+    },
+    {
+      "id": "prefix-success-is-not-safe-dominance",
+      "purpose": "A prefix with higher current success can leave a worse state for the same fixed suffix.",
+      "prefixes": [
+        { "name": "A", "alreadySuccess": "2/5", "remaining": [{ "state": "bad", "p": "3/5" }] },
+        { "name": "B", "alreadySuccess": "3/10", "remaining": [{ "state": "good", "p": "7/10" }] }
+      ],
+      "sharedSuffix": { "successGivenBad": "0", "successGivenGood": "1" },
+      "expected": { "finalSuccessA": "2/5", "finalSuccessB": "1", "prefixAIsSafeDominating": false }
+    }
+  ]
+}

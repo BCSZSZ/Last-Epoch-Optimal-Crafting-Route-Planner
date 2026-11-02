@@ -1,0 +1,83 @@
+{
+  "artifacts": {
+    "affixes.json": {
+      "bytes": 3087707,
+      "sha256": "abdbea6ee8a01e02f16122943da57bf641a504a3ece3fa05ffd1550c1cc79794"
+    },
+    "items.json": {
+      "bytes": 1265629,
+      "sha256": "ebb84bc1ef39ae40d538e131e38d7eadeb330b07e841303d13822fb8c9f45f1c"
+    },
+    "native-evidence.json": {
+      "bytes": 230740,
+      "sha256": "6e0e3c918d8d76420939894acc5e3ca94e320926e70db347fcb6847b4495ffda"
+    },
+    "resource-parameters.json": {
+      "bytes": 288,
+      "sha256": "06b25b738cd53a1b7e6de2da931ccd3274d6fdc55f9c34c184d809ac7833de28"
+    }
+  },
+  "assetObjects": [
+    {
+      "name": "MasterAffixesList",
+      "pathId": "2955332227439360059",
+      "rawByteLength": 399772,
+      "rawSha256": "3544d42552a0eedad5e52210e1152337ac9feb2534d1d6c7962a306d1e5f0f80"
+    },
+    {
+      "name": "MasterItemsList",
+      "pathId": "331809119198608226",
+      "rawByteLength": 299548,
+      "rawSha256": "fd85a40ee8fb9fec1336e5db3b0680fb9f1e5774c89c3d5dd74b5cc1769d58aa"
+    }
+  ],
+  "auditedOn": "2026-11-03",
+  "counts": {
+    "affixCount": 1156,
+    "baseCount": 923,
+    "itemTypeCount": 42,
+    "multiAffixCount": 540,
+    "registeredNativeMethodCount": 1036,
+    "singleAffixCount": 616,
+    "specialAffixTypeCounts": {
+      "0": 770,
+      "1": 12,
+      "2": 26,
+      "3": 61,
+      "4": 49,
+      "5": 66,
+      "6": 134,
+      "7": 38
+    }
+  },
+  "dataRevision": "e13bd6ad1c607782651e98ab7eafa959cc8883b89d570eb100ac55fa36b086a2",
+  "gameVersion": "1.5.3",
+  "installedFiles": {
+    "GameAssembly.dll": {
+      "bytes": 97256960,
+      "sha256": "323e9183f3bee600b6c9e1c469218b9de926e9044f2ca3d44fae8a0ec9a91464"
+    },
+    "Last Epoch_Data/StreamingAssets/LEAssetBundles/PermaLoad.bundle": {
+      "bytes": 132116289,
+      "sha256": "0322391a7464b8fd3ba07b85b65c547fea0401704ba8ed924bad7ff9fcd36fc6"
+    },
+    "Last Epoch_Data/globalgamemanagers": {
+      "bytes": 1444580,
+      "sha256": "7afac6e4baeb93b02daa481567b859dc9665046167cedc055e5e15d87574d864"
+    },
+    "Last Epoch_Data/il2cpp_data/Metadata/global-metadata.dat": {
+      "bytes": 36457932,
+      "sha256": "2a4e8440606c420345934158b6784d8f5d8b0184f32fd91af0e9e0903ba94f83"
+    }
+  },
+  "integerEncoding": "Integers outside JavaScript safe integer range are decimal strings; ordinary affix/base IDs remain numbers.",
+  "playerSettingsRead": "check_read=False for PlayerSettings tail compatibility; main databases use check_read=True.",
+  "schemaVersion": 1,
+  "steamBuildId": 26087601,
+  "timezone": "Asia/Tokyo",
+  "toolVersions": {
+    "UnityPy": "1.25.4",
+    "capstone": "5.0.9",
+    "pefile": "2024.8.26"
+  }
+}

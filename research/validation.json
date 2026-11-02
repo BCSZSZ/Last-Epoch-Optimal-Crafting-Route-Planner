@@ -1,0 +1,117 @@
+{
+  "auditedOn": "2026-11-03",
+  "checks": {
+    "actions": {
+      "dataRevision": "e13bd6ad1c607782651e98ab7eafa959cc8883b89d570eb100ac55fa36b086a2",
+      "gameVersion": "1.5.3",
+      "glovesPoolCount": 40,
+      "havoc": [
+        {
+          "distinctArrangements": 6,
+          "sameArrangementTail": "6^-10000",
+          "successGivenChanged": "1/5",
+          "successWithFiniteCap": "(1/5) * (1 - 6^-10000)",
+          "symbolicMass": "1",
+          "tiers": [
+            7,
+            1,
+            7,
+            1
+          ]
+        },
+        {
+          "distinctArrangements": 12,
+          "sameArrangementTail": "12^-10000",
+          "successGivenChanged": "2/11",
+          "successWithFiniteCap": "(2/11) * (1 - 12^-10000)",
+          "symbolicMass": "1",
+          "tiers": [
+            7,
+            1,
+            7,
+            2
+          ]
+        }
+      ],
+      "model": "INDEPENDENT_NORMALIZED_WEIGHTS_AND_UNIFORM_PERMUTATIONS",
+      "monteCarlo": {
+        "integerRoundingAllowanceHits": 1,
+        "seed": 20261103,
+        "sigmaLimit": 4.0
+      },
+      "nativeGridBitExact": false,
+      "redemption": [
+        {
+          "case": "noTarget",
+          "exactFraction": "140737488355328/16257994501799281",
+          "exitStates": 289,
+          "mass": "1",
+          "monteCarloHits": 1701,
+          "samples": 200000,
+          "withinDeclaredTolerance": true
+        },
+        {
+          "case": "targetFirst",
+          "exactFraction": "70368744177664/16257994501799281",
+          "exitStates": 289,
+          "mass": "1",
+          "monteCarloHits": 844,
+          "samples": 200000,
+          "withinDeclaredTolerance": true
+        },
+        {
+          "case": "targetLast",
+          "exactFraction": "0",
+          "exitStates": 289,
+          "mass": "1",
+          "monteCarloHits": 0,
+          "samples": 200000,
+          "withinDeclaredTolerance": true
+        }
+      ],
+      "status": "PASS"
+    },
+    "fp": {
+      "exactUnitMassCases": 1536,
+      "scope": "research_reference_only",
+      "verified": true,
+      "wroteArtifact": false
+    },
+    "math": {
+      "fixtureSHA256": "2e8f761032a1fb9710be3bdfe80d361982297d3cbf6663140f77bc517e6a978a",
+      "notGameMechanics": true,
+      "rationalChecks": 124,
+      "status": "passed",
+      "syntheticCases": 7
+    }
+  },
+  "claimedClientTest": false,
+  "claimedProductionSolverTest": false,
+  "documents": {
+    "bootstrapUnchanged": true,
+    "localLinks": 75,
+    "requiredDocuments": 11
+  },
+  "inputs": {
+    "scripts/build_research_index.py": "868a6bfc464509f152dab8ac6990c039a74d15edf8d27a0dbc7bb4a1070386c0",
+    "scripts/check_action_examples.py": "e393f25b274ff9c203fa8026eb38765d4d4a1d8f2a66688596379cbbb6ffa5f0",
+    "scripts/check_fp_examples.py": "3a413c0f56738862cbc7cf34b1d3f1badbdc80edc2aab60f8a413c06c9199257",
+    "scripts/check_math_fixtures.py": "25c3d9154e604d00aa625eed52a780768af42c8d6a21fa31bbb49190fc0b4295",
+    "scripts/extract_game_snapshot.py": "94c58a91f80bd510954e0d762f596d261b257976cd0ec46ec51fb82ba1a3fdc8",
+    "scripts/inspect_native_method.py": "64342a49c9bb46d236fc258fed3b8b2179431c410b1fc30f39873b0004aafa23",
+    "scripts/register_audited_build.py": "11f4fc697b2cb0f041ee5f830793000415adcac9a7612a41617b193f0ff98a34",
+    "scripts/validate_research.py": "f8256b526042659f24890bc43ce906acd29b49d6ccacee14bdb0aa0f8cd271a4"
+  },
+  "phase": "PHASE_0_RESEARCH_ONLY",
+  "schemaVersion": 1,
+  "snapshot": {
+    "affixes": 1156,
+    "bases": 923,
+    "behaviorClaims": 18,
+    "dataRevision": "e13bd6ad1c607782651e98ab7eafa959cc8883b89d570eb100ac55fa36b086a2",
+    "itemTypes": 42,
+    "registeredMethodRanges": 1036,
+    "reviewedDistinctMethodRanges": 50
+  },
+  "status": "PASS"
+}

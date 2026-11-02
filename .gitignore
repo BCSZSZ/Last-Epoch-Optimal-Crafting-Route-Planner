@@ -1,0 +1,16 @@
+.venv/
+.cache/
+__pycache__/
+*.py[cod]
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.dll
+*.bundle
+*.dat
+*.pdb
+Thumbs.db
+.DS_Store

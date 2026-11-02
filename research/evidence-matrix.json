@@ -1,0 +1,1102 @@
+{
+  "auditedOn": "2026-11-03",
+  "claims": [
+    {
+      "claim": {
+        "confidence": "VERIFIED",
+        "details": {
+          "baseFeeSealComparison": "For equal starting tier, successful Despair and failed ordinary upgrade pass the same oldStoredTier+1 to applyForgingPotentialCostFromShard; their later Forge outcomes and refunds can differ.",
+          "chaos": "upgrades first, rerolls roll unless preserved, then invokes identity reroll helper",
+          "costOrder": "New add charges tier=0 before adding; upgrade charges with incremented storedTier. Successful sealing charges with old storedTier+1. Full Forge postprocessing belongs to separate FP audit.",
+          "criticalEligibility": "Current Forge audit confirms Chaos skips the critical entrance; ordinary/failed Despair paths are additionally gated by primary-affix shard stock. Full evidence in forge-fp-claims.json.",
+          "eligibility": [
+            "FP>0; ordinary-craft item category; full Forge capability restrictions",
+            "CanForgeOnItem uses actual item base/subtype/class requirement",
+            "playerLevel >= CalculateLevelRequirementAfterShard",
+            "selected affix cannot already be sealed",
+            "new affix requires free compatible prefix/suffix capacity"
+          ],
+          "newAffix": "adds selected ID at storedTier=0; absent explicit roll uses RandomByte",
+          "tierStorage": "displayTier=storedTier+1; existing storedTier>=4 is at ordinary craft maximum",
+          "upgrade": "existing storedTier<4 increments once; ordinary upgrade without preserveRollWithinTier redraws roll byte"
+        },
+        "evidenceRefs": [
+          "checkForgeCapability",
+          "canForge",
+          "canRoll",
+          "addAffixTier",
+          "addAffixNoChecks",
+          "maxCraftable"
+        ],
+        "id": "ADD_UPGRADE",
+        "limitations": [
+          "CanForgeOnItem has an already-present-affix compatibility-override list fallback; complete legacy-ID membership not decoded in this report."
+        ],
+        "summary": "普通添加/升级受实际底材、角色等级、词缀与槽位资格约束，普通碎片升级止于T5。"
+      },
+      "id": "affix:ADD_UPGRADE",
+      "methods": [
+        {
+          "id": "checkForgeCapability",
+          "length": 7110,
+          "name": "CraftingManager.CheckForgeCapability",
+          "rva": "0x1166960",
+          "sha256": "65dc209839517bc76571d021286330c6440dc872cd609ea543eacd485f018390"
+        },
+        {
+          "id": "canForge",
+          "length": 188,
+          "name": "Affix.CanForgeOnItem",
+          "rva": "0x11b1660",
+          "sha256": "196479eda47bd6f8183ad93fe2e4a6b2c1881605df6c1f7c7ac9d86caa747ff1"
+        },
+        {
+          "id": "canRoll",
+          "length": 301,
+          "name": "Affix.CanRollOn(int,int,ClassRequirement)",
+          "rva": "0x11b19b0",
+          "sha256": "6f1c8d134ba61baae027515858bd6554afa327c59ad6095a4baae7b953ab5650"
+        },
+        {
+          "id": "addAffixTier",
+          "length": 2995,
+          "name": "ItemData.AddAffixTier",
+          "rva": "0x11f3dd0",
+          "sha256": "4c2ff3660d4892d8151ccbfe273c29a1aac266130a579afd5ddcf21169c4de3f"
+        },
+        {
+          "id": "addAffixNoChecks",
+          "length": 963,
+          "name": "ItemData.AddAffixNoCostOrChecks",
+          "rva": "0x11f3a00",
+          "sha256": "7abb1a8e3857803bfc795e0e342426840ecaa35358fd656bbcef9057b956c2bd"
+        },
+        {
+          "id": "maxCraftable",
+          "length": 349,
+          "name": "ItemData.AffixIsAtMaxCraftableTierOrAbove",
+          "rva": "0x11f8310",
+          "sha256": "1285c0dc61d702a6fcb2ef981b1806768c17e23bd4b1b131518b38e310121995"
+        }
+      ],
+      "source": "research/affix-action-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "confidence": "VERIFIED",
+        "details": {
+          "chanceRaw": "float32((float32(float32(rarity*0.15f)+0.6f)+exaltedBonus)*tierMultiplier)",
+          "exaltedBonusNominal": 0.3,
+          "failure": "selected affix normally upgrades, may redraw roll and incurs its native cost/postprocessing; route then terminates under user policy.",
+          "hasExaltedMeaning": "hasExaltedAffix scans all affixes for storedTier>=5; no sealed exclusion in this helper.",
+          "probabilitySaturation": "getChanceToSealAffix itself does not clamp; Roll(q>=1) returns true and Roll(q<=0) returns false.",
+          "rarityMeaning": "For valid ordinary items setRarityFromAffixes clamps listCount - regularSealed - primordialSealed - corruptedSealed to0..4.",
+          "routePolicy": "If seal success is required, failed Bernoulli branch is an absorbing route-failure leaf after completing the native action.",
+          "selectedTier": "storedTier0..3 => display T1..T4",
+          "success": "SealAffix moves the selected object to list start, marks sealedType=1 and regular sealed slot, updates rarity, keeps tier and roll.",
+          "tierMultipliersNominal": [
+            0.7,
+            0.46,
+            0.23,
+            0.1
+          ]
+        },
+        "evidenceRefs": [
+          "sealChance",
+          "sealAffix",
+          "rarityFromAffixes",
+          "hasExalted",
+          "addAffixTier",
+          "roll",
+          "checkForgeCapability"
+        ],
+        "id": "DESPAIR",
+        "limitations": [],
+        "summary": "必要封印一次尝试；成功保原阶封入普通封印槽，失败走普通升级路径。"
+      },
+      "id": "affix:DESPAIR",
+      "methods": [
+        {
+          "id": "sealChance",
+          "length": 189,
+          "name": "ItemData.getChanceToSealAffix",
+          "rva": "0x120efe0",
+          "sha256": "334cccb08a38be025b2b41146fc8fe987ff42680c95a0ff83d4a08d1fae76afc"
+        },
+        {
+          "id": "sealAffix",
+          "length": 231,
+          "name": "ItemData.SealAffix",
+          "rva": "0x1209940",
+          "sha256": "5bc125c9d4b5cf1b963bf466b3151e2c1f43288dd1c45287cf7568bf526999b1"
+        },
+        {
+          "id": "rarityFromAffixes",
+          "length": 226,
+          "name": "ItemData.setRarityFromAffixesForNormalMagicOrRareItem",
+          "rva": "0x1212fd0",
+          "sha256": "40dc1da0027d7dcfb3013addce57344b29caf6a8d038b773c8ebd45162dac4c8"
+        },
+        {
+          "id": "hasExalted",
+          "length": 311,
+          "name": "ItemData.hasExaltedAffix",
+          "rva": "0x12109c0",
+          "sha256": "fbb79c6f6b69232f414e0ee68064636b2326b79414e1674a168ef5720dbe9bcc"
+        },
+        {
+          "id": "addAffixTier",
+          "length": 2995,
+          "name": "ItemData.AddAffixTier",
+          "rva": "0x11f3dd0",
+          "sha256": "4c2ff3660d4892d8151ccbfe273c29a1aac266130a579afd5ddcf21169c4de3f"
+        },
+        {
+          "id": "roll",
+          "length": 85,
+          "name": "RngElement.Roll(float)",
+          "rva": "0xf6ad10",
+          "sha256": "583bfe30cac14fca465a2cc9925df64883eb08811dc78b761e7b20c6865c64c5"
+        },
+        {
+          "id": "checkForgeCapability",
+          "length": 7110,
+          "name": "CraftingManager.CheckForgeCapability",
+          "rva": "0x1166960",
+          "sha256": "65dc209839517bc76571d021286330c6440dc872cd609ea543eacd485f018390"
+        }
+      ],
+      "source": "research/affix-action-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "confidence": "VERIFIED",
+        "details": {
+          "costOrder": "Non-affix FP cost is applied before tier shuffle.",
+          "eligibility": [
+            "isExaltedItem",
+            "at least4 nonsealed affixes",
+            "more than1 distinct tier"
+          ],
+          "examples": {
+            "twoT7DifferentLowTiers": "A=12; two successful arrangements; nominal goal chance2*(1-12^-10000)/11",
+            "twoT7EqualLowTiers": "A=6; nominal goal chance(1-6^-10000)/5"
+          },
+          "idealIidModel": "If A distinct tier arrangements are equally likely and current x is not successful, each other arrangement y has probability (1-A^-10000)/(A-1), and x has tail probability A^-10000.",
+          "mutations": [
+            "Nonsealed affix IDs and roll bytes remain attached to their affix objects.",
+            "Stored tiers are collected, shuffled, written back, then the item is rebuilt and deserialized.",
+            "No Standard-only filter exists in the Havoc tier collector."
+          ],
+          "retryCap": 10000
+        },
+        "evidenceRefs": [
+          "havocEligible",
+          "isExaltedItem",
+          "havoc",
+          "shuffleUntilChanged",
+          "differentOrder",
+          "shuffle",
+          "isSealed"
+        ],
+        "id": "HAVOC",
+        "limitations": [
+          "The equal-permutation formula is exact under an explicitly independent uniform permutation model, not a proof of exact seeded PRNG probabilities.",
+          "The 10000-attempt tail must be bounded or retained rather than silently deleted."
+        ],
+        "summary": "浩劫只重分配未封印词缀的阶数，并拒绝原阶数序列。"
+      },
+      "id": "affix:HAVOC",
+      "methods": [
+        {
+          "id": "havocEligible",
+          "length": 452,
+          "name": "ItemData.canBeRuneOfHavocCrafted",
+          "rva": "0x120e9c0",
+          "sha256": "e199b7751ae79dfdf458fb11e6917f4881fe7038df457d0480a0efa62844b7ad"
+        },
+        {
+          "id": "isExaltedItem",
+          "length": 418,
+          "name": "ItemData.isExaltedItem",
+          "rva": "0x1210db0",
+          "sha256": "76d001e43bebfa4833b5f8d7d91285c7bda99bd25889e76e86610a2e23822e5a"
+        },
+        {
+          "id": "havoc",
+          "length": 743,
+          "name": "ItemData.CraftRuneOfHavoc",
+          "rva": "0x11fbf40",
+          "sha256": "d6638a117dbad7db925d08b2c5cfe379a55c8b5d66e4e3c7f7972272d5116f45"
+        },
+        {
+          "id": "shuffleUntilChanged",
+          "length": 302,
+          "name": "EpochExtensions.ShuffleUntilDifferentOrder",
+          "rva": "0x85c1f0",
+          "sha256": "930068cfc78da55a753bd6595285e6bdd1eeba80280150e4f4df7938c25e8642"
+        },
+        {
+          "id": "differentOrder",
+          "length": 664,
+          "name": "EpochExtensions.AreDifferentOrder",
+          "rva": "0x856ee0",
+          "sha256": "b1d1b64599a3769402652fd0bf8702a9e63fb9238af08d1a35bba5086f54f5e5"
+        },
+        {
+          "id": "shuffle",
+          "length": 1243,
+          "name": "RngElement.Shuffle<T>",
+          "rva": "0x90c590",
+          "sha256": "8762a65c7209718f6f07308eccfef3cf9fabe9eb85875c6ac69c07e729707ed4"
+        },
+        {
+          "id": "isSealed",
+          "length": 8,
+          "name": "ItemAffix.IsSealed",
+          "rva": "0x1216c50",
+          "sha256": "673369bd4e2aaafe9ae43ca4a0261a154c68a553c78d67b48eb66eeb375178e8"
+        }
+      ],
+      "source": "research/affix-action-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "confidence": "VERIFIED",
+        "details": {
+          "candidateFilters": [
+            "same AffixType as selected affix",
+            "actual CanRollOn(baseType,subType,baseClassRequirement)",
+            "candidate ID absent from complete current affix list, including sealed IDs and own current ID",
+            "candidate specialAffixType==0"
+          ],
+          "emptyCandidatePool": "Helper leaves the item unchanged when candidate list is empty; consuming the rune is controlled by the outer action, not inferred here.",
+          "mutations": "Writes new affixId only, then RebuildID/setValuesFromSerialisation; maintains storedTier and roll bytes through the identity change.",
+          "nominalNormalizedModel": "P(i->j|state)=craftWeight(j)/sum(current candidate craftWeights)",
+          "sourceLists": [
+            "single-affix list",
+            "multi-affix list"
+          ],
+          "weight": "Use first matching equipmentType override weighting, otherwise definition.weighting; if w<1, float32min(1,float32(2*w)); otherwise w unchanged.",
+          "weightedImplementation": "GetRandomWeighted chooses stack variant for candidateCount<=128 and iterator variant above128."
+        },
+        "evidenceRefs": [
+          "reroll",
+          "weightSelector",
+          "craftWeight",
+          "baseWeight",
+          "canRoll",
+          "classMatch",
+          "subtypeGroup",
+          "subtypeCompatibility",
+          "weightedDispatch"
+        ],
+        "id": "IDENTITY_REROLL",
+        "limitations": [
+          "Bit-level float32 cumulative weighted-selection boundary effects are not certified by normalized rational weights alone."
+        ],
+        "summary": "混沌与救赎共用按当前完整状态加权的同侧普通候选池。"
+      },
+      "id": "affix:IDENTITY_REROLL",
+      "methods": [
+        {
+          "id": "reroll",
+          "length": 1465,
+          "name": "ItemData.rerollAffixIDOfAffix",
+          "rva": "0x1212a10",
+          "sha256": "d70d73e0a024e5fee7be2dd7e8ae272a8eaf2fc1b0fb9fa10ca2d4888a443003"
+        },
+        {
+          "id": "weightSelector",
+          "length": 36,
+          "name": "ItemData.<rerollAffixIDOfAffix>b__138_0",
+          "rva": "0x120c7c0",
+          "sha256": "a9ddd7c3c76d88f65648242dc6840913185829325b23a3ea8cf4b5b8a577d1c7"
+        },
+        {
+          "id": "craftWeight",
+          "length": 41,
+          "name": "Affix.GetWeightingForGlyphOfChaos",
+          "rva": "0x11b3390",
+          "sha256": "e31441207f9370843d9ae1e336b98ff4895d24576ee3f9e2466bda723e378ad6"
+        },
+        {
+          "id": "baseWeight",
+          "length": 372,
+          "name": "Affix.GetWeighting",
+          "rva": "0x11b3510",
+          "sha256": "e36dc3afe14b45759d73551c50a638b53e294793e151dca12f8b7c040acc48e1"
+        },
+        {
+          "id": "canRoll",
+          "length": 301,
+          "name": "Affix.CanRollOn(int,int,ClassRequirement)",
+          "rva": "0x11b19b0",
+          "sha256": "6f1c8d134ba61baae027515858bd6554afa327c59ad6095a4baae7b953ab5650"
+        },
+        {
+          "id": "classMatch",
+          "length": 74,
+          "name": "EpochExtensions.MatchesSpecificity",
+          "rva": "0x10e3d70",
+          "sha256": "5c4139a93570c0fce2166674a3a8b894eb615e5cd5dba4155e2b0eb0c71d9bc3"
+        },
+        {
+          "id": "subtypeGroup",
+          "length": 64,
+          "name": "SubTypeGroupExtensionMethods.GetSubTypeGroup",
+          "rva": "0x1247030",
+          "sha256": "0f941d08cb4257ed04ecc2d1c46b014f0280faeb19014dda170ba02549f57e52"
+        },
+        {
+          "id": "subtypeCompatibility",
+          "length": 175,
+          "name": "SubTypeGroupExtensionMethods.CanRollOn",
+          "rva": "0x1246f80",
+          "sha256": "3a1a63952bdc1fb7595bfdaa3aa5dede5a1483e644ba1aef2999b9fd47103a15"
+        },
+        {
+          "id": "weightedDispatch",
+          "length": 239,
+          "name": "RngElement.GetRandomWeighted<T>(IReadOnlyList,weight)",
+          "rva": "0x90b5e0",
+          "sha256": "658626347bbf165795cb938fd1c891c0ed6aa68004f683ec371b9de714f9b450"
+        }
+      ],
+      "source": "research/affix-action-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "confidence": "VERIFIED",
+        "details": {
+          "costOrder": "Non-affix FP cost occurs before processing affixes.",
+          "jointDistribution": "Expand each sequential reroll using its UPDATED whole-item ID exclusion set; candidate draws cannot be factored as independent simultaneous slot draws.",
+          "order": "Iterates actual affix list index from0 upwards and reloads item.affixes each step; each identity reroll rebuilds/deserializes before the next index.",
+          "selectedAffixes": "Every current nonsealed affix with storedTier+1>=6; helper does not require the source affix specialAffixType==0.",
+          "tierAndRoll": "ID changes preserve stored tier and normalized roll byte."
+        },
+        "evidenceRefs": [
+          "redemptionEligible",
+          "redemptionEligiblePredicate",
+          "redemption",
+          "reroll",
+          "isSealed",
+          "isAffixExalted"
+        ],
+        "id": "REDEMPTION",
+        "limitations": [
+          "Do not sort native affix order during canonicalization.",
+          "Order of ordinary affixes across full serialization roundtrip is cross-checked in the FP/serialization audit; this action report does not claim a UI can freely reorder them."
+        ],
+        "summary": "救赎依实际列表索引逐条重抽全部未封印崇高词缀，不能锁定已有好T7。"
+      },
+      "id": "affix:REDEMPTION",
+      "methods": [
+        {
+          "id": "redemptionEligible",
+          "length": 294,
+          "name": "ItemData.canBeRuneOfRedemptionCrafted",
+          "rva": "0x120eb90",
+          "sha256": "1241c81ae6ddc2556bf5a8f77c46b167f7edaad2bc68ea94f597a009febb385e"
+        },
+        {
+          "id": "redemptionEligiblePredicate",
+          "length": 31,
+          "name": "ItemData.<canBeRuneOfRedemptionCrafted>b__168_0",
+          "rva": "0x1231610",
+          "sha256": "9775974f46aab3aca5b6fd13379ae60b92156ea2dc8aa97d234f20813a70d07b"
+        },
+        {
+          "id": "redemption",
+          "length": 276,
+          "name": "ItemData.CraftRuneOfRedemption",
+          "rva": "0x11fc230",
+          "sha256": "4f804ee694625b53596e2d9a1e2a475c6acaeb45561a8a16e7a1a02dc01f0cee"
+        },
+        {
+          "id": "reroll",
+          "length": 1465,
+          "name": "ItemData.rerollAffixIDOfAffix",
+          "rva": "0x1212a10",
+          "sha256": "d70d73e0a024e5fee7be2dd7e8ae272a8eaf2fc1b0fb9fa10ca2d4888a443003"
+        },
+        {
+          "id": "isSealed",
+          "length": 8,
+          "name": "ItemAffix.IsSealed",
+          "rva": "0x1216c50",
+          "sha256": "673369bd4e2aaafe9ae43ca4a0261a154c68a553c78d67b48eb66eeb375178e8"
+        },
+        {
+          "id": "isAffixExalted",
+          "length": 13,
+          "name": "ItemAffix.IsExalted",
+          "rva": "0x1216bf0",
+          "sha256": "96bbfd26c557f5896a651fb1e186fb4edb108ff736b5e0782da09ae9222677cf"
+        }
+      ],
+      "source": "research/affix-action-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "confidence": "VERIFIED",
+        "details": {
+          "eligible": "IsSealed=false AND specialAffixType=0",
+          "nominalProbability": "1/N per eligible affix under ideal uniform index draws; permitted target set success mass = permittedEligibleCount/N.",
+          "routePolicy": "After the native action and full costs, removal outside the predeclared permitted ID/slot set is absorbing failure; no rescue or reroll branch.",
+          "sourceExclusions": [
+            "Experimental=1",
+            "Personal=2",
+            "Set=3",
+            "IdolEnchantment=4",
+            "IdolWeaver=5",
+            "Corrupted=6",
+            "FakeUniqueMod=7",
+            "any sealedType>0"
+          ]
+        },
+        "evidenceRefs": [
+          "removalPool",
+          "removeAffix",
+          "isSealed"
+        ],
+        "id": "REMOVAL",
+        "limitations": [],
+        "summary": "剥离只在未封印Standard词缀池中随机选择，T7没有保护。"
+      },
+      "id": "affix:REMOVAL",
+      "methods": [
+        {
+          "id": "removalPool",
+          "length": 645,
+          "name": "ItemData.TryGetRandomAffixThatCanBeRemovedWithRuneOfRemoval",
+          "rva": "0x120bad0",
+          "sha256": "9408f8ad76311e5f069c664fec736a18356b8b5d2d2d1b140773e1ac537f9dbf"
+        },
+        {
+          "id": "removeAffix",
+          "length": 459,
+          "name": "ItemData.RemoveAffix",
+          "rva": "0x1207770",
+          "sha256": "5e40022d15d4eb64d7cc52a9558d278c04f1652f46196f4c1cc4245f1d7dfd16"
+        },
+        {
+          "id": "isSealed",
+          "length": 8,
+          "name": "ItemAffix.IsSealed",
+          "rva": "0x1216c50",
+          "sha256": "673369bd4e2aaafe9ae43ca4a0261a154c68a553c78d67b48eb66eeb375178e8"
+        }
+      ],
+      "source": "research/affix-action-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "confidence": "VERIFIED",
+        "details": {
+          "classMatch": "req==31 OR specificity==0 OR (req==0 AND specificity&1!=0) OR ((req<<1)&specificity!=0), for legal class flags.",
+          "equipmentType": "Use GetEquipmentTypeForBaseType(baseType); do not assume displayed text is a key.",
+          "ordinaryScope": "Nonempty ordinary equipment base types0..24 excluding11 and24 (23 types); subgroup branch above is retained for completeness but not used by ordinary gloves.",
+          "subtypeGroups": [
+            {
+              "allowedCanRollOnAnyOf": [
+                31,
+                33
+              ],
+              "equipmentType": 29,
+              "group": 1,
+              "subTypes": [
+                10,
+                11,
+                12,
+                13,
+                14,
+                17
+              ]
+            },
+            {
+              "allowedCanRollOnAnyOf": [
+                32,
+                33
+              ],
+              "equipmentType": 30,
+              "group": 2,
+              "subTypes": [
+                10,
+                11,
+                12,
+                13,
+                14,
+                17
+              ]
+            }
+          ],
+          "typeMatch": "definition.canRollOn contains actual equipmentType OR supports subtypeGroup."
+        },
+        "evidenceRefs": [
+          "canRoll",
+          "classMatch",
+          "subtypeGroup",
+          "subtypeCompatibility",
+          "baseWeight"
+        ],
+        "id": "CANDIDATE_COMPATIBILITY",
+        "limitations": [],
+        "summary": "普通装备23类范围的底材/职业匹配与额外神像底材组已按原生helper还原。"
+      },
+      "id": "affix:CANDIDATE_COMPATIBILITY",
+      "methods": [
+        {
+          "id": "canRoll",
+          "length": 301,
+          "name": "Affix.CanRollOn(int,int,ClassRequirement)",
+          "rva": "0x11b19b0",
+          "sha256": "6f1c8d134ba61baae027515858bd6554afa327c59ad6095a4baae7b953ab5650"
+        },
+        {
+          "id": "classMatch",
+          "length": 74,
+          "name": "EpochExtensions.MatchesSpecificity",
+          "rva": "0x10e3d70",
+          "sha256": "5c4139a93570c0fce2166674a3a8b894eb615e5cd5dba4155e2b0eb0c71d9bc3"
+        },
+        {
+          "id": "subtypeGroup",
+          "length": 64,
+          "name": "SubTypeGroupExtensionMethods.GetSubTypeGroup",
+          "rva": "0x1247030",
+          "sha256": "0f941d08cb4257ed04ecc2d1c46b014f0280faeb19014dda170ba02549f57e52"
+        },
+        {
+          "id": "subtypeCompatibility",
+          "length": 175,
+          "name": "SubTypeGroupExtensionMethods.CanRollOn",
+          "rva": "0x1246f80",
+          "sha256": "3a1a63952bdc1fb7595bfdaa3aa5dede5a1483e644ba1aef2999b9fd47103a15"
+        },
+        {
+          "id": "baseWeight",
+          "length": 372,
+          "name": "Affix.GetWeighting",
+          "rva": "0x11b3510",
+          "sha256": "e36dc3afe14b45759d73551c50a638b53e294793e151dca12f8b7c040acc48e1"
+        }
+      ],
+      "source": "research/affix-action-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "confidence": "VERIFIED",
+        "details": {
+          "affixType": {
+            "PREFIX": 0,
+            "SPECIAL": 2,
+            "SUFFIX": 1
+          },
+          "primordial": "Model primordial sealed slot separately from regular Despair sealed slot. Evolution is an extension operation, not silently added to core action search.",
+          "sealedType": "ItemAffix.IsSealed is sealedType>0, not specialAffixType!=0; do not conflate them.",
+          "specialAffixType": {
+            "Corrupted": 6,
+            "Experimental": 1,
+            "FakeUniqueMod": 7,
+            "IdolEnchantment": 4,
+            "IdolWeaver": 5,
+            "Personal": 2,
+            "Set": 3,
+            "Standard": 0
+          },
+          "tierStorage": "storedTier byte is displayTier-1; T8 stored7 still satisfies IsExalted, but legal primordial affix is excluded from operations by sealedType."
+        },
+        "evidenceRefs": [
+          "isSealed",
+          "isAffixExalted",
+          "sealAffix",
+          "maxCraftable"
+        ],
+        "id": "SEALED_AND_T8",
+        "limitations": [],
+        "summary": "封印状态与词缀特殊类别是独立维度；原初T8位于独立封印槽。"
+      },
+      "id": "affix:SEALED_AND_T8",
+      "methods": [
+        {
+          "id": "isSealed",
+          "length": 8,
+          "name": "ItemAffix.IsSealed",
+          "rva": "0x1216c50",
+          "sha256": "673369bd4e2aaafe9ae43ca4a0261a154c68a553c78d67b48eb66eeb375178e8"
+        },
+        {
+          "id": "isAffixExalted",
+          "length": 13,
+          "name": "ItemAffix.IsExalted",
+          "rva": "0x1216bf0",
+          "sha256": "96bbfd26c557f5896a651fb1e186fb4edb108ff736b5e0782da09ae9222677cf"
+        },
+        {
+          "id": "sealAffix",
+          "length": 231,
+          "name": "ItemData.SealAffix",
+          "rva": "0x1209940",
+          "sha256": "5bc125c9d4b5cf1b963bf466b3151e2c1f43288dd1c45287cf7568bf526999b1"
+        },
+        {
+          "id": "maxCraftable",
+          "length": 349,
+          "name": "ItemData.AffixIsAtMaxCraftableTierOrAbove",
+          "rva": "0x11f8310",
+          "sha256": "1285c0dc61d702a6fcb2ef981b1806768c17e23bd4b1b131518b38e310121995"
+        }
+      ],
+      "source": "research/affix-action-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "confidence": "VERIFIED",
+        "details": {
+          "gridInterpretation": "For hypothetical iid uniform23bit-grid U and 0<q<1, effective Roll mass=(floor(q*2^23)+1)/2^23; actual seeded correlations require RNG-state modeling.",
+          "nextInt": "min + floor((max-min)*oldUint32/2^32) for legal min<=max; max excluded when min<max; equal bounds return min and still advance RNG.",
+          "randomByte": "Returns high8 bits of oldUint32 and advances RNG.",
+          "roll": "q<=0 false without a draw; q>=1 true without a draw; else U=(oldUint32>>9)/2^23 and returns q>=U, then updates xorshift state.",
+          "solverConvention": "Keep actual float32 constants/branch order; document independent-draw abstraction and numerical precision separately from client replay."
+        },
+        "evidenceRefs": [
+          "roll",
+          "nextInt",
+          "randomByte",
+          "shuffle",
+          "weightedDispatch"
+        ],
+        "id": "RNG_PRIMITIVES",
+        "limitations": [],
+        "summary": "当前随机helper使用有限整数/float格点与有状态PRNG，精确模型必须公开所用抽样约定。"
+      },
+      "id": "affix:RNG_PRIMITIVES",
+      "methods": [
+        {
+          "id": "roll",
+          "length": 85,
+          "name": "RngElement.Roll(float)",
+          "rva": "0xf6ad10",
+          "sha256": "583bfe30cac14fca465a2cc9925df64883eb08811dc78b761e7b20c6865c64c5"
+        },
+        {
+          "id": "nextInt",
+          "length": 55,
+          "name": "RngElement.NextInt(int,int)",
+          "rva": "0xf6a1d0",
+          "sha256": "9dd3314936fd3881e72af01da5c4320e43448ce6458ad70ba533b059a89e6fad"
+        },
+        {
+          "id": "randomByte",
+          "length": 43,
+          "name": "RngElement.RandomByte",
+          "rva": "0xf6a720",
+          "sha256": "97e7baf071a8309caa7872995727a77e24f269864b0eea9809ac7f72655fcfcf"
+        },
+        {
+          "id": "shuffle",
+          "length": 1243,
+          "name": "RngElement.Shuffle<T>",
+          "rva": "0x90c590",
+          "sha256": "8762a65c7209718f6f07308eccfef3cf9fabe9eb85875c6ac69c07e729707ed4"
+        },
+        {
+          "id": "weightedDispatch",
+          "length": 239,
+          "name": "RngElement.GetRandomWeighted<T>(IReadOnlyList,weight)",
+          "rva": "0x90b5e0",
+          "sha256": "658626347bbf165795cb938fd1c891c0ed6aa68004f683ec371b9de714f9b450"
+        }
+      ],
+      "source": "research/affix-action-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "claim": "FP is 0..63; current setter clamps to63, serialization low six bits stores FP, high two bits store FP type; generation and empowerment audited paths also clamp.",
+        "id": "FP-DOMAIN",
+        "productDefault": {
+          "evaluationMax": 63,
+          "evaluationMin": 1,
+          "weights": "uniform_product_convention_not_drop_distribution",
+          "zeroBoundary": 0
+        },
+        "scope": "Current persisted ordinary craftable equipment and audited generation/crafting paths",
+        "sources": [
+          "F1",
+          "F2",
+          "F3",
+          "F4",
+          "F5",
+          "F16"
+        ],
+        "status": "VERIFIED"
+      },
+      "id": "forge:FP-DOMAIN",
+      "methods": [
+        {
+          "id": "F1",
+          "length": 105,
+          "name": "ItemData::SetForgingPotential",
+          "rva": "0x1209c60",
+          "sha256": "5da7d29b14fa33e728f3ecaff759a7e15194b8aa3726eeab172d9a450739c3ca"
+        },
+        {
+          "id": "F2",
+          "length": 3722,
+          "name": "ItemData::RebuildID",
+          "rva": "0x1206760",
+          "sha256": "18cc5cf5898e954560385c3b9c4c40bdd23ff703ab02cff5afe4f4359f54052f"
+        },
+        {
+          "id": "F3",
+          "length": 6193,
+          "name": "ItemData::setValuesFromSerialisation",
+          "rva": "0x12130c0",
+          "sha256": "26e942dfbf0ad9aa5eb46d3251b032eed9059c9a6f098b9f6b1512b584737ed2"
+        },
+        {
+          "id": "F4",
+          "length": 2383,
+          "name": "GenerateItems::GenerateAffixes",
+          "rva": "0x11c0d40",
+          "sha256": "a240472a74be60164d662a7342c2ab19e81ced367e3a3af9360dc57ffbefae34"
+        },
+        {
+          "id": "F5",
+          "length": 3801,
+          "name": "ItemData::EmpowerMagicRareOrExaltedCore",
+          "rva": "0x11fdcc0",
+          "sha256": "8abb547358b0ca0cf7c85d24889b6706b2446d0445d8ab7aed7c9bea6f5b63bd"
+        },
+        {
+          "id": "F16",
+          "length": 228,
+          "name": "ItemData::calculateForgingPotentialFromVersion0Serialisation",
+          "rva": "0x120e710",
+          "sha256": "eab1b67742e5a26deb6927b6f9acf9d8473daf1fe2bebb37b4d94944725cc1b8"
+        }
+      ],
+      "source": "research/forge-fp-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "boundsSemantics": "maxExclusive; equal bounds return lo; native integer draw has finite 32-bit buckets",
+        "claim": "If noCost or max<=0, actual loss0. Otherwise X=NextInt(lo,hi); conditional lucky draw threshold0.285 uses Y=NextInt(lo,X), then SetFP(max(0,F-X)); report oldF-newF.",
+        "coreNonAffixBounds": {
+          "Havoc": [
+            1,
+            20
+          ],
+          "Redemption": [
+            1,
+            20
+          ],
+          "Removal": [
+            1,
+            25
+          ]
+        },
+        "id": "FP-COST",
+        "luckyThresholdFloat32": 0.2849999964237213,
+        "sources": [
+          "F6",
+          "F7",
+          "F8",
+          "F9"
+        ],
+        "status": "VERIFIED"
+      },
+      "id": "forge:FP-COST",
+      "methods": [
+        {
+          "id": "F6",
+          "length": 311,
+          "name": "ItemData::applyForgingPotentialCost",
+          "rva": "0x120e370",
+          "sha256": "abdbe53150567bc779b00825dfd239e702b1a6bd5fa12ed71af6b1ae07e69c19"
+        },
+        {
+          "id": "F7",
+          "length": 462,
+          "name": "ItemData::applyForgingPotentialCostFromShard",
+          "rva": "0x120e1a0",
+          "sha256": "7fb84ba0fd903e1ccf930250fc2d7a79374238721fa853fff882441cdc075224"
+        },
+        {
+          "id": "F8",
+          "length": 264,
+          "name": "ItemData::getMaxForgingPotentialCostForNonAffix",
+          "rva": "0x120f730",
+          "sha256": "abcc648379c6b249e41154bf7b53e35fdf87751d48703939a2bbdbc5fb5b6ae6"
+        },
+        {
+          "id": "F9",
+          "length": 216,
+          "name": "ItemData::getMinForgingPotentialCostForNonAffix",
+          "rva": "0x120f8c0",
+          "sha256": "e1b5401b21d7e1ffafd55a581e40c71a577657491b1e517de597214bcc785440"
+        }
+      ],
+      "source": "research/forge-fp-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "claim": "Hope accepted support rolls0.25; if noCost remains false and FPtype==Ice(2), roll resource ice chance; Ice success sets noCost, not a material refund.",
+        "hopeThresholdFloat32": 0.25,
+        "iceThresholdFloat32": 0.30000001192092896,
+        "id": "FP-HOPE-ICE",
+        "sources": [
+          "F10"
+        ],
+        "status": "VERIFIED"
+      },
+      "id": "forge:FP-HOPE-ICE",
+      "methods": [
+        {
+          "id": "F10",
+          "length": 11703,
+          "name": "CraftingManager::Forge",
+          "rva": "0x1168790",
+          "sha256": "8d54e03a8baa387c7fab2d661d88a1f2cd001a44264db1ff837b2875416a2954"
+        }
+      ],
+      "source": "research/forge-fp-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "claim": "After shard action primary ID becomes-1 if storage.CheckForShard is false or Chaos flag is true. Critical path requires nonnegative primary ID and no successful seal. Thus Chaos path skips normal/Blood critical; finite physical shard storage can also affect eligibility.",
+        "id": "FP-CRITICAL-GATE",
+        "scope": "Audited local CraftingManager.Forge path; no online/client experiment",
+        "sources": [
+          "F10",
+          "F12",
+          "F13",
+          "F14",
+          "F15"
+        ],
+        "status": "VERIFIED",
+        "unlimitedStockDefault": "Every needed shard type remains present in storage. User maximum-use restrictions are not automatically physical inventory counts."
+      },
+      "id": "forge:FP-CRITICAL-GATE",
+      "methods": [
+        {
+          "id": "F10",
+          "length": 11703,
+          "name": "CraftingManager::Forge",
+          "rva": "0x1168790",
+          "sha256": "8d54e03a8baa387c7fab2d661d88a1f2cd001a44264db1ff837b2875416a2954"
+        },
+        {
+          "id": "F12",
+          "length": 89,
+          "name": "ClientShardStorage::CheckForShard",
+          "rva": "0x13ca850",
+          "sha256": "b67eb5d952adea860c6ed0004811c02de59ad47c96744f49707983ec22df657e"
+        },
+        {
+          "id": "F13",
+          "length": 300,
+          "name": "ClientShardStorage::RemoveShard",
+          "rva": "0x13cae10",
+          "sha256": "181432cd93bc63e94e2eb351d83488f0675700c7204d3f048e82a8d33b17ac0a"
+        },
+        {
+          "id": "F14",
+          "length": 872,
+          "name": "CraftingManager::PopShardToModifierSlot",
+          "rva": "0x116c420",
+          "sha256": "9a1e563d2183e346299b31abd9f89a6c230bea9c961d1d6cbb9de4558ecb3740"
+        },
+        {
+          "id": "F15",
+          "length": 358,
+          "name": "GlobalDataTracker::CheckForShard",
+          "rva": "0x286f6e0",
+          "sha256": "d147eb79b07d465f57a6d6b5faf4e658fcbb842be2aeff98feae410631fa5066"
+        }
+      ],
+      "source": "research/forge-fp-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "bloodExtraThresholdFloat32": 0.30000001192092896,
+        "claim": "Eligible shard path first checks normal critical threshold0.12; if it fails and FPtype==Blood(1), checks resource extra-critical threshold. Successful seal skips both; failed Despair may remain eligible.",
+        "id": "FP-CRITICAL-ROLL",
+        "idealIidIllustration": {
+          "formula": "0.12+(1-0.12)*0.30",
+          "status": "MODEL_DERIVATION_NOT_CLIENT_RATE",
+          "value": 0.384
+        },
+        "normalThresholdFloat32": 0.11999999731779099,
+        "sources": [
+          "F10"
+        ],
+        "status": "VERIFIED"
+      },
+      "id": "forge:FP-CRITICAL-ROLL",
+      "methods": [
+        {
+          "id": "F10",
+          "length": 11703,
+          "name": "CraftingManager::Forge",
+          "rva": "0x1168790",
+          "sha256": "8d54e03a8baa387c7fab2d661d88a1f2cd001a44264db1ff837b2875416a2954"
+        }
+      ],
+      "source": "research/forge-fp-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "claim": "Critical calls AddExtraAffixTier, refunds actual loss unconditionally, restores/returns primary crafting material for the audited nonsealed critical branch and keeps accepted support glyph. No upgrade candidate does not prevent refund.",
+        "id": "FP-CRITICAL-EXIT",
+        "sources": [
+          "F10",
+          "F11"
+        ],
+        "status": "VERIFIED"
+      },
+      "id": "forge:FP-CRITICAL-EXIT",
+      "methods": [
+        {
+          "id": "F10",
+          "length": 11703,
+          "name": "CraftingManager::Forge",
+          "rva": "0x1168790",
+          "sha256": "8d54e03a8baa387c7fab2d661d88a1f2cd001a44264db1ff837b2875416a2954"
+        },
+        {
+          "id": "F11",
+          "length": 1777,
+          "name": "ItemData::AddExtraAffixTier",
+          "rva": "0x11f5ab0",
+          "sha256": "49c645ae74b21891e15b4a3998bf5afd5b3e0afaf53baf04cd7035e1ae736746"
+        }
+      ],
+      "source": "research/forge-fp-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "claim": "After positive actual cost and without critical refund, if postF<2 and preF>2, roll0.05 to restore2; otherwise, if postF==0 and preF>1, roll0.05 to restore1. Update reported actual loss accordingly.",
+        "id": "FP-LOW-PRESERVE",
+        "order": "preserve2 first, preserve1 only if preserve2 did not return/conditions still hold; no increase over preF",
+        "sources": [
+          "F10"
+        ],
+        "status": "VERIFIED",
+        "thresholdFloat32": 0.05000000074505806
+      },
+      "id": "forge:FP-LOW-PRESERVE",
+      "methods": [
+        {
+          "id": "F10",
+          "length": 11703,
+          "name": "CraftingManager::Forge",
+          "rva": "0x1168790",
+          "sha256": "8d54e03a8baa387c7fab2d661d88a1f2cd001a44264db1ff837b2875416a2954"
+        }
+      ],
+      "source": "research/forge-fp-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "claim": "AddExtra candidates are unsealed storedTier<4. Primary has a first 0.5 exclusion coin; when excluded, a second0.5 coin or empty other pool can force primary. Otherwise uniform selection from candidate list. Selected candidate failing player-level requirement causes no upgrade and no retry.",
+        "id": "FP-EXTRA-SELECTION",
+        "idealIidAllCandidatesEligible": {
+          "eachOther": "1/(2*(m+1))+1/(4*m)",
+          "mZero": "primary selected with probability1 if eligible",
+          "primaryWhenOtherCountMPositive": "1/(2*(m+1))+1/4"
+        },
+        "sources": [
+          "F11"
+        ],
+        "status": "VERIFIED"
+      },
+      "id": "forge:FP-EXTRA-SELECTION",
+      "methods": [
+        {
+          "id": "F11",
+          "length": 1777,
+          "name": "ItemData::AddExtraAffixTier",
+          "rva": "0x11f5ab0",
+          "sha256": "49c645ae74b21891e15b4a3998bf5afd5b3e0afaf53baf04cd7035e1ae736746"
+        }
+      ],
+      "source": "research/forge-fp-claims.json",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": {
+        "claim": "For same starting regular T1..T4, successful Despair passes oldStoredTier+1 to costFromShard, while failed/ordinary upgrade increments first then passes newStoredTier; base fee parameter is identical. Final actual fees can still differ through eligible critical/refund postprocessing. New affix uses parameter0.",
+        "id": "FP-DESPAIR-BASE-FEE",
+        "sources": [
+          "F17",
+          "F7",
+          "F10"
+        ],
+        "status": "VERIFIED"
+      },
+      "id": "forge:FP-DESPAIR-BASE-FEE",
+      "methods": [
+        {
+          "id": "F17",
+          "length": 2995,
+          "name": "ItemData::AddAffixTier",
+          "rva": "0x11f3dd0",
+          "sha256": "4c2ff3660d4892d8151ccbfe273c29a1aac266130a579afd5ddcf21169c4de3f"
+        },
+        {
+          "id": "F7",
+          "length": 462,
+          "name": "ItemData::applyForgingPotentialCostFromShard",
+          "rva": "0x120e1a0",
+          "sha256": "7fb84ba0fd903e1ccf930250fc2d7a79374238721fa853fff882441cdc075224"
+        },
+        {
+          "id": "F10",
+          "length": 11703,
+          "name": "CraftingManager::Forge",
+          "rva": "0x1168790",
+          "sha256": "8d54e03a8baa387c7fab2d661d88a1f2cd001a44264db1ff837b2875416a2954"
+        }
+      ],
+      "source": "research/forge-fp-claims.json",
+      "status": "VERIFIED"
+    }
+  ],
+  "dataRevision": "e13bd6ad1c607782651e98ab7eafa959cc8883b89d570eb100ac55fa36b086a2",
+  "gameVersion": "1.5.3",
+  "interpretation": "VERIFIED refers to stated static local-code claims; not client testing or whole-engine validation.",
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "affix",
+      "methodRangeCount": 34,
+      "path": "research/affix-action-claims.json",
+      "sha256": "d720c72a45da01dcfea09a7feb92c44087474e89d431e4378f08a7581ebe6aed"
+    },
+    {
+      "id": "forge",
+      "methodRangeCount": 17,
+      "path": "research/forge-fp-claims.json",
+      "sha256": "618e6d5fa1db4b8db683b7fdefdfd3c4b70c17363634a36b99eb2e1cd914770c"
+    }
+  ],
+  "steamBuildId": 26087601
+}

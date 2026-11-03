@@ -53,8 +53,9 @@ def check(require_live_match=False):
         live = json.loads((ROOT / 'research/static-deployment.json').read_text(encoding='utf-8'))
         if live['modelId'] != memory['modelId']:
             raise ValueError('Live build model differs')
-        for entry in live['checks']:
-            if entry['file'] != 'index.html' and memory['build']['artifacts'].get(entry['file']) != entry['sha256']:
+        live_artifacts = {entry['file']: entry['sha256'] for entry in live['checks']}
+        for name, fingerprint in memory['build']['artifacts'].items():
+            if name != 'index.html' and live_artifacts.get(name) != fingerprint:
                 raise ValueError('Observed JS/CSS/Worker bytes differ from live static validation')
     return {'status': 'PASS', 'modelId': memory['modelId'], 'samples': len(observations),
             'samplesOverlappingPlanning': active_observations, 'workerUrls': sorted(worker_urls),

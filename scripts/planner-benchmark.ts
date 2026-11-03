@@ -4,27 +4,20 @@ import { arch, cpus, platform, totalmem } from 'node:os';
 import { performance } from 'node:perf_hooks';
 import { fileURLToPath } from 'node:url';
 import { MODEL_ID } from '../src/core/catalog';
-import { exampleRequest } from '../src/core/examples';
+import { benchmarkCases, benchmarkRequest } from '../src/diagnostics/cases';
 import { plan } from '../src/core/planner';
-import type { FpType, PlanRequest } from '../src/core/types';
+import type { FpType } from '../src/core/types';
 
-const cases = ['7732-ready', '7710-direct', '7713-prepare', 'removal-required', '7732-missing'];
+const cases = benchmarkCases.map((entry) => entry.id);
 const fpTypes: FpType[] = ['NORMAL', 'ICE', 'BLOOD'];
 const selected = process.argv.indexOf('--case');
 const slow = process.argv.includes('--jitless');
 const root = new URL('../', import.meta.url);
 
-function requestFor(id: string, fpType: FpType): PlanRequest {
-  const initial = exampleRequest(id === 'removal-required' ? '7710-direct' : id);
-  return { ...initial, item: { ...initial.item, fpType, ...(id === 'removal-required' ? {
-    affixes: [[4, 7], [2, 5], [7, 7], [10, 5]].map(([affix, tier]) => ({ id: affix, tier, slot: 'ordinary' as const, roll: null })),
-  } : {}) }, constraints: id === 'removal-required' ? { allowedActions: ['removal', 'add', 'havoc'] } : initial.constraints };
-}
-
 if (selected >= 0) {
   const id = process.argv[selected + 1];
   const fpType = process.argv[process.argv.indexOf('--fp') + 1] as FpType;
-  const request = requestFor(id, fpType);
+  const request = benchmarkRequest(id, fpType);
   const start = performance.now();
   const report = await plan(request);
   const elapsed = performance.now() - start;

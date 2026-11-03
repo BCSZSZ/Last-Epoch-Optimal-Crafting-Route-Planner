@@ -238,17 +238,17 @@
   "claimedProductionSolverTest": false,
   "documents": {
     "bootstrapUnchanged": true,
-    "localLinks": 161,
+    "localLinks": 168,
     "requiredDocuments": 11
   },
   "inputs": {
-    "scripts/build_research_index.py": "56fa9dd6d51faf5945ad68bff9332ec964b2f307a332ba703171bdadd921ee6e",
+    "scripts/build_research_index.py": "1a6f7023d5ad5a0e6aba7cbe1eaac3aa46bc5bfa3f1d2ae7a6eee4f3dfc5a9ce",
     "scripts/build_runtime_model.py": "7428fd028b9ead71cd03cf110a9166f90501002a048af9d9565a0c1f23e9529b",
     "scripts/check_7710_monte_carlo.py": "d7e40b9aed16910123b55dd75346dad6d8abe429d0198202f8388dcc796814b9",
     "scripts/check_7710_routes.py": "2cd2b15df713b53a5c6da9e4b9c2a1b25a6a266545aea72e12a7856b2d9c9dc8",
     "scripts/check_7732_redemption.py": "e534bb29d35492d8295dcd89adf631bed689f099f874af15bb1b11852810d122",
     "scripts/check_action_examples.py": "e393f25b274ff9c203fa8026eb38765d4d4a1d8f2a66688596379cbbb6ffa5f0",
-    "scripts/check_browser_memory.py": "5a723eb08bc97788c2a6bb2070a37563e00b234b707b5c5c12566daf7d83a56b",
+    "scripts/check_browser_memory.py": "4dbdaf3539e4c26f6d821dd5afe38ada53dc042b072dec05fdda3209bd7bbfaa",
     "scripts/check_common_patterns.py": "8bf83fb954640a7caae4a414c64a1bbc42e3034f0aba5806def0804161877b10",
     "scripts/check_common_patterns_monte_carlo.py": "c33bcb343cd12c9dcc9b87f60f4ebd36f8b9c0904c8a2f86bd60b390f1871342",
     "scripts/check_crafting_level_examples.py": "7d51af5af82862e9d64bca7a36f892f9f4e9cd737893bdb2b7de9148f697ed4e",

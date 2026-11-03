@@ -25,3 +25,4 @@ jobs:
       - run: npm run model
       - run: npm run check
       - run: npm test
+      - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/desktop-baseline.json

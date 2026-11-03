@@ -8,6 +8,8 @@
 
 [对照原计划的完成度审计](docs/completion-audit.md)逐项列出证据和剩余门槛；物理低性能设备实测仍待补齐；已记录的浏览器内存采样最大值与瞬时分配峰值分开。
 
+[一键设备验证](https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/device-check/)使用生产Worker依次运行五类装备×三类潜能，可取消、下载完整记录或复制摘要。[操作与结果口径](docs/device-validation.md)。2026-11-03用户确认目前没有低性能设备，保留该待验收项。
+
 先读 [首阶段审阅结论](docs/phase0-review.md)，再看 [常见打造模式与771x校验](docs/examples/common-crafting-patterns.md)、[7710完整准备路线](docs/examples/7710-to-target-double-t7.md)、[产品需求](docs/PRD.md)、[机制与证据](docs/mechanics.md)及[未决事项](docs/open-questions.md)。所有碎片、符文和雕文固定无限，材料代价不参与优化。
 
 ## 原始规范与当前政策

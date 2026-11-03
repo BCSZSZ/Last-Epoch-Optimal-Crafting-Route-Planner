@@ -17,6 +17,7 @@ jobs:
       - run: python -X utf8 scripts/validate_research.py
       - run: python -X utf8 -m unittest discover -s tests -v
       - run: python -X utf8 scripts/check_browser_memory.py
+      - run: python -X utf8 scripts/research_redemption_intrinsic.py --verify-only
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
@@ -24,6 +25,7 @@ jobs:
       - run: npm ci
       - run: npm run model
       - run: npm run check
+      - run: npx tsx scripts/research_intrinsic_routes.ts --verify-only
       - run: npm test
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/desktop-baseline.json
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/public-normal.json

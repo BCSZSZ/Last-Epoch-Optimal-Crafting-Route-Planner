@@ -1,0 +1,888 @@
+{
+  "schemaVersion": 1,
+  "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+  "date": "2026-11-03",
+  "rows": [
+    {
+      "fpType": "NORMAL",
+      "case": "7710-direct-no-t1-guard",
+      "route": {
+        "id": "7710-direct-no-t1-guard",
+        "macros": [
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "seal",
+            "selector": {
+              "side": 0,
+              "excludedIds": [
+                4,
+                5
+              ],
+              "minTier": 1,
+              "maxTier": 4
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "success": 0.9814000000000003,
+      "fp": 46.5695415231328,
+      "successFpMoment": 46.485116123132805,
+      "attempts": 7.971884000000002,
+      "fpGivenSuccess": 47.36612606799755,
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "NORMAL",
+      "case": "7710-prepare-t1-before-seal",
+      "route": {
+        "id": "7710-prepare-t1-before-seal",
+        "macros": [
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "exists",
+              "selector": {
+                "side": 0,
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 1
+              }
+            }
+          },
+          {
+            "kind": "seal",
+            "selector": {
+              "side": 0,
+              "excludedIds": [
+                4,
+                5
+              ],
+              "minTier": 1,
+              "maxTier": 1
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "success": 1.0000000000000002,
+      "fp": 48.80489228921569,
+      "successFpMoment": 48.804892289215694,
+      "attempts": 8.329200000000002,
+      "fpGivenSuccess": 48.80489228921568,
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "NORMAL",
+      "case": "7732-two-removals",
+      "route": {
+        "id": "7732-two-removals",
+        "macros": [
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "success": 0.16666666666666663,
+      "fp": 19.246181180147055,
+      "successFpMoment": 9.862079617647055,
+      "attempts": 2.6848666666666663,
+      "fpGivenSuccess": 59.17247770588234,
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "NORMAL",
+      "case": "7732-seal-t2-remove-t3",
+      "route": {
+        "id": "7732-seal-t2-remove-t3",
+        "macros": [
+          {
+            "kind": "seal",
+            "selector": {
+              "ids": [
+                26
+              ],
+              "minTier": 2,
+              "maxTier": 2
+            }
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "success": 0.2300000000000001,
+      "fp": 20.425757102466584,
+      "successFpMoment": 12.945990824057489,
+      "attempts": 3.325116000000001,
+      "fpGivenSuccess": 56.28691662633688,
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "ICE",
+      "case": "7710-direct-no-t1-guard",
+      "route": {
+        "id": "7710-direct-no-t1-guard",
+        "macros": [
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "seal",
+            "selector": {
+              "side": 0,
+              "excludedIds": [
+                4,
+                5
+              ],
+              "minTier": 1,
+              "maxTier": 4
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "success": 0.9814,
+      "fp": 32.598679066192965,
+      "successFpMoment": 32.53958128619296,
+      "attempts": 7.971883999999999,
+      "fpGivenSuccess": 33.15628824759829,
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "ICE",
+      "case": "7710-prepare-t1-before-seal",
+      "route": {
+        "id": "7710-prepare-t1-before-seal",
+        "macros": [
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "exists",
+              "selector": {
+                "side": 0,
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 1
+              }
+            }
+          },
+          {
+            "kind": "seal",
+            "selector": {
+              "side": 0,
+              "excludedIds": [
+                4,
+                5
+              ],
+              "minTier": 1,
+              "maxTier": 1
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "success": 1.0000000000000002,
+      "fp": 34.16342460245099,
+      "successFpMoment": 34.16342460245099,
+      "attempts": 8.3292,
+      "fpGivenSuccess": 34.16342460245098,
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "ICE",
+      "case": "7732-two-removals",
+      "route": {
+        "id": "7732-two-removals",
+        "macros": [
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "success": 0.16666666666666685,
+      "fp": 13.472326826102947,
+      "successFpMoment": 6.903455732352947,
+      "attempts": 2.6848666666666676,
+      "fpGivenSuccess": 41.42073439411764,
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "ICE",
+      "case": "7732-seal-t2-remove-t3",
+      "route": {
+        "id": "7732-seal-t2-remove-t3",
+        "macros": [
+          {
+            "kind": "seal",
+            "selector": {
+              "ids": [
+                26
+              ],
+              "minTier": 2,
+              "maxTier": 2
+            }
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "success": 0.23000000000000012,
+      "fp": 14.298029971726606,
+      "successFpMoment": 9.062193576840244,
+      "attempts": 3.3251160000000004,
+      "fpGivenSuccess": 39.40084163843582,
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "BLOOD",
+      "case": "7710-direct-no-t1-guard",
+      "route": {
+        "id": "7710-direct-no-t1-guard",
+        "macros": [
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "seal",
+            "selector": {
+              "side": 0,
+              "excludedIds": [
+                4,
+                5
+              ],
+              "minTier": 1,
+              "maxTier": 4
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "success": 0.9404800000000005,
+      "fp": 42.96888715687987,
+      "successFpMoment": 42.779774260879876,
+      "attempts": 7.864156160000004,
+      "fpGivenSuccess": 45.48717065847211,
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "BLOOD",
+      "case": "7710-prepare-t1-before-seal",
+      "route": {
+        "id": "7710-prepare-t1-before-seal",
+        "macros": [
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "exists",
+              "selector": {
+                "side": 0,
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 1
+              }
+            }
+          },
+          {
+            "kind": "seal",
+            "selector": {
+              "side": 0,
+              "excludedIds": [
+                4,
+                5
+              ],
+              "minTier": 1,
+              "maxTier": 1
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "success": 1.0000000000000007,
+      "fp": 49.91787674745099,
+      "successFpMoment": 49.91787674745099,
+      "attempts": 8.977408000000004,
+      "fpGivenSuccess": 49.917876747450954,
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "BLOOD",
+      "case": "7732-two-removals",
+      "route": {
+        "id": "7732-two-removals",
+        "macros": [
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "success": 0.1666666666666667,
+      "fp": 18.912437339852943,
+      "successFpMoment": 9.52833577735294,
+      "attempts": 2.712234666666667,
+      "fpGivenSuccess": 57.17001466411762,
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "BLOOD",
+      "case": "7732-seal-t2-remove-t3",
+      "route": {
+        "id": "7732-seal-t2-remove-t3",
+        "macros": [
+          {
+            "kind": "seal",
+            "selector": {
+              "ids": [
+                26
+              ],
+              "minTier": 2,
+              "maxTier": 2
+            }
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "success": 0.2300000000000002,
+      "fp": 19.543063602860702,
+      "successFpMoment": 12.485424324451609,
+      "attempts": 3.3628838400000016,
+      "fpGivenSuccess": 54.28445358457216,
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    }
+  ],
+  "hybridRows": [
+    {
+      "fpType": "NORMAL",
+      "mode": "atLeastOne",
+      "success": 0.7008785165755337,
+      "fp": 80.90042395203429,
+      "successFpMoment": 64.59485428095401,
+      "attempts": 12.927125579895394,
+      "fpGivenSuccess": 92.16269689155556,
+      "route": "Complete each Redemption cast until the declared first-hit predicate. If both targets reached, stop. Otherwise move T2 onto the non-target prefix by Havoc, seal once, add the missing target, then final Havoc. Any seal failure aborts. Missing-ID branches are declared in advance; no optimization at execution time.",
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "NORMAL",
+      "mode": "targetA",
+      "success": 0.7092983004655414,
+      "fp": 103.96545343746996,
+      "successFpMoment": 80.95694365407641,
+      "attempts": 16.500289648926735,
+      "fpGivenSuccess": 114.13666661958878,
+      "route": "Complete each Redemption cast until the declared first-hit predicate. If both targets reached, stop. Otherwise move T2 onto the non-target prefix by Havoc, seal once, add the missing target, then final Havoc. Any seal failure aborts. Missing-ID branches are declared in advance; no optimization at execution time.",
+      "thresholdDecision": {
+        "display": "已放弃",
+        "reasons": [
+          "SUCCESS_PATH_MEAN_FP_ABOVE_100"
+        ]
+      }
+    },
+    {
+      "fpType": "ICE",
+      "mode": "atLeastOne",
+      "success": 0.7008785165755335,
+      "fp": 56.63029676642403,
+      "successFpMoment": 45.21639799666783,
+      "attempts": 12.927125579895394,
+      "fpGivenSuccess": 64.51388782408894,
+      "route": "Complete each Redemption cast until the declared first-hit predicate. If both targets reached, stop. Otherwise move T2 onto the non-target prefix by Havoc, seal once, add the missing target, then final Havoc. Any seal failure aborts. Missing-ID branches are declared in advance; no optimization at execution time.",
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "ICE",
+      "mode": "targetA",
+      "success": 0.7092983004655413,
+      "fp": 72.775817406229,
+      "successFpMoment": 56.6698605578535,
+      "attempts": 16.500289648926735,
+      "fpGivenSuccess": 79.89566663371217,
+      "route": "Complete each Redemption cast until the declared first-hit predicate. If both targets reached, stop. Otherwise move T2 onto the non-target prefix by Havoc, seal once, add the missing target, then final Havoc. Any seal failure aborts. Missing-ID branches are declared in advance; no optimization at execution time.",
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "BLOOD",
+      "mode": "atLeastOne",
+      "success": 0.7008785165755337,
+      "fp": 79.4746401279079,
+      "successFpMoment": 63.57638418080673,
+      "attempts": 12.927125579895394,
+      "fpGivenSuccess": 90.70956332266906,
+      "route": "Complete each Redemption cast until the declared first-hit predicate. If both targets reached, stop. Otherwise move T2 onto the non-target prefix by Havoc, seal once, add the missing target, then final Havoc. Any seal failure aborts. Missing-ID branches are declared in advance; no optimization at execution time.",
+      "thresholdDecision": {
+        "display": "保留",
+        "reasons": []
+      }
+    },
+    {
+      "fpType": "BLOOD",
+      "mode": "targetA",
+      "success": 0.7092983004655417,
+      "fp": 102.5798031120665,
+      "successFpMoment": 79.96714183292903,
+      "attempts": 16.500289648926735,
+      "fpGivenSuccess": 112.74120039543773,
+      "route": "Complete each Redemption cast until the declared first-hit predicate. If both targets reached, stop. Otherwise move T2 onto the non-target prefix by Havoc, seal once, add the missing target, then final Havoc. Any seal failure aborts. Missing-ID branches are declared in advance; no optimization at execution time.",
+      "thresholdDecision": {
+        "display": "已放弃",
+        "reasons": [
+          "SUCCESS_PATH_MEAN_FP_ABOVE_100"
+        ]
+      }
+    }
+  ],
+  "analysisModel": "INTRINSIC_OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V1",
+  "semantics": {
+    "success": "OPERATION_SUCCESS_WITH_CONTINUOUSLY_SUFFICIENT_FP",
+    "fpThresholdMetric": "EXPECTED_FP_GIVEN_FINAL_SUCCESS",
+    "minimumSuccess": 0.15,
+    "maximumExpectedSuccessFp": 100,
+    "equalityPasses": true,
+    "fpBoundaryPreservation": "NOT_APPLICABLE_TO_THE_RESOURCE_DEMAND_METRIC; NO_STARTING_FP_BALANCE",
+    "ordinaryFpUpperBoundInActualGame": 63,
+    "shippedPlannerChanged": false
+  },
+  "qualification": "Research nominal arithmetic under the declared iid rule model; not a finite-budget completion probability, client measurement or global dominance proof. Havoc uses its changed-layout symmetry. Fixed one-shot actions preserve joint outcome and FP costs.",
+  "sourceHashes": {
+    "src/generated/model.json": "fcde9020026d43303cc6959fe2b4b5e4b7ff715313c972f1fcfea91dc0d60298",
+    "research/redemption-intrinsic.json": "0c4e3807d085bcc9fc4958f065ffa4a93b8c086e3300a576ab3c0499fc0654ad",
+    "scripts/research_intrinsic_routes.ts": "59c94be76a44de6d7ac82112b0a42f08e980da999340af9edb74ff756c07298f"
+  }
+}

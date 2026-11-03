@@ -1,0 +1,6295 @@
+{
+  "actualClientTests": 0,
+  "auditedOn": "2026-11-03",
+  "dataRevision": "e13bd6ad1c607782651e98ab7eafa959cc8883b89d570eb100ac55fa36b086a2",
+  "dependency": "PYTHON_STANDARD_LIBRARY_ONLY",
+  "feePerCast": {
+    "baseAfterLucky": 8.5825,
+    "ice": 4.5058125,
+    "iceFraction": "72093/16000",
+    "normalAndBlood": 6.436875,
+    "normalFraction": "10299/1600"
+  },
+  "gameVersion": "1.5.3",
+  "gloveFixture": {
+    "atLeastOne": {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 4.096609098799989,
+      "bestNoTargetStartExpectedFpIce": 18.458552484986726,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 26.369360692838175,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "compressedStates": 33,
+      "eventualHitProbability": 0.9999999999999997,
+      "expectedCasts": 4.096609098799989,
+      "expectedFpIce": 18.458552484986726,
+      "expectedFpNormalAndBlood": 26.369360692838175,
+      "initialT7Ids": [
+        2,
+        26
+      ],
+      "linearEquationMaximumResidual": 1.1102230246251565e-15,
+      "mode": "AT_LEAST_ONE",
+      "terminalOrderedWeightGroupDistribution": [
+        {
+          "castCountFirstMoment": 0.026215572834554383,
+          "expectedCastsGivenExit": 4.049275522162369,
+          "fpFirstMomentIce": 0.11812245577259557,
+          "fpFirstMomentNormalAndBlood": 0.16874636538942223,
+          "orderedGroupIndices": [
+            0,
+            4
+          ],
+          "probability": 0.0064741390629193115,
+          "representativeT7Ids": [
+            83,
+            4
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.026215572834554383,
+          "expectedCastsGivenExit": 4.049275522162369,
+          "fpFirstMomentIce": 0.11812245577259557,
+          "fpFirstMomentNormalAndBlood": 0.16874636538942223,
+          "orderedGroupIndices": [
+            0,
+            5
+          ],
+          "probability": 0.0064741390629193115,
+          "representativeT7Ids": [
+            83,
+            5
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.07756222033236351,
+          "expectedCastsGivenExit": 4.028257940884932,
+          "fpFirstMomentIce": 0.3494808219013177,
+          "fpFirstMomentNormalAndBlood": 0.49925831700188233,
+          "orderedGroupIndices": [
+            1,
+            4
+          ],
+          "probability": 0.01925453172825486,
+          "representativeT7Ids": [
+            503,
+            4
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.07756222033236351,
+          "expectedCastsGivenExit": 4.028257940884932,
+          "fpFirstMomentIce": 0.3494808219013177,
+          "fpFirstMomentNormalAndBlood": 0.49925831700188233,
+          "orderedGroupIndices": [
+            1,
+            5
+          ],
+          "probability": 0.01925453172825486,
+          "representativeT7Ids": [
+            503,
+            5
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.10198213681881695,
+          "expectedCastsGivenExit": 4.007195739829342,
+          "fpFirstMomentIce": 0.4595123868549357,
+          "fpFirstMomentNormalAndBlood": 0.6564462669356222,
+          "orderedGroupIndices": [
+            2,
+            4
+          ],
+          "probability": 0.025449751756613754,
+          "representativeT7Ids": [
+            66,
+            4
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.10198213681881695,
+          "expectedCastsGivenExit": 4.007195739829342,
+          "fpFirstMomentIce": 0.4595123868549357,
+          "fpFirstMomentNormalAndBlood": 0.6564462669356222,
+          "orderedGroupIndices": [
+            2,
+            5
+          ],
+          "probability": 0.025449751756613754,
+          "representativeT7Ids": [
+            66,
+            5
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.7468039974904626,
+          "expectedCastsGivenExit": 4.121329238108131,
+          "fpFirstMomentIce": 3.364958786942495,
+          "fpFirstMomentNormalAndBlood": 4.807083981346421,
+          "orderedGroupIndices": [
+            3,
+            4
+          ],
+          "probability": 0.18120464402239264,
+          "representativeT7Ids": [
+            2,
+            4
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.7468039974904626,
+          "expectedCastsGivenExit": 4.121329238108131,
+          "fpFirstMomentIce": 3.364958786942495,
+          "fpFirstMomentNormalAndBlood": 4.807083981346421,
+          "orderedGroupIndices": [
+            3,
+            5
+          ],
+          "probability": 0.18120464402239264,
+          "representativeT7Ids": [
+            2,
+            5
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.027995799274121037,
+          "expectedCastsGivenExit": 4.070796602747404,
+          "fpFirstMomentIce": 0.1261438223168255,
+          "fpFirstMomentNormalAndBlood": 0.18020546045260785,
+          "orderedGroupIndices": [
+            4,
+            0
+          ],
+          "probability": 0.0068772287112617006,
+          "representativeT7Ids": [
+            4,
+            83
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.0829168558405379,
+          "expectedCastsGivenExit": 4.060615702307152,
+          "fpFirstMomentIce": 0.3736078055069937,
+          "fpFirstMomentNormalAndBlood": 0.5337254364385624,
+          "orderedGroupIndices": [
+            4,
+            1
+          ],
+          "probability": 0.020419774221290227,
+          "representativeT7Ids": [
+            4,
+            503
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.10913263853140429,
+          "expectedCastsGivenExit": 4.050383305842582,
+          "fpFirstMomentIce": 0.4917312068527831,
+          "fpFirstMomentNormalAndBlood": 0.702473152646833,
+          "orderedGroupIndices": [
+            4,
+            2
+          ],
+          "probability": 0.026943780450107778,
+          "representativeT7Ids": [
+            4,
+            66
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.8039132464440356,
+          "expectedCastsGivenExit": 4.105155531853993,
+          "fpFirstMomentIce": 3.6222823547431164,
+          "fpFirstMomentNormalAndBlood": 5.174689078204452,
+          "orderedGroupIndices": [
+            4,
+            3
+          ],
+          "probability": 0.19583015557049258,
+          "representativeT7Ids": [
+            4,
+            2
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.07178208183369829,
+          "expectedCastsGivenExit": 4.09108084065314,
+          "fpFirstMomentIce": 0.3234366016023007,
+          "fpFirstMomentNormalAndBlood": 0.4620522880032866,
+          "orderedGroupIndices": [
+            4,
+            5
+          ],
+          "probability": 0.017545994476667028,
+          "representativeT7Ids": [
+            4,
+            5
+          ],
+          "targetIds": [
+            4,
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.027995799274121037,
+          "expectedCastsGivenExit": 4.070796602747404,
+          "fpFirstMomentIce": 0.1261438223168255,
+          "fpFirstMomentNormalAndBlood": 0.18020546045260785,
+          "orderedGroupIndices": [
+            5,
+            0
+          ],
+          "probability": 0.0068772287112617006,
+          "representativeT7Ids": [
+            5,
+            83
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.0829168558405379,
+          "expectedCastsGivenExit": 4.060615702307152,
+          "fpFirstMomentIce": 0.3736078055069937,
+          "fpFirstMomentNormalAndBlood": 0.5337254364385624,
+          "orderedGroupIndices": [
+            5,
+            1
+          ],
+          "probability": 0.020419774221290227,
+          "representativeT7Ids": [
+            5,
+            503
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.10913263853140429,
+          "expectedCastsGivenExit": 4.050383305842582,
+          "fpFirstMomentIce": 0.4917312068527831,
+          "fpFirstMomentNormalAndBlood": 0.702473152646833,
+          "orderedGroupIndices": [
+            5,
+            2
+          ],
+          "probability": 0.026943780450107778,
+          "representativeT7Ids": [
+            5,
+            66
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.8039132464440356,
+          "expectedCastsGivenExit": 4.105155531853993,
+          "fpFirstMomentIce": 3.6222823547431164,
+          "fpFirstMomentNormalAndBlood": 5.174689078204452,
+          "orderedGroupIndices": [
+            5,
+            3
+          ],
+          "probability": 0.19583015557049258,
+          "representativeT7Ids": [
+            5,
+            2
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.07178208183369829,
+          "expectedCastsGivenExit": 4.09108084065314,
+          "fpFirstMomentIce": 0.3234366016023007,
+          "fpFirstMomentNormalAndBlood": 0.4620522880032866,
+          "orderedGroupIndices": [
+            5,
+            4
+          ],
+          "probability": 0.017545994476667028,
+          "representativeT7Ids": [
+            5,
+            4
+          ],
+          "targetIds": [
+            4,
+            5
+          ]
+        }
+      ],
+      "terminalTargetMass": {
+        "4": 0.48245400552333284,
+        "5": 0.48245400552333284,
+        "BOTH": 0.035091988953334055
+      },
+      "transientStates": 15,
+      "worstNoTargetStartExpectedCasts": 4.140618346570523
+    },
+    "baseId": "4:0",
+    "both": {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 139.88800470553682,
+      "bestNoTargetStartExpectedFpIce": 630.3091202022666,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 900.4416002889523,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "compressedStates": 33,
+      "eventualHitProbability": 0.9999999999999818,
+      "expectedCasts": 139.88800470553682,
+      "expectedFpIce": 630.3091202022666,
+      "expectedFpNormalAndBlood": 900.4416002889523,
+      "initialT7Ids": [
+        2,
+        26
+      ],
+      "linearEquationMaximumResidual": 1.0103029524088925e-13,
+      "mode": "BOTH",
+      "terminalOrderedWeightGroupDistribution": [
+        {
+          "castCountFirstMoment": 69.9440023527672,
+          "expectedCastsGivenExit": 139.88800470553696,
+          "fpFirstMomentIce": 315.15456010112786,
+          "fpFirstMomentNormalAndBlood": 450.22080014446834,
+          "orderedGroupIndices": [
+            4,
+            5
+          ],
+          "probability": 0.49999999999999084,
+          "representativeT7Ids": [
+            4,
+            5
+          ],
+          "targetIds": [
+            4,
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 69.94400235276721,
+          "expectedCastsGivenExit": 139.88800470553699,
+          "fpFirstMomentIce": 315.1545601011279,
+          "fpFirstMomentNormalAndBlood": 450.22080014446846,
+          "orderedGroupIndices": [
+            5,
+            4
+          ],
+          "probability": 0.4999999999999909,
+          "representativeT7Ids": [
+            5,
+            4
+          ],
+          "targetIds": [
+            4,
+            5
+          ]
+        }
+      ],
+      "terminalTargetMass": {
+        "BOTH": 0.9999999999999818
+      },
+      "transientStates": 31,
+      "worstNoTargetStartExpectedCasts": 139.99424507822363
+    },
+    "groups": [
+      {
+        "count": 1,
+        "ids": [
+          83
+        ],
+        "side": 0,
+        "targetId": null,
+        "weight": 0.3999999761581421
+      },
+      {
+        "count": 2,
+        "ids": [
+          503,
+          945
+        ],
+        "side": 0,
+        "targetId": null,
+        "weight": 0.6000000238418579
+      },
+      {
+        "count": 2,
+        "ids": [
+          66,
+          101
+        ],
+        "side": 0,
+        "targetId": null,
+        "weight": 0.7999999523162842
+      },
+      {
+        "count": 12,
+        "ids": [
+          2,
+          14,
+          26,
+          34,
+          69,
+          70,
+          72,
+          87,
+          88,
+          501,
+          502,
+          504
+        ],
+        "side": 0,
+        "targetId": null,
+        "weight": 1.0
+      },
+      {
+        "count": 1,
+        "ids": [
+          4
+        ],
+        "side": 0,
+        "targetId": 4,
+        "weight": 1.0
+      },
+      {
+        "count": 1,
+        "ids": [
+          5
+        ],
+        "side": 0,
+        "targetId": 5,
+        "weight": 1.0
+      }
+    ],
+    "initialAllIds": [
+      2,
+      26,
+      7,
+      10
+    ],
+    "initialTiers": [
+      7,
+      7,
+      3,
+      2
+    ],
+    "targetA": {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 7.9183378632078645,
+      "bestNoTargetStartExpectedFpIce": 35.67854572326529,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 50.96935103323612,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "compressedStates": 33,
+      "eventualHitProbability": 0.9999999999999994,
+      "expectedCasts": 7.9183378632078645,
+      "expectedFpIce": 35.67854572326529,
+      "expectedFpNormalAndBlood": 50.96935103323612,
+      "initialT7Ids": [
+        2,
+        26
+      ],
+      "linearEquationMaximumResidual": 5.329070518200751e-15,
+      "mode": "TARGET_A",
+      "terminalOrderedWeightGroupDistribution": [
+        {
+          "castCountFirstMoment": 0.09807007109119446,
+          "expectedCastsGivenExit": 7.867719060234751,
+          "fpFirstMomentIce": 0.44188535219859265,
+          "fpFirstMomentNormalAndBlood": 0.6312647888551324,
+          "orderedGroupIndices": [
+            0,
+            4
+          ],
+          "probability": 0.012464866925264656,
+          "representativeT7Ids": [
+            83,
+            4
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.2903499108157864,
+          "expectedCastsGivenExit": 7.845126447816889,
+          "fpFirstMomentIce": 1.3082622575276557,
+          "fpFirstMomentNormalAndBlood": 1.8689460821823651,
+          "orderedGroupIndices": [
+            1,
+            4
+          ],
+          "probability": 0.03701022701763894,
+          "representativeT7Ids": [
+            503,
+            4
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.3820110941775945,
+          "expectedCastsGivenExit": 7.822467583839145,
+          "fpFirstMomentIce": 1.7212703632840824,
+          "fpFirstMomentNormalAndBlood": 2.4589576618344036,
+          "orderedGroupIndices": [
+            2,
+            4
+          ],
+          "probability": 0.048835113739149484,
+          "representativeT7Ids": [
+            66,
+            4
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 2.8195490405327766,
+          "expectedCastsGivenExit": 7.954157867304892,
+          "fpFirstMomentIce": 12.704359311195592,
+          "fpFirstMomentNormalAndBlood": 18.149084730279416,
+          "orderedGroupIndices": [
+            3,
+            4
+          ],
+          "probability": 0.3544748655445186,
+          "representativeT7Ids": [
+            2,
+            4
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.10464492222215649,
+          "expectedCastsGivenExit": 7.890775356126859,
+          "fpFirstMomentIce": 0.4715103986101205,
+          "fpFirstMomentNormalAndBlood": 0.6735862837287435,
+          "orderedGroupIndices": [
+            4,
+            0
+          ],
+          "probability": 0.013261678035340856,
+          "representativeT7Ids": [
+            4,
+            83
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.31002121496581486,
+          "expectedCastsGivenExit": 7.879800178962418,
+          "fpFirstMomentIce": 1.3968974656581556,
+          "fpFirstMomentNormalAndBlood": 1.9955678080830794,
+          "orderedGroupIndices": [
+            4,
+            1
+          ],
+          "probability": 0.039343791457239374,
+          "representativeT7Ids": [
+            4,
+            503
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.4081481843696143,
+          "expectedCastsGivenExit": 7.868759592832196,
+          "fpFirstMomentIce": 1.8390391909849129,
+          "fpFirstMomentNormalAndBlood": 2.627198844264161,
+          "orderedGroupIndices": [
+            4,
+            2
+          ],
+          "probability": 0.051869443913549515,
+          "representativeT7Ids": [
+            4,
+            66
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 3.0181353894033482,
+          "expectedCastsGivenExit": 7.9322866979412945,
+          "fpFirstMomentIce": 13.599152164265975,
+          "fpFirstMomentNormalAndBlood": 19.427360234665677,
+          "orderedGroupIndices": [
+            4,
+            3
+          ],
+          "probability": 0.3804874312203894,
+          "representativeT7Ids": [
+            4,
+            2
+          ],
+          "targetIds": [
+            4
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.2518368070407503,
+          "expectedCastsGivenExit": 7.857626751083738,
+          "fpFirstMomentIce": 1.1347294331243007,
+          "fpFirstMomentNormalAndBlood": 1.6210420473204294,
+          "orderedGroupIndices": [
+            4,
+            5
+          ],
+          "probability": 0.032049983413378155,
+          "representativeT7Ids": [
+            4,
+            5
+          ],
+          "targetIds": [
+            4,
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.23557122858882748,
+          "expectedCastsGivenExit": 7.799700637260076,
+          "fpFirstMomentIce": 1.0614397864158962,
+          "fpFirstMomentNormalAndBlood": 1.5163425520227087,
+          "orderedGroupIndices": [
+            5,
+            4
+          ],
+          "probability": 0.030202598733530407,
+          "representativeT7Ids": [
+            5,
+            4
+          ],
+          "targetIds": [
+            4,
+            5
+          ]
+        }
+      ],
+      "terminalTargetMass": {
+        "4": 0.9377474178530908,
+        "BOTH": 0.06225258214690856
+      },
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 7.9639501559164865
+    },
+    "targetB": {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 7.9183378632078645,
+      "bestNoTargetStartExpectedFpIce": 35.67854572326529,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 50.96935103323612,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "compressedStates": 33,
+      "eventualHitProbability": 0.9999999999999994,
+      "expectedCasts": 7.9183378632078645,
+      "expectedFpIce": 35.67854572326529,
+      "expectedFpNormalAndBlood": 50.96935103323612,
+      "initialT7Ids": [
+        2,
+        26
+      ],
+      "linearEquationMaximumResidual": 5.329070518200751e-15,
+      "mode": "TARGET_B",
+      "terminalOrderedWeightGroupDistribution": [
+        {
+          "castCountFirstMoment": 0.09807007109119446,
+          "expectedCastsGivenExit": 7.867719060234751,
+          "fpFirstMomentIce": 0.44188535219859265,
+          "fpFirstMomentNormalAndBlood": 0.6312647888551324,
+          "orderedGroupIndices": [
+            0,
+            5
+          ],
+          "probability": 0.012464866925264656,
+          "representativeT7Ids": [
+            83,
+            5
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.2903499108157864,
+          "expectedCastsGivenExit": 7.845126447816889,
+          "fpFirstMomentIce": 1.3082622575276557,
+          "fpFirstMomentNormalAndBlood": 1.8689460821823651,
+          "orderedGroupIndices": [
+            1,
+            5
+          ],
+          "probability": 0.03701022701763894,
+          "representativeT7Ids": [
+            503,
+            5
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.3820110941775945,
+          "expectedCastsGivenExit": 7.822467583839145,
+          "fpFirstMomentIce": 1.7212703632840824,
+          "fpFirstMomentNormalAndBlood": 2.4589576618344036,
+          "orderedGroupIndices": [
+            2,
+            5
+          ],
+          "probability": 0.048835113739149484,
+          "representativeT7Ids": [
+            66,
+            5
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 2.8195490405327766,
+          "expectedCastsGivenExit": 7.954157867304892,
+          "fpFirstMomentIce": 12.704359311195592,
+          "fpFirstMomentNormalAndBlood": 18.149084730279416,
+          "orderedGroupIndices": [
+            3,
+            5
+          ],
+          "probability": 0.3544748655445186,
+          "representativeT7Ids": [
+            2,
+            5
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.23557122858882748,
+          "expectedCastsGivenExit": 7.799700637260076,
+          "fpFirstMomentIce": 1.0614397864158962,
+          "fpFirstMomentNormalAndBlood": 1.5163425520227087,
+          "orderedGroupIndices": [
+            4,
+            5
+          ],
+          "probability": 0.030202598733530407,
+          "representativeT7Ids": [
+            4,
+            5
+          ],
+          "targetIds": [
+            4,
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.10464492222215649,
+          "expectedCastsGivenExit": 7.890775356126859,
+          "fpFirstMomentIce": 0.4715103986101205,
+          "fpFirstMomentNormalAndBlood": 0.6735862837287435,
+          "orderedGroupIndices": [
+            5,
+            0
+          ],
+          "probability": 0.013261678035340856,
+          "representativeT7Ids": [
+            5,
+            83
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.31002121496581486,
+          "expectedCastsGivenExit": 7.879800178962418,
+          "fpFirstMomentIce": 1.3968974656581556,
+          "fpFirstMomentNormalAndBlood": 1.9955678080830794,
+          "orderedGroupIndices": [
+            5,
+            1
+          ],
+          "probability": 0.039343791457239374,
+          "representativeT7Ids": [
+            5,
+            503
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.4081481843696143,
+          "expectedCastsGivenExit": 7.868759592832196,
+          "fpFirstMomentIce": 1.8390391909849129,
+          "fpFirstMomentNormalAndBlood": 2.627198844264161,
+          "orderedGroupIndices": [
+            5,
+            2
+          ],
+          "probability": 0.051869443913549515,
+          "representativeT7Ids": [
+            5,
+            66
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 3.0181353894033482,
+          "expectedCastsGivenExit": 7.9322866979412945,
+          "fpFirstMomentIce": 13.599152164265975,
+          "fpFirstMomentNormalAndBlood": 19.427360234665677,
+          "orderedGroupIndices": [
+            5,
+            3
+          ],
+          "probability": 0.3804874312203894,
+          "representativeT7Ids": [
+            5,
+            2
+          ],
+          "targetIds": [
+            5
+          ]
+        },
+        {
+          "castCountFirstMoment": 0.2518368070407503,
+          "expectedCastsGivenExit": 7.857626751083738,
+          "fpFirstMomentIce": 1.1347294331243007,
+          "fpFirstMomentNormalAndBlood": 1.6210420473204294,
+          "orderedGroupIndices": [
+            5,
+            4
+          ],
+          "probability": 0.032049983413378155,
+          "representativeT7Ids": [
+            5,
+            4
+          ],
+          "targetIds": [
+            4,
+            5
+          ]
+        }
+      ],
+      "terminalTargetMass": {
+        "5": 0.9377474178530908,
+        "BOTH": 0.06225258214690856
+      },
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 7.9639501559164865
+    },
+    "targetIds": [
+      4,
+      5
+    ]
+  },
+  "iceCasesAtMost100": 1,
+  "independentChecks": {
+    "exactFourIdModels": [
+      {
+        "compressedValue": 3.750000000000001,
+        "expectedCastsExactFraction": "15/4",
+        "mode": "BOTH"
+      },
+      {
+        "compressedValue": 1.0,
+        "expectedCastsExactFraction": "1",
+        "mode": "AT_LEAST_ONE"
+      },
+      {
+        "compressedValue": 1.3333333333333333,
+        "expectedCastsExactFraction": "4/3",
+        "mode": "TARGET_A"
+      }
+    ],
+    "fullGloveOrderedIdStatesChecked": 342,
+    "maximumTransitionDifference": 1.7763568394002505e-15
+  },
+  "inputSha256": {
+    "data/game/1.5.3/affixes.json": "abdbea6ee8a01e02f16122943da57bf641a504a3ece3fa05ffd1550c1cc79794",
+    "data/game/1.5.3/items.json": "ebb84bc1ef39ae40d538e131e38d7eadeb330b07e841303d13822fb8c9f45f1c",
+    "data/game/1.5.3/manifest.json": "f1127461629a61b3d0a6970ab26ccc2032491bceed849298849a6b842f2251b9",
+    "research/affix-action-claims.json": "d720c72a45da01dcfea09a7feb92c44087474e89d431e4378f08a7581ebe6aed",
+    "research/forge-fp-claims.json": "618e6d5fa1db4b8db683b7fdefdfd3c4b70c17363634a36b99eb2e1cd914770c",
+    "scripts/research_redemption_average.py": "dd58695d83f1cfc97efb15cc7e3bf89c5c104bd052a493b08dd838afe3c1380a",
+    "scripts/research_redemption_intrinsic.py": "9c0c24a84fa63209378d1c8ee322c307d774e1751ebbaeefc97efb9f19ce5499"
+  },
+  "model": "INDEPENDENT_NORMALIZED_CURRENT_CRAFT_WEIGHTS_INFINITE_FP_DEMAND",
+  "nativeGridBitExact": false,
+  "normalCasesAtMost100": 0,
+  "oneCastGlobalBound": {
+    "attainingBootsExample": {
+      "baseId": "3:0",
+      "initialIds": [
+        502,
+        504,
+        7,
+        10
+      ],
+      "initialTiers": [
+        7,
+        7,
+        3,
+        2
+      ],
+      "singleCastProbability": 0.11337868223281962,
+      "singleCastProbabilityFraction": "35184372088832/310326168869929",
+      "targetIds": [
+        28,
+        501
+      ]
+    },
+    "maximumCandidateCraftWeight": 1.0,
+    "minimumPrefixPoolWeight": 6.200000047683716,
+    "minimumSidePoolWeight": 6.200000047683716,
+    "minimumSuffixPoolWeight": 8.539999723434448,
+    "mixedSideGlobalUpperBound": 0.03640600083497329,
+    "mixedSideGlobalUpperBoundFraction": "17592186044416/483222151319519",
+    "modelScope": "ONE_COMPLETE_REDEMPTION_CAST_NO_OTHER_ACTIONS_FOUR_STANDARD_ORDINARY_AFFIXES_NO_ADDITIONAL_SEALED_IDS",
+    "poolGroupsChecked": 38,
+    "qualification": "Each denominator excludes at most two eligible identities on its side, each with weight at most one. Two same-side target orders give2/(W-2)^2; mixed sides give1/((Wp-2)(Ws-2)). This bound is for a one-cast route only, not repeat-until-both, other mixed actions, extra sealed exclusions, or native RNG replay.",
+    "sameSideGlobalUpperBound": 0.11337868223281962,
+    "sameSideGlobalUpperBoundFraction": "35184372088832/310326168869929",
+    "sidePools": [
+      {
+        "classRequirement": 0,
+        "count": 9,
+        "equipmentType": 0,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 7.800000071525574,
+        "totalFraction": "65431143/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 19,
+        "equipmentType": 0,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 18.799999952316284,
+        "totalFraction": "78852915/4194304"
+      },
+      {
+        "classRequirement": 1,
+        "count": 44,
+        "equipmentType": 0,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 15.380000591278076,
+        "totalFraction": "32254199/2097152"
+      },
+      {
+        "classRequirement": 1,
+        "count": 18,
+        "equipmentType": 0,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 17.799999952316284,
+        "totalFraction": "74658611/4194304"
+      },
+      {
+        "classRequirement": 2,
+        "count": 39,
+        "equipmentType": 0,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 12.040000438690186,
+        "totalFraction": "25249711/2097152"
+      },
+      {
+        "classRequirement": 2,
+        "count": 19,
+        "equipmentType": 0,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 18.799999952316284,
+        "totalFraction": "78852915/4194304"
+      },
+      {
+        "classRequirement": 4,
+        "count": 40,
+        "equipmentType": 0,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 13.62000048160553,
+        "totalFraction": "114252845/8388608"
+      },
+      {
+        "classRequirement": 4,
+        "count": 18,
+        "equipmentType": 0,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 17.799999952316284,
+        "totalFraction": "74658611/4194304"
+      },
+      {
+        "classRequirement": 8,
+        "count": 41,
+        "equipmentType": 0,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 13.820000529289246,
+        "totalFraction": "115930567/8388608"
+      },
+      {
+        "classRequirement": 8,
+        "count": 19,
+        "equipmentType": 0,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 18.799999952316284,
+        "totalFraction": "78852915/4194304"
+      },
+      {
+        "classRequirement": 16,
+        "count": 49,
+        "equipmentType": 0,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 14.040000796318054,
+        "totalFraction": "117776063/8388608"
+      },
+      {
+        "classRequirement": 16,
+        "count": 18,
+        "equipmentType": 0,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 17.799999952316284,
+        "totalFraction": "74658611/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 9,
+        "equipmentType": 1,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 8.199999928474426,
+        "totalFraction": "68786585/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 17,
+        "equipmentType": 1,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 16.59999990463257,
+        "totalFraction": "34812723/2097152"
+      },
+      {
+        "classRequirement": 1,
+        "count": 44,
+        "equipmentType": 1,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 15.84000039100647,
+        "totalFraction": "66437777/4194304"
+      },
+      {
+        "classRequirement": 1,
+        "count": 16,
+        "equipmentType": 1,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 15.599999904632568,
+        "totalFraction": "32715571/2097152"
+      },
+      {
+        "classRequirement": 2,
+        "count": 42,
+        "equipmentType": 1,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 13.980000257492065,
+        "totalFraction": "58636371/4194304"
+      },
+      {
+        "classRequirement": 2,
+        "count": 17,
+        "equipmentType": 1,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 16.59999990463257,
+        "totalFraction": "34812723/2097152"
+      },
+      {
+        "classRequirement": 4,
+        "count": 41,
+        "equipmentType": 1,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 15.06000030040741,
+        "totalFraction": "126332439/8388608"
+      },
+      {
+        "classRequirement": 4,
+        "count": 16,
+        "equipmentType": 1,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 15.599999904632568,
+        "totalFraction": "32715571/2097152"
+      },
+      {
+        "classRequirement": 8,
+        "count": 44,
+        "equipmentType": 1,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 14.880000352859497,
+        "totalFraction": "62411245/4194304"
+      },
+      {
+        "classRequirement": 8,
+        "count": 17,
+        "equipmentType": 1,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 16.59999990463257,
+        "totalFraction": "34812723/2097152"
+      },
+      {
+        "classRequirement": 16,
+        "count": 50,
+        "equipmentType": 1,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 15.420000672340393,
+        "totalFraction": "129352341/8388608"
+      },
+      {
+        "classRequirement": 16,
+        "count": 16,
+        "equipmentType": 1,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 15.599999904632568,
+        "totalFraction": "32715571/2097152"
+      },
+      {
+        "classRequirement": 0,
+        "count": 19,
+        "equipmentType": 2,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 15.600000023841858,
+        "totalFraction": "130862285/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 20,
+        "equipmentType": 2,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 18.199999928474426,
+        "totalFraction": "152672665/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 7,
+        "equipmentType": 3,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 6.200000047683716,
+        "totalFraction": "26004685/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 17,
+        "equipmentType": 3,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 13.400000095367432,
+        "totalFraction": "28101837/2097152"
+      },
+      {
+        "classRequirement": 0,
+        "count": 19,
+        "equipmentType": 4,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 17.199999928474426,
+        "totalFraction": "144284057/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 21,
+        "equipmentType": 4,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 19.199999928474426,
+        "totalFraction": "161061273/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 22,
+        "equipmentType": 5,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 20.40000009536743,
+        "totalFraction": "42781901/2097152"
+      },
+      {
+        "classRequirement": 0,
+        "count": 24,
+        "equipmentType": 5,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 17.03999972343445,
+        "totalFraction": "71470939/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 22,
+        "equipmentType": 6,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 21.399999976158142,
+        "totalFraction": "179516211/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 21,
+        "equipmentType": 6,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 15.139999747276306,
+        "totalFraction": "127003523/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 20,
+        "equipmentType": 7,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 18.40000009536743,
+        "totalFraction": "38587597/2097152"
+      },
+      {
+        "classRequirement": 0,
+        "count": 17,
+        "equipmentType": 7,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 12.399999737739563,
+        "totalFraction": "104018737/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 26,
+        "equipmentType": 8,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 25.799999952316284,
+        "totalFraction": "108213043/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 19,
+        "equipmentType": 8,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 12.039999723434448,
+        "totalFraction": "50499419/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 22,
+        "equipmentType": 9,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 21.200000047683716,
+        "totalFraction": "88919245/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 23,
+        "equipmentType": 9,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 16.53999972343445,
+        "totalFraction": "69373787/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 15,
+        "equipmentType": 10,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 13.600000023841858,
+        "totalFraction": "114085069/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 15,
+        "equipmentType": 10,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 8.539999723434448,
+        "totalFraction": "35819355/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 22,
+        "equipmentType": 12,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 20.40000009536743,
+        "totalFraction": "42781901/2097152"
+      },
+      {
+        "classRequirement": 0,
+        "count": 27,
+        "equipmentType": 12,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 20.03999972343445,
+        "totalFraction": "84053851/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 20,
+        "equipmentType": 13,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 18.00000011920929,
+        "totalFraction": "150994945/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 20,
+        "equipmentType": 13,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 15.399999737739563,
+        "totalFraction": "129184561/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 21,
+        "equipmentType": 14,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 19.800000071525574,
+        "totalFraction": "166094439/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 25,
+        "equipmentType": 14,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 19.739999771118164,
+        "totalFraction": "10349445/524288"
+      },
+      {
+        "classRequirement": 0,
+        "count": 25,
+        "equipmentType": 15,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 24.399999976158142,
+        "totalFraction": "204682035/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 19,
+        "equipmentType": 15,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 11.639999747276306,
+        "totalFraction": "97643395/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 21,
+        "equipmentType": 16,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 20.200000047683716,
+        "totalFraction": "84724941/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 25,
+        "equipmentType": 16,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 18.739999771118164,
+        "totalFraction": "9825157/524288"
+      },
+      {
+        "classRequirement": 0,
+        "count": 15,
+        "equipmentType": 17,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 13.5,
+        "totalFraction": "27/2"
+      },
+      {
+        "classRequirement": 0,
+        "count": 18,
+        "equipmentType": 17,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 13.600000143051147,
+        "totalFraction": "57042535/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 9,
+        "equipmentType": 18,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 8.200000047683716,
+        "totalFraction": "34393293/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 18,
+        "equipmentType": 18,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 16.399999976158142,
+        "totalFraction": "137573171/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 15,
+        "equipmentType": 19,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 14.799999952316284,
+        "totalFraction": "62075699/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 13,
+        "equipmentType": 19,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 12.799999952316284,
+        "totalFraction": "53687091/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 34,
+        "equipmentType": 20,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 28.40000009536743,
+        "totalFraction": "59559117/2097152"
+      },
+      {
+        "classRequirement": 0,
+        "count": 18,
+        "equipmentType": 20,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 16.899999976158142,
+        "totalFraction": "141767475/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 25,
+        "equipmentType": 21,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 23.200000047683716,
+        "totalFraction": "97307853/4194304"
+      },
+      {
+        "classRequirement": 0,
+        "count": 17,
+        "equipmentType": 21,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 15.900000095367432,
+        "totalFraction": "33344717/2097152"
+      },
+      {
+        "classRequirement": 0,
+        "count": 28,
+        "equipmentType": 22,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 25.399999976158142,
+        "totalFraction": "213070643/8388608"
+      },
+      {
+        "classRequirement": 0,
+        "count": 14,
+        "equipmentType": 22,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 13.0,
+        "totalFraction": "13"
+      },
+      {
+        "classRequirement": 1,
+        "count": 34,
+        "equipmentType": 22,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 24.199999690055847,
+        "totalFraction": "203004311/8388608"
+      },
+      {
+        "classRequirement": 1,
+        "count": 14,
+        "equipmentType": 22,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 13.0,
+        "totalFraction": "13"
+      },
+      {
+        "classRequirement": 2,
+        "count": 30,
+        "equipmentType": 22,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 20.99999964237213,
+        "totalFraction": "176160765/8388608"
+      },
+      {
+        "classRequirement": 2,
+        "count": 14,
+        "equipmentType": 22,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 13.0,
+        "totalFraction": "13"
+      },
+      {
+        "classRequirement": 4,
+        "count": 32,
+        "equipmentType": 22,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 23.71999967098236,
+        "totalFraction": "198977779/8388608"
+      },
+      {
+        "classRequirement": 4,
+        "count": 14,
+        "equipmentType": 22,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 13.0,
+        "totalFraction": "13"
+      },
+      {
+        "classRequirement": 8,
+        "count": 32,
+        "equipmentType": 22,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 23.639999747276306,
+        "totalFraction": "198306691/8388608"
+      },
+      {
+        "classRequirement": 8,
+        "count": 14,
+        "equipmentType": 22,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 13.0,
+        "totalFraction": "13"
+      },
+      {
+        "classRequirement": 16,
+        "count": 29,
+        "equipmentType": 22,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 20.71999967098236,
+        "totalFraction": "173811955/8388608"
+      },
+      {
+        "classRequirement": 16,
+        "count": 14,
+        "equipmentType": 22,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 13.0,
+        "totalFraction": "13"
+      },
+      {
+        "classRequirement": 16,
+        "count": 15,
+        "equipmentType": 23,
+        "maximum": 1.0,
+        "side": 0,
+        "total": 14.49999988079071,
+        "totalFraction": "121634815/8388608"
+      },
+      {
+        "classRequirement": 16,
+        "count": 17,
+        "equipmentType": 23,
+        "maximum": 1.0,
+        "side": 1,
+        "total": 11.139999747276306,
+        "totalFraction": "93449091/8388608"
+      }
+    ],
+    "sidePoolsChecked": 76,
+    "strictlyBelow15PercentByExactFractionComparison": true
+  },
+  "qualification": "Finite weight-class Markov chain, whole two-slot cast before stopping, binary64 linear solve. No initial-FP truncation or low-FP preservation; each cast uses untruncated cost, Hope and optional Ice. First-one terminal groups preserve target identity/order/other weight class, not individual non-target identities within an exchangeable class. Scan uses highest craft-weight targets and reports best/worst legal no-target starts; it is a search for counterexamples, not a dominance proof over every target pair or mixed route.",
+  "scan": [
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 26.471308150757416,
+      "bestNoTargetStartExpectedFpIce": 119.27475115703466,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 170.39250165290665,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        501,
+        502
+      ],
+      "classRequirement": 0,
+      "compressedStates": 14,
+      "equipmentType": 0,
+      "eventualHitProbability": 1.0,
+      "expectedCasts": 26.471308150757416,
+      "expectedFpIce": 119.27475115703466,
+      "expectedFpNormalAndBlood": 170.39250165290665,
+      "initialT7Ids": [
+        501,
+        502
+      ],
+      "linearEquationMaximumResidual": 4.884981308350689e-15,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 9,
+      "poolWeight": 7.800000071525574,
+      "targetIds": [
+        34,
+        70
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 26.710976844170652
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 166.504509693733,
+      "bestNoTargetStartExpectedFpIce": 750.2381010843934,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1071.7687158348476,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        8,
+        10
+      ],
+      "classRequirement": 0,
+      "compressedStates": 13,
+      "equipmentType": 0,
+      "eventualHitProbability": 0.9999999999999825,
+      "expectedCasts": 166.504509693733,
+      "expectedFpIce": 750.2381010843934,
+      "expectedFpNormalAndBlood": 1071.7687158348476,
+      "initialT7Ids": [
+        8,
+        10
+      ],
+      "linearEquationMaximumResidual": 9.847678228425139e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 19,
+      "poolWeight": 18.799999952316284,
+      "targetIds": [
+        1,
+        7
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 11,
+      "worstNoTargetStartExpectedCasts": 166.52875040453583
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 122.29524523708513,
+      "bestNoTargetStartExpectedFpIce": 551.0394446798236,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 787.1992066854623,
+      "bestNoTargetState": [
+        1,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        501,
+        8
+      ],
+      "classRequirement": 0,
+      "compressedStates": 9,
+      "equipmentType": 0,
+      "eventualHitProbability": 0.9999999999999982,
+      "expectedCasts": 122.35877831832885,
+      "expectedFpIce": 551.3257128314551,
+      "expectedFpNormalAndBlood": 787.6081611877929,
+      "fixedLowTierIds": [
+        70,
+        7
+      ],
+      "initialT7Ids": [
+        71,
+        8
+      ],
+      "linearEquationMaximumResidual": 3.952393967665557e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        34,
+        1
+      ],
+      "transientStates": 8,
+      "worstNoTargetStartExpectedCasts": 122.37148932298099
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 121.10657253935014,
+      "bestNoTargetStartExpectedFpIce": 545.6835083799606,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 779.5478691142293,
+      "bestNoTargetState": [
+        4,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        501,
+        504
+      ],
+      "classRequirement": 1,
+      "compressedStates": 46,
+      "equipmentType": 0,
+      "eventualHitProbability": 1.0000000000000004,
+      "expectedCasts": 121.10657253935014,
+      "expectedFpIce": 545.6835083799606,
+      "expectedFpNormalAndBlood": 779.5478691142293,
+      "initialT7Ids": [
+        501,
+        504
+      ],
+      "linearEquationMaximumResidual": 4.75175454539567e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 44,
+      "poolWeight": 15.380000591278076,
+      "targetIds": [
+        34,
+        70
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 44,
+      "worstNoTargetStartExpectedCasts": 121.29227569434207
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 148.70046916833095,
+      "bestNoTargetStartExpectedFpIce": 670.0164327345302,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 957.1663324779003,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        8,
+        10
+      ],
+      "classRequirement": 1,
+      "compressedStates": 13,
+      "equipmentType": 0,
+      "eventualHitProbability": 0.999999999999988,
+      "expectedCasts": 148.70046916833095,
+      "expectedFpIce": 670.0164327345302,
+      "expectedFpNormalAndBlood": 957.1663324779003,
+      "initialT7Ids": [
+        8,
+        10
+      ],
+      "linearEquationMaximumResidual": 8.149037000748649e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 18,
+      "poolWeight": 17.799999952316284,
+      "targetIds": [
+        1,
+        7
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 11,
+      "worstNoTargetStartExpectedCasts": 148.72630437183818
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 249.74212576315392,
+      "bestNoTargetStartExpectedFpIce": 1125.291192040191,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1607.5588457717013,
+      "bestNoTargetState": [
+        4,
+        7
+      ],
+      "bestNoTargetT7Ids": [
+        501,
+        8
+      ],
+      "classRequirement": 1,
+      "compressedStates": 18,
+      "equipmentType": 0,
+      "eventualHitProbability": 0.9999999999999991,
+      "expectedCasts": 249.8003267864432,
+      "expectedFpIce": 1125.5534349384407,
+      "expectedFpNormalAndBlood": 1607.9334784834866,
+      "fixedLowTierIds": [
+        70,
+        7
+      ],
+      "initialT7Ids": [
+        21,
+        8
+      ],
+      "linearEquationMaximumResidual": 8.304468224196171e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        34,
+        1
+      ],
+      "transientStates": 17,
+      "worstNoTargetStartExpectedCasts": 249.81294862229706
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 76.2153746193498,
+      "bestNoTargetStartExpectedFpIce": 343.4121876520491,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 490.5888395029272,
+      "bestNoTargetState": [
+        4,
+        5
+      ],
+      "bestNoTargetT7Ids": [
+        503,
+        505
+      ],
+      "classRequirement": 2,
+      "compressedStates": 58,
+      "equipmentType": 0,
+      "eventualHitProbability": 1.0,
+      "expectedCasts": 76.25671229433331,
+      "expectedFpIce": 343.5984474647107,
+      "expectedFpNormalAndBlood": 490.8549249495867,
+      "initialT7Ids": [
+        505,
+        503
+      ],
+      "linearEquationMaximumResidual": 4.440892098500626e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 39,
+      "poolWeight": 12.040000438690186,
+      "targetIds": [
+        34,
+        502
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 56,
+      "worstNoTargetStartExpectedCasts": 76.42304085775126
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 166.504509693733,
+      "bestNoTargetStartExpectedFpIce": 750.2381010843934,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1071.7687158348476,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        8,
+        10
+      ],
+      "classRequirement": 2,
+      "compressedStates": 13,
+      "equipmentType": 0,
+      "eventualHitProbability": 0.9999999999999825,
+      "expectedCasts": 166.504509693733,
+      "expectedFpIce": 750.2381010843934,
+      "expectedFpNormalAndBlood": 1071.7687158348476,
+      "initialT7Ids": [
+        8,
+        10
+      ],
+      "linearEquationMaximumResidual": 9.847678228425139e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 19,
+      "poolWeight": 18.799999952316284,
+      "targetIds": [
+        1,
+        7
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 11,
+      "worstNoTargetStartExpectedCasts": 166.52875040453583
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 207.24745207262822,
+      "bestNoTargetStartExpectedFpIce": 933.8181601419992,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1334.0259430599988,
+      "bestNoTargetState": [
+        5,
+        8
+      ],
+      "bestNoTargetT7Ids": [
+        505,
+        8
+      ],
+      "classRequirement": 2,
+      "compressedStates": 21,
+      "equipmentType": 0,
+      "eventualHitProbability": 1.0000000000000009,
+      "expectedCasts": 207.3154726466578,
+      "expectedFpIce": 934.1246480947189,
+      "expectedFpNormalAndBlood": 1334.4637829924554,
+      "fixedLowTierIds": [
+        502,
+        7
+      ],
+      "initialT7Ids": [
+        53,
+        8
+      ],
+      "linearEquationMaximumResidual": 5.262457136723242e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        34,
+        1
+      ],
+      "transientStates": 20,
+      "worstNoTargetStartExpectedCasts": 207.33546164575364
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 95.16289999895204,
+      "bestNoTargetStartExpectedFpIce": 428.7861843515281,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 612.5516919307544,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "bestNoTargetT7Ids": [
+        504,
+        505
+      ],
+      "classRequirement": 4,
+      "compressedStates": 33,
+      "equipmentType": 0,
+      "eventualHitProbability": 1.0000000000000044,
+      "expectedCasts": 95.16289999895204,
+      "expectedFpIce": 428.7861843515281,
+      "expectedFpNormalAndBlood": 612.5516919307544,
+      "initialT7Ids": [
+        504,
+        505
+      ],
+      "linearEquationMaximumResidual": 5.484501741648273e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 40,
+      "poolWeight": 13.62000048160553,
+      "targetIds": [
+        34,
+        501
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 31,
+      "worstNoTargetStartExpectedCasts": 95.37985312623456
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 148.70046916833095,
+      "bestNoTargetStartExpectedFpIce": 670.0164327345302,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 957.1663324779003,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        8,
+        10
+      ],
+      "classRequirement": 4,
+      "compressedStates": 13,
+      "equipmentType": 0,
+      "eventualHitProbability": 0.999999999999988,
+      "expectedCasts": 148.70046916833095,
+      "expectedFpIce": 670.0164327345302,
+      "expectedFpNormalAndBlood": 957.1663324779003,
+      "initialT7Ids": [
+        8,
+        10
+      ],
+      "linearEquationMaximumResidual": 8.149037000748649e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 18,
+      "poolWeight": 17.799999952316284,
+      "targetIds": [
+        1,
+        7
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 11,
+      "worstNoTargetStartExpectedCasts": 148.72630437183818
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 220.27480869898417,
+      "bestNoTargetStartExpectedFpIce": 992.5169864709917,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1417.8814092442738,
+      "bestNoTargetState": [
+        3,
+        6
+      ],
+      "bestNoTargetT7Ids": [
+        504,
+        8
+      ],
+      "classRequirement": 4,
+      "compressedStates": 15,
+      "equipmentType": 0,
+      "eventualHitProbability": 1.0000000000000147,
+      "expectedCasts": 220.34121524954594,
+      "expectedFpIce": 992.8162019365948,
+      "expectedFpNormalAndBlood": 1418.308859909421,
+      "fixedLowTierIds": [
+        501,
+        7
+      ],
+      "initialT7Ids": [
+        358,
+        8
+      ],
+      "linearEquationMaximumResidual": 4.929390229335695e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        34,
+        1
+      ],
+      "transientStates": 14,
+      "worstNoTargetStartExpectedCasts": 220.35394754578792
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 98.56373897494613,
+      "bestNoTargetStartExpectedFpIce": 444.1097271200495,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 634.4424673143563,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "bestNoTargetT7Ids": [
+        502,
+        505
+      ],
+      "classRequirement": 8,
+      "compressedStates": 34,
+      "equipmentType": 0,
+      "eventualHitProbability": 0.9999999999999992,
+      "expectedCasts": 98.56373897494613,
+      "expectedFpIce": 444.1097271200495,
+      "expectedFpNormalAndBlood": 634.4424673143563,
+      "initialT7Ids": [
+        502,
+        505
+      ],
+      "linearEquationMaximumResidual": 5.1958437552457326e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 41,
+      "poolWeight": 13.820000529289246,
+      "targetIds": [
+        34,
+        70
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 32,
+      "worstNoTargetStartExpectedCasts": 98.77785085773203
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 166.504509693733,
+      "bestNoTargetStartExpectedFpIce": 750.2381010843934,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1071.7687158348476,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        8,
+        10
+      ],
+      "classRequirement": 8,
+      "compressedStates": 13,
+      "equipmentType": 0,
+      "eventualHitProbability": 0.9999999999999825,
+      "expectedCasts": 166.504509693733,
+      "expectedFpIce": 750.2381010843934,
+      "expectedFpNormalAndBlood": 1071.7687158348476,
+      "initialT7Ids": [
+        8,
+        10
+      ],
+      "linearEquationMaximumResidual": 9.847678228425139e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 19,
+      "poolWeight": 18.799999952316284,
+      "targetIds": [
+        1,
+        7
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 11,
+      "worstNoTargetStartExpectedCasts": 166.52875040453583
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 237.55183416530096,
+      "bestNoTargetStartExpectedFpIce": 1070.3640237799402,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1529.0914625427715,
+      "bestNoTargetState": [
+        3,
+        6
+      ],
+      "bestNoTargetT7Ids": [
+        502,
+        8
+      ],
+      "classRequirement": 8,
+      "compressedStates": 15,
+      "equipmentType": 0,
+      "eventualHitProbability": 0.9999999999999919,
+      "expectedCasts": 237.5852890775405,
+      "expectedFpIce": 1070.5147653416955,
+      "expectedFpNormalAndBlood": 1529.3068076309935,
+      "fixedLowTierIds": [
+        70,
+        7
+      ],
+      "initialT7Ids": [
+        71,
+        8
+      ],
+      "linearEquationMaximumResidual": 9.903189379656396e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        34,
+        1
+      ],
+      "transientStates": 14,
+      "worstNoTargetStartExpectedCasts": 237.62896148834983
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 103.85347978241902,
+      "bestNoTargetStartExpectedFpIce": 467.9443073721209,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 668.4918676744584,
+      "bestNoTargetState": [
+        2,
+        3
+      ],
+      "bestNoTargetT7Ids": [
+        503,
+        505
+      ],
+      "classRequirement": 16,
+      "compressedStates": 32,
+      "equipmentType": 0,
+      "eventualHitProbability": 1.0000000000000004,
+      "expectedCasts": 103.88757379898139,
+      "expectedFpIce": 468.09792861812286,
+      "expectedFpNormalAndBlood": 668.7113265973184,
+      "initialT7Ids": [
+        505,
+        503
+      ],
+      "linearEquationMaximumResidual": 3.175237850427948e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 49,
+      "poolWeight": 14.040000796318054,
+      "targetIds": [
+        34,
+        331
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 30,
+      "worstNoTargetStartExpectedCasts": 104.02449462879616
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 148.70046916833095,
+      "bestNoTargetStartExpectedFpIce": 670.0164327345302,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 957.1663324779003,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        8,
+        10
+      ],
+      "classRequirement": 16,
+      "compressedStates": 13,
+      "equipmentType": 0,
+      "eventualHitProbability": 0.999999999999988,
+      "expectedCasts": 148.70046916833095,
+      "expectedFpIce": 670.0164327345302,
+      "expectedFpNormalAndBlood": 957.1663324779003,
+      "initialT7Ids": [
+        8,
+        10
+      ],
+      "linearEquationMaximumResidual": 8.149037000748649e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 18,
+      "poolWeight": 17.799999952316284,
+      "targetIds": [
+        1,
+        7
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 11,
+      "worstNoTargetStartExpectedCasts": 148.72630437183818
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 229.64047675009985,
+      "bestNoTargetStartExpectedFpIce": 1034.7169306465594,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1478.1670437807988,
+      "bestNoTargetState": [
+        3,
+        6
+      ],
+      "bestNoTargetT7Ids": [
+        505,
+        8
+      ],
+      "classRequirement": 16,
+      "compressedStates": 15,
+      "equipmentType": 0,
+      "eventualHitProbability": 0.9999999999999821,
+      "expectedCasts": 229.70477022640347,
+      "expectedFpIce": 1035.0066249957567,
+      "expectedFpNormalAndBlood": 1478.5808928510808,
+      "fixedLowTierIds": [
+        331,
+        7
+      ],
+      "initialT7Ids": [
+        437,
+        8
+      ],
+      "linearEquationMaximumResidual": 9.059419880941277e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        34,
+        1
+      ],
+      "transientStates": 14,
+      "worstNoTargetStartExpectedCasts": 229.71762023300212
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 29.21760758261926,
+      "bestNoTargetStartExpectedFpIce": 131.64906146586065,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 188.07008780837234,
+      "bestNoTargetState": [
+        2,
+        2
+      ],
+      "bestNoTargetT7Ids": [
+        501,
+        502
+      ],
+      "classRequirement": 0,
+      "compressedStates": 22,
+      "equipmentType": 1,
+      "eventualHitProbability": 1.0000000000000024,
+      "expectedCasts": 29.21760758261926,
+      "expectedFpIce": 131.64906146586065,
+      "expectedFpNormalAndBlood": 188.07008780837234,
+      "initialT7Ids": [
+        501,
+        502
+      ],
+      "linearEquationMaximumResidual": 7.549516567451064e-15,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 9,
+      "poolWeight": 8.199999928474426,
+      "targetIds": [
+        34,
+        70
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 20,
+      "worstNoTargetStartExpectedCasts": 29.40084565097844
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 128.90560462833804,
+      "bestNoTargetStartExpectedFpIce": 580.8244846544234,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 829.7492637920334,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        8,
+        10
+      ],
+      "classRequirement": 0,
+      "compressedStates": 14,
+      "equipmentType": 1,
+      "eventualHitProbability": 0.999999999999989,
+      "expectedCasts": 128.90560462833804,
+      "expectedFpIce": 580.8244846544234,
+      "expectedFpNormalAndBlood": 829.7492637920334,
+      "initialT7Ids": [
+        8,
+        10
+      ],
+      "linearEquationMaximumResidual": 9.08162434143378e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 17,
+      "poolWeight": 16.59999990463257,
+      "targetIds": [
+        1,
+        7
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 128.9481875897887
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 112.87344128588329,
+      "bestNoTargetStartExpectedFpIce": 508.586562663949,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 726.5522323770699,
+      "bestNoTargetState": [
+        2,
+        5
+      ],
+      "bestNoTargetT7Ids": [
+        501,
+        8
+      ],
+      "classRequirement": 0,
+      "compressedStates": 12,
+      "equipmentType": 1,
+      "eventualHitProbability": 1.0000000000000018,
+      "expectedCasts": 112.90384571442618,
+      "expectedFpIce": 508.72355931813297,
+      "expectedFpNormalAndBlood": 726.747941883047,
+      "fixedLowTierIds": [
+        70,
+        7
+      ],
+      "initialT7Ids": [
+        95,
+        8
+      ],
+      "linearEquationMaximumResidual": 3.441691376337985e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        34,
+        1
+      ],
+      "transientStates": 11,
+      "worstNoTargetStartExpectedCasts": 112.94843195503927
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 127.82759369782863,
+      "bestNoTargetStartExpectedFpIce": 575.9671695285975,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 822.8102421837107,
+      "bestNoTargetState": [
+        5,
+        5
+      ],
+      "bestNoTargetT7Ids": [
+        501,
+        504
+      ],
+      "classRequirement": 1,
+      "compressedStates": 60,
+      "equipmentType": 1,
+      "eventualHitProbability": 1.0000000000000053,
+      "expectedCasts": 127.82759369782863,
+      "expectedFpIce": 575.9671695285975,
+      "expectedFpNormalAndBlood": 822.8102421837107,
+      "initialT7Ids": [
+        501,
+        504
+      ],
+      "linearEquationMaximumResidual": 5.6621374255882984e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 44,
+      "poolWeight": 15.84000039100647,
+      "targetIds": [
+        34,
+        70
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 58,
+      "worstNoTargetStartExpectedCasts": 128.00591442828036
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 113.3005728660335,
+      "bestNoTargetStartExpectedFpIce": 510.5111374769346,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 729.3016249670494,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        8,
+        10
+      ],
+      "classRequirement": 1,
+      "compressedStates": 14,
+      "equipmentType": 1,
+      "eventualHitProbability": 0.9999999999999944,
+      "expectedCasts": 113.3005728660335,
+      "expectedFpIce": 510.5111374769346,
+      "expectedFpNormalAndBlood": 729.3016249670494,
+      "initialT7Ids": [
+        8,
+        10
+      ],
+      "linearEquationMaximumResidual": 6.794564910705958e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 16,
+      "poolWeight": 15.599999904632568,
+      "targetIds": [
+        1,
+        7
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 113.34650101316203
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 223.45062374004678,
+      "bestNoTargetStartExpectedFpIce": 1006.8266135806996,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1438.3237336867135,
+      "bestNoTargetState": [
+        5,
+        8
+      ],
+      "bestNoTargetT7Ids": [
+        501,
+        8
+      ],
+      "classRequirement": 1,
+      "compressedStates": 21,
+      "equipmentType": 1,
+      "eventualHitProbability": 1.0000000000000062,
+      "expectedCasts": 223.46530473713804,
+      "expectedFpIce": 1006.8927634009059,
+      "expectedFpNormalAndBlood": 1438.4182334298653,
+      "fixedLowTierIds": [
+        70,
+        7
+      ],
+      "initialT7Ids": [
+        95,
+        8
+      ],
+      "linearEquationMaximumResidual": 7.926992395823618e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        34,
+        1
+      ],
+      "transientStates": 20,
+      "worstNoTargetStartExpectedCasts": 223.52216281362217
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 101.23570136281754,
+      "bestNoTargetStartExpectedFpIce": 456.1490886468503,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 651.6415552097861,
+      "bestNoTargetState": [
+        5,
+        6
+      ],
+      "bestNoTargetT7Ids": [
+        95,
+        505
+      ],
+      "classRequirement": 2,
+      "compressedStates": 75,
+      "equipmentType": 1,
+      "eventualHitProbability": 1.0000000000000044,
+      "expectedCasts": 101.25279997016332,
+      "expectedFpIce": 456.22613176556155,
+      "expectedFpNormalAndBlood": 651.751616807945,
+      "initialT7Ids": [
+        505,
+        95
+      ],
+      "linearEquationMaximumResidual": 9.037215420448774e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 42,
+      "poolWeight": 13.980000257492065,
+      "targetIds": [
+        34,
+        502
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 73,
+      "worstNoTargetStartExpectedCasts": 101.42598626507848
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 128.90560462833804,
+      "bestNoTargetStartExpectedFpIce": 580.8244846544234,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 829.7492637920334,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        8,
+        10
+      ],
+      "classRequirement": 2,
+      "compressedStates": 14,
+      "equipmentType": 1,
+      "eventualHitProbability": 0.999999999999989,
+      "expectedCasts": 128.90560462833804,
+      "expectedFpIce": 580.8244846544234,
+      "expectedFpNormalAndBlood": 829.7492637920334,
+      "initialT7Ids": [
+        8,
+        10
+      ],
+      "linearEquationMaximumResidual": 9.08162434143378e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 17,
+      "poolWeight": 16.59999990463257,
+      "targetIds": [
+        1,
+        7
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 128.9481875897887
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 211.03754834671614,
+      "bestNoTargetStartExpectedFpIce": 950.895623309988,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1358.4223190142684,
+      "bestNoTargetState": [
+        6,
+        9
+      ],
+      "bestNoTargetT7Ids": [
+        505,
+        8
+      ],
+      "classRequirement": 2,
+      "compressedStates": 24,
+      "equipmentType": 1,
+      "eventualHitProbability": 1.0000000000000113,
+      "expectedCasts": 211.09590381121205,
+      "expectedFpIce": 951.158562091357,
+      "expectedFpNormalAndBlood": 1358.7979458447955,
+      "fixedLowTierIds": [
+        502,
+        7
+      ],
+      "initialT7Ids": [
+        53,
+        8
+      ],
+      "linearEquationMaximumResidual": 1.1390888232654106e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        34,
+        1
+      ],
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 211.1162933357691
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 115.30615956973033,
+      "bestNoTargetStartExpectedFpIce": 519.5479351162855,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 742.2113358804079,
+      "bestNoTargetState": [
+        4,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        504,
+        505
+      ],
+      "classRequirement": 4,
+      "compressedStates": 46,
+      "equipmentType": 1,
+      "eventualHitProbability": 0.9999999999999998,
+      "expectedCasts": 115.30615956973033,
+      "expectedFpIce": 519.5479351162855,
+      "expectedFpNormalAndBlood": 742.2113358804079,
+      "initialT7Ids": [
+        504,
+        505
+      ],
+      "linearEquationMaximumResidual": 5.995204332975845e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 41,
+      "poolWeight": 15.06000030040741,
+      "targetIds": [
+        34,
+        501
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 44,
+      "worstNoTargetStartExpectedCasts": 115.495646963531
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 113.3005728660335,
+      "bestNoTargetStartExpectedFpIce": 510.5111374769346,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 729.3016249670494,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        8,
+        10
+      ],
+      "classRequirement": 4,
+      "compressedStates": 14,
+      "equipmentType": 1,
+      "eventualHitProbability": 0.9999999999999944,
+      "expectedCasts": 113.3005728660335,
+      "expectedFpIce": 510.5111374769346,
+      "expectedFpNormalAndBlood": 729.3016249670494,
+      "initialT7Ids": [
+        8,
+        10
+      ],
+      "linearEquationMaximumResidual": 6.794564910705958e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 16,
+      "poolWeight": 15.599999904632568,
+      "targetIds": [
+        1,
+        7
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 113.34650101316203
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 211.87018536714177,
+      "bestNoTargetStartExpectedFpIce": 954.6473296045846,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1363.7818994351205,
+      "bestNoTargetState": [
+        4,
+        7
+      ],
+      "bestNoTargetT7Ids": [
+        504,
+        8
+      ],
+      "classRequirement": 4,
+      "compressedStates": 18,
+      "equipmentType": 1,
+      "eventualHitProbability": 1.0000000000000033,
+      "expectedCasts": 211.88569214809885,
+      "expectedFpIce": 954.7172002520557,
+      "expectedFpNormalAndBlood": 1363.8817146457936,
+      "fixedLowTierIds": [
+        501,
+        7
+      ],
+      "initialT7Ids": [
+        95,
+        8
+      ],
+      "linearEquationMaximumResidual": 5.5067062021407764e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        34,
+        1
+      ],
+      "transientStates": 17,
+      "worstNoTargetStartExpectedCasts": 211.94495101570806
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 113.76002188547582,
+      "bestNoTargetStartExpectedFpIce": 512.5813286118506,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 732.2590408740722,
+      "bestNoTargetState": [
+        5,
+        5
+      ],
+      "bestNoTargetT7Ids": [
+        502,
+        505
+      ],
+      "classRequirement": 8,
+      "compressedStates": 60,
+      "equipmentType": 1,
+      "eventualHitProbability": 0.9999999999999916,
+      "expectedCasts": 113.76002188547582,
+      "expectedFpIce": 512.5813286118506,
+      "expectedFpNormalAndBlood": 732.2590408740722,
+      "initialT7Ids": [
+        502,
+        505
+      ],
+      "linearEquationMaximumResidual": 6.461498003318411e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 44,
+      "poolWeight": 14.880000352859497,
+      "targetIds": [
+        34,
+        70
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 58,
+      "worstNoTargetStartExpectedCasts": 113.96324016251367
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 128.90560462833804,
+      "bestNoTargetStartExpectedFpIce": 580.8244846544234,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 829.7492637920334,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        8,
+        10
+      ],
+      "classRequirement": 8,
+      "compressedStates": 14,
+      "equipmentType": 1,
+      "eventualHitProbability": 0.999999999999989,
+      "expectedCasts": 128.90560462833804,
+      "expectedFpIce": 580.8244846544234,
+      "expectedFpNormalAndBlood": 829.7492637920334,
+      "initialT7Ids": [
+        8,
+        10
+      ],
+      "linearEquationMaximumResidual": 9.08162434143378e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 17,
+      "poolWeight": 16.59999990463257,
+      "targetIds": [
+        1,
+        7
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 128.9481875897887
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 224.4861268543531,
+      "bestNoTargetStartExpectedFpIce": 1011.4923964569299,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1444.989137795614,
+      "bestNoTargetState": [
+        5,
+        8
+      ],
+      "bestNoTargetT7Ids": [
+        502,
+        8
+      ],
+      "classRequirement": 8,
+      "compressedStates": 21,
+      "equipmentType": 1,
+      "eventualHitProbability": 1.0000000000000118,
+      "expectedCasts": 224.50175085066988,
+      "expectedFpIce": 1011.562795254834,
+      "expectedFpNormalAndBlood": 1445.0897075069056,
+      "fixedLowTierIds": [
+        70,
+        7
+      ],
+      "initialT7Ids": [
+        95,
+        8
+      ],
+      "linearEquationMaximumResidual": 8.859579736508749e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        34,
+        1
+      ],
+      "transientStates": 20,
+      "worstNoTargetStartExpectedCasts": 224.5650743974467
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 123.6177747800809,
+      "bestNoTargetStartExpectedFpIce": 556.9985148262733,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 795.7121640375332,
+      "bestNoTargetState": [
+        3,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        95,
+        505
+      ],
+      "classRequirement": 16,
+      "compressedStates": 45,
+      "equipmentType": 1,
+      "eventualHitProbability": 0.9999999999999961,
+      "expectedCasts": 123.6329775670289,
+      "expectedFpIce": 557.0670157337385,
+      "expectedFpNormalAndBlood": 795.8100224767692,
+      "initialT7Ids": [
+        505,
+        95
+      ],
+      "linearEquationMaximumResidual": 9.14823772291129e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 50,
+      "poolWeight": 15.420000672340393,
+      "targetIds": [
+        34,
+        331
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 43,
+      "worstNoTargetStartExpectedCasts": 123.78675366756424
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 113.3005728660335,
+      "bestNoTargetStartExpectedFpIce": 510.5111374769346,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 729.3016249670494,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        8,
+        10
+      ],
+      "classRequirement": 16,
+      "compressedStates": 14,
+      "equipmentType": 1,
+      "eventualHitProbability": 0.9999999999999944,
+      "expectedCasts": 113.3005728660335,
+      "expectedFpIce": 510.5111374769346,
+      "expectedFpNormalAndBlood": 729.3016249670494,
+      "initialT7Ids": [
+        8,
+        10
+      ],
+      "linearEquationMaximumResidual": 6.794564910705958e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 16,
+      "poolWeight": 15.599999904632568,
+      "targetIds": [
+        1,
+        7
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 113.34650101316203
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 218.9544604759299,
+      "bestNoTargetStartExpectedFpIce": 986.5677449432009,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1409.382492776001,
+      "bestNoTargetState": [
+        4,
+        7
+      ],
+      "bestNoTargetT7Ids": [
+        505,
+        8
+      ],
+      "classRequirement": 16,
+      "compressedStates": 18,
+      "equipmentType": 1,
+      "eventualHitProbability": 1.000000000000003,
+      "expectedCasts": 218.96958562495993,
+      "expectedFpIce": 986.6358960287648,
+      "expectedFpNormalAndBlood": 1409.4798514696638,
+      "fixedLowTierIds": [
+        331,
+        7
+      ],
+      "initialT7Ids": [
+        95,
+        8
+      ],
+      "linearEquationMaximumResidual": 5.4511950509095186e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        34,
+        1
+      ],
+      "transientStates": 17,
+      "worstNoTargetStartExpectedCasts": 219.02786640513182
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 115.75248691807774,
+      "bestNoTargetStartExpectedFpIce": 521.5590024615611,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 745.0842892308016,
+      "bestNoTargetState": [
+        4,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        23,
+        26
+      ],
+      "classRequirement": 0,
+      "compressedStates": 45,
+      "equipmentType": 2,
+      "eventualHitProbability": 0.9999999999999871,
+      "expectedCasts": 115.75248691807774,
+      "expectedFpIce": 521.5590024615611,
+      "expectedFpNormalAndBlood": 745.0842892308016,
+      "initialT7Ids": [
+        23,
+        26
+      ],
+      "linearEquationMaximumResidual": 7.149836278586008e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 19,
+      "poolWeight": 15.600000023841858,
+      "targetIds": [
+        12,
+        16
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 43,
+      "worstNoTargetStartExpectedCasts": 115.87992719996757
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 156.58884710466708,
+      "bestNoTargetStartExpectedFpIce": 705.5599846447977,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1007.9428352068538,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "bestNoTargetT7Ids": [
+        10,
+        13
+      ],
+      "classRequirement": 0,
+      "compressedStates": 32,
+      "equipmentType": 2,
+      "eventualHitProbability": 0.9999999999999927,
+      "expectedCasts": 156.58884710466708,
+      "expectedFpIce": 705.5599846447977,
+      "expectedFpNormalAndBlood": 1007.9428352068538,
+      "initialT7Ids": [
+        10,
+        13
+      ],
+      "linearEquationMaximumResidual": 1.1102230246251565e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 20,
+      "poolWeight": 18.199999928474426,
+      "targetIds": [
+        7,
+        8
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 30,
+      "worstNoTargetStartExpectedCasts": 156.72349158645306
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 253.11447333148652,
+      "bestNoTargetStartExpectedFpIce": 1140.4863578679287,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1629.2662255256123,
+      "bestNoTargetState": [
+        4,
+        9
+      ],
+      "bestNoTargetT7Ids": [
+        23,
+        10
+      ],
+      "classRequirement": 0,
+      "compressedStates": 30,
+      "equipmentType": 2,
+      "eventualHitProbability": 0.9999999999999808,
+      "expectedCasts": 253.14388262317266,
+      "expectedFpIce": 1140.6188706220241,
+      "expectedFpNormalAndBlood": 1629.4555294600343,
+      "fixedLowTierIds": [
+        16,
+        8
+      ],
+      "initialT7Ids": [
+        15,
+        10
+      ],
+      "linearEquationMaximumResidual": 1.645350522494482e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        12,
+        7
+      ],
+      "transientStates": 29,
+      "worstNoTargetStartExpectedCasts": 253.20695306474474
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 15.540879894288489,
+      "bestNoTargetStartExpectedFpIce": 70.02429088868375,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 100.03470126954821,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        502,
+        504
+      ],
+      "classRequirement": 0,
+      "compressedStates": 14,
+      "equipmentType": 3,
+      "eventualHitProbability": 1.0,
+      "expectedCasts": 15.540879894288489,
+      "expectedFpIce": 70.02429088868375,
+      "expectedFpNormalAndBlood": 100.03470126954821,
+      "initialT7Ids": [
+        502,
+        504
+      ],
+      "linearEquationMaximumResidual": 3.3306690738754696e-15,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 7,
+      "poolWeight": 6.200000047683716,
+      "targetIds": [
+        28,
+        501
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 15.907493653505517
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 85.04842700417181,
+      "bestNoTargetStartExpectedFpIce": 383.21226550073493,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 547.4460935724784,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "bestNoTargetT7Ids": [
+        25,
+        27
+      ],
+      "classRequirement": 0,
+      "compressedStates": 33,
+      "equipmentType": 3,
+      "eventualHitProbability": 1.0000000000000033,
+      "expectedCasts": 85.04842700417181,
+      "expectedFpIce": 383.21226550073493,
+      "expectedFpNormalAndBlood": 547.4460935724784,
+      "initialT7Ids": [
+        25,
+        27
+      ],
+      "linearEquationMaximumResidual": 2.55351295663786e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 17,
+      "poolWeight": 13.400000095367432,
+      "targetIds": [
+        1,
+        8
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 31,
+      "worstNoTargetStartExpectedCasts": 85.22813968764336
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 65.74945547919395,
+      "bestNoTargetStartExpectedFpIce": 296.2547183663456,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 423.2210262376366,
+      "bestNoTargetState": [
+        1,
+        6
+      ],
+      "bestNoTargetT7Ids": [
+        502,
+        25
+      ],
+      "classRequirement": 0,
+      "compressedStates": 15,
+      "equipmentType": 3,
+      "eventualHitProbability": 1.0000000000000016,
+      "expectedCasts": 65.87630036102563,
+      "expectedFpIce": 296.8262576204638,
+      "expectedFpNormalAndBlood": 424.0375108863768,
+      "fixedLowTierIds": [
+        501,
+        8
+      ],
+      "initialT7Ids": [
+        71,
+        7
+      ],
+      "linearEquationMaximumResidual": 1.2212453270876722e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        28,
+        1
+      ],
+      "transientStates": 14,
+      "worstNoTargetStartExpectedCasts": 65.91405046719686
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 139.88800470553682,
+      "bestNoTargetStartExpectedFpIce": 630.3091202022666,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 900.4416002889523,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "bestNoTargetT7Ids": [
+        5,
+        14
+      ],
+      "classRequirement": 0,
+      "compressedStates": 33,
+      "equipmentType": 4,
+      "eventualHitProbability": 0.9999999999999818,
+      "expectedCasts": 139.88800470553682,
+      "expectedFpIce": 630.3091202022666,
+      "expectedFpNormalAndBlood": 900.4416002889523,
+      "initialT7Ids": [
+        5,
+        14
+      ],
+      "linearEquationMaximumResidual": 1.0103029524088925e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 19,
+      "poolWeight": 17.199999928474426,
+      "targetIds": [
+        2,
+        4
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 31,
+      "worstNoTargetStartExpectedCasts": 139.99424507822363
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 174.79033720708267,
+      "bestNoTargetStartExpectedFpIce": 787.5724862668882,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1125.1035518098402,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "bestNoTargetT7Ids": [
+        10,
+        13
+      ],
+      "classRequirement": 0,
+      "compressedStates": 32,
+      "equipmentType": 4,
+      "eventualHitProbability": 1.000000000000018,
+      "expectedCasts": 174.79033720708267,
+      "expectedFpIce": 787.5724862668882,
+      "expectedFpNormalAndBlood": 1125.1035518098402,
+      "initialT7Ids": [
+        10,
+        13
+      ],
+      "linearEquationMaximumResidual": 9.237055564881302e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 21,
+      "poolWeight": 19.199999928474426,
+      "targetIds": [
+        7,
+        8
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 30,
+      "worstNoTargetStartExpectedCasts": 174.91711179303442
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 295.759288575516,
+      "bestNoTargetStartExpectedFpIce": 1332.6358994546672,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1903.7655706495245,
+      "bestNoTargetState": [
+        3,
+        8
+      ],
+      "bestNoTargetT7Ids": [
+        5,
+        10
+      ],
+      "classRequirement": 0,
+      "compressedStates": 25,
+      "equipmentType": 4,
+      "eventualHitProbability": 0.9999999999999858,
+      "expectedCasts": 295.759288575516,
+      "expectedFpIce": 1332.6358994546672,
+      "expectedFpNormalAndBlood": 1903.7655706495245,
+      "fixedLowTierIds": [
+        4,
+        8
+      ],
+      "initialT7Ids": [
+        5,
+        10
+      ],
+      "linearEquationMaximumResidual": 1.6353585152728556e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        2,
+        7
+      ],
+      "transientStates": 24,
+      "worstNoTargetStartExpectedCasts": 295.8441582720302
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 198.32527362549123,
+      "bestNoTargetStartExpectedFpIce": 893.6164969676588,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1276.5949956680838,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        15
+      ],
+      "classRequirement": 0,
+      "compressedStates": 14,
+      "equipmentType": 5,
+      "eventualHitProbability": 1.0000000000000078,
+      "expectedCasts": 198.32527362549123,
+      "expectedFpIce": 893.6164969676588,
+      "expectedFpNormalAndBlood": 1276.5949956680838,
+      "initialT7Ids": [
+        6,
+        15
+      ],
+      "linearEquationMaximumResidual": 4.241051954068098e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 22,
+      "poolWeight": 20.40000009536743,
+      "targetIds": [
+        2,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 198.3913641962002
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 139.57162397009037,
+      "bestNoTargetStartExpectedFpIce": 628.8835679297329,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 898.4050970424754,
+      "bestNoTargetState": [
+        6,
+        6
+      ],
+      "bestNoTargetT7Ids": [
+        54,
+        55
+      ],
+      "classRequirement": 0,
+      "compressedStates": 75,
+      "equipmentType": 5,
+      "eventualHitProbability": 0.9999999999999984,
+      "expectedCasts": 139.57162397009037,
+      "expectedFpIce": 628.8835679297329,
+      "expectedFpNormalAndBlood": 898.4050970424754,
+      "initialT7Ids": [
+        54,
+        55
+      ],
+      "linearEquationMaximumResidual": 1.0413891970983968e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 24,
+      "poolWeight": 17.03999972343445,
+      "targetIds": [
+        20,
+        44
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 73,
+      "worstNoTargetStartExpectedCasts": 139.7200914111853
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 314.23545928708074,
+      "bestNoTargetStartExpectedFpIce": 1415.8860603989697,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 2022.6943719985277,
+      "bestNoTargetState": [
+        1,
+        9
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        54
+      ],
+      "classRequirement": 0,
+      "compressedStates": 24,
+      "equipmentType": 5,
+      "eventualHitProbability": 0.9999999999999879,
+      "expectedCasts": 314.23545928708074,
+      "expectedFpIce": 1415.8860603989697,
+      "expectedFpNormalAndBlood": 2022.6943719985277,
+      "fixedLowTierIds": [
+        5,
+        44
+      ],
+      "initialT7Ids": [
+        6,
+        54
+      ],
+      "linearEquationMaximumResidual": 1.907363156306019e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        2,
+        20
+      ],
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 314.3070187959459
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 217.6020743130443,
+      "bestNoTargetStartExpectedFpIce": 980.474146465644,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1400.677352093777,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        5,
+        6
+      ],
+      "classRequirement": 0,
+      "compressedStates": 13,
+      "equipmentType": 6,
+      "eventualHitProbability": 0.9999999999999941,
+      "expectedCasts": 217.6020743130443,
+      "expectedFpIce": 980.474146465644,
+      "expectedFpNormalAndBlood": 1400.677352093777,
+      "initialT7Ids": [
+        5,
+        6
+      ],
+      "linearEquationMaximumResidual": 1.5498713423767185e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 22,
+      "poolWeight": 21.399999976158142,
+      "targetIds": [
+        2,
+        4
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 11,
+      "worstNoTargetStartExpectedCasts": 217.6644704202158
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 109.05901167286613,
+      "bestNoTargetStartExpectedFpIce": 491.39945803324616,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 701.9992257617802,
+      "bestNoTargetState": [
+        4,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        54,
+        55
+      ],
+      "classRequirement": 0,
+      "compressedStates": 44,
+      "equipmentType": 6,
+      "eventualHitProbability": 1.0000000000000018,
+      "expectedCasts": 109.05901167286613,
+      "expectedFpIce": 491.39945803324616,
+      "expectedFpNormalAndBlood": 701.9992257617802,
+      "initialT7Ids": [
+        54,
+        55
+      ],
+      "linearEquationMaximumResidual": 4.907185768843192e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 21,
+      "poolWeight": 15.139999747276306,
+      "targetIds": [
+        20,
+        44
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 42,
+      "worstNoTargetStartExpectedCasts": 109.22897270317337
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 290.62114916419523,
+      "bestNoTargetStartExpectedFpIce": 1309.4844066683954,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1870.692009526279,
+      "bestNoTargetState": [
+        1,
+        7
+      ],
+      "bestNoTargetT7Ids": [
+        5,
+        54
+      ],
+      "classRequirement": 0,
+      "compressedStates": 18,
+      "equipmentType": 6,
+      "eventualHitProbability": 0.9999999999999742,
+      "expectedCasts": 290.62114916419523,
+      "expectedFpIce": 1309.4844066683954,
+      "expectedFpNormalAndBlood": 1870.692009526279,
+      "fixedLowTierIds": [
+        4,
+        44
+      ],
+      "initialT7Ids": [
+        5,
+        54
+      ],
+      "linearEquationMaximumResidual": 9.880984919163893e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        2,
+        20
+      ],
+      "transientStates": 17,
+      "worstNoTargetStartExpectedCasts": 290.70830922226895
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 160.5239826856706,
+      "bestNoTargetStartExpectedFpIce": 723.2909677348782,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1033.2728110498258,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        12
+      ],
+      "classRequirement": 0,
+      "compressedStates": 14,
+      "equipmentType": 7,
+      "eventualHitProbability": 1.0000000000000075,
+      "expectedCasts": 160.5239826856706,
+      "expectedFpIce": 723.2909677348782,
+      "expectedFpNormalAndBlood": 1033.2728110498258,
+      "initialT7Ids": [
+        6,
+        12
+      ],
+      "linearEquationMaximumResidual": 5.773159728050814e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 20,
+      "poolWeight": 18.40000009536743,
+      "targetIds": [
+        2,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 160.5984292010664
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 72.07707571976233,
+      "bestNoTargetStartExpectedFpIce": 324.76578874155166,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 463.95112677364517,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "bestNoTargetT7Ids": [
+        54,
+        55
+      ],
+      "classRequirement": 0,
+      "compressedStates": 32,
+      "equipmentType": 7,
+      "eventualHitProbability": 1.000000000000002,
+      "expectedCasts": 72.07707571976233,
+      "expectedFpIce": 324.76578874155166,
+      "expectedFpNormalAndBlood": 463.95112677364517,
+      "initialT7Ids": [
+        54,
+        55
+      ],
+      "linearEquationMaximumResidual": 5.395683899678261e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 17,
+      "poolWeight": 12.399999737739563,
+      "targetIds": [
+        20,
+        44
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 30,
+      "worstNoTargetStartExpectedCasts": 72.2826864923769
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 200.59483985174737,
+      "bestNoTargetStartExpectedFpIce": 903.8427368395015,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1291.2039097707163,
+      "bestNoTargetState": [
+        1,
+        6
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        54
+      ],
+      "classRequirement": 0,
+      "compressedStates": 15,
+      "equipmentType": 7,
+      "eventualHitProbability": 1.0000000000000044,
+      "expectedCasts": 200.59483985174737,
+      "expectedFpIce": 903.8427368395015,
+      "expectedFpNormalAndBlood": 1291.2039097707163,
+      "fixedLowTierIds": [
+        5,
+        44
+      ],
+      "initialT7Ids": [
+        6,
+        54
+      ],
+      "linearEquationMaximumResidual": 7.505107646466058e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        2,
+        20
+      ],
+      "transientStates": 14,
+      "worstNoTargetStartExpectedCasts": 200.68481832254332
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 319.1224256423768,
+      "bestNoTargetStartExpectedFpIce": 1437.905814489742,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 2054.151163556774,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        5,
+        6
+      ],
+      "classRequirement": 0,
+      "compressedStates": 13,
+      "equipmentType": 8,
+      "eventualHitProbability": 1.0000000000000016,
+      "expectedCasts": 319.1224256423768,
+      "expectedFpIce": 1437.905814489742,
+      "expectedFpNormalAndBlood": 2054.151163556774,
+      "initialT7Ids": [
+        5,
+        6
+      ],
+      "linearEquationMaximumResidual": 1.3233858453531866e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 26,
+      "poolWeight": 25.799999952316284,
+      "targetIds": [
+        2,
+        4
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 11,
+      "worstNoTargetStartExpectedCasts": 319.13938362821244
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 69.415254294281,
+      "bestNoTargetStartExpectedFpIce": 312.77212048985,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 446.8173149855,
+      "bestNoTargetState": [
+        6,
+        6
+      ],
+      "bestNoTargetT7Ids": [
+        55,
+        56
+      ],
+      "classRequirement": 0,
+      "compressedStates": 75,
+      "equipmentType": 8,
+      "eventualHitProbability": 0.9999999999999987,
+      "expectedCasts": 69.415254294281,
+      "expectedFpIce": 312.77212048985,
+      "expectedFpNormalAndBlood": 446.8173149855,
+      "initialT7Ids": [
+        55,
+        56
+      ],
+      "linearEquationMaximumResidual": 4.418687638008123e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 19,
+      "poolWeight": 12.039999723434448,
+      "targetIds": [
+        11,
+        20
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 73,
+      "worstNoTargetStartExpectedCasts": 69.6443608861286
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 279.02511490295825,
+      "bestNoTargetStartExpectedFpIce": 1257.2348505436855,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1796.0497864909794,
+      "bestNoTargetState": [
+        1,
+        9
+      ],
+      "bestNoTargetT7Ids": [
+        5,
+        55
+      ],
+      "classRequirement": 0,
+      "compressedStates": 24,
+      "equipmentType": 8,
+      "eventualHitProbability": 1.0000000000000175,
+      "expectedCasts": 279.06318307485117,
+      "expectedFpIce": 1257.406378588453,
+      "expectedFpNormalAndBlood": 1796.2948265549326,
+      "fixedLowTierIds": [
+        4,
+        20
+      ],
+      "initialT7Ids": [
+        5,
+        54
+      ],
+      "linearEquationMaximumResidual": 1.3944401189291966e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        2,
+        11
+      ],
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 279.10578269879204
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 213.81461976721386,
+      "bestNoTargetStartExpectedFpIce": 963.4085864298594,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1376.2979806140845,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        12
+      ],
+      "classRequirement": 0,
+      "compressedStates": 14,
+      "equipmentType": 9,
+      "eventualHitProbability": 1.0000000000000038,
+      "expectedCasts": 213.81461976721386,
+      "expectedFpIce": 963.4085864298594,
+      "expectedFpNormalAndBlood": 1376.2979806140845,
+      "initialT7Ids": [
+        6,
+        12
+      ],
+      "linearEquationMaximumResidual": 9.792167077193881e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 22,
+      "poolWeight": 21.200000047683716,
+      "targetIds": [
+        2,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 213.87771674176727
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 131.34487857384366,
+      "bestNoTargetStartExpectedFpIce": 591.815395689007,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 845.4505652700099,
+      "bestNoTargetState": [
+        7,
+        7
+      ],
+      "bestNoTargetT7Ids": [
+        55,
+        56
+      ],
+      "classRequirement": 0,
+      "compressedStates": 93,
+      "equipmentType": 9,
+      "eventualHitProbability": 0.9999999999999742,
+      "expectedCasts": 131.34487857384366,
+      "expectedFpIce": 591.815395689007,
+      "expectedFpNormalAndBlood": 845.4505652700099,
+      "initialT7Ids": [
+        55,
+        56
+      ],
+      "linearEquationMaximumResidual": 1.0946799022804043e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 23,
+      "poolWeight": 16.53999972343445,
+      "targetIds": [
+        20,
+        44
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 91,
+      "worstNoTargetStartExpectedCasts": 131.49860536026137
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 316.6949283006311,
+      "bestNoTargetStartExpectedFpIce": 1426.9679666235875,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 2038.5256666051246,
+      "bestNoTargetState": [
+        1,
+        10
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        55
+      ],
+      "classRequirement": 0,
+      "compressedStates": 27,
+      "equipmentType": 9,
+      "eventualHitProbability": 1.0000000000000289,
+      "expectedCasts": 316.7222223878531,
+      "expectedFpIce": 1427.0909486629685,
+      "expectedFpNormalAndBlood": 2038.7013552328117,
+      "fixedLowTierIds": [
+        5,
+        44
+      ],
+      "initialT7Ids": [
+        6,
+        54
+      ],
+      "linearEquationMaximumResidual": 1.2168044349891716e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        2,
+        20
+      ],
+      "transientStates": 26,
+      "worstNoTargetStartExpectedCasts": 316.76709160943335
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 85.47874127422874,
+      "bestNoTargetStartExpectedFpIce": 385.1511809176858,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 550.215972739551,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        9
+      ],
+      "classRequirement": 0,
+      "compressedStates": 31,
+      "equipmentType": 10,
+      "eventualHitProbability": 0.999999999999994,
+      "expectedCasts": 85.47874127422874,
+      "expectedFpIce": 385.1511809176858,
+      "expectedFpNormalAndBlood": 550.215972739551,
+      "initialT7Ids": [
+        6,
+        9
+      ],
+      "linearEquationMaximumResidual": 5.939693181744587e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 15,
+      "poolWeight": 13.600000023841858,
+      "targetIds": [
+        4,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 29,
+      "worstNoTargetStartExpectedCasts": 85.65165974052682
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 34.625029878137425,
+      "bestNoTargetStartExpectedFpIce": 156.0138924377851,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 222.87698919683584,
+      "bestNoTargetState": [
+        5,
+        5
+      ],
+      "bestNoTargetT7Ids": [
+        56,
+        58
+      ],
+      "classRequirement": 0,
+      "compressedStates": 58,
+      "equipmentType": 10,
+      "eventualHitProbability": 0.9999999999999972,
+      "expectedCasts": 34.625029878137425,
+      "expectedFpIce": 156.0138924377851,
+      "expectedFpNormalAndBlood": 222.87698919683584,
+      "initialT7Ids": [
+        56,
+        58
+      ],
+      "linearEquationMaximumResidual": 2.042810365310288e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 15,
+      "poolWeight": 8.539999723434448,
+      "targetIds": [
+        11,
+        55
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 56,
+      "worstNoTargetStartExpectedCasts": 35.00320938473941
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 98.51569628483855,
+      "bestNoTargetStartExpectedFpIce": 443.89325576642915,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 634.1332225234702,
+      "bestNoTargetState": [
+        3,
+        10
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        56
+      ],
+      "classRequirement": 0,
+      "compressedStates": 35,
+      "equipmentType": 10,
+      "eventualHitProbability": 0.9999999999999901,
+      "expectedCasts": 98.51569628483855,
+      "expectedFpIce": 443.89325576642915,
+      "expectedFpNormalAndBlood": 634.1332225234702,
+      "fixedLowTierIds": [
+        5,
+        55
+      ],
+      "initialT7Ids": [
+        6,
+        56
+      ],
+      "linearEquationMaximumResidual": 3.907985046680551e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        4,
+        11
+      ],
+      "transientStates": 34,
+      "worstNoTargetStartExpectedCasts": 98.69711157842093
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 198.32527362549123,
+      "bestNoTargetStartExpectedFpIce": 893.6164969676588,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1276.5949956680838,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        15
+      ],
+      "classRequirement": 0,
+      "compressedStates": 14,
+      "equipmentType": 12,
+      "eventualHitProbability": 1.0000000000000078,
+      "expectedCasts": 198.32527362549123,
+      "expectedFpIce": 893.6164969676588,
+      "expectedFpNormalAndBlood": 1276.5949956680838,
+      "initialT7Ids": [
+        6,
+        15
+      ],
+      "linearEquationMaximumResidual": 4.241051954068098e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 22,
+      "poolWeight": 20.40000009536743,
+      "targetIds": [
+        2,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 198.3913641962002
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 193.6715637382702,
+      "bestNoTargetStartExpectedFpIce": 872.6477527864447,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1246.639646837778,
+      "bestNoTargetState": [
+        6,
+        6
+      ],
+      "bestNoTargetT7Ids": [
+        50,
+        54
+      ],
+      "classRequirement": 0,
+      "compressedStates": 75,
+      "equipmentType": 12,
+      "eventualHitProbability": 0.9999999999999658,
+      "expectedCasts": 193.6715637382702,
+      "expectedFpIce": 872.6477527864447,
+      "expectedFpNormalAndBlood": 1246.639646837778,
+      "initialT7Ids": [
+        50,
+        54
+      ],
+      "linearEquationMaximumResidual": 1.7341683644644945e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 27,
+      "poolWeight": 20.03999972343445,
+      "targetIds": [
+        20,
+        44
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 73,
+      "worstNoTargetStartExpectedCasts": 193.7946333616612
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 372.05708365685473,
+      "bestNoTargetStartExpectedFpIce": 1676.4194582546018,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 2394.884940363717,
+      "bestNoTargetState": [
+        1,
+        9
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        50
+      ],
+      "classRequirement": 0,
+      "compressedStates": 24,
+      "equipmentType": 12,
+      "eventualHitProbability": 1.000000000000008,
+      "expectedCasts": 372.05708365685473,
+      "expectedFpIce": 1676.4194582546018,
+      "expectedFpNormalAndBlood": 2394.884940363717,
+      "fixedLowTierIds": [
+        5,
+        44
+      ],
+      "initialT7Ids": [
+        6,
+        50
+      ],
+      "linearEquationMaximumResidual": 1.949551631241775e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        2,
+        20
+      ],
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 372.12054028234934
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 153.82171242432435,
+      "bestNoTargetStartExpectedFpIce": 693.0917946129259,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 990.1311351613227,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        15
+      ],
+      "classRequirement": 0,
+      "compressedStates": 14,
+      "equipmentType": 13,
+      "eventualHitProbability": 0.9999999999999934,
+      "expectedCasts": 153.82171242432435,
+      "expectedFpIce": 693.0917946129259,
+      "expectedFpNormalAndBlood": 990.1311351613227,
+      "initialT7Ids": [
+        6,
+        15
+      ],
+      "linearEquationMaximumResidual": 3.26405569239796e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 20,
+      "poolWeight": 18.00000011920929,
+      "targetIds": [
+        2,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 153.89824077259684
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 112.26908922757417,
+      "bestNoTargetStartExpectedFpIce": 505.86346560521906,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 722.6620937217415,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "bestNoTargetT7Ids": [
+        50,
+        54
+      ],
+      "classRequirement": 0,
+      "compressedStates": 32,
+      "equipmentType": 13,
+      "eventualHitProbability": 0.9999999999999875,
+      "expectedCasts": 112.26908922757417,
+      "expectedFpIce": 505.86346560521906,
+      "expectedFpNormalAndBlood": 722.6620937217415,
+      "initialT7Ids": [
+        50,
+        54
+      ],
+      "linearEquationMaximumResidual": 7.316369732279782e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 20,
+      "poolWeight": 15.399999737739563,
+      "targetIds": [
+        20,
+        44
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 30,
+      "worstNoTargetStartExpectedCasts": 112.4264936794554
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 246.82899008801635,
+      "bestNoTargetStartExpectedFpIce": 1112.1651489009603,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1588.8073555728001,
+      "bestNoTargetState": [
+        1,
+        6
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        50
+      ],
+      "classRequirement": 0,
+      "compressedStates": 15,
+      "equipmentType": 13,
+      "eventualHitProbability": 0.999999999999979,
+      "expectedCasts": 246.82899008801635,
+      "expectedFpIce": 1112.1651489009603,
+      "expectedFpNormalAndBlood": 1588.8073555728001,
+      "fixedLowTierIds": [
+        5,
+        44
+      ],
+      "initialT7Ids": [
+        6,
+        50
+      ],
+      "linearEquationMaximumResidual": 7.394085344003543e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        2,
+        20
+      ],
+      "transientStates": 14,
+      "worstNoTargetStartExpectedCasts": 246.90553679154473
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 186.1884230781525,
+      "bestNoTargetStartExpectedFpIce": 838.9301240608281,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1198.471605801183,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        15
+      ],
+      "classRequirement": 0,
+      "compressedStates": 14,
+      "equipmentType": 14,
+      "eventualHitProbability": 0.9999999999999888,
+      "expectedCasts": 186.1884230781525,
+      "expectedFpIce": 838.9301240608281,
+      "expectedFpNormalAndBlood": 1198.471605801183,
+      "initialT7Ids": [
+        6,
+        15
+      ],
+      "linearEquationMaximumResidual": 5.240252676230739e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 21,
+      "poolWeight": 19.800000071525574,
+      "targetIds": [
+        2,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 186.2567104392812
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 186.76746648371017,
+      "bestNoTargetStartExpectedFpIce": 841.5391850756323,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1202.1988358223318,
+      "bestNoTargetState": [
+        5,
+        5
+      ],
+      "bestNoTargetT7Ids": [
+        50,
+        54
+      ],
+      "classRequirement": 0,
+      "compressedStates": 58,
+      "equipmentType": 14,
+      "eventualHitProbability": 0.9999999999999876,
+      "expectedCasts": 186.76746648371017,
+      "expectedFpIce": 841.5391850756323,
+      "expectedFpNormalAndBlood": 1202.1988358223318,
+      "initialT7Ids": [
+        50,
+        54
+      ],
+      "linearEquationMaximumResidual": 1.3944401189291966e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 25,
+      "poolWeight": 19.739999771118164,
+      "targetIds": [
+        20,
+        44
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 56,
+      "worstNoTargetStartExpectedCasts": 186.8921542686
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 353.9867628662519,
+      "bestNoTargetStartExpectedFpIce": 1594.9979809572937,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 2278.5685442247054,
+      "bestNoTargetState": [
+        1,
+        8
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        50
+      ],
+      "classRequirement": 0,
+      "compressedStates": 21,
+      "equipmentType": 14,
+      "eventualHitProbability": 1.0000000000000182,
+      "expectedCasts": 353.9867628662519,
+      "expectedFpIce": 1594.9979809572937,
+      "expectedFpNormalAndBlood": 2278.5685442247054,
+      "fixedLowTierIds": [
+        5,
+        44
+      ],
+      "initialT7Ids": [
+        6,
+        50
+      ],
+      "linearEquationMaximumResidual": 1.9695356456850277e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        2,
+        20
+      ],
+      "transientStates": 20,
+      "worstNoTargetStartExpectedCasts": 354.0515870060542
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 285.0533632273139,
+      "bestNoTargetStartExpectedFpIce": 1284.3970071966714,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1834.8528674238162,
+      "bestNoTargetState": [
+        2,
+        2
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        9
+      ],
+      "classRequirement": 0,
+      "compressedStates": 21,
+      "equipmentType": 15,
+      "eventualHitProbability": 1.0000000000000315,
+      "expectedCasts": 285.0533632273139,
+      "expectedFpIce": 1284.3970071966714,
+      "expectedFpNormalAndBlood": 1834.8528674238162,
+      "initialT7Ids": [
+        6,
+        9
+      ],
+      "linearEquationMaximumResidual": 1.8429702208777599e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 25,
+      "poolWeight": 24.399999976158142,
+      "targetIds": [
+        4,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 19,
+      "worstNoTargetStartExpectedCasts": 285.0983536624543
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 65.26920101159592,
+      "bestNoTargetStartExpectedFpIce": 294.0907817830616,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 420.1296882615165,
+      "bestNoTargetState": [
+        6,
+        6
+      ],
+      "bestNoTargetT7Ids": [
+        55,
+        56
+      ],
+      "classRequirement": 0,
+      "compressedStates": 75,
+      "equipmentType": 15,
+      "eventualHitProbability": 1.0000000000000044,
+      "expectedCasts": 65.26920101159592,
+      "expectedFpIce": 294.0907817830616,
+      "expectedFpNormalAndBlood": 420.1296882615165,
+      "initialT7Ids": [
+        55,
+        56
+      ],
+      "linearEquationMaximumResidual": 4.6629367034256575e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 19,
+      "poolWeight": 11.639999747276306,
+      "targetIds": [
+        11,
+        20
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 73,
+      "worstNoTargetStartExpectedCasts": 65.51034705670627
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 254.79890728833342,
+      "bestNoTargetStartExpectedFpIce": 1148.0761014461139,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1640.108716351591,
+      "bestNoTargetState": [
+        2,
+        10
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        55
+      ],
+      "classRequirement": 0,
+      "compressedStates": 32,
+      "equipmentType": 15,
+      "eventualHitProbability": 0.9999999999999903,
+      "expectedCasts": 254.8385707036866,
+      "expectedFpIce": 1148.254817358805,
+      "expectedFpNormalAndBlood": 1640.3640247982926,
+      "fixedLowTierIds": [
+        5,
+        20
+      ],
+      "initialT7Ids": [
+        6,
+        54
+      ],
+      "linearEquationMaximumResidual": 1.0835776720341528e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        4,
+        11
+      ],
+      "transientStates": 31,
+      "worstNoTargetStartExpectedCasts": 254.892148392942
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 193.61272069695184,
+      "bestNoTargetStartExpectedFpIce": 872.3826170753343,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1246.2608815361918,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        12
+      ],
+      "classRequirement": 0,
+      "compressedStates": 14,
+      "equipmentType": 16,
+      "eventualHitProbability": 1.0000000000000056,
+      "expectedCasts": 193.61272069695184,
+      "expectedFpIce": 872.3826170753343,
+      "expectedFpNormalAndBlood": 1246.2608815361918,
+      "initialT7Ids": [
+        6,
+        12
+      ],
+      "linearEquationMaximumResidual": 5.240252676230739e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 21,
+      "poolWeight": 20.200000047683716,
+      "targetIds": [
+        2,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 193.67936902416326
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 168.78870162854713,
+      "bestNoTargetStartExpectedFpIce": 760.5302416566781,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1086.4717737952542,
+      "bestNoTargetState": [
+        6,
+        6
+      ],
+      "bestNoTargetT7Ids": [
+        50,
+        55
+      ],
+      "classRequirement": 0,
+      "compressedStates": 75,
+      "equipmentType": 16,
+      "eventualHitProbability": 1.0000000000000093,
+      "expectedCasts": 168.78870162854713,
+      "expectedFpIce": 760.5302416566781,
+      "expectedFpNormalAndBlood": 1086.4717737952542,
+      "initialT7Ids": [
+        50,
+        55
+      ],
+      "linearEquationMaximumResidual": 1.525446435834965e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 25,
+      "poolWeight": 18.739999771118164,
+      "targetIds": [
+        20,
+        44
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 73,
+      "worstNoTargetStartExpectedCasts": 168.92140532889405
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 342.69909110459616,
+      "bestNoTargetStartExpectedFpIce": 1544.1378484377283,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 2205.9112120538975,
+      "bestNoTargetState": [
+        1,
+        9
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        50
+      ],
+      "classRequirement": 0,
+      "compressedStates": 24,
+      "equipmentType": 16,
+      "eventualHitProbability": 1.0000000000000133,
+      "expectedCasts": 342.69909110459616,
+      "expectedFpIce": 1544.1378484377283,
+      "expectedFpNormalAndBlood": 2205.9112120538975,
+      "fixedLowTierIds": [
+        5,
+        44
+      ],
+      "initialT7Ids": [
+        6,
+        50
+      ],
+      "linearEquationMaximumResidual": 1.7852386235972517e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        2,
+        20
+      ],
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 342.7658832863321
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 84.31460895110676,
+      "bestNoTargetStartExpectedFpIce": 379.9058189445088,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 542.7225984921553,
+      "bestNoTargetState": [
+        4,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        16,
+        23
+      ],
+      "classRequirement": 0,
+      "compressedStates": 43,
+      "equipmentType": 17,
+      "eventualHitProbability": 0.9999999999999816,
+      "expectedCasts": 84.31460895110676,
+      "expectedFpIce": 379.9058189445088,
+      "expectedFpNormalAndBlood": 542.7225984921553,
+      "initialT7Ids": [
+        16,
+        23
+      ],
+      "linearEquationMaximumResidual": 6.417089082333405e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 15,
+      "poolWeight": 13.5,
+      "targetIds": [
+        5,
+        12
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 41,
+      "worstNoTargetStartExpectedCasts": 84.48931086845847
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 88.42275504820714,
+      "bestNoTargetStartExpectedFpIce": 398.4163549806498,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 569.1662214009283,
+      "bestNoTargetState": [
+        2,
+        2
+      ],
+      "bestNoTargetT7Ids": [
+        55,
+        56
+      ],
+      "classRequirement": 0,
+      "compressedStates": 23,
+      "equipmentType": 17,
+      "eventualHitProbability": 1.0000000000000022,
+      "expectedCasts": 88.42275504820714,
+      "expectedFpIce": 398.4163549806498,
+      "expectedFpNormalAndBlood": 569.1662214009283,
+      "initialT7Ids": [
+        55,
+        56
+      ],
+      "linearEquationMaximumResidual": 2.2426505097428162e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 18,
+      "poolWeight": 13.600000143051147,
+      "targetIds": [
+        20,
+        54
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 21,
+      "worstNoTargetStartExpectedCasts": 88.58356348052322
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 159.78692135637266,
+      "bestNoTargetStartExpectedFpIce": 719.9699075840609,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1028.5284394058012,
+      "bestNoTargetState": [
+        4,
+        8
+      ],
+      "bestNoTargetT7Ids": [
+        16,
+        55
+      ],
+      "classRequirement": 0,
+      "compressedStates": 24,
+      "equipmentType": 17,
+      "eventualHitProbability": 1.0000000000000098,
+      "expectedCasts": 159.822095490623,
+      "expectedFpIce": 720.1283956378428,
+      "expectedFpNormalAndBlood": 1028.754850911204,
+      "fixedLowTierIds": [
+        12,
+        54
+      ],
+      "initialT7Ids": [
+        16,
+        7
+      ],
+      "linearEquationMaximumResidual": 9.50350909079134e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        5,
+        20
+      ],
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 159.90714405586223
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 29.097095370734564,
+      "bestNoTargetStartExpectedFpIce": 131.10605603514793,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 187.29436576449703,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        41,
+        43
+      ],
+      "classRequirement": 0,
+      "compressedStates": 14,
+      "equipmentType": 18,
+      "eventualHitProbability": 1.0000000000000009,
+      "expectedCasts": 29.097095370734564,
+      "expectedFpIce": 131.10605603514793,
+      "expectedFpNormalAndBlood": 187.29436576449703,
+      "initialT7Ids": [
+        41,
+        43
+      ],
+      "linearEquationMaximumResidual": 7.993605777301127e-15,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 9,
+      "poolWeight": 8.200000047683716,
+      "targetIds": [
+        3,
+        30
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 12,
+      "worstNoTargetStartExpectedCasts": 29.31356514027259
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 126.84383153185152,
+      "bestNoTargetStartExpectedFpIce": 571.5345216641108,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 816.4778880915867,
+      "bestNoTargetState": [
+        2,
+        2
+      ],
+      "bestNoTargetT7Ids": [
+        10,
+        13
+      ],
+      "classRequirement": 0,
+      "compressedStates": 23,
+      "equipmentType": 18,
+      "eventualHitProbability": 0.9999999999999896,
+      "expectedCasts": 126.84383153185152,
+      "expectedFpIce": 571.5345216641108,
+      "expectedFpNormalAndBlood": 816.4778880915867,
+      "initialT7Ids": [
+        10,
+        13
+      ],
+      "linearEquationMaximumResidual": 5.995204332975845e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 18,
+      "poolWeight": 16.399999976158142,
+      "targetIds": [
+        1,
+        7
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 21,
+      "worstNoTargetStartExpectedCasts": 126.92918542900684
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 111.5805035068128,
+      "bestNoTargetStartExpectedFpIce": 502.760827457291,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 718.2297535104157,
+      "bestNoTargetState": [
+        1,
+        5
+      ],
+      "bestNoTargetT7Ids": [
+        41,
+        10
+      ],
+      "classRequirement": 0,
+      "compressedStates": 12,
+      "equipmentType": 18,
+      "eventualHitProbability": 1.000000000000002,
+      "expectedCasts": 111.5805035068128,
+      "expectedFpIce": 502.760827457291,
+      "expectedFpNormalAndBlood": 718.2297535104157,
+      "fixedLowTierIds": [
+        30,
+        7
+      ],
+      "initialT7Ids": [
+        41,
+        10
+      ],
+      "linearEquationMaximumResidual": 2.1760371282653068e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        3,
+        1
+      ],
+      "transientStates": 11,
+      "worstNoTargetStartExpectedCasts": 111.67044933089079
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 101.2838964840512,
+      "bestNoTargetStartExpectedFpIce": 456.36624682654394,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 651.9517811807771,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        9
+      ],
+      "classRequirement": 0,
+      "compressedStates": 13,
+      "equipmentType": 19,
+      "eventualHitProbability": 0.9999999999999898,
+      "expectedCasts": 101.2838964840512,
+      "expectedFpIce": 456.36624682654394,
+      "expectedFpNormalAndBlood": 651.9517811807771,
+      "initialT7Ids": [
+        6,
+        9
+      ],
+      "linearEquationMaximumResidual": 3.7969627442180354e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 15,
+      "poolWeight": 14.799999952316284,
+      "targetIds": [
+        4,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 11,
+      "worstNoTargetStartExpectedCasts": 101.31612579554023
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 74.6666749298739,
+      "bestNoTargetStartExpectedFpIce": 336.4340372324625,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 480.62005318923207,
+      "bestNoTargetState": [
+        1,
+        1
+      ],
+      "bestNoTargetT7Ids": [
+        10,
+        11
+      ],
+      "classRequirement": 0,
+      "compressedStates": 13,
+      "equipmentType": 19,
+      "eventualHitProbability": 0.9999999999999963,
+      "expectedCasts": 74.6666749298739,
+      "expectedFpIce": 336.4340372324625,
+      "expectedFpNormalAndBlood": 480.62005318923207,
+      "initialT7Ids": [
+        10,
+        11
+      ],
+      "linearEquationMaximumResidual": 2.220446049250313e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 13,
+      "poolWeight": 12.799999952316284,
+      "targetIds": [
+        7,
+        8
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 11,
+      "worstNoTargetStartExpectedCasts": 74.70535002798768
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 162.1897518602231,
+      "bestNoTargetStartExpectedFpIce": 730.7966113036916,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1043.9951590052735,
+      "bestNoTargetState": [
+        1,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        10
+      ],
+      "classRequirement": 0,
+      "compressedStates": 9,
+      "equipmentType": 19,
+      "eventualHitProbability": 1.0000000000000075,
+      "expectedCasts": 162.1897518602231,
+      "expectedFpIce": 730.7966113036916,
+      "expectedFpNormalAndBlood": 1043.9951590052735,
+      "fixedLowTierIds": [
+        5,
+        8
+      ],
+      "initialT7Ids": [
+        6,
+        10
+      ],
+      "linearEquationMaximumResidual": 5.084821452783217e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        4,
+        7
+      ],
+      "transientStates": 8,
+      "worstNoTargetStartExpectedCasts": 162.2240306766738
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 392.9931611247242,
+      "bestNoTargetStartExpectedFpIce": 1770.7534978102965,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 2529.647854014709,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "bestNoTargetT7Ids": [
+        9,
+        12
+      ],
+      "classRequirement": 0,
+      "compressedStates": 33,
+      "equipmentType": 20,
+      "eventualHitProbability": 0.9999999999999816,
+      "expectedCasts": 392.9931611247242,
+      "expectedFpIce": 1770.7534978102965,
+      "expectedFpNormalAndBlood": 2529.647854014709,
+      "initialT7Ids": [
+        9,
+        12
+      ],
+      "linearEquationMaximumResidual": 2.540190280342358e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 34,
+      "poolWeight": 28.40000009536743,
+      "targetIds": [
+        5,
+        6
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 31,
+      "worstNoTargetStartExpectedCasts": 393.0690152869731
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 134.24407511194678,
+      "bestNoTargetStartExpectedFpIce": 604.8786316903487,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 864.1123309862124,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "bestNoTargetT7Ids": [
+        10,
+        13
+      ],
+      "classRequirement": 0,
+      "compressedStates": 31,
+      "equipmentType": 20,
+      "eventualHitProbability": 0.9999999999999897,
+      "expectedCasts": 134.24407511194678,
+      "expectedFpIce": 604.8786316903487,
+      "expectedFpNormalAndBlood": 864.1123309862124,
+      "initialT7Ids": [
+        10,
+        13
+      ],
+      "linearEquationMaximumResidual": 8.881784197001252e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 18,
+      "poolWeight": 16.899999976158142,
+      "targetIds": [
+        7,
+        8
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 29,
+      "worstNoTargetStartExpectedCasts": 134.3456442886825
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 437.7065426439568,
+      "bestNoTargetStartExpectedFpIce": 1972.223611176924,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 2817.4623016813193,
+      "bestNoTargetState": [
+        3,
+        8
+      ],
+      "bestNoTargetT7Ids": [
+        9,
+        10
+      ],
+      "classRequirement": 0,
+      "compressedStates": 25,
+      "equipmentType": 20,
+      "eventualHitProbability": 1.0000000000000293,
+      "expectedCasts": 437.72223304054904,
+      "expectedFpIce": 1972.294309162019,
+      "expectedFpNormalAndBlood": 2817.5632988028838,
+      "fixedLowTierIds": [
+        6,
+        8
+      ],
+      "initialT7Ids": [
+        0,
+        10
+      ],
+      "linearEquationMaximumResidual": 2.0095036745715333e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        5,
+        7
+      ],
+      "transientStates": 24,
+      "worstNoTargetStartExpectedCasts": 437.77611485119263
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 257.9684311634419,
+      "bestNoTargetStartExpectedFpIce": 1162.357381741626,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1660.51054534518,
+      "bestNoTargetState": [
+        2,
+        2
+      ],
+      "bestNoTargetT7Ids": [
+        12,
+        14
+      ],
+      "classRequirement": 0,
+      "compressedStates": 22,
+      "equipmentType": 21,
+      "eventualHitProbability": 0.9999999999999974,
+      "expectedCasts": 257.9684311634419,
+      "expectedFpIce": 1162.357381741626,
+      "expectedFpNormalAndBlood": 1660.51054534518,
+      "initialT7Ids": [
+        12,
+        14
+      ],
+      "linearEquationMaximumResidual": 2.204902926905561e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 25,
+      "poolWeight": 23.200000047683716,
+      "targetIds": [
+        5,
+        9
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 20,
+      "worstNoTargetStartExpectedCasts": 258.0440278193225
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 117.96405104143001,
+      "bestNoTargetStartExpectedFpIce": 531.5238957331134,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 759.3198510473047,
+      "bestNoTargetState": [
+        2,
+        2
+      ],
+      "bestNoTargetT7Ids": [
+        10,
+        13
+      ],
+      "classRequirement": 0,
+      "compressedStates": 21,
+      "equipmentType": 21,
+      "eventualHitProbability": 1.0000000000000129,
+      "expectedCasts": 117.96405104143001,
+      "expectedFpIce": 531.5238957331134,
+      "expectedFpNormalAndBlood": 759.3198510473047,
+      "initialT7Ids": [
+        10,
+        13
+      ],
+      "linearEquationMaximumResidual": 4.696243394164412e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 17,
+      "poolWeight": 15.900000095367432,
+      "targetIds": [
+        7,
+        8
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 19,
+      "worstNoTargetStartExpectedCasts": 118.1008579420252
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 331.04277726929604,
+      "bestNoTargetStartExpectedFpIce": 1491.6166838547101,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 2130.8809769352997,
+      "bestNoTargetState": [
+        2,
+        6
+      ],
+      "bestNoTargetT7Ids": [
+        12,
+        10
+      ],
+      "classRequirement": 0,
+      "compressedStates": 16,
+      "equipmentType": 21,
+      "eventualHitProbability": 1.0000000000000295,
+      "expectedCasts": 331.04277726929604,
+      "expectedFpIce": 1491.6166838547101,
+      "expectedFpNormalAndBlood": 2130.8809769352997,
+      "fixedLowTierIds": [
+        9,
+        8
+      ],
+      "initialT7Ids": [
+        12,
+        10
+      ],
+      "linearEquationMaximumResidual": 8.681944052568724e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        5,
+        7
+      ],
+      "transientStates": 15,
+      "worstNoTargetStartExpectedCasts": 331.12683504009306
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 311.19617159022954,
+      "bestNoTargetStartExpectedFpIce": 1402.1915999034013,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 2003.1308570048586,
+      "bestNoTargetState": [
+        3,
+        3
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        12
+      ],
+      "classRequirement": 0,
+      "compressedStates": 33,
+      "equipmentType": 22,
+      "eventualHitProbability": 0.9999999999999963,
+      "expectedCasts": 311.19617159022954,
+      "expectedFpIce": 1402.1915999034013,
+      "expectedFpNormalAndBlood": 2003.1308570048586,
+      "initialT7Ids": [
+        6,
+        12
+      ],
+      "linearEquationMaximumResidual": 2.1271873151818e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 28,
+      "poolWeight": 25.399999976158142,
+      "targetIds": [
+        4,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 31,
+      "worstNoTargetStartExpectedCasts": 311.2647134429334
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 77.41065782983434,
+      "bestNoTargetStartExpectedFpIce": 348.79790968289046,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 498.28272811841487,
+      "bestNoTargetState": [
+        2,
+        2
+      ],
+      "bestNoTargetT7Ids": [
+        13,
+        17
+      ],
+      "classRequirement": 0,
+      "compressedStates": 21,
+      "equipmentType": 22,
+      "eventualHitProbability": 1.0000000000000062,
+      "expectedCasts": 77.41065782983434,
+      "expectedFpIce": 348.79790968289046,
+      "expectedFpNormalAndBlood": 498.28272811841487,
+      "initialT7Ids": [
+        13,
+        17
+      ],
+      "linearEquationMaximumResidual": 3.730349362740526e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 14,
+      "poolWeight": 13.0,
+      "targetIds": [
+        7,
+        10
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 19,
+      "worstNoTargetStartExpectedCasts": 77.57611296111779
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 293.2857208352576,
+      "bestNoTargetStartExpectedFpIce": 1321.4904670110143,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1887.8435243014487,
+      "bestNoTargetState": [
+        3,
+        7
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        13
+      ],
+      "classRequirement": 0,
+      "compressedStates": 20,
+      "equipmentType": 22,
+      "eventualHitProbability": 1.0000000000000133,
+      "expectedCasts": 293.2857208352576,
+      "expectedFpIce": 1321.4904670110143,
+      "expectedFpNormalAndBlood": 1887.8435243014487,
+      "fixedLowTierIds": [
+        5,
+        10
+      ],
+      "initialT7Ids": [
+        6,
+        13
+      ],
+      "linearEquationMaximumResidual": 1.34781075189494e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        4,
+        7
+      ],
+      "transientStates": 19,
+      "worstNoTargetStartExpectedCasts": 293.3808766197621
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 285.2050099429268,
+      "bestNoTargetStartExpectedFpIce": 1285.080298863464,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1835.8289983763768,
+      "bestNoTargetState": [
+        4,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        12
+      ],
+      "classRequirement": 1,
+      "compressedStates": 46,
+      "equipmentType": 22,
+      "eventualHitProbability": 1.0000000000000022,
+      "expectedCasts": 285.2050099429268,
+      "expectedFpIce": 1285.080298863464,
+      "expectedFpNormalAndBlood": 1835.8289983763768,
+      "initialT7Ids": [
+        6,
+        12
+      ],
+      "linearEquationMaximumResidual": 2.5568436257117355e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 34,
+      "poolWeight": 24.199999690055847,
+      "targetIds": [
+        4,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 44,
+      "worstNoTargetStartExpectedCasts": 285.3024361698241
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 77.41065782983434,
+      "bestNoTargetStartExpectedFpIce": 348.79790968289046,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 498.28272811841487,
+      "bestNoTargetState": [
+        2,
+        2
+      ],
+      "bestNoTargetT7Ids": [
+        13,
+        17
+      ],
+      "classRequirement": 1,
+      "compressedStates": 21,
+      "equipmentType": 22,
+      "eventualHitProbability": 1.0000000000000062,
+      "expectedCasts": 77.41065782983434,
+      "expectedFpIce": 348.79790968289046,
+      "expectedFpNormalAndBlood": 498.28272811841487,
+      "initialT7Ids": [
+        13,
+        17
+      ],
+      "linearEquationMaximumResidual": 3.730349362740526e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 14,
+      "poolWeight": 13.0,
+      "targetIds": [
+        7,
+        10
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 19,
+      "worstNoTargetStartExpectedCasts": 77.57611296111779
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 279.98078279008655,
+      "bestNoTargetStartExpectedFpIce": 1261.540910855357,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1802.2013012219384,
+      "bestNoTargetState": [
+        4,
+        8
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        13
+      ],
+      "classRequirement": 1,
+      "compressedStates": 24,
+      "equipmentType": 22,
+      "eventualHitProbability": 1.0000000000000169,
+      "expectedCasts": 279.98078279008655,
+      "expectedFpIce": 1261.540910855357,
+      "expectedFpNormalAndBlood": 1802.2013012219384,
+      "fixedLowTierIds": [
+        5,
+        10
+      ],
+      "initialT7Ids": [
+        6,
+        13
+      ],
+      "linearEquationMaximumResidual": 7.238654120556021e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        4,
+        7
+      ],
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 280.0830189912708
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 213.75904189698215,
+      "bestNoTargetStartExpectedFpIce": 963.158162967446,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1375.9402328106369,
+      "bestNoTargetState": [
+        4,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        12
+      ],
+      "classRequirement": 2,
+      "compressedStates": 46,
+      "equipmentType": 22,
+      "eventualHitProbability": 1.0000000000000084,
+      "expectedCasts": 213.75904189698215,
+      "expectedFpIce": 963.158162967446,
+      "expectedFpNormalAndBlood": 1375.9402328106369,
+      "initialT7Ids": [
+        6,
+        12
+      ],
+      "linearEquationMaximumResidual": 1.0835776720341528e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 30,
+      "poolWeight": 20.99999964237213,
+      "targetIds": [
+        4,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 44,
+      "worstNoTargetStartExpectedCasts": 213.87306400894488
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 77.41065782983434,
+      "bestNoTargetStartExpectedFpIce": 348.79790968289046,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 498.28272811841487,
+      "bestNoTargetState": [
+        2,
+        2
+      ],
+      "bestNoTargetT7Ids": [
+        13,
+        17
+      ],
+      "classRequirement": 2,
+      "compressedStates": 21,
+      "equipmentType": 22,
+      "eventualHitProbability": 1.0000000000000062,
+      "expectedCasts": 77.41065782983434,
+      "expectedFpIce": 348.79790968289046,
+      "expectedFpNormalAndBlood": 498.28272811841487,
+      "initialT7Ids": [
+        13,
+        17
+      ],
+      "linearEquationMaximumResidual": 3.730349362740526e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 14,
+      "poolWeight": 13.0,
+      "targetIds": [
+        7,
+        10
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 19,
+      "worstNoTargetStartExpectedCasts": 77.57611296111779
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 241.50516525485995,
+      "bestNoTargetStartExpectedFpIce": 1088.1769924199136,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1554.5385605998765,
+      "bestNoTargetState": [
+        4,
+        8
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        13
+      ],
+      "classRequirement": 2,
+      "compressedStates": 24,
+      "equipmentType": 22,
+      "eventualHitProbability": 0.9999999999999756,
+      "expectedCasts": 241.50516525485995,
+      "expectedFpIce": 1088.1769924199136,
+      "expectedFpNormalAndBlood": 1554.5385605998765,
+      "fixedLowTierIds": [
+        5,
+        10
+      ],
+      "initialT7Ids": [
+        6,
+        13
+      ],
+      "linearEquationMaximumResidual": 1.2234657731369225e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        4,
+        7
+      ],
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 241.61314348121056
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 272.88276007998167,
+      "bestNoTargetStartExpectedFpIce": 1229.5585514028824,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1756.512216289832,
+      "bestNoTargetState": [
+        4,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        12
+      ],
+      "classRequirement": 4,
+      "compressedStates": 46,
+      "equipmentType": 22,
+      "eventualHitProbability": 0.9999999999999902,
+      "expectedCasts": 272.88276007998167,
+      "expectedFpIce": 1229.5585514028824,
+      "expectedFpNormalAndBlood": 1756.512216289832,
+      "initialT7Ids": [
+        6,
+        12
+      ],
+      "linearEquationMaximumResidual": 1.9728663147589032e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 32,
+      "poolWeight": 23.71999967098236,
+      "targetIds": [
+        4,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 44,
+      "worstNoTargetStartExpectedCasts": 272.98211978948916
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 77.41065782983434,
+      "bestNoTargetStartExpectedFpIce": 348.79790968289046,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 498.28272811841487,
+      "bestNoTargetState": [
+        2,
+        2
+      ],
+      "bestNoTargetT7Ids": [
+        13,
+        17
+      ],
+      "classRequirement": 4,
+      "compressedStates": 21,
+      "equipmentType": 22,
+      "eventualHitProbability": 1.0000000000000062,
+      "expectedCasts": 77.41065782983434,
+      "expectedFpIce": 348.79790968289046,
+      "expectedFpNormalAndBlood": 498.28272811841487,
+      "initialT7Ids": [
+        13,
+        17
+      ],
+      "linearEquationMaximumResidual": 3.730349362740526e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 14,
+      "poolWeight": 13.0,
+      "targetIds": [
+        7,
+        10
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 19,
+      "worstNoTargetStartExpectedCasts": 77.57611296111779
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 273.87286150679887,
+      "bestNoTargetStartExpectedFpIce": 1234.0197627881032,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1762.885375411576,
+      "bestNoTargetState": [
+        4,
+        8
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        13
+      ],
+      "classRequirement": 4,
+      "compressedStates": 24,
+      "equipmentType": 22,
+      "eventualHitProbability": 1.0000000000000007,
+      "expectedCasts": 273.87286150679887,
+      "expectedFpIce": 1234.0197627881032,
+      "expectedFpNormalAndBlood": 1762.885375411576,
+      "fixedLowTierIds": [
+        5,
+        10
+      ],
+      "initialT7Ids": [
+        6,
+        13
+      ],
+      "linearEquationMaximumResidual": 1.4721557306529576e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        4,
+        7
+      ],
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 273.97575755527276
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 271.4596166180028,
+      "bestNoTargetStartExpectedFpIce": 1223.146133802605,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1747.3516197180068,
+      "bestNoTargetState": [
+        4,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        12
+      ],
+      "classRequirement": 8,
+      "compressedStates": 46,
+      "equipmentType": 22,
+      "eventualHitProbability": 1.0000000000000075,
+      "expectedCasts": 271.4596166180028,
+      "expectedFpIce": 1223.146133802605,
+      "expectedFpNormalAndBlood": 1747.3516197180068,
+      "initialT7Ids": [
+        6,
+        12
+      ],
+      "linearEquationMaximumResidual": 1.5354384430565915e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 32,
+      "poolWeight": 23.639999747276306,
+      "targetIds": [
+        4,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 44,
+      "worstNoTargetStartExpectedCasts": 271.55946046036786
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 77.41065782983434,
+      "bestNoTargetStartExpectedFpIce": 348.79790968289046,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 498.28272811841487,
+      "bestNoTargetState": [
+        2,
+        2
+      ],
+      "bestNoTargetT7Ids": [
+        13,
+        17
+      ],
+      "classRequirement": 8,
+      "compressedStates": 21,
+      "equipmentType": 22,
+      "eventualHitProbability": 1.0000000000000062,
+      "expectedCasts": 77.41065782983434,
+      "expectedFpIce": 348.79790968289046,
+      "expectedFpNormalAndBlood": 498.28272811841487,
+      "initialT7Ids": [
+        13,
+        17
+      ],
+      "linearEquationMaximumResidual": 3.730349362740526e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 14,
+      "poolWeight": 13.0,
+      "targetIds": [
+        7,
+        10
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 19,
+      "worstNoTargetStartExpectedCasts": 77.57611296111779
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 273.0704604467715,
+      "bestNoTargetStartExpectedFpIce": 1230.4042940618187,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1757.7204200883123,
+      "bestNoTargetState": [
+        4,
+        8
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        13
+      ],
+      "classRequirement": 8,
+      "compressedStates": 24,
+      "equipmentType": 22,
+      "eventualHitProbability": 0.9999999999999929,
+      "expectedCasts": 273.0704604467715,
+      "expectedFpIce": 1230.4042940618187,
+      "expectedFpNormalAndBlood": 1757.7204200883123,
+      "fixedLowTierIds": [
+        5,
+        10
+      ],
+      "initialT7Ids": [
+        6,
+        13
+      ],
+      "linearEquationMaximumResidual": 1.7330581414398694e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        4,
+        7
+      ],
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 273.1735320025753
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 207.74124273784278,
+      "bestNoTargetStartExpectedFpIce": 936.0430882937063,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1337.2044118481517,
+      "bestNoTargetState": [
+        4,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        12
+      ],
+      "classRequirement": 16,
+      "compressedStates": 46,
+      "equipmentType": 22,
+      "eventualHitProbability": 0.999999999999984,
+      "expectedCasts": 207.74124273784278,
+      "expectedFpIce": 936.0430882937063,
+      "expectedFpNormalAndBlood": 1337.2044118481517,
+      "initialT7Ids": [
+        6,
+        12
+      ],
+      "linearEquationMaximumResidual": 1.4699352846037073e-13,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 29,
+      "poolWeight": 20.71999967098236,
+      "targetIds": [
+        4,
+        5
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 44,
+      "worstNoTargetStartExpectedCasts": 207.85689352866265
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 77.41065782983434,
+      "bestNoTargetStartExpectedFpIce": 348.79790968289046,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 498.28272811841487,
+      "bestNoTargetState": [
+        2,
+        2
+      ],
+      "bestNoTargetT7Ids": [
+        13,
+        17
+      ],
+      "classRequirement": 16,
+      "compressedStates": 21,
+      "equipmentType": 22,
+      "eventualHitProbability": 1.0000000000000062,
+      "expectedCasts": 77.41065782983434,
+      "expectedFpIce": 348.79790968289046,
+      "expectedFpNormalAndBlood": 498.28272811841487,
+      "initialT7Ids": [
+        13,
+        17
+      ],
+      "linearEquationMaximumResidual": 3.730349362740526e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 14,
+      "poolWeight": 13.0,
+      "targetIds": [
+        7,
+        10
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 19,
+      "worstNoTargetStartExpectedCasts": 77.57611296111779
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 238.03675349549576,
+      "bestNoTargetStartExpectedFpIce": 1072.5489793594236,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 1532.2128276563192,
+      "bestNoTargetState": [
+        4,
+        8
+      ],
+      "bestNoTargetT7Ids": [
+        6,
+        13
+      ],
+      "classRequirement": 16,
+      "compressedStates": 24,
+      "equipmentType": 22,
+      "eventualHitProbability": 1.0000000000000093,
+      "expectedCasts": 238.03675349549576,
+      "expectedFpIce": 1072.5489793594236,
+      "expectedFpNormalAndBlood": 1532.2128276563192,
+      "fixedLowTierIds": [
+        5,
+        10
+      ],
+      "initialT7Ids": [
+        6,
+        13
+      ],
+      "linearEquationMaximumResidual": 1.1790568521519162e-13,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        4,
+        7
+      ],
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 238.14528926309
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 97.43000529123296,
+      "bestNoTargetStartExpectedFpIce": 439.00133571630363,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 627.1447653090052,
+      "bestNoTargetState": [
+        2,
+        2
+      ],
+      "bestNoTargetT7Ids": [
+        12,
+        16
+      ],
+      "classRequirement": 16,
+      "compressedStates": 22,
+      "equipmentType": 23,
+      "eventualHitProbability": 0.9999999999999941,
+      "expectedCasts": 97.43000529123296,
+      "expectedFpIce": 439.00133571630363,
+      "expectedFpNormalAndBlood": 627.1447653090052,
+      "initialT7Ids": [
+        12,
+        16
+      ],
+      "linearEquationMaximumResidual": 4.04121180963557e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_PREFIX_T7",
+      "poolCount": 15,
+      "poolWeight": 14.49999988079071,
+      "targetIds": [
+        5,
+        6
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 20,
+      "worstNoTargetStartExpectedCasts": 97.48036121338686
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 58.553114609714925,
+      "bestNoTargetStartExpectedFpIce": 263.82935572238614,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 376.8990796034087,
+      "bestNoTargetState": [
+        4,
+        4
+      ],
+      "bestNoTargetT7Ids": [
+        55,
+        56
+      ],
+      "classRequirement": 16,
+      "compressedStates": 45,
+      "equipmentType": 23,
+      "eventualHitProbability": 1.0000000000000024,
+      "expectedCasts": 58.553114609714925,
+      "expectedFpIce": 263.82935572238614,
+      "expectedFpNormalAndBlood": 376.8990796034087,
+      "initialT7Ids": [
+        55,
+        56
+      ],
+      "linearEquationMaximumResidual": 3.0531133177191805e-14,
+      "mode": "BOTH",
+      "pattern": "TWO_SUFFIX_T7",
+      "poolCount": 17,
+      "poolWeight": 11.139999747276306,
+      "targetIds": [
+        20,
+        54
+      ],
+      "targetWeights": [
+        1.0,
+        1.0
+      ],
+      "transientStates": 43,
+      "worstNoTargetStartExpectedCasts": 58.80441987306355
+    },
+    {
+      "allStatesCanReachAbsorbingSet": true,
+      "bestNoTargetStartExpectedCasts": 139.0874601582008,
+      "bestNoTargetStartExpectedFpIce": 626.7020165740731,
+      "bestNoTargetStartExpectedFpNormalAndBlood": 895.2885951058187,
+      "bestNoTargetState": [
+        2,
+        8
+      ],
+      "bestNoTargetT7Ids": [
+        12,
+        55
+      ],
+      "classRequirement": 16,
+      "compressedStates": 24,
+      "equipmentType": 23,
+      "eventualHitProbability": 1.000000000000001,
+      "expectedCasts": 139.0874601582008,
+      "expectedFpIce": 626.7020165740731,
+      "expectedFpNormalAndBlood": 895.2885951058187,
+      "fixedLowTierIds": [
+        6,
+        54
+      ],
+      "initialT7Ids": [
+        12,
+        55
+      ],
+      "linearEquationMaximumResidual": 8.026912468039882e-14,
+      "mode": "BOTH",
+      "pattern": "ONE_PREFIX_ONE_SUFFIX_T7",
+      "targetIds": [
+        5,
+        20
+      ],
+      "transientStates": 23,
+      "worstNoTargetStartExpectedCasts": 139.18529053611746
+    }
+  ],
+  "scanMinimumIce": {
+    "allStatesCanReachAbsorbingSet": true,
+    "bestNoTargetStartExpectedCasts": 15.540879894288489,
+    "bestNoTargetStartExpectedFpIce": 70.02429088868375,
+    "bestNoTargetStartExpectedFpNormalAndBlood": 100.03470126954821,
+    "bestNoTargetState": [
+      1,
+      1
+    ],
+    "bestNoTargetT7Ids": [
+      502,
+      504
+    ],
+    "classRequirement": 0,
+    "compressedStates": 14,
+    "equipmentType": 3,
+    "eventualHitProbability": 1.0,
+    "expectedCasts": 15.540879894288489,
+    "expectedFpIce": 70.02429088868375,
+    "expectedFpNormalAndBlood": 100.03470126954821,
+    "initialT7Ids": [
+      502,
+      504
+    ],
+    "linearEquationMaximumResidual": 3.3306690738754696e-15,
+    "mode": "BOTH",
+    "pattern": "TWO_PREFIX_T7",
+    "poolCount": 7,
+    "poolWeight": 6.200000047683716,
+    "targetIds": [
+      28,
+      501
+    ],
+    "targetWeights": [
+      1.0,
+      1.0
+    ],
+    "transientStates": 12,
+    "worstNoTargetStartExpectedCasts": 15.907493653505517
+  },
+  "scanMinimumNormal": {
+    "allStatesCanReachAbsorbingSet": true,
+    "bestNoTargetStartExpectedCasts": 15.540879894288489,
+    "bestNoTargetStartExpectedFpIce": 70.02429088868375,
+    "bestNoTargetStartExpectedFpNormalAndBlood": 100.03470126954821,
+    "bestNoTargetState": [
+      1,
+      1
+    ],
+    "bestNoTargetT7Ids": [
+      502,
+      504
+    ],
+    "classRequirement": 0,
+    "compressedStates": 14,
+    "equipmentType": 3,
+    "eventualHitProbability": 1.0,
+    "expectedCasts": 15.540879894288489,
+    "expectedFpIce": 70.02429088868375,
+    "expectedFpNormalAndBlood": 100.03470126954821,
+    "initialT7Ids": [
+      502,
+      504
+    ],
+    "linearEquationMaximumResidual": 3.3306690738754696e-15,
+    "mode": "BOTH",
+    "pattern": "TWO_PREFIX_T7",
+    "poolCount": 7,
+    "poolWeight": 6.200000047683716,
+    "targetIds": [
+      28,
+      501
+    ],
+    "targetWeights": [
+      1.0,
+      1.0
+    ],
+    "transientStates": 12,
+    "worstNoTargetStartExpectedCasts": 15.907493653505517
+  },
+  "schemaVersion": 1,
+  "sideMismatchImpossibleExample": {
+    "baseId": "4:0",
+    "eventualHitProbability": 0,
+    "expectedCasts": null,
+    "expectedFpDemand": null,
+    "initialIds": [
+      2,
+      26,
+      7,
+      10
+    ],
+    "initialTiers": [
+      3,
+      2,
+      7,
+      7
+    ],
+    "nonterminationProbability": 1,
+    "reason": "PURE_REDEMPTION_PRESERVES_TIER_AND_SIDE; BOTH_T7_SUFFIXES_CANNOT_BECOME_TARGET_PREFIXES",
+    "targetT7Ids": [
+      4,
+      5
+    ]
+  },
+  "steamBuildId": 26087601
+}

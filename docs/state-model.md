@@ -1,5 +1,7 @@
 # 状态、目标与异步规划接口
 
+**最新指标契约**：[操作成功率＋成功路径FP期望](metric-revision-2026-11-03.md)覆盖下文旧主评分语义。迁移时放弃记录需携带已算阶段、阈值原因及上下界口径；当前线上尚使用旧报告。
+
 ## 模块外部接口
 
 界面只使用异步规划接口 `plan(request, {signal, onProgress}) -> Promise<PlanReport>`。浏览器 Adapter 将主线程的回调和取消信号转换为 Worker 数据消息；函数和 AbortSignal 不直接通过 Worker 传递。未来 Node.js Adapter 使用同一请求／报告契约，生产核心不依赖 React、DOM、网络或存储。

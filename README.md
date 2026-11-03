@@ -2,6 +2,8 @@
 
 《最后纪元》自动装备打造路线规划器。
 
+**最新指标方案**：[操作成功率、成功路径FP期望与15%／100FP放弃门槛](docs/metric-revision-2026-11-03.md)。本轮已完成新口径研究，线上产品仍待从旧有限FP评分切换。
+
 **[打开公开预览版](https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/)**，无需登录。
 
 已实现中文React网页、Worker规划接口、有限固定路线搜索、三类潜能与成功率／消耗分布，已通过实际Pages发布及计算验证。规则基于本机1.5.3／Steam build 26087601的资源及原生实现。[关键机制调查答复](docs/research/key-mechanisms-status.md)、[实施状态与边界](docs/implementation-status.md)、[浏览器和性能验收](docs/product-validation.md)。

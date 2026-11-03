@@ -521,7 +521,7 @@
     "src/core/levels.ts": "d53a6f58306ba7d887752042208d9cc8ab71819b11d033f9cd0cbc234e82aa9a",
     "src/core/rules.ts": "380a9af9251160a4fa27928142ba10e6716021084c13205d71216c6aa90ff449",
     "src/core/catalog.ts": "8280dd7c469bcc48d1691033cecb7cbb68d9d37d7506907b33177636bae3e94d",
-    "research/strategy-classification-coverage.json": "28ef356dc3ddc707e90838fdf22517a8465d83abd19b1db0003e1acd1085e24b",
+    "research/strategy-classification-coverage.json": "3c69361a7b5f4de255493436e8dabd29e8116229046e6128e746c7f3169bba47",
     "scripts/analyze_precomputation.py": "e0fa5fd398e503639c294b3a2d704e4de02b6994191d8825b24465134b0fac65"
   }
 }

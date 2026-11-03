@@ -264,7 +264,7 @@ def build():
             'scopeExclusions': ['Actual affix-ID permutations/weights, base/class compatibility, shard availability, levels, special affixes, roll objectives, protections, corrupted/primordial slots, sealed identities and native list order are not enumerated.',
                                 'The occupied seal flag alone is insufficient: the sealed ID affects duplicate-ID exclusion and whether a missing target is trapped outside ordinary slots.',
                                 'Counts are labelled structural representatives, not a loot/target distribution and not a complete count of concrete game states.',
-                                'Template sequence witnesses prove structural possibility only, not policy conformance, optimality,15% threshold or100FP acceptance.'],
+                                'Template sequence witnesses prove structural possibility only, not policy conformance, optimality, the15% threshold or the versioned FP cutoff.'],
             'aggregate': {category: plain(stats) for category, stats in aggregate.items()},
             'havocClassEdgesWith220Terminal': [list(edge) for edge in sorted(havoc_edges)],
             'cases': cases, 'witnesses': witnesses(),

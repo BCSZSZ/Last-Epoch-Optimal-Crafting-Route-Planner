@@ -18,6 +18,7 @@ jobs:
       - run: python -X utf8 -m unittest discover -s tests -v
       - run: python -X utf8 scripts/check_browser_memory.py
       - run: python -X utf8 scripts/research_redemption_intrinsic.py --verify-only
+      - run: python -X utf8 scripts/check_strategy_classification.py --verify-only
       - uses: actions/setup-node@v6
         with:
           node-version: '22'

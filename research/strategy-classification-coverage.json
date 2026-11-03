@@ -1,0 +1,3532 @@
+{
+  "abstractStateCount": 8580,
+  "aggregate": {
+    "200": {
+      "allMissingTargetsFitTogether": {
+        "false": 1166,
+        "true": 10
+      },
+      "count": 1176,
+      "directMissingTargetAdds": {
+        "A": 74,
+        "A+B": 90,
+        "B": 74,
+        "NONE": 938
+      },
+      "emptySides": {
+        "P0_S0": 864,
+        "P0_S1": 144,
+        "P0_S2": 4,
+        "P1_S0": 144,
+        "P1_S1": 16,
+        "P2_S0": 4
+      },
+      "garbageTierMultisets": {
+        "1,1,7,7": 24,
+        "1,2,7,7": 48,
+        "1,3,7,7": 48,
+        "1,4,7,7": 48,
+        "1,5,7,7": 48,
+        "1,6,7,7": 48,
+        "1,7,7": 48,
+        "2,2,7,7": 24,
+        "2,3,7,7": 48,
+        "2,4,7,7": 48,
+        "2,5,7,7": 48,
+        "2,6,7,7": 48,
+        "2,7,7": 48,
+        "3,3,7,7": 24,
+        "3,4,7,7": 48,
+        "3,5,7,7": 48,
+        "3,6,7,7": 48,
+        "3,7,7": 48,
+        "4,4,7,7": 24,
+        "4,5,7,7": 48,
+        "4,6,7,7": 48,
+        "4,7,7": 48,
+        "5,5,7,7": 24,
+        "5,6,7,7": 48,
+        "5,7,7": 48,
+        "6,6,7,7": 24,
+        "6,7,7": 48,
+        "7,7": 24
+      },
+      "garbageTierPresence": {
+        "1": 312,
+        "2": 312,
+        "3": 312,
+        "4": 312,
+        "5": 312,
+        "6": 312,
+        "7": 1176
+      },
+      "leafCounters": {
+        "n2|P0_S2|add=A+B|fit=1": 1,
+        "n2|P0_S2|add=A|fit=0": 1,
+        "n2|P0_S2|add=B|fit=0": 1,
+        "n2|P0_S2|add=NONE|fit=0": 1,
+        "n2|P1_S1|add=A+B|fit=0": 8,
+        "n2|P1_S1|add=A+B|fit=1": 8,
+        "n2|P2_S0|add=A+B|fit=1": 1,
+        "n2|P2_S0|add=A|fit=0": 1,
+        "n2|P2_S0|add=B|fit=0": 1,
+        "n2|P2_S0|add=NONE|fit=0": 1,
+        "n3|P0_S1|add=A+B|fit=0": 36,
+        "n3|P0_S1|add=A|fit=0": 36,
+        "n3|P0_S1|add=B|fit=0": 36,
+        "n3|P0_S1|add=NONE|fit=0": 36,
+        "n3|P1_S0|add=A+B|fit=0": 36,
+        "n3|P1_S0|add=A|fit=0": 36,
+        "n3|P1_S0|add=B|fit=0": 36,
+        "n3|P1_S0|add=NONE|fit=0": 36,
+        "n4|P0_S0|add=NONE|fit=0": 864
+      },
+      "ordinaryCounts": {
+        "2": 24,
+        "3": 288,
+        "4": 864
+      },
+      "targetPositions": {
+        "A=ABSENT|B=ABSENT": 1176
+      },
+      "targetTierDomains": {
+        "A": [],
+        "B": []
+      },
+      "targetTierPairs": {
+        "A0_B0": 1176
+      }
+    },
+    "201": {
+      "allMissingTargetsFitTogether": {
+        "false": 1872,
+        "true": 144
+      },
+      "count": 2016,
+      "directMissingTargetAdds": {
+        "A": 72,
+        "B": 72,
+        "NONE": 1872
+      },
+      "emptySides": {
+        "P0_S0": 1728,
+        "P0_S1": 144,
+        "P1_S0": 144
+      },
+      "garbageTierMultisets": {
+        "1,7,7": 288,
+        "2,7,7": 288,
+        "3,7,7": 288,
+        "4,7,7": 288,
+        "5,7,7": 288,
+        "6,7,7": 288,
+        "7,7": 288
+      },
+      "garbageTierPresence": {
+        "1": 288,
+        "2": 288,
+        "3": 288,
+        "4": 288,
+        "5": 288,
+        "6": 288,
+        "7": 2016
+      },
+      "leafCounters": {
+        "n3|P0_S1|add=A|fit=1": 36,
+        "n3|P0_S1|add=B|fit=1": 36,
+        "n3|P0_S1|add=NONE|fit=0": 72,
+        "n3|P1_S0|add=A|fit=1": 36,
+        "n3|P1_S0|add=B|fit=1": 36,
+        "n3|P1_S0|add=NONE|fit=0": 72,
+        "n4|P0_S0|add=NONE|fit=0": 1728
+      },
+      "ordinaryCounts": {
+        "3": 288,
+        "4": 1728
+      },
+      "targetPositions": {
+        "A=ABSENT|B=P0": 252,
+        "A=ABSENT|B=P1": 252,
+        "A=ABSENT|B=S0": 252,
+        "A=ABSENT|B=S1": 252,
+        "A=P0|B=ABSENT": 252,
+        "A=P1|B=ABSENT": 252,
+        "A=S0|B=ABSENT": 252,
+        "A=S1|B=ABSENT": 252
+      },
+      "targetTierDomains": {
+        "A": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "B": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "targetTierPairs": {
+        "A0_B1": 168,
+        "A0_B2": 168,
+        "A0_B3": 168,
+        "A0_B4": 168,
+        "A0_B5": 168,
+        "A0_B6": 168,
+        "A1_B0": 168,
+        "A2_B0": 168,
+        "A3_B0": 168,
+        "A4_B0": 168,
+        "A5_B0": 168,
+        "A6_B0": 168
+      }
+    },
+    "202": {
+      "allMissingTargetsFitTogether": {
+        "true": 432
+      },
+      "count": 432,
+      "directMissingTargetAdds": {
+        "ALREADY_PRESENT": 432
+      },
+      "emptySides": {
+        "P0_S0": 432
+      },
+      "garbageTierMultisets": {
+        "7,7": 432
+      },
+      "garbageTierPresence": {
+        "7": 432
+      },
+      "leafCounters": {
+        "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 432
+      },
+      "ordinaryCounts": {
+        "4": 432
+      },
+      "targetPositions": {
+        "A=P0|B=P1": 36,
+        "A=P0|B=S0": 36,
+        "A=P0|B=S1": 36,
+        "A=P1|B=P0": 36,
+        "A=P1|B=S0": 36,
+        "A=P1|B=S1": 36,
+        "A=S0|B=P0": 36,
+        "A=S0|B=P1": 36,
+        "A=S0|B=S1": 36,
+        "A=S1|B=P0": 36,
+        "A=S1|B=P1": 36,
+        "A=S1|B=S0": 36
+      },
+      "targetTierDomains": {
+        "A": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "B": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "targetTierPairs": {
+        "A1_B1": 12,
+        "A1_B2": 12,
+        "A1_B3": 12,
+        "A1_B4": 12,
+        "A1_B5": 12,
+        "A1_B6": 12,
+        "A2_B1": 12,
+        "A2_B2": 12,
+        "A2_B3": 12,
+        "A2_B4": 12,
+        "A2_B5": 12,
+        "A2_B6": 12,
+        "A3_B1": 12,
+        "A3_B2": 12,
+        "A3_B3": 12,
+        "A3_B4": 12,
+        "A3_B5": 12,
+        "A3_B6": 12,
+        "A4_B1": 12,
+        "A4_B2": 12,
+        "A4_B3": 12,
+        "A4_B4": 12,
+        "A4_B5": 12,
+        "A4_B6": 12,
+        "A5_B1": 12,
+        "A5_B2": 12,
+        "A5_B3": 12,
+        "A5_B4": 12,
+        "A5_B5": 12,
+        "A5_B6": 12,
+        "A6_B1": 12,
+        "A6_B2": 12,
+        "A6_B3": 12,
+        "A6_B4": 12,
+        "A6_B5": 12,
+        "A6_B6": 12
+      }
+    },
+    "210": {
+      "allMissingTargetsFitTogether": {
+        "false": 2024,
+        "true": 328
+      },
+      "count": 2352,
+      "directMissingTargetAdds": {
+        "A": 164,
+        "B": 164,
+        "NONE": 2024
+      },
+      "emptySides": {
+        "P0_S0": 1728,
+        "P0_S1": 288,
+        "P0_S2": 8,
+        "P1_S0": 288,
+        "P1_S1": 32,
+        "P2_S0": 8
+      },
+      "garbageTierMultisets": {
+        "1,1,7": 48,
+        "1,2,7": 96,
+        "1,3,7": 96,
+        "1,4,7": 96,
+        "1,5,7": 96,
+        "1,6,7": 96,
+        "1,7": 96,
+        "2,2,7": 48,
+        "2,3,7": 96,
+        "2,4,7": 96,
+        "2,5,7": 96,
+        "2,6,7": 96,
+        "2,7": 96,
+        "3,3,7": 48,
+        "3,4,7": 96,
+        "3,5,7": 96,
+        "3,6,7": 96,
+        "3,7": 96,
+        "4,4,7": 48,
+        "4,5,7": 96,
+        "4,6,7": 96,
+        "4,7": 96,
+        "5,5,7": 48,
+        "5,6,7": 96,
+        "5,7": 96,
+        "6,6,7": 48,
+        "6,7": 96,
+        "7": 48
+      },
+      "garbageTierPresence": {
+        "1": 624,
+        "2": 624,
+        "3": 624,
+        "4": 624,
+        "5": 624,
+        "6": 624,
+        "7": 2352
+      },
+      "leafCounters": {
+        "n2|P0_S2|add=A|fit=1": 2,
+        "n2|P0_S2|add=B|fit=1": 2,
+        "n2|P0_S2|add=NONE|fit=0": 4,
+        "n2|P1_S1|add=A|fit=1": 16,
+        "n2|P1_S1|add=B|fit=1": 16,
+        "n2|P2_S0|add=A|fit=1": 2,
+        "n2|P2_S0|add=B|fit=1": 2,
+        "n2|P2_S0|add=NONE|fit=0": 4,
+        "n3|P0_S1|add=A|fit=1": 72,
+        "n3|P0_S1|add=B|fit=1": 72,
+        "n3|P0_S1|add=NONE|fit=0": 144,
+        "n3|P1_S0|add=A|fit=1": 72,
+        "n3|P1_S0|add=B|fit=1": 72,
+        "n3|P1_S0|add=NONE|fit=0": 144,
+        "n4|P0_S0|add=NONE|fit=0": 1728
+      },
+      "ordinaryCounts": {
+        "2": 48,
+        "3": 576,
+        "4": 1728
+      },
+      "targetPositions": {
+        "A=ABSENT|B=P0": 294,
+        "A=ABSENT|B=P1": 294,
+        "A=ABSENT|B=S0": 294,
+        "A=ABSENT|B=S1": 294,
+        "A=P0|B=ABSENT": 294,
+        "A=P1|B=ABSENT": 294,
+        "A=S0|B=ABSENT": 294,
+        "A=S1|B=ABSENT": 294
+      },
+      "targetTierDomains": {
+        "A": [
+          7
+        ],
+        "B": [
+          7
+        ]
+      },
+      "targetTierPairs": {
+        "A0_B7": 1176,
+        "A7_B0": 1176
+      }
+    },
+    "211": {
+      "allMissingTargetsFitTogether": {
+        "true": 2016
+      },
+      "count": 2016,
+      "directMissingTargetAdds": {
+        "ALREADY_PRESENT": 2016
+      },
+      "emptySides": {
+        "P0_S0": 1728,
+        "P0_S1": 144,
+        "P1_S0": 144
+      },
+      "garbageTierMultisets": {
+        "1,7": 288,
+        "2,7": 288,
+        "3,7": 288,
+        "4,7": 288,
+        "5,7": 288,
+        "6,7": 288,
+        "7": 288
+      },
+      "garbageTierPresence": {
+        "1": 288,
+        "2": 288,
+        "3": 288,
+        "4": 288,
+        "5": 288,
+        "6": 288,
+        "7": 2016
+      },
+      "leafCounters": {
+        "n3|P0_S1|add=ALREADY_PRESENT|fit=1": 144,
+        "n3|P1_S0|add=ALREADY_PRESENT|fit=1": 144,
+        "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 1728
+      },
+      "ordinaryCounts": {
+        "3": 288,
+        "4": 1728
+      },
+      "targetPositions": {
+        "A=P0|B=P1": 168,
+        "A=P0|B=S0": 168,
+        "A=P0|B=S1": 168,
+        "A=P1|B=P0": 168,
+        "A=P1|B=S0": 168,
+        "A=P1|B=S1": 168,
+        "A=S0|B=P0": 168,
+        "A=S0|B=P1": 168,
+        "A=S0|B=S1": 168,
+        "A=S1|B=P0": 168,
+        "A=S1|B=P1": 168,
+        "A=S1|B=S0": 168
+      },
+      "targetTierDomains": {
+        "A": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "B": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "targetTierPairs": {
+        "A1_B7": 168,
+        "A2_B7": 168,
+        "A3_B7": 168,
+        "A4_B7": 168,
+        "A5_B7": 168,
+        "A6_B7": 168,
+        "A7_B1": 168,
+        "A7_B2": 168,
+        "A7_B3": 168,
+        "A7_B4": 168,
+        "A7_B5": 168,
+        "A7_B6": 168
+      }
+    },
+    "220": {
+      "allMissingTargetsFitTogether": {
+        "true": 588
+      },
+      "count": 588,
+      "directMissingTargetAdds": {
+        "ALREADY_PRESENT": 588
+      },
+      "emptySides": {
+        "P0_S0": 432,
+        "P0_S1": 72,
+        "P0_S2": 2,
+        "P1_S0": 72,
+        "P1_S1": 8,
+        "P2_S0": 2
+      },
+      "garbageTierMultisets": {
+        "1": 24,
+        "1,1": 12,
+        "1,2": 24,
+        "1,3": 24,
+        "1,4": 24,
+        "1,5": 24,
+        "1,6": 24,
+        "2": 24,
+        "2,2": 12,
+        "2,3": 24,
+        "2,4": 24,
+        "2,5": 24,
+        "2,6": 24,
+        "3": 24,
+        "3,3": 12,
+        "3,4": 24,
+        "3,5": 24,
+        "3,6": 24,
+        "4": 24,
+        "4,4": 12,
+        "4,5": 24,
+        "4,6": 24,
+        "5": 24,
+        "5,5": 12,
+        "5,6": 24,
+        "6": 24,
+        "6,6": 12,
+        "NONE": 12
+      },
+      "garbageTierPresence": {
+        "1": 156,
+        "2": 156,
+        "3": 156,
+        "4": 156,
+        "5": 156,
+        "6": 156
+      },
+      "leafCounters": {
+        "n2|P0_S2|add=ALREADY_PRESENT|fit=1": 2,
+        "n2|P1_S1|add=ALREADY_PRESENT|fit=1": 8,
+        "n2|P2_S0|add=ALREADY_PRESENT|fit=1": 2,
+        "n3|P0_S1|add=ALREADY_PRESENT|fit=1": 72,
+        "n3|P1_S0|add=ALREADY_PRESENT|fit=1": 72,
+        "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 432
+      },
+      "ordinaryCounts": {
+        "2": 12,
+        "3": 144,
+        "4": 432
+      },
+      "targetPositions": {
+        "A=P0|B=P1": 49,
+        "A=P0|B=S0": 49,
+        "A=P0|B=S1": 49,
+        "A=P1|B=P0": 49,
+        "A=P1|B=S0": 49,
+        "A=P1|B=S1": 49,
+        "A=S0|B=P0": 49,
+        "A=S0|B=P1": 49,
+        "A=S0|B=S1": 49,
+        "A=S1|B=P0": 49,
+        "A=S1|B=P1": 49,
+        "A=S1|B=S0": 49
+      },
+      "targetTierDomains": {
+        "A": [
+          7
+        ],
+        "B": [
+          7
+        ]
+      },
+      "targetTierPairs": {
+        "A7_B7": 588
+      }
+    }
+  },
+  "allowedOrdinaryCounts": {
+    "200": [
+      2,
+      3,
+      4
+    ],
+    "201": [
+      3,
+      4
+    ],
+    "202": [
+      4
+    ],
+    "210": [
+      2,
+      3,
+      4
+    ],
+    "211": [
+      3,
+      4
+    ],
+    "220": [
+      2,
+      3,
+      4
+    ]
+  },
+  "auditedOn": "2026-11-03",
+  "cases": {
+    "A0_B0": {
+      "categories": {
+        "200": {
+          "allMissingTargetsFitTogether": {
+            "false": 293,
+            "true": 1
+          },
+          "count": 294,
+          "directMissingTargetAdds": {
+            "A+B": 41,
+            "NONE": 253
+          },
+          "emptySides": {
+            "P0_S0": 216,
+            "P0_S1": 36,
+            "P0_S2": 1,
+            "P1_S0": 36,
+            "P1_S1": 4,
+            "P2_S0": 1
+          },
+          "garbageTierMultisets": {
+            "1,1,7,7": 6,
+            "1,2,7,7": 12,
+            "1,3,7,7": 12,
+            "1,4,7,7": 12,
+            "1,5,7,7": 12,
+            "1,6,7,7": 12,
+            "1,7,7": 12,
+            "2,2,7,7": 6,
+            "2,3,7,7": 12,
+            "2,4,7,7": 12,
+            "2,5,7,7": 12,
+            "2,6,7,7": 12,
+            "2,7,7": 12,
+            "3,3,7,7": 6,
+            "3,4,7,7": 12,
+            "3,5,7,7": 12,
+            "3,6,7,7": 12,
+            "3,7,7": 12,
+            "4,4,7,7": 6,
+            "4,5,7,7": 12,
+            "4,6,7,7": 12,
+            "4,7,7": 12,
+            "5,5,7,7": 6,
+            "5,6,7,7": 12,
+            "5,7,7": 12,
+            "6,6,7,7": 6,
+            "6,7,7": 12,
+            "7,7": 6
+          },
+          "garbageTierPresence": {
+            "1": 78,
+            "2": 78,
+            "3": 78,
+            "4": 78,
+            "5": 78,
+            "6": 78,
+            "7": 294
+          },
+          "leafCounters": {
+            "n2|P0_S2|add=NONE|fit=0": 1,
+            "n2|P1_S1|add=A+B|fit=0": 4,
+            "n2|P2_S0|add=A+B|fit=1": 1,
+            "n3|P0_S1|add=NONE|fit=0": 36,
+            "n3|P1_S0|add=A+B|fit=0": 36,
+            "n4|P0_S0|add=NONE|fit=0": 216
+          },
+          "ordinaryCounts": {
+            "2": 6,
+            "3": 72,
+            "4": 216
+          },
+          "targetPositions": {
+            "A=ABSENT|B=ABSENT": 294
+          },
+          "targetTierDomains": {
+            "A": [],
+            "B": []
+          },
+          "targetTierPairs": {
+            "A0_B0": 294
+          }
+        },
+        "201": {
+          "allMissingTargetsFitTogether": {
+            "false": 480,
+            "true": 24
+          },
+          "count": 504,
+          "directMissingTargetAdds": {
+            "A": 12,
+            "B": 12,
+            "NONE": 480
+          },
+          "emptySides": {
+            "P0_S0": 432,
+            "P0_S1": 48,
+            "P1_S0": 24
+          },
+          "garbageTierMultisets": {
+            "1,7,7": 72,
+            "2,7,7": 72,
+            "3,7,7": 72,
+            "4,7,7": 72,
+            "5,7,7": 72,
+            "6,7,7": 72,
+            "7,7": 72
+          },
+          "garbageTierPresence": {
+            "1": 72,
+            "2": 72,
+            "3": 72,
+            "4": 72,
+            "5": 72,
+            "6": 72,
+            "7": 504
+          },
+          "leafCounters": {
+            "n3|P0_S1|add=NONE|fit=0": 48,
+            "n3|P1_S0|add=A|fit=1": 12,
+            "n3|P1_S0|add=B|fit=1": 12,
+            "n4|P0_S0|add=NONE|fit=0": 432
+          },
+          "ordinaryCounts": {
+            "3": 72,
+            "4": 432
+          },
+          "targetPositions": {
+            "A=ABSENT|B=P0": 126,
+            "A=ABSENT|B=P1": 126,
+            "A=P0|B=ABSENT": 126,
+            "A=P1|B=ABSENT": 126
+          },
+          "targetTierDomains": {
+            "A": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "B": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "targetTierPairs": {
+            "A0_B1": 42,
+            "A0_B2": 42,
+            "A0_B3": 42,
+            "A0_B4": 42,
+            "A0_B5": 42,
+            "A0_B6": 42,
+            "A1_B0": 42,
+            "A2_B0": 42,
+            "A3_B0": 42,
+            "A4_B0": 42,
+            "A5_B0": 42,
+            "A6_B0": 42
+          }
+        },
+        "202": {
+          "allMissingTargetsFitTogether": {
+            "true": 72
+          },
+          "count": 72,
+          "directMissingTargetAdds": {
+            "ALREADY_PRESENT": 72
+          },
+          "emptySides": {
+            "P0_S0": 72
+          },
+          "garbageTierMultisets": {
+            "7,7": 72
+          },
+          "garbageTierPresence": {
+            "7": 72
+          },
+          "leafCounters": {
+            "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 72
+          },
+          "ordinaryCounts": {
+            "4": 72
+          },
+          "targetPositions": {
+            "A=P0|B=P1": 36,
+            "A=P1|B=P0": 36
+          },
+          "targetTierDomains": {
+            "A": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "B": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "targetTierPairs": {
+            "A1_B1": 2,
+            "A1_B2": 2,
+            "A1_B3": 2,
+            "A1_B4": 2,
+            "A1_B5": 2,
+            "A1_B6": 2,
+            "A2_B1": 2,
+            "A2_B2": 2,
+            "A2_B3": 2,
+            "A2_B4": 2,
+            "A2_B5": 2,
+            "A2_B6": 2,
+            "A3_B1": 2,
+            "A3_B2": 2,
+            "A3_B3": 2,
+            "A3_B4": 2,
+            "A3_B5": 2,
+            "A3_B6": 2,
+            "A4_B1": 2,
+            "A4_B2": 2,
+            "A4_B3": 2,
+            "A4_B4": 2,
+            "A4_B5": 2,
+            "A4_B6": 2,
+            "A5_B1": 2,
+            "A5_B2": 2,
+            "A5_B3": 2,
+            "A5_B4": 2,
+            "A5_B5": 2,
+            "A5_B6": 2,
+            "A6_B1": 2,
+            "A6_B2": 2,
+            "A6_B3": 2,
+            "A6_B4": 2,
+            "A6_B5": 2,
+            "A6_B6": 2
+          }
+        },
+        "210": {
+          "allMissingTargetsFitTogether": {
+            "false": 532,
+            "true": 56
+          },
+          "count": 588,
+          "directMissingTargetAdds": {
+            "A": 28,
+            "B": 28,
+            "NONE": 532
+          },
+          "emptySides": {
+            "P0_S0": 432,
+            "P0_S1": 96,
+            "P0_S2": 4,
+            "P1_S0": 48,
+            "P1_S1": 8
+          },
+          "garbageTierMultisets": {
+            "1,1,7": 12,
+            "1,2,7": 24,
+            "1,3,7": 24,
+            "1,4,7": 24,
+            "1,5,7": 24,
+            "1,6,7": 24,
+            "1,7": 24,
+            "2,2,7": 12,
+            "2,3,7": 24,
+            "2,4,7": 24,
+            "2,5,7": 24,
+            "2,6,7": 24,
+            "2,7": 24,
+            "3,3,7": 12,
+            "3,4,7": 24,
+            "3,5,7": 24,
+            "3,6,7": 24,
+            "3,7": 24,
+            "4,4,7": 12,
+            "4,5,7": 24,
+            "4,6,7": 24,
+            "4,7": 24,
+            "5,5,7": 12,
+            "5,6,7": 24,
+            "5,7": 24,
+            "6,6,7": 12,
+            "6,7": 24,
+            "7": 12
+          },
+          "garbageTierPresence": {
+            "1": 156,
+            "2": 156,
+            "3": 156,
+            "4": 156,
+            "5": 156,
+            "6": 156,
+            "7": 588
+          },
+          "leafCounters": {
+            "n2|P0_S2|add=NONE|fit=0": 4,
+            "n2|P1_S1|add=A|fit=1": 4,
+            "n2|P1_S1|add=B|fit=1": 4,
+            "n3|P0_S1|add=NONE|fit=0": 96,
+            "n3|P1_S0|add=A|fit=1": 24,
+            "n3|P1_S0|add=B|fit=1": 24,
+            "n4|P0_S0|add=NONE|fit=0": 432
+          },
+          "ordinaryCounts": {
+            "2": 12,
+            "3": 144,
+            "4": 432
+          },
+          "targetPositions": {
+            "A=ABSENT|B=P0": 147,
+            "A=ABSENT|B=P1": 147,
+            "A=P0|B=ABSENT": 147,
+            "A=P1|B=ABSENT": 147
+          },
+          "targetTierDomains": {
+            "A": [
+              7
+            ],
+            "B": [
+              7
+            ]
+          },
+          "targetTierPairs": {
+            "A0_B7": 294,
+            "A7_B0": 294
+          }
+        },
+        "211": {
+          "allMissingTargetsFitTogether": {
+            "true": 336
+          },
+          "count": 336,
+          "directMissingTargetAdds": {
+            "ALREADY_PRESENT": 336
+          },
+          "emptySides": {
+            "P0_S0": 288,
+            "P0_S1": 48
+          },
+          "garbageTierMultisets": {
+            "1,7": 48,
+            "2,7": 48,
+            "3,7": 48,
+            "4,7": 48,
+            "5,7": 48,
+            "6,7": 48,
+            "7": 48
+          },
+          "garbageTierPresence": {
+            "1": 48,
+            "2": 48,
+            "3": 48,
+            "4": 48,
+            "5": 48,
+            "6": 48,
+            "7": 336
+          },
+          "leafCounters": {
+            "n3|P0_S1|add=ALREADY_PRESENT|fit=1": 48,
+            "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 288
+          },
+          "ordinaryCounts": {
+            "3": 48,
+            "4": 288
+          },
+          "targetPositions": {
+            "A=P0|B=P1": 168,
+            "A=P1|B=P0": 168
+          },
+          "targetTierDomains": {
+            "A": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "B": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          "targetTierPairs": {
+            "A1_B7": 28,
+            "A2_B7": 28,
+            "A3_B7": 28,
+            "A4_B7": 28,
+            "A5_B7": 28,
+            "A6_B7": 28,
+            "A7_B1": 28,
+            "A7_B2": 28,
+            "A7_B3": 28,
+            "A7_B4": 28,
+            "A7_B5": 28,
+            "A7_B6": 28
+          }
+        },
+        "220": {
+          "allMissingTargetsFitTogether": {
+            "true": 98
+          },
+          "count": 98,
+          "directMissingTargetAdds": {
+            "ALREADY_PRESENT": 98
+          },
+          "emptySides": {
+            "P0_S0": 72,
+            "P0_S1": 24,
+            "P0_S2": 2
+          },
+          "garbageTierMultisets": {
+            "1": 4,
+            "1,1": 2,
+            "1,2": 4,
+            "1,3": 4,
+            "1,4": 4,
+            "1,5": 4,
+            "1,6": 4,
+            "2": 4,
+            "2,2": 2,
+            "2,3": 4,
+            "2,4": 4,
+            "2,5": 4,
+            "2,6": 4,
+            "3": 4,
+            "3,3": 2,
+            "3,4": 4,
+            "3,5": 4,
+            "3,6": 4,
+            "4": 4,
+            "4,4": 2,
+            "4,5": 4,
+            "4,6": 4,
+            "5": 4,
+            "5,5": 2,
+            "5,6": 4,
+            "6": 4,
+            "6,6": 2,
+            "NONE": 2
+          },
+          "garbageTierPresence": {
+            "1": 26,
+            "2": 26,
+            "3": 26,
+            "4": 26,
+            "5": 26,
+            "6": 26
+          },
+          "leafCounters": {
+            "n2|P0_S2|add=ALREADY_PRESENT|fit=1": 2,
+            "n3|P0_S1|add=ALREADY_PRESENT|fit=1": 24,
+            "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 72
+          },
+          "ordinaryCounts": {
+            "2": 2,
+            "3": 24,
+            "4": 72
+          },
+          "targetPositions": {
+            "A=P0|B=P1": 49,
+            "A=P1|B=P0": 49
+          },
+          "targetTierDomains": {
+            "A": [
+              7
+            ],
+            "B": [
+              7
+            ]
+          },
+          "targetTierPairs": {
+            "A7_B7": 98
+          }
+        }
+      },
+      "enumeration": {
+        "acceptedStates": 1892,
+        "rawCandidates": 30976,
+        "rejectedDuplicateTargetId": 506,
+        "rejectedNotExactlyTwoT7": 28578
+      },
+      "independentCombinatorialCounts": {
+        "200": 294,
+        "201": 504,
+        "202": 72,
+        "210": 588,
+        "211": 336,
+        "220": 98
+      },
+      "targetSides": {
+        "A": 0,
+        "B": 0
+      }
+    },
+    "A0_B1": {
+      "categories": {
+        "200": {
+          "allMissingTargetsFitTogether": {
+            "false": 290,
+            "true": 4
+          },
+          "count": 294,
+          "directMissingTargetAdds": {
+            "A": 37,
+            "A+B": 4,
+            "B": 37,
+            "NONE": 216
+          },
+          "emptySides": {
+            "P0_S0": 216,
+            "P0_S1": 36,
+            "P0_S2": 1,
+            "P1_S0": 36,
+            "P1_S1": 4,
+            "P2_S0": 1
+          },
+          "garbageTierMultisets": {
+            "1,1,7,7": 6,
+            "1,2,7,7": 12,
+            "1,3,7,7": 12,
+            "1,4,7,7": 12,
+            "1,5,7,7": 12,
+            "1,6,7,7": 12,
+            "1,7,7": 12,
+            "2,2,7,7": 6,
+            "2,3,7,7": 12,
+            "2,4,7,7": 12,
+            "2,5,7,7": 12,
+            "2,6,7,7": 12,
+            "2,7,7": 12,
+            "3,3,7,7": 6,
+            "3,4,7,7": 12,
+            "3,5,7,7": 12,
+            "3,6,7,7": 12,
+            "3,7,7": 12,
+            "4,4,7,7": 6,
+            "4,5,7,7": 12,
+            "4,6,7,7": 12,
+            "4,7,7": 12,
+            "5,5,7,7": 6,
+            "5,6,7,7": 12,
+            "5,7,7": 12,
+            "6,6,7,7": 6,
+            "6,7,7": 12,
+            "7,7": 6
+          },
+          "garbageTierPresence": {
+            "1": 78,
+            "2": 78,
+            "3": 78,
+            "4": 78,
+            "5": 78,
+            "6": 78,
+            "7": 294
+          },
+          "leafCounters": {
+            "n2|P0_S2|add=B|fit=0": 1,
+            "n2|P1_S1|add=A+B|fit=1": 4,
+            "n2|P2_S0|add=A|fit=0": 1,
+            "n3|P0_S1|add=B|fit=0": 36,
+            "n3|P1_S0|add=A|fit=0": 36,
+            "n4|P0_S0|add=NONE|fit=0": 216
+          },
+          "ordinaryCounts": {
+            "2": 6,
+            "3": 72,
+            "4": 216
+          },
+          "targetPositions": {
+            "A=ABSENT|B=ABSENT": 294
+          },
+          "targetTierDomains": {
+            "A": [],
+            "B": []
+          },
+          "targetTierPairs": {
+            "A0_B0": 294
+          }
+        },
+        "201": {
+          "allMissingTargetsFitTogether": {
+            "false": 456,
+            "true": 48
+          },
+          "count": 504,
+          "directMissingTargetAdds": {
+            "A": 24,
+            "B": 24,
+            "NONE": 456
+          },
+          "emptySides": {
+            "P0_S0": 432,
+            "P0_S1": 36,
+            "P1_S0": 36
+          },
+          "garbageTierMultisets": {
+            "1,7,7": 72,
+            "2,7,7": 72,
+            "3,7,7": 72,
+            "4,7,7": 72,
+            "5,7,7": 72,
+            "6,7,7": 72,
+            "7,7": 72
+          },
+          "garbageTierPresence": {
+            "1": 72,
+            "2": 72,
+            "3": 72,
+            "4": 72,
+            "5": 72,
+            "6": 72,
+            "7": 504
+          },
+          "leafCounters": {
+            "n3|P0_S1|add=B|fit=1": 24,
+            "n3|P0_S1|add=NONE|fit=0": 12,
+            "n3|P1_S0|add=A|fit=1": 24,
+            "n3|P1_S0|add=NONE|fit=0": 12,
+            "n4|P0_S0|add=NONE|fit=0": 432
+          },
+          "ordinaryCounts": {
+            "3": 72,
+            "4": 432
+          },
+          "targetPositions": {
+            "A=ABSENT|B=S0": 126,
+            "A=ABSENT|B=S1": 126,
+            "A=P0|B=ABSENT": 126,
+            "A=P1|B=ABSENT": 126
+          },
+          "targetTierDomains": {
+            "A": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "B": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "targetTierPairs": {
+            "A0_B1": 42,
+            "A0_B2": 42,
+            "A0_B3": 42,
+            "A0_B4": 42,
+            "A0_B5": 42,
+            "A0_B6": 42,
+            "A1_B0": 42,
+            "A2_B0": 42,
+            "A3_B0": 42,
+            "A4_B0": 42,
+            "A5_B0": 42,
+            "A6_B0": 42
+          }
+        },
+        "202": {
+          "allMissingTargetsFitTogether": {
+            "true": 144
+          },
+          "count": 144,
+          "directMissingTargetAdds": {
+            "ALREADY_PRESENT": 144
+          },
+          "emptySides": {
+            "P0_S0": 144
+          },
+          "garbageTierMultisets": {
+            "7,7": 144
+          },
+          "garbageTierPresence": {
+            "7": 144
+          },
+          "leafCounters": {
+            "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 144
+          },
+          "ordinaryCounts": {
+            "4": 144
+          },
+          "targetPositions": {
+            "A=P0|B=S0": 36,
+            "A=P0|B=S1": 36,
+            "A=P1|B=S0": 36,
+            "A=P1|B=S1": 36
+          },
+          "targetTierDomains": {
+            "A": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "B": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "targetTierPairs": {
+            "A1_B1": 4,
+            "A1_B2": 4,
+            "A1_B3": 4,
+            "A1_B4": 4,
+            "A1_B5": 4,
+            "A1_B6": 4,
+            "A2_B1": 4,
+            "A2_B2": 4,
+            "A2_B3": 4,
+            "A2_B4": 4,
+            "A2_B5": 4,
+            "A2_B6": 4,
+            "A3_B1": 4,
+            "A3_B2": 4,
+            "A3_B3": 4,
+            "A3_B4": 4,
+            "A3_B5": 4,
+            "A3_B6": 4,
+            "A4_B1": 4,
+            "A4_B2": 4,
+            "A4_B3": 4,
+            "A4_B4": 4,
+            "A4_B5": 4,
+            "A4_B6": 4,
+            "A5_B1": 4,
+            "A5_B2": 4,
+            "A5_B3": 4,
+            "A5_B4": 4,
+            "A5_B5": 4,
+            "A5_B6": 4,
+            "A6_B1": 4,
+            "A6_B2": 4,
+            "A6_B3": 4,
+            "A6_B4": 4,
+            "A6_B5": 4,
+            "A6_B6": 4
+          }
+        },
+        "210": {
+          "allMissingTargetsFitTogether": {
+            "false": 480,
+            "true": 108
+          },
+          "count": 588,
+          "directMissingTargetAdds": {
+            "A": 54,
+            "B": 54,
+            "NONE": 480
+          },
+          "emptySides": {
+            "P0_S0": 432,
+            "P0_S1": 72,
+            "P0_S2": 2,
+            "P1_S0": 72,
+            "P1_S1": 8,
+            "P2_S0": 2
+          },
+          "garbageTierMultisets": {
+            "1,1,7": 12,
+            "1,2,7": 24,
+            "1,3,7": 24,
+            "1,4,7": 24,
+            "1,5,7": 24,
+            "1,6,7": 24,
+            "1,7": 24,
+            "2,2,7": 12,
+            "2,3,7": 24,
+            "2,4,7": 24,
+            "2,5,7": 24,
+            "2,6,7": 24,
+            "2,7": 24,
+            "3,3,7": 12,
+            "3,4,7": 24,
+            "3,5,7": 24,
+            "3,6,7": 24,
+            "3,7": 24,
+            "4,4,7": 12,
+            "4,5,7": 24,
+            "4,6,7": 24,
+            "4,7": 24,
+            "5,5,7": 12,
+            "5,6,7": 24,
+            "5,7": 24,
+            "6,6,7": 12,
+            "6,7": 24,
+            "7": 12
+          },
+          "garbageTierPresence": {
+            "1": 156,
+            "2": 156,
+            "3": 156,
+            "4": 156,
+            "5": 156,
+            "6": 156,
+            "7": 588
+          },
+          "leafCounters": {
+            "n2|P0_S2|add=B|fit=1": 2,
+            "n2|P1_S1|add=A|fit=1": 4,
+            "n2|P1_S1|add=B|fit=1": 4,
+            "n2|P2_S0|add=A|fit=1": 2,
+            "n3|P0_S1|add=B|fit=1": 48,
+            "n3|P0_S1|add=NONE|fit=0": 24,
+            "n3|P1_S0|add=A|fit=1": 48,
+            "n3|P1_S0|add=NONE|fit=0": 24,
+            "n4|P0_S0|add=NONE|fit=0": 432
+          },
+          "ordinaryCounts": {
+            "2": 12,
+            "3": 144,
+            "4": 432
+          },
+          "targetPositions": {
+            "A=ABSENT|B=S0": 147,
+            "A=ABSENT|B=S1": 147,
+            "A=P0|B=ABSENT": 147,
+            "A=P1|B=ABSENT": 147
+          },
+          "targetTierDomains": {
+            "A": [
+              7
+            ],
+            "B": [
+              7
+            ]
+          },
+          "targetTierPairs": {
+            "A0_B7": 294,
+            "A7_B0": 294
+          }
+        },
+        "211": {
+          "allMissingTargetsFitTogether": {
+            "true": 672
+          },
+          "count": 672,
+          "directMissingTargetAdds": {
+            "ALREADY_PRESENT": 672
+          },
+          "emptySides": {
+            "P0_S0": 576,
+            "P0_S1": 48,
+            "P1_S0": 48
+          },
+          "garbageTierMultisets": {
+            "1,7": 96,
+            "2,7": 96,
+            "3,7": 96,
+            "4,7": 96,
+            "5,7": 96,
+            "6,7": 96,
+            "7": 96
+          },
+          "garbageTierPresence": {
+            "1": 96,
+            "2": 96,
+            "3": 96,
+            "4": 96,
+            "5": 96,
+            "6": 96,
+            "7": 672
+          },
+          "leafCounters": {
+            "n3|P0_S1|add=ALREADY_PRESENT|fit=1": 48,
+            "n3|P1_S0|add=ALREADY_PRESENT|fit=1": 48,
+            "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 576
+          },
+          "ordinaryCounts": {
+            "3": 96,
+            "4": 576
+          },
+          "targetPositions": {
+            "A=P0|B=S0": 168,
+            "A=P0|B=S1": 168,
+            "A=P1|B=S0": 168,
+            "A=P1|B=S1": 168
+          },
+          "targetTierDomains": {
+            "A": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "B": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          "targetTierPairs": {
+            "A1_B7": 56,
+            "A2_B7": 56,
+            "A3_B7": 56,
+            "A4_B7": 56,
+            "A5_B7": 56,
+            "A6_B7": 56,
+            "A7_B1": 56,
+            "A7_B2": 56,
+            "A7_B3": 56,
+            "A7_B4": 56,
+            "A7_B5": 56,
+            "A7_B6": 56
+          }
+        },
+        "220": {
+          "allMissingTargetsFitTogether": {
+            "true": 196
+          },
+          "count": 196,
+          "directMissingTargetAdds": {
+            "ALREADY_PRESENT": 196
+          },
+          "emptySides": {
+            "P0_S0": 144,
+            "P0_S1": 24,
+            "P1_S0": 24,
+            "P1_S1": 4
+          },
+          "garbageTierMultisets": {
+            "1": 8,
+            "1,1": 4,
+            "1,2": 8,
+            "1,3": 8,
+            "1,4": 8,
+            "1,5": 8,
+            "1,6": 8,
+            "2": 8,
+            "2,2": 4,
+            "2,3": 8,
+            "2,4": 8,
+            "2,5": 8,
+            "2,6": 8,
+            "3": 8,
+            "3,3": 4,
+            "3,4": 8,
+            "3,5": 8,
+            "3,6": 8,
+            "4": 8,
+            "4,4": 4,
+            "4,5": 8,
+            "4,6": 8,
+            "5": 8,
+            "5,5": 4,
+            "5,6": 8,
+            "6": 8,
+            "6,6": 4,
+            "NONE": 4
+          },
+          "garbageTierPresence": {
+            "1": 52,
+            "2": 52,
+            "3": 52,
+            "4": 52,
+            "5": 52,
+            "6": 52
+          },
+          "leafCounters": {
+            "n2|P1_S1|add=ALREADY_PRESENT|fit=1": 4,
+            "n3|P0_S1|add=ALREADY_PRESENT|fit=1": 24,
+            "n3|P1_S0|add=ALREADY_PRESENT|fit=1": 24,
+            "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 144
+          },
+          "ordinaryCounts": {
+            "2": 4,
+            "3": 48,
+            "4": 144
+          },
+          "targetPositions": {
+            "A=P0|B=S0": 49,
+            "A=P0|B=S1": 49,
+            "A=P1|B=S0": 49,
+            "A=P1|B=S1": 49
+          },
+          "targetTierDomains": {
+            "A": [
+              7
+            ],
+            "B": [
+              7
+            ]
+          },
+          "targetTierPairs": {
+            "A7_B7": 196
+          }
+        }
+      },
+      "enumeration": {
+        "acceptedStates": 2398,
+        "rawCandidates": 50625,
+        "rejectedDuplicateTargetId": 1658,
+        "rejectedNotExactlyTwoT7": 46569
+      },
+      "independentCombinatorialCounts": {
+        "200": 294,
+        "201": 504,
+        "202": 144,
+        "210": 588,
+        "211": 672,
+        "220": 196
+      },
+      "targetSides": {
+        "A": 0,
+        "B": 1
+      }
+    },
+    "A1_B0": {
+      "categories": {
+        "200": {
+          "allMissingTargetsFitTogether": {
+            "false": 290,
+            "true": 4
+          },
+          "count": 294,
+          "directMissingTargetAdds": {
+            "A": 37,
+            "A+B": 4,
+            "B": 37,
+            "NONE": 216
+          },
+          "emptySides": {
+            "P0_S0": 216,
+            "P0_S1": 36,
+            "P0_S2": 1,
+            "P1_S0": 36,
+            "P1_S1": 4,
+            "P2_S0": 1
+          },
+          "garbageTierMultisets": {
+            "1,1,7,7": 6,
+            "1,2,7,7": 12,
+            "1,3,7,7": 12,
+            "1,4,7,7": 12,
+            "1,5,7,7": 12,
+            "1,6,7,7": 12,
+            "1,7,7": 12,
+            "2,2,7,7": 6,
+            "2,3,7,7": 12,
+            "2,4,7,7": 12,
+            "2,5,7,7": 12,
+            "2,6,7,7": 12,
+            "2,7,7": 12,
+            "3,3,7,7": 6,
+            "3,4,7,7": 12,
+            "3,5,7,7": 12,
+            "3,6,7,7": 12,
+            "3,7,7": 12,
+            "4,4,7,7": 6,
+            "4,5,7,7": 12,
+            "4,6,7,7": 12,
+            "4,7,7": 12,
+            "5,5,7,7": 6,
+            "5,6,7,7": 12,
+            "5,7,7": 12,
+            "6,6,7,7": 6,
+            "6,7,7": 12,
+            "7,7": 6
+          },
+          "garbageTierPresence": {
+            "1": 78,
+            "2": 78,
+            "3": 78,
+            "4": 78,
+            "5": 78,
+            "6": 78,
+            "7": 294
+          },
+          "leafCounters": {
+            "n2|P0_S2|add=A|fit=0": 1,
+            "n2|P1_S1|add=A+B|fit=1": 4,
+            "n2|P2_S0|add=B|fit=0": 1,
+            "n3|P0_S1|add=A|fit=0": 36,
+            "n3|P1_S0|add=B|fit=0": 36,
+            "n4|P0_S0|add=NONE|fit=0": 216
+          },
+          "ordinaryCounts": {
+            "2": 6,
+            "3": 72,
+            "4": 216
+          },
+          "targetPositions": {
+            "A=ABSENT|B=ABSENT": 294
+          },
+          "targetTierDomains": {
+            "A": [],
+            "B": []
+          },
+          "targetTierPairs": {
+            "A0_B0": 294
+          }
+        },
+        "201": {
+          "allMissingTargetsFitTogether": {
+            "false": 456,
+            "true": 48
+          },
+          "count": 504,
+          "directMissingTargetAdds": {
+            "A": 24,
+            "B": 24,
+            "NONE": 456
+          },
+          "emptySides": {
+            "P0_S0": 432,
+            "P0_S1": 36,
+            "P1_S0": 36
+          },
+          "garbageTierMultisets": {
+            "1,7,7": 72,
+            "2,7,7": 72,
+            "3,7,7": 72,
+            "4,7,7": 72,
+            "5,7,7": 72,
+            "6,7,7": 72,
+            "7,7": 72
+          },
+          "garbageTierPresence": {
+            "1": 72,
+            "2": 72,
+            "3": 72,
+            "4": 72,
+            "5": 72,
+            "6": 72,
+            "7": 504
+          },
+          "leafCounters": {
+            "n3|P0_S1|add=A|fit=1": 24,
+            "n3|P0_S1|add=NONE|fit=0": 12,
+            "n3|P1_S0|add=B|fit=1": 24,
+            "n3|P1_S0|add=NONE|fit=0": 12,
+            "n4|P0_S0|add=NONE|fit=0": 432
+          },
+          "ordinaryCounts": {
+            "3": 72,
+            "4": 432
+          },
+          "targetPositions": {
+            "A=ABSENT|B=P0": 126,
+            "A=ABSENT|B=P1": 126,
+            "A=S0|B=ABSENT": 126,
+            "A=S1|B=ABSENT": 126
+          },
+          "targetTierDomains": {
+            "A": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "B": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "targetTierPairs": {
+            "A0_B1": 42,
+            "A0_B2": 42,
+            "A0_B3": 42,
+            "A0_B4": 42,
+            "A0_B5": 42,
+            "A0_B6": 42,
+            "A1_B0": 42,
+            "A2_B0": 42,
+            "A3_B0": 42,
+            "A4_B0": 42,
+            "A5_B0": 42,
+            "A6_B0": 42
+          }
+        },
+        "202": {
+          "allMissingTargetsFitTogether": {
+            "true": 144
+          },
+          "count": 144,
+          "directMissingTargetAdds": {
+            "ALREADY_PRESENT": 144
+          },
+          "emptySides": {
+            "P0_S0": 144
+          },
+          "garbageTierMultisets": {
+            "7,7": 144
+          },
+          "garbageTierPresence": {
+            "7": 144
+          },
+          "leafCounters": {
+            "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 144
+          },
+          "ordinaryCounts": {
+            "4": 144
+          },
+          "targetPositions": {
+            "A=S0|B=P0": 36,
+            "A=S0|B=P1": 36,
+            "A=S1|B=P0": 36,
+            "A=S1|B=P1": 36
+          },
+          "targetTierDomains": {
+            "A": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "B": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "targetTierPairs": {
+            "A1_B1": 4,
+            "A1_B2": 4,
+            "A1_B3": 4,
+            "A1_B4": 4,
+            "A1_B5": 4,
+            "A1_B6": 4,
+            "A2_B1": 4,
+            "A2_B2": 4,
+            "A2_B3": 4,
+            "A2_B4": 4,
+            "A2_B5": 4,
+            "A2_B6": 4,
+            "A3_B1": 4,
+            "A3_B2": 4,
+            "A3_B3": 4,
+            "A3_B4": 4,
+            "A3_B5": 4,
+            "A3_B6": 4,
+            "A4_B1": 4,
+            "A4_B2": 4,
+            "A4_B3": 4,
+            "A4_B4": 4,
+            "A4_B5": 4,
+            "A4_B6": 4,
+            "A5_B1": 4,
+            "A5_B2": 4,
+            "A5_B3": 4,
+            "A5_B4": 4,
+            "A5_B5": 4,
+            "A5_B6": 4,
+            "A6_B1": 4,
+            "A6_B2": 4,
+            "A6_B3": 4,
+            "A6_B4": 4,
+            "A6_B5": 4,
+            "A6_B6": 4
+          }
+        },
+        "210": {
+          "allMissingTargetsFitTogether": {
+            "false": 480,
+            "true": 108
+          },
+          "count": 588,
+          "directMissingTargetAdds": {
+            "A": 54,
+            "B": 54,
+            "NONE": 480
+          },
+          "emptySides": {
+            "P0_S0": 432,
+            "P0_S1": 72,
+            "P0_S2": 2,
+            "P1_S0": 72,
+            "P1_S1": 8,
+            "P2_S0": 2
+          },
+          "garbageTierMultisets": {
+            "1,1,7": 12,
+            "1,2,7": 24,
+            "1,3,7": 24,
+            "1,4,7": 24,
+            "1,5,7": 24,
+            "1,6,7": 24,
+            "1,7": 24,
+            "2,2,7": 12,
+            "2,3,7": 24,
+            "2,4,7": 24,
+            "2,5,7": 24,
+            "2,6,7": 24,
+            "2,7": 24,
+            "3,3,7": 12,
+            "3,4,7": 24,
+            "3,5,7": 24,
+            "3,6,7": 24,
+            "3,7": 24,
+            "4,4,7": 12,
+            "4,5,7": 24,
+            "4,6,7": 24,
+            "4,7": 24,
+            "5,5,7": 12,
+            "5,6,7": 24,
+            "5,7": 24,
+            "6,6,7": 12,
+            "6,7": 24,
+            "7": 12
+          },
+          "garbageTierPresence": {
+            "1": 156,
+            "2": 156,
+            "3": 156,
+            "4": 156,
+            "5": 156,
+            "6": 156,
+            "7": 588
+          },
+          "leafCounters": {
+            "n2|P0_S2|add=A|fit=1": 2,
+            "n2|P1_S1|add=A|fit=1": 4,
+            "n2|P1_S1|add=B|fit=1": 4,
+            "n2|P2_S0|add=B|fit=1": 2,
+            "n3|P0_S1|add=A|fit=1": 48,
+            "n3|P0_S1|add=NONE|fit=0": 24,
+            "n3|P1_S0|add=B|fit=1": 48,
+            "n3|P1_S0|add=NONE|fit=0": 24,
+            "n4|P0_S0|add=NONE|fit=0": 432
+          },
+          "ordinaryCounts": {
+            "2": 12,
+            "3": 144,
+            "4": 432
+          },
+          "targetPositions": {
+            "A=ABSENT|B=P0": 147,
+            "A=ABSENT|B=P1": 147,
+            "A=S0|B=ABSENT": 147,
+            "A=S1|B=ABSENT": 147
+          },
+          "targetTierDomains": {
+            "A": [
+              7
+            ],
+            "B": [
+              7
+            ]
+          },
+          "targetTierPairs": {
+            "A0_B7": 294,
+            "A7_B0": 294
+          }
+        },
+        "211": {
+          "allMissingTargetsFitTogether": {
+            "true": 672
+          },
+          "count": 672,
+          "directMissingTargetAdds": {
+            "ALREADY_PRESENT": 672
+          },
+          "emptySides": {
+            "P0_S0": 576,
+            "P0_S1": 48,
+            "P1_S0": 48
+          },
+          "garbageTierMultisets": {
+            "1,7": 96,
+            "2,7": 96,
+            "3,7": 96,
+            "4,7": 96,
+            "5,7": 96,
+            "6,7": 96,
+            "7": 96
+          },
+          "garbageTierPresence": {
+            "1": 96,
+            "2": 96,
+            "3": 96,
+            "4": 96,
+            "5": 96,
+            "6": 96,
+            "7": 672
+          },
+          "leafCounters": {
+            "n3|P0_S1|add=ALREADY_PRESENT|fit=1": 48,
+            "n3|P1_S0|add=ALREADY_PRESENT|fit=1": 48,
+            "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 576
+          },
+          "ordinaryCounts": {
+            "3": 96,
+            "4": 576
+          },
+          "targetPositions": {
+            "A=S0|B=P0": 168,
+            "A=S0|B=P1": 168,
+            "A=S1|B=P0": 168,
+            "A=S1|B=P1": 168
+          },
+          "targetTierDomains": {
+            "A": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "B": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          "targetTierPairs": {
+            "A1_B7": 56,
+            "A2_B7": 56,
+            "A3_B7": 56,
+            "A4_B7": 56,
+            "A5_B7": 56,
+            "A6_B7": 56,
+            "A7_B1": 56,
+            "A7_B2": 56,
+            "A7_B3": 56,
+            "A7_B4": 56,
+            "A7_B5": 56,
+            "A7_B6": 56
+          }
+        },
+        "220": {
+          "allMissingTargetsFitTogether": {
+            "true": 196
+          },
+          "count": 196,
+          "directMissingTargetAdds": {
+            "ALREADY_PRESENT": 196
+          },
+          "emptySides": {
+            "P0_S0": 144,
+            "P0_S1": 24,
+            "P1_S0": 24,
+            "P1_S1": 4
+          },
+          "garbageTierMultisets": {
+            "1": 8,
+            "1,1": 4,
+            "1,2": 8,
+            "1,3": 8,
+            "1,4": 8,
+            "1,5": 8,
+            "1,6": 8,
+            "2": 8,
+            "2,2": 4,
+            "2,3": 8,
+            "2,4": 8,
+            "2,5": 8,
+            "2,6": 8,
+            "3": 8,
+            "3,3": 4,
+            "3,4": 8,
+            "3,5": 8,
+            "3,6": 8,
+            "4": 8,
+            "4,4": 4,
+            "4,5": 8,
+            "4,6": 8,
+            "5": 8,
+            "5,5": 4,
+            "5,6": 8,
+            "6": 8,
+            "6,6": 4,
+            "NONE": 4
+          },
+          "garbageTierPresence": {
+            "1": 52,
+            "2": 52,
+            "3": 52,
+            "4": 52,
+            "5": 52,
+            "6": 52
+          },
+          "leafCounters": {
+            "n2|P1_S1|add=ALREADY_PRESENT|fit=1": 4,
+            "n3|P0_S1|add=ALREADY_PRESENT|fit=1": 24,
+            "n3|P1_S0|add=ALREADY_PRESENT|fit=1": 24,
+            "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 144
+          },
+          "ordinaryCounts": {
+            "2": 4,
+            "3": 48,
+            "4": 144
+          },
+          "targetPositions": {
+            "A=S0|B=P0": 49,
+            "A=S0|B=P1": 49,
+            "A=S1|B=P0": 49,
+            "A=S1|B=P1": 49
+          },
+          "targetTierDomains": {
+            "A": [
+              7
+            ],
+            "B": [
+              7
+            ]
+          },
+          "targetTierPairs": {
+            "A7_B7": 196
+          }
+        }
+      },
+      "enumeration": {
+        "acceptedStates": 2398,
+        "rawCandidates": 50625,
+        "rejectedDuplicateTargetId": 1658,
+        "rejectedNotExactlyTwoT7": 46569
+      },
+      "independentCombinatorialCounts": {
+        "200": 294,
+        "201": 504,
+        "202": 144,
+        "210": 588,
+        "211": 672,
+        "220": 196
+      },
+      "targetSides": {
+        "A": 1,
+        "B": 0
+      }
+    },
+    "A1_B1": {
+      "categories": {
+        "200": {
+          "allMissingTargetsFitTogether": {
+            "false": 293,
+            "true": 1
+          },
+          "count": 294,
+          "directMissingTargetAdds": {
+            "A+B": 41,
+            "NONE": 253
+          },
+          "emptySides": {
+            "P0_S0": 216,
+            "P0_S1": 36,
+            "P0_S2": 1,
+            "P1_S0": 36,
+            "P1_S1": 4,
+            "P2_S0": 1
+          },
+          "garbageTierMultisets": {
+            "1,1,7,7": 6,
+            "1,2,7,7": 12,
+            "1,3,7,7": 12,
+            "1,4,7,7": 12,
+            "1,5,7,7": 12,
+            "1,6,7,7": 12,
+            "1,7,7": 12,
+            "2,2,7,7": 6,
+            "2,3,7,7": 12,
+            "2,4,7,7": 12,
+            "2,5,7,7": 12,
+            "2,6,7,7": 12,
+            "2,7,7": 12,
+            "3,3,7,7": 6,
+            "3,4,7,7": 12,
+            "3,5,7,7": 12,
+            "3,6,7,7": 12,
+            "3,7,7": 12,
+            "4,4,7,7": 6,
+            "4,5,7,7": 12,
+            "4,6,7,7": 12,
+            "4,7,7": 12,
+            "5,5,7,7": 6,
+            "5,6,7,7": 12,
+            "5,7,7": 12,
+            "6,6,7,7": 6,
+            "6,7,7": 12,
+            "7,7": 6
+          },
+          "garbageTierPresence": {
+            "1": 78,
+            "2": 78,
+            "3": 78,
+            "4": 78,
+            "5": 78,
+            "6": 78,
+            "7": 294
+          },
+          "leafCounters": {
+            "n2|P0_S2|add=A+B|fit=1": 1,
+            "n2|P1_S1|add=A+B|fit=0": 4,
+            "n2|P2_S0|add=NONE|fit=0": 1,
+            "n3|P0_S1|add=A+B|fit=0": 36,
+            "n3|P1_S0|add=NONE|fit=0": 36,
+            "n4|P0_S0|add=NONE|fit=0": 216
+          },
+          "ordinaryCounts": {
+            "2": 6,
+            "3": 72,
+            "4": 216
+          },
+          "targetPositions": {
+            "A=ABSENT|B=ABSENT": 294
+          },
+          "targetTierDomains": {
+            "A": [],
+            "B": []
+          },
+          "targetTierPairs": {
+            "A0_B0": 294
+          }
+        },
+        "201": {
+          "allMissingTargetsFitTogether": {
+            "false": 480,
+            "true": 24
+          },
+          "count": 504,
+          "directMissingTargetAdds": {
+            "A": 12,
+            "B": 12,
+            "NONE": 480
+          },
+          "emptySides": {
+            "P0_S0": 432,
+            "P0_S1": 24,
+            "P1_S0": 48
+          },
+          "garbageTierMultisets": {
+            "1,7,7": 72,
+            "2,7,7": 72,
+            "3,7,7": 72,
+            "4,7,7": 72,
+            "5,7,7": 72,
+            "6,7,7": 72,
+            "7,7": 72
+          },
+          "garbageTierPresence": {
+            "1": 72,
+            "2": 72,
+            "3": 72,
+            "4": 72,
+            "5": 72,
+            "6": 72,
+            "7": 504
+          },
+          "leafCounters": {
+            "n3|P0_S1|add=A|fit=1": 12,
+            "n3|P0_S1|add=B|fit=1": 12,
+            "n3|P1_S0|add=NONE|fit=0": 48,
+            "n4|P0_S0|add=NONE|fit=0": 432
+          },
+          "ordinaryCounts": {
+            "3": 72,
+            "4": 432
+          },
+          "targetPositions": {
+            "A=ABSENT|B=S0": 126,
+            "A=ABSENT|B=S1": 126,
+            "A=S0|B=ABSENT": 126,
+            "A=S1|B=ABSENT": 126
+          },
+          "targetTierDomains": {
+            "A": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "B": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "targetTierPairs": {
+            "A0_B1": 42,
+            "A0_B2": 42,
+            "A0_B3": 42,
+            "A0_B4": 42,
+            "A0_B5": 42,
+            "A0_B6": 42,
+            "A1_B0": 42,
+            "A2_B0": 42,
+            "A3_B0": 42,
+            "A4_B0": 42,
+            "A5_B0": 42,
+            "A6_B0": 42
+          }
+        },
+        "202": {
+          "allMissingTargetsFitTogether": {
+            "true": 72
+          },
+          "count": 72,
+          "directMissingTargetAdds": {
+            "ALREADY_PRESENT": 72
+          },
+          "emptySides": {
+            "P0_S0": 72
+          },
+          "garbageTierMultisets": {
+            "7,7": 72
+          },
+          "garbageTierPresence": {
+            "7": 72
+          },
+          "leafCounters": {
+            "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 72
+          },
+          "ordinaryCounts": {
+            "4": 72
+          },
+          "targetPositions": {
+            "A=S0|B=S1": 36,
+            "A=S1|B=S0": 36
+          },
+          "targetTierDomains": {
+            "A": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "B": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "targetTierPairs": {
+            "A1_B1": 2,
+            "A1_B2": 2,
+            "A1_B3": 2,
+            "A1_B4": 2,
+            "A1_B5": 2,
+            "A1_B6": 2,
+            "A2_B1": 2,
+            "A2_B2": 2,
+            "A2_B3": 2,
+            "A2_B4": 2,
+            "A2_B5": 2,
+            "A2_B6": 2,
+            "A3_B1": 2,
+            "A3_B2": 2,
+            "A3_B3": 2,
+            "A3_B4": 2,
+            "A3_B5": 2,
+            "A3_B6": 2,
+            "A4_B1": 2,
+            "A4_B2": 2,
+            "A4_B3": 2,
+            "A4_B4": 2,
+            "A4_B5": 2,
+            "A4_B6": 2,
+            "A5_B1": 2,
+            "A5_B2": 2,
+            "A5_B3": 2,
+            "A5_B4": 2,
+            "A5_B5": 2,
+            "A5_B6": 2,
+            "A6_B1": 2,
+            "A6_B2": 2,
+            "A6_B3": 2,
+            "A6_B4": 2,
+            "A6_B5": 2,
+            "A6_B6": 2
+          }
+        },
+        "210": {
+          "allMissingTargetsFitTogether": {
+            "false": 532,
+            "true": 56
+          },
+          "count": 588,
+          "directMissingTargetAdds": {
+            "A": 28,
+            "B": 28,
+            "NONE": 532
+          },
+          "emptySides": {
+            "P0_S0": 432,
+            "P0_S1": 48,
+            "P1_S0": 96,
+            "P1_S1": 8,
+            "P2_S0": 4
+          },
+          "garbageTierMultisets": {
+            "1,1,7": 12,
+            "1,2,7": 24,
+            "1,3,7": 24,
+            "1,4,7": 24,
+            "1,5,7": 24,
+            "1,6,7": 24,
+            "1,7": 24,
+            "2,2,7": 12,
+            "2,3,7": 24,
+            "2,4,7": 24,
+            "2,5,7": 24,
+            "2,6,7": 24,
+            "2,7": 24,
+            "3,3,7": 12,
+            "3,4,7": 24,
+            "3,5,7": 24,
+            "3,6,7": 24,
+            "3,7": 24,
+            "4,4,7": 12,
+            "4,5,7": 24,
+            "4,6,7": 24,
+            "4,7": 24,
+            "5,5,7": 12,
+            "5,6,7": 24,
+            "5,7": 24,
+            "6,6,7": 12,
+            "6,7": 24,
+            "7": 12
+          },
+          "garbageTierPresence": {
+            "1": 156,
+            "2": 156,
+            "3": 156,
+            "4": 156,
+            "5": 156,
+            "6": 156,
+            "7": 588
+          },
+          "leafCounters": {
+            "n2|P1_S1|add=A|fit=1": 4,
+            "n2|P1_S1|add=B|fit=1": 4,
+            "n2|P2_S0|add=NONE|fit=0": 4,
+            "n3|P0_S1|add=A|fit=1": 24,
+            "n3|P0_S1|add=B|fit=1": 24,
+            "n3|P1_S0|add=NONE|fit=0": 96,
+            "n4|P0_S0|add=NONE|fit=0": 432
+          },
+          "ordinaryCounts": {
+            "2": 12,
+            "3": 144,
+            "4": 432
+          },
+          "targetPositions": {
+            "A=ABSENT|B=S0": 147,
+            "A=ABSENT|B=S1": 147,
+            "A=S0|B=ABSENT": 147,
+            "A=S1|B=ABSENT": 147
+          },
+          "targetTierDomains": {
+            "A": [
+              7
+            ],
+            "B": [
+              7
+            ]
+          },
+          "targetTierPairs": {
+            "A0_B7": 294,
+            "A7_B0": 294
+          }
+        },
+        "211": {
+          "allMissingTargetsFitTogether": {
+            "true": 336
+          },
+          "count": 336,
+          "directMissingTargetAdds": {
+            "ALREADY_PRESENT": 336
+          },
+          "emptySides": {
+            "P0_S0": 288,
+            "P1_S0": 48
+          },
+          "garbageTierMultisets": {
+            "1,7": 48,
+            "2,7": 48,
+            "3,7": 48,
+            "4,7": 48,
+            "5,7": 48,
+            "6,7": 48,
+            "7": 48
+          },
+          "garbageTierPresence": {
+            "1": 48,
+            "2": 48,
+            "3": 48,
+            "4": 48,
+            "5": 48,
+            "6": 48,
+            "7": 336
+          },
+          "leafCounters": {
+            "n3|P1_S0|add=ALREADY_PRESENT|fit=1": 48,
+            "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 288
+          },
+          "ordinaryCounts": {
+            "3": 48,
+            "4": 288
+          },
+          "targetPositions": {
+            "A=S0|B=S1": 168,
+            "A=S1|B=S0": 168
+          },
+          "targetTierDomains": {
+            "A": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "B": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          "targetTierPairs": {
+            "A1_B7": 28,
+            "A2_B7": 28,
+            "A3_B7": 28,
+            "A4_B7": 28,
+            "A5_B7": 28,
+            "A6_B7": 28,
+            "A7_B1": 28,
+            "A7_B2": 28,
+            "A7_B3": 28,
+            "A7_B4": 28,
+            "A7_B5": 28,
+            "A7_B6": 28
+          }
+        },
+        "220": {
+          "allMissingTargetsFitTogether": {
+            "true": 98
+          },
+          "count": 98,
+          "directMissingTargetAdds": {
+            "ALREADY_PRESENT": 98
+          },
+          "emptySides": {
+            "P0_S0": 72,
+            "P1_S0": 24,
+            "P2_S0": 2
+          },
+          "garbageTierMultisets": {
+            "1": 4,
+            "1,1": 2,
+            "1,2": 4,
+            "1,3": 4,
+            "1,4": 4,
+            "1,5": 4,
+            "1,6": 4,
+            "2": 4,
+            "2,2": 2,
+            "2,3": 4,
+            "2,4": 4,
+            "2,5": 4,
+            "2,6": 4,
+            "3": 4,
+            "3,3": 2,
+            "3,4": 4,
+            "3,5": 4,
+            "3,6": 4,
+            "4": 4,
+            "4,4": 2,
+            "4,5": 4,
+            "4,6": 4,
+            "5": 4,
+            "5,5": 2,
+            "5,6": 4,
+            "6": 4,
+            "6,6": 2,
+            "NONE": 2
+          },
+          "garbageTierPresence": {
+            "1": 26,
+            "2": 26,
+            "3": 26,
+            "4": 26,
+            "5": 26,
+            "6": 26
+          },
+          "leafCounters": {
+            "n2|P2_S0|add=ALREADY_PRESENT|fit=1": 2,
+            "n3|P1_S0|add=ALREADY_PRESENT|fit=1": 24,
+            "n4|P0_S0|add=ALREADY_PRESENT|fit=1": 72
+          },
+          "ordinaryCounts": {
+            "2": 2,
+            "3": 24,
+            "4": 72
+          },
+          "targetPositions": {
+            "A=S0|B=S1": 49,
+            "A=S1|B=S0": 49
+          },
+          "targetTierDomains": {
+            "A": [
+              7
+            ],
+            "B": [
+              7
+            ]
+          },
+          "targetTierPairs": {
+            "A7_B7": 98
+          }
+        }
+      },
+      "enumeration": {
+        "acceptedStates": 1892,
+        "rawCandidates": 30976,
+        "rejectedDuplicateTargetId": 506,
+        "rejectedNotExactlyTwoT7": 28578
+      },
+      "independentCombinatorialCounts": {
+        "200": 294,
+        "201": 504,
+        "202": 72,
+        "210": 588,
+        "211": 336,
+        "220": 98
+      },
+      "targetSides": {
+        "A": 1,
+        "B": 1
+      }
+    }
+  },
+  "categoriesAreExclusiveAndExhaustiveInScope": true,
+  "categoryCounts": {
+    "200": 1176,
+    "201": 2016,
+    "202": 432,
+    "210": 2352,
+    "211": 2016,
+    "220": 588
+  },
+  "havocClassEdgesWith220Terminal": [
+    [
+      "200",
+      "200"
+    ],
+    [
+      "201",
+      "201"
+    ],
+    [
+      "201",
+      "210"
+    ],
+    [
+      "202",
+      "202"
+    ],
+    [
+      "202",
+      "211"
+    ],
+    [
+      "202",
+      "220"
+    ],
+    [
+      "210",
+      "201"
+    ],
+    [
+      "210",
+      "210"
+    ],
+    [
+      "211",
+      "202"
+    ],
+    [
+      "211",
+      "211"
+    ],
+    [
+      "211",
+      "220"
+    ]
+  ],
+  "inputSha256": {
+    "docs/strategy-classification.md": "e6b485a0e1325d107c14477e7bfedd8c83bacb510419f76d040b9d747631e4ad",
+    "scripts/check_strategy_classification.py": "3cf69c5f56844029365e65f993df35e9507a491767d9821e2192be896afc064b",
+    "src/core/catalog.ts": "8280dd7c469bcc48d1691033cecb7cbb68d9d37d7506907b33177636bae3e94d",
+    "src/core/rules.ts": "f315ff7bca3d2311631c8138371f870fe08f8d5ab57fc27444b6f6be24306dcb",
+    "src/core/validation.ts": "205c559a009b16974e3ba9ea8f07f240508406d6a5b7b42b278fb50cb6c1e2a6"
+  },
+  "orthogonalOrdinarySealOccupancyFlags": [
+    "EMPTY",
+    "OCCUPIED"
+  ],
+  "schemaVersion": 1,
+  "scope": "ABSTRACT_STANDARD_TWO_T7_STRUCTURE_ONLY",
+  "scopeExclusions": [
+    "Actual affix-ID permutations/weights, base/class compatibility, shard availability, levels, special affixes, roll objectives, protections, corrupted/primordial slots, sealed identities and native list order are not enumerated.",
+    "The occupied seal flag alone is insufficient: the sealed ID affects duplicate-ID exclusion and whether a missing target is trapped outside ordinary slots.",
+    "Counts are labelled structural representatives, not a loot/target distribution and not a complete count of concrete game states.",
+    "Template sequence witnesses prove structural possibility only, not policy conformance, optimality,15% threshold or100FP acceptance."
+  ],
+  "slotOrder": [
+    "P0",
+    "P1",
+    "S0",
+    "S1"
+  ],
+  "stateFlagProductCountNotAdditionalPhysicalValidation": 17160,
+  "targetSideSettings": 4,
+  "witnesses": {
+    "200AllVacanciesWrongSide": [
+      {
+        "action": "START",
+        "category": "200",
+        "state": [
+          {
+            "idRole": "X0",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "X1",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "empty": true,
+            "position": "S0"
+          },
+          {
+            "empty": true,
+            "position": "S1"
+          }
+        ]
+      },
+      {
+        "action": "ADD_GARBAGE_TO_FOUR",
+        "category": "200",
+        "state": [
+          {
+            "idRole": "X0",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "X1",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 1
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "HAVOC_PREPARE_PREFIX_T1",
+        "category": "200",
+        "state": [
+          {
+            "idRole": "X0",
+            "position": "P0",
+            "tier": 1
+          },
+          {
+            "idRole": "X1",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "ACCEPTED_REMOVAL_PREFIX",
+        "category": "200",
+        "state": [
+          {
+            "empty": true,
+            "position": "P0"
+          },
+          {
+            "idRole": "X1",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "ADD_A",
+        "category": "201",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 1
+          },
+          {
+            "idRole": "X1",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "HAVOC_PREPARE_B_PREFIX",
+        "category": "210",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "X1",
+            "position": "P1",
+            "tier": 1
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "REQUIRED_SEAL_SUCCESS",
+        "category": "210",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "empty": true,
+            "position": "P1"
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "ADD_B",
+        "category": "211",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "B",
+            "position": "P1",
+            "tier": 1
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "FINAL_HAVOC",
+        "category": "220",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "B",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 1
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      }
+    ],
+    "direct200To211ViaT6": [
+      {
+        "action": "START",
+        "category": "200",
+        "state": [
+          {
+            "idRole": "X0",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "X1",
+            "position": "P1",
+            "tier": 6
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "REDEMPTION_REPLACED_ALL_THREE_EXALTED",
+        "category": "211",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "B",
+            "position": "P1",
+            "tier": 6
+          },
+          {
+            "idRole": "Y2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      }
+    ],
+    "direct200To220": [
+      {
+        "action": "START",
+        "category": "200",
+        "state": [
+          {
+            "idRole": "X0",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "X1",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 3
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 2
+          }
+        ]
+      },
+      {
+        "action": "REDEMPTION_BOTH_TARGETS",
+        "category": "220",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "B",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 3
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 2
+          }
+        ]
+      }
+    ],
+    "havoc211To202": [
+      {
+        "action": "START",
+        "category": "211",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "B",
+            "position": "P1",
+            "tier": 1
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 2
+          }
+        ]
+      },
+      {
+        "action": "HAVOC",
+        "category": "202",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 1
+          },
+          {
+            "idRole": "B",
+            "position": "P1",
+            "tier": 2
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 7
+          }
+        ]
+      }
+    ],
+    "removeAddPrepareSealAdd": [
+      {
+        "action": "START",
+        "category": "200",
+        "state": [
+          {
+            "idRole": "X0",
+            "position": "P0",
+            "tier": 3
+          },
+          {
+            "idRole": "X1",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "ACCEPTED_REMOVAL",
+        "category": "200",
+        "state": [
+          {
+            "empty": true,
+            "position": "P0"
+          },
+          {
+            "idRole": "X1",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "ADD_A",
+        "category": "201",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 1
+          },
+          {
+            "idRole": "X1",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "HAVOC_PREPARE",
+        "category": "210",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "X1",
+            "position": "P1",
+            "tier": 1
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "REQUIRED_SEAL_SUCCESS",
+        "category": "210",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "empty": true,
+            "position": "P1"
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "ADD_B",
+        "category": "211",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "B",
+            "position": "P1",
+            "tier": 1
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      },
+      {
+        "action": "FINAL_HAVOC",
+        "category": "220",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "B",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 1
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 1
+          }
+        ]
+      }
+    ],
+    "same210DifferentAddEligibility": {
+      "blockedB": [
+        {
+          "idRole": "A",
+          "position": "P0",
+          "tier": 7
+        },
+        {
+          "idRole": "X1",
+          "position": "P1",
+          "tier": 1
+        },
+        {
+          "idRole": "X2",
+          "position": "S0",
+          "tier": 7
+        },
+        {
+          "empty": true,
+          "position": "S1"
+        }
+      ],
+      "directB": [
+        {
+          "idRole": "A",
+          "position": "P0",
+          "tier": 7
+        },
+        {
+          "empty": true,
+          "position": "P1"
+        },
+        {
+          "idRole": "X2",
+          "position": "S0",
+          "tier": 7
+        },
+        {
+          "idRole": "X3",
+          "position": "S1",
+          "tier": 1
+        }
+      ],
+      "ordinaryCount": 3,
+      "sameClass": "210",
+      "targetSides": {
+        "A": 0,
+        "B": 0
+      }
+    },
+    "scope": "Positive-possibility symbolic branches only; no probabilities, FP, protection, concrete shard or level assertions. Complete casts are checked; all garbage IDs are distinct. A/B side is prefix in these witnesses.",
+    "twoRedemptionPhasesWithDemotedKnownTarget": [
+      {
+        "action": "START",
+        "category": "200",
+        "state": [
+          {
+            "idRole": "X0",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "X1",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 3
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 2
+          }
+        ]
+      },
+      {
+        "action": "FIRST_REDEMPTION_PHASE_EXIT",
+        "category": "210",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "Y1",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 3
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 2
+          }
+        ]
+      },
+      {
+        "action": "HAVOC_DEMOTE_A_BELOW_T6",
+        "category": "201",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 3
+          },
+          {
+            "idRole": "Y1",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "X2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 2
+          }
+        ]
+      },
+      {
+        "action": "SECOND_REDEMPTION_PHASE_EXIT",
+        "category": "211",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 3
+          },
+          {
+            "idRole": "B",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "Y2",
+            "position": "S0",
+            "tier": 7
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 2
+          }
+        ]
+      },
+      {
+        "action": "FINAL_HAVOC",
+        "category": "220",
+        "state": [
+          {
+            "idRole": "A",
+            "position": "P0",
+            "tier": 7
+          },
+          {
+            "idRole": "B",
+            "position": "P1",
+            "tier": 7
+          },
+          {
+            "idRole": "Y2",
+            "position": "S0",
+            "tier": 3
+          },
+          {
+            "idRole": "X3",
+            "position": "S1",
+            "tier": 2
+          }
+        ]
+      }
+    ]
+  }
+}

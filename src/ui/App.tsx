@@ -3,7 +3,7 @@ import { Catalog, MODEL_ID } from '../core/catalog';
 import { exampleRequest, examples } from '../core/examples';
 import { parsePlanRequest } from '../core/request';
 import type { PlanProgress, PlanReport } from '../core/planner';
-import type { ActionKind, Affix, PlanRequest, Requirement, Slot } from '../core/types';
+import type { ActionKind, Affix, Macro, PlanRequest, Requirement, Slot } from '../core/types';
 import { BrowserPlanner } from '../execution/browser';
 import { ConsumptionChart, ProbabilityChart } from './charts';
 import { actionNames, affixLabel, affixName, failureNames, fpNames, macroText, requirementText, slotNames, typeName } from './labels';
@@ -17,7 +17,12 @@ const STORAGE = 'le-crafting-input-v1';
 function initialRequest(): PlanRequest {
   try {
     const raw = localStorage.getItem(STORAGE);
-    if (raw) { const parsed = parsePlanRequest(JSON.parse(raw), catalog); if (parsed.request) return parsed.request; }
+    if (raw) {
+      const saved = JSON.parse(raw);
+      // This released input schema shares the same audited game data; preserve edits while recomputing results.
+      const value = saved?.modelId === 'le-1.5.3-iid-f58515921fd9cbcc' ? { ...saved, modelId: MODEL_ID } : saved;
+      const parsed = parsePlanRequest(value, catalog); if (parsed.request) return parsed.request;
+    }
   } catch { /* Storage is optional; an unavailable cache never prevents local planning. */ }
   return exampleRequest();
 }
@@ -40,6 +45,7 @@ function Download({ value, name, children }: { value: unknown; name: string; chi
 }
 
 function Results({ report }: { report: PlanReport }) {
+  if (report.metric === 'INTRINSIC_V2') return <IntrinsicResults report={report} />;
   const primary = report.primary;
   if (!primary) return <section className="panel notice" aria-live="polite"><span className="eyebrow">计算报告</span>
     <h2>{report.status === 'INVALID_INPUT' ? '请修正输入' : '当前范围尚未找到路线'}</h2>
@@ -95,6 +101,46 @@ function Results({ report }: { report: PlanReport }) {
   </div>;
 }
 
+function MacroInstructions({ macro }: { macro: Macro }) {
+  const text = macroText(macro, catalog);
+  if (macro.kind !== 'conditional') return <><h3>{text.title}</h3><p>{text.condition}</p></>;
+  return <><h3>{text.title}</h3>{[{ label: '条件成立', steps: macro.then }, { label: '条件不成立', steps: macro.otherwise ?? [] }].map((branch) =>
+    <div className="macro-branch" key={branch.label}><p className="macro-branch-label">{branch.label}{branch.steps.length ? '：执行以下步骤' : '：跳过'}</p>
+      {branch.steps.map((part, index) => <div className="macro-branch-step" key={index}><MacroInstructions macro={part} /></div>)}
+    </div>)}</>;
+}
+
+function IntrinsicResults({ report }: { report: PlanReport }) {
+  const primary = report.primary, structure = report.hierarchy?.structure;
+  return <div className="result-stack" aria-live="polite">
+    <section className="panel result-hero"><div className="row between"><span className="eyebrow">{structure ? `${structure.node.group} · 普通${structure.node.ordinaryCount}条 · 封印${structure.node.sealedCount}条` : '固定模板计算'}</span>
+      <span className={`badge ${report.searchStatus === 'INCOMPLETE' ? 'amber' : 'mint'}`}>{report.searchStatus === 'INCOMPLETE' ? '搜索未完成' : '模板范围已完成'}</span></div>
+      {primary ? <><div className="score">{(primary.scoreEstimate * 100).toFixed(2)}<span>%</span></div><p className="score-caption">操作成功率</p>
+        <p className="muted">假设FP持续充足；误剥、必要封印失败即NG。100%操作成功率不保证实际剩余FP足够。</p>
+        <div className="stats"><div><span>成功路径平均FP</span><strong>{number(primary.expectedFpGivenSuccess)}</strong></div><div><span>已放弃模板</span><strong>{report.abandoned?.length ?? 0}</strong></div><div><span>主路线阶段</span><strong>{primary.route.macros.length}</strong></div></div>
+        <p className="chart-note">仅最终成功路径参与FP均值；保留成功率≥15%、平均FP≤100的路线。模型内成功率区间：{percent(primary.score)}。</p></> :
+        <><h2>{report.abandoned?.length ? '当前已算模板均未通过门槛' : '当前范围尚未找到路线'}</h2><p>{report.searchStatus === 'INCOMPLETE' ? '仍有未完成或未覆盖候选，不能据此判定装备不可达。' : '此结论仅针对已声明的模板范围。'}</p></>}
+    </section>
+    {primary && <section className="panel"><div className="row between"><h2>固定执行路线</h2><Download value={report} name="last-epoch-crafting-report.json">导出报告</Download></div>
+      {primary.route.macros.length ? <ol className="route-list">{primary.route.macros.map((macro, index) => <li key={index}><span className="step-number">{index + 1}</span><div><MacroInstructions macro={macro} /></div></li>)}</ol> : <p>两个目标已经达成，无需制作。</p>}
+      <div className="stop-note">目标提前达成即停止；所有条件分支预先固定。必要封印失败、剥离失手后不执行后续步骤。</div>
+    </section>}
+    {!!report.abandoned?.length && <section className="panel"><h2>已放弃</h2><p className="chart-note">低于15%的过关概率上界，或高于100FP的成功条件成本下界，才会触发放弃。执行预算不足单独记为未完成。</p>
+      {report.abandoned.map((row) => <details key={row.route.id}><summary>已放弃 · 已算至第{row.intrinsic.evaluatedThroughStage}阶段 · {row.route.description ?? row.route.id}</summary>
+        <p>{row.intrinsic.probabilityMeaning === 'FULL_ROUTE' ? '整路操作成功率' : '截至该阶段的过关概率（整路成功率上界）'}：{percent(row.score)}</p>
+        <p>{row.intrinsic.fpMeaning === 'LOWER_BOUND_GIVEN_FINAL_SUCCESS' ? '成功路径平均FP下界' : row.intrinsic.fpMeaning === 'PREFIX_GIVEN_PREFIX_SURVIVAL' ? '该前缀过关条件下的平均FP' : '成功路径平均FP'}：{row.intrinsic.successfulFpLowerBound !== null ? `≥${row.intrinsic.successfulFpLowerBound.toFixed(2)}` : number(row.expectedFpGivenSuccess)}</p>
+        <p>{row.intrinsic.reason === 'ABOVE_MAXIMUM_SUCCESS_FP' ? '已证明成功路径平均FP超过100。' : row.intrinsic.reason === 'NO_SUCCESS_EXIT' ? '此模板没有可达成功出口。' : '已证明整路成功率低于15%。'}</p>
+        <ol>{row.route.macros.slice(0, row.intrinsic.evaluatedThroughStage).map((macro, index) => <li key={index}>{macroText(macro, catalog).title}</li>)}</ol>
+      </details>)}
+    </section>}
+    <section className="panel evidence"><h2>计算范围</h2><p>已评价{report.search.evaluatedRoutes}个固定模板，放弃{report.abandoned?.length ?? 0}个，未完成{report.unresolvedRoutes ?? 0}个。耗时{(report.search.elapsedMilliseconds / 1000).toFixed(2)}秒。</p>
+      {report.hierarchy && <p>28个入口标签合并为23个上层节点；本装备生成{report.hierarchy.generatedTemplates}个可用模板，按结构或明确限制排除{report.hierarchy.structurallyRejected}个候选。</p>}
+      <p>当前推荐尚未证明全游戏最优。所有碎片、符文和雕文无限，不计材料代价。</p>
+      <details><summary>模型、精度与约定</summary><p>{report.qualification}</p><p>费用与装备变化联合计算；循环吸收核用数值残差界验证。新指标不使用初始FP预算轴，未另外计算有限FP曲线和分位数。</p><p>游戏{report.gameVersion} · 模型{report.modelId}</p></details>
+    </section>
+  </div>;
+}
+
 export function App() {
   const [request, setRequest] = useState<PlanRequest>(initialRequest);
   const [report, setReport] = useState<PlanReport | null>(null);
@@ -103,7 +149,6 @@ export function App() {
   const [message, setMessage] = useState('');
   const [selectedExample, setSelectedExample] = useState('7710-direct');
   const [alternativeFor, setAlternativeFor] = useState<number | null>(null);
-  const [weightDraft, setWeightDraft] = useState(request.scoring.weights?.join(', ') ?? '');
   const generation = useRef(0);
   const controller = useRef<AbortController | null>(null);
   const planner = useRef<BrowserPlanner | null>(null);
@@ -111,7 +156,6 @@ export function App() {
   if (!planner.current) planner.current = new BrowserPlanner();
   useEffect(() => () => { generation.current++; planner.current?.dispose(); }, []);
   useEffect(() => { try { localStorage.setItem(STORAGE, JSON.stringify(request)); } catch { /* Optional preference storage. */ } }, [request]);
-  useEffect(() => setWeightDraft(request.scoring.weights?.join(', ') ?? ''), [request.scoring.weights]);
 
   const edit = (next: PlanRequest) => {
     generation.current++; controller.current?.abort(); controller.current = null;
@@ -219,24 +263,18 @@ export function App() {
           <label>宏阶段上限<input type="number" min="1" max="32" value={request.search.macroStages} onChange={(event) => edit({ ...request, search: { ...request.search, macroStages: Number(event.target.value) } })} /></label>
           <label>状态上限<input type="number" min="1" max="200000" value={request.search.maxStates} onChange={(event) => edit({ ...request, search: { ...request.search, maxStates: Number(event.target.value) } })} /></label></div>
         <p className="chart-note">计算预算不会改变游戏规则。达到上限时返回当前最佳候选并标明搜索未完成。</p>
-        <h3>评分权重</h3><p className="chart-note">当前评分域为1–{request.scoring.maximumFp ?? 63}。留空采用等权；自定义时每个整数预算填一个非负权重，以逗号分隔。此项不是剩余FP。</p>
-        <textarea aria-label="自定义评分权重" value={weightDraft} onChange={(event) => setWeightDraft(event.target.value)} rows={3} placeholder="留空使用等权" />
-        <button type="button" onClick={() => {
-          const candidate = { ...request, scoring: { ...request.scoring, weights: weightDraft.trim() ? weightDraft.split(/[,，\s]+/).map(Number) : undefined } };
-          const parsed = parsePlanRequest(candidate, catalog);
-          if (parsed.request) edit(parsed.request); else setMessage(parsed.issues.map((row) => row.message).join('；'));
-        }}>应用评分权重</button>
+        <p className="chart-note">主指标为操作成功率与成功路径平均FP，按15%／100FP门槛筛选；不使用起始FP权重。</p>
         <label className="inline-check"><input type="checkbox" checked={request.item.corrupted} onChange={(event) => edit({ ...request, item: { ...request.item, corrupted: event.target.checked } })} />装备已腐化</label>
       </details></section>
       <section className="planning-controls"><div className="row"><button type="button" className="primary-button" onClick={() => void run()} disabled={busy}>{busy ? '正在比较路线…' : '开始规划'}</button>
         {busy && <button type="button" onClick={() => controller.current?.abort()}>取消</button>}</div>
-        <p className="chart-note">材料无限 · 1–{request.scoring.maximumFp ?? 63}假设预算{request.scoring.weights ? '自定义权重' : '等权'} · 不输入实际剩余FP</p>
+        <p className="chart-note">材料无限 · 操作成功率≥15% · 成功路径平均FP≤100 · 不输入实际剩余FP</p>
         {busy && <div role="status" className="progress"><span className="spinner" />{progress?.message ?? '正在加载计算模块…'}<small>已评价 {progress?.evaluatedRoutes ?? 0} 条</small></div>}
         {message && <div className="error-message" role="alert">{message}</div>}
         <div className="row wrap input-tools"><Download value={request} name="last-epoch-crafting-input.json">导出输入</Download><button type="button" className="text-button" onClick={() => fileInput.current?.click()}>导入输入JSON</button>
           <input ref={fileInput} type="file" hidden accept="application/json,.json" onChange={(event) => { void importFile(event.target.files?.[0]); event.target.value = ''; }} /></div>
       </section>
     </section>
-    <section className="results-column" aria-label="规划结果">{report ? <Results report={report} /> : <div className="empty-result panel"><div className="empty-symbol" aria-hidden="true">◇</div><span className="eyebrow">一件装备 · 一条固定路线</span><h2>把概率留给计算。</h2><p>准备、封印、补词和重复符文会共同计入整条路线。先填入目标，再开始比较。</p><div className="empty-features"><span>完整路线成功率</span><span>三类潜能</span><span>消耗分布</span><span>版本化代码证据</span></div></div>}</section>
+    <section className="results-column" aria-label="规划结果">{report ? <Results report={report} /> : <div className="empty-result panel"><div className="empty-symbol" aria-hidden="true">◇</div><span className="eyebrow">一件装备 · 一条固定路线</span><h2>把概率留给计算。</h2><p>准备、封印、补词和重复符文会共同计入整条路线。先填入目标，再开始比较。</p><div className="empty-features"><span>操作成功率</span><span>三类潜能</span><span>成功路径FP</span><span>版本化代码证据</span></div></div>}</section>
     </main><footer><span>基于 Last Epoch {catalog.model.gameVersion}／build {catalog.model.steamBuildId} 的本地代码研究。</span><span>独立随机参考模型，不是客户端实测频次。{MODEL_ID}</span></footer></>;
 }

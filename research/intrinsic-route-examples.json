@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+  "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
   "date": "2026-11-03",
   "rows": [
     {
@@ -877,12 +877,12 @@
     "equalityPasses": true,
     "fpBoundaryPreservation": "NOT_APPLICABLE_TO_THE_RESOURCE_DEMAND_METRIC; NO_STARTING_FP_BALANCE",
     "ordinaryFpUpperBoundInActualGame": 63,
-    "shippedPlannerChanged": false
+    "shippedPlannerMetric": "INTRINSIC_V2"
   },
   "qualification": "Research nominal arithmetic under the declared iid rule model; not a finite-budget completion probability, client measurement or global dominance proof. Havoc uses its changed-layout symmetry. Fixed one-shot actions preserve joint outcome and FP costs.",
   "sourceHashes": {
-    "src/generated/model.json": "fcde9020026d43303cc6959fe2b4b5e4b7ff715313c972f1fcfea91dc0d60298",
+    "src/generated/model.json": "e96a4a59055df2cc1c7f285806a969cac5bf17a979de07206c57bbbf2fa3d925",
     "research/redemption-intrinsic.json": "0c4e3807d085bcc9fc4958f065ffa4a93b8c086e3300a576ab3c0499fc0654ad",
-    "scripts/research_intrinsic_routes.ts": "59c94be76a44de6d7ac82112b0a42f08e980da999340af9edb74ff756c07298f"
+    "scripts/research_intrinsic_routes.ts": "4b284fd600007fb4f289ccf9fcb461d3f248b29f27d60cbc329cac1c804a5105"
   }
 }

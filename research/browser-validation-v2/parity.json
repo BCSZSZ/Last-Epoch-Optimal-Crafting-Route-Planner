@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 2,
+  "status": "PASS",
+  "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+  "metric": "INTRINSIC_V2",
+  "checks": [
+    {
+      "file": "7710-normal.json",
+      "example": "7710-direct",
+      "recordSha256": "c6b45a9988e4b4102353024d72de980eb47f455917e87766559d4774f6908fa9",
+      "routeId": "r-32e2603f38468323",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 48.804892289212226,
+        "upper": 48.804892289219154
+      },
+      "states": 47,
+      "bitIdenticalCompletePrimary": true,
+      "browserMilliseconds": 305
+    },
+    {
+      "file": "7732-normal.json",
+      "example": "7732-missing",
+      "recordSha256": "093cd6d28443effa47a39edabf5e8c522777081584479b95c29f1d9f566f9bd5",
+      "routeId": "r-bd1f58826aef5c66",
+      "operationSuccess": {
+        "lower": 0.7008785158407594,
+        "upper": 0.7008785171722106
+      },
+      "successfulMeanFp": {
+        "lower": 92.16269664468486,
+        "upper": 92.16269715073125
+      },
+      "states": 1737,
+      "bitIdenticalCompletePrimary": true,
+      "browserMilliseconds": 3033
+    }
+  ],
+  "qualification": "Actual local static-build browser UI and production Worker exports, replayed in Node for the same fixed chosen route. Byte identity covers the full primary report, not wall-clock search coverage. Shares the rule kernel; independent correctness evidence is separate. Not physical low-end-device or peak-memory evidence."
+}

@@ -88,21 +88,28 @@ export interface Selector {
   readonly maxTier?: number;
   /** In a macro, require complete current seal eligibility before selecting this entry. */
   readonly sealable?: boolean;
+  readonly eligibleAction?: 'chaos' | 'removal';
 }
 
 export type Predicate =
   | { readonly kind: 'target' }
+  | { readonly kind: 'any'; readonly predicates: readonly Predicate[] }
+  | { readonly kind: 'all'; readonly predicates: readonly Predicate[] }
   | { readonly kind: 'requirements'; readonly requirements: readonly Requirement[] }
   | { readonly kind: 'identity'; readonly requirement: Requirement }
-  | { readonly kind: 'exists'; readonly selector: Selector };
+  | { readonly kind: 'exists'; readonly selector: Selector }
+  | { readonly kind: 'count'; readonly selector: Selector; readonly minimum: number };
 
 export type Macro =
+  | { readonly kind: 'conditional'; readonly when: Predicate; readonly then: readonly Macro[]; readonly otherwise?: readonly Macro[] }
+  | { readonly kind: 'fill'; readonly ids: readonly number[]; readonly glyph: Glyph }
   | { readonly kind: 'once'; readonly action: AtomicAction }
   | { readonly kind: 'seal'; readonly selector: Selector }
   | { readonly kind: 'removal'; readonly accepted: Selector; readonly glyph: 'hope' | 'none' }
   | { readonly kind: 'repeat'; readonly action: AtomicAction; readonly until: Predicate }
   | { readonly kind: 'upgrade'; readonly id: number; readonly tier: number; readonly glyph: Glyph }
-  | { readonly kind: 'chaos'; readonly selector: Selector; readonly until: Requirement };
+  | { readonly kind: 'chaos'; readonly selector: Selector; readonly until: Requirement;
+      readonly onExhausted?: 'ABORT' | 'CONTINUE'; readonly prepareWithHavoc?: boolean };
 
 export interface Route { readonly id: string; readonly macros: readonly Macro[]; readonly description?: string }
 

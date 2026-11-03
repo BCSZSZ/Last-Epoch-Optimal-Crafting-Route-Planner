@@ -3,7 +3,7 @@ import { commonRoutes, macroLibrary, routeId, routeSpace } from './candidates';
 import { exampleRequest } from './examples';
 import { macroStep, predicateReached, reportRoute } from './evaluation';
 import { MODEL_ID } from './catalog';
-import { plan, PlanningCancelledError } from './planner';
+import { plan, planFiniteBaseline, PlanningCancelledError } from './planner';
 import { parsePlanRequest } from './request';
 import { RuleEngine } from './rules';
 import type { Macro, PlanRequest, Route } from './types';
@@ -112,7 +112,7 @@ describe('bounded search and safe pruning', () => {
   it('evaluates complex 7732 Redemption as a state-changing loop and reports estimated precision', async () => {
     const input: PlanRequest = { ...exampleRequest('7732-missing'), scoring: { maximumFp: 10 },
       search: { ...exampleRequest().search, maxRoutes: 3 } };
-    const result = await plan(input, { now: () => 0, screeningSamplesPerFp: 128, finalSamplesPerFp: 256, seed: 'planner7732' });
+    const result = await planFiniteBaseline(input, { now: () => 0, screeningSamplesPerFp: 128, finalSamplesPerFp: 256, seed: 'planner7732' });
     expect(result.status).toBe('RECOMMENDATION');
     expect(result.primary?.evaluationStatus).toBe('ESTIMATED');
     expect(result.primary?.sampling?.samplesPerFp).toBe(256);

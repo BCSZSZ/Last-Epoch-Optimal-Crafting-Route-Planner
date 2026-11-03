@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -9,14 +10,23 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def check(require_live_match=False):
+def check(require_live_match=False, allow_historical=False):
     folder = ROOT / 'research/browser-memory'
     memory = json.loads((folder / '7710-normal-memory.json').read_text(encoding='utf-8'))
     request = json.loads((folder / '7710-normal-input.json').read_text(encoding='utf-8'))
     plan = json.loads((folder / '7710-normal-plan.json').read_text(encoding='utf-8'))
     model = json.loads((ROOT / 'src/generated/model.json').read_text(encoding='utf-8'))
-    if len({memory['modelId'], request['modelId'], plan['modelId'], model['modelId']}) != 1:
-        raise ValueError('Input, browser, plan and current model versions differ')
+    historical = memory['modelId'] != model['modelId']
+    if historical:
+        if not allow_historical:
+            raise ValueError('Historical observation requires --allow-historical; it is not current-release memory evidence')
+        manifest = json.loads((ROOT / 'research/runtime-model-archive/manifest.json').read_text(encoding='utf-8'))
+        archived = manifest['models'][memory['modelId']]
+        archive_path = (ROOT / archived['file']).resolve()
+        if not archive_path.is_relative_to((ROOT / 'research/runtime-model-archive').resolve()) or hashlib.sha256(archive_path.read_bytes()).hexdigest() != archived['sha256']:
+            raise ValueError('Invalid historical model archive')
+    if len({memory['modelId'], request['modelId'], plan['modelId']}) != 1:
+        raise ValueError('Input, browser and plan model versions differ')
     if memory['active'] or memory['measurementPending']:
         raise ValueError('Measurement did not finish')
     if not memory['environment']['secureContext'] or not memory['environment']['crossOriginIsolated']:
@@ -57,7 +67,7 @@ def check(require_live_match=False):
         for name, fingerprint in memory['build']['artifacts'].items():
             if name != 'index.html' and live_artifacts.get(name) != fingerprint:
                 raise ValueError('Observed JS/CSS/Worker bytes differ from live static validation')
-    return {'status': 'PASS', 'modelId': memory['modelId'], 'samples': len(observations),
+    return {'status': 'PASS', 'modelId': memory['modelId'], 'currentModelId': model['modelId'], 'historical': historical, 'samples': len(observations),
             'samplesOverlappingPlanning': active_observations, 'workerUrls': sorted(worker_urls),
             'maximumTotalMiBObserved': maximum / 2 ** 20, 'maximumWorkerExclusiveMiBObserved': worker_maximum / 2 ** 20,
             'requestScope': request['search'], 'evaluatedRoutes': plan['search']['evaluatedRoutes'],
@@ -70,8 +80,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--require-live-match', action='store_true')
     parser.add_argument('--write-report', action='store_true')
+    parser.add_argument('--allow-historical', action='store_true')
     args = parser.parse_args()
-    result = check(args.require_live_match)
+    result = check(args.require_live_match, args.allow_historical)
     if args.write_report:
         (ROOT / 'research/browser-memory/validation.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     print(json.dumps(result, ensure_ascii=False))

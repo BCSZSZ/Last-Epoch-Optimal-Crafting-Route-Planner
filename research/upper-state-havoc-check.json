@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-11-03",
-  "sourceModelId": "le-1.5.3-iid-f58515921fd9cbcc",
+  "sourceModelId": "le-1.5.3-iid-b88b0a4321c1f217",
   "analysisModel": "INTRINSIC_OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V1",
   "rows": [
     {
@@ -98,8 +98,8 @@
   "sameCoarseLabelButDifferentTransitionAndCost": true,
   "qualification": "One legal concrete no-roll target example. Current production atomic kernel with continuously sufficient FP; Havoc changed-layout symmetry gives the repeated-macro mean. Not a benchmark or client measurement.",
   "inputSha256": {
-    "src/generated/model.json": "fcde9020026d43303cc6959fe2b4b5e4b7ff715313c972f1fcfea91dc0d60298",
-    "src/core/rules.ts": "f315ff7bca3d2311631c8138371f870fe08f8d5ab57fc27444b6f6be24306dcb",
+    "src/generated/model.json": "e96a4a59055df2cc1c7f285806a969cac5bf17a979de07206c57bbbf2fa3d925",
+    "src/core/rules.ts": "380a9af9251160a4fa27928142ba10e6716021084c13205d71216c6aa90ff449",
     "src/core/probability.ts": "6a88f44bba1543b55c97e9ad56957f44f5a4cbe51c7ed2da1b181cc77b7906be",
     "scripts/check_upper_state_havoc.ts": "118a4156ea94114db04eba5359c23dd07d7ae2bded9cf63296351abeca43372c"
   }

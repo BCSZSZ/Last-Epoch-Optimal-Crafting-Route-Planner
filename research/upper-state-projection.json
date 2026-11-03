@@ -2062,13 +2062,13 @@
     "presentTargetMask": "A=1,B=2; ordinary identity present at any tier, not justT7"
   },
   "inputSha256": {
-    "research/upper-state-havoc-check.json": "e4d6bbc356a4a4002fa951b6e45550de3b599749d24d4172164e79aaa86bf15a",
+    "research/upper-state-havoc-check.json": "70bf1cacde7e95ceb3cfca65aa17b5cfa5f5f5b0d35580e341b24ed4e55e0b59",
     "scripts/analyze_upper_state_projection.py": "311893d0599c680e87d1141270ecdc2c76c2d2764e95d6da6c3cf3513b1802e4",
     "scripts/check_strategy_classification.py": "3cf69c5f56844029365e65f993df35e9507a491767d9821e2192be896afc064b",
     "scripts/check_upper_state_havoc.ts": "118a4156ea94114db04eba5359c23dd07d7ae2bded9cf63296351abeca43372c",
     "src/core/catalog.ts": "8280dd7c469bcc48d1691033cecb7cbb68d9d37d7506907b33177636bae3e94d",
-    "src/core/rules.ts": "f315ff7bca3d2311631c8138371f870fe08f8d5ab57fc27444b6f6be24306dcb",
-    "src/core/validation.ts": "205c559a009b16974e3ba9ea8f07f240508406d6a5b7b42b278fb50cb6c1e2a6"
+    "src/core/rules.ts": "380a9af9251160a4fa27928142ba10e6716021084c13205d71216c6aa90ff449",
+    "src/core/validation.ts": "486d5c02e303f9ecbeca8475dfef19943e7a3d8e3294131f5fa6394a5f509cab"
   },
   "population": {
     "additionalPhysicalGameStatesVerified": 0,

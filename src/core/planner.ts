@@ -8,6 +8,10 @@ import { sampleRoute, SamplingInterruptedError } from './sampling';
 import { targetReached } from './target';
 import { parsePlanRequest } from './request';
 import type { Issue, Macro, PlanRequest, Route } from './types';
+import { compileTemplates } from './hierarchy';
+import type { Structure } from './hierarchy';
+import { evaluateIntrinsic, IntrinsicWorkspace } from './intrinsic';
+import type { IntrinsicReport } from './intrinsic';
 
 export interface PlanProgress {
   readonly phase: 'VALIDATION' | 'SEARCH' | 'REFINEMENT' | 'DONE';
@@ -18,6 +22,17 @@ export interface PlanProgress {
 }
 
 export interface PlanReport {
+  readonly metric?: 'INTRINSIC_V2' | 'FINITE_FP_V1';
+  readonly hierarchy?: {
+    readonly structure: Structure;
+    readonly upperLabels: 28;
+    readonly routeNodes: 23;
+    readonly generatedTemplates: number;
+    readonly structurallyRejected: number;
+    readonly workspaceCacheHits: number;
+  };
+  readonly abandoned?: readonly IntrinsicReport[];
+  readonly unresolvedRoutes?: number;
   readonly modelId: string;
   readonly gameVersion: string;
   readonly status: 'RECOMMENDATION' | 'INVALID_INPUT' | 'NO_ROUTE_FOUND_IN_SCOPE';
@@ -57,6 +72,7 @@ export interface PlanReport {
 }
 
 export interface PlanningOptions {
+  readonly intrinsicRoutes?: readonly Route[];
   readonly signal?: { readonly aborted: boolean };
   readonly onProgress?: (progress: PlanProgress) => void;
   readonly now?: () => number;
@@ -97,7 +113,7 @@ function certifiedDominates(a: RouteReport, b: RouteReport): boolean {
 }
 
 /** One asynchronous planning interface for both browser Worker and Node adapters. */
-export async function plan(input: unknown, options: PlanningOptions = {}): Promise<PlanReport> {
+export async function planFiniteBaseline(input: unknown, options: PlanningOptions = {}): Promise<PlanReport> {
   const engine = new RuleEngine(new Catalog());
   const now = options.now ?? Date.now;
   const start = now();
@@ -233,4 +249,73 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
   progress('DONE', primary ? '已得到当前范围内的主推荐' : '当前搜索范围尚未找到可行路线');
   return finish(primary ? 'RECOMMENDATION' : 'NO_ROUTE_FOUND_IN_SCOPE', [], library.length, space.candidateUpperBound,
     space.pruned(), exhausted && unevaluated === 0 ? 'COMPLETE' : 'INCOMPLETE');
+}
+
+/** Production entry: hierarchical complete templates, joint intrinsic rewards, certified practical thresholds. */
+export async function plan(input: unknown, options: PlanningOptions = {}): Promise<PlanReport> {
+  // The explicit Cartesian seam is retained only for the independent finite-FP regression baseline.
+  if (options.library) return planFiniteBaseline(input, options);
+  const engine = new RuleEngine(), parsed = parsePlanRequest(input, engine.catalog);
+  if (!parsed.request) return planFiniteBaseline(input, options);
+  const request = parsed.request, now = options.now ?? Date.now, start = now();
+  const elapsed = () => Math.max(0, now() - start);
+  const stopped = () => Boolean(options.signal?.aborted) || elapsed() >= request.search.milliseconds;
+  if (options.signal?.aborted) throw new PlanningCancelledError();
+  const compiled = compileTemplates(request, engine), workspace = new IntrinsicWorkspace(engine, request);
+  const seeds = options.intrinsicRoutes ?? options.seedRoutes ?? (compiled?.templates ?? commonRoutes(request, engine));
+  const library = compiled || options.intrinsicRoutes ? [] : macroLibrary(request, engine, seeds);
+  const general = routeSpace(library, request.search.macroStages, stopped);
+  const routes = function* () { yield* seeds; if (!compiled && !options.intrinsicRoutes) yield* general.routes; };
+  const seen = new Set<string>(), abandoned: IntrinsicReport[] = [], retained: IntrinsicReport[] = [];
+  let primary: IntrinsicReport | null = null, evaluated = 0, unresolved = 0, exhausted = true, duplicates = 0;
+  let stopReason = 'TEMPLATE_SCOPE_EXHAUSTED';
+  const progress = (phase: PlanProgress['phase'], message: string) => options.onProgress?.({ phase, evaluatedRoutes: evaluated,
+    elapsedMilliseconds: elapsed(), bestScore: primary?.scoreEstimate ?? null, message });
+  progress('VALIDATION', compiled ? `结构 ${compiled.structure.node.key}：按细分结构编译固定模板` : '目标超出双T7分层范围，使用已声明的通用候选语言');
+  const compare = (a: IntrinsicReport, b: IntrinsicReport) => Math.abs(a.scoreEstimate - b.scoreEstimate) > 1e-9 ? b.scoreEstimate - a.scoreEstimate :
+    midpoint(a.expectedFpGivenSuccess) - midpoint(b.expectedFpGivenSuccess) || a.route.id.localeCompare(b.route.id, 'en');
+  const containsChaos = (macros: readonly Macro[]): boolean => macros.some((macro) => macro.kind === 'chaos' ||
+    (macro.kind === 'conditional' && containsChaos([...macro.then, ...(macro.otherwise ?? [])])));
+  for (const route of routes()) {
+    if (options.signal?.aborted) throw new PlanningCancelledError();
+    if (stopped() || evaluated >= request.search.maxRoutes) { exhausted = false; stopReason = stopped() ? 'TIME_BUDGET' : 'ROUTE_BUDGET'; break; }
+    const key = routeKey(route); if (seen.has(key)) { duplicates++; continue; } seen.add(key);
+    progress('SEARCH', route.description ?? '计算完整固定策略的操作成功率与成功路径FP');
+    evaluated++;
+    try {
+      const routeStart = now();
+      const routeStopped = () => stopped() || now() - routeStart >= Math.min(containsChaos(route.macros) ? 300 : 1500, request.search.milliseconds / 4);
+      const report = evaluateIntrinsic(workspace, route, routeStopped, options.disableCertifiedPruning);
+      if (report.intrinsic.decision === 'ABANDONED') abandoned.push(report);
+      else if (report.intrinsic.decision === 'UNRESOLVED') unresolved++;
+      else { retained.push(report); if (!primary || compare(report, primary) < 0) primary = report; }
+    } catch (error) {
+      if (options.signal?.aborted) throw new PlanningCancelledError();
+      if (!(error instanceof EvaluationLimitError || error instanceof OutcomeLimitError)) throw error;
+      unresolved++;
+      if (stopped()) { exhausted = false; stopReason = 'TIME_BUDGET'; break; }
+    }
+    await options.yieldControl?.();
+  }
+  if (options.signal?.aborted) throw new PlanningCancelledError();
+  progress('DONE', primary ? '已得到通过15%／100FP门槛的当前主推荐' : '已返回放弃记录或尚未完成的候选范围');
+  const pareto = retained.filter((row) => !retained.some((other) => other !== row && other.score.lower >= row.score.upper &&
+    other.expectedFpGivenSuccess!.upper < row.expectedFpGivenSuccess!.lower));
+  return {
+    metric: 'INTRINSIC_V2', modelId: engine.catalog.model.modelId, gameVersion: engine.catalog.model.gameVersion,
+    status: primary ? 'RECOMMENDATION' : 'NO_ROUTE_FOUND_IN_SCOPE', primary, issues: [], abandoned, unresolvedRoutes: unresolved,
+    searchStatus: exhausted && unresolved === 0 ? 'COMPLETE' : 'INCOMPLETE', optimality: 'NOT_PROVEN', samplingGuarantee: null,
+    hierarchy: compiled ? { structure: compiled.structure, upperLabels: 28, routeNodes: 23, generatedTemplates: compiled.templates.length,
+      structurallyRejected: compiled.rejected.length, workspaceCacheHits: workspace.cacheHits } : undefined,
+    search: { grammar: options.intrinsicRoutes ? 'EXPLICIT_FIXED_INTRINSIC_ROUTES' : compiled?.grammar ?? 'GENERAL_FIXED_GRAMMAR_INTRINSIC_V2',
+      macroStages: request.search.macroStages, librarySize: compiled ? new Set(compiled.templates.flatMap((row) => row.macros.map((macro) => JSON.stringify(macro)))).size : library.length,
+      candidateUpperBound: String(options.intrinsicRoutes?.length ?? compiled?.templates.length ?? general.candidateUpperBound),
+      evaluatedRoutes: evaluated, exactRoutes: evaluated - unresolved, estimatedRoutes: 0, unevaluatedRoutes: unresolved,
+      skippedDuplicates: duplicates, certifiedPrunedPrefixes: abandoned.filter((row) => row.intrinsic.probabilityMeaning === 'PREFIX_SURVIVAL_UPPER_BOUND').length,
+      elapsedMilliseconds: elapsed(), stopReason, paretoRouteIds: pareto.map((row) => row.route.id) },
+    conventions: { fpDomain: [], weights: [], materials: 'UNLIMITED', fixedRoute: true, rngModel: engine.catalog.model.rngModel },
+    qualification: 'FP持续充足；成功率只计操作NG，FP只以最终成功路径的均值判断100门槛。未使用起始FP分布或耗尽保留福利。' +
+      '模板及分支预先固定；上层标签只路由，数值保留ID、阶数、原生顺序和费用联合核。15%／100等号通过；区间跨阈或执行预算不足保留未完成。' +
+      '已搜索范围不代表任意长度策略全局最优。普通填充采用预先声明的合法碎片顺序，不宣称所有填充ID均等价。',
+  };
 }

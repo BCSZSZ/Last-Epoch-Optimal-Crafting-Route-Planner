@@ -1,7 +1,7 @@
 import { Catalog, itemKey, ordinary } from './catalog';
 import { requiredLevelAfterShard, requiredLevelWithAffix } from './levels';
 import { assertUnitMass, boundedCostKernel, sum, tierPermutations } from './probability';
-import { exact, Interval, ONE, ratio } from './interval';
+import { exact, Interval, ONE, ZERO, ratio } from './interval';
 import { validateItem } from './validation';
 import { pickWeighted } from './random';
 import type { Draw } from './random';
@@ -22,6 +22,17 @@ export interface TransitionOptions {
   /** Expand byte draws only when roll predicates/protection require their values. */
   readonly trackRolls?: boolean;
   readonly maxOutcomes?: number;
+}
+
+export interface DemandDistribution {
+  readonly outcomes: readonly {
+    readonly item: Item;
+    readonly abort: AtomicOutcome['abort'];
+    readonly probability: { readonly lower: number; readonly upper: number };
+    /** E[net FP demand * 1{this exit}], retaining critical/exit correlation. */
+    readonly fpMoment: { readonly lower: number; readonly upper: number };
+  }[];
+  readonly issues: readonly Issue[];
 }
 
 export class OutcomeLimitError extends Error {
@@ -151,6 +162,29 @@ export class RuleEngine {
     const result = [...outcomes.values()];
     const mass = assertUnitMass(result.map((row) => row.probability));
     return { outcomes: result, issues: [], probabilityMass: mass, evaluation: 'OUTWARD_ROUNDED_UNDER_DECLARED_MODEL' };
+  }
+
+  /** Continuous-resource reward projection of the SAME native settlement. No FP balance axis. */
+  demandTransition(item: Item, action: AtomicAction, context: CraftingContext, options: TransitionOptions = {}): DemandDistribution {
+    const constraints = options.constraints ?? {};
+    const issues = this.eligibility(item, 63, action, context, constraints);
+    if (issues.length) return { outcomes: [], issues };
+    const states = this.#variants(item, action, context, Boolean(options.trackRolls || constraints.protected?.some((row) => row.roll)), options.maxOutcomes ?? 200000);
+    if (states.some((row) => row.weight.upper > 0 && protectionViolated(item, row.item, constraints))) {
+      return { outcomes: [], issues: [{ code: 'PROTECTION_RISK', message: '该动作可能违反明确设置的全程保护条件' }] };
+    }
+    // Maximum single charge is 24; buffer 63 cannot invoke the low-balance preservation law.
+    const fee = this.#cost(item, 63, action).reduce((value, row) => value.add(row.bounds.mul(exact(63 - row.value))), ZERO);
+    const exits = new Map<string, { item: Item; abort: AtomicOutcome['abort']; probability: Interval; fpMoment: Interval }>();
+    for (const state of states) {
+      const key = `${state.abort ?? '-'}|${itemKey(state.item)}`;
+      const previous = exits.get(key);
+      exits.set(key, { item: state.item, abort: state.abort,
+        probability: (previous?.probability ?? ZERO).add(state.weight),
+        fpMoment: (previous?.fpMoment ?? ZERO).add(state.critical ? ZERO : state.weight.mul(fee)) });
+    }
+    assertUnitMass([...exits.values()].map((row) => row.probability.midpoint));
+    return { outcomes: [...exits.values()].map((row) => ({ ...row, probability: row.probability.report(), fpMoment: row.fpMoment.report() })), issues: [] };
   }
 
   sample(item: Item, fp: number, action: AtomicAction, context: CraftingContext, draw: Draw, options: TransitionOptions = {}): AtomicSample {

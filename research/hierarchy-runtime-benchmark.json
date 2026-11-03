@@ -1,0 +1,2838 @@
+{
+  "schemaVersion": 2,
+  "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+  "metric": "INTRINSIC_V2",
+  "measuredAt": "2026-11-03T09:52:53.732Z",
+  "environment": {
+    "node": "v22.20.0",
+    "cpu": "13th Gen Intel(R) Core(TM) i5-13600KF",
+    "logicalCpus": 20,
+    "memoryGiB": 31.772438049316406
+  },
+  "records": [
+    {
+      "id": "7732-ready",
+      "fpType": "NORMAL",
+      "milliseconds": 14.024799999999999,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "NORMAL",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 4,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "COMPLETE",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 35.402812499999435,
+        "upper": 35.40281250000057
+      },
+      "routeId": "r-35c31b58e079a1bc",
+      "routeDescription": "身份齐全：必要时补满普通栏，再浩劫收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "202-N4-S0",
+            "group": "202",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "202-N4-S0",
+            "families": [
+              "FINISH"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 3,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 7,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 4,
+              "tier": 3,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": true
+            },
+            {
+              "id": 5,
+              "tier": 2,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": true
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 1,
+        "structurallyRejected": 0,
+        "workspaceCacheHits": 0
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 2,
+        "candidateUpperBound": "1",
+        "evaluatedRoutes": 1,
+        "exactRoutes": 1,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 0,
+        "elapsedMilliseconds": 10,
+        "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+        "paretoRouteIds": [
+          "r-35c31b58e079a1bc"
+        ]
+      },
+      "primaryStates": 4,
+      "abandoned": 0,
+      "unresolved": 0
+    },
+    {
+      "id": "7732-ready",
+      "fpType": "ICE",
+      "milliseconds": 2.2468000000000075,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "ICE",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 4,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "COMPLETE",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 24.78196874999956,
+        "upper": 24.78196875000045
+      },
+      "routeId": "r-35c31b58e079a1bc",
+      "routeDescription": "身份齐全：必要时补满普通栏，再浩劫收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "202-N4-S0",
+            "group": "202",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "202-N4-S0",
+            "families": [
+              "FINISH"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 3,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 7,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 4,
+              "tier": 3,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": true
+            },
+            {
+              "id": 5,
+              "tier": 2,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": true
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 1,
+        "structurallyRejected": 0,
+        "workspaceCacheHits": 0
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 2,
+        "candidateUpperBound": "1",
+        "evaluatedRoutes": 1,
+        "exactRoutes": 1,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 0,
+        "elapsedMilliseconds": 2,
+        "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+        "paretoRouteIds": [
+          "r-35c31b58e079a1bc"
+        ]
+      },
+      "primaryStates": 4,
+      "abandoned": 0,
+      "unresolved": 0
+    },
+    {
+      "id": "7732-ready",
+      "fpType": "BLOOD",
+      "milliseconds": 2.2541999999999973,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "BLOOD",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 4,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "COMPLETE",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 35.402812499999435,
+        "upper": 35.40281250000057
+      },
+      "routeId": "r-35c31b58e079a1bc",
+      "routeDescription": "身份齐全：必要时补满普通栏，再浩劫收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "202-N4-S0",
+            "group": "202",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "202-N4-S0",
+            "families": [
+              "FINISH"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 3,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 7,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 4,
+              "tier": 3,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": true
+            },
+            {
+              "id": 5,
+              "tier": 2,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": true
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 1,
+        "structurallyRejected": 0,
+        "workspaceCacheHits": 0
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 2,
+        "candidateUpperBound": "1",
+        "evaluatedRoutes": 1,
+        "exactRoutes": 1,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 0,
+        "elapsedMilliseconds": 2,
+        "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+        "paretoRouteIds": [
+          "r-35c31b58e079a1bc"
+        ]
+      },
+      "primaryStates": 4,
+      "abandoned": 0,
+      "unresolved": 0
+    },
+    {
+      "id": "7710-direct",
+      "fpType": "NORMAL",
+      "milliseconds": 275.5206,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "NORMAL",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "INCOMPLETE",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 48.804892289212226,
+        "upper": 48.804892289219154
+      },
+      "routeId": "r-32e2603f38468323",
+      "routeDescription": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "200-N3-S0",
+            "group": "200",
+            "ordinaryCount": 3,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "200-N3-S0",
+            "families": [
+              "DIRECT",
+              "SEAL",
+              "PREPARE_SEAL",
+              "REMOVE",
+              "PREPARE_REMOVE",
+              "CHAOS",
+              "PREPARE_CHAOS",
+              "REDEMPTION",
+              "REDEMPTION_SINGLE_CAST",
+              "REDEMPTION_ANY_THEN_ACQUIRE",
+              "REDEMPTION_PROTECTED_SECOND"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 0,
+          "emptyBySide": [
+            1,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 7,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 2,
+              "tier": 1,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": false
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 293,
+        "structurallyRejected": 224,
+        "workspaceCacheHits": 747
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 45,
+        "candidateUpperBound": "293",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 48,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 28,
+        "elapsedMilliseconds": 275,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-32e2603f38468323",
+          "r-96ada66330cc5207",
+          "r-b9488ec56a997279",
+          "r-db4e370198968d45"
+        ]
+      },
+      "primaryStates": 47,
+      "abandoned": 29,
+      "unresolved": 0
+    },
+    {
+      "id": "7710-direct",
+      "fpType": "ICE",
+      "milliseconds": 166.36840000000007,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "ICE",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "INCOMPLETE",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 34.16342460244816,
+        "upper": 34.1634246024538
+      },
+      "routeId": "r-32e2603f38468323",
+      "routeDescription": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "200-N3-S0",
+            "group": "200",
+            "ordinaryCount": 3,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "200-N3-S0",
+            "families": [
+              "DIRECT",
+              "SEAL",
+              "PREPARE_SEAL",
+              "REMOVE",
+              "PREPARE_REMOVE",
+              "CHAOS",
+              "PREPARE_CHAOS",
+              "REDEMPTION",
+              "REDEMPTION_SINGLE_CAST",
+              "REDEMPTION_ANY_THEN_ACQUIRE",
+              "REDEMPTION_PROTECTED_SECOND"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 0,
+          "emptyBySide": [
+            1,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 7,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 2,
+              "tier": 1,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": false
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 293,
+        "structurallyRejected": 224,
+        "workspaceCacheHits": 747
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 45,
+        "candidateUpperBound": "293",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 48,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 28,
+        "elapsedMilliseconds": 165,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-32e2603f38468323",
+          "r-96ada66330cc5207",
+          "r-b9488ec56a997279",
+          "r-db4e370198968d45"
+        ]
+      },
+      "primaryStates": 47,
+      "abandoned": 29,
+      "unresolved": 0
+    },
+    {
+      "id": "7710-direct",
+      "fpType": "BLOOD",
+      "milliseconds": 161.62869999999998,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "BLOOD",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "INCOMPLETE",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 49.917876747447636,
+        "upper": 49.917876747454336
+      },
+      "routeId": "r-32e2603f38468323",
+      "routeDescription": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "200-N3-S0",
+            "group": "200",
+            "ordinaryCount": 3,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "200-N3-S0",
+            "families": [
+              "DIRECT",
+              "SEAL",
+              "PREPARE_SEAL",
+              "REMOVE",
+              "PREPARE_REMOVE",
+              "CHAOS",
+              "PREPARE_CHAOS",
+              "REDEMPTION",
+              "REDEMPTION_SINGLE_CAST",
+              "REDEMPTION_ANY_THEN_ACQUIRE",
+              "REDEMPTION_PROTECTED_SECOND"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 0,
+          "emptyBySide": [
+            1,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 7,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 2,
+              "tier": 1,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": false
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 293,
+        "structurallyRejected": 224,
+        "workspaceCacheHits": 747
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 45,
+        "candidateUpperBound": "293",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 48,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 28,
+        "elapsedMilliseconds": 162,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-32e2603f38468323",
+          "r-96ada66330cc5207",
+          "r-b9488ec56a997279",
+          "r-db4e370198968d45"
+        ]
+      },
+      "primaryStates": 47,
+      "abandoned": 29,
+      "unresolved": 0
+    },
+    {
+      "id": "7713-prepare",
+      "fpType": "NORMAL",
+      "milliseconds": 7032.2235,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "NORMAL",
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "INCOMPLETE",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 68.40710318627185,
+        "upper": 68.40710318627717
+      },
+      "routeId": "r-54a76475201aba49",
+      "routeDescription": "补栏浩劫准备后封T1补齐缺失目标，再收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "210-N4-S0",
+            "group": "210",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "210-N4-S0",
+            "families": [
+              "DIRECT",
+              "SEAL",
+              "PREPARE_SEAL",
+              "REMOVE",
+              "PREPARE_REMOVE",
+              "CHAOS",
+              "PREPARE_CHAOS",
+              "REDEMPTION",
+              "REDEMPTION_SINGLE_CAST",
+              "REDEMPTION_ANY_THEN_ACQUIRE",
+              "REDEMPTION_PROTECTED_SECOND"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 1,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 4,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": true
+            },
+            {
+              "id": 26,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 1,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": false
+            },
+            {
+              "id": 7,
+              "tier": 3,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": false
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 24,
+        "structurallyRejected": 16,
+        "workspaceCacheHits": 12792
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 26,
+        "candidateUpperBound": "24",
+        "evaluatedRoutes": 24,
+        "exactRoutes": 19,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 5,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 2,
+        "elapsedMilliseconds": 7032,
+        "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+        "paretoRouteIds": [
+          "r-54a76475201aba49",
+          "r-f3a574428dbc2606",
+          "r-f1e1237c5a28bbb0",
+          "r-41dff94263a0dc26"
+        ]
+      },
+      "primaryStates": 33,
+      "abandoned": 4,
+      "unresolved": 5
+    },
+    {
+      "id": "7713-prepare",
+      "fpType": "ICE",
+      "milliseconds": 6992.575500000001,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "ICE",
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "INCOMPLETE",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 47.884972230390005,
+        "upper": 47.88497223039431
+      },
+      "routeId": "r-54a76475201aba49",
+      "routeDescription": "补栏浩劫准备后封T1补齐缺失目标，再收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "210-N4-S0",
+            "group": "210",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "210-N4-S0",
+            "families": [
+              "DIRECT",
+              "SEAL",
+              "PREPARE_SEAL",
+              "REMOVE",
+              "PREPARE_REMOVE",
+              "CHAOS",
+              "PREPARE_CHAOS",
+              "REDEMPTION",
+              "REDEMPTION_SINGLE_CAST",
+              "REDEMPTION_ANY_THEN_ACQUIRE",
+              "REDEMPTION_PROTECTED_SECOND"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 1,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 4,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": true
+            },
+            {
+              "id": 26,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 1,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": false
+            },
+            {
+              "id": 7,
+              "tier": 3,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": false
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 24,
+        "structurallyRejected": 16,
+        "workspaceCacheHits": 12792
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 26,
+        "candidateUpperBound": "24",
+        "evaluatedRoutes": 24,
+        "exactRoutes": 19,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 5,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 2,
+        "elapsedMilliseconds": 6993,
+        "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+        "paretoRouteIds": [
+          "r-54a76475201aba49",
+          "r-f3a574428dbc2606",
+          "r-f1e1237c5a28bbb0",
+          "r-41dff94263a0dc26"
+        ]
+      },
+      "primaryStates": 33,
+      "abandoned": 4,
+      "unresolved": 5
+    },
+    {
+      "id": "7713-prepare",
+      "fpType": "BLOOD",
+      "milliseconds": 7495.5617,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "BLOOD",
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "INCOMPLETE",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 66.87737848038891,
+        "upper": 66.87737848039538
+      },
+      "routeId": "r-f3a574428dbc2606",
+      "routeDescription": "救赎首次命中任一目标 → 按既定分支补栏浩劫准备后封T1补另一目标 → 收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "210-N4-S0",
+            "group": "210",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "210-N4-S0",
+            "families": [
+              "DIRECT",
+              "SEAL",
+              "PREPARE_SEAL",
+              "REMOVE",
+              "PREPARE_REMOVE",
+              "CHAOS",
+              "PREPARE_CHAOS",
+              "REDEMPTION",
+              "REDEMPTION_SINGLE_CAST",
+              "REDEMPTION_ANY_THEN_ACQUIRE",
+              "REDEMPTION_PROTECTED_SECOND"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 1,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 4,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": true
+            },
+            {
+              "id": 26,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 1,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": false
+            },
+            {
+              "id": 7,
+              "tier": 3,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": false
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 24,
+        "structurallyRejected": 16,
+        "workspaceCacheHits": 12792
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 26,
+        "candidateUpperBound": "24",
+        "evaluatedRoutes": 24,
+        "exactRoutes": 19,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 5,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 2,
+        "elapsedMilliseconds": 7495,
+        "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+        "paretoRouteIds": [
+          "r-54a76475201aba49",
+          "r-f3a574428dbc2606",
+          "r-f1e1237c5a28bbb0",
+          "r-41dff94263a0dc26"
+        ]
+      },
+      "primaryStates": 35,
+      "abandoned": 4,
+      "unresolved": 5
+    },
+    {
+      "id": "removal-required",
+      "fpType": "NORMAL",
+      "milliseconds": 1.6147000000019034,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "NORMAL",
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 5,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 5,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {
+          "allowedActions": [
+            "removal",
+            "add",
+            "havoc"
+          ]
+        },
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "COMPLETE",
+      "operationSuccess": {
+        "lower": 0.2499999999999983,
+        "upper": 0.2500000000000017
+      },
+      "successfulMeanFp": {
+        "lower": 48.545410477937665,
+        "upper": 48.54541047794469
+      },
+      "routeId": "r-117f6f3bf12838af",
+      "routeDescription": "剥离垃圾补齐缺失目标，再收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "210-N4-S0",
+            "group": "210",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "210-N4-S0",
+            "families": [
+              "DIRECT",
+              "SEAL",
+              "PREPARE_SEAL",
+              "REMOVE",
+              "PREPARE_REMOVE",
+              "CHAOS",
+              "PREPARE_CHAOS",
+              "REDEMPTION",
+              "REDEMPTION_SINGLE_CAST",
+              "REDEMPTION_ANY_THEN_ACQUIRE",
+              "REDEMPTION_PROTECTED_SECOND"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 1,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 4,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": true
+            },
+            {
+              "id": 2,
+              "tier": 5,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 5,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": false
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 2,
+        "structurallyRejected": 38,
+        "workspaceCacheHits": 8
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 4,
+        "candidateUpperBound": "2",
+        "evaluatedRoutes": 2,
+        "exactRoutes": 2,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 0,
+        "elapsedMilliseconds": 1,
+        "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+        "paretoRouteIds": [
+          "r-117f6f3bf12838af",
+          "r-f1e1237c5a28bbb0"
+        ]
+      },
+      "primaryStates": 12,
+      "abandoned": 0,
+      "unresolved": 0
+    },
+    {
+      "id": "removal-required",
+      "fpType": "ICE",
+      "milliseconds": 2.2907000000013795,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "ICE",
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 5,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 5,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {
+          "allowedActions": [
+            "removal",
+            "add",
+            "havoc"
+          ]
+        },
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "COMPLETE",
+      "operationSuccess": {
+        "lower": 0.2499999999999983,
+        "upper": 0.2500000000000017
+      },
+      "successfulMeanFp": {
+        "lower": 33.981787334556095,
+        "upper": 33.98178733456155
+      },
+      "routeId": "r-117f6f3bf12838af",
+      "routeDescription": "剥离垃圾补齐缺失目标，再收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "210-N4-S0",
+            "group": "210",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "210-N4-S0",
+            "families": [
+              "DIRECT",
+              "SEAL",
+              "PREPARE_SEAL",
+              "REMOVE",
+              "PREPARE_REMOVE",
+              "CHAOS",
+              "PREPARE_CHAOS",
+              "REDEMPTION",
+              "REDEMPTION_SINGLE_CAST",
+              "REDEMPTION_ANY_THEN_ACQUIRE",
+              "REDEMPTION_PROTECTED_SECOND"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 1,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 4,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": true
+            },
+            {
+              "id": 2,
+              "tier": 5,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 5,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": false
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 2,
+        "structurallyRejected": 38,
+        "workspaceCacheHits": 8
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 4,
+        "candidateUpperBound": "2",
+        "evaluatedRoutes": 2,
+        "exactRoutes": 2,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 0,
+        "elapsedMilliseconds": 2,
+        "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+        "paretoRouteIds": [
+          "r-117f6f3bf12838af",
+          "r-f1e1237c5a28bbb0"
+        ]
+      },
+      "primaryStates": 12,
+      "abandoned": 0,
+      "unresolved": 0
+    },
+    {
+      "id": "removal-required",
+      "fpType": "BLOOD",
+      "milliseconds": 4.047099999999773,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "BLOOD",
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 5,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 5,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {
+          "allowedActions": [
+            "removal",
+            "add",
+            "havoc"
+          ]
+        },
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "COMPLETE",
+      "operationSuccess": {
+        "lower": 0.24999999999999747,
+        "upper": 0.25000000000000255
+      },
+      "successfulMeanFp": {
+        "lower": 47.015685772055235,
+        "upper": 47.01568577206241
+      },
+      "routeId": "r-117f6f3bf12838af",
+      "routeDescription": "剥离垃圾补齐缺失目标，再收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "210-N4-S0",
+            "group": "210",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "210-N4-S0",
+            "families": [
+              "DIRECT",
+              "SEAL",
+              "PREPARE_SEAL",
+              "REMOVE",
+              "PREPARE_REMOVE",
+              "CHAOS",
+              "PREPARE_CHAOS",
+              "REDEMPTION",
+              "REDEMPTION_SINGLE_CAST",
+              "REDEMPTION_ANY_THEN_ACQUIRE",
+              "REDEMPTION_PROTECTED_SECOND"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 1,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 4,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": true
+            },
+            {
+              "id": 2,
+              "tier": 5,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 5,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": false
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 2,
+        "structurallyRejected": 38,
+        "workspaceCacheHits": 8
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 4,
+        "candidateUpperBound": "2",
+        "evaluatedRoutes": 2,
+        "exactRoutes": 2,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 0,
+        "elapsedMilliseconds": 4,
+        "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+        "paretoRouteIds": [
+          "r-117f6f3bf12838af",
+          "r-f1e1237c5a28bbb0"
+        ]
+      },
+      "primaryStates": 12,
+      "abandoned": 0,
+      "unresolved": 0
+    },
+    {
+      "id": "7732-missing",
+      "fpType": "NORMAL",
+      "milliseconds": 2986.904700000003,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "NORMAL",
+          "affixes": [
+            {
+              "id": 2,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "INCOMPLETE",
+      "operationSuccess": {
+        "lower": 0.7008785158407594,
+        "upper": 0.7008785171722106
+      },
+      "successfulMeanFp": {
+        "lower": 92.16269664468486,
+        "upper": 92.16269715073125
+      },
+      "routeId": "r-bd1f58826aef5c66",
+      "routeDescription": "救赎首次命中任一目标 → 按既定分支补栏浩劫准备后封T2补另一目标 → 收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "200-N4-S0",
+            "group": "200",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "200-N4-S0",
+            "families": [
+              "DIRECT",
+              "SEAL",
+              "PREPARE_SEAL",
+              "REMOVE",
+              "PREPARE_REMOVE",
+              "CHAOS",
+              "PREPARE_CHAOS",
+              "REDEMPTION",
+              "REDEMPTION_SINGLE_CAST",
+              "REDEMPTION_ANY_THEN_ACQUIRE",
+              "REDEMPTION_PROTECTED_SECOND"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 0,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 2,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": false
+            },
+            {
+              "id": 26,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 7,
+              "tier": 3,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 2,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": false
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 241,
+        "structurallyRejected": 276,
+        "workspaceCacheHits": 1896
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 66,
+        "candidateUpperBound": "241",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 46,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 2,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 34,
+        "elapsedMilliseconds": 2987,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-bd1f58826aef5c66",
+          "r-17ddebe3f713b2ef",
+          "r-d6ec5ef78f21aaf3"
+        ]
+      },
+      "primaryStates": 1737,
+      "abandoned": 42,
+      "unresolved": 2
+    },
+    {
+      "id": "7732-missing",
+      "fpType": "ICE",
+      "milliseconds": 3047.1884000000027,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "ICE",
+          "affixes": [
+            {
+              "id": 2,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "INCOMPLETE",
+      "operationSuccess": {
+        "lower": 0.7008785158407594,
+        "upper": 0.7008785171722106
+      },
+      "successfulMeanFp": {
+        "lower": 64.5138876504757,
+        "upper": 64.51388800609783
+      },
+      "routeId": "r-bd1f58826aef5c66",
+      "routeDescription": "救赎首次命中任一目标 → 按既定分支补栏浩劫准备后封T2补另一目标 → 收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "200-N4-S0",
+            "group": "200",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "200-N4-S0",
+            "families": [
+              "DIRECT",
+              "SEAL",
+              "PREPARE_SEAL",
+              "REMOVE",
+              "PREPARE_REMOVE",
+              "CHAOS",
+              "PREPARE_CHAOS",
+              "REDEMPTION",
+              "REDEMPTION_SINGLE_CAST",
+              "REDEMPTION_ANY_THEN_ACQUIRE",
+              "REDEMPTION_PROTECTED_SECOND"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 0,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 2,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": false
+            },
+            {
+              "id": 26,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 7,
+              "tier": 3,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 2,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": false
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 241,
+        "structurallyRejected": 276,
+        "workspaceCacheHits": 1896
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 66,
+        "candidateUpperBound": "241",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 46,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 2,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 34,
+        "elapsedMilliseconds": 3047,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-bd1f58826aef5c66",
+          "r-17ddebe3f713b2ef",
+          "r-d6ec5ef78f21aaf3"
+        ]
+      },
+      "primaryStates": 1737,
+      "abandoned": 42,
+      "unresolved": 2
+    },
+    {
+      "id": "7732-missing",
+      "fpType": "BLOOD",
+      "milliseconds": 3150.806700000001,
+      "request": {
+        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "BLOOD",
+          "affixes": [
+            {
+              "id": 2,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "INCOMPLETE",
+      "operationSuccess": {
+        "lower": 0.7008785158407594,
+        "upper": 0.7008785171722106
+      },
+      "successfulMeanFp": {
+        "lower": 90.70956307703881,
+        "upper": 90.70956358032441
+      },
+      "routeId": "r-bd1f58826aef5c66",
+      "routeDescription": "救赎首次命中任一目标 → 按既定分支补栏浩劫准备后封T2补另一目标 → 收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "200-N4-S0",
+            "group": "200",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "200-N4-S0",
+            "families": [
+              "DIRECT",
+              "SEAL",
+              "PREPARE_SEAL",
+              "REMOVE",
+              "PREPARE_REMOVE",
+              "CHAOS",
+              "PREPARE_CHAOS",
+              "REDEMPTION",
+              "REDEMPTION_SINGLE_CAST",
+              "REDEMPTION_ANY_THEN_ACQUIRE",
+              "REDEMPTION_PROTECTED_SECOND"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 0,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 2,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": false
+            },
+            {
+              "id": 26,
+              "tier": 7,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 7,
+              "tier": 3,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 2,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": false
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 241,
+        "structurallyRejected": 276,
+        "workspaceCacheHits": 1896
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 66,
+        "candidateUpperBound": "241",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 46,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 2,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 34,
+        "elapsedMilliseconds": 3151,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-bd1f58826aef5c66",
+          "r-17ddebe3f713b2ef",
+          "r-d6ec5ef78f21aaf3"
+        ]
+      },
+      "primaryStates": 1737,
+      "abandoned": 42,
+      "unresolved": 2
+    }
+  ],
+  "qualification": "Node sequential production planner; all allowed actions, real versioned pools, default 12s/48-route request. Time includes template compilation and intrinsic search, excludes module startup. Per-template budgets can leave candidates unresolved; no global-optimality claim. New metrics differ from the archived finite-FP release, so elapsed ratios are not an equal-work speedup benchmark. Not browser, peak-memory, or low-end-device evidence."
+}

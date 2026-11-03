@@ -27,6 +27,9 @@ export class Interval {
     if (this.lower === 0 && this.upper === 0) return other;
     return new Interval(nextDown(this.lower + other.lower), nextUp(this.upper + other.upper));
   }
+  sub(other: Interval): Interval {
+    return this.add(new Interval(-other.upper, -other.lower));
+  }
   mul(other: Interval): Interval {
     if ((this.lower === 0 && this.upper === 0) || (other.lower === 0 && other.upper === 0)) return ZERO;
     if (this.lower === 1 && this.upper === 1) return other;

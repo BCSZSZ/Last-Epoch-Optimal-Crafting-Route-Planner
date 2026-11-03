@@ -45,6 +45,10 @@ export function deviceSummary(record: DeviceBenchmarkRecord) {
       workerSeconds: entry.report.search.elapsedMilliseconds / 1000,
       candidates: entry.report.search.evaluatedRoutes, searchStatus: entry.report.searchStatus,
       recommendation: entry.report.primary?.route.id ?? null,
+      metric: entry.report.metric ?? 'FINITE_FP_V1',
+      successfulMeanFp: entry.report.primary?.expectedFpGivenSuccess ?? null,
+      upperNode: entry.report.hierarchy?.structure.node.routeNode ?? null,
+      abandoned: entry.report.abandoned?.length ?? 0,
       successScore: entry.report.primary?.scoreEstimate ?? null, evaluation: entry.report.primary?.evaluationStatus ?? null })),
     error: record.error, qualification: record.qualification };
 }

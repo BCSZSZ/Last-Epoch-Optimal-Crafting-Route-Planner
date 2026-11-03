@@ -2,11 +2,11 @@
 
 《最后纪元》自动装备打造路线规划器。
 
-**最新指标方案**：[操作成功率、成功路径FP期望与15%／100FP放弃门槛](docs/metric-revision-2026-11-03.md)。本轮已完成新口径研究，线上产品仍待从旧有限FP评分切换。
+**新版求解器**：[23节点的细分结构、完整模板与有证剪枝](docs/hierarchical-solver-v2.md)已接入生产入口。主指标改为操作成功率和最终成功路径平均FP，低于15%或高于100FP的模板显示“已放弃”；计算预算不足单列未完成。[112例逐标签／侧别验收](research/hierarchy-validation.json)
 
 **[打开公开预览版](https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/)**，无需登录。
 
-已实现中文React网页、Worker规划接口、有限固定路线搜索、三类潜能与成功率／消耗分布，已通过实际Pages发布及计算验证。规则基于本机1.5.3／Steam build 26087601的资源及原生实现。[关键机制调查答复](docs/research/key-mechanisms-status.md)、[实施状态与边界](docs/implementation-status.md)、[浏览器和性能验收](docs/product-validation.md)。
+已实现中文React网页、Worker规划接口、按结构生成的固定模板、三类潜能及联合概率／费用评价。旧有限FP曲线和分布保留在研究基线，新主报告使用无余额轴的指标。规则基于本机1.5.3／Steam build 26087601的资源及原生实现。[关键机制调查答复](docs/research/key-mechanisms-status.md)、[实施状态与边界](docs/implementation-status.md)。
 
 [对照原计划的完成度审计](docs/completion-audit.md)逐项列出证据和剩余门槛；物理低性能设备实测仍待补齐；已记录的浏览器内存采样最大值与瞬时分配峰值分开。
 
@@ -48,7 +48,7 @@ npm run dev
 
 `npm run build`构建静态网页，`npm run preview`本地验证产物。`npm run model`只读校验运行模型及源代码指纹。显式更新投影时运行`python -X utf8 scripts/build_runtime_model.py`，核查差异后提交。Pages子路径由`PAGES_BASE`指定，Worker地址随Vite构建解析；运行时不读取本地游戏、父项目或账户。
 
-普通加词、升级、必要封印、浩劫、救赎、混沌、剥离均进入同一规则内核。常见7710／771x路线优先比较，其他合法输入仍进入通用候选。默认12秒／48候选的有限搜索通常未穷尽，报告明确写出未证明最优。复杂救赎采用整路线直接采样并展示统计区间；它不是固定首发概率的几何近似。所有假设FP使用同一条固定路线。
+普通加词、升级、必要封印、浩劫、救赎、混沌、剥离均进入同一规则内核。双T7主场景按28个入口标签／23个上层节点选模板，其他合法输入使用明确标注的通用候选。默认12秒／48候选可能未穷尽，报告明确写出未证明最优。救赎逐次更新候选池，以有状态吸收链和奖励界评价；超出状态或执行预算保留未完成，不把首发命中率当重复概率。主报告不再要求起始FP分布。
 
 无本地游戏、无第三方依赖即可核对已提交数据与数学样例：
 

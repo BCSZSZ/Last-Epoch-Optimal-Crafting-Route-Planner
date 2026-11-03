@@ -1,5 +1,7 @@
 # 宏动作与固定路线契约
 
+当前生产补充：[23节点求解器v2](hierarchical-solver-v2.md)新增预先声明的条件分支、按固定碎片顺序填充，以及明确窗口耗尽行为／浩劫恢复窗口的混沌宏。评价使用持续FP的操作成功率和成功路径FP，不在主指标中因余额耗尽而NG；下文涉及有限FP的部分保留为旧基线说明。
+
 状态：Phase 0 架构审阅稿，2026-11-03。游戏资格与概率取自[动作审计](research/affix-actions-audit.md)和[费用审计](research/forge-fp-audit.md)，联合计算见[概率模型](probability-model.md)。
 
 ## 1. 固定路线的含义

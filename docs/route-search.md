@@ -1,6 +1,6 @@
 # 固定路线搜索与最优性范围
 
-实现补充：`src/core/candidates.ts`和`planner.ts`现已实现有限宏语言v1、常见完整路线优先、随后按长度遍历通用宏组合。内部保留报告候选及保守Pareto摘要；只以有证严格评分界剪前缀。没有将本文件中所有未来优化都标为已实现。
+当前实现：[23节点求解器v2](hierarchical-solver-v2.md)按结构编译完整固定模板，以操作成功率与成功路径FP评价。六类主场景不再遍历任意宏排列；超出六类的目标保留明确标注的通用语言。以下有限FP评分及宏语言v1内容作为旧基线保留。
 
 状态：Phase 0 架构审阅稿，2026-11-03。依据[启动规范第 7–8 节](../BOOTSTRAP.md)、[宏动作契约](macro-actions.md)、[概率模型](probability-model.md)与[优化目标](optimization-objective.md)。
 

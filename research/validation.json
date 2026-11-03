@@ -202,8 +202,8 @@
     "runtimeModel": {
       "affixes": 1156,
       "bases": 923,
-      "bytes": 1049485,
-      "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+      "bytes": 1049767,
+      "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
       "verifiedOnly": true
     },
     "user7710": {
@@ -238,27 +238,31 @@
   "claimedProductionSolverTest": false,
   "documents": {
     "bootstrapUnchanged": true,
-    "localLinks": 168,
+    "localLinks": 268,
     "requiredDocuments": 11
   },
   "inputs": {
-    "scripts/build_research_index.py": "1a6f7023d5ad5a0e6aba7cbe1eaac3aa46bc5bfa3f1d2ae7a6eee4f3dfc5a9ce",
+    "scripts/analyze_upper_state_projection.py": "311893d0599c680e87d1141270ecdc2c76c2d2764e95d6da6c3cf3513b1802e4",
+    "scripts/build_research_index.py": "59ba9116be703ba249ad3d0c5e82fcaa7184727c2e6719d7b76867f80a8cf269",
     "scripts/build_runtime_model.py": "7428fd028b9ead71cd03cf110a9166f90501002a048af9d9565a0c1f23e9529b",
     "scripts/check_7710_monte_carlo.py": "d7e40b9aed16910123b55dd75346dad6d8abe429d0198202f8388dcc796814b9",
     "scripts/check_7710_routes.py": "2cd2b15df713b53a5c6da9e4b9c2a1b25a6a266545aea72e12a7856b2d9c9dc8",
     "scripts/check_7732_redemption.py": "e534bb29d35492d8295dcd89adf631bed689f099f874af15bb1b11852810d122",
     "scripts/check_action_examples.py": "e393f25b274ff9c203fa8026eb38765d4d4a1d8f2a66688596379cbbb6ffa5f0",
-    "scripts/check_browser_memory.py": "4dbdaf3539e4c26f6d821dd5afe38ada53dc042b072dec05fdda3209bd7bbfaa",
+    "scripts/check_browser_memory.py": "cf65f691a610dab08d75175cbab0085a785a82674e72a48d12bff079549b67d4",
     "scripts/check_common_patterns.py": "8bf83fb954640a7caae4a414c64a1bbc42e3034f0aba5806def0804161877b10",
     "scripts/check_common_patterns_monte_carlo.py": "c33bcb343cd12c9dcc9b87f60f4ebd36f8b9c0904c8a2f86bd60b390f1871342",
     "scripts/check_crafting_level_examples.py": "7d51af5af82862e9d64bca7a36f892f9f4e9cd737893bdb2b7de9148f697ed4e",
     "scripts/check_fp_examples.py": "3a413c0f56738862cbc7cf34b1d3f1badbdc80edc2aab60f8a413c06c9199257",
     "scripts/check_math_fixtures.py": "25c3d9154e604d00aa625eed52a780768af42c8d6a21fa31bbb49190fc0b4295",
     "scripts/check_static_site.py": "1fce064d08bc7f9ddd234841dec6cda9baed20ed7d7512bf68bfa17f53185376",
+    "scripts/check_strategy_classification.py": "3cf69c5f56844029365e65f993df35e9507a491767d9821e2192be896afc064b",
     "scripts/extract_game_snapshot.py": "94c58a91f80bd510954e0d762f596d261b257976cd0ec46ec51fb82ba1a3fdc8",
     "scripts/extract_legacy_forge.py": "667c5960cf2f2a3fc0746bdc602a7b091edbcf585def956ee99170017cbcc58a",
     "scripts/inspect_native_method.py": "d1efb2a6e47ddfd5c63eab7b20bd01fe34906db6aa1a059bd169575509090ca6",
     "scripts/register_audited_build.py": "11f4fc697b2cb0f041ee5f830793000415adcac9a7612a41617b193f0ff98a34",
+    "scripts/research_redemption_average.py": "dd58695d83f1cfc97efb15cc7e3bf89c5c104bd052a493b08dd838afe3c1380a",
+    "scripts/research_redemption_intrinsic.py": "9c0c24a84fa63209378d1c8ee322c307d774e1751ebbaeefc97efb9f19ce5499",
     "scripts/serve_browser_memory.py": "3fc4e5534678ab4dbea59155603e00599440674248ed2d63f77854c3f2ecb11c",
     "scripts/validate_research.py": "717100d3fa20b7944ecbacd20db4f572403b20e08e435e6ca576943a35839d5e"
   },

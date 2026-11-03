@@ -79,6 +79,9 @@ export function validateRequest(request: PlanRequest, catalog: Catalog): Issue[]
         !request.item.affixes.some((row) => matches(row, { ...requirement, minRollByte: row.roll === null ? undefined : requirement.minRollByte }))) {
       issues.push({ code: 'UNSUPPORTED_SLOT_OPERATION', message: '当前动作范围不能新增或修改指定先古／腐化槽目标' });
     }
+    if (requirement.slot === 'ordinary' && requirement.ids.every((id) => request.item.affixes.some((row) => row.id === id && row.slot !== 'ordinary'))) {
+      issues.push({ code: 'TARGET_ID_BLOCKED_BY_EXTRA_SLOT', message: '目标ID已在不可移除的封印或额外槽中；当前操作不能将它重新加入普通栏' });
+    }
     if (requirement.slot === 'sealed' && !request.item.affixes.some((row) => matches(row, { ...requirement, minRollByte: row.roll === null ? undefined : requirement.minRollByte })) &&
         (requirement.minTier > 4 || request.item.affixes.some((row) => row.slot === 'sealed'))) {
       issues.push({ code: 'UNREACHABLE_SEALED_TARGET', message: '普通封印槽不可重洗；当前绝望只能新封印T1至T4' });

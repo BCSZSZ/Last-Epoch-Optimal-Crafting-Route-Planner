@@ -2745,8 +2745,8 @@
     "docs/strategy-classification.md": "e6b485a0e1325d107c14477e7bfedd8c83bacb510419f76d040b9d747631e4ad",
     "scripts/check_strategy_classification.py": "3cf69c5f56844029365e65f993df35e9507a491767d9821e2192be896afc064b",
     "src/core/catalog.ts": "8280dd7c469bcc48d1691033cecb7cbb68d9d37d7506907b33177636bae3e94d",
-    "src/core/rules.ts": "f315ff7bca3d2311631c8138371f870fe08f8d5ab57fc27444b6f6be24306dcb",
-    "src/core/validation.ts": "205c559a009b16974e3ba9ea8f07f240508406d6a5b7b42b278fb50cb6c1e2a6"
+    "src/core/rules.ts": "380a9af9251160a4fa27928142ba10e6716021084c13205d71216c6aa90ff449",
+    "src/core/validation.ts": "486d5c02e303f9ecbeca8475dfef19943e7a3d8e3294131f5fa6394a5f509cab"
   },
   "orthogonalOrdinarySealOccupancyFlags": [
     "EMPTY",

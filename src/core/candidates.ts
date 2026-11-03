@@ -21,6 +21,9 @@ export function macroActionKind(macro: Macro): string {
 }
 
 export function allowedMacro(macro: Macro, request: PlanRequest): boolean {
+  if (macro.kind === 'conditional') return [...macro.then, ...(macro.otherwise ?? [])].every((part) => allowedMacro(part, request));
+  if (macro.kind === 'fill') return !request.constraints.allowedActions || request.constraints.allowedActions.includes('add');
+  if (macro.kind === 'chaos' && macro.prepareWithHavoc && request.constraints.allowedActions && !request.constraints.allowedActions.includes('havoc')) return false;
   return !request.constraints.allowedActions || request.constraints.allowedActions.some((kind) => kind === macroActionKind(macro));
 }
 

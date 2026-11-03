@@ -4,6 +4,7 @@ import { boundedCostKernel, tierPermutations } from './probability';
 import { RuleEngine } from './rules';
 import { matches, select, selectedIds, targetReached } from './target';
 import type { Affix, AtomicAction, Item, Macro, PlanRequest, Predicate, Route, Selector } from './types';
+import type { IntrinsicStatistics } from './intrinsic';
 
 export interface Absorption {
   readonly success: readonly Interval[];
@@ -58,19 +59,31 @@ function divide(source: Absorption, denominator: Interval): Absorption {
 }
 
 export function predicateReached(item: Item, predicate: Predicate, request: PlanRequest, engine: RuleEngine): boolean {
+  if (predicate.kind === 'any') return predicate.predicates.some((part) => predicateReached(item, part, request, engine));
+  if (predicate.kind === 'all') return predicate.predicates.every((part) => predicateReached(item, part, request, engine));
   if (predicate.kind === 'target') return targetReached(item, request.target);
   if (predicate.kind === 'requirements') return targetReached(item, { requirements: predicate.requirements });
   if (predicate.kind === 'exists') return select(item, predicate.selector, engine.catalog, selectorEligibility(item, predicate.selector, request, engine)) !== undefined;
+  if (predicate.kind === 'count') return selectedIds(item, predicate.selector, engine.catalog, selectorEligibility(item, predicate.selector, request, engine)).length >= predicate.minimum;
   return item.affixes.some((row) => matches(row, predicate.requirement));
 }
 
 function selectorEligibility(item: Item, selector: Selector, request: PlanRequest, engine: RuleEngine): (affix: Affix) => boolean {
-  return !selector.sealable ? () => true : (affix) => engine.eligibility(item, 1, { kind: 'seal', id: affix.id },
-    request.craftingContext, request.constraints).length === 0;
+  return (affix) => (!selector.sealable || engine.eligibility(item, 1, { kind: 'seal', id: affix.id },
+    request.craftingContext, request.constraints).length === 0) &&
+    (selector.eligibleAction !== 'chaos' || engine.eligibility(item, 1, { kind: 'chaos', id: affix.id }, request.craftingContext, request.constraints).length === 0) &&
+    (selector.eligibleAction !== 'removal' || engine.catalog.affix(affix.id).special === 0);
 }
 
 export function macroStep(macro: Macro, item: Item, request: PlanRequest, engine: RuleEngine):
   { action: AtomicAction; advance: boolean } | 'SKIP' | 'INAPPLICABLE' {
+  if (macro.kind === 'conditional') return 'INAPPLICABLE'; // Compiled by the intrinsic program evaluator.
+  if (macro.kind === 'fill') {
+    if (ordinary(item).length === 4) return 'SKIP';
+    const id = macro.ids.find((id) => engine.eligibility(item, 63, { kind: 'add', id, glyph: macro.glyph },
+      request.craftingContext, request.constraints).length === 0);
+    return id === undefined ? 'INAPPLICABLE' : { action: { kind: 'add', id, glyph: macro.glyph }, advance: false };
+  }
   if (macro.kind === 'once') return { action: macro.action, advance: true };
   if (macro.kind === 'removal') return { action: { kind: 'removal', glyph: macro.glyph,
     acceptedIds: selectedIds(item, macro.accepted, engine.catalog, selectorEligibility(item, macro.accepted, request, engine)) }, advance: true };
@@ -88,7 +101,16 @@ export function macroStep(macro: Macro, item: Item, request: PlanRequest, engine
   if (item.affixes.some((row) => matches(row, macro.until))) return 'SKIP';
   const index = select(item, { ...macro.selector, maxTier: Math.min(4, macro.selector.maxTier ?? 4) }, engine.catalog,
     selectorEligibility(item, macro.selector, request, engine));
-  return index === undefined ? 'INAPPLICABLE' : { action: { kind: 'chaos', id: item.affixes[index].id }, advance: false };
+  if (index !== undefined) return { action: { kind: 'chaos', id: item.affixes[index].id }, advance: false };
+  if (macro.prepareWithHavoc && ordinary(item).length === 4) {
+    const indices = item.affixes.flatMap((row, index) => row.slot === 'ordinary' ? [index] : []);
+    const possible = tierPermutations(ordinary(item).map((row) => row.tier)).some((tiers) => {
+      const affixes = [...item.affixes]; indices.forEach((index, i) => { affixes[index] = { ...affixes[index], tier: tiers[i] }; });
+      return predicateReached({ ...item, affixes }, { kind: 'exists', selector: macro.selector }, request, engine);
+    });
+    if (possible) return { action: { kind: 'havoc', glyph: 'hope' }, advance: false };
+  }
+  return macro.onExhausted === 'CONTINUE' ? 'SKIP' : 'INAPPLICABLE';
 }
 
 /** Exact state expansion plus outward rounding; uniform-Havoc symmetry solves its free-cost loop. */
@@ -263,6 +285,7 @@ export interface MacroStatistics {
 }
 
 export interface RouteReport {
+  readonly intrinsic?: IntrinsicStatistics;
   readonly route: Route;
   readonly evaluationStatus: 'BOUNDED_NUMERICAL' | 'ESTIMATED';
   readonly score: { lower: number; upper: number };

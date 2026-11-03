@@ -140,7 +140,7 @@ const output = { schemaVersion: 1, modelId: MODEL_ID, date: '2026-11-03',
   semantics: { success: 'OPERATION_SUCCESS_WITH_CONTINUOUSLY_SUFFICIENT_FP', fpThresholdMetric: 'EXPECTED_FP_GIVEN_FINAL_SUCCESS',
     minimumSuccess: 0.15, maximumExpectedSuccessFp: 100, equalityPasses: true,
     fpBoundaryPreservation: 'NOT_APPLICABLE_TO_THE_RESOURCE_DEMAND_METRIC; NO_STARTING_FP_BALANCE',
-    ordinaryFpUpperBoundInActualGame: 63, shippedPlannerChanged: false },
+    ordinaryFpUpperBoundInActualGame: 63, shippedPlannerMetric: 'INTRINSIC_V2' },
   qualification: 'Research nominal arithmetic under the declared iid rule model; not a finite-budget completion probability, client measurement or global dominance proof. Havoc uses its changed-layout symmetry. Fixed one-shot actions preserve joint outcome and FP costs.',
   sourceHashes: Object.fromEntries(['src/generated/model.json', 'research/redemption-intrinsic.json', 'scripts/research_intrinsic_routes.ts'].map((path) => [path, hash(path)])) };
 for (const fpType of ['NORMAL', 'ICE', 'BLOOD'] as const) {

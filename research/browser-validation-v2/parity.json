@@ -1,7 +1,9 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "status": "PASS",
   "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+  "currentModelId": "le-1.5.3-iid-67c53ae6d74b301f",
+  "historical": true,
   "metric": "INTRINSIC_V2",
   "checks": [
     {
@@ -39,5 +41,5 @@
       "browserMilliseconds": 3033
     }
   ],
-  "qualification": "Actual local static-build browser UI and production Worker exports, replayed in Node for the same fixed chosen route. Byte identity covers the full primary report, not wall-clock search coverage. Shares the rule kernel; independent correctness evidence is separate. Not physical low-end-device or peak-memory evidence."
+  "qualification": "Actual local static-build browser UI and production Worker exports, replayed against their original archived data model with the current compatible rule kernel. Byte identity covers the full primary report, not wall-clock search coverage or current browser performance. Shares the rule kernel; independent correctness evidence is separate. Not physical low-end-device or peak-memory evidence."
 }

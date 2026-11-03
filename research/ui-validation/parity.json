@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+  "status": "PASS",
+  "checks": [
+    {
+      "file": "simple-7710.json",
+      "sha256": "33b5cc688b14609a0a34847142186b727c634a49daca9b18dfb3355e45584549",
+      "inputModel": "FORGEABLE_EQUAL",
+      "routeId": "r-a633bb0371133d27",
+      "success": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 48.804892289212226,
+        "upper": 48.804892289219154
+      },
+      "fullPrimaryBitIdentical": true,
+      "browserMilliseconds": 278
+    },
+    {
+      "file": "detailed-wildcard.json",
+      "sha256": "c2957a3db76518fa60620495e4a8d22cf987e9c373bb3c61c8ecdfd11dd7315f",
+      "inputModel": "FORGEABLE_WEIGHTED",
+      "routeId": "r-174a5839b2cfc7c5",
+      "success": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 11.613199852940937,
+        "upper": 11.613199852941417
+      },
+      "fullPrimaryBitIdentical": true,
+      "browserMilliseconds": 231
+    }
+  ],
+  "qualification": "Actual local Pages-subpath static UI exports from production Worker; replays the chosen full primary in Node. Does not prove searched-scope equality, independent mechanics correctness, actual unknown-item probabilities, low-end-device performance or client frequencies."
+}

@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+  "measuredAt": "2026-11-03T10:24:41.929Z",
+  "rows": [
+    {
+      "id": "7713-prepare",
+      "elapsedMilliseconds": 7055,
+      "evaluatedTemplates": 24,
+      "unresolved": 5,
+      "primaryStates": 33,
+      "generatedTemplates": 24,
+      "primaryRouteId": "r-54a76475201aba49",
+      "paretoReported": 4,
+      "cacheHits": 12792
+    },
+    {
+      "id": "7732-missing",
+      "elapsedMilliseconds": 2959,
+      "evaluatedTemplates": 48,
+      "unresolved": 2,
+      "primaryStates": 1737,
+      "generatedTemplates": 241,
+      "primaryRouteId": "r-bd1f58826aef5c66",
+      "paretoReported": 3,
+      "cacheHits": 1896
+    }
+  ],
+  "completeCoverage": [
+    {
+      "label": "200-N2-S0",
+      "templates": 118,
+      "paretoReported": 2,
+      "status": "COMPLETE",
+      "primaryStates": 22
+    },
+    {
+      "label": "200-N2-S1",
+      "templates": 22,
+      "paretoReported": 2,
+      "status": "COMPLETE",
+      "primaryStates": 22
+    },
+    {
+      "label": "200-N3-S0",
+      "templates": 126,
+      "paretoReported": 4,
+      "status": "COMPLETE",
+      "primaryStates": 47
+    },
+    {
+      "label": "200-N3-S1",
+      "templates": 22,
+      "paretoReported": 6,
+      "status": "COMPLETE",
+      "primaryStates": 24
+    },
+    {
+      "label": "200-N4-S0",
+      "templates": 96,
+      "paretoReported": 16,
+      "status": "COMPLETE",
+      "primaryStates": 112
+    },
+    {
+      "label": "200-N4-S1",
+      "templates": 16,
+      "paretoReported": 4,
+      "status": "COMPLETE",
+      "primaryStates": 26
+    },
+    {
+      "label": "201-N3-S0",
+      "templates": 7,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 11
+    },
+    {
+      "label": "201-N3-S1",
+      "templates": 3,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 11
+    },
+    {
+      "label": "201-N4-S0",
+      "templates": 5,
+      "paretoReported": 3,
+      "status": "COMPLETE",
+      "primaryStates": 32
+    },
+    {
+      "label": "201-N4-S1",
+      "templates": 2,
+      "paretoReported": 2,
+      "status": "COMPLETE",
+      "primaryStates": 13
+    },
+    {
+      "label": "202-N4-S0",
+      "templates": 1,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 4
+    },
+    {
+      "label": "202-N4-S1",
+      "templates": 1,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 4
+    },
+    {
+      "label": "210-N2-S0",
+      "templates": 7,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 20
+    },
+    {
+      "label": "210-N2-S1",
+      "templates": 3,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 20
+    },
+    {
+      "label": "210-N3-S0",
+      "templates": 7,
+      "paretoReported": 2,
+      "status": "COMPLETE",
+      "primaryStates": 44
+    },
+    {
+      "label": "210-N3-S1",
+      "templates": 2,
+      "paretoReported": 2,
+      "status": "COMPLETE",
+      "primaryStates": 22
+    },
+    {
+      "label": "210-N4-S0",
+      "templates": 5,
+      "paretoReported": 2,
+      "status": "COMPLETE",
+      "primaryStates": 16
+    },
+    {
+      "label": "210-N4-S1",
+      "templates": 2,
+      "paretoReported": 2,
+      "status": "COMPLETE",
+      "primaryStates": 15
+    },
+    {
+      "label": "211-N3-S0",
+      "templates": 1,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 10
+    },
+    {
+      "label": "211-N3-S1",
+      "templates": 1,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 10
+    },
+    {
+      "label": "211-N4-S0",
+      "templates": 1,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 4
+    },
+    {
+      "label": "211-N4-S1",
+      "templates": 1,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 4
+    },
+    {
+      "label": "220-N2-S0",
+      "templates": 1,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 1
+    },
+    {
+      "label": "220-N2-S1",
+      "templates": 1,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 1
+    },
+    {
+      "label": "220-N3-S0",
+      "templates": 1,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 1
+    },
+    {
+      "label": "220-N3-S1",
+      "templates": 1,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 1
+    },
+    {
+      "label": "220-N4-S0",
+      "templates": 1,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 1
+    },
+    {
+      "label": "220-N4-S1",
+      "templates": 1,
+      "paretoReported": 1,
+      "status": "COMPLETE",
+      "primaryStates": 1
+    }
+  ],
+  "qualification": "Research invocation of unchanged production planner. CPU-sampled timings can differ from saved baseline and per-template budget cutoffs can change coverage. Small frontier observations are not a proof of frontier size across all symbolic states."
+}

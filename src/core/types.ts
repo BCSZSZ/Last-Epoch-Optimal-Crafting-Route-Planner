@@ -1,5 +1,6 @@
 /** Data-only contracts. No React, browser, Worker, network, or storage dependencies. */
 export type FpType = 'NORMAL' | 'ICE' | 'BLOOD';
+export type InputModel = 'AUDITED' | 'FORGEABLE_WEIGHTED' | 'FORGEABLE_EQUAL';
 export type Slot = 'ordinary' | 'sealed' | 'primordial' | 'corrupted';
 export type Side = 0 | 1 | 2;
 export type Glyph = 'hope' | 'order' | 'none';
@@ -127,6 +128,7 @@ export interface SearchBudget {
 
 export interface PlanRequest {
   readonly modelId: string;
+  readonly inputModel?: InputModel;
   readonly item: Item;
   readonly craftingContext: CraftingContext;
   readonly target: Target;

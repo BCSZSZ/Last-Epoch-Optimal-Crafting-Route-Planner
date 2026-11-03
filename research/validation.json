@@ -202,8 +202,8 @@
     "runtimeModel": {
       "affixes": 1156,
       "bases": 923,
-      "bytes": 1049767,
-      "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+      "bytes": 1049947,
+      "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
       "verifiedOnly": true
     },
     "user7710": {
@@ -238,12 +238,13 @@
   "claimedProductionSolverTest": false,
   "documents": {
     "bootstrapUnchanged": true,
-    "localLinks": 268,
+    "localLinks": 315,
     "requiredDocuments": 11
   },
   "inputs": {
+    "scripts/analyze_precomputation.py": "d681eca645b4c1be8507d5d8a5b18276237ae9959f2b0a52711bcd7d7b2c4043",
     "scripts/analyze_upper_state_projection.py": "311893d0599c680e87d1141270ecdc2c76c2d2764e95d6da6c3cf3513b1802e4",
-    "scripts/build_research_index.py": "59ba9116be703ba249ad3d0c5e82fcaa7184727c2e6719d7b76867f80a8cf269",
+    "scripts/build_research_index.py": "d99d6bea9134f779ed51a3465265e8f1d70acc8d156a85cd69a949851b997f39",
     "scripts/build_runtime_model.py": "7428fd028b9ead71cd03cf110a9166f90501002a048af9d9565a0c1f23e9529b",
     "scripts/check_7710_monte_carlo.py": "d7e40b9aed16910123b55dd75346dad6d8abe429d0198202f8388dcc796814b9",
     "scripts/check_7710_routes.py": "2cd2b15df713b53a5c6da9e4b9c2a1b25a6a266545aea72e12a7856b2d9c9dc8",

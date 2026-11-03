@@ -30,7 +30,8 @@ jobs:
       - run: npx tsx scripts/research_intrinsic_routes.ts --verify-only
       - run: npx tsx scripts/check_upper_state_havoc.ts --verify-only
       - run: npx tsx scripts/validate_hierarchy.ts --verify-only
-      - run: npx tsx scripts/check_hierarchy_browser.ts --verify-only
+      - run: npx tsx scripts/check_hierarchy_browser.ts --historical --verify-only
+      - run: npx tsx scripts/check_ui_reports.ts --verify-only
       - run: npm test
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/desktop-baseline.json --historical
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/public-normal.json --historical

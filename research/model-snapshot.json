@@ -75,13 +75,14 @@
     "research/device-validation/public-normal.json": "3dee7539ad446fa250bb1037e5cfd13a3ef79d71d12863c19d47d1ce140d09f4",
     "research/forge-fp-claims.json": "618e6d5fa1db4b8db683b7fdefdfd3c4b70c17363634a36b99eb2e1cd914770c",
     "research/fp-examples.json": "ff72db932924dcd374e4c8a42af47525b34fb37c4e5e2aecda9173f85d49713e",
-    "research/hierarchy-runtime-benchmark.json": "4c2e71172446e516d3d4dc895e990060e0e2de114edcfb258131f6d245c01128",
-    "research/hierarchy-validation.json": "3261b722aafebc32ddfa3cd883de8e9efafceb8555f6896d26eef21fa3ad74ca",
+    "research/hierarchy-runtime-benchmark.json": "cee9cedc99d2bb4f3aa65d08ef6a94aa0a3ea102ace80f2a4f677ab58d8fc886",
+    "research/hierarchy-validation.json": "9693fbd706d153a24ed164cc8c5adac9ea343c1a3a592033d9a61cc7c16107a8",
     "research/legacy-forge-compatibility.json": "f750857451068cd7470aa0b1802fcdff12b5d6ee8a997b144e34e858b34fdba0",
     "research/math-fixtures.json": "2e8f761032a1fb9710be3bdfe80d361982297d3cbf6663140f77bc517e6a978a",
     "research/reference-calculators.json": "fbbd966f057c2ed97ecca0ad8d2036eab93ac721cb506c993417c7faddbd831e",
-    "research/runtime-model-archive/manifest.json": "01c5cefc9d4f28ac6030ae19d3fbd149ed9ef880c994f001444c731a1a4189b7",
-    "src/generated/model.json": "e96a4a59055df2cc1c7f285806a969cac5bf17a979de07206c57bbbf2fa3d925"
+    "research/runtime-model-archive/manifest.json": "dfedf1a5dd46328199086955702dc4e753dea4799f08022f8370339b5b7c7bc9",
+    "research/ui-validation/parity.json": "94a95f3003c9d54bee5a3f646d21a135b400681e0211e9dd64ddef76846c6d94",
+    "src/generated/model.json": "7682651db84a66f58d16130668bc0ea301e158048a0325fb0cda4b10fd41632b"
   },
   "modelId": "le-1.5.3-26087601-r7-hierarchical-intrinsic",
   "phase": "PUBLIC_PREVIEW",
@@ -132,7 +133,7 @@
     "upperInputLabels": 28,
     "upperRouteNodes": 23
   },
-  "productionModelId": "le-1.5.3-iid-b88b0a4321c1f217",
+  "productionModelId": "le-1.5.3-iid-67c53ae6d74b301f",
   "productionReady": false,
   "referenceExampleModels": [
     "INDEPENDENT_NORMALIZED_WEIGHTS_AND_UNIFORM_PERMUTATIONS",
@@ -142,7 +143,7 @@
   "remainingAcceptance": [
     "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "41aeab5d08abf83b9c9e05801d87886d9ce367b7e8dd06299a347ebd90073519",
+  "researchRevision": "fac29e5347a261fa32da7b73ce38e232d7e4532bb45d40e1f72a94e1fd7081db",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 2,
   "steamBuildId": 26087601,
@@ -150,6 +151,17 @@
     "clientBitExactRequired": false,
     "codeDerivedRulesSufficient": true,
     "date": "2026-11-03"
+  },
+  "userInput": {
+    "assumeForgeable": true,
+    "auditedApiPreserved": true,
+    "bothReferencePoolsAllClassesPerItemType": true,
+    "contract": "docs/minimal-ui.md",
+    "countsSplitByPrefixSuffix": true,
+    "defaultAnonymousPool": "FORGEABLE_EQUAL",
+    "knownIdentityPool": "FORGEABLE_WEIGHTED",
+    "optionalAffixIdentities": true,
+    "uiWorkerParity": "research/ui-validation/parity.json"
   },
   "validationNotClaimed": [
     "UNBOUNDED_GLOBAL_OPTIMALITY",

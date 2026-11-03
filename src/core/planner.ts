@@ -1,5 +1,4 @@
-import { Catalog } from './catalog';
-import { allowedMacro, commonRoutes, macroLibrary, routeKey, routeSpace } from './candidates';
+import { allowedMacro, commonRoutes, macroLibrary, routeId, routeKey, routeSpace } from './candidates';
 import { EvaluationInterruptedError, EvaluationLimitError, reportRoute, SamplingRequiredError } from './evaluation';
 import type { RouteReport } from './evaluation';
 import { exact, ZERO } from './interval';
@@ -12,6 +11,7 @@ import { compileTemplates } from './hierarchy';
 import type { Structure } from './hierarchy';
 import { evaluateIntrinsic, IntrinsicWorkspace } from './intrinsic';
 import type { IntrinsicReport } from './intrinsic';
+import { catalogForInputModel, readInputModel } from './input-model';
 
 export interface PlanProgress {
   readonly phase: 'VALIDATION' | 'SEARCH' | 'REFINEMENT' | 'DONE';
@@ -22,6 +22,7 @@ export interface PlanProgress {
 }
 
 export interface PlanReport {
+  readonly inputModel?: PlanRequest['inputModel'];
   readonly metric?: 'INTRINSIC_V2' | 'FINITE_FP_V1';
   readonly hierarchy?: {
     readonly structure: Structure;
@@ -114,7 +115,7 @@ function certifiedDominates(a: RouteReport, b: RouteReport): boolean {
 
 /** One asynchronous planning interface for both browser Worker and Node adapters. */
 export async function planFiniteBaseline(input: unknown, options: PlanningOptions = {}): Promise<PlanReport> {
-  const engine = new RuleEngine(new Catalog());
+  const engine = new RuleEngine(catalogForInputModel(readInputModel(input)));
   const now = options.now ?? Date.now;
   const start = now();
   const elapsed = () => Math.max(0, now() - start);
@@ -255,17 +256,18 @@ export async function planFiniteBaseline(input: unknown, options: PlanningOption
 export async function plan(input: unknown, options: PlanningOptions = {}): Promise<PlanReport> {
   // The explicit Cartesian seam is retained only for the independent finite-FP regression baseline.
   if (options.library) return planFiniteBaseline(input, options);
-  const engine = new RuleEngine(), parsed = parsePlanRequest(input, engine.catalog);
+  const engine = new RuleEngine(catalogForInputModel(readInputModel(input))), parsed = parsePlanRequest(input, engine.catalog);
   if (!parsed.request) return planFiniteBaseline(input, options);
   const request = parsed.request, now = options.now ?? Date.now, start = now();
   const elapsed = () => Math.max(0, now() - start);
   const stopped = () => Boolean(options.signal?.aborted) || elapsed() >= request.search.milliseconds;
   if (options.signal?.aborted) throw new PlanningCancelledError();
   const compiled = compileTemplates(request, engine), workspace = new IntrinsicWorkspace(engine, request);
-  const seeds = options.intrinsicRoutes ?? options.seedRoutes ?? (compiled?.templates ?? commonRoutes(request, engine));
-  const library = compiled || options.intrinsicRoutes ? [] : macroLibrary(request, engine, seeds);
+  const terminal = !compiled && !options.intrinsicRoutes && !options.seedRoutes && targetReached(request.item, request.target);
+  const seeds = options.intrinsicRoutes ?? options.seedRoutes ?? (compiled?.templates ?? (terminal ? [{ id: routeId([]), macros: [], description: '目标已经达成' }] : commonRoutes(request, engine)));
+  const library = compiled || terminal || options.intrinsicRoutes ? [] : macroLibrary(request, engine, seeds);
   const general = routeSpace(library, request.search.macroStages, stopped);
-  const routes = function* () { yield* seeds; if (!compiled && !options.intrinsicRoutes) yield* general.routes; };
+  const routes = function* () { yield* seeds; if (!compiled && !terminal && !options.intrinsicRoutes) yield* general.routes; };
   const seen = new Set<string>(), abandoned: IntrinsicReport[] = [], retained: IntrinsicReport[] = [];
   let primary: IntrinsicReport | null = null, evaluated = 0, unresolved = 0, exhausted = true, duplicates = 0;
   let stopReason = 'TEMPLATE_SCOPE_EXHAUSTED';
@@ -302,7 +304,7 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
   const pareto = retained.filter((row) => !retained.some((other) => other !== row && other.score.lower >= row.score.upper &&
     other.expectedFpGivenSuccess!.upper < row.expectedFpGivenSuccess!.lower));
   return {
-    metric: 'INTRINSIC_V2', modelId: engine.catalog.model.modelId, gameVersion: engine.catalog.model.gameVersion,
+    metric: 'INTRINSIC_V2', inputModel: request.inputModel ?? 'AUDITED', modelId: engine.catalog.model.modelId, gameVersion: engine.catalog.model.gameVersion,
     status: primary ? 'RECOMMENDATION' : 'NO_ROUTE_FOUND_IN_SCOPE', primary, issues: [], abandoned, unresolvedRoutes: unresolved,
     searchStatus: exhausted && unresolved === 0 ? 'COMPLETE' : 'INCOMPLETE', optimality: 'NOT_PROVEN', samplingGuarantee: null,
     hierarchy: compiled ? { structure: compiled.structure, upperLabels: 28, routeNodes: 23, generatedTemplates: compiled.templates.length,
@@ -314,7 +316,9 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
       skippedDuplicates: duplicates, certifiedPrunedPrefixes: abandoned.filter((row) => row.intrinsic.probabilityMeaning === 'PREFIX_SURVIVAL_UPPER_BOUND').length,
       elapsedMilliseconds: elapsed(), stopReason, paretoRouteIds: pareto.map((row) => row.route.id) },
     conventions: { fpDomain: [], weights: [], materials: 'UNLIMITED', fixedRoute: true, rngModel: engine.catalog.model.rngModel },
-    qualification: 'FP持续充足；成功率只计操作NG，FP只以最终成功路径的均值判断100门槛。未使用起始FP分布或耗尽保留福利。' +
+    qualification: (request.inputModel && request.inputModel !== 'AUDITED' ? '按可锻造前提、100级与该部位全职业通用池计算；' +
+      (request.inputModel === 'FORGEABLE_EQUAL' ? '未指定词条采用等权正权重候选池，仅为简化参考，不是未知真实词条的精确概率。' : '已指定词条采用实际制作权重；通用池不冒充指定底材职业池。') : '') +
+      'FP持续充足；成功率只计操作NG，FP只以最终成功路径的均值判断100门槛。未使用起始FP分布或耗尽保留福利。' +
       '模板及分支预先固定；上层标签只路由，数值保留ID、阶数、原生顺序和费用联合核。15%／100等号通过；区间跨阈或执行预算不足保留未完成。' +
       '已搜索范围不代表任意长度策略全局最优。普通填充采用预先声明的合法碎片顺序，不宣称所有填充ID均等价。',
   };

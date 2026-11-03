@@ -45,6 +45,19 @@ export function commonRoutes(request: PlanRequest, engine: RuleEngine): Route[] 
   const prepare = (selector: Selector): Macro => ({ kind: 'repeat', action: { kind: 'havoc', glyph: 'hope' }, until: { kind: 'exists', selector } });
   const existing = new Set(request.item.affixes.map((row) => row.id));
   append([], '起点已达标时直接结束');
+  if (request.inputModel && request.inputModel !== 'AUDITED') {
+    const fillers = engine.catalog.model.affixes.filter((row) => row.special === 0 && row.side < 2 && engine.catalog.hasShard(row.id) &&
+      engine.catalog.canRollOn(row.id, request.item.baseId)).map((row) => row.id).sort((a, b) => a - b);
+    const fill: Macro = { kind: 'fill', ids: fillers, glyph: 'hope' };
+    append([fill, final], '补满普通栏后浩劫至所需前后缀阶数');
+    const specificOrdinary = required.filter((row) => row.slot === 'ordinary' && row.ids.length === 1).flatMap((row) => row.ids);
+    for (const goal of required.filter((row) => row.slot === 'sealed' && row.minTier <= 4)) {
+      const selector: Selector = { ids: goal.ids, excludedIds: specificOrdinary, minTier: goal.minTier, maxTier: Math.min(4, goal.maxTier ?? 4), sealable: true };
+      const seal: Macro = { kind: 'seal', selector };
+      append([seal, fill, final], '封印符合目标的词缀，再补栏并调整阶数');
+      append([fill, prepare(selector), seal, fill, final], '补栏并浩劫准备封印目标，封印后补栏收尾');
+    }
+  }
   if (targetReached(request.item, { requirements: required.map((row) => ({ ...row, minTier: 1, maxTier: 8 })) })) {
     append([final], '目标身份齐全后，浩劫至目标阶数布局');
   }

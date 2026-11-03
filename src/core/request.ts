@@ -29,8 +29,9 @@ export function parsePlanRequest(value: unknown, catalog = new Catalog()): { req
     if (!Array.isArray(input) || input.length > maximum) { fail(path, `需要数组，最多${maximum}项`); return false; } return true;
   };
   const slots = ['ordinary', 'sealed', 'primordial', 'corrupted'];
-  if (!object(value, 'request', ['modelId', 'item', 'craftingContext', 'target', 'constraints', 'scoring', 'search'])) return { request: null, issues };
+  if (!object(value, 'request', ['modelId', 'inputModel', 'item', 'craftingContext', 'target', 'constraints', 'scoring', 'search'])) return { request: null, issues };
   if (!text(value.modelId)) fail('modelId', '需要模型版本字符串');
+  if (value.inputModel !== undefined) enumeration(value.inputModel, 'inputModel', ['AUDITED', 'FORGEABLE_WEIGHTED', 'FORGEABLE_EQUAL']);
   if (object(value.item, 'item', ['baseId', 'itemLevel', 'fpType', 'corrupted', 'affixes'])) {
     const item = value.item;
     if (!text(item.baseId)) fail('item.baseId', '需要底材ID字符串');

@@ -21,3 +21,4 @@ coverage/
 *.tsbuildinfo
 artifacts/browser/
 artifacts/browser-memory/
+artifacts/precomputation/

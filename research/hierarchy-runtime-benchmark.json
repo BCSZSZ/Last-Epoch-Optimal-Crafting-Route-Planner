@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+  "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
   "metric": "INTRINSIC_V2",
-  "measuredAt": "2026-11-03T09:52:53.732Z",
+  "measuredAt": "2026-11-03T11:04:17.895Z",
   "environment": {
     "node": "v22.20.0",
     "cpu": "13th Gen Intel(R) Core(TM) i5-13600KF",
@@ -13,9 +13,9 @@
     {
       "id": "7732-ready",
       "fpType": "NORMAL",
-      "milliseconds": 14.024799999999999,
+      "milliseconds": 7.056100000000015,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -180,7 +180,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 10,
+        "elapsedMilliseconds": 5,
         "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
         "paretoRouteIds": [
           "r-35c31b58e079a1bc"
@@ -193,9 +193,9 @@
     {
       "id": "7732-ready",
       "fpType": "ICE",
-      "milliseconds": 2.2468000000000075,
+      "milliseconds": 1.2205999999999904,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -360,7 +360,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 2,
+        "elapsedMilliseconds": 1,
         "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
         "paretoRouteIds": [
           "r-35c31b58e079a1bc"
@@ -373,9 +373,9 @@
     {
       "id": "7732-ready",
       "fpType": "BLOOD",
-      "milliseconds": 2.2541999999999973,
+      "milliseconds": 1.4437000000000069,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -553,9 +553,9 @@
     {
       "id": "7710-direct",
       "fpType": "NORMAL",
-      "milliseconds": 275.5206,
+      "milliseconds": 168.3417,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -716,7 +716,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 28,
-        "elapsedMilliseconds": 275,
+        "elapsedMilliseconds": 168,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-32e2603f38468323",
@@ -732,9 +732,9 @@
     {
       "id": "7710-direct",
       "fpType": "ICE",
-      "milliseconds": 166.36840000000007,
+      "milliseconds": 108.52360000000004,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -895,7 +895,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 28,
-        "elapsedMilliseconds": 165,
+        "elapsedMilliseconds": 109,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-32e2603f38468323",
@@ -911,9 +911,9 @@
     {
       "id": "7710-direct",
       "fpType": "BLOOD",
-      "milliseconds": 161.62869999999998,
+      "milliseconds": 91.90420000000006,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1074,7 +1074,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 28,
-        "elapsedMilliseconds": 162,
+        "elapsedMilliseconds": 92,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-32e2603f38468323",
@@ -1090,9 +1090,9 @@
     {
       "id": "7713-prepare",
       "fpType": "NORMAL",
-      "milliseconds": 7032.2235,
+      "milliseconds": 7200.8499,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1267,7 +1267,7 @@
         "unevaluatedRoutes": 5,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 2,
-        "elapsedMilliseconds": 7032,
+        "elapsedMilliseconds": 7200,
         "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
         "paretoRouteIds": [
           "r-54a76475201aba49",
@@ -1283,9 +1283,9 @@
     {
       "id": "7713-prepare",
       "fpType": "ICE",
-      "milliseconds": 6992.575500000001,
+      "milliseconds": 7039.855299999999,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1460,7 +1460,7 @@
         "unevaluatedRoutes": 5,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 2,
-        "elapsedMilliseconds": 6993,
+        "elapsedMilliseconds": 7039,
         "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
         "paretoRouteIds": [
           "r-54a76475201aba49",
@@ -1476,9 +1476,9 @@
     {
       "id": "7713-prepare",
       "fpType": "BLOOD",
-      "milliseconds": 7495.5617,
+      "milliseconds": 6973.689700000001,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1653,7 +1653,7 @@
         "unevaluatedRoutes": 5,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 2,
-        "elapsedMilliseconds": 7495,
+        "elapsedMilliseconds": 6973,
         "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
         "paretoRouteIds": [
           "r-54a76475201aba49",
@@ -1669,9 +1669,9 @@
     {
       "id": "removal-required",
       "fpType": "NORMAL",
-      "milliseconds": 1.6147000000019034,
+      "milliseconds": 1.6381000000001222,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1866,9 +1866,9 @@
     {
       "id": "removal-required",
       "fpType": "ICE",
-      "milliseconds": 2.2907000000013795,
+      "milliseconds": 1.6563999999998487,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2049,7 +2049,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 2,
+        "elapsedMilliseconds": 1,
         "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
         "paretoRouteIds": [
           "r-117f6f3bf12838af",
@@ -2063,9 +2063,9 @@
     {
       "id": "removal-required",
       "fpType": "BLOOD",
-      "milliseconds": 4.047099999999773,
+      "milliseconds": 1.3761999999987893,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2246,7 +2246,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 4,
+        "elapsedMilliseconds": 2,
         "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
         "paretoRouteIds": [
           "r-117f6f3bf12838af",
@@ -2260,9 +2260,9 @@
     {
       "id": "7732-missing",
       "fpType": "NORMAL",
-      "milliseconds": 2986.904700000003,
+      "milliseconds": 3053.995799999997,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2437,7 +2437,7 @@
         "unevaluatedRoutes": 2,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 34,
-        "elapsedMilliseconds": 2987,
+        "elapsedMilliseconds": 3054,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-bd1f58826aef5c66",
@@ -2452,9 +2452,9 @@
     {
       "id": "7732-missing",
       "fpType": "ICE",
-      "milliseconds": 3047.1884000000027,
+      "milliseconds": 3004.3320999999996,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2629,7 +2629,7 @@
         "unevaluatedRoutes": 2,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 34,
-        "elapsedMilliseconds": 3047,
+        "elapsedMilliseconds": 3004,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-bd1f58826aef5c66",
@@ -2644,9 +2644,9 @@
     {
       "id": "7732-missing",
       "fpType": "BLOOD",
-      "milliseconds": 3150.806700000001,
+      "milliseconds": 2961.128099999998,
       "request": {
-        "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
+        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2821,7 +2821,7 @@
         "unevaluatedRoutes": 2,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 34,
-        "elapsedMilliseconds": 3151,
+        "elapsedMilliseconds": 2961,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-bd1f58826aef5c66",

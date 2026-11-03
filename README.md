@@ -2,6 +2,8 @@
 
 《最后纪元》自动装备打造路线规划器。
 
+**极简界面已接入计算**：固定两前缀、两后缀和一封印，按钮选T级，词条可留空；左起始、右简易／详细目标，结果在跨栏按钮下方。简易目标分别填前后缀数量。缺省身份用等权参考，完整身份用实际权重通用池。[输入约定](docs/minimal-ui.md)、[后续预计算设计](docs/precomputation-plan.md)。
+
 **新版求解器**：[23节点的细分结构、完整模板与有证剪枝](docs/hierarchical-solver-v2.md)已接入生产入口。主指标改为操作成功率和最终成功路径平均FP，低于15%或高于100FP的模板显示“已放弃”；计算预算不足单列未完成。[112例逐标签／侧别验收](research/hierarchy-validation.json)
 
 **[打开公开预览版](https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/)**，无需登录。

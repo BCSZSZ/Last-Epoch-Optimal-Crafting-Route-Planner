@@ -6,6 +6,12 @@
       "sha256": "fcde9020026d43303cc6959fe2b4b5e4b7ff715313c972f1fcfea91dc0d60298",
       "metric": "FINITE_FP_V1",
       "purpose": "Historical released fixtures only; does not certify current browser performance."
+    },
+    "le-1.5.3-iid-b88b0a4321c1f217": {
+      "file": "research/runtime-model-archive/le-1.5.3-iid-b88b0a4321c1f217.json",
+      "sha256": "e96a4a59055df2cc1c7f285806a969cac5bf17a979de07206c57bbbf2fa3d925",
+      "metric": "INTRINSIC_V2",
+      "purpose": "Historical 23-node release before simplified UI input contract."
     }
   }
 }

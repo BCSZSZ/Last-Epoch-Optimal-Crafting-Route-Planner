@@ -12,47 +12,50 @@ export const slotNames = { ordinary: '普通未封印栏', sealed: '普通封印
 export const fpNames = { NORMAL: '普通潜能', ICE: '冰潜能', BLOOD: '血潜能' };
 export const actionNames = { add: '添加词缀', upgrade: '普通升级', seal: '绝望封印', chaos: '混沌', havoc: '浩劫', redemption: '救赎', removal: '剥离' };
 export const typeName = (id: number, fallback: string) => typeNames[id] ?? fallback;
-export const affixName = (catalog: Catalog, id: number) => affixNames[id] ?? (catalog.hasAffix(id) ? catalog.affix(id).name : `未知ID ${id}`);
+export type NameAliases = Readonly<Record<number, string>>;
+export const affixName = (catalog: Catalog, id: number, aliases: NameAliases = {}) => aliases[id] ?? affixNames[id] ?? (catalog.hasAffix(id) ? catalog.affix(id).name : `未知ID ${id}`);
 export const affixLabel = (catalog: Catalog, id: number) => `${affixName(catalog, id)} · #${id}`;
 
 function glyph(value: string): string { return value === 'hope' ? '，配希望雕文' : value === 'order' ? '，配秩序雕文' : ''; }
-export function requirementText(requirement: Requirement, catalog: Catalog): string {
-  const ids = requirement.ids.map((id) => affixName(catalog, id)).join('／');
+export function requirementText(requirement: Requirement, catalog: Catalog, aliases: NameAliases = {}): string {
+  const sides = new Set(requirement.ids.map((id) => catalog.side(id)));
+  const ids = requirement.ids.length > 8 ? `符合目标的${sides.size === 1 ? sides.has(0) ? '前缀' : '后缀' : '词条'}` :
+    requirement.ids.map((id) => affixName(catalog, id, aliases)).join('／');
   const tier = requirement.maxTier === requirement.minTier ? `恰好T${requirement.minTier}` : `至少T${requirement.minTier}`;
   return `${ids}（${tier}，${slotNames[requirement.slot]}${requirement.minRollByte === undefined ? '' : `，原始roll≥${requirement.minRollByte}`}）`;
 }
 
-export function selectorText(selector: Selector, catalog: Catalog): string {
+export function selectorText(selector: Selector, catalog: Catalog, aliases: NameAliases = {}): string {
   const side = selector.side === 0 ? '前缀' : selector.side === 1 ? '后缀' : '普通词缀';
-  const identity = selector.ids?.length ? selector.ids.map((id) => affixName(catalog, id)).join('／') : `${side}中符合条件的词缀`;
+  const identity = selector.ids?.length && selector.ids.length <= 8 ? selector.ids.map((id) => affixName(catalog, id, aliases)).join('／') : `${side}中符合条件的词缀`;
   const tier = selector.minTier !== undefined && selector.maxTier === selector.minTier ? `T${selector.minTier}` :
     selector.maxTier !== undefined ? `T${selector.minTier ?? 1}–T${selector.maxTier}` : '';
-  const exclude = selector.excludedIds?.length ? `，排除${selector.excludedIds.map((id) => affixName(catalog, id)).join('／')}` : '';
+  const exclude = selector.excludedIds?.length ? `，排除${selector.excludedIds.length > 8 ? '目标词条' : selector.excludedIds.map((id) => affixName(catalog, id, aliases)).join('／')}` : '';
   return `${tier}${identity}${selector.sealable ? '（须可封印）' : selector.eligibleAction === 'chaos' ? '（须可混沌）' : selector.eligibleAction === 'removal' ? '（须可剥离）' : ''}${exclude}`;
 }
 
-function predicateText(predicate: Predicate, catalog: Catalog): string {
-  if (predicate.kind === 'any' || predicate.kind === 'all') return predicate.predicates.map((part) => predicateText(part, catalog)).join(predicate.kind === 'any' ? '，或' : '，且');
+function predicateText(predicate: Predicate, catalog: Catalog, aliases: NameAliases): string {
+  if (predicate.kind === 'any' || predicate.kind === 'all') return predicate.predicates.map((part) => predicateText(part, catalog, aliases)).join(predicate.kind === 'any' ? '，或' : '，且');
   if (predicate.kind === 'target') return '完整目标达成';
-  if (predicate.kind === 'exists') return `出现${selectorText(predicate.selector, catalog)}`;
-  if (predicate.kind === 'count') return `至少${predicate.minimum}条${selectorText(predicate.selector, catalog)}`;
-  if (predicate.kind === 'requirements') return predicate.requirements.map((row) => requirementText(row, catalog)).join('，且');
-  return requirementText(predicate.requirement, catalog);
+  if (predicate.kind === 'exists') return `出现${selectorText(predicate.selector, catalog, aliases)}`;
+  if (predicate.kind === 'count') return `至少${predicate.minimum}条${selectorText(predicate.selector, catalog, aliases)}`;
+  if (predicate.kind === 'requirements') return predicate.requirements.map((row) => requirementText(row, catalog, aliases)).join('，且');
+  return requirementText(predicate.requirement, catalog, aliases);
 }
 
-export function macroText(macro: Macro, catalog: Catalog): { title: string; condition: string } {
-  if (macro.kind === 'conditional') return { title: `按预定条件分支：${predicateText(macro.when, catalog)}`,
-    condition: `成立时：${macro.then.map((part) => macroText(part, catalog).title).join(' → ') || '跳过'}；否则：${macro.otherwise?.map((part) => macroText(part, catalog).title).join(' → ') || '跳过'}。分支已预先固定。` };
+export function macroText(macro: Macro, catalog: Catalog, aliases: NameAliases = {}): { title: string; condition: string } {
+  if (macro.kind === 'conditional') return { title: `检查：${predicateText(macro.when, catalog, aliases)}`,
+    condition: `成立时：${macro.then.map((part) => macroText(part, catalog, aliases).title).join(' → ') || '跳过'}；否则：${macro.otherwise?.map((part) => macroText(part, catalog, aliases).title).join(' → ') || '跳过'}。` };
   if (macro.kind === 'fill') return { title: '补满四条普通词缀', condition: '按预先声明的碎片顺序选择当前合法填充，逐次完整结算；已有四条时跳过。' };
-  if (macro.kind === 'seal') return { title: `封印一次：${selectorText(macro.selector, catalog)}`, condition: '按当前原生顺序选择第一个合法对象；必要封印失败后立即终止整条路线。' };
-  if (macro.kind === 'removal') return { title: `剥离一次${glyph(macro.glyph)}`, condition: `仅允许移除${selectorText(macro.accepted, catalog)}；命中其他词缀，完整结算后立即终止。` };
-  if (macro.kind === 'upgrade') return { title: `升级${affixName(catalog, macro.id)}至T${macro.tier}${glyph(macro.glyph)}`, condition: '已满足此阶数时跳过；达到局部目标或无合法制作机会时退出。' };
-  if (macro.kind === 'chaos') return { title: `用混沌升级${selectorText(macro.selector, catalog)}`, condition: `直到${requirementText(macro.until, catalog)}；${macro.prepareWithHavoc ? '需要时用浩劫调回剩余低阶窗口；' : ''}${macro.onExhausted === 'CONTINUE' ? '窗口耗尽后进入既定补救后缀。' : '窗口耗尽即NG。'}` };
+  if (macro.kind === 'seal') return { title: `封印一次：${selectorText(macro.selector, catalog, aliases)}`, condition: '选择第一个合法对象；封印失败立即停止。' };
+  if (macro.kind === 'removal') return { title: `剥离一次${glyph(macro.glyph)}`, condition: `仅允许移除${selectorText(macro.accepted, catalog, aliases)}；剥歪立即停止。` };
+  if (macro.kind === 'upgrade') return { title: `升级${affixName(catalog, macro.id, aliases)}至T${macro.tier}${glyph(macro.glyph)}`, condition: '已满足此阶数时跳过；达到目标或无法升级时退出。' };
+  if (macro.kind === 'chaos') return { title: `用混沌升级${selectorText(macro.selector, catalog, aliases)}`, condition: `直到${requirementText(macro.until, catalog, aliases)}；${macro.prepareWithHavoc ? '需要时用浩劫调回剩余低阶窗口；' : ''}${macro.onExhausted === 'CONTINUE' ? '窗口耗尽后进入既定补救。' : '窗口耗尽即NG。'}` };
   if (macro.kind === 'repeat') return { title: `反复使用${actionNames[macro.action.kind]}${'glyph' in macro.action ? glyph(macro.action.glyph) : ''}`,
-    condition: `直到${predicateText(macro.until, catalog)}。${macro.action.kind === 'redemption' ? '每次会重抽全部未封印崇高词缀，在完整动作结束后检查。' : ''}每次完整结算后检查条件；动作不再合法时停止。` };
+    condition: `直到${predicateText(macro.until, catalog, aliases)}。${macro.action.kind === 'redemption' ? '每次重抽全部未封印崇高词条，完整结算后检查。' : ''}` };
   const action = macro.action;
-  return { title: `${actionNames[action.kind]}${'id' in action ? `：${affixName(catalog, action.id)}` : '一次'}${'glyph' in action ? glyph(action.glyph) : ''}`,
-    condition: action.kind === 'seal' ? '封印失败立即终止整条路线。' : action.kind === 'removal' ? `只接受ID：${action.acceptedIds.join('、')}，失手立即停止。` : '完整结算后进入下一阶段；全部目标提前达成时直接结束。' };
+  return { title: `${actionNames[action.kind]}${'id' in action ? `：${affixName(catalog, action.id, aliases)}` : '一次'}${'glyph' in action ? glyph(action.glyph) : ''}`,
+    condition: action.kind === 'seal' ? '封印失败立即停止。' : action.kind === 'removal' ? `仅移除${action.acceptedIds.map((id) => affixName(catalog, id, aliases)).join('、')}；失手立即停止。` : '目标提前达成即停止。' };
 }
 
 export const failureNames: Record<string, string> = { FP_EXHAUSTED: '潜能耗尽', REQUIRED_SEAL_FAILED: '必要封印失败',

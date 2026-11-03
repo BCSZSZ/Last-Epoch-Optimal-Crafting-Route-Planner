@@ -43,10 +43,15 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                 "research/device-validation/desktop-baseline.json", "research/device-validation/desktop-baseline-validation.json",
                 "research/device-validation/public-normal.json", "research/device-validation/public-normal-validation.json",
                 "src/generated/model.json", "research/hierarchy-validation.json", "research/hierarchy-runtime-benchmark.json",
-                "research/runtime-model-archive/manifest.json")
+                "research/runtime-model-archive/manifest.json", "research/ui-validation/parity.json")
     model = {"schemaVersion": 2, "modelId": "le-1.5.3-26087601-r7-hierarchical-intrinsic",
              "phase": "PUBLIC_PREVIEW", "productionReady": False,
              "productionModelId": load_json(root / "src/generated/model.json")["modelId"],
+             "userInput": {"contract": "docs/minimal-ui.md", "assumeForgeable": True,
+                           "optionalAffixIdentities": True, "countsSplitByPrefixSuffix": True,
+                           "defaultAnonymousPool": "FORGEABLE_EQUAL", "knownIdentityPool": "FORGEABLE_WEIGHTED",
+                           "bothReferencePoolsAllClassesPerItemType": True, "auditedApiPreserved": True,
+                           "uiWorkerParity": "research/ui-validation/parity.json"},
              "userApproval": {"date": "2026-11-03", "codeDerivedRulesSufficient": True, "clientBitExactRequired": False},
              "gameVersion": manifest["gameVersion"], "steamBuildId": manifest["steamBuildId"],
              "dataRevision": manifest["dataRevision"],

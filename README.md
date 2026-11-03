@@ -2,7 +2,9 @@
 
 《最后纪元》自动装备打造路线规划器。
 
-当前已实现**中文React网页、Worker规划接口、有限固定路线搜索、三类潜能与成功率／消耗分布**，正在完成GitHub Pages发布验证。规则基于本机1.5.3／Steam build 26087601的资源及原生实现。[关键机制调查答复](docs/research/key-mechanisms-status.md)、[实施状态与边界](docs/implementation-status.md)、[浏览器和性能验收](docs/product-validation.md)。
+**[打开公开预览版](https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/)**，无需登录。
+
+已实现中文React网页、Worker规划接口、有限固定路线搜索、三类潜能与成功率／消耗分布，已通过实际Pages发布及计算验证。规则基于本机1.5.3／Steam build 26087601的资源及原生实现。[关键机制调查答复](docs/research/key-mechanisms-status.md)、[实施状态与边界](docs/implementation-status.md)、[浏览器和性能验收](docs/product-validation.md)。
 
 先读 [首阶段审阅结论](docs/phase0-review.md)，再看 [常见打造模式与771x校验](docs/examples/common-crafting-patterns.md)、[7710完整准备路线](docs/examples/7710-to-target-double-t7.md)、[产品需求](docs/PRD.md)、[机制与证据](docs/mechanics.md)及[未决事项](docs/open-questions.md)。所有碎片、符文和雕文固定无限，材料代价不参与优化。
 

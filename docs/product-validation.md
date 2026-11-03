@@ -10,7 +10,7 @@
 
 ## 实际浏览器
 
-使用本机ChatGPT in-app Chromium浏览器访问Vite正式构建预览。保存的[四份完整报告及逐字段对照](../research/browser-validation/parity.json)包含：
+使用本机ChatGPT in-app Chromium浏览器访问Vite正式构建预览及公开Pages站点。保存的[五份完整报告及逐字段对照](../research/browser-validation/parity.json)包含：
 
 | 输入 | 潜能 | 加权J | 浏览器耗时 | 精度 |
 |---|---|---:|---:|---|
@@ -18,6 +18,7 @@
 | 7713先浩劫准备 | 冰 | 41.8193% | 1.232s | 向外舍入区间 |
 | 7717已有A | 血 | 83.2412% | 7.815s | 向外舍入区间 |
 | 7732全部非目标 | 普通 | 4.2969% | 3.250s | 每F1024条、共64512条路径采样 |
+| 公网7710直接准备 | 普通 | 44.7225% | 7.859s | 向外舍入区间 |
 
 表中为同一具体底材／ID／顺序的候选推荐，不是所有同tier串物品的统一概率，亦未证明全局最优。Node重算同一选中路线后，完整RouteReport的JSON逐字段一致，含采样曲线与种子。命令：`npx tsx scripts/check-browser-reports.ts`。
 
@@ -37,4 +38,8 @@
 
 ## 静态发布
 
-工作流使用Vite仓库子路径和ES模块Worker，只发布dist。仓库代码／研究资料与必要派生数据可公开，原始DLL、缓存、凭据和虚拟环境排除。实际线上入口、刷新、Worker、取消及下载验证结果在发布后补入本节。
+工作流使用Vite仓库子路径和ES模块Worker，只发布dist。仓库代码／研究资料与必要派生数据已按用户授权公开，原始DLL、缓存、凭据和虚拟环境排除。私有Pages创建实际返回422套餐不支持，因此按已有授权将同一仓库改public，随后成功启用workflow发布。
+
+公开地址：[制作路线规划](https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/)。[首次构建／部署运行](https://github.com/BCSZSZ/Last-Epoch-Optimal-Crafting-Route-Planner/actions/runs/41576011780)成功，代码提交deaaac730d199a95edf91d7461e123dba88b252a。无登录访问后实际完成7710整路线规划；结果与本地逐字段一致。已核刷新、取消、重新规划、报告下载；error日志为空。
+
+[HTTP字节验证](../research/static-deployment.json)对HTML、主JS、CSS、Worker逐一核对200、MIME与SHA256，全部与本地仓库子路径正式构建相同。复现命令：以`PAGES_BASE=/Last-Epoch-Optimal-Crafting-Route-Planner/`构建，再运行`python scripts/check_static_site.py https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/`。本地子路径预览也须向`npm run preview`传相同`--base`。

@@ -12,6 +12,7 @@ const cases: { file: string; example: string; fpType: FpType }[] = [
   { file: '7732-normal', example: '7732-missing', fpType: 'NORMAL' },
   { file: '7713-ice', example: '7713-prepare', fpType: 'ICE' },
   { file: '7717-blood', example: '7717-existing', fpType: 'BLOOD' },
+  { file: 'public-7710-normal', example: '7710-direct', fpType: 'NORMAL' },
 ];
 const checks = [];
 for (const entry of cases) {

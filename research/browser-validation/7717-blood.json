@@ -1,0 +1,3772 @@
+{
+  "modelId": "le-1.5.3-iid-de87d96b5479099b",
+  "gameVersion": "1.5.3",
+  "status": "RECOMMENDATION",
+  "issues": [],
+  "primary": {
+    "route": {
+      "id": "r-d98eb2830c5645f7",
+      "macros": [
+        {
+          "kind": "seal",
+          "selector": {
+            "side": 0,
+            "excludedIds": [
+              4,
+              5
+            ],
+            "minTier": 1,
+            "maxTier": 4
+          }
+        },
+        {
+          "kind": "once",
+          "action": {
+            "kind": "add",
+            "id": 5,
+            "glyph": "hope"
+          }
+        },
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "description": "封印该侧垃圾，补入目标，再浩劫"
+    },
+    "evaluationStatus": "BOUNDED_NUMERICAL",
+    "score": {
+      "lower": 0.8324124524426794,
+      "upper": 0.8324124524427228
+    },
+    "scoreEstimate": 0.832412452442701,
+    "curve": [
+      {
+        "initialFp": 0,
+        "successProbability": {
+          "lower": 0,
+          "upper": 0
+        },
+        "continuationSuccessUpper": 0,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "expectedFpGivenSuccess": null,
+        "quantiles": {
+          "p50": {
+            "lower": 0,
+            "upper": 0
+          },
+          "p90": {
+            "lower": 0,
+            "upper": 0
+          },
+          "p95": {
+            "lower": 0,
+            "upper": 0
+          }
+        },
+        "successQuantiles": null
+      },
+      {
+        "initialFp": 1,
+        "successProbability": {
+          "lower": 0,
+          "upper": 0
+        },
+        "continuationSuccessUpper": 0,
+        "expectedFp": {
+          "lower": 0.9999999999999981,
+          "upper": 1.000000000000002
+        },
+        "expectedFpGivenSuccess": null,
+        "quantiles": {
+          "p50": {
+            "lower": 1,
+            "upper": 1
+          },
+          "p90": {
+            "lower": 1,
+            "upper": 1
+          },
+          "p95": {
+            "lower": 1,
+            "upper": 1
+          }
+        },
+        "successQuantiles": null
+      },
+      {
+        "initialFp": 2,
+        "successProbability": {
+          "lower": 0.09285596637806559,
+          "upper": 0.09285596637806719
+        },
+        "continuationSuccessUpper": 0.09285596637806719,
+        "expectedFp": {
+          "lower": 1.9767860084054758,
+          "upper": 1.9767860084054911
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 1.7499999999999685,
+          "upper": 1.7500000000000313
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 2,
+            "upper": 2
+          },
+          "p90": {
+            "lower": 2,
+            "upper": 2
+          },
+          "p95": {
+            "lower": 2,
+            "upper": 2
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 2,
+            "upper": 2
+          },
+          "p90": {
+            "lower": 2,
+            "upper": 2
+          },
+          "p95": {
+            "lower": 2,
+            "upper": 2
+          }
+        }
+      },
+      {
+        "initialFp": 3,
+        "successProbability": {
+          "lower": 0.17157005233265346,
+          "upper": 0.17157005233265676
+        },
+        "continuationSuccessUpper": 0.17157005233265676,
+        "expectedFp": {
+          "lower": 2.923460759085722,
+          "upper": 2.923460759085753
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 2.5538892722031092,
+          "upper": 2.553889272203212
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 3,
+            "upper": 3
+          },
+          "p90": {
+            "lower": 3,
+            "upper": 3
+          },
+          "p95": {
+            "lower": 3,
+            "upper": 3
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 3,
+            "upper": 3
+          },
+          "p90": {
+            "lower": 3,
+            "upper": 3
+          },
+          "p95": {
+            "lower": 3,
+            "upper": 3
+          }
+        }
+      },
+      {
+        "initialFp": 4,
+        "successProbability": {
+          "lower": 0.23266420568178536,
+          "upper": 0.23266420568178978
+        },
+        "continuationSuccessUpper": 0.23266420568178978,
+        "expectedFp": {
+          "lower": 3.8508483924139703,
+          "upper": 3.8508483924140138
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 3.358940464653955,
+          "upper": 3.3589404646540877
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 4,
+            "upper": 4
+          },
+          "p90": {
+            "lower": 4,
+            "upper": 4
+          },
+          "p95": {
+            "lower": 4,
+            "upper": 4
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 4,
+            "upper": 4
+          },
+          "p90": {
+            "lower": 4,
+            "upper": 4
+          },
+          "p95": {
+            "lower": 4,
+            "upper": 4
+          }
+        }
+      },
+      {
+        "initialFp": 5,
+        "successProbability": {
+          "lower": 0.2918575584670495,
+          "upper": 0.29185755846705513
+        },
+        "continuationSuccessUpper": 0.29185755846705513,
+        "expectedFp": {
+          "lower": 4.753502143251054,
+          "upper": 4.753502143251115
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 4.155417258872305,
+          "upper": 4.155417258872471
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 5,
+            "upper": 5
+          },
+          "p90": {
+            "lower": 5,
+            "upper": 5
+          },
+          "p95": {
+            "lower": 5,
+            "upper": 5
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 5,
+            "upper": 5
+          },
+          "p90": {
+            "lower": 5,
+            "upper": 5
+          },
+          "p95": {
+            "lower": 5,
+            "upper": 5
+          }
+        }
+      },
+      {
+        "initialFp": 6,
+        "successProbability": {
+          "lower": 0.35059667643322673,
+          "upper": 0.3505966764332334
+        },
+        "continuationSuccessUpper": 0.3505966764332334,
+        "expectedFp": {
+          "lower": 5.627184226446054,
+          "upper": 5.627184226446132
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 4.936624906582814,
+          "upper": 4.936624906583011
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 6,
+            "upper": 6
+          },
+          "p90": {
+            "lower": 6,
+            "upper": 6
+          },
+          "p95": {
+            "lower": 6,
+            "upper": 6
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 6,
+            "upper": 6
+          },
+          "p90": {
+            "lower": 6,
+            "upper": 6
+          },
+          "p95": {
+            "lower": 6,
+            "upper": 6
+          }
+        }
+      },
+      {
+        "initialFp": 7,
+        "successProbability": {
+          "lower": 0.4092678036237391,
+          "upper": 0.409267803623747
+        },
+        "continuationSuccessUpper": 0.40926780362374643,
+        "expectedFp": {
+          "lower": 6.4690577523541455,
+          "upper": 6.469057752354243
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 5.702702135509371,
+          "upper": 5.702702135509599
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 7,
+            "upper": 7
+          },
+          "p90": {
+            "lower": 7,
+            "upper": 7
+          },
+          "p95": {
+            "lower": 7,
+            "upper": 7
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 7,
+            "upper": 7
+          },
+          "p90": {
+            "lower": 7,
+            "upper": 7
+          },
+          "p95": {
+            "lower": 7,
+            "upper": 7
+          }
+        }
+      },
+      {
+        "initialFp": 8,
+        "successProbability": {
+          "lower": 0.46807720948396997,
+          "upper": 0.46807720948397896
+        },
+        "continuationSuccessUpper": 0.46807720948397774,
+        "expectedFp": {
+          "lower": 7.276466914173464,
+          "upper": 7.276466914173583
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 6.454244147831535,
+          "upper": 6.454244147831795
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 8,
+            "upper": 8
+          },
+          "p90": {
+            "lower": 8,
+            "upper": 8
+          },
+          "p95": {
+            "lower": 8,
+            "upper": 8
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 8,
+            "upper": 8
+          },
+          "p90": {
+            "lower": 8,
+            "upper": 8
+          },
+          "p95": {
+            "lower": 8,
+            "upper": 8
+          }
+        }
+      },
+      {
+        "initialFp": 9,
+        "successProbability": {
+          "lower": 0.5271460582575379,
+          "upper": 0.5271460582575482
+        },
+        "continuationSuccessUpper": 0.5271460582575463,
+        "expectedFp": {
+          "lower": 8.046851686390813,
+          "upper": 8.046851686390955
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 7.19187054768126,
+          "upper": 7.191870547681551
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 9,
+            "upper": 9
+          },
+          "p90": {
+            "lower": 9,
+            "upper": 9
+          },
+          "p95": {
+            "lower": 9,
+            "upper": 9
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 9,
+            "upper": 9
+          },
+          "p90": {
+            "lower": 9,
+            "upper": 9
+          },
+          "p95": {
+            "lower": 9,
+            "upper": 9
+          }
+        }
+      },
+      {
+        "initialFp": 10,
+        "successProbability": {
+          "lower": 0.5865487767353489,
+          "upper": 0.5865487767353604
+        },
+        "continuationSuccessUpper": 0.586548776735358,
+        "expectedFp": {
+          "lower": 8.777721428212375,
+          "upper": 8.777721428212542
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 7.916151869601261,
+          "upper": 7.916151869601584
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 10,
+            "upper": 10
+          },
+          "p90": {
+            "lower": 10,
+            "upper": 10
+          },
+          "p95": {
+            "lower": 10,
+            "upper": 10
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 9,
+            "upper": 9
+          },
+          "p90": {
+            "lower": 10,
+            "upper": 10
+          },
+          "p95": {
+            "lower": 10,
+            "upper": 10
+          }
+        }
+      },
+      {
+        "initialFp": 11,
+        "successProbability": {
+          "lower": 0.6195206715265981,
+          "upper": 0.6195206715266104
+        },
+        "continuationSuccessUpper": 0.6195206715266073,
+        "expectedFp": {
+          "lower": 9.4733440290547,
+          "upper": 9.473344029054884
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 8.5357465196708,
+          "upper": 8.535746519671152
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 11,
+            "upper": 11
+          },
+          "p90": {
+            "lower": 11,
+            "upper": 11
+          },
+          "p95": {
+            "lower": 11,
+            "upper": 11
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 10,
+            "upper": 10
+          },
+          "p90": {
+            "lower": 11,
+            "upper": 11
+          },
+          "p95": {
+            "lower": 11,
+            "upper": 11
+          }
+        }
+      },
+      {
+        "initialFp": 12,
+        "successProbability": {
+          "lower": 0.6489960628029104,
+          "upper": 0.6489960628029235
+        },
+        "continuationSuccessUpper": 0.6489960628029198,
+        "expectedFp": {
+          "lower": 10.135831997007942,
+          "upper": 10.135831997008143
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 9.127612770189975,
+          "upper": 9.12761277019036
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 12,
+            "upper": 12
+          },
+          "p90": {
+            "lower": 12,
+            "upper": 12
+          },
+          "p95": {
+            "lower": 12,
+            "upper": 12
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 11,
+            "upper": 11
+          },
+          "p90": {
+            "lower": 12,
+            "upper": 12
+          },
+          "p95": {
+            "lower": 12,
+            "upper": 12
+          }
+        }
+      },
+      {
+        "initialFp": 13,
+        "successProbability": {
+          "lower": 0.6760558603660948,
+          "upper": 0.6760558603661085
+        },
+        "continuationSuccessUpper": 0.6760558603661043,
+        "expectedFp": {
+          "lower": 10.767057818134584,
+          "upper": 10.7670578181348
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 9.697104022356596,
+          "upper": 9.697104022357006
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 13,
+            "upper": 13
+          },
+          "p90": {
+            "lower": 13,
+            "upper": 13
+          },
+          "p95": {
+            "lower": 13,
+            "upper": 13
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 11,
+            "upper": 11
+          },
+          "p90": {
+            "lower": 13,
+            "upper": 13
+          },
+          "p95": {
+            "lower": 13,
+            "upper": 13
+          }
+        }
+      },
+      {
+        "initialFp": 14,
+        "successProbability": {
+          "lower": 0.7024303252983414,
+          "upper": 0.7024303252983557
+        },
+        "continuationSuccessUpper": 0.7024303252983509,
+        "expectedFp": {
+          "lower": 11.36394295501965,
+          "upper": 11.36394295501988
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 10.247233426517061,
+          "upper": 10.247233426517496
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 14,
+            "upper": 14
+          },
+          "p90": {
+            "lower": 14,
+            "upper": 14
+          },
+          "p95": {
+            "lower": 14,
+            "upper": 14
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 12,
+            "upper": 12
+          },
+          "p90": {
+            "lower": 14,
+            "upper": 14
+          },
+          "p95": {
+            "lower": 14,
+            "upper": 14
+          }
+        }
+      },
+      {
+        "initialFp": 15,
+        "successProbability": {
+          "lower": 0.7282623033576625,
+          "upper": 0.7282623033576775
+        },
+        "continuationSuccessUpper": 0.7282623033576724,
+        "expectedFp": {
+          "lower": 11.926141442884505,
+          "upper": 11.926141442884749
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 10.779187604598718,
+          "upper": 10.77918760459918
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 15,
+            "upper": 15
+          },
+          "p90": {
+            "lower": 15,
+            "upper": 15
+          },
+          "p95": {
+            "lower": 15,
+            "upper": 15
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 12,
+            "upper": 12
+          },
+          "p90": {
+            "lower": 15,
+            "upper": 15
+          },
+          "p95": {
+            "lower": 15,
+            "upper": 15
+          }
+        }
+      },
+      {
+        "initialFp": 16,
+        "successProbability": {
+          "lower": 0.753644093152653,
+          "upper": 0.7536440931526688
+        },
+        "continuationSuccessUpper": 0.753644093152663,
+        "expectedFp": {
+          "lower": 12.453330817122017,
+          "upper": 12.453330817122279
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 11.293973355458101,
+          "upper": 11.293973355458593
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 15,
+            "upper": 15
+          },
+          "p90": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p95": {
+            "lower": 16,
+            "upper": 16
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 13,
+            "upper": 13
+          },
+          "p90": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p95": {
+            "lower": 16,
+            "upper": 16
+          }
+        }
+      },
+      {
+        "initialFp": 17,
+        "successProbability": {
+          "lower": 0.7786433569555514,
+          "upper": 0.7786433569555679
+        },
+        "continuationSuccessUpper": 0.7786433569555616,
+        "expectedFp": {
+          "lower": 12.945172103640166,
+          "upper": 12.945172103640441
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 11.792445270176081,
+          "upper": 11.7924452701766
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 17,
+            "upper": 17
+          },
+          "p95": {
+            "lower": 17,
+            "upper": 17
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 13,
+            "upper": 13
+          },
+          "p90": {
+            "lower": 17,
+            "upper": 17
+          },
+          "p95": {
+            "lower": 17,
+            "upper": 17
+          }
+        }
+      },
+      {
+        "initialFp": 18,
+        "successProbability": {
+          "lower": 0.8033121366775462,
+          "upper": 0.8033121366775633
+        },
+        "continuationSuccessUpper": 0.8033121366775565,
+        "expectedFp": {
+          "lower": 13.401314823509145,
+          "upper": 13.401314823509436
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 12.275344580861452,
+          "upper": 12.275344580861995
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 18,
+            "upper": 18
+          },
+          "p95": {
+            "lower": 18,
+            "upper": 18
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 13,
+            "upper": 13
+          },
+          "p90": {
+            "lower": 18,
+            "upper": 18
+          },
+          "p95": {
+            "lower": 18,
+            "upper": 18
+          }
+        }
+      },
+      {
+        "initialFp": 19,
+        "successProbability": {
+          "lower": 0.8276918004302921,
+          "upper": 0.8276918004303099
+        },
+        "continuationSuccessUpper": 0.8276918004303027,
+        "expectedFp": {
+          "lower": 13.821401105358076,
+          "upper": 13.821401105358381
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 12.74332463853121,
+          "upper": 12.743324638531778
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 19,
+            "upper": 19
+          },
+          "p95": {
+            "lower": 19,
+            "upper": 19
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 14,
+            "upper": 14
+          },
+          "p90": {
+            "lower": 19,
+            "upper": 19
+          },
+          "p95": {
+            "lower": 19,
+            "upper": 19
+          }
+        }
+      },
+      {
+        "initialFp": 20,
+        "successProbability": {
+          "lower": 0.8493602363918674,
+          "upper": 0.8493602363918858
+        },
+        "continuationSuccessUpper": 0.8493602363918781,
+        "expectedFp": {
+          "lower": 14.205682608881604,
+          "upper": 14.20568260888192
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 13.17802135907253,
+          "upper": 13.178021359073119
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 20,
+            "upper": 20
+          },
+          "p95": {
+            "lower": 20,
+            "upper": 20
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 14,
+            "upper": 14
+          },
+          "p90": {
+            "lower": 20,
+            "upper": 20
+          },
+          "p95": {
+            "lower": 20,
+            "upper": 20
+          }
+        }
+      },
+      {
+        "initialFp": 21,
+        "successProbability": {
+          "lower": 0.869084303943059,
+          "upper": 0.8690843039430785
+        },
+        "continuationSuccessUpper": 0.8690843039430701,
+        "expectedFp": {
+          "lower": 14.554546738434034,
+          "upper": 14.554546738434365
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 13.58362712072603,
+          "upper": 13.58362712072665
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 21,
+            "upper": 21
+          },
+          "p95": {
+            "lower": 21,
+            "upper": 21
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 14,
+            "upper": 14
+          },
+          "p90": {
+            "lower": 21,
+            "upper": 21
+          },
+          "p95": {
+            "lower": 21,
+            "upper": 21
+          }
+        }
+      },
+      {
+        "initialFp": 22,
+        "successProbability": {
+          "lower": 0.8863700113620882,
+          "upper": 0.8863700113621079
+        },
+        "continuationSuccessUpper": 0.8863700113620993,
+        "expectedFp": {
+          "lower": 14.87061066225612,
+          "upper": 14.870610662256466
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 13.95664423846182,
+          "upper": 13.956644238462461
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 22,
+            "upper": 22
+          },
+          "p95": {
+            "lower": 22,
+            "upper": 22
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 15,
+            "upper": 15
+          },
+          "p90": {
+            "lower": 22,
+            "upper": 22
+          },
+          "p95": {
+            "lower": 22,
+            "upper": 22
+          }
+        }
+      },
+      {
+        "initialFp": 23,
+        "successProbability": {
+          "lower": 0.9015068942036405,
+          "upper": 0.9015068942036609
+        },
+        "continuationSuccessUpper": 0.9015068942036517,
+        "expectedFp": {
+          "lower": 15.1560237815033,
+          "upper": 15.156023781503661
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 14.299039121130816,
+          "upper": 14.299039121131482
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 23,
+            "upper": 23
+          },
+          "p95": {
+            "lower": 23,
+            "upper": 23
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 15,
+            "upper": 15
+          },
+          "p90": {
+            "lower": 23,
+            "upper": 23
+          },
+          "p95": {
+            "lower": 23,
+            "upper": 23
+          }
+        }
+      },
+      {
+        "initialFp": 24,
+        "successProbability": {
+          "lower": 0.9146319217605341,
+          "upper": 0.914631921760555
+        },
+        "continuationSuccessUpper": 0.9146319217605455,
+        "expectedFp": {
+          "lower": 15.413082608404602,
+          "upper": 15.413082608404977
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 14.611614150677294,
+          "upper": 14.611614150677983
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 24,
+            "upper": 24
+          },
+          "p95": {
+            "lower": 24,
+            "upper": 24
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 15,
+            "upper": 15
+          },
+          "p90": {
+            "lower": 24,
+            "upper": 24
+          },
+          "p95": {
+            "lower": 24,
+            "upper": 24
+          }
+        }
+      },
+      {
+        "initialFp": 25,
+        "successProbability": {
+          "lower": 0.9258542277124747,
+          "upper": 0.925854227712496
+        },
+        "continuationSuccessUpper": 0.9258542277124863,
+        "expectedFp": {
+          "lower": 15.644014106173902,
+          "upper": 15.644014106174282
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 14.894752744239081,
+          "upper": 14.894752744239785
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 25,
+            "upper": 25
+          },
+          "p95": {
+            "lower": 25,
+            "upper": 25
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 15,
+            "upper": 15
+          },
+          "p90": {
+            "lower": 25,
+            "upper": 25
+          },
+          "p95": {
+            "lower": 25,
+            "upper": 25
+          }
+        }
+      },
+      {
+        "initialFp": 26,
+        "successProbability": {
+          "lower": 0.9352604077251062,
+          "upper": 0.935260407725128
+        },
+        "continuationSuccessUpper": 0.935260407725118,
+        "expectedFp": {
+          "lower": 15.851080679970716,
+          "upper": 15.851080679971107
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 15.148563078046704,
+          "upper": 15.148563078047427
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 26,
+            "upper": 26
+          },
+          "p95": {
+            "lower": 26,
+            "upper": 26
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 15,
+            "upper": 15
+          },
+          "p90": {
+            "lower": 26,
+            "upper": 26
+          },
+          "p95": {
+            "lower": 26,
+            "upper": 26
+          }
+        }
+      },
+      {
+        "initialFp": 27,
+        "successProbability": {
+          "lower": 0.9429226552236789,
+          "upper": 0.9429226552237013
+        },
+        "continuationSuccessUpper": 0.9429226552236908,
+        "expectedFp": {
+          "lower": 16.03657778038019,
+          "upper": 16.036577780380593
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 15.372935830013429,
+          "upper": 15.372935830014178
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 27,
+            "upper": 27
+          },
+          "p95": {
+            "lower": 27,
+            "upper": 27
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 15,
+            "upper": 15
+          },
+          "p90": {
+            "lower": 27,
+            "upper": 27
+          },
+          "p95": {
+            "lower": 27,
+            "upper": 27
+          }
+        }
+      },
+      {
+        "initialFp": 28,
+        "successProbability": {
+          "lower": 0.9489027172109935,
+          "upper": 0.9489027172110162
+        },
+        "continuationSuccessUpper": 0.9489027172110056,
+        "expectedFp": {
+          "lower": 16.20283520818053,
+          "upper": 16.202835208180947
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 15.567571914543983,
+          "upper": 15.567571914544745
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 28,
+            "upper": 28
+          },
+          "p95": {
+            "lower": 28,
+            "upper": 28
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 15,
+            "upper": 15
+          },
+          "p90": {
+            "lower": 28,
+            "upper": 28
+          },
+          "p95": {
+            "lower": 28,
+            "upper": 28
+          }
+        }
+      },
+      {
+        "initialFp": 29,
+        "successProbability": {
+          "lower": 0.9542000011548161,
+          "upper": 0.9542000011548392
+        },
+        "continuationSuccessUpper": 0.9542000011548283,
+        "expectedFp": {
+          "lower": 16.351980956243544,
+          "upper": 16.351980956243967
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 15.744897266349549,
+          "upper": 15.74489726635033
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 29,
+            "upper": 29
+          },
+          "p95": {
+            "lower": 29,
+            "upper": 29
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 28,
+            "upper": 28
+          },
+          "p95": {
+            "lower": 29,
+            "upper": 29
+          }
+        }
+      },
+      {
+        "initialFp": 30,
+        "successProbability": {
+          "lower": 0.958841729074138,
+          "upper": 0.9588417290741613
+        },
+        "continuationSuccessUpper": 0.9588417290741502,
+        "expectedFp": {
+          "lower": 16.48605794321917,
+          "upper": 16.4860579432196
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 15.905972125524865,
+          "upper": 15.905972125525661
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 30,
+            "upper": 30
+          },
+          "p95": {
+            "lower": 30,
+            "upper": 30
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 29,
+            "upper": 29
+          },
+          "p95": {
+            "lower": 30,
+            "upper": 30
+          }
+        }
+      },
+      {
+        "initialFp": 31,
+        "successProbability": {
+          "lower": 0.9631149609250956,
+          "upper": 0.9631149609251192
+        },
+        "continuationSuccessUpper": 0.9631149609251078,
+        "expectedFp": {
+          "lower": 16.606237409008617,
+          "upper": 16.60623740900905
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 16.054990136207806,
+          "upper": 16.054990136208616
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 31,
+            "upper": 31
+          },
+          "p95": {
+            "lower": 31,
+            "upper": 31
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 29,
+            "upper": 29
+          },
+          "p95": {
+            "lower": 31,
+            "upper": 31
+          }
+        }
+      },
+      {
+        "initialFp": 32,
+        "successProbability": {
+          "lower": 0.9670512393165512,
+          "upper": 0.9670512393165751
+        },
+        "continuationSuccessUpper": 0.9670512393165636,
+        "expectedFp": {
+          "lower": 16.7136362644248,
+          "upper": 16.713636264425244
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 16.192808908058893,
+          "upper": 16.19280890805972
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 31,
+            "upper": 31
+          },
+          "p95": {
+            "lower": 32,
+            "upper": 32
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 30,
+            "upper": 30
+          },
+          "p95": {
+            "lower": 32,
+            "upper": 32
+          }
+        }
+      },
+      {
+        "initialFp": 33,
+        "successProbability": {
+          "lower": 0.9706697599386483,
+          "upper": 0.9706697599386727
+        },
+        "continuationSuccessUpper": 0.9706697599386609,
+        "expectedFp": {
+          "lower": 16.809264466076325,
+          "upper": 16.809264466076772
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 16.32003715151587,
+          "upper": 16.32003715151671
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 33,
+            "upper": 33
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 30,
+            "upper": 30
+          },
+          "p95": {
+            "lower": 33,
+            "upper": 33
+          }
+        }
+      },
+      {
+        "initialFp": 34,
+        "successProbability": {
+          "lower": 0.9739828750550694,
+          "upper": 0.9739828750550938
+        },
+        "continuationSuccessUpper": 0.973982875055082,
+        "expectedFp": {
+          "lower": 16.894111341334995,
+          "upper": 16.89411134133545
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 16.43717718579209,
+          "upper": 16.437177185792944
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 34,
+            "upper": 34
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 30,
+            "upper": 30
+          },
+          "p95": {
+            "lower": 34,
+            "upper": 34
+          }
+        }
+      },
+      {
+        "initialFp": 35,
+        "successProbability": {
+          "lower": 0.9770005973516098,
+          "upper": 0.9770005973516346
+        },
+        "continuationSuccessUpper": 0.9770005973516225,
+        "expectedFp": {
+          "lower": 16.96913412787121,
+          "upper": 16.969134127871673
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 16.54467262250845,
+          "upper": 16.544672622509317
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 35,
+            "upper": 35
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 30,
+            "upper": 30
+          },
+          "p95": {
+            "lower": 34,
+            "upper": 34
+          }
+        }
+      },
+      {
+        "initialFp": 36,
+        "successProbability": {
+          "lower": 0.9797313453261127,
+          "upper": 0.9797313453261377
+        },
+        "continuationSuccessUpper": 0.9797313453261255,
+        "expectedFp": {
+          "lower": 17.03526259961768,
+          "upper": 17.035262599618154
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 16.642920642628116,
+          "upper": 16.642920642628997
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 36,
+            "upper": 36
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 31,
+            "upper": 31
+          },
+          "p95": {
+            "lower": 35,
+            "upper": 35
+          }
+        }
+      },
+      {
+        "initialFp": 37,
+        "successProbability": {
+          "lower": 0.9821823356389109,
+          "upper": 0.9821823356389361
+        },
+        "continuationSuccessUpper": 0.9821823356389238,
+        "expectedFp": {
+          "lower": 17.093402982578088,
+          "upper": 17.093402982578567
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 16.7322795420948,
+          "upper": 16.732279542095696
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 31,
+            "upper": 31
+          },
+          "p95": {
+            "lower": 35,
+            "upper": 35
+          }
+        }
+      },
+      {
+        "initialFp": 38,
+        "successProbability": {
+          "lower": 0.984359840669861,
+          "upper": 0.9843598406698867
+        },
+        "continuationSuccessUpper": 0.984359840669874,
+        "expectedFp": {
+          "lower": 17.1444410431161,
+          "upper": 17.14444104311658
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 16.81307414706034,
+          "upper": 16.81307414706125
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 31,
+            "upper": 31
+          },
+          "p95": {
+            "lower": 36,
+            "upper": 36
+          }
+        }
+      },
+      {
+        "initialFp": 39,
+        "successProbability": {
+          "lower": 0.9862693695123015,
+          "upper": 0.9862693695123271
+        },
+        "continuationSuccessUpper": 0.9862693695123146,
+        "expectedFp": {
+          "lower": 17.18924458489099,
+          "upper": 17.189244584891476
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 16.885599929059847,
+          "upper": 16.885599929060763
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 31,
+            "upper": 31
+          },
+          "p95": {
+            "lower": 36,
+            "upper": 36
+          }
+        }
+      },
+      {
+        "initialFp": 40,
+        "successProbability": {
+          "lower": 0.9879404766694044,
+          "upper": 0.9879404766694303
+        },
+        "continuationSuccessUpper": 0.9879404766694175,
+        "expectedFp": {
+          "lower": 17.228591482799757,
+          "upper": 17.228591482800255
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 16.950627031733433,
+          "upper": 16.95062703173436
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 31,
+            "upper": 31
+          },
+          "p95": {
+            "lower": 36,
+            "upper": 36
+          }
+        }
+      },
+      {
+        "initialFp": 41,
+        "successProbability": {
+          "lower": 0.9893949681722812,
+          "upper": 0.9893949681723074
+        },
+        "continuationSuccessUpper": 0.9893949681722946,
+        "expectedFp": {
+          "lower": 17.263189174168506,
+          "upper": 17.263189174169003
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.00876132442776,
+          "upper": 17.008761324428693
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 31,
+            "upper": 31
+          },
+          "p95": {
+            "lower": 36,
+            "upper": 36
+          }
+        }
+      },
+      {
+        "initialFp": 42,
+        "successProbability": {
+          "lower": 0.990659371583958,
+          "upper": 0.9906593715839844
+        },
+        "continuationSuccessUpper": 0.9906593715839713,
+        "expectedFp": {
+          "lower": 17.293657652804672,
+          "upper": 17.293657652805177
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.060709002638887,
+          "upper": 17.06070900263984
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 31,
+            "upper": 31
+          },
+          "p95": {
+            "lower": 36,
+            "upper": 36
+          }
+        }
+      },
+      {
+        "initialFp": 43,
+        "successProbability": {
+          "lower": 0.9917571569566127,
+          "upper": 0.9917571569566392
+        },
+        "continuationSuccessUpper": 0.9917571569566261,
+        "expectedFp": {
+          "lower": 17.32054135389242,
+          "upper": 17.32054135389293
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.10711032838971,
+          "upper": 17.10711032839067
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 31,
+            "upper": 31
+          },
+          "p95": {
+            "lower": 36,
+            "upper": 36
+          }
+        }
+      },
+      {
+        "initialFp": 44,
+        "successProbability": {
+          "lower": 0.992710228798353,
+          "upper": 0.99271022879838
+        },
+        "continuationSuccessUpper": 0.9927102287983667,
+        "expectedFp": {
+          "lower": 17.34431287307796,
+          "upper": 17.344312873078483
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.148572107302808,
+          "upper": 17.14857210730379
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 31,
+            "upper": 31
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 45,
+        "successProbability": {
+          "lower": 0.9935392244260679,
+          "upper": 0.993539224426095
+        },
+        "continuationSuccessUpper": 0.9935392244260816,
+        "expectedFp": {
+          "lower": 17.365377912575607,
+          "upper": 17.36537791257614
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.18567580621914,
+          "upper": 17.185675806220136
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 46,
+        "successProbability": {
+          "lower": 0.9942637556339174,
+          "upper": 0.9942637556339449
+        },
+        "continuationSuccessUpper": 0.9942637556339313,
+        "expectedFp": {
+          "lower": 17.38407855621458,
+          "upper": 17.384078556215123
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.21898361311534,
+          "upper": 17.218983613116354
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 47,
+        "successProbability": {
+          "lower": 0.9949025682972695,
+          "upper": 0.9949025682972973
+        },
+        "continuationSuccessUpper": 0.9949025682972834,
+        "expectedFp": {
+          "lower": 17.40069609015085,
+          "upper": 17.400696090151392
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.24904261679931,
+          "upper": 17.249042616800327
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 48,
+        "successProbability": {
+          "lower": 0.9954736609448751,
+          "upper": 0.9954736609449032
+        },
+        "continuationSuccessUpper": 0.9954736609448891,
+        "expectedFp": {
+          "lower": 17.415453439907687,
+          "upper": 17.415453439908244
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.276387954793144,
+          "upper": 17.27638795479418
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 49,
+        "successProbability": {
+          "lower": 0.995984875596119,
+          "upper": 0.9959848755961472
+        },
+        "continuationSuccessUpper": 0.995984875596133,
+        "expectedFp": {
+          "lower": 17.42854581008117,
+          "upper": 17.428545810081733
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.30127147159497,
+          "upper": 17.301271471596017
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 50,
+        "successProbability": {
+          "lower": 0.9964435983819301,
+          "upper": 0.9964435983819586
+        },
+        "continuationSuccessUpper": 0.9964435983819442,
+        "expectedFp": {
+          "lower": 17.44014370227787,
+          "upper": 17.440143702278437
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.323934490026247,
+          "upper": 17.323934490027305
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 51,
+        "successProbability": {
+          "lower": 0.9968542266246372,
+          "upper": 0.9968542266246659
+        },
+        "continuationSuccessUpper": 0.9968542266246514,
+        "expectedFp": {
+          "lower": 17.450403574563655,
+          "upper": 17.450403574564234
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.34453109655206,
+          "upper": 17.344531096553133
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 52,
+        "successProbability": {
+          "lower": 0.9972207346832845,
+          "upper": 0.9972207346833135
+        },
+        "continuationSuccessUpper": 0.997220734683299,
+        "expectedFp": {
+          "lower": 17.459468741951724,
+          "upper": 17.45946874195231
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.363203895857577,
+          "upper": 17.36320389585866
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 53,
+        "successProbability": {
+          "lower": 0.9975468290149272,
+          "upper": 0.9975468290149564
+        },
+        "continuationSuccessUpper": 0.9975468290149417,
+        "expectedFp": {
+          "lower": 17.467470693837114,
+          "upper": 17.467470693837708
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.380088961587063,
+          "upper": 17.380088961588157
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 54,
+        "successProbability": {
+          "lower": 0.9978360307505476,
+          "upper": 0.9978360307505771
+        },
+        "continuationSuccessUpper": 0.9978360307505623,
+        "expectedFp": {
+          "lower": 17.474529504921378,
+          "upper": 17.47452950492198
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.395318098901686,
+          "upper": 17.3953180989028
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 55,
+        "successProbability": {
+          "lower": 0.9980917091025091,
+          "upper": 0.9980917091025389
+        },
+        "continuationSuccessUpper": 0.9980917091025239,
+        "expectedFp": {
+          "lower": 17.480754324274017,
+          "upper": 17.480754324274624
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.409019798928842,
+          "upper": 17.40901979892996
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 56,
+        "successProbability": {
+          "lower": 0.9983171047735608,
+          "upper": 0.9983171047735907
+        },
+        "continuationSuccessUpper": 0.9983171047735757,
+        "expectedFp": {
+          "lower": 17.486243794581206,
+          "upper": 17.486243794581817
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.42131991802924,
+          "upper": 17.42131991803037
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 57,
+        "successProbability": {
+          "lower": 0.9985153478674796,
+          "upper": 0.9985153478675098
+        },
+        "continuationSuccessUpper": 0.9985153478674947,
+        "expectedFp": {
+          "lower": 17.491086413009338,
+          "upper": 17.491086413009956
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.432342205486204,
+          "upper": 17.432342205487345
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 58,
+        "successProbability": {
+          "lower": 0.9986894721183508,
+          "upper": 0.9986894721183815
+        },
+        "continuationSuccessUpper": 0.9986894721183661,
+        "expectedFp": {
+          "lower": 17.495360845533792,
+          "upper": 17.49536084553441
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.442208729255718,
+          "upper": 17.44220872925687
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 59,
+        "successProbability": {
+          "lower": 0.9988424264915605,
+          "upper": 0.9988424264915913
+        },
+        "continuationSuccessUpper": 0.9988424264915758,
+        "expectedFp": {
+          "lower": 17.49913620332503,
+          "upper": 17.49913620332566
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.451040228190326,
+          "upper": 17.451040228191488
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 60,
+        "successProbability": {
+          "lower": 0.9989768368901377,
+          "upper": 0.9989768368901686
+        },
+        "continuationSuccessUpper": 0.998976836890153,
+        "expectedFp": {
+          "lower": 17.50247303141889,
+          "upper": 17.50247303141953
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.45894659492051,
+          "upper": 17.458946594921684
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 61,
+        "successProbability": {
+          "lower": 0.9990950847762928,
+          "upper": 0.999095084776324
+        },
+        "continuationSuccessUpper": 0.9990950847763083,
+        "expectedFp": {
+          "lower": 17.50542409849234,
+          "upper": 17.50542409849298
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.46602954588038,
+          "upper": 17.466029545881565
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 62,
+        "successProbability": {
+          "lower": 0.9991992624354551,
+          "upper": 0.9991992624354865
+        },
+        "continuationSuccessUpper": 0.9991992624354707,
+        "expectedFp": {
+          "lower": 17.508035349077602,
+          "upper": 17.50803534907825
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.472380411413667,
+          "upper": 17.472380411414864
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      },
+      {
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.9992912054423814,
+          "upper": 0.999291205442413
+        },
+        "continuationSuccessUpper": 0.9992912054423971,
+        "expectedFp": {
+          "lower": 17.51034673086685,
+          "upper": 17.510346730867504
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 17.478081042457816,
+          "upper": 17.47808104245902
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 38,
+            "upper": 38
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 16,
+            "upper": 16
+          },
+          "p90": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p95": {
+            "lower": 37,
+            "upper": 37
+          }
+        }
+      }
+    ],
+    "expectedFp": {
+      "lower": 14.260824851568628,
+      "upper": 14.26082485156937
+    },
+    "expectedFpGivenSuccess": {
+      "lower": 15.195693834158314,
+      "upper": 15.195693834159915
+    },
+    "failedFpWaste": {
+      "lower": 1.611740080508145,
+      "upper": 1.6117400805082132
+    },
+    "quantiles": {
+      "p50": {
+        "lower": 13,
+        "upper": 13
+      },
+      "p90": {
+        "lower": 27,
+        "upper": 27
+      },
+      "p95": {
+        "lower": 32,
+        "upper": 32
+      }
+    },
+    "successQuantiles": {
+      "p50": {
+        "lower": 14,
+        "upper": 14
+      },
+      "p90": {
+        "lower": 28,
+        "upper": 28
+      },
+      "p95": {
+        "lower": 33,
+        "upper": 33
+      }
+    },
+    "consumption": [
+      {
+        "spent": 0,
+        "success": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failure": {
+          "lower": 0,
+          "upper": 0
+        }
+      },
+      {
+        "spent": 1,
+        "success": {
+          "lower": 0.019105957130259203,
+          "upper": 0.019105957130259817
+        },
+        "failure": {
+          "lower": 0.01587301587301576,
+          "upper": 0.015873015873015983
+        }
+      },
+      {
+        "spent": 2,
+        "success": {
+          "lower": 0.022298317369974948,
+          "upper": 0.02229831736997567
+        },
+        "failure": {
+          "lower": 0.014399111644792479,
+          "upper": 0.014399111644792713
+        }
+      },
+      {
+        "spent": 3,
+        "success": {
+          "lower": 0.0253055402980671,
+          "upper": 0.025305540298067915
+        },
+        "failure": {
+          "lower": 0.013149681709005354,
+          "upper": 0.013149681709005592
+        }
+      },
+      {
+        "spent": 4,
+        "success": {
+          "lower": 0.028070144134577556,
+          "upper": 0.028070144134578506
+        },
+        "failure": {
+          "lower": 0.012179933243146117,
+          "upper": 0.01217993324314634
+        }
+      },
+      {
+        "spent": 5,
+        "success": {
+          "lower": 0.030623927784917262,
+          "upper": 0.030623927784918275
+        },
+        "failure": {
+          "lower": 0.011240356214808582,
+          "upper": 0.011240356214808801
+        }
+      },
+      {
+        "spent": 6,
+        "success": {
+          "lower": 0.032979532648341595,
+          "upper": 0.03297953264834272
+        },
+        "failure": {
+          "lower": 0.010307989262964497,
+          "upper": 0.010307989262964706
+        }
+      },
+      {
+        "spent": 7,
+        "success": {
+          "lower": 0.03515303191971897,
+          "upper": 0.03515303191972024
+        },
+        "failure": {
+          "lower": 0.009376701529781756,
+          "upper": 0.009376701529781954
+        }
+      },
+      {
+        "spent": 8,
+        "success": {
+          "lower": 0.03715794946079729,
+          "upper": 0.0371579494607987
+        },
+        "failure": {
+          "lower": 0.008443218897079677,
+          "upper": 0.008443218897079866
+        }
+      },
+      {
+        "spent": 9,
+        "success": {
+          "lower": 0.03900510295199728,
+          "upper": 0.03900510295199871
+        },
+        "failure": {
+          "lower": 0.007505618122896055,
+          "upper": 0.007505618122896233
+        }
+      },
+      {
+        "spent": 10,
+        "success": {
+          "lower": 0.03447249208415237,
+          "upper": 0.034472492084153684
+        },
+        "failure": {
+          "lower": 0.006562717829597462,
+          "upper": 0.006562717829597631
+        }
+      },
+      {
+        "spent": 11,
+        "success": {
+          "lower": 0.03333812345947177,
+          "upper": 0.033338123459473096
+        },
+        "failure": {
+          "lower": 0.006039354420212554,
+          "upper": 0.00603935442021271
+        }
+      },
+      {
+        "spent": 12,
+        "success": {
+          "lower": 0.032753908320820375,
+          "upper": 0.0327539083208217
+        },
+        "failure": {
+          "lower": 0.005571491066620295,
+          "upper": 0.005571491066620439
+        }
+      },
+      {
+        "spent": 13,
+        "success": {
+          "lower": 0.03225368242031305,
+          "upper": 0.032253682420314324
+        },
+        "failure": {
+          "lower": 0.005141970470379272,
+          "upper": 0.005141970470379407
+        }
+      },
+      {
+        "spent": 14,
+        "success": {
+          "lower": 0.03178241320683174,
+          "upper": 0.03178241320683299
+        },
+        "failure": {
+          "lower": 0.004723328169867424,
+          "upper": 0.004723328169867548
+        }
+      },
+      {
+        "spent": 15,
+        "success": {
+          "lower": 0.03131790574991812,
+          "upper": 0.03131790574991934
+        },
+        "failure": {
+          "lower": 0.004313296772100419,
+          "upper": 0.004313296772100534
+        }
+      },
+      {
+        "spent": 16,
+        "success": {
+          "lower": 0.030848784247088885,
+          "upper": 0.030848784247090075
+        },
+        "failure": {
+          "lower": 0.003910411219798982,
+          "upper": 0.003910411219799088
+        }
+      },
+      {
+        "spent": 17,
+        "success": {
+          "lower": 0.03036856159173092,
+          "upper": 0.03036856159173201
+        },
+        "failure": {
+          "lower": 0.0035135975086418633,
+          "upper": 0.003513597508641958
+        }
+      },
+      {
+        "spent": 18,
+        "success": {
+          "lower": 0.029873335391916875,
+          "upper": 0.029873335391918023
+        },
+        "failure": {
+          "lower": 0.0031220295765467085,
+          "upper": 0.003122029576546795
+        }
+      },
+      {
+        "spent": 19,
+        "success": {
+          "lower": 0.02888717017642609,
+          "upper": 0.02888717017642721
+        },
+        "failure": {
+          "lower": 0.002735050786820581,
+          "upper": 0.0027350507868206587
+        }
+      },
+      {
+        "spent": 20,
+        "success": {
+          "lower": 0.02787207989741524,
+          "upper": 0.0278720798974163
+        },
+        "failure": {
+          "lower": 0.0023911073588590674,
+          "upper": 0.002391107358859137
+        }
+      },
+      {
+        "spent": 21,
+        "success": {
+          "lower": 0.0252775474960172,
+          "upper": 0.02527754749601821
+        },
+        "failure": {
+          "lower": 0.0020780269215385605,
+          "upper": 0.0020780269215386234
+        }
+      },
+      {
+        "spent": 22,
+        "success": {
+          "lower": 0.02302858219084607,
+          "upper": 0.023028582190846997
+        },
+        "failure": {
+          "lower": 0.0018036506133000054,
+          "upper": 0.0018036506133000609
+        }
+      },
+      {
+        "spent": 23,
+        "success": {
+          "lower": 0.020873833252701562,
+          "upper": 0.020873833252702388
+        },
+        "failure": {
+          "lower": 0.0015633826316880622,
+          "upper": 0.0015633826316881125
+        }
+      },
+      {
+        "spent": 24,
+        "success": {
+          "lower": 0.01878729495767009,
+          "upper": 0.018787294957670824
+        },
+        "failure": {
+          "lower": 0.0013550488609437173,
+          "upper": 0.0013550488609437624
+        }
+      },
+      {
+        "spent": 25,
+        "success": {
+          "lower": 0.016763373746384827,
+          "upper": 0.016763373746385493
+        },
+        "failure": {
+          "lower": 0.0011769170204367215,
+          "upper": 0.001176917020436762
+        }
+      },
+      {
+        "spent": 26,
+        "success": {
+          "lower": 0.01480174198362969,
+          "upper": 0.014801741983630266
+        },
+        "failure": {
+          "lower": 0.0010276125757917747,
+          "upper": 0.0010276125757918114
+        }
+      },
+      {
+        "spent": 27,
+        "success": {
+          "lower": 0.012904161658809235,
+          "upper": 0.01290416165880977
+        },
+        "failure": {
+          "lower": 0.0009059895996239527,
+          "upper": 0.0009059895996239855
+        }
+      },
+      {
+        "spent": 28,
+        "success": {
+          "lower": 0.011218216677897117,
+          "upper": 0.011218216677897571
+        },
+        "failure": {
+          "lower": 0.0008110679807776871,
+          "upper": 0.0008110679807777169
+        }
+      },
+      {
+        "spent": 29,
+        "success": {
+          "lower": 0.009645238250442124,
+          "upper": 0.009645238250442527
+        },
+        "failure": {
+          "lower": 0.0007269841086535182,
+          "upper": 0.000726984108653545
+        }
+      },
+      {
+        "spent": 30,
+        "success": {
+          "lower": 0.008635360579417807,
+          "upper": 0.008635360579418171
+        },
+        "failure": {
+          "lower": 0.0006533058877119002,
+          "upper": 0.0006533058877119246
+        }
+      },
+      {
+        "spent": 31,
+        "success": {
+          "lower": 0.00772172076189287,
+          "upper": 0.007721720761893185
+        },
+        "failure": {
+          "lower": 0.0005854768107125734,
+          "upper": 0.0005854768107125955
+        }
+      },
+      {
+        "spent": 32,
+        "success": {
+          "lower": 0.006878768286221262,
+          "upper": 0.006878768286221556
+        },
+        "failure": {
+          "lower": 0.0005229962013243877,
+          "upper": 0.0005229962013244078
+        }
+      },
+      {
+        "spent": 33,
+        "success": {
+          "lower": 0.006098158137106726,
+          "upper": 0.006098158137106985
+        },
+        "failure": {
+          "lower": 0.00046555936605300154,
+          "upper": 0.0004655593660530195
+        }
+      },
+      {
+        "spent": 34,
+        "success": {
+          "lower": 0.005374355025026502,
+          "upper": 0.005374355025026728
+        },
+        "failure": {
+          "lower": 0.0004129702372209208,
+          "upper": 0.0004129702372209371
+        }
+      },
+      {
+        "spent": 35,
+        "success": {
+          "lower": 0.004703246531089446,
+          "upper": 0.004703246531089643
+        },
+        "failure": {
+          "lower": 0.00036506988330758044,
+          "upper": 0.0003650698833075952
+        }
+      },
+      {
+        "spent": 36,
+        "success": {
+          "lower": 0.0040816172920269496,
+          "upper": 0.004081617292027126
+        },
+        "failure": {
+          "lower": 0.0003217246773630885,
+          "upper": 0.00032172467736310166
+        }
+      },
+      {
+        "spent": 37,
+        "success": {
+          "lower": 0.0035068705311305155,
+          "upper": 0.003506870531130663
+        },
+        "failure": {
+          "lower": 0.0002828200692234334,
+          "upper": 0.0002828200692234452
+        }
+      },
+      {
+        "spent": 38,
+        "success": {
+          "lower": 0.0029768606871699373,
+          "upper": 0.00297686068717007
+        },
+        "failure": {
+          "lower": 0.00024825649730358663,
+          "upper": 0.00024825649730359726
+        }
+      },
+      {
+        "spent": 39,
+        "success": {
+          "lower": 0.0025208398348424373,
+          "upper": 0.002520839834842548
+        },
+        "failure": {
+          "lower": 0.00021794651567754773,
+          "upper": 0.0002179465156775572
+        }
+      },
+      {
+        "spent": 40,
+        "success": {
+          "lower": 0.002123358592088437,
+          "upper": 0.0021233585920885333
+        },
+        "failure": {
+          "lower": 0.00019142100524734116,
+          "upper": 0.0001914210052473496
+        }
+      },
+      {
+        "spent": 41,
+        "success": {
+          "lower": 0.0017854732880438072,
+          "upper": 0.0017854732880438898
+        },
+        "failure": {
+          "lower": 0.00016833383853500887,
+          "upper": 0.0001683338385350165
+        }
+      },
+      {
+        "spent": 42,
+        "success": {
+          "lower": 0.0014988399321268424,
+          "upper": 0.001498839932126913
+        },
+        "failure": {
+          "lower": 0.00014826394311156664,
+          "upper": 0.00014826394311157344
+        }
+      },
+      {
+        "spent": 43,
+        "success": {
+          "lower": 0.001257356850476366,
+          "upper": 0.001257356850476427
+        },
+        "failure": {
+          "lower": 0.00013083877846625352,
+          "upper": 0.00013083877846625967
+        }
+      },
+      {
+        "spent": 44,
+        "success": {
+          "lower": 0.0010556894971968747,
+          "upper": 0.0010556894971969258
+        },
+        "failure": {
+          "lower": 0.00011571065399418174,
+          "upper": 0.00011571065399418723
+        }
+      },
+      {
+        "spent": 45,
+        "success": {
+          "lower": 0.0008890066453587478,
+          "upper": 0.0008890066453587916
+        },
+        "failure": {
+          "lower": 0.00010255199323680265,
+          "upper": 0.0001025519932368076
+        }
+      },
+      {
+        "spent": 46,
+        "success": {
+          "lower": 0.0007528563172376146,
+          "upper": 0.0007528563172376522
+        },
+        "failure": {
+          "lower": 0.00009105149787410812,
+          "upper": 0.00009105149787411251
+        }
+      },
+      {
+        "spent": 47,
+        "success": {
+          "lower": 0.000643088489725216,
+          "upper": 0.0006430884897252485
+        },
+        "failure": {
+          "lower": 0.00008091161432883535,
+          "upper": 0.00008091161432883934
+        }
+      },
+      {
+        "spent": 48,
+        "success": {
+          "lower": 0.0005483554773921828,
+          "upper": 0.0005483554773922109
+        },
+        "failure": {
+          "lower": 0.00007184665166842796,
+          "upper": 0.00007184665166843155
+        }
+      },
+      {
+        "spent": 49,
+        "success": {
+          "lower": 0.0004669968907351409,
+          "upper": 0.0004669968907351646
+        },
+        "failure": {
+          "lower": 0.00006373213339471458,
+          "upper": 0.0000637321333947178
+        }
+      },
+      {
+        "spent": 50,
+        "success": {
+          "lower": 0.0003957047255739277,
+          "upper": 0.00039570472557394807
+        },
+        "failure": {
+          "lower": 0.00005645081933421996,
+          "upper": 0.00005645081933422282
+        }
+      },
+      {
+        "spent": 51,
+        "success": {
+          "lower": 0.0003334223225772498,
+          "upper": 0.00033342232257726735
+        },
+        "failure": {
+          "lower": 0.00004993291071981996,
+          "upper": 0.00004993291071982254
+        }
+      },
+      {
+        "spent": 52,
+        "success": {
+          "lower": 0.00027927600006176804,
+          "upper": 0.00027927600006178273
+        },
+        "failure": {
+          "lower": 0.00004411532248731996,
+          "upper": 0.000044115322487322254
+        }
+      },
+      {
+        "spent": 53,
+        "success": {
+          "lower": 0.0002324732445480892,
+          "upper": 0.00023247324454810138
+        },
+        "failure": {
+          "lower": 0.00003893922198505384,
+          "upper": 0.000038939221985055915
+        }
+      },
+      {
+        "spent": 54,
+        "success": {
+          "lower": 0.00019227978695752929,
+          "upper": 0.00019227978695753967
+        },
+        "failure": {
+          "lower": 0.00003434871824504485,
+          "upper": 0.00003434871824504671
+        }
+      },
+      {
+        "spent": 55,
+        "success": {
+          "lower": 0.0001580068861770138,
+          "upper": 0.00015800688617702237
+        },
+        "failure": {
+          "lower": 0.00003029033170597177,
+          "upper": 0.00003029033170597341
+        }
+      },
+      {
+        "spent": 56,
+        "success": {
+          "lower": 0.00012900274297954198,
+          "upper": 0.0001290027429795491
+        },
+        "failure": {
+          "lower": 0.000026712622641656964,
+          "upper": 0.000026712622641658434
+        }
+      },
+      {
+        "spent": 57,
+        "success": {
+          "lower": 0.00010464625442090366,
+          "upper": 0.0001046462544209095
+        },
+        "failure": {
+          "lower": 0.0000235659068651649,
+          "upper": 0.000023565906865166222
+        }
+      },
+      {
+        "spent": 58,
+        "success": {
+          "lower": 0.00008434225771534211,
+          "upper": 0.00008434225771534692
+        },
+        "failure": {
+          "lower": 0.00002080202986720651,
+          "upper": 0.000020802029867207687
+        }
+      },
+      {
+        "spent": 59,
+        "success": {
+          "lower": 0.00006746739181848636,
+          "upper": 0.00006746739181849025
+        },
+        "failure": {
+          "lower": 0.000018374182673401132,
+          "upper": 0.000018374182673402193
+        }
+      },
+      {
+        "spent": 60,
+        "success": {
+          "lower": 0.000053489754204786375,
+          "upper": 0.00005348975420478952
+        },
+        "failure": {
+          "lower": 0.00001624068428328679,
+          "upper": 0.000016240684283287738
+        }
+      },
+      {
+        "spent": 61,
+        "success": {
+          "lower": 0.00004193233303357311,
+          "upper": 0.00004193233303357561
+        },
+        "failure": {
+          "lower": 0.00001436373370939419,
+          "upper": 0.00001436373370939503
+        }
+      },
+      {
+        "spent": 62,
+        "success": {
+          "lower": 0.00003113722264960117,
+          "upper": 0.00003113722264960305
+        },
+        "failure": {
+          "lower": 0.000012710120071894746,
+          "upper": 0.0000127101200718955
+        }
+      },
+      {
+        "spent": 63,
+        "success": {
+          "lower": 0.000022501414527079952,
+          "upper": 0.000022501414527081318
+        },
+        "failure": {
+          "lower": 0.000011250707263539978,
+          "upper": 0.000011250707263540657
+        }
+      }
+    ],
+    "attemptsByMacro": [
+      {
+        "lower": 0.9999999999999866,
+        "upper": 1.0000000000000102
+      },
+      {
+        "lower": 0.9362001199136921,
+        "upper": 0.9362001199137202
+      },
+      {
+        "lower": 1.2486186786640232,
+        "upper": 1.2486186786640803
+      }
+    ],
+    "failureReasons": [
+      {
+        "reason": "FP_EXHAUSTED",
+        "probability": {
+          "lower": 0.1675875475572956,
+          "upper": 0.1675875475573025
+        }
+      }
+    ],
+    "states": 252
+  },
+  "searchStatus": "INCOMPLETE",
+  "optimality": "NOT_PROVEN",
+  "search": {
+    "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+    "macroStages": 12,
+    "librarySize": 1019,
+    "candidateUpperBound": "1254632733340981365482990232886448281",
+    "evaluatedRoutes": 15,
+    "exactRoutes": 13,
+    "estimatedRoutes": 2,
+    "unevaluatedRoutes": 0,
+    "skippedDuplicates": 3,
+    "certifiedPrunedPrefixes": 5,
+    "elapsedMilliseconds": 7815,
+    "stopReason": "TIME_BUDGET",
+    "paretoRouteIds": [
+      "r-741638a568efd6f9",
+      "r-2724a8fa3ce4c0de",
+      "r-9baccd36f4667182",
+      "r-6282ffe336a47677",
+      "r-d98eb2830c5645f7",
+      "r-7bf9a5c1def1c2d5",
+      "r-c0142a03a5924caf",
+      "r-022133e836edcecc",
+      "r-2cf84b1e2971c5e2",
+      "r-a48b48677512f8c3",
+      "r-5b0e705e99d07b6a",
+      "r-03fee19e3cf32fca"
+    ]
+  },
+  "conventions": {
+    "fpDomain": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "weights": [
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872,
+      0.015873015873015872
+    ],
+    "materials": "UNLIMITED",
+    "fixedRoute": true,
+    "rngModel": "DISPLAY_PARAMETERS_INDEPENDENT_DRAWS_V1"
+  },
+  "qualification": "概率基于本地代码规则及公开的独立抽样模型。算术区间和采样统计区间分别标注；搜索范围、执行预算与最优证明单列，未覆盖范围不解释为装备不可行。"
+}

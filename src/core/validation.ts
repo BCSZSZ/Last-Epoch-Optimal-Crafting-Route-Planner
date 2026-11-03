@@ -1,6 +1,7 @@
 import { Catalog, ordinary } from './catalog';
 import type { CraftingContext, Issue, Item, PlanRequest, Requirement } from './types';
 import { targetReached } from './target';
+import { matches } from './target';
 
 export function validateItem(item: Item, context: CraftingContext, catalog: Catalog): Issue[] {
   const issues: Issue[] = [];
@@ -65,6 +66,24 @@ export function validateRequest(request: PlanRequest, catalog: Catalog): Issue[]
     issues.push({ code: 'UNKNOWN_INITIAL_ROLL', message: '计算roll目标或保护时需提供起始词缀的原始roll；不能对未知旧值假定均匀分布' });
   }
   const requiredTargets = request.target.requirements.filter((row) => !row.optional);
+  if (requiredTargets.length > 7) issues.push({ code: 'TARGET_SLOT_CAPACITY', message: '所需目标超过装备的全部槽位数量' });
+  if (catalog.hasBase(request.item.baseId)) for (const requirement of requiredTargets) {
+    if (!requirement.ids.every((id) => catalog.hasAffix(id))) continue;
+    if (requirement.ids.every((id) => catalog.affix(id).tiers.length < requirement.minTier)) {
+      issues.push({ code: 'TARGET_TIER_UNAVAILABLE', message: '目标词缀定义没有所需阶数' });
+    }
+    if (requirement.ids.every((id) => !catalog.canRollOn(id, request.item.baseId) && !request.item.affixes.some((row) => row.id === id))) {
+      issues.push({ code: 'UNREACHABLE_AFFIX_BASE', message: '目标词缀不符合底材或职业，且起始装备上也不存在该ID' });
+    }
+    if (['primordial', 'corrupted'].includes(requirement.slot) &&
+        !request.item.affixes.some((row) => matches(row, { ...requirement, minRollByte: row.roll === null ? undefined : requirement.minRollByte }))) {
+      issues.push({ code: 'UNSUPPORTED_SLOT_OPERATION', message: '当前动作范围不能新增或修改指定先古／腐化槽目标' });
+    }
+    if (requirement.slot === 'sealed' && !request.item.affixes.some((row) => matches(row, { ...requirement, minRollByte: row.roll === null ? undefined : requirement.minRollByte })) &&
+        (requirement.minTier > 4 || request.item.affixes.some((row) => row.slot === 'sealed'))) {
+      issues.push({ code: 'UNREACHABLE_SEALED_TARGET', message: '普通封印槽不可重洗；当前绝望只能新封印T1至T4' });
+    }
+  }
   if (requiredTargets.filter((row) => row.slot === 'ordinary').length > 4 ||
       ['sealed', 'primordial', 'corrupted'].some((slot) => requiredTargets.filter((row) => row.slot === slot).length > 1)) {
     issues.push({ code: 'TARGET_SLOT_CAPACITY', message: '目标数量超过相应槽位容量' });
@@ -90,6 +109,8 @@ export function validateRequest(request: PlanRequest, catalog: Catalog): Issue[]
   }
   const protectedIds = request.constraints.protected?.map((row) => row.id) ?? [];
   if (protectedIds.some((id) => !request.item.affixes.some((row) => row.id === id))) issues.push({ code: 'PROTECTED_ID_MISSING', message: '被保护词缀必须存在于起始装备中' });
+  if (request.constraints.protected?.some((rule) => rule.minTier !== undefined &&
+      request.item.affixes.some((row) => row.id === rule.id && row.tier < rule.minTier!))) issues.push({ code: 'INITIAL_PROTECTION_VIOLATED', message: '起始阶数已经低于全程保护下界，请修正保护条件' });
   if (request.constraints.protected?.some((rule) => rule.roll && request.item.affixes.find((row) => row.id === rule.id)?.roll === null)) issues.push({ code: 'UNKNOWN_PROTECTED_ROLL', message: '保护roll时需提供该词缀的实际原始roll字节' });
   if (request.constraints.maxAttempts !== undefined && (!Number.isInteger(request.constraints.maxAttempts) || request.constraints.maxAttempts < 1)) issues.push({ code: 'INVALID_ATTEMPT_LIMIT', message: '显式操作次数上限必须为正整数' });
   const maximum = request.scoring.maximumFp ?? 63;
@@ -98,6 +119,7 @@ export function validateRequest(request: PlanRequest, catalog: Catalog): Issue[]
       request.scoring.weights.some((w) => !Number.isFinite(w) || w < 0) || request.scoring.weights.every((w) => w === 0))) {
     issues.push({ code: 'INVALID_SCORING_WEIGHTS', message: '每个预算需对应一个非负权重，且权重和须大于零' });
   }
+  if (request.scoring.weights && !Number.isFinite(request.scoring.weights.reduce((a, b) => a + b, 0))) issues.push({ code: 'WEIGHT_RANGE_UNSUPPORTED', message: '权重总和超出当前数值范围；请按相同比例缩小权重' });
   for (const [name, value] of Object.entries(request.search)) {
     if (!Number.isFinite(value) || value <= 0 || (name !== 'milliseconds' && !Number.isInteger(value))) issues.push({ code: 'INVALID_SEARCH_BUDGET', message: `搜索预算${name}必须为正数；数量上限须为整数` });
   }

@@ -104,10 +104,10 @@
     "research/fp-examples.json": "ff72db932924dcd374e4c8a42af47525b34fb37c4e5e2aecda9173f85d49713e",
     "research/legacy-forge-compatibility.json": "f750857451068cd7470aa0b1802fcdff12b5d6ee8a997b144e34e858b34fdba0",
     "research/math-fixtures.json": "2e8f761032a1fb9710be3bdfe80d361982297d3cbf6663140f77bc517e6a978a",
-    "src/generated/model.json": "3f95e7b8e24245b43747b5ed72625826539657ee4f6e61004ea5900802793cab"
+    "src/generated/model.json": "2dbfba24975cd2df43a30ce39f3dbbdec5e3a3c635665b3d52423cfca17554ff"
   },
-  "modelId": "le-1.5.3-26087601-r4-product-implementation",
-  "phase": "PRODUCT_IMPLEMENTATION_IN_PROGRESS",
+  "modelId": "le-1.5.3-26087601-r5-browser-release-candidate",
+  "phase": "BROWSER_RELEASE_CANDIDATE",
   "policies": {
     "adaptiveReoptimization": false,
     "commonPatternsPrioritizedNotExclusive": true,
@@ -148,7 +148,7 @@
     "unassessedPatternStatus": "UNASSESSED",
     "uncompletedSearchStatus": "INCOMPLETE"
   },
-  "productionModelId": "le-1.5.3-iid-ba34131b0f031bbf",
+  "productionModelId": "le-1.5.3-iid-de87d96b5479099b",
   "productionPreconditions": [
     "FULL_SOLVER_VALIDATION",
     "BROWSER_PERFORMANCE",
@@ -160,7 +160,7 @@
     "display_parameters_iid",
     "native_uniform_grid_iid"
   ],
-  "researchRevision": "164a1dab68d70eaf6647a99cf3d04646584f0e1fafe181b8bfb59f70933c41ec",
+  "researchRevision": "710a125b3c1423808eab6138558ebcc875122f5329967cd36bdfc56f99acc44c",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 1,
   "steamBuildId": 26087601,
@@ -170,8 +170,9 @@
     "date": "2026-11-03"
   },
   "validationNotClaimed": [
-    "FULL_ROUTE_SEARCH",
-    "BROWSER_PERFORMANCE",
+    "UNBOUNDED_GLOBAL_OPTIMALITY",
+    "PHYSICAL_LOW_END_DEVICE",
+    "BROWSER_WORKER_HEAP_PEAK",
     "LIVE_DEPLOYMENT",
     "GAME_CLIENT_CRAFTING_FREQUENCIES",
     "ONLINE_SERVER_PARITY"

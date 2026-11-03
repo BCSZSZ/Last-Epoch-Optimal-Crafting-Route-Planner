@@ -1,0 +1,1550 @@
+{
+  "schemaVersion": 1,
+  "measuredOn": "2026-11-03T03:59:46.649Z",
+  "modelId": "le-1.5.3-iid-de87d96b5479099b",
+  "scope": "COMPLETE_PLANNER_WITH_DEFAULT_TIME_AND_ROUTE_LIMITS_ALL_FP_0_TO_63",
+  "environment": {
+    "node": "v22.20.0",
+    "platform": "win32",
+    "arch": "x64",
+    "cpu": "13th Gen Intel(R) Core(TM) i5-13600KF",
+    "logicalCpus": 20,
+    "memoryGiB": 31.772438049316406,
+    "jitless": true
+  },
+  "measurement": "Cold child per case and FP type; elapsed excludes module load and process launch. Peak RSS includes Node and imported model. Jitless disables V8 JIT as a constrained-runtime proxy, not a measurement of a physical low-end device. Wall-clock cutoffs may change candidate coverage.",
+  "requestScope": {
+    "milliseconds": 12000,
+    "maxRoutes": 48,
+    "macroStages": 12,
+    "maxStates": 25000
+  },
+  "records": [
+    {
+      "id": "7732-ready",
+      "fpType": "NORMAL",
+      "milliseconds": 5808.6817,
+      "peakRssMiB": 118.21875,
+      "status": "RECOMMENDATION",
+      "score": 0.6236150286198845,
+      "scoreBounds": {
+        "lower": 0.6236150286198664,
+        "upper": 0.6236150286199025
+      },
+      "evaluation": "BOUNDED_NUMERICAL",
+      "routeId": "r-f5f04e6842bf1044",
+      "macros": [
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 1016,
+        "candidateUpperBound": "1211022357648499479475860072608191033",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 43,
+        "estimatedRoutes": 5,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 3,
+        "certifiedPrunedPrefixes": 18,
+        "elapsedMilliseconds": 5808,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-f5f04e6842bf1044",
+          "r-2724a8fa3ce4c0de",
+          "r-76da380bc5a10f67",
+          "r-022133e836edcecc",
+          "r-1581db107181f64c",
+          "r-ae62abbd04ed89a9",
+          "r-5430c05ef175f762",
+          "r-f7e86e2a54bf484e",
+          "r-5c76026e8482978a",
+          "r-ec16b768d6c53b5c",
+          "r-9f54de0a8ed38f06",
+          "r-330360d72b7906c3",
+          "r-cac346c3587e4bff",
+          "r-d2bfd19347ebf76f",
+          "r-d0a80f8c21464400",
+          "r-b21c5d2260aa59ce",
+          "r-90965f185e66d4dc",
+          "r-db689d9525a54b49",
+          "r-31019c651c456c09",
+          "r-3fe60b31789c6215",
+          "r-78dab9f8ea4d1734",
+          "r-3cf8cca41d355400",
+          "r-d1330f3c6cd0f290",
+          "r-57c4a512ff778f9e",
+          "r-738acda86589bdcc",
+          "r-027fd50591d6d6d9",
+          "r-3bac89d58f880759",
+          "r-fa76450142584145",
+          "r-5365539ea9e8ef1a",
+          "r-c14742189adb82ec",
+          "r-12cd289a4ca8c8f6",
+          "r-2d993c47e14af213",
+          "r-3b091df3c484c98f",
+          "r-28662ba39e03845f",
+          "r-6282ffe336a47677",
+          "r-c079387f58d7c133",
+          "r-21d7e28f74daa56b",
+          "r-18d19b3bd4f47a67",
+          "r-5a00c7bb7ab23b47",
+          "r-c95f70a627a6f9d2",
+          "r-68f9cd60c6230ea4",
+          "r-f52772b2c366cf9e",
+          "r-51b9eb4d09bbbfb1",
+          "r-5f66e07dd98f7371",
+          "r-a40154990086212d",
+          "r-eb31a424f3654128",
+          "r-8d284f3a2c527116"
+        ]
+      },
+      "states": 64,
+      "samples": 0,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "7732-ready",
+      "fpType": "ICE",
+      "milliseconds": 7825.1645,
+      "peakRssMiB": 117.39453125,
+      "status": "RECOMMENDATION",
+      "score": 0.7146364783343879,
+      "scoreBounds": {
+        "lower": 0.7146364783343672,
+        "upper": 0.7146364783344086
+      },
+      "evaluation": "BOUNDED_NUMERICAL",
+      "routeId": "r-f5f04e6842bf1044",
+      "macros": [
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 1016,
+        "candidateUpperBound": "1211022357648499479475860072608191033",
+        "evaluatedRoutes": 47,
+        "exactRoutes": 42,
+        "estimatedRoutes": 5,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 3,
+        "certifiedPrunedPrefixes": 18,
+        "elapsedMilliseconds": 7825,
+        "stopReason": "TIME_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-f5f04e6842bf1044",
+          "r-2724a8fa3ce4c0de",
+          "r-76da380bc5a10f67",
+          "r-022133e836edcecc",
+          "r-1581db107181f64c",
+          "r-ae62abbd04ed89a9",
+          "r-5430c05ef175f762",
+          "r-f7e86e2a54bf484e",
+          "r-5c76026e8482978a",
+          "r-ec16b768d6c53b5c",
+          "r-9f54de0a8ed38f06",
+          "r-330360d72b7906c3",
+          "r-cac346c3587e4bff",
+          "r-d2bfd19347ebf76f",
+          "r-d0a80f8c21464400",
+          "r-b21c5d2260aa59ce",
+          "r-90965f185e66d4dc",
+          "r-db689d9525a54b49",
+          "r-31019c651c456c09",
+          "r-3fe60b31789c6215",
+          "r-78dab9f8ea4d1734",
+          "r-3cf8cca41d355400",
+          "r-d1330f3c6cd0f290",
+          "r-57c4a512ff778f9e",
+          "r-738acda86589bdcc",
+          "r-027fd50591d6d6d9",
+          "r-3bac89d58f880759",
+          "r-fa76450142584145",
+          "r-5365539ea9e8ef1a",
+          "r-c14742189adb82ec",
+          "r-12cd289a4ca8c8f6",
+          "r-2d993c47e14af213",
+          "r-3b091df3c484c98f",
+          "r-28662ba39e03845f",
+          "r-6282ffe336a47677",
+          "r-c079387f58d7c133",
+          "r-21d7e28f74daa56b",
+          "r-18d19b3bd4f47a67",
+          "r-5a00c7bb7ab23b47",
+          "r-c95f70a627a6f9d2",
+          "r-68f9cd60c6230ea4",
+          "r-f52772b2c366cf9e",
+          "r-51b9eb4d09bbbfb1",
+          "r-5f66e07dd98f7371",
+          "r-a40154990086212d",
+          "r-eb31a424f3654128"
+        ]
+      },
+      "states": 64,
+      "samples": 0,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "7732-ready",
+      "fpType": "BLOOD",
+      "milliseconds": 6879.782700000001,
+      "peakRssMiB": 117.76953125,
+      "status": "RECOMMENDATION",
+      "score": 0.6236150286198845,
+      "scoreBounds": {
+        "lower": 0.6236150286198664,
+        "upper": 0.6236150286199025
+      },
+      "evaluation": "BOUNDED_NUMERICAL",
+      "routeId": "r-f5f04e6842bf1044",
+      "macros": [
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 1016,
+        "candidateUpperBound": "1211022357648499479475860072608191033",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 43,
+        "estimatedRoutes": 5,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 3,
+        "certifiedPrunedPrefixes": 18,
+        "elapsedMilliseconds": 6879,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-f5f04e6842bf1044",
+          "r-2724a8fa3ce4c0de",
+          "r-76da380bc5a10f67",
+          "r-022133e836edcecc",
+          "r-1581db107181f64c",
+          "r-ae62abbd04ed89a9",
+          "r-5430c05ef175f762",
+          "r-f7e86e2a54bf484e",
+          "r-5c76026e8482978a",
+          "r-ec16b768d6c53b5c",
+          "r-9f54de0a8ed38f06",
+          "r-330360d72b7906c3",
+          "r-cac346c3587e4bff",
+          "r-d2bfd19347ebf76f",
+          "r-d0a80f8c21464400",
+          "r-b21c5d2260aa59ce",
+          "r-90965f185e66d4dc",
+          "r-db689d9525a54b49",
+          "r-31019c651c456c09",
+          "r-3fe60b31789c6215",
+          "r-78dab9f8ea4d1734",
+          "r-3cf8cca41d355400",
+          "r-d1330f3c6cd0f290",
+          "r-57c4a512ff778f9e",
+          "r-738acda86589bdcc",
+          "r-027fd50591d6d6d9",
+          "r-3bac89d58f880759",
+          "r-fa76450142584145",
+          "r-5365539ea9e8ef1a",
+          "r-c14742189adb82ec",
+          "r-12cd289a4ca8c8f6",
+          "r-2d993c47e14af213",
+          "r-3b091df3c484c98f",
+          "r-28662ba39e03845f",
+          "r-6282ffe336a47677",
+          "r-c079387f58d7c133",
+          "r-21d7e28f74daa56b",
+          "r-18d19b3bd4f47a67",
+          "r-5a00c7bb7ab23b47",
+          "r-c95f70a627a6f9d2",
+          "r-68f9cd60c6230ea4",
+          "r-f52772b2c366cf9e",
+          "r-51b9eb4d09bbbfb1",
+          "r-5f66e07dd98f7371",
+          "r-a40154990086212d",
+          "r-eb31a424f3654128",
+          "r-8d284f3a2c527116"
+        ]
+      },
+      "states": 64,
+      "samples": 0,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "7710-direct",
+      "fpType": "NORMAL",
+      "milliseconds": 7853.7241,
+      "peakRssMiB": 124.55859375,
+      "status": "RECOMMENDATION",
+      "score": 0.4472252707958129,
+      "scoreBounds": {
+        "lower": 0.44722527079579805,
+        "upper": 0.4472252707958278
+      },
+      "evaluation": "BOUNDED_NUMERICAL",
+      "routeId": "r-085e76281e31b18c",
+      "macros": [
+        {
+          "kind": "once",
+          "action": {
+            "kind": "add",
+            "id": 4,
+            "glyph": "hope"
+          }
+        },
+        {
+          "kind": "seal",
+          "selector": {
+            "side": 0,
+            "excludedIds": [
+              4,
+              5
+            ],
+            "minTier": 1,
+            "maxTier": 4
+          }
+        },
+        {
+          "kind": "once",
+          "action": {
+            "kind": "add",
+            "id": 5,
+            "glyph": "hope"
+          }
+        },
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 1019,
+        "candidateUpperBound": "1254632733340981365482990232886448281",
+        "evaluatedRoutes": 7,
+        "exactRoutes": 6,
+        "estimatedRoutes": 1,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 2,
+        "elapsedMilliseconds": 7853,
+        "stopReason": "TIME_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-2724a8fa3ce4c0de",
+          "r-8e98d65195807abd",
+          "r-3835c0aee4ab80ba",
+          "r-085e76281e31b18c",
+          "r-9c766d50ac82ba2c",
+          "r-d068b940c8a5ea9c"
+        ]
+      },
+      "states": 942,
+      "samples": 0,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "7710-direct",
+      "fpType": "ICE",
+      "milliseconds": 7899.0243,
+      "peakRssMiB": 122.36328125,
+      "status": "RECOMMENDATION",
+      "score": 0.5789720513410019,
+      "scoreBounds": {
+        "lower": 0.5789720513409813,
+        "upper": 0.5789720513410225
+      },
+      "evaluation": "BOUNDED_NUMERICAL",
+      "routeId": "r-085e76281e31b18c",
+      "macros": [
+        {
+          "kind": "once",
+          "action": {
+            "kind": "add",
+            "id": 4,
+            "glyph": "hope"
+          }
+        },
+        {
+          "kind": "seal",
+          "selector": {
+            "side": 0,
+            "excludedIds": [
+              4,
+              5
+            ],
+            "minTier": 1,
+            "maxTier": 4
+          }
+        },
+        {
+          "kind": "once",
+          "action": {
+            "kind": "add",
+            "id": 5,
+            "glyph": "hope"
+          }
+        },
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 1019,
+        "candidateUpperBound": "1254632733340981365482990232886448281",
+        "evaluatedRoutes": 7,
+        "exactRoutes": 6,
+        "estimatedRoutes": 1,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 2,
+        "elapsedMilliseconds": 7899,
+        "stopReason": "TIME_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-2724a8fa3ce4c0de",
+          "r-8e98d65195807abd",
+          "r-3835c0aee4ab80ba",
+          "r-085e76281e31b18c",
+          "r-9c766d50ac82ba2c",
+          "r-d068b940c8a5ea9c"
+        ]
+      },
+      "states": 953,
+      "samples": 0,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "7710-direct",
+      "fpType": "BLOOD",
+      "milliseconds": 7884.6353,
+      "peakRssMiB": 123.82421875,
+      "status": "RECOMMENDATION",
+      "score": 0.4554655188139222,
+      "scoreBounds": {
+        "lower": 0.45546551881390734,
+        "upper": 0.4554655188139371
+      },
+      "evaluation": "BOUNDED_NUMERICAL",
+      "routeId": "r-085e76281e31b18c",
+      "macros": [
+        {
+          "kind": "once",
+          "action": {
+            "kind": "add",
+            "id": 4,
+            "glyph": "hope"
+          }
+        },
+        {
+          "kind": "seal",
+          "selector": {
+            "side": 0,
+            "excludedIds": [
+              4,
+              5
+            ],
+            "minTier": 1,
+            "maxTier": 4
+          }
+        },
+        {
+          "kind": "once",
+          "action": {
+            "kind": "add",
+            "id": 5,
+            "glyph": "hope"
+          }
+        },
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 1019,
+        "candidateUpperBound": "1254632733340981365482990232886448281",
+        "evaluatedRoutes": 7,
+        "exactRoutes": 6,
+        "estimatedRoutes": 1,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 2,
+        "elapsedMilliseconds": 7884,
+        "stopReason": "TIME_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-2724a8fa3ce4c0de",
+          "r-8e98d65195807abd",
+          "r-3835c0aee4ab80ba",
+          "r-085e76281e31b18c",
+          "r-9c766d50ac82ba2c",
+          "r-d068b940c8a5ea9c"
+        ]
+      },
+      "states": 942,
+      "samples": 0,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "7713-prepare",
+      "fpType": "NORMAL",
+      "milliseconds": 4450.607,
+      "peakRssMiB": 113.12890625,
+      "status": "RECOMMENDATION",
+      "score": 0.2706208981291877,
+      "scoreBounds": {
+        "lower": 0.27062089812917633,
+        "upper": 0.2706208981291991
+      },
+      "evaluation": "BOUNDED_NUMERICAL",
+      "routeId": "r-7bf9a5c1def1c2d5",
+      "macros": [
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "exists",
+            "selector": {
+              "side": 0,
+              "excludedIds": [
+                4,
+                5
+              ],
+              "minTier": 1,
+              "maxTier": 1,
+              "sealable": true
+            }
+          }
+        },
+        {
+          "kind": "seal",
+          "selector": {
+            "side": 0,
+            "excludedIds": [
+              4,
+              5
+            ],
+            "minTier": 1,
+            "maxTier": 1,
+            "sealable": true
+          }
+        },
+        {
+          "kind": "once",
+          "action": {
+            "kind": "add",
+            "id": 5,
+            "glyph": "hope"
+          }
+        },
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 1019,
+        "candidateUpperBound": "1254632733340981365482990232886448281",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 45,
+        "estimatedRoutes": 3,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 3,
+        "certifiedPrunedPrefixes": 26,
+        "elapsedMilliseconds": 4450,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-2724a8fa3ce4c0de",
+          "r-9baccd36f4667182",
+          "r-6282ffe336a47677",
+          "r-d98eb2830c5645f7",
+          "r-7bf9a5c1def1c2d5",
+          "r-c0142a03a5924caf",
+          "r-c2efb85376a824cf",
+          "r-022133e836edcecc",
+          "r-2cf84b1e2971c5e2",
+          "r-a48b48677512f8c3",
+          "r-5b0e705e99d07b6a",
+          "r-03fee19e3cf32fca",
+          "r-037f8228f22e4884",
+          "r-1581db107181f64c",
+          "r-ae62abbd04ed89a9",
+          "r-5430c05ef175f762",
+          "r-f7e86e2a54bf484e",
+          "r-5c76026e8482978a",
+          "r-ec16b768d6c53b5c",
+          "r-9f54de0a8ed38f06",
+          "r-330360d72b7906c3",
+          "r-cac346c3587e4bff",
+          "r-d2bfd19347ebf76f",
+          "r-d0a80f8c21464400",
+          "r-b21c5d2260aa59ce",
+          "r-90965f185e66d4dc",
+          "r-db689d9525a54b49",
+          "r-31019c651c456c09",
+          "r-3fe60b31789c6215",
+          "r-78dab9f8ea4d1734",
+          "r-3cf8cca41d355400",
+          "r-d1330f3c6cd0f290",
+          "r-57c4a512ff778f9e",
+          "r-738acda86589bdcc",
+          "r-027fd50591d6d6d9",
+          "r-3bac89d58f880759",
+          "r-fa76450142584145",
+          "r-5365539ea9e8ef1a",
+          "r-c14742189adb82ec",
+          "r-12cd289a4ca8c8f6",
+          "r-2d993c47e14af213",
+          "r-3b091df3c484c98f",
+          "r-28662ba39e03845f",
+          "r-c079387f58d7c133",
+          "r-21d7e28f74daa56b"
+        ]
+      },
+      "states": 1006,
+      "samples": 0,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "7713-prepare",
+      "fpType": "ICE",
+      "milliseconds": 5417.5335,
+      "peakRssMiB": 112.23828125,
+      "status": "RECOMMENDATION",
+      "score": 0.4181926481670739,
+      "scoreBounds": {
+        "lower": 0.4181926481670557,
+        "upper": 0.4181926481670922
+      },
+      "evaluation": "BOUNDED_NUMERICAL",
+      "routeId": "r-7bf9a5c1def1c2d5",
+      "macros": [
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "exists",
+            "selector": {
+              "side": 0,
+              "excludedIds": [
+                4,
+                5
+              ],
+              "minTier": 1,
+              "maxTier": 1,
+              "sealable": true
+            }
+          }
+        },
+        {
+          "kind": "seal",
+          "selector": {
+            "side": 0,
+            "excludedIds": [
+              4,
+              5
+            ],
+            "minTier": 1,
+            "maxTier": 1,
+            "sealable": true
+          }
+        },
+        {
+          "kind": "once",
+          "action": {
+            "kind": "add",
+            "id": 5,
+            "glyph": "hope"
+          }
+        },
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 1019,
+        "candidateUpperBound": "1254632733340981365482990232886448281",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 45,
+        "estimatedRoutes": 3,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 3,
+        "certifiedPrunedPrefixes": 26,
+        "elapsedMilliseconds": 5417,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-2724a8fa3ce4c0de",
+          "r-9baccd36f4667182",
+          "r-6282ffe336a47677",
+          "r-d98eb2830c5645f7",
+          "r-7bf9a5c1def1c2d5",
+          "r-c0142a03a5924caf",
+          "r-c2efb85376a824cf",
+          "r-022133e836edcecc",
+          "r-2cf84b1e2971c5e2",
+          "r-a48b48677512f8c3",
+          "r-5b0e705e99d07b6a",
+          "r-03fee19e3cf32fca",
+          "r-037f8228f22e4884",
+          "r-1581db107181f64c",
+          "r-ae62abbd04ed89a9",
+          "r-5430c05ef175f762",
+          "r-f7e86e2a54bf484e",
+          "r-5c76026e8482978a",
+          "r-ec16b768d6c53b5c",
+          "r-9f54de0a8ed38f06",
+          "r-330360d72b7906c3",
+          "r-cac346c3587e4bff",
+          "r-d2bfd19347ebf76f",
+          "r-d0a80f8c21464400",
+          "r-b21c5d2260aa59ce",
+          "r-90965f185e66d4dc",
+          "r-db689d9525a54b49",
+          "r-31019c651c456c09",
+          "r-3fe60b31789c6215",
+          "r-78dab9f8ea4d1734",
+          "r-3cf8cca41d355400",
+          "r-d1330f3c6cd0f290",
+          "r-57c4a512ff778f9e",
+          "r-738acda86589bdcc",
+          "r-027fd50591d6d6d9",
+          "r-3bac89d58f880759",
+          "r-fa76450142584145",
+          "r-5365539ea9e8ef1a",
+          "r-c14742189adb82ec",
+          "r-12cd289a4ca8c8f6",
+          "r-2d993c47e14af213",
+          "r-3b091df3c484c98f",
+          "r-28662ba39e03845f",
+          "r-c079387f58d7c133",
+          "r-21d7e28f74daa56b"
+        ]
+      },
+      "states": 1018,
+      "samples": 0,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "7713-prepare",
+      "fpType": "BLOOD",
+      "milliseconds": 4826.140700000001,
+      "peakRssMiB": 112.63671875,
+      "status": "RECOMMENDATION",
+      "score": 0.28520123204436654,
+      "scoreBounds": {
+        "lower": 0.28520123204435466,
+        "upper": 0.2852012320443784
+      },
+      "evaluation": "BOUNDED_NUMERICAL",
+      "routeId": "r-7bf9a5c1def1c2d5",
+      "macros": [
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "exists",
+            "selector": {
+              "side": 0,
+              "excludedIds": [
+                4,
+                5
+              ],
+              "minTier": 1,
+              "maxTier": 1,
+              "sealable": true
+            }
+          }
+        },
+        {
+          "kind": "seal",
+          "selector": {
+            "side": 0,
+            "excludedIds": [
+              4,
+              5
+            ],
+            "minTier": 1,
+            "maxTier": 1,
+            "sealable": true
+          }
+        },
+        {
+          "kind": "once",
+          "action": {
+            "kind": "add",
+            "id": 5,
+            "glyph": "hope"
+          }
+        },
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 1019,
+        "candidateUpperBound": "1254632733340981365482990232886448281",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 45,
+        "estimatedRoutes": 3,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 3,
+        "certifiedPrunedPrefixes": 26,
+        "elapsedMilliseconds": 4825,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-2724a8fa3ce4c0de",
+          "r-9baccd36f4667182",
+          "r-6282ffe336a47677",
+          "r-d98eb2830c5645f7",
+          "r-7bf9a5c1def1c2d5",
+          "r-c0142a03a5924caf",
+          "r-c2efb85376a824cf",
+          "r-022133e836edcecc",
+          "r-2cf84b1e2971c5e2",
+          "r-a48b48677512f8c3",
+          "r-5b0e705e99d07b6a",
+          "r-03fee19e3cf32fca",
+          "r-037f8228f22e4884",
+          "r-1581db107181f64c",
+          "r-ae62abbd04ed89a9",
+          "r-5430c05ef175f762",
+          "r-f7e86e2a54bf484e",
+          "r-5c76026e8482978a",
+          "r-ec16b768d6c53b5c",
+          "r-9f54de0a8ed38f06",
+          "r-330360d72b7906c3",
+          "r-cac346c3587e4bff",
+          "r-d2bfd19347ebf76f",
+          "r-d0a80f8c21464400",
+          "r-b21c5d2260aa59ce",
+          "r-90965f185e66d4dc",
+          "r-db689d9525a54b49",
+          "r-31019c651c456c09",
+          "r-3fe60b31789c6215",
+          "r-78dab9f8ea4d1734",
+          "r-3cf8cca41d355400",
+          "r-d1330f3c6cd0f290",
+          "r-57c4a512ff778f9e",
+          "r-738acda86589bdcc",
+          "r-027fd50591d6d6d9",
+          "r-3bac89d58f880759",
+          "r-fa76450142584145",
+          "r-5365539ea9e8ef1a",
+          "r-c14742189adb82ec",
+          "r-12cd289a4ca8c8f6",
+          "r-2d993c47e14af213",
+          "r-3b091df3c484c98f",
+          "r-28662ba39e03845f",
+          "r-c079387f58d7c133",
+          "r-21d7e28f74daa56b"
+        ]
+      },
+      "states": 1006,
+      "samples": 0,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "removal-required",
+      "fpType": "NORMAL",
+      "milliseconds": 987.175,
+      "peakRssMiB": 110.859375,
+      "status": "RECOMMENDATION",
+      "score": 0.11396777798539454,
+      "scoreBounds": {
+        "lower": 0.11396777798539075,
+        "upper": 0.11396777798539831
+      },
+      "evaluation": "BOUNDED_NUMERICAL",
+      "routeId": "r-c0142a03a5924caf",
+      "macros": [
+        {
+          "kind": "removal",
+          "accepted": {
+            "side": 0,
+            "excludedIds": [
+              4,
+              5
+            ]
+          },
+          "glyph": "hope"
+        },
+        {
+          "kind": "once",
+          "action": {
+            "kind": "add",
+            "id": 5,
+            "glyph": "hope"
+          }
+        },
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 339,
+        "candidateUpperBound": "2310358507725919807844891959561",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 48,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 2,
+        "certifiedPrunedPrefixes": 43,
+        "elapsedMilliseconds": 987,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-9baccd36f4667182",
+          "r-6282ffe336a47677",
+          "r-c0142a03a5924caf",
+          "r-03fee19e3cf32fca",
+          "r-5430c05ef175f762",
+          "r-f7e86e2a54bf484e",
+          "r-78dab9f8ea4d1734",
+          "r-3cf8cca41d355400",
+          "r-c079387f58d7c133",
+          "r-64276ed596a98269",
+          "r-397fda21a5a2be45",
+          "r-55abf86446ca3718",
+          "r-48c0ab20cb00b314",
+          "r-2857e8278b0fa64b",
+          "r-3358681375d37547",
+          "r-c5db663e79fb4a3a",
+          "r-801f850acfab0b36",
+          "r-9feda643bcb72d4f",
+          "r-69fb605fecf0d83b",
+          "r-d071123a1eec045e",
+          "r-990797462a1ec37a",
+          "r-2b01f44424839980",
+          "r-463e7980be45428c",
+          "r-0491d3e0929af04c",
+          "r-17ed531c30a74428",
+          "r-803162abc1d1f90f",
+          "r-43b86a177cf960fb",
+          "r-195df1222474761e",
+          "r-61392a1ecd24a23a",
+          "r-9da7649aa7941b86",
+          "r-fa7d3da64e1669f2",
+          "r-255b4769874c79b5",
+          "r-0e2f0a95e88dbf51",
+          "r-66b15207c81dba13",
+          "r-c39c99f35ff4825f",
+          "r-55d592822e66929e",
+          "r-e0c075fed716beba",
+          "r-069abf7111ddd94d",
+          "r-1b45792d486adad9",
+          "r-d3ce31b3bcbe567f",
+          "r-4fc232efebed688b",
+          "r-318fdf3e88aa6682",
+          "r-ebd3fe0a2455686e",
+          "r-8ad2686b0003603f",
+          "r-fada4cd7fbfebd4b",
+          "r-7bd8a1194aab15e5"
+        ]
+      },
+      "states": 255,
+      "samples": 0,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "removal-required",
+      "fpType": "ICE",
+      "milliseconds": 1001.925,
+      "peakRssMiB": 110.08984375,
+      "status": "RECOMMENDATION",
+      "score": 0.14652147112506547,
+      "scoreBounds": {
+        "lower": 0.14652147112506025,
+        "upper": 0.14652147112507072
+      },
+      "evaluation": "BOUNDED_NUMERICAL",
+      "routeId": "r-c0142a03a5924caf",
+      "macros": [
+        {
+          "kind": "removal",
+          "accepted": {
+            "side": 0,
+            "excludedIds": [
+              4,
+              5
+            ]
+          },
+          "glyph": "hope"
+        },
+        {
+          "kind": "once",
+          "action": {
+            "kind": "add",
+            "id": 5,
+            "glyph": "hope"
+          }
+        },
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 339,
+        "candidateUpperBound": "2310358507725919807844891959561",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 48,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 2,
+        "certifiedPrunedPrefixes": 43,
+        "elapsedMilliseconds": 1001,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-9baccd36f4667182",
+          "r-6282ffe336a47677",
+          "r-c0142a03a5924caf",
+          "r-03fee19e3cf32fca",
+          "r-5430c05ef175f762",
+          "r-f7e86e2a54bf484e",
+          "r-78dab9f8ea4d1734",
+          "r-3cf8cca41d355400",
+          "r-c079387f58d7c133",
+          "r-64276ed596a98269",
+          "r-397fda21a5a2be45",
+          "r-55abf86446ca3718",
+          "r-48c0ab20cb00b314",
+          "r-2857e8278b0fa64b",
+          "r-3358681375d37547",
+          "r-c5db663e79fb4a3a",
+          "r-801f850acfab0b36",
+          "r-9feda643bcb72d4f",
+          "r-69fb605fecf0d83b",
+          "r-d071123a1eec045e",
+          "r-990797462a1ec37a",
+          "r-2b01f44424839980",
+          "r-463e7980be45428c",
+          "r-0491d3e0929af04c",
+          "r-17ed531c30a74428",
+          "r-803162abc1d1f90f",
+          "r-43b86a177cf960fb",
+          "r-195df1222474761e",
+          "r-61392a1ecd24a23a",
+          "r-9da7649aa7941b86",
+          "r-fa7d3da64e1669f2",
+          "r-255b4769874c79b5",
+          "r-0e2f0a95e88dbf51",
+          "r-66b15207c81dba13",
+          "r-c39c99f35ff4825f",
+          "r-55d592822e66929e",
+          "r-e0c075fed716beba",
+          "r-069abf7111ddd94d",
+          "r-1b45792d486adad9",
+          "r-d3ce31b3bcbe567f",
+          "r-4fc232efebed688b",
+          "r-318fdf3e88aa6682",
+          "r-ebd3fe0a2455686e",
+          "r-8ad2686b0003603f",
+          "r-fada4cd7fbfebd4b",
+          "r-7bd8a1194aab15e5"
+        ]
+      },
+      "states": 255,
+      "samples": 0,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "removal-required",
+      "fpType": "BLOOD",
+      "milliseconds": 969.7058,
+      "peakRssMiB": 110.96484375,
+      "status": "RECOMMENDATION",
+      "score": 0.11879691133445106,
+      "scoreBounds": {
+        "lower": 0.1187969113344472,
+        "upper": 0.1187969113344549
+      },
+      "evaluation": "BOUNDED_NUMERICAL",
+      "routeId": "r-c0142a03a5924caf",
+      "macros": [
+        {
+          "kind": "removal",
+          "accepted": {
+            "side": 0,
+            "excludedIds": [
+              4,
+              5
+            ]
+          },
+          "glyph": "hope"
+        },
+        {
+          "kind": "once",
+          "action": {
+            "kind": "add",
+            "id": 5,
+            "glyph": "hope"
+          }
+        },
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 339,
+        "candidateUpperBound": "2310358507725919807844891959561",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 48,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 2,
+        "certifiedPrunedPrefixes": 43,
+        "elapsedMilliseconds": 970,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-9baccd36f4667182",
+          "r-6282ffe336a47677",
+          "r-c0142a03a5924caf",
+          "r-03fee19e3cf32fca",
+          "r-5430c05ef175f762",
+          "r-f7e86e2a54bf484e",
+          "r-78dab9f8ea4d1734",
+          "r-3cf8cca41d355400",
+          "r-c079387f58d7c133",
+          "r-64276ed596a98269",
+          "r-397fda21a5a2be45",
+          "r-55abf86446ca3718",
+          "r-48c0ab20cb00b314",
+          "r-2857e8278b0fa64b",
+          "r-3358681375d37547",
+          "r-c5db663e79fb4a3a",
+          "r-801f850acfab0b36",
+          "r-9feda643bcb72d4f",
+          "r-69fb605fecf0d83b",
+          "r-d071123a1eec045e",
+          "r-990797462a1ec37a",
+          "r-2b01f44424839980",
+          "r-463e7980be45428c",
+          "r-0491d3e0929af04c",
+          "r-17ed531c30a74428",
+          "r-803162abc1d1f90f",
+          "r-43b86a177cf960fb",
+          "r-195df1222474761e",
+          "r-61392a1ecd24a23a",
+          "r-9da7649aa7941b86",
+          "r-fa7d3da64e1669f2",
+          "r-255b4769874c79b5",
+          "r-0e2f0a95e88dbf51",
+          "r-66b15207c81dba13",
+          "r-c39c99f35ff4825f",
+          "r-55d592822e66929e",
+          "r-e0c075fed716beba",
+          "r-069abf7111ddd94d",
+          "r-1b45792d486adad9",
+          "r-d3ce31b3bcbe567f",
+          "r-4fc232efebed688b",
+          "r-318fdf3e88aa6682",
+          "r-ebd3fe0a2455686e",
+          "r-8ad2686b0003603f",
+          "r-fada4cd7fbfebd4b",
+          "r-7bd8a1194aab15e5"
+        ]
+      },
+      "states": 255,
+      "samples": 0,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "7732-missing",
+      "fpType": "NORMAL",
+      "milliseconds": 12026.817,
+      "peakRssMiB": 111.0546875,
+      "status": "RECOMMENDATION",
+      "score": 0.04786706349206349,
+      "scoreBounds": {
+        "lower": 0.004679498514553064,
+        "upper": 0.0910546284695739
+      },
+      "evaluation": "ESTIMATED",
+      "routeId": "r-2724a8fa3ce4c0de",
+      "macros": [
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "redemption",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 1019,
+        "candidateUpperBound": "1254632733340981365482990232886448281",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 43,
+        "estimatedRoutes": 5,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 2,
+        "certifiedPrunedPrefixes": 0,
+        "elapsedMilliseconds": 12026,
+        "stopReason": "TIME_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-2724a8fa3ce4c0de",
+          "r-8e98d65195807abd",
+          "r-3835c0aee4ab80ba",
+          "r-085e76281e31b18c",
+          "r-9c766d50ac82ba2c",
+          "r-d068b940c8a5ea9c",
+          "r-81a2770a7ea5823e",
+          "r-29e8dc851eeadc31",
+          "r-93c76c7283ad71ee",
+          "r-888be360ec7147c4",
+          "r-57f58d3a9c2ae92e",
+          "r-7b10d940a051978c",
+          "r-f84eee0c6149fe68",
+          "r-76da380bc5a10f67",
+          "r-022133e836edcecc",
+          "r-78dab9f8ea4d1734",
+          "r-6282ffe336a47677",
+          "r-f5f04e6842bf1044",
+          "r-2cf84b1e2971c5e2",
+          "r-a48b48677512f8c3",
+          "r-5b0e705e99d07b6a",
+          "r-03fee19e3cf32fca",
+          "r-037f8228f22e4884",
+          "r-9acf697f36f7e793",
+          "r-1581db107181f64c",
+          "r-ae62abbd04ed89a9",
+          "r-5430c05ef175f762",
+          "r-f7e86e2a54bf484e",
+          "r-5c76026e8482978a",
+          "r-ec16b768d6c53b5c",
+          "r-9f54de0a8ed38f06",
+          "r-330360d72b7906c3",
+          "r-cac346c3587e4bff",
+          "r-d2bfd19347ebf76f",
+          "r-d0a80f8c21464400",
+          "r-b21c5d2260aa59ce",
+          "r-90965f185e66d4dc",
+          "r-db689d9525a54b49",
+          "r-31019c651c456c09",
+          "r-3fe60b31789c6215",
+          "r-3cf8cca41d355400",
+          "r-d1330f3c6cd0f290",
+          "r-57c4a512ff778f9e",
+          "r-738acda86589bdcc",
+          "r-027fd50591d6d6d9",
+          "r-3bac89d58f880759",
+          "r-fa76450142584145"
+        ]
+      },
+      "states": 23326,
+      "samples": 4032,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "7732-missing",
+      "fpType": "ICE",
+      "milliseconds": 12017.1126,
+      "peakRssMiB": 110.4921875,
+      "status": "RECOMMENDATION",
+      "score": 0.06572420634920632,
+      "scoreBounds": {
+        "lower": 0.0225366413716959,
+        "upper": 0.10891177132671676
+      },
+      "evaluation": "ESTIMATED",
+      "routeId": "r-2724a8fa3ce4c0de",
+      "macros": [
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "redemption",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 1019,
+        "candidateUpperBound": "1254632733340981365482990232886448281",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 43,
+        "estimatedRoutes": 5,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 2,
+        "certifiedPrunedPrefixes": 0,
+        "elapsedMilliseconds": 12017,
+        "stopReason": "TIME_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-2724a8fa3ce4c0de",
+          "r-8e98d65195807abd",
+          "r-3835c0aee4ab80ba",
+          "r-085e76281e31b18c",
+          "r-9c766d50ac82ba2c",
+          "r-d068b940c8a5ea9c",
+          "r-81a2770a7ea5823e",
+          "r-29e8dc851eeadc31",
+          "r-93c76c7283ad71ee",
+          "r-888be360ec7147c4",
+          "r-57f58d3a9c2ae92e",
+          "r-7b10d940a051978c",
+          "r-f84eee0c6149fe68",
+          "r-76da380bc5a10f67",
+          "r-022133e836edcecc",
+          "r-78dab9f8ea4d1734",
+          "r-6282ffe336a47677",
+          "r-f5f04e6842bf1044",
+          "r-2cf84b1e2971c5e2",
+          "r-a48b48677512f8c3",
+          "r-5b0e705e99d07b6a",
+          "r-03fee19e3cf32fca",
+          "r-037f8228f22e4884",
+          "r-9acf697f36f7e793",
+          "r-1581db107181f64c",
+          "r-ae62abbd04ed89a9",
+          "r-5430c05ef175f762",
+          "r-f7e86e2a54bf484e",
+          "r-5c76026e8482978a",
+          "r-ec16b768d6c53b5c",
+          "r-9f54de0a8ed38f06",
+          "r-330360d72b7906c3",
+          "r-cac346c3587e4bff",
+          "r-d2bfd19347ebf76f",
+          "r-d0a80f8c21464400",
+          "r-b21c5d2260aa59ce",
+          "r-90965f185e66d4dc",
+          "r-db689d9525a54b49",
+          "r-31019c651c456c09",
+          "r-3fe60b31789c6215",
+          "r-3cf8cca41d355400",
+          "r-d1330f3c6cd0f290",
+          "r-57c4a512ff778f9e",
+          "r-738acda86589bdcc",
+          "r-027fd50591d6d6d9",
+          "r-3bac89d58f880759",
+          "r-fa76450142584145"
+        ]
+      },
+      "states": 32911,
+      "samples": 4032,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    },
+    {
+      "id": "7732-missing",
+      "fpType": "BLOOD",
+      "milliseconds": 12018.5682,
+      "peakRssMiB": 110.984375,
+      "status": "RECOMMENDATION",
+      "score": 0.04786706349206349,
+      "scoreBounds": {
+        "lower": 0.004679498514553064,
+        "upper": 0.0910546284695739
+      },
+      "evaluation": "ESTIMATED",
+      "routeId": "r-2724a8fa3ce4c0de",
+      "macros": [
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "redemption",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 1019,
+        "candidateUpperBound": "1254632733340981365482990232886448281",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 43,
+        "estimatedRoutes": 5,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 2,
+        "certifiedPrunedPrefixes": 0,
+        "elapsedMilliseconds": 12018,
+        "stopReason": "TIME_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-2724a8fa3ce4c0de",
+          "r-8e98d65195807abd",
+          "r-3835c0aee4ab80ba",
+          "r-085e76281e31b18c",
+          "r-9c766d50ac82ba2c",
+          "r-d068b940c8a5ea9c",
+          "r-81a2770a7ea5823e",
+          "r-29e8dc851eeadc31",
+          "r-93c76c7283ad71ee",
+          "r-888be360ec7147c4",
+          "r-57f58d3a9c2ae92e",
+          "r-7b10d940a051978c",
+          "r-f84eee0c6149fe68",
+          "r-76da380bc5a10f67",
+          "r-022133e836edcecc",
+          "r-78dab9f8ea4d1734",
+          "r-6282ffe336a47677",
+          "r-f5f04e6842bf1044",
+          "r-2cf84b1e2971c5e2",
+          "r-a48b48677512f8c3",
+          "r-5b0e705e99d07b6a",
+          "r-03fee19e3cf32fca",
+          "r-037f8228f22e4884",
+          "r-9acf697f36f7e793",
+          "r-1581db107181f64c",
+          "r-ae62abbd04ed89a9",
+          "r-5430c05ef175f762",
+          "r-f7e86e2a54bf484e",
+          "r-5c76026e8482978a",
+          "r-ec16b768d6c53b5c",
+          "r-9f54de0a8ed38f06",
+          "r-330360d72b7906c3",
+          "r-cac346c3587e4bff",
+          "r-d2bfd19347ebf76f",
+          "r-d0a80f8c21464400",
+          "r-b21c5d2260aa59ce",
+          "r-90965f185e66d4dc",
+          "r-db689d9525a54b49",
+          "r-31019c651c456c09",
+          "r-3fe60b31789c6215",
+          "r-3cf8cca41d355400",
+          "r-d1330f3c6cd0f290",
+          "r-57c4a512ff778f9e",
+          "r-738acda86589bdcc",
+          "r-027fd50591d6d6d9",
+          "r-3bac89d58f880759",
+          "r-fa76450142584145"
+        ]
+      },
+      "states": 23326,
+      "samples": 4032,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+    }
+  ]
+}

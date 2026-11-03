@@ -20,11 +20,18 @@ export function targetReached(item: Item, target: Target): boolean {
   return assign(0, 0);
 }
 
-export function select(item: Item, selector: Selector, catalog: Catalog): number | undefined {
+export function select(item: Item, selector: Selector, catalog: Catalog, eligible: (affix: Affix) => boolean = () => true): number | undefined {
   const index = item.affixes.findIndex((affix) => affix.slot === 'ordinary' &&
     (selector.ids === undefined || selector.ids.includes(affix.id)) &&
     !selector.excludedIds?.includes(affix.id) &&
     (selector.side === undefined || catalog.side(affix.id) === selector.side) &&
-    affix.tier >= (selector.minTier ?? 1) && affix.tier <= (selector.maxTier ?? 8));
+    affix.tier >= (selector.minTier ?? 1) && affix.tier <= (selector.maxTier ?? 8) && eligible(affix));
   return index < 0 ? undefined : index;
+}
+
+export function selectedIds(item: Item, selector: Selector, catalog: Catalog, eligible: (affix: Affix) => boolean = () => true): readonly number[] {
+  return item.affixes.filter((affix) => affix.slot === 'ordinary' &&
+    (selector.ids === undefined || selector.ids.includes(affix.id)) && !selector.excludedIds?.includes(affix.id) &&
+    (selector.side === undefined || catalog.side(affix.id) === selector.side) &&
+    affix.tier >= (selector.minTier ?? 1) && affix.tier <= (selector.maxTier ?? 8) && eligible(affix)).map((row) => row.id);
 }

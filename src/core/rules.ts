@@ -3,7 +3,9 @@ import { requiredLevelAfterShard, requiredLevelWithAffix } from './levels';
 import { assertUnitMass, boundedCostKernel, sum, tierPermutations } from './probability';
 import { exact, Interval, ONE, ratio } from './interval';
 import { validateItem } from './validation';
-import type { Affix, AtomicAction, AtomicDistribution, AtomicOutcome, Constraints, CraftingContext, Issue, Item } from './types';
+import { pickWeighted } from './random';
+import type { Draw } from './random';
+import type { Affix, AtomicAction, AtomicDistribution, AtomicOutcome, AtomicSample, Constraints, CraftingContext, Issue, Item } from './types';
 
 interface Variant {
   readonly probability: number;
@@ -39,8 +41,15 @@ function scaled(state: Variant, weight: Interval): Variant {
   return { ...state, weight: result, probability: result.midpoint };
 }
 
-function rollVariants(item: Item, index: number, trackRolls: boolean): Variant[] {
+function selected<T extends { readonly weight: Interval }>(values: readonly T[], draw?: Draw): T[] {
+  if (!draw) return [...values];
+  const value = pickWeighted(values, (row) => row.weight.midpoint, draw);
+  return [{ ...value, weight: ONE }];
+}
+
+function rollVariants(item: Item, index: number, trackRolls: boolean, draw?: Draw): Variant[] {
   if (!trackRolls) return [variant(replace(item, index, { ...item.affixes[index], roll: null }))];
+  if (draw) return [variant(replace(item, index, { ...item.affixes[index], roll: Math.floor(draw() * 256) }))];
   return Array.from({ length: 256 }, (_, roll) => variant(replace(item, index, { ...item.affixes[index], roll }), exact(1 / 256)));
 }
 
@@ -58,6 +67,7 @@ function protectionViolated(before: Item, after: Item, constraints: Constraints)
 export class RuleEngine {
   readonly catalog: Catalog;
   readonly #costCache = new Map<string, ReturnType<typeof boundedCostKernel>>();
+  readonly #protectionCache = new Map<string, readonly Issue[]>();
 
   constructor(catalog = new Catalog()) { this.catalog = catalog; }
 
@@ -118,38 +128,15 @@ export class RuleEngine {
     if (issues.length) return empty(issues);
     const maximum = options.maxOutcomes ?? 200000;
     const trackRolls = options.trackRolls || constraints.protected?.some((row) => row.roll) || false;
-    const primary = 'id' in action ? action.id : undefined;
-    const index = primary === undefined ? -1 : item.affixes.findIndex((row) => row.id === primary);
-    const states = this.#operation(item, action, index, trackRolls, maximum);
-    const eligibleForCritical = action.kind === 'add' || action.kind === 'upgrade' || action.kind === 'seal';
-    const p = this.catalog.model.parameters;
-    const criticalChance = item.fpType === 'BLOOD' ? exact(p.critical).add(exact(p.critical).complement().mul(exact(p.blood))) : exact(p.critical);
-    const variants: Variant[] = [];
-    for (const state of states) {
-      const chance = eligibleForCritical && !state.sealed ? criticalChance : exact(0);
-      variants.push(scaled(state, chance.complement()));
-      if (chance.upper > 0 && primary !== undefined) {
-        const preservePrimary = action.kind === 'upgrade' && action.glyph === 'order';
-        for (const extra of this.#extraTier(state.item, primary, preservePrimary, context, trackRolls)) {
-          variants.push({ ...scaled(state, chance.mul(extra.weight)), item: extra.item, critical: true });
-        }
-      }
-      if (variants.length > maximum) throw new OutcomeLimitError(maximum);
-    }
+    const variants = this.#variants(item, action, context, trackRolls, maximum);
     // Reject a risky action as a whole; never renormalize away a protection-violating branch.
     if (variants.some((row) => row.probability > 0 && protectionViolated(item, row.item, constraints))) {
       return empty([{ code: 'PROTECTION_RISK', message: '该动作可能违反明确设置的全程保护条件' }]);
     }
-    const upper = action.kind === 'havoc' || action.kind === 'redemption' ? 20 : action.kind === 'removal' ? 25 :
-      action.kind === 'add' ? (ordinary(item).length === 0 ? 10 : ordinary(item).length === 1 ? 14 : 18) :
-      [0, 10, 12, 18, 24][item.affixes[index].tier];
-    const hope = 'glyph' in action && action.glyph === 'hope';
-    const cacheKey = `${fp}:${upper}:${item.fpType}:${Number(hope)}`;
-    let cost = this.#costCache.get(cacheKey);
-    if (!cost) { cost = boundedCostKernel(fp, upper, item.fpType, hope, p); this.#costCache.set(cacheKey, cost); }
+    const cost = this.#cost(item, fp, action);
     const outcomes = new Map<string, AtomicOutcome>();
     for (const state of variants) {
-      if (state.probability === 0) continue;
+      if (state.weight.upper === 0) continue;
       const stateKey = `${itemKey(state.item)}|${state.critical}|${state.sealed}|${state.abort}|${state.removedId ?? '-'}`;
       for (const remaining of state.critical ? [{ value: fp, probability: 1, bounds: ONE }] : cost) {
         const key = `${stateKey}|${remaining.value}`;
@@ -166,24 +153,85 @@ export class RuleEngine {
     return { outcomes: result, issues: [], probabilityMass: mass, evaluation: 'OUTWARD_ROUNDED_UNDER_DECLARED_MODEL' };
   }
 
-  #operation(item: Item, action: AtomicAction, index: number, trackRolls: boolean, maximum: number): Variant[] {
+  sample(item: Item, fp: number, action: AtomicAction, context: CraftingContext, draw: Draw, options: TransitionOptions = {}): AtomicSample {
+    const constraints = options.constraints ?? {};
+    const issues = this.eligibility(item, fp, action, context, constraints);
+    if (issues.length) return { outcome: null, issues };
+    // A lucky draw cannot make a globally risky action legal. Prove protection before sampling.
+    if (constraints.protected?.length) {
+      const key = `${itemKey(item)}|${context.playerLevel}|${JSON.stringify(action)}|${JSON.stringify(constraints.protected)}`;
+      let protection = this.#protectionCache.get(key);
+      if (!protection) {
+        protection = this.transition(item, 1, action, context, options).issues;
+        if (this.#protectionCache.size >= 2048) this.#protectionCache.delete(this.#protectionCache.keys().next().value!);
+        this.#protectionCache.set(key, protection);
+      }
+      if (protection.length) return { outcome: null, issues: protection };
+    }
+    const trackRolls = options.trackRolls || constraints.protected?.some((row) => row.roll) || false;
+    const state = this.#variants(item, action, context, trackRolls, options.maxOutcomes ?? 200000, draw)[0];
+    const remaining = state.critical ? fp : pickWeighted(this.#cost(item, fp, action), (row) => row.probability, draw).value;
+    const { probability: _probability, weight: _weight, ...outcome } = state;
+    return { outcome: { ...outcome, fp: remaining }, issues: [] };
+  }
+
+  #variants(item: Item, action: AtomicAction, context: CraftingContext, trackRolls: boolean, maximum: number, draw?: Draw): Variant[] {
+    const primary = 'id' in action ? action.id : undefined;
+    const index = primary === undefined ? -1 : item.affixes.findIndex((row) => row.id === primary);
+    const states = this.#operation(item, action, index, trackRolls, maximum, draw);
+    const eligibleForCritical = action.kind === 'add' || action.kind === 'upgrade' || action.kind === 'seal';
+    const p = this.catalog.model.parameters;
+    const criticalChance = item.fpType === 'BLOOD' ? exact(p.critical).add(exact(p.critical).complement().mul(exact(p.blood))) : exact(p.critical);
+    const variants: Variant[] = [];
+    for (const state of states) {
+      const chance = eligibleForCritical && !state.sealed ? criticalChance : exact(0);
+      for (const fate of selected([{ critical: false, weight: chance.complement() }, { critical: true, weight: chance }].filter((row) => row.weight.upper > 0), draw)) {
+        if (!fate.critical) variants.push(scaled(state, fate.weight));
+        else if (primary !== undefined) {
+          const preservePrimary = action.kind === 'upgrade' && action.glyph === 'order';
+          for (const extra of this.#extraTier(state.item, primary, preservePrimary, context, trackRolls, draw)) {
+            variants.push({ ...scaled(state, fate.weight.mul(extra.weight)), item: extra.item, critical: true });
+          }
+        }
+      }
+      if (variants.length > maximum) throw new OutcomeLimitError(maximum);
+    }
+    return variants;
+  }
+
+  #cost(item: Item, fp: number, action: AtomicAction): ReturnType<typeof boundedCostKernel> {
+    const index = 'id' in action ? item.affixes.findIndex((row) => row.id === action.id) : -1;
+    const upper = action.kind === 'havoc' || action.kind === 'redemption' ? 20 : action.kind === 'removal' ? 25 :
+      action.kind === 'add' ? (ordinary(item).length === 0 ? 10 : ordinary(item).length === 1 ? 14 : 18) :
+      [0, 10, 12, 18, 24][item.affixes[index].tier];
+    const hope = 'glyph' in action && action.glyph === 'hope';
+    const cacheKey = `${fp}:${upper}:${item.fpType}:${Number(hope)}`;
+    let cost = this.#costCache.get(cacheKey);
+    if (!cost) { cost = boundedCostKernel(fp, upper, item.fpType, hope, this.catalog.model.parameters); this.#costCache.set(cacheKey, cost); }
+    return cost;
+  }
+
+  #operation(item: Item, action: AtomicAction, index: number, trackRolls: boolean, maximum: number, draw?: Draw): Variant[] {
     if (action.kind === 'add') {
       const added = { ...item, affixes: [...item.affixes, { id: action.id, tier: 1, slot: 'ordinary' as const, roll: null }] };
-      return rollVariants(added, added.affixes.length - 1, trackRolls);
+      return rollVariants(added, added.affixes.length - 1, trackRolls, draw);
     }
     if (action.kind === 'upgrade' || action.kind === 'chaos') {
       const upgraded = replace(item, index, { ...item.affixes[index], tier: item.affixes[index].tier + 1 });
-      const rolled = action.kind === 'upgrade' && action.glyph === 'order' ? [variant(upgraded)] : rollVariants(upgraded, index, trackRolls);
-      return action.kind === 'chaos' ? this.#reroll(rolled, index, maximum) : rolled;
+      const rolled = action.kind === 'upgrade' && action.glyph === 'order' ? [variant(upgraded)] : rollVariants(upgraded, index, trackRolls, draw);
+      return action.kind === 'chaos' ? this.#reroll(rolled, index, maximum, draw) : rolled;
     }
     if (action.kind === 'seal') {
       const chance = this.#sealWeight(item, item.affixes[index].tier);
       const original = item.affixes[index];
       const sealed: Item = { ...item, affixes: [{ ...original, slot: 'sealed' }, ...item.affixes.filter((_, i) => i !== index)] };
-      const output: Variant[] = [{ ...variant(sealed, chance), sealed: true }];
-      if (chance.lower < 1) {
-        const failed = replace(item, index, { ...original, tier: original.tier + 1 });
-        output.push(...rollVariants(failed, index, trackRolls).map((row) => ({ ...scaled(row, chance.complement()), abort: 'REQUIRED_SEAL_FAILED' as const })));
+      const output: Variant[] = [];
+      for (const fate of selected([{ success: true, weight: chance }, { success: false, weight: chance.complement() }].filter((row) => row.weight.upper > 0), draw)) {
+        if (fate.success) output.push({ ...variant(sealed, fate.weight), sealed: true });
+        else {
+          const failed = replace(item, index, { ...original, tier: original.tier + 1 });
+          output.push(...rollVariants(failed, index, trackRolls, draw).map((row) => ({ ...scaled(row, fate.weight), abort: 'REQUIRED_SEAL_FAILED' as const })));
+        }
       }
       return output;
     }
@@ -191,30 +239,31 @@ export class RuleEngine {
       const indices = item.affixes.flatMap((row, i) => row.slot === 'ordinary' ? [i] : []);
       const tiers = indices.map((i) => item.affixes[i].tier);
       const changed = tierPermutations(tiers).filter((layout) => layout.some((tier, i) => tier !== tiers[i]));
-      return changed.map((layout) => {
+      const choices = selected(changed.map((layout) => ({ layout, weight: ratio(1, changed.length) })), draw);
+      return choices.map(({ layout, weight }) => {
         const byIndex = new Map(indices.map((i, j) => [i, layout[j]]));
-        return variant({ ...item, affixes: item.affixes.map((row, i) => byIndex.has(i) ? { ...row, tier: byIndex.get(i)! } : row) }, ratio(1, changed.length));
+        return variant({ ...item, affixes: item.affixes.map((row, i) => byIndex.has(i) ? { ...row, tier: byIndex.get(i)! } : row) }, weight);
       });
     }
     if (action.kind === 'redemption') {
       const indices = item.affixes.flatMap((row, i) => row.slot === 'ordinary' && row.tier >= 6 ? [i] : []);
       let states = [variant(item)];
-      for (const i of indices) states = this.#reroll(states, i, maximum);
+      for (const i of indices) states = this.#reroll(states, i, maximum, draw);
       return states;
     }
     if (action.kind !== 'removal') throw new Error('未知原子动作');
     const candidates = item.affixes.flatMap((row, i) => row.slot === 'ordinary' && this.catalog.affix(row.id).special === 0 ? [i] : []);
-    return candidates.map((i) => ({ ...variant({ ...item, affixes: item.affixes.filter((_, j) => i !== j) }, ratio(1, candidates.length)),
+    return selected(candidates.map((index) => ({ index, weight: ratio(1, candidates.length) })), draw).map(({ index: i, weight }) => ({ ...variant({ ...item, affixes: item.affixes.filter((_, j) => i !== j) }, weight),
       removedId: item.affixes[i].id, abort: action.acceptedIds.includes(item.affixes[i].id) ? null : 'UNACCEPTED_REMOVAL' }));
   }
 
-  #reroll(states: readonly Variant[], index: number, maximum: number): Variant[] {
+  #reroll(states: readonly Variant[], index: number, maximum: number, draw?: Draw): Variant[] {
     const results: Variant[] = [];
     for (const state of states) {
       const pool = this.catalog.rerollPool(state.item, this.catalog.side(state.item.affixes[index].id));
       if (!pool.length) throw new Error('原生候选池为空，尚未覆盖该特殊输入');
-      for (const entry of pool) {
-        results.push({ ...scaled(state, entry.bounds),
+      for (const entry of selected(pool.map((row) => ({ ...row, weight: row.bounds })), draw)) {
+        results.push({ ...scaled(state, entry.weight),
           item: replace(state.item, index, { ...state.item.affixes[index], id: entry.id }) });
         if (results.length > maximum) throw new OutcomeLimitError(maximum);
       }
@@ -222,7 +271,7 @@ export class RuleEngine {
     return results;
   }
 
-  #extraTier(item: Item, primary: number, preservePrimary: boolean, context: CraftingContext, trackRolls: boolean): Variant[] {
+  #extraTier(item: Item, primary: number, preservePrimary: boolean, context: CraftingContext, trackRolls: boolean, draw?: Draw): Variant[] {
     const eligible = item.affixes.flatMap((row, i) => row.slot === 'ordinary' && row.tier < 5 ? [i] : []);
     if (!eligible.length) return [variant(item)];
     const primaryIndex = eligible.find((i) => item.affixes[i].id === primary);
@@ -237,7 +286,7 @@ export class RuleEngine {
       choices.push(...others.map((index) => ({ index, weight: ratio(0.25, others.length), preserve: false })));
     }
     const output: Variant[] = [];
-    for (const choice of choices) {
+    for (const choice of selected(choices, draw)) {
       const original = item.affixes[choice.index];
       // Selection precedes the level test; a blocked selection is not replaced by another slot.
       if (requiredLevelWithAffix(item, original.id, original.tier + 1, this.catalog) > context.playerLevel) {
@@ -245,7 +294,7 @@ export class RuleEngine {
         continue;
       }
       const upgraded = replace(item, choice.index, { ...original, tier: original.tier + 1 });
-      const rolled = choice.preserve ? [variant(upgraded)] : rollVariants(upgraded, choice.index, trackRolls);
+      const rolled = choice.preserve ? [variant(upgraded)] : rollVariants(upgraded, choice.index, trackRolls, draw);
       output.push(...rolled.map((row) => scaled(row, choice.weight)));
     }
     if (Math.abs(sum(output.map((row) => row.probability)) - 1) > 1e-12) throw new Error('额外升阶概率质量错误');

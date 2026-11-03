@@ -38,8 +38,8 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                 "research/common-pattern-results.json", "research/common-pattern-monte-carlo.json",
                 "research/7732-redemption-reference.json", "research/legacy-forge-compatibility.json",
                 "research/crafting-level-claims.json", "src/generated/model.json")
-    model = {"schemaVersion": 1, "modelId": "le-1.5.3-26087601-r4-product-implementation",
-             "phase": "PRODUCT_IMPLEMENTATION_IN_PROGRESS", "productionReady": False,
+    model = {"schemaVersion": 1, "modelId": "le-1.5.3-26087601-r5-browser-release-candidate",
+             "phase": "BROWSER_RELEASE_CANDIDATE", "productionReady": False,
              "productionModelId": load_json(root / "src/generated/model.json")["modelId"],
              "userApproval": {"date": "2026-11-03", "codeDerivedRulesSufficient": True, "clientBitExactRequired": False},
              "gameVersion": manifest["gameVersion"], "steamBuildId": manifest["steamBuildId"],
@@ -70,7 +70,7 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                             "audience": "PUBLIC_WITHOUT_LOGIN", "publicRepositoryAuthorizedIfPagesRequiresIt": True},
              "productionPreconditions": ["FULL_SOLVER_VALIDATION", "BROWSER_PERFORMANCE", "ACTUAL_STATIC_DEPLOYMENT"],
              "deferredResearch": ["WEIGHTED_NATIVE_GRID_BOUNDARIES", "MULTI_PROPERTY_ROLL_DISPLAY_PROJECTION", "CLIENT_FREQUENCIES"],
-             "validationNotClaimed": ["FULL_ROUTE_SEARCH", "BROWSER_PERFORMANCE",
+             "validationNotClaimed": ["UNBOUNDED_GLOBAL_OPTIMALITY", "PHYSICAL_LOW_END_DEVICE", "BROWSER_WORKER_HEAP_PEAK",
                                       "LIVE_DEPLOYMENT", "GAME_CLIENT_CRAFTING_FREQUENCIES", "ONLINE_SERVER_PARITY"],
              "inputs": {path: hashlib.sha256((root / path).read_bytes()).hexdigest() for path in required}}
     model["researchRevision"] = hashlib.sha256(encode_json(model)).hexdigest()

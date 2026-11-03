@@ -1,0 +1,55 @@
+{
+  "modelId": "le-1.5.3-iid-de87d96b5479099b",
+  "checkedOn": "2026-11-03T03:56:34.998Z",
+  "checks": [
+    {
+      "file": "7710-normal",
+      "example": "7710-direct",
+      "fpType": "NORMAL",
+      "score": 0.4472252707958129,
+      "routeId": "r-085e76281e31b18c",
+      "evaluation": "BOUNDED_NUMERICAL",
+      "milliseconds": 7820,
+      "evaluatedRoutes": 13,
+      "comparison": "IDENTICAL_COMPLETE_ROUTE_REPORT",
+      "scope": "Same chosen fixed route; wall-clock search coverage is reported separately."
+    },
+    {
+      "file": "7732-normal",
+      "example": "7732-missing",
+      "fpType": "NORMAL",
+      "score": 0.04296875000000001,
+      "routeId": "r-2724a8fa3ce4c0de",
+      "evaluation": "ESTIMATED",
+      "milliseconds": 3250,
+      "evaluatedRoutes": 48,
+      "comparison": "IDENTICAL_COMPLETE_ROUTE_REPORT",
+      "scope": "Same chosen fixed route; wall-clock search coverage is reported separately."
+    },
+    {
+      "file": "7713-ice",
+      "example": "7713-prepare",
+      "fpType": "ICE",
+      "score": 0.4181926481670739,
+      "routeId": "r-7bf9a5c1def1c2d5",
+      "evaluation": "BOUNDED_NUMERICAL",
+      "milliseconds": 1232,
+      "evaluatedRoutes": 48,
+      "comparison": "IDENTICAL_COMPLETE_ROUTE_REPORT",
+      "scope": "Same chosen fixed route; wall-clock search coverage is reported separately."
+    },
+    {
+      "file": "7717-blood",
+      "example": "7717-existing",
+      "fpType": "BLOOD",
+      "score": 0.832412452442701,
+      "routeId": "r-d98eb2830c5645f7",
+      "evaluation": "BOUNDED_NUMERICAL",
+      "milliseconds": 7815,
+      "evaluatedRoutes": 15,
+      "comparison": "IDENTICAL_COMPLETE_ROUTE_REPORT",
+      "scope": "Same chosen fixed route; wall-clock search coverage is reported separately."
+    }
+  ],
+  "limitation": "Observed browser reports versus Node share the production kernel. Independent correctness evidence comes from the Python Fraction and Monte Carlo research artifacts, not this platform-parity check."
+}

@@ -74,22 +74,32 @@ export interface AtomicDistribution {
   readonly evaluation: 'OUTWARD_ROUNDED_UNDER_DECLARED_MODEL';
 }
 
+export type SampledOutcome = Omit<AtomicOutcome, 'probability' | 'probabilityBounds'>;
+export interface AtomicSample {
+  readonly outcome: SampledOutcome | null;
+  readonly issues: readonly Issue[];
+}
+
 export interface Selector {
   readonly side?: 0 | 1;
   readonly ids?: readonly number[];
   readonly excludedIds?: readonly number[];
   readonly minTier?: number;
   readonly maxTier?: number;
+  /** In a macro, require complete current seal eligibility before selecting this entry. */
+  readonly sealable?: boolean;
 }
 
 export type Predicate =
   | { readonly kind: 'target' }
+  | { readonly kind: 'requirements'; readonly requirements: readonly Requirement[] }
   | { readonly kind: 'identity'; readonly requirement: Requirement }
   | { readonly kind: 'exists'; readonly selector: Selector };
 
 export type Macro =
   | { readonly kind: 'once'; readonly action: AtomicAction }
   | { readonly kind: 'seal'; readonly selector: Selector }
+  | { readonly kind: 'removal'; readonly accepted: Selector; readonly glyph: 'hope' | 'none' }
   | { readonly kind: 'repeat'; readonly action: AtomicAction; readonly until: Predicate }
   | { readonly kind: 'upgrade'; readonly id: number; readonly tier: number; readonly glyph: Glyph }
   | { readonly kind: 'chaos'; readonly selector: Selector; readonly until: Requirement };

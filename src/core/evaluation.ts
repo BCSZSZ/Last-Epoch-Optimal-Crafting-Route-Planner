@@ -2,8 +2,8 @@ import { itemKey, ordinary } from './catalog';
 import { Interval, exact, ONE, ratio, ZERO } from './interval';
 import { boundedCostKernel, tierPermutations } from './probability';
 import { RuleEngine } from './rules';
-import { matches, select, targetReached } from './target';
-import type { AtomicAction, Item, Macro, PlanRequest, Predicate, Route } from './types';
+import { matches, select, selectedIds, targetReached } from './target';
+import type { Affix, AtomicAction, Item, Macro, PlanRequest, Predicate, Route, Selector } from './types';
 
 export interface Absorption {
   readonly success: readonly Interval[];
@@ -14,6 +14,7 @@ export interface Absorption {
 
 export class EvaluationLimitError extends Error {}
 export class SamplingRequiredError extends Error {}
+export class EvaluationInterruptedError extends EvaluationLimitError {}
 
 function zero(stages: number): Absorption {
   return { success: Array<Interval>(64).fill(ZERO), failure: Array<Interval>(64).fill(ZERO),
@@ -49,15 +50,24 @@ function divide(source: Absorption, denominator: Interval): Absorption {
 
 export function predicateReached(item: Item, predicate: Predicate, request: PlanRequest, engine: RuleEngine): boolean {
   if (predicate.kind === 'target') return targetReached(item, request.target);
-  if (predicate.kind === 'exists') return select(item, predicate.selector, engine.catalog) !== undefined;
+  if (predicate.kind === 'requirements') return targetReached(item, { requirements: predicate.requirements });
+  if (predicate.kind === 'exists') return select(item, predicate.selector, engine.catalog, selectorEligibility(item, predicate.selector, request, engine)) !== undefined;
   return item.affixes.some((row) => matches(row, predicate.requirement));
+}
+
+function selectorEligibility(item: Item, selector: Selector, request: PlanRequest, engine: RuleEngine): (affix: Affix) => boolean {
+  return !selector.sealable ? () => true : (affix) => engine.eligibility(item, 1, { kind: 'seal', id: affix.id },
+    request.craftingContext, request.constraints).length === 0;
 }
 
 export function macroStep(macro: Macro, item: Item, request: PlanRequest, engine: RuleEngine):
   { action: AtomicAction; advance: boolean } | 'SKIP' | 'INAPPLICABLE' {
   if (macro.kind === 'once') return { action: macro.action, advance: true };
+  if (macro.kind === 'removal') return { action: { kind: 'removal', glyph: macro.glyph,
+    acceptedIds: selectedIds(item, macro.accepted, engine.catalog, selectorEligibility(item, macro.accepted, request, engine)) }, advance: true };
   if (macro.kind === 'seal') {
-    const index = select(item, { ...macro.selector, maxTier: Math.min(4, macro.selector.maxTier ?? 4) }, engine.catalog);
+    const selector = { ...macro.selector, sealable: true, maxTier: Math.min(4, macro.selector.maxTier ?? 4) };
+    const index = select(item, selector, engine.catalog, selectorEligibility(item, selector, request, engine));
     return index === undefined ? 'INAPPLICABLE' : { action: { kind: 'seal', id: item.affixes[index].id }, advance: true };
   }
   if (macro.kind === 'repeat') return predicateReached(item, macro.until, request, engine) ? 'SKIP' : { action: macro.action, advance: false };
@@ -67,7 +77,8 @@ export function macroStep(macro: Macro, item: Item, request: PlanRequest, engine
       { action: { kind: 'upgrade', id: macro.id, glyph: macro.glyph }, advance: false };
   }
   if (item.affixes.some((row) => matches(row, macro.until))) return 'SKIP';
-  const index = select(item, { ...macro.selector, maxTier: Math.min(4, macro.selector.maxTier ?? 4) }, engine.catalog);
+  const index = select(item, { ...macro.selector, maxTier: Math.min(4, macro.selector.maxTier ?? 4) }, engine.catalog,
+    selectorEligibility(item, macro.selector, request, engine));
   return index === undefined ? 'INAPPLICABLE' : { action: { kind: 'chaos', id: item.affixes[index].id }, advance: false };
 }
 
@@ -78,7 +89,7 @@ export class RouteEvaluator {
   readonly #trackRolls: boolean;
   nodes = 0;
 
-  constructor(readonly engine: RuleEngine, readonly request: PlanRequest, readonly route: Route) {
+  constructor(readonly engine: RuleEngine, readonly request: PlanRequest, readonly route: Route, readonly shouldStop?: () => boolean) {
     this.#trackRolls = request.target.requirements.some((row) => row.minRollByte !== undefined) ||
       request.constraints.protected?.some((row) => row.roll) || false;
   }
@@ -95,6 +106,7 @@ export class RouteEvaluator {
     const cached = this.#cache.get(key);
     if (cached) return cached;
     if (++this.nodes > this.request.search.maxStates) throw new EvaluationLimitError('达到整条路线的状态预算');
+    if ((this.nodes & 63) === 0 && this.shouldStop?.()) throw new EvaluationInterruptedError('路线评价已取消或达到时间预算');
     const macro = this.route.macros[stage];
     const step = macroStep(macro, item, this.request, this.engine);
     let result: Absorption;
@@ -141,7 +153,7 @@ export class RouteEvaluator {
         return { ...item, affixes: item.affixes.map((row, index) => ({ ...row, tier: replacements.get(index) ?? row.tier })) };
       });
       const goals = layouts.filter((layout) => predicateReached(layout, macro.until, this.request, this.engine));
-      if (!goals.length) return terminal(this.route.macros.length, fp, false, 'UNREACHABLE_MACRO_SUBGOAL');
+      // Even an unreachable subgoal consumes real attempts/FP if the action remains legal.
       const hit = ratio(goals.length, layouts.length - 1);
       const miss = hit.complement();
       table = [terminal(this.route.macros.length, 0, false, 'FP_EXHAUSTED')];
@@ -151,9 +163,11 @@ export class RouteEvaluator {
         let loop = ZERO;
         const cost = boundedCostKernel(budget, 20, item.fpType, macro.action.glyph === 'hope', this.engine.catalog.model.parameters);
         for (const remaining of cost) {
-          const goalsMean = zero(this.route.macros.length);
-          for (const goal of goals) addScaled(goalsMean, this.#visit(stage + 1, goal, remaining.value), ratio(1, goals.length));
-          addScaled(numerator, goalsMean, remaining.bounds.mul(hit));
+          if (goals.length) {
+            const goalsMean = zero(this.route.macros.length);
+            for (const goal of goals) addScaled(goalsMean, this.#visit(stage + 1, goal, remaining.value), ratio(1, goals.length));
+            addScaled(numerator, goalsMean, remaining.bounds.mul(hit));
+          }
           if (remaining.value < budget) addScaled(numerator, table[remaining.value], remaining.bounds.mul(miss));
           else loop = loop.add(remaining.bounds.mul(miss));
           (numerator.attempts as Interval[])[stage] = numerator.attempts[stage].add(remaining.bounds);
@@ -172,21 +186,26 @@ export interface Quantiles {
   readonly p95: { lower: number; upper: number };
 }
 
-function quantiles(distribution: readonly Interval[], denominator = ONE): Quantiles | null {
-  if (denominator.lower <= 0) return null;
+export function quantilesFromCdf(cdf: readonly { lower: number; upper: number }[]): Quantiles {
   const inverse = (p: number) => {
-    let accumulated = ZERO;
     let lower = -1;
-    let upper = distribution.length - 1;
-    for (let cost = 0; cost < distribution.length; cost++) {
-      accumulated = accumulated.add(distribution[cost]);
-      const cdf = accumulated.div(denominator);
-      if (lower < 0 && cdf.upper >= p) lower = cost;
-      if (cdf.lower >= p) { upper = cost; break; }
+    let upper = cdf.length - 1;
+    for (let cost = 0; cost < cdf.length; cost++) {
+      if (lower < 0 && cdf[cost].upper >= p) lower = cost;
+      if (cdf[cost].lower >= p) { upper = cost; break; }
     }
     return { lower: Math.max(0, lower), upper };
   };
   return { p50: inverse(0.5), p90: inverse(0.9), p95: inverse(0.95) };
+}
+
+function quantiles(distribution: readonly Interval[], denominator = ONE): Quantiles | null {
+  if (denominator.lower <= 0) return null;
+  let accumulated = ZERO;
+  return quantilesFromCdf(distribution.map((value) => {
+    accumulated = accumulated.add(value);
+    return accumulated.div(denominator).report();
+  }));
 }
 
 export function summarizeDistribution(success: readonly Interval[], failure: readonly Interval[]) {
@@ -203,6 +222,9 @@ export function summarizeDistribution(success: readonly Interval[], failure: rea
 export interface CurvePoint {
   readonly initialFp: number;
   readonly successProbability: { lower: number; upper: number };
+  readonly successEstimate?: number;
+  /** Certified exact-route upper bound for every extension of this fixed prefix. */
+  readonly continuationSuccessUpper?: number;
   readonly expectedFp: { lower: number; upper: number };
   readonly expectedFpGivenSuccess: { lower: number; upper: number } | null;
   readonly quantiles: Quantiles | null;
@@ -213,20 +235,31 @@ export interface RouteReport {
   readonly route: Route;
   readonly evaluationStatus: 'BOUNDED_NUMERICAL' | 'ESTIMATED';
   readonly score: { lower: number; upper: number };
+  readonly scoreEstimate: number;
   readonly curve: readonly CurvePoint[];
   readonly expectedFp: { lower: number; upper: number };
   readonly expectedFpGivenSuccess: { lower: number; upper: number } | null;
   readonly failedFpWaste: { lower: number; upper: number };
   readonly quantiles: Quantiles | null;
   readonly successQuantiles: Quantiles | null;
-  readonly consumption: readonly { spent: number; success: { lower: number; upper: number }; failure: { lower: number; upper: number } }[];
+  readonly consumption: readonly { spent: number; success: { lower: number; upper: number }; failure: { lower: number; upper: number }; successEstimate?: number; failureEstimate?: number }[];
   readonly attemptsByMacro: readonly { lower: number; upper: number }[];
   readonly failureReasons: readonly { reason: string; probability: { lower: number; upper: number } }[];
   readonly states: number;
+  readonly sampling?: {
+    readonly seed: string;
+    readonly samplesPerFp: number;
+    readonly totalTrials: number;
+    readonly confidence: number;
+    readonly method: 'SIMULTANEOUS_HOEFFDING_UNDER_IID_SAMPLING';
+    readonly attemptGuard: number;
+    readonly unobservedAttemptMeanBound: number;
+    readonly minimumPaidProbability: number;
+  };
 }
 
-export function reportRoute(engine: RuleEngine, request: PlanRequest, route: Route): RouteReport {
-  const evaluator = new RouteEvaluator(engine, request, route);
+export function reportRoute(engine: RuleEngine, request: PlanRequest, route: Route, shouldStop?: () => boolean): RouteReport {
+  const evaluator = new RouteEvaluator(engine, request, route, shouldStop);
   const maximum = request.scoring.maximumFp ?? 63;
   const weights = request.scoring.weights ?? Array<number>(maximum).fill(1);
   const totalWeight = weights.reduce((value, weight) => value.add(exact(weight)), ZERO);
@@ -242,7 +275,10 @@ export function reportRoute(engine: RuleEngine, request: PlanRequest, route: Rou
     const point = summarizeDistribution(successes, failures);
     const unitMass = [...successes, ...failures].reduce((value, row) => value.add(row), ZERO);
     if (unitMass.lower > 1 || unitMass.upper < 1 || unitMass.width > 1e-7) throw new EvaluationLimitError('路线概率质量或数值区间未通过校验');
-    curve.push({ initialFp: fp, successProbability: point.probability.report(), expectedFp: point.expectedFp.report(),
+    const exhaustedRoute = evaluated.reasons.get('ROUTE_EXHAUSTED') ?? ZERO;
+    const continuationUpper = Math.min(1, point.probability.add(exhaustedRoute).upper,
+      new Interval(Math.max(0, evaluated.failure[0].lower)).complement().upper);
+    curve.push({ initialFp: fp, successProbability: point.probability.report(), continuationSuccessUpper: continuationUpper, expectedFp: point.expectedFp.report(),
       expectedFpGivenSuccess: point.expectedFpGivenSuccess?.report() ?? null, quantiles: point.quantiles, successQuantiles: point.successQuantiles });
     if (fp === 0) continue;
     const weight = exact(weights[fp - 1]).div(totalWeight);
@@ -254,7 +290,7 @@ export function reportRoute(engine: RuleEngine, request: PlanRequest, route: Rou
     for (const [reason, probability] of evaluated.reasons) reasons.set(reason, (reasons.get(reason) ?? ZERO).add(probability.mul(weight)));
   }
   const combined = summarizeDistribution(success, failure);
-  return { route, evaluationStatus: 'BOUNDED_NUMERICAL', score: combined.probability.report(), curve,
+  return { route, evaluationStatus: 'BOUNDED_NUMERICAL', score: combined.probability.report(), scoreEstimate: combined.probability.midpoint, curve,
     expectedFp: combined.expectedFp.report(), expectedFpGivenSuccess: combined.expectedFpGivenSuccess?.report() ?? null,
     failedFpWaste: combined.failedMoment.report(), quantiles: combined.quantiles, successQuantiles: combined.successQuantiles,
     consumption: success.map((value, spent) => ({ spent, success: value.report(), failure: failure[spent].report() })),

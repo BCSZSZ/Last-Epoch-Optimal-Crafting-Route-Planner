@@ -202,8 +202,8 @@
     "runtimeModel": {
       "affixes": 1156,
       "bases": 923,
-      "bytes": 1048947,
-      "modelId": "le-1.5.3-iid-ba34131b0f031bbf",
+      "bytes": 1049485,
+      "modelId": "le-1.5.3-iid-de87d96b5479099b",
       "verifiedOnly": true
     },
     "user7710": {
@@ -238,11 +238,11 @@
   "claimedProductionSolverTest": false,
   "documents": {
     "bootstrapUnchanged": true,
-    "localLinks": 128,
+    "localLinks": 151,
     "requiredDocuments": 11
   },
   "inputs": {
-    "scripts/build_research_index.py": "f0a5b75113e23be55c326af2b6f7364f4ec104feca2d24ad718c054b8ae635ff",
+    "scripts/build_research_index.py": "af8d7f95c213799934abddac0ed6918cff03f51cde8bc82398bc9588d4e992a8",
     "scripts/build_runtime_model.py": "7428fd028b9ead71cd03cf110a9166f90501002a048af9d9565a0c1f23e9529b",
     "scripts/check_7710_monte_carlo.py": "d7e40b9aed16910123b55dd75346dad6d8abe429d0198202f8388dcc796814b9",
     "scripts/check_7710_routes.py": "2cd2b15df713b53a5c6da9e4b9c2a1b25a6a266545aea72e12a7856b2d9c9dc8",

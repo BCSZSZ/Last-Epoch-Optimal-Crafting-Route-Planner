@@ -21,6 +21,7 @@ export class Catalog {
   readonly model: Model;
   readonly #affixes: ReadonlyMap<number, AffixDefinition>;
   readonly #bases: ReadonlyMap<string, BaseDefinition>;
+  readonly #pools = new Map<string, readonly { id: number; probability: number; bounds: Interval }[]>();
 
   constructor(model: Model = snapshot) {
     this.model = freeze(model);
@@ -92,16 +93,23 @@ export class Catalog {
   }
 
   rerollPool(item: Item, side: Side): readonly { id: number; probability: number; bounds: Interval }[] {
+    // Only a candidate pool is keyed by an ID SET. Native item order is retained everywhere else.
+    const key = `${item.baseId}:${side}:${item.affixes.map((row) => row.id).sort((a, b) => a - b).join(',')}`;
+    const cached = this.#pools.get(key);
+    if (cached) return cached;
     const excluded = new Set(item.affixes.map((row) => row.id));
     const entries = this.model.affixes.filter((row) => row.side === side && row.special === 0 &&
       !excluded.has(row.id) && this.canRollOn(row.id, item.baseId))
       .map((row) => ({ id: row.id, weight: this.craftWeight(row.id, item.baseId) }))
       .filter((row) => row.weight > 0);
     const total = entries.reduce((sum, row) => sum.add(exact(row.weight)), ZERO);
-    return entries.map((row) => {
+    const result = entries.map((row) => {
       const bounds = exact(row.weight).div(total);
       return { id: row.id, probability: bounds.midpoint, bounds };
     });
+    if (this.#pools.size >= 4096) this.#pools.delete(this.#pools.keys().next().value!);
+    this.#pools.set(key, result);
+    return result;
   }
 }
 

@@ -6,7 +6,7 @@
 
 ## 已完成
 
-11 份研究与架构文档、当前游戏版本化快照、两份原生审计、统一证据矩阵、独立研究环境和复现脚本已交付。生产模型清单为[model-snapshot.json](../research/model-snapshot.json)，明确标注 `PHASE_0_REVIEW`、`productionReady=false`。
+11份研究与架构文档、当前游戏版本化快照、两份原生审计、统一证据矩阵、独立研究环境和复现脚本已交付。此份记录保留Phase0审阅过程；当前已获用户授权进入实现，最新阶段和精度边界以[模型清单](../research/model-snapshot.json)、[实施状态](implementation-status.md)及[产品验收](product-validation.md)为准。
 
 数据库包含1156个词缀、42类资源类型及923个底材定义；包括旧版／不可掉落条目，不能把完整资源数量当当前可制作名单。方法登记、实际行为审计及数学样例验证各自单列，不用登记总数夸大审计范围。
 

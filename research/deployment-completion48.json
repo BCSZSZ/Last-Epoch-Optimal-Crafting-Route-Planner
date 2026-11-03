@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-03T15:42:00Z",
+  "status": "BLOCKED_BY_PAGES_DEPLOYMENT_LOCK",
+  "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
+  "implementationCommit": "3d7dcd8b4334cd419543fd57abe905abfcb1a643",
+  "unchangedSourceRetryCommit": "cad0af61c71f31fea038fcbaa698df5b13bef72e",
+  "buildAndTests": {
+    "typescriptTests": 149,
+    "pythonTests": 30,
+    "positionCases": 396,
+    "replayedSelectedWitnesses": 372,
+    "localStaticBrowserWorkerReportsMatchingNode": 4,
+    "researchWorkflow": "https://github.com/BCSZSZ/Last-Epoch-Optimal-Crafting-Route-Planner/actions/runs/41665625911",
+    "researchConclusion": "success",
+    "staticBuildConclusion": "success"
+  },
+  "publication": {
+    "workflow": "https://github.com/BCSZSZ/Last-Epoch-Optimal-Crafting-Route-Planner/actions/runs/41665625601",
+    "firstDeploymentJob": 126013339618,
+    "firstFailure": "updating_pages for ten minutes, then deploy-pages timeout and cancellation",
+    "retryDeploymentJobs": [126020310996, 126021226391, 126022954027],
+    "retryFailure": "HTTP 400: in progress deployment 3d7dcd8b4334cd419543fd57abe905abfcb1a643 must be cancelled first",
+    "explicitCancelRequested": true,
+    "oldDeploymentGetStatusAfterCancel": "deployment_cancelled",
+    "inconsistentBackendStateStillObservedAfterExplicitCancel": true,
+    "publicPage": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/",
+    "observedPublicScript": "/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-DK0nWmd7.js",
+    "newBuildScript": "/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-BugJVJ1v.js",
+    "newPublicVersionVerified": false
+  },
+  "remainingWork": "After GitHub releases the old Pages deployment lock, rerun the failed deployment, then verify current model, all three metrics, route steps and full Worker/Node report parity on the public site.",
+  "qualification": "Observed repository-specific deployment failures; no claim of a GitHub-wide outage. Local UI proof is not public-release proof. Original public input restored; temporary test tabs and local server closed."
+}

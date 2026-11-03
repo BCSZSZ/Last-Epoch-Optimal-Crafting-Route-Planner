@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import struct
 import sys
 from urllib.parse import unquote, urlsplit
 
@@ -74,7 +75,16 @@ def validate_snapshot(root: Path = ROOT) -> dict:
             refs = claim.get("evidenceRefs", claim.get("sources", []))
             require(bool(refs) and all(ref in methods for ref in refs), f"Broken method references: {claim['id']}")
             claims += 1
+    legacy = load_json(root / "research/legacy-forge-compatibility.json")
+    require(legacy["sources"]["GameAssembly.dll"]["sha256"] == registry["assemblySha256"], "Legacy audit binary mismatch")
+    ids = list(struct.unpack("<4H", bytes.fromhex(legacy["initializedTable"]["bytesHex"])))
+    require(ids == legacy["initializedTable"]["ids"] == legacy["rule"]["existingAttributeOverrideIds"] == [501, 502, 503, 504],
+            "Legacy forge initializer and compatibility rule disagree")
+    levels = load_json(root / "research/crafting-level-claims.json")
+    require(levels["source"]["gameAssemblySha256"] == registry["assemblySha256"] and
+            levels["source"]["steamBuildId"] == manifest["steamBuildId"], "Level audit version mismatch")
     return {"dataRevision": manifest["dataRevision"], "affixes": len(affixes), "itemTypes": 42, "bases": 923,
+            "legacyForgeOverrideIds": ids, "levelAuditMethodSpans": len(levels["methods"]),
             "registeredMethodRanges": len(registry["methods"]), "reviewedDistinctMethodRanges": len(reviewed), "behaviorClaims": claims}
 
 
@@ -121,7 +131,9 @@ def main() -> None:
               "user7710MonteCarlo": run_example("check_7710_monte_carlo.py", "--summary", "--no-timing"),
               "commonPatterns": run_example("check_common_patterns.py", "--verify-only"),
               "commonPatternsMonteCarlo": run_example("check_common_patterns_monte_carlo.py", "--verify-only", "--no-timing"),
-              "allTargetsAbsent7732": run_example("check_7732_redemption.py", "--verify-only")}
+              "allTargetsAbsent7732": run_example("check_7732_redemption.py", "--verify-only"),
+              "craftingLevels": run_example("check_crafting_level_examples.py", "--verify-only", "--summary"),
+              "runtimeModel": run_example("build_runtime_model.py", "--verify-only")}
     checks["user7710MonteCarlo"].pop("elapsedSeconds", None)
     checks["commonPatternsMonteCarlo"].pop("elapsedSeconds", None)
     model = load_json(ROOT / "research/model-snapshot.json")
@@ -140,7 +152,7 @@ def main() -> None:
             common_mc["fixtureSha256"] == sha(ROOT / "research/common-pattern-cases.json") and
             common_mc["referenceResultsSha256"] == sha(ROOT / "research/common-pattern-results.json"),
             "Stale common-pattern Monte Carlo baseline")
-    report = {"schemaVersion": 1, "auditedOn": "2026-11-03", "status": "PASS", "phase": "PHASE_0_RESEARCH_ONLY",
+    report = {"schemaVersion": 1, "auditedOn": "2026-11-03", "status": "PASS", "phase": "RESEARCH_AND_RUNTIME_MODEL_INTEGRITY",
               "snapshot": snapshot, "documents": documents, "checks": checks,
               "claimedClientTest": False, "claimedProductionSolverTest": False,
               "inputs": {str(path.relative_to(ROOT)).replace("\\", "/"): sha(path)
@@ -155,6 +167,8 @@ def main() -> None:
                       "commonPatternScenarios": checks["commonPatterns"]["scenarios"],
                       "commonPatternMonteCarloSamples": checks["commonPatternsMonteCarlo"]["totalSamples"],
                       "allTargetsAbsent7732Trials": checks["allTargetsAbsent7732"]["trials"],
+                      "craftingLevelExamples": checks["craftingLevels"]["exampleCount"],
+                      "productionModelId": checks["runtimeModel"]["modelId"],
                       "wroteReport": args.write_report}, ensure_ascii=False))
 
 

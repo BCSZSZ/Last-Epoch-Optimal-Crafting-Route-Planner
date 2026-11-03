@@ -1,0 +1,263 @@
+import { itemKey, ordinary } from './catalog';
+import { Interval, exact, ONE, ratio, ZERO } from './interval';
+import { boundedCostKernel, tierPermutations } from './probability';
+import { RuleEngine } from './rules';
+import { matches, select, targetReached } from './target';
+import type { AtomicAction, Item, Macro, PlanRequest, Predicate, Route } from './types';
+
+export interface Absorption {
+  readonly success: readonly Interval[];
+  readonly failure: readonly Interval[];
+  readonly attempts: readonly Interval[];
+  readonly reasons: ReadonlyMap<string, Interval>;
+}
+
+export class EvaluationLimitError extends Error {}
+export class SamplingRequiredError extends Error {}
+
+function zero(stages: number): Absorption {
+  return { success: Array<Interval>(64).fill(ZERO), failure: Array<Interval>(64).fill(ZERO),
+    attempts: Array<Interval>(stages).fill(ZERO), reasons: new Map() };
+}
+
+function terminal(stages: number, fp: number, success: boolean, reason = 'ROUTE_EXHAUSTED'): Absorption {
+  const result = zero(stages);
+  ((success ? result.success : result.failure) as Interval[])[fp] = ONE;
+  if (!success) (result.reasons as Map<string, Interval>).set(reason, ONE);
+  return result;
+}
+
+/** The mutable accumulator is internal; cached evaluations are never changed by callers. */
+function addScaled(destination: Absorption, source: Absorption, weight: Interval): void {
+  if (weight.upper === 0) return;
+  for (let fp = 0; fp < 64; fp++) {
+    (destination.success as Interval[])[fp] = destination.success[fp].add(source.success[fp].mul(weight));
+    (destination.failure as Interval[])[fp] = destination.failure[fp].add(source.failure[fp].mul(weight));
+  }
+  for (let stage = 0; stage < destination.attempts.length; stage++) {
+    (destination.attempts as Interval[])[stage] = destination.attempts[stage].add(source.attempts[stage].mul(weight));
+  }
+  const reasons = destination.reasons as Map<string, Interval>;
+  for (const [reason, value] of source.reasons) reasons.set(reason, (reasons.get(reason) ?? ZERO).add(value.mul(weight)));
+}
+
+function divide(source: Absorption, denominator: Interval): Absorption {
+  return { success: source.success.map((row) => row.div(denominator)), failure: source.failure.map((row) => row.div(denominator)),
+    attempts: source.attempts.map((row) => row.div(denominator)),
+    reasons: new Map([...source.reasons].map(([key, value]) => [key, value.div(denominator)])) };
+}
+
+export function predicateReached(item: Item, predicate: Predicate, request: PlanRequest, engine: RuleEngine): boolean {
+  if (predicate.kind === 'target') return targetReached(item, request.target);
+  if (predicate.kind === 'exists') return select(item, predicate.selector, engine.catalog) !== undefined;
+  return item.affixes.some((row) => matches(row, predicate.requirement));
+}
+
+export function macroStep(macro: Macro, item: Item, request: PlanRequest, engine: RuleEngine):
+  { action: AtomicAction; advance: boolean } | 'SKIP' | 'INAPPLICABLE' {
+  if (macro.kind === 'once') return { action: macro.action, advance: true };
+  if (macro.kind === 'seal') {
+    const index = select(item, { ...macro.selector, maxTier: Math.min(4, macro.selector.maxTier ?? 4) }, engine.catalog);
+    return index === undefined ? 'INAPPLICABLE' : { action: { kind: 'seal', id: item.affixes[index].id }, advance: true };
+  }
+  if (macro.kind === 'repeat') return predicateReached(item, macro.until, request, engine) ? 'SKIP' : { action: macro.action, advance: false };
+  if (macro.kind === 'upgrade') {
+    const affix = item.affixes.find((row) => row.id === macro.id && row.slot === 'ordinary');
+    return !affix ? 'INAPPLICABLE' : affix.tier >= macro.tier ? 'SKIP' :
+      { action: { kind: 'upgrade', id: macro.id, glyph: macro.glyph }, advance: false };
+  }
+  if (item.affixes.some((row) => matches(row, macro.until))) return 'SKIP';
+  const index = select(item, { ...macro.selector, maxTier: Math.min(4, macro.selector.maxTier ?? 4) }, engine.catalog);
+  return index === undefined ? 'INAPPLICABLE' : { action: { kind: 'chaos', id: item.affixes[index].id }, advance: false };
+}
+
+/** Exact state expansion plus outward rounding; uniform-Havoc symmetry solves its free-cost loop. */
+export class RouteEvaluator {
+  readonly #cache = new Map<string, Absorption>();
+  readonly #havoc = new Map<string, Absorption[]>();
+  readonly #trackRolls: boolean;
+  nodes = 0;
+
+  constructor(readonly engine: RuleEngine, readonly request: PlanRequest, readonly route: Route) {
+    this.#trackRolls = request.target.requirements.some((row) => row.minRollByte !== undefined) ||
+      request.constraints.protected?.some((row) => row.roll) || false;
+  }
+
+  evaluate(fp: number): Absorption {
+    if (!Number.isInteger(fp) || fp < 0 || fp > (this.request.scoring.maximumFp ?? 63)) throw new RangeError('假设预算不在声明的评分域内');
+    return this.#visit(0, this.request.item, fp, this.request.constraints.maxAttempts);
+  }
+
+  #visit(stage: number, item: Item, fp: number, attemptsLeft?: number): Absorption {
+    if (targetReached(item, this.request.target)) return terminal(this.route.macros.length, fp, true);
+    if (stage >= this.route.macros.length) return terminal(this.route.macros.length, fp, false);
+    const key = `${stage}|${fp}|${attemptsLeft ?? '*'}|${itemKey(item)}`;
+    const cached = this.#cache.get(key);
+    if (cached) return cached;
+    if (++this.nodes > this.request.search.maxStates) throw new EvaluationLimitError('达到整条路线的状态预算');
+    const macro = this.route.macros[stage];
+    const step = macroStep(macro, item, this.request, this.engine);
+    let result: Absorption;
+    if (step === 'SKIP') result = this.#visit(stage + 1, item, fp, attemptsLeft);
+    else if (step === 'INAPPLICABLE') result = terminal(this.route.macros.length, fp, false, 'INAPPLICABLE_NEXT_STAGE');
+    else if (fp === 0) result = terminal(this.route.macros.length, fp, false, 'FP_EXHAUSTED');
+    else if (attemptsLeft === 0) result = terminal(this.route.macros.length, fp, false, 'OPERATION_LIMIT');
+    else if (macro.kind === 'repeat' && step.action.kind === 'havoc' && attemptsLeft === undefined) {
+      result = this.#havocUntil(stage, item, fp, macro);
+    } else {
+      if (macro.kind === 'repeat' && step.action.kind === 'redemption' && attemptsLeft === undefined) {
+        throw new SamplingRequiredError('救赎会逐次改变候选池；使用直接路线采样，不套固定命中率几何分布');
+      }
+      const transition = this.engine.transition(item, fp, step.action, this.request.craftingContext,
+        { constraints: this.request.constraints, trackRolls: this.#trackRolls, maxOutcomes: this.request.search.maxStates });
+      if (transition.issues.length) result = terminal(this.route.macros.length, fp, false, transition.issues[0].code);
+      else {
+        result = zero(this.route.macros.length);
+        for (const outcome of transition.outcomes) {
+          const weight = new Interval(outcome.probabilityBounds.lower, outcome.probabilityBounds.upper);
+          const child = outcome.abort ? terminal(this.route.macros.length, outcome.fp, false, outcome.abort) :
+            this.#visit(stage + Number(step.advance), outcome.item, outcome.fp, attemptsLeft === undefined ? undefined : attemptsLeft - 1);
+          addScaled(result, child, weight);
+          (result.attempts as Interval[])[stage] = result.attempts[stage].add(weight);
+        }
+      }
+    }
+    this.#cache.set(key, result);
+    return result;
+  }
+
+  #havocUntil(stage: number, item: Item, fp: number, macro: Extract<Macro, { kind: 'repeat' }>): Absorption {
+    if (macro.action.kind !== 'havoc') throw new Error('浩劫宏类型不一致');
+    const check = this.engine.transition(item, fp, macro.action, this.request.craftingContext,
+      { constraints: this.request.constraints, maxOutcomes: this.request.search.maxStates });
+    if (check.issues.length) return terminal(this.route.macros.length, fp, false, check.issues[0].code);
+    const indices = item.affixes.flatMap((row, i) => row.slot === 'ordinary' ? [i] : []);
+    const tiers = ordinary(item).map((row) => row.tier);
+    const signature = `${stage}|${item.affixes.map((row) => `${row.id}:${row.slot}:${row.slot === 'ordinary' ? '*' : row.tier}:${row.roll ?? '*'}`).join(',')}|${[...tiers].sort().join(',')}`;
+    let table = this.#havoc.get(signature);
+    if (!table) {
+      const layouts = tierPermutations(tiers).map((layout): Item => {
+        const replacements = new Map(indices.map((index, i) => [index, layout[i]]));
+        return { ...item, affixes: item.affixes.map((row, index) => ({ ...row, tier: replacements.get(index) ?? row.tier })) };
+      });
+      const goals = layouts.filter((layout) => predicateReached(layout, macro.until, this.request, this.engine));
+      if (!goals.length) return terminal(this.route.macros.length, fp, false, 'UNREACHABLE_MACRO_SUBGOAL');
+      const hit = ratio(goals.length, layouts.length - 1);
+      const miss = hit.complement();
+      table = [terminal(this.route.macros.length, 0, false, 'FP_EXHAUSTED')];
+      this.#havoc.set(signature, table);
+      for (let budget = 1; budget <= (this.request.scoring.maximumFp ?? 63); budget++) {
+        const numerator = zero(this.route.macros.length);
+        let loop = ZERO;
+        const cost = boundedCostKernel(budget, 20, item.fpType, macro.action.glyph === 'hope', this.engine.catalog.model.parameters);
+        for (const remaining of cost) {
+          const goalsMean = zero(this.route.macros.length);
+          for (const goal of goals) addScaled(goalsMean, this.#visit(stage + 1, goal, remaining.value), ratio(1, goals.length));
+          addScaled(numerator, goalsMean, remaining.bounds.mul(hit));
+          if (remaining.value < budget) addScaled(numerator, table[remaining.value], remaining.bounds.mul(miss));
+          else loop = loop.add(remaining.bounds.mul(miss));
+          (numerator.attempts as Interval[])[stage] = numerator.attempts[stage].add(remaining.bounds);
+        }
+        if (loop.upper >= 1) throw new EvaluationLimitError('无法在当前精度下证明零成本循环会终止');
+        table.push(divide(numerator, loop.complement()));
+      }
+    }
+    return table[fp];
+  }
+}
+
+export interface Quantiles {
+  readonly p50: { lower: number; upper: number };
+  readonly p90: { lower: number; upper: number };
+  readonly p95: { lower: number; upper: number };
+}
+
+function quantiles(distribution: readonly Interval[], denominator = ONE): Quantiles | null {
+  if (denominator.lower <= 0) return null;
+  const inverse = (p: number) => {
+    let accumulated = ZERO;
+    let lower = -1;
+    let upper = distribution.length - 1;
+    for (let cost = 0; cost < distribution.length; cost++) {
+      accumulated = accumulated.add(distribution[cost]);
+      const cdf = accumulated.div(denominator);
+      if (lower < 0 && cdf.upper >= p) lower = cost;
+      if (cdf.lower >= p) { upper = cost; break; }
+    }
+    return { lower: Math.max(0, lower), upper };
+  };
+  return { p50: inverse(0.5), p90: inverse(0.9), p95: inverse(0.95) };
+}
+
+export function summarizeDistribution(success: readonly Interval[], failure: readonly Interval[]) {
+  const probability = success.reduce((value, row) => value.add(row), ZERO).clamp(0, 1);
+  const successMoment = success.reduce((value, row, cost) => value.add(row.mul(exact(cost))), ZERO);
+  const failedMoment = failure.reduce((value, row, cost) => value.add(row.mul(exact(cost))), ZERO);
+  const total = success.map((row, i) => row.add(failure[i]));
+  return { probability, successMoment, failedMoment,
+    expectedFp: successMoment.add(failedMoment),
+    expectedFpGivenSuccess: probability.lower > 0 ? successMoment.div(probability) : null,
+    quantiles: quantiles(total), successQuantiles: quantiles(success, probability) };
+}
+
+export interface CurvePoint {
+  readonly initialFp: number;
+  readonly successProbability: { lower: number; upper: number };
+  readonly expectedFp: { lower: number; upper: number };
+  readonly expectedFpGivenSuccess: { lower: number; upper: number } | null;
+  readonly quantiles: Quantiles | null;
+  readonly successQuantiles: Quantiles | null;
+}
+
+export interface RouteReport {
+  readonly route: Route;
+  readonly evaluationStatus: 'BOUNDED_NUMERICAL' | 'ESTIMATED';
+  readonly score: { lower: number; upper: number };
+  readonly curve: readonly CurvePoint[];
+  readonly expectedFp: { lower: number; upper: number };
+  readonly expectedFpGivenSuccess: { lower: number; upper: number } | null;
+  readonly failedFpWaste: { lower: number; upper: number };
+  readonly quantiles: Quantiles | null;
+  readonly successQuantiles: Quantiles | null;
+  readonly consumption: readonly { spent: number; success: { lower: number; upper: number }; failure: { lower: number; upper: number } }[];
+  readonly attemptsByMacro: readonly { lower: number; upper: number }[];
+  readonly failureReasons: readonly { reason: string; probability: { lower: number; upper: number } }[];
+  readonly states: number;
+}
+
+export function reportRoute(engine: RuleEngine, request: PlanRequest, route: Route): RouteReport {
+  const evaluator = new RouteEvaluator(engine, request, route);
+  const maximum = request.scoring.maximumFp ?? 63;
+  const weights = request.scoring.weights ?? Array<number>(maximum).fill(1);
+  const totalWeight = weights.reduce((value, weight) => value.add(exact(weight)), ZERO);
+  const success = Array<Interval>(64).fill(ZERO);
+  const failure = Array<Interval>(64).fill(ZERO);
+  const attempts = Array<Interval>(route.macros.length).fill(ZERO);
+  const reasons = new Map<string, Interval>();
+  const curve: CurvePoint[] = [];
+  for (let fp = 0; fp <= maximum; fp++) {
+    const evaluated = evaluator.evaluate(fp);
+    const successes = Array.from({ length: 64 }, (_, cost) => cost <= fp ? evaluated.success[fp - cost] : ZERO);
+    const failures = Array.from({ length: 64 }, (_, cost) => cost <= fp ? evaluated.failure[fp - cost] : ZERO);
+    const point = summarizeDistribution(successes, failures);
+    const unitMass = [...successes, ...failures].reduce((value, row) => value.add(row), ZERO);
+    if (unitMass.lower > 1 || unitMass.upper < 1 || unitMass.width > 1e-7) throw new EvaluationLimitError('路线概率质量或数值区间未通过校验');
+    curve.push({ initialFp: fp, successProbability: point.probability.report(), expectedFp: point.expectedFp.report(),
+      expectedFpGivenSuccess: point.expectedFpGivenSuccess?.report() ?? null, quantiles: point.quantiles, successQuantiles: point.successQuantiles });
+    if (fp === 0) continue;
+    const weight = exact(weights[fp - 1]).div(totalWeight);
+    for (let cost = 0; cost < 64; cost++) {
+      success[cost] = success[cost].add(successes[cost].mul(weight));
+      failure[cost] = failure[cost].add(failures[cost].mul(weight));
+    }
+    for (let stage = 0; stage < attempts.length; stage++) attempts[stage] = attempts[stage].add(evaluated.attempts[stage].mul(weight));
+    for (const [reason, probability] of evaluated.reasons) reasons.set(reason, (reasons.get(reason) ?? ZERO).add(probability.mul(weight)));
+  }
+  const combined = summarizeDistribution(success, failure);
+  return { route, evaluationStatus: 'BOUNDED_NUMERICAL', score: combined.probability.report(), curve,
+    expectedFp: combined.expectedFp.report(), expectedFpGivenSuccess: combined.expectedFpGivenSuccess?.report() ?? null,
+    failedFpWaste: combined.failedMoment.report(), quantiles: combined.quantiles, successQuantiles: combined.successQuantiles,
+    consumption: success.map((value, spent) => ({ spent, success: value.report(), failure: failure[spent].report() })),
+    attemptsByMacro: attempts.map((row) => row.report()), failureReasons: [...reasons].map(([reason, value]) => ({ reason, probability: value.report() })),
+    states: evaluator.nodes };
+}

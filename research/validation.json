@@ -176,6 +176,16 @@
       "totalSamples": 1080000,
       "verifiedOnly": true
     },
+    "craftingLevels": {
+      "clientExperiment": false,
+      "exampleCount": 34,
+      "nativeVerification": null,
+      "passed": true,
+      "snapshotShardCounts": {
+        "all": 508,
+        "experimental": 0
+      }
+    },
     "fp": {
       "exactUnitMassCases": 1536,
       "scope": "research_reference_only",
@@ -188,6 +198,13 @@
       "rationalChecks": 124,
       "status": "passed",
       "syntheticCases": 7
+    },
+    "runtimeModel": {
+      "affixes": 1156,
+      "bases": 923,
+      "bytes": 1048947,
+      "modelId": "le-1.5.3-iid-ba34131b0f031bbf",
+      "verifiedOnly": true
     },
     "user7710": {
       "distinctReadyStates": 42,
@@ -221,25 +238,28 @@
   "claimedProductionSolverTest": false,
   "documents": {
     "bootstrapUnchanged": true,
-    "localLinks": 103,
+    "localLinks": 128,
     "requiredDocuments": 11
   },
   "inputs": {
-    "scripts/build_research_index.py": "dc708db5fb8b71a7e69a07bbfec8a400bea8403d663912a485d7ec8992f98fff",
+    "scripts/build_research_index.py": "f0a5b75113e23be55c326af2b6f7364f4ec104feca2d24ad718c054b8ae635ff",
+    "scripts/build_runtime_model.py": "7428fd028b9ead71cd03cf110a9166f90501002a048af9d9565a0c1f23e9529b",
     "scripts/check_7710_monte_carlo.py": "d7e40b9aed16910123b55dd75346dad6d8abe429d0198202f8388dcc796814b9",
     "scripts/check_7710_routes.py": "2cd2b15df713b53a5c6da9e4b9c2a1b25a6a266545aea72e12a7856b2d9c9dc8",
     "scripts/check_7732_redemption.py": "e534bb29d35492d8295dcd89adf631bed689f099f874af15bb1b11852810d122",
     "scripts/check_action_examples.py": "e393f25b274ff9c203fa8026eb38765d4d4a1d8f2a66688596379cbbb6ffa5f0",
     "scripts/check_common_patterns.py": "8bf83fb954640a7caae4a414c64a1bbc42e3034f0aba5806def0804161877b10",
     "scripts/check_common_patterns_monte_carlo.py": "c33bcb343cd12c9dcc9b87f60f4ebd36f8b9c0904c8a2f86bd60b390f1871342",
+    "scripts/check_crafting_level_examples.py": "7d51af5af82862e9d64bca7a36f892f9f4e9cd737893bdb2b7de9148f697ed4e",
     "scripts/check_fp_examples.py": "3a413c0f56738862cbc7cf34b1d3f1badbdc80edc2aab60f8a413c06c9199257",
     "scripts/check_math_fixtures.py": "25c3d9154e604d00aa625eed52a780768af42c8d6a21fa31bbb49190fc0b4295",
     "scripts/extract_game_snapshot.py": "94c58a91f80bd510954e0d762f596d261b257976cd0ec46ec51fb82ba1a3fdc8",
+    "scripts/extract_legacy_forge.py": "667c5960cf2f2a3fc0746bdc602a7b091edbcf585def956ee99170017cbcc58a",
     "scripts/inspect_native_method.py": "d1efb2a6e47ddfd5c63eab7b20bd01fe34906db6aa1a059bd169575509090ca6",
     "scripts/register_audited_build.py": "11f4fc697b2cb0f041ee5f830793000415adcac9a7612a41617b193f0ff98a34",
-    "scripts/validate_research.py": "54f178ad32ec57d6b2693bf25ea71527e15491676c769e932d6e36861aec54bf"
+    "scripts/validate_research.py": "717100d3fa20b7944ecbacd20db4f572403b20e08e435e6ca576943a35839d5e"
   },
-  "phase": "PHASE_0_RESEARCH_ONLY",
+  "phase": "RESEARCH_AND_RUNTIME_MODEL_INTEGRITY",
   "schemaVersion": 1,
   "snapshot": {
     "affixes": 1156,
@@ -247,6 +267,13 @@
     "behaviorClaims": 18,
     "dataRevision": "e13bd6ad1c607782651e98ab7eafa959cc8883b89d570eb100ac55fa36b086a2",
     "itemTypes": 42,
+    "legacyForgeOverrideIds": [
+      501,
+      502,
+      503,
+      504
+    ],
+    "levelAuditMethodSpans": 22,
     "registeredMethodRanges": 1036,
     "reviewedDistinctMethodRanges": 50
   },

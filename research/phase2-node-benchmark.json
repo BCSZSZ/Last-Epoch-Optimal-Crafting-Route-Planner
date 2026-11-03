@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "measuredOn": "2026-11-03",
+  "modelId": "le-1.5.3-iid-6487e675d56f272b",
+  "scope": "PHASE_2_NODE_ATOMIC_AND_KNOWN_MACRO_ROUTES_NOT_FULL_SOLVER_OR_BROWSER",
+  "environment": {
+    "node": "v22.20.0",
+    "platform": "win32",
+    "arch": "x64",
+    "cpu": "13th Gen Intel(R) Core(TM) i5-13600KF",
+    "logicalCpus": 20,
+    "memoryGiB": 31.772438049316406
+  },
+  "measurement": "One cold child process per input; three FP types in declared order share rule-kernel cache. Import/model load and engine construction excluded from milliseconds; peak RSS includes the whole process. No warm repetitions or hardware emulation.",
+  "cases": [
+    {
+      "id": "double_t7_havoc",
+      "records": [
+        {
+          "fpType": "NORMAL",
+          "milliseconds": 33.1079,
+          "states": 64,
+          "scope": "COMPLETE_FIXED_ROUTE_ALL_FP_0_TO_63",
+          "successScore": {
+            "lower": 0.6549493033383181,
+            "upper": 0.654949303338355
+          }
+        },
+        {
+          "fpType": "ICE",
+          "milliseconds": 19.351200000000006,
+          "states": 64,
+          "scope": "COMPLETE_FIXED_ROUTE_ALL_FP_0_TO_63",
+          "successScore": {
+            "lower": 0.7417353868276887,
+            "upper": 0.7417353868277304
+          }
+        },
+        {
+          "fpType": "BLOOD",
+          "milliseconds": 17.281900000000007,
+          "states": 64,
+          "scope": "COMPLETE_FIXED_ROUTE_ALL_FP_0_TO_63",
+          "successScore": {
+            "lower": 0.6549493033383181,
+            "upper": 0.654949303338355
+          }
+        }
+      ],
+      "peakRssMiB": 98.7890625
+    },
+    {
+      "id": "7710_direct",
+      "records": [
+        {
+          "fpType": "NORMAL",
+          "milliseconds": 189.08360000000002,
+          "states": 942,
+          "scope": "COMPLETE_FIXED_ROUTE_ALL_FP_0_TO_63",
+          "successScore": {
+            "lower": 0.447225270795798,
+            "upper": 0.44722527079582797
+          }
+        },
+        {
+          "fpType": "ICE",
+          "milliseconds": 143.9162,
+          "states": 953,
+          "scope": "COMPLETE_FIXED_ROUTE_ALL_FP_0_TO_63",
+          "successScore": {
+            "lower": 0.5789720513409812,
+            "upper": 0.5789720513410227
+          }
+        },
+        {
+          "fpType": "BLOOD",
+          "milliseconds": 151.101,
+          "states": 942,
+          "scope": "COMPLETE_FIXED_ROUTE_ALL_FP_0_TO_63",
+          "successScore": {
+            "lower": 0.4554655188139072,
+            "upper": 0.45546551881393715
+          }
+        }
+      ],
+      "peakRssMiB": 122.953125
+    },
+    {
+      "id": "7713_prepare",
+      "records": [
+        {
+          "fpType": "NORMAL",
+          "milliseconds": 215.29089999999997,
+          "states": 1006,
+          "scope": "COMPLETE_FIXED_ROUTE_ALL_FP_0_TO_63",
+          "successScore": {
+            "lower": 0.27062089812917633,
+            "upper": 0.2706208981291991
+          }
+        },
+        {
+          "fpType": "ICE",
+          "milliseconds": 174.89099999999996,
+          "states": 1018,
+          "scope": "COMPLETE_FIXED_ROUTE_ALL_FP_0_TO_63",
+          "successScore": {
+            "lower": 0.4181926481670557,
+            "upper": 0.4181926481670922
+          }
+        },
+        {
+          "fpType": "BLOOD",
+          "milliseconds": 174.48479999999995,
+          "states": 1006,
+          "scope": "COMPLETE_FIXED_ROUTE_ALL_FP_0_TO_63",
+          "successScore": {
+            "lower": 0.28520123204435466,
+            "upper": 0.2852012320443784
+          }
+        }
+      ],
+      "peakRssMiB": 119.67578125
+    },
+    {
+      "id": "removal_then_fill",
+      "records": [
+        {
+          "fpType": "NORMAL",
+          "milliseconds": 104.0521,
+          "states": 318,
+          "scope": "COMPLETE_FIXED_ROUTE_ALL_FP_0_TO_63",
+          "successScore": {
+            "lower": 0.11951542554154862,
+            "upper": 0.11951542554155635
+          }
+        },
+        {
+          "fpType": "ICE",
+          "milliseconds": 82.90789999999998,
+          "states": 318,
+          "scope": "COMPLETE_FIXED_ROUTE_ALL_FP_0_TO_63",
+          "successScore": {
+            "lower": 0.15187076445961384,
+            "upper": 0.15187076445962427
+          }
+        },
+        {
+          "fpType": "BLOOD",
+          "milliseconds": 81.4255,
+          "states": 318,
+          "scope": "COMPLETE_FIXED_ROUTE_ALL_FP_0_TO_63",
+          "successScore": {
+            "lower": 0.12268026462375768,
+            "upper": 0.12268026462376554
+          }
+        }
+      ],
+      "peakRssMiB": 117.3203125
+    },
+    {
+      "id": "rare_redemption_onecast",
+      "records": [
+        {
+          "fpType": "NORMAL",
+          "milliseconds": 11.592800000000011,
+          "states": 5780,
+          "scope": "SINGLE_ATOMIC_ACTION_ONLY",
+          "successScore": null
+        },
+        {
+          "fpType": "ICE",
+          "milliseconds": 7.80419999999998,
+          "states": 5780,
+          "scope": "SINGLE_ATOMIC_ACTION_ONLY",
+          "successScore": null
+        },
+        {
+          "fpType": "BLOOD",
+          "milliseconds": 5.596300000000014,
+          "states": 5780,
+          "scope": "SINGLE_ATOMIC_ACTION_ONLY",
+          "successScore": null
+        }
+      ],
+      "peakRssMiB": 93.9375
+    }
+  ]
+}

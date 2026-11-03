@@ -1,6 +1,11 @@
 {
   "dataRevision": "e13bd6ad1c607782651e98ab7eafa959cc8883b89d570eb100ac55fa36b086a2",
-  "defaultRngModel": "INDEPENDENT_NATIVE_GRID",
+  "defaultRngModel": "DISPLAY_PARAMETERS_INDEPENDENT_DRAWS_V1",
+  "deferredResearch": [
+    "WEIGHTED_NATIVE_GRID_BOUNDARIES",
+    "MULTI_PROPERTY_ROLL_DISPLAY_PROJECTION",
+    "CLIENT_FREQUENCIES"
+  ],
   "deployment": {
     "audience": "PUBLIC_WITHOUT_LOGIN",
     "priority": [
@@ -94,12 +99,15 @@
     "research/common-pattern-cases.json": "56a99d9902d5c10400a6bbe0867228963ff3fb0f5d95e720dbcd8123eef66e93",
     "research/common-pattern-monte-carlo.json": "0949743091e215ee325121fb3a1ca096afbd607a48cddbc2b9a62bfa64f3e465",
     "research/common-pattern-results.json": "c74b2af851671ed22425b508b7f227785e558a5f4595a873a04451b57cb12a86",
+    "research/crafting-level-claims.json": "6abd200337b5056e49069dd506d7e88dded175419fb8941648f6da893411749c",
     "research/forge-fp-claims.json": "618e6d5fa1db4b8db683b7fdefdfd3c4b70c17363634a36b99eb2e1cd914770c",
     "research/fp-examples.json": "ff72db932924dcd374e4c8a42af47525b34fb37c4e5e2aecda9173f85d49713e",
-    "research/math-fixtures.json": "2e8f761032a1fb9710be3bdfe80d361982297d3cbf6663140f77bc517e6a978a"
+    "research/legacy-forge-compatibility.json": "f750857451068cd7470aa0b1802fcdff12b5d6ee8a997b144e34e858b34fdba0",
+    "research/math-fixtures.json": "2e8f761032a1fb9710be3bdfe80d361982297d3cbf6663140f77bc517e6a978a",
+    "src/generated/model.json": "3f95e7b8e24245b43747b5ed72625826539657ee4f6e61004ea5900802793cab"
   },
-  "modelId": "le-1.5.3-26087601-phase0-r3-common-patterns",
-  "phase": "PHASE_0_REVIEW",
+  "modelId": "le-1.5.3-26087601-r4-product-implementation",
+  "phase": "PRODUCT_IMPLEMENTATION_IN_PROGRESS",
   "policies": {
     "adaptiveReoptimization": false,
     "commonPatternsPrioritizedNotExclusive": true,
@@ -140,11 +148,11 @@
     "unassessedPatternStatus": "UNASSESSED",
     "uncompletedSearchStatus": "INCOMPLETE"
   },
+  "productionModelId": "le-1.5.3-iid-ba34131b0f031bbf",
   "productionPreconditions": [
-    "LEGACY_FORGE_OVERRIDE",
-    "WEIGHTED_FLOAT_BOUNDARIES",
-    "ALL_ROLL_DISPLAY_SEMANTICS",
-    "APPROVE_RULE_MODEL_AND_OPTIMIZATION_OBJECTIVE"
+    "FULL_SOLVER_VALIDATION",
+    "BROWSER_PERFORMANCE",
+    "ACTUAL_STATIC_DEPLOYMENT"
   ],
   "productionReady": false,
   "referenceExampleModels": [
@@ -152,12 +160,16 @@
     "display_parameters_iid",
     "native_uniform_grid_iid"
   ],
-  "researchRevision": "a19daa30904b37c95f7707062bb93a62e274bc54890e83b4b401fd6ada4ba7f9",
-  "rngQualification": "Independent primitive outputs with native grids and operations; independence is a mathematical convention, not a proved property of a seeded client stream. Weighted grid boundaries remain a production precondition.",
+  "researchRevision": "164a1dab68d70eaf6647a99cf3d04646584f0e1fafe181b8bfb59f70933c41ec",
+  "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 1,
   "steamBuildId": 26087601,
+  "userApproval": {
+    "clientBitExactRequired": false,
+    "codeDerivedRulesSufficient": true,
+    "date": "2026-11-03"
+  },
   "validationNotClaimed": [
-    "PRODUCTION_TYPESCRIPT_ENGINE",
     "FULL_ROUTE_SEARCH",
     "BROWSER_PERFORMANCE",
     "LIVE_DEPLOYMENT",

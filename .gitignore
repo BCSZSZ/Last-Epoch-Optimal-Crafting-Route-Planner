@@ -14,3 +14,9 @@ coverage/
 *.pdb
 Thumbs.db
 .DS_Store
+node_modules/
+dist/
+coverage/
+.vite/
+*.tsbuildinfo
+artifacts/browser/

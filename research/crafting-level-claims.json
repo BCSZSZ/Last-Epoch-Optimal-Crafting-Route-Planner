@@ -1,0 +1,1563 @@
+{
+  "schemaVersion": 1,
+  "auditedOn": "2026-11-03",
+  "scope": "Bounded current native static audit for ordinary crafting levels, glyph effects and rolls; no client execution",
+  "source": {
+    "gameVersion": "1.5.3",
+    "steamBuildId": 26087601,
+    "gameAssemblySha256": "323e9183f3bee600b6c9e1c469218b9de926e9044f2ca3d44fae8a0ec9a91464",
+    "metadataSha256": "2a4e8440606c420345934158b6784d8f5d8b0184f32fd91af0e9e0903ba94f83",
+    "dummyAssembly": {
+      "relativePath": "MelonLoader/Dependencies/Il2CppAssemblyGenerator/Cpp2IL/cpp2il_out/LE.dll",
+      "sha256": "90c158898682825116547d51b1c7a46e1b9eebd6822c4028ce5cbbe5a9066f19",
+      "use": "Names, signatures and field offsets only. Dummy method bodies were not treated as implementation."
+    }
+  },
+  "verificationMeaning": {
+    "VERIFIED": "Current native bytes and control flow statically audited; not client experiment",
+    "PARTIALLY_VERIFIED": "Named explicit remaining branch or domain boundary",
+    "clientExperiment": false,
+    "nativeRngBitExact": false
+  },
+  "methods": [
+    {
+      "id": "forgeCapability",
+      "name": "CraftingManager::CheckForgeCapability",
+      "rva": "0x1166960",
+      "metadataDeclaredLength": 7110,
+      "auditedSpanLength": 7110,
+      "sha256": "65dc209839517bc76571d021286330c6440dc872cd609ea543eacd485f018390",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "forge",
+      "name": "CraftingManager::Forge",
+      "rva": "0x1168790",
+      "metadataDeclaredLength": 11703,
+      "auditedSpanLength": 11703,
+      "sha256": "8d54e03a8baa387c7fab2d661d88a1f2cd001a44264db1ff837b2875416a2954",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "canUseShardOnItem",
+      "name": "AffixList::CanUseShardOnItem",
+      "rva": "0x119d3e0",
+      "metadataDeclaredLength": 105,
+      "auditedSpanLength": 105,
+      "sha256": "a5af2cae459a2545b10f776953f04331fff0e6ab8ea5318ff8afb1881b76821c",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "canForgeOnItem",
+      "name": "Affix::CanForgeOnItem",
+      "rva": "0x11b1660",
+      "metadataDeclaredLength": 188,
+      "auditedSpanLength": 188,
+      "sha256": "196479eda47bd6f8183ad93fe2e4a6b2c1881605df6c1f7c7ac9d86caa747ff1",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "hasShard",
+      "name": "Affix::get_HasShard",
+      "rva": "0x11b44d0",
+      "metadataDeclaredLength": 139,
+      "auditedSpanLength": 139,
+      "sha256": "1c98cbe4e62937611448a52f13bda403365443b7c9abcad9d260eb0ebf7ec536",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "addAffixTier",
+      "name": "ItemData::AddAffixTier",
+      "rva": "0x11f3dd0",
+      "metadataDeclaredLength": 2995,
+      "auditedSpanLength": 2995,
+      "sha256": "4c2ff3660d4892d8151ccbfe273c29a1aac266130a579afd5ddcf21169c4de3f",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "addExtraAffixTier",
+      "name": "ItemData::AddExtraAffixTier",
+      "rva": "0x11f5ab0",
+      "metadataDeclaredLength": 1777,
+      "auditedSpanLength": 1777,
+      "sha256": "49c645ae74b21891e15b4a3998bf5afd5b3e0afaf53baf04cd7035e1ae736746",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "maxCraftable",
+      "name": "ItemData::AffixIsAtMaxCraftableTierOrAbove",
+      "rva": "0x11f8310",
+      "metadataDeclaredLength": 349,
+      "auditedSpanLength": 349,
+      "sha256": "1285c0dc61d702a6fcb2ef981b1806768c17e23bd4b1b131518b38e310121995",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "levelAndClass",
+      "name": "ItemData::CalculateLevelAndClassRequirement",
+      "rva": "0x11f9920",
+      "metadataDeclaredLength": 1135,
+      "auditedSpanLength": 1135,
+      "sha256": "6e9d5b07dd7edd54e0c1e5093538c82d7f293104af7803b1b729209684e9e029",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "afterShard",
+      "name": "ItemData::CalculateLevelRequirementAfterShard",
+      "rva": "0x11f9d90",
+      "metadataDeclaredLength": 242,
+      "auditedSpanLength": 242,
+      "sha256": "df14baff9fc5621586f7d9653087eb3b36afe8a2108045cbc39cb5311282f3f9",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "withAffix",
+      "name": "ItemData::CalculateLevelRequirementWithAffixAtTier",
+      "rva": "0x11f9e90",
+      "metadataDeclaredLength": 736,
+      "auditedSpanLength": 1088,
+      "sha256": "b0be3b95aff0b98ca48776e8ed43955d0f345414c4978b1000418820dc568045",
+      "verification": "Read from current GameAssembly.dll; static instruction audit",
+      "spanNote": "Cpp2IL descriptor length 0x2e0 ends before return/clamp and highest-tier table. PE unwind range is [0x11f9e90,0x11fa2c8); audited 0x440 span includes that range and 8 alignment bytes, ending before the next function at 0x11fa2d0. Do not treat descriptor length alone as a complete implementation."
+    },
+    {
+      "id": "maxTierForLevel",
+      "name": "ItemData::GetMaxAffixTierForLevel",
+      "rva": "0x1202480",
+      "metadataDeclaredLength": 80,
+      "auditedSpanLength": 80,
+      "sha256": "3102d305a4526196b5802b002c0bc0f5c58b68ed5833db72771c9691f4038dc0",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "tierLevel",
+      "name": "ItemData::LevelRequirementForAffixTier",
+      "rva": "0x1205150",
+      "metadataDeclaredLength": 72,
+      "auditedSpanLength": 72,
+      "sha256": "e2ecfcee539c51948aba7deb2a8eb1ae4356fe89f349b6c2093932de4e6414e6",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "sealAffix",
+      "name": "ItemData::SealAffix",
+      "rva": "0x1209940",
+      "metadataDeclaredLength": 231,
+      "auditedSpanLength": 231,
+      "sha256": "5bc125c9d4b5cf1b963bf466b3151e2c1f43288dd1c45287cf7568bf526999b1",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "currentAffixLevel",
+      "name": "ItemData::calculateAffixLevelRequirement",
+      "rva": "0x120e4b0",
+      "metadataDeclaredLength": 576,
+      "auditedSpanLength": 576,
+      "sha256": "06ea1b001bf5957e085a938a24d17ab4429910ab3bbb9d701916a010b1839a86",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "currentLevel",
+      "name": "ItemData::getLevelRequirement",
+      "rva": "0x120f700",
+      "metadataDeclaredLength": 37,
+      "auditedSpanLength": 37,
+      "sha256": "eaf888fbe435c4a431c11f8ed4e67e45bb5f31c99c3e4d12559b801586ea2161",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "contribution",
+      "name": "ItemAffix::CanContributeToLevelRequirement",
+      "rva": "0x1216770",
+      "metadataDeclaredLength": 17,
+      "auditedSpanLength": 17,
+      "sha256": "2e8b05fe810b389e94acc1a33e00daa98ca3cd29571e7b44938eeaf40f772a23",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "sealedRegular",
+      "name": "ItemAffix::get_IsSealedRegular",
+      "rva": "0x1216c40",
+      "metadataDeclaredLength": 8,
+      "auditedSpanLength": 8,
+      "sha256": "ff9e88cc5c7bc1e1cf4b9f220e05cd0762ef12064e12e81f0e8d1af765c78634",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "sealed",
+      "name": "ItemAffix::get_IsSealed",
+      "rva": "0x1216c50",
+      "metadataDeclaredLength": 8,
+      "auditedSpanLength": 8,
+      "sha256": "673369bd4e2aaafe9ae43ca4a0261a154c68a553c78d67b48eb66eeb375178e8",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "baseLevel",
+      "name": "ItemList::GetItemLevelRequirement",
+      "rva": "0x1227000",
+      "metadataDeclaredLength": 889,
+      "auditedSpanLength": 889,
+      "sha256": "1f12bd6db864accca74c79e1781293792b29beedce4de44dc5f5a03354052099",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "baseLevelAndClass",
+      "name": "ItemList::GetLevelAndClassRequirements",
+      "rva": "0x1227db0",
+      "metadataDeclaredLength": 577,
+      "auditedSpanLength": 577,
+      "sha256": "4501dbcaec592b4018b215284a99160aca896c35d85f9ffbb4f72fd0bae60583",
+      "verification": "Read from current GameAssembly.dll; static instruction audit"
+    },
+    {
+      "id": "afterShardPredicate",
+      "name": "'<>c__DisplayClass114_0'::'<CalculateLevelRequirementAfterShard>b__0'",
+      "rva": "0x1231700",
+      "metadataDeclaredLength": 48,
+      "auditedSpanLength": 48,
+      "sha256": "029186628933188eb2d69750df7023b48f719f4c9a951b90d82574308ab0bba1",
+      "verification": "Read current native closure; ID match also requires Standard0 and sealedType0"
+    }
+  ],
+  "jumpTables": [
+    {
+      "id": "tierLevelTable",
+      "rva": "0x1205198",
+      "targetRvas": [
+        "0x120516b",
+        "0x1205171",
+        "0x1205177",
+        "0x120517d",
+        "0x1205183",
+        "0x1205189"
+      ],
+      "sha256": "47702c353970e19d4134e3b2c253f611f47dbd47778cae0a221a623c022d33c8"
+    },
+    {
+      "id": "currentHighestBonusTable",
+      "rva": "0x120e6f0",
+      "targetRvas": [
+        "0x120e67f",
+        "0x120e686",
+        "0x120e68d",
+        "0x120e694",
+        "0x120e69b",
+        "0x120e6a2"
+      ],
+      "sha256": "dcb55daaea4417fecbb154e16cfe51732d8b042cbd3508bfb1249decaa919c9e"
+    },
+    {
+      "id": "hypotheticalTierTable",
+      "rva": "0x11fa298",
+      "targetRvas": [
+        "0x11f9f9c",
+        "0x11f9fa6",
+        "0x11f9fb0",
+        "0x11f9fbd",
+        "0x11f9fd2",
+        "0x11f9fdc"
+      ],
+      "sha256": "798a5a6457ab3fcc0fdd105fb3d67c4a5cc8e1293e9576be4599c1735996e666"
+    },
+    {
+      "id": "hypotheticalHighestBonusTable",
+      "rva": "0x11fa2b0",
+      "targetRvas": [
+        "0x11fa179",
+        "0x11fa1b3",
+        "0x11fa183",
+        "0x11fa18d",
+        "0x11fa197",
+        "0x11fa1a1"
+      ],
+      "sha256": "e87d32de5b893d835de5dd79059ed2e5e1d6b026d5c59561fd0385e9988489bf"
+    }
+  ],
+  "constants": [
+    {
+      "id": "one",
+      "rva": "0x456dc18",
+      "float32": 1.0
+    },
+    {
+      "id": "three",
+      "rva": "0x456dc3c",
+      "float32": 3.0
+    },
+    {
+      "id": "six",
+      "rva": "0x456dc48",
+      "float32": 6.0
+    },
+    {
+      "id": "ten",
+      "rva": "0x456dddc",
+      "float32": 10.0
+    },
+    {
+      "id": "fourteen",
+      "rva": "0x456dc50",
+      "float32": 14.0
+    },
+    {
+      "id": "fifteen",
+      "rva": "0x456ded4",
+      "float32": 15.0
+    },
+    {
+      "id": "sixteen",
+      "rva": "0x456e0dc",
+      "float32": 16.0
+    },
+    {
+      "id": "two",
+      "rva": "0x456dc38",
+      "float32": 2.0
+    },
+    {
+      "id": "twelve",
+      "rva": "0x456e2c8",
+      "float32": 12.0
+    },
+    {
+      "id": "twenty",
+      "rva": "0x456dc54",
+      "float32": 20.0
+    },
+    {
+      "id": "twentyEight",
+      "rva": "0x47293b0",
+      "float32": 28.0
+    },
+    {
+      "id": "thirty",
+      "rva": "0x456ddfc",
+      "float32": 30.0
+    },
+    {
+      "id": "thirtyTwo",
+      "rva": "0x456e4f8",
+      "float32": 32.0
+    },
+    {
+      "id": "capNinety",
+      "rva": "0x456dee4",
+      "float32": 90.0
+    }
+  ],
+  "fields": [
+    {
+      "type": "ItemData",
+      "name": "itemType",
+      "offset": "0x2c",
+      "snapshotField": "items.bases[].baseTypeId"
+    },
+    {
+      "type": "ItemData",
+      "name": "subType",
+      "offset": "0x2e",
+      "snapshotField": "items.bases[].subTypeId"
+    },
+    {
+      "type": "ItemAffix",
+      "name": "affixId",
+      "offset": "0x10",
+      "format": "uint16"
+    },
+    {
+      "type": "ItemAffix",
+      "name": "affixTier",
+      "offset": "0x12",
+      "format": "byte, displayTier-1"
+    },
+    {
+      "type": "ItemAffix",
+      "name": "affixRoll",
+      "offset": "0x13",
+      "format": "byte"
+    },
+    {
+      "type": "ItemAffix",
+      "name": "specialAffixType",
+      "offset": "0x18",
+      "values": {
+        "Standard": 0,
+        "Experimental": 1,
+        "Personal": 2,
+        "Set": 3,
+        "IdolEnchantment": 4,
+        "IdolWeaver": 5,
+        "Corrupted": 6,
+        "FakeUniqueMod": 7
+      }
+    },
+    {
+      "type": "ItemAffix",
+      "name": "sealedAffixType",
+      "offset": "0x38",
+      "values": {
+        "None": 0,
+        "Regular": 1,
+        "Primordial": 2,
+        "FromCorruption": 3
+      }
+    },
+    {
+      "type": "ItemList.BaseItem/EquipmentItem",
+      "name": "levelRequirement",
+      "offset": "0x24",
+      "snapshotField": "items.bases[].definition.levelRequirement"
+    },
+    {
+      "type": "ItemList.EquipmentItem",
+      "name": "classRequirement",
+      "offset": "0x40",
+      "snapshotField": "items.bases[].definition.classRequirement"
+    },
+    {
+      "type": "ItemList.EquipmentItem",
+      "name": "subClassRequirement",
+      "offset": "0x44",
+      "snapshotField": "items.bases[].definition.subClassRequirement"
+    },
+    {
+      "type": "AffixList.Affix",
+      "name": "levelRequirement",
+      "offset": "0x48",
+      "snapshotField": "affixes.affixes[].definition.levelRequirement",
+      "usedByAuditedCraftingLevelFormula": false
+    },
+    {
+      "type": "AffixList.Affix",
+      "name": "rollsOn",
+      "offset": "0x4c",
+      "values": {
+        "Equipment": 0,
+        "Idols": 1
+      }
+    },
+    {
+      "type": "AffixList.Affix",
+      "name": "specialAffixType",
+      "offset": "0x50"
+    },
+    {
+      "type": "AffixList.Affix",
+      "name": "canRollOn",
+      "offset": "0x78"
+    }
+  ],
+  "claims": [
+    {
+      "id": "L01_TIER_TABLE",
+      "status": "VERIFIED",
+      "conclusion": "Internal tier indexes 0..5 map to level contributions [1,3,6,10,14,15]; unsigned indexes above5 map to16. Highest-tier bonus is [2,6,12,20,28,30] or32. These tables are not affix-definition levelRequirement.",
+      "evidence": [
+        {
+          "method": "tierLevel",
+          "sites": [
+            "0x1205150-0x1205194"
+          ],
+          "tables": [
+            "tierLevelTable"
+          ]
+        },
+        {
+          "method": "currentAffixLevel",
+          "sites": [
+            "0x120e664-0x120e6ae"
+          ],
+          "tables": [
+            "currentHighestBonusTable"
+          ]
+        },
+        {
+          "method": "withAffix",
+          "sites": [
+            "0x11f9f8a-0x11f9ffe",
+            "0x11fa164-0x11fa1b3"
+          ],
+          "tables": [
+            "hypotheticalTierTable",
+            "hypotheticalHighestBonusTable"
+          ]
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "L02_CONTRIBUTION_FILTER",
+      "status": "VERIFIED",
+      "conclusion": "An existing affix contributes only if ItemAffix.specialAffixType==Standard0 and sealedAffixType==None0. All three sealed slot types and all non-Standard categories are ignored by current equipment level calculation.",
+      "evidence": [
+        {
+          "method": "contribution",
+          "sites": [
+            "0x1216770-0x1216780"
+          ]
+        },
+        {
+          "method": "currentAffixLevel",
+          "sites": [
+            "0x120e5b7-0x120e604"
+          ]
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "L03_CURRENT_ORDINARY_LEVEL",
+      "status": "VERIFIED",
+      "conclusion": "For the ordinary branch: affixReq=clamp(-10+sum(L(storedTier))+2*L(maxStoredTier, default0),1,90) over contributing existing affixes. Item requirement=max(base levelRequirement,affixReq,1). The 90 cap applies to the affix expression, not the base level.",
+      "evidence": [
+        {
+          "method": "currentAffixLevel",
+          "sites": [
+            "0x120e527-0x120e604",
+            "0x120e64f-0x120e6dc"
+          ]
+        },
+        {
+          "method": "levelAndClass",
+          "sites": [
+            "0x11f99c2-0x11f9aba"
+          ]
+        },
+        {
+          "method": "currentLevel",
+          "sites": [
+            "0x120f700-0x120f724"
+          ]
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "L04_AFTER_SHARD",
+      "status": "VERIFIED",
+      "conclusion": "AfterShard first finds an existing matching ID that is Standard0 and unsealed0; the separate closure imposes all three conditions. A qualifying existing targetStoredTier=oldStoredTier+tiersToAdd; otherwise targetStoredTier=0 regardless of tiersToAdd, including same-ID experimental/sealed objects. It delegates to WithAffixAtTier and is not a complete eligibility validator.",
+      "evidence": [
+        {
+          "method": "afterShard",
+          "sites": [
+            "0x11f9e46-0x11f9e78"
+          ]
+        },
+        {
+          "method": "afterShardPredicate",
+          "sites": [
+            "0x1231709-0x123172a"
+          ]
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "L05_HYPOTHETICAL_LEVEL",
+      "status": "VERIFIED",
+      "conclusion": "WithAffixAtTier always includes the hypothetical target contribution; excludes every existing matching ID and then filters other affixes by CanContribute. It caps the hypothetical affix sum at90, then takes max(baseReq,thatSum,1). Inputs are stored tier indexes. Full tail and switch tables were audited beyond the truncated metadata descriptor.",
+      "evidence": [
+        {
+          "method": "withAffix",
+          "sites": [
+            "0x11f9f43-0x11fa00f",
+            "0x11fa09d-0x11fa0f9",
+            "0x11fa164-0x11fa27e"
+          ]
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "L06_MAX_TIER_HELPER",
+      "status": "VERIFIED",
+      "conclusion": "GetMaxAffixTierForLevel tests stored6 down to1, returns the first whose hypothetical requirement fits. Otherwise returns0 without checking T1. It never returns stored7/T8; returned0 alone cannot authorize T1.",
+      "evidence": [
+        {
+          "method": "maxTierForLevel",
+          "sites": [
+            "0x1202491-0x12024cf"
+          ]
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "L07_BASE_AND_DEFINITION_FIELDS",
+      "status": "VERIFIED",
+      "conclusion": "Base requirement is ItemList.EquipmentItem inherited levelRequirement at+0x24; class/subclass are+0x40/+0x44. Affix-definition levelRequirement at+0x48 is returned by separate AffixList helper and is absent from the audited equipment/shard-level formulas. Item baseType and subType are+0x2c/+0x2e.",
+      "evidence": [
+        {
+          "method": "baseLevel",
+          "sites": [
+            "0x12270f5-0x122718e",
+            "0x1227242-0x12272d6",
+            "0x122734f"
+          ]
+        },
+        {
+          "method": "baseLevelAndClass",
+          "sites": [
+            "0x1227efd-0x1227f15",
+            "0x1227f9b-0x1227fc9"
+          ]
+        },
+        {
+          "method": "withAffix",
+          "sites": [
+            "0x11f9f53-0x11f9f62"
+          ]
+        }
+      ],
+      "unknowns": [
+        "What affix-definition levelRequirement governs outside these functions is not re-audited here. Invalid base lookup returns101 in baseLevel; product must reject unknown IDs instead of accepting that sentinel."
+      ]
+    },
+    {
+      "id": "L08_PLAYER_LEVEL_GATE",
+      "status": "VERIFIED",
+      "conclusion": "Ordinary shard capability obtains CharacterInfoProvider.getLevel and requires level>=AfterShard(selectedId,1), including a Despair attempt. Both possible extra-tier branches separately check AfterShard(selectedId,1) after the primary operation; a failed extra-tier level check does not select a different target. Outer critical refund still runs regardless of the extra-tier helper return.",
+      "evidence": [
+        {
+          "method": "forgeCapability",
+          "sites": [
+            "0x1167eb7-0x1167f48",
+            "0x1168428-0x1168493"
+          ]
+        },
+        {
+          "method": "addExtraAffixTier",
+          "sites": [
+            "0x11f5e1b-0x11f5e38",
+            "0x11f5fd5-0x11f5ff4"
+          ]
+        },
+        {
+          "method": "forge",
+          "sites": [
+            "0x116a264-0x116a2df"
+          ]
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "L09_GLYPHS_ON_NEW_ID",
+      "status": "VERIFIED",
+      "conclusion": "Chaos/Order/Despair are not a blanket capability rejection on an absent target ID. In the ordinary shard path, Forge only enables Chaos/Order for an existing nonsealed matching ID and Despair for an existing ID with no ordinary sealed slot. A new ID is added atT1 without these glyph effects, and their active/consume flag staysfalse. Despair with an existing ordinary sealed slot is rejected by capability even if shard target is absent. Rune11-related flags are outside this claim scope.",
+      "evidence": [
+        {
+          "method": "forge",
+          "sites": [
+            "0x1168e6e-0x1168f34",
+            "0x1168f82-0x116915f",
+            "0x116a161-0x116a18a"
+          ]
+        },
+        {
+          "method": "forgeCapability",
+          "sites": [
+            "0x11680c8-0x11680d3",
+            "0x1168141-0x1168175"
+          ]
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "L10_ROLL_AND_LIST_ORDER",
+      "status": "VERIFIED",
+      "conclusion": "Ordinary primary upgrades reroll roll byte unless preserveRollWithinTier=true. Only effective Order sets that flag in the audited glyph path; the same flag reaches ExtraAffixTier. The dedicated primary extra-tier branch respects it; fallback extra-tier selection always rerolls, even if it selects the primary ID. Successful SealAffix preserves tier and roll, removes the selected object then prepends it, and marks sealedType1/regular occupancy. Failed Despair upgrades first and rerolls, before full outer critical/refund settlement.",
+      "evidence": [
+        {
+          "method": "forge",
+          "sites": [
+            "0x1169024-0x11690be",
+            "0x116a16d-0x116a18a",
+            "0x116a291-0x116a2a8"
+          ]
+        },
+        {
+          "method": "addAffixTier",
+          "sites": [
+            "0x11f417a-0x11f41d0",
+            "0x11f42d4-0x11f4339"
+          ]
+        },
+        {
+          "method": "addExtraAffixTier",
+          "sites": [
+            "0x11f5e5c-0x11f5eb5",
+            "0x11f60b4-0x11f60fa"
+          ]
+        },
+        {
+          "method": "sealAffix",
+          "sites": [
+            "0x1209990-0x1209a12"
+          ]
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "L11_HAS_SHARD",
+      "status": "VERIFIED",
+      "conclusion": "Affix.HasShard is rollsOn==Equipment0 AND specialAffixType in{Standard0,Set3} AND canRollOn!=[41]. All12 current experimental definitions have HasShard=false. Unlimited actual materials does not invent experimental shard IDs. The permissive AddAffixTier/CanForgeOnItem inner helpers do not themselves impose this existence test.",
+      "evidence": [
+        {
+          "method": "hasShard",
+          "sites": [
+            "0x11b4501-0x11b4554"
+          ]
+        },
+        {
+          "method": "canUseShardOnItem",
+          "sites": [
+            "0x119d41b-0x119d444"
+          ]
+        },
+        {
+          "method": "canForgeOnItem",
+          "sites": [
+            "0x11b169c-0x11b171a"
+          ]
+        },
+        {
+          "method": "addAffixTier",
+          "sites": [
+            "0x11f3f87-0x11f3fda",
+            "0x11f4083-0x11f40f5",
+            "0x11f4293-0x11f42ee"
+          ]
+        }
+      ],
+      "unknowns": [
+        "The complete UI/inventory creation graph is not re-audited. HasShard is an explicit native definition property, while rejecting non-existent shard operations in a planner is the ordinary-player-domain interpretation."
+      ]
+    },
+    {
+      "id": "L12_SPECIAL_SCOPE",
+      "status": "PARTIALLY_VERIFIED",
+      "conclusion": "Do not apply a blanket Standard-only filter to existing secondary critical/Havoc slots: AddExtraAffixTier filters unsealed storedTier<4 but not special type. Conversely Set3 has shards and an extra capability duplicate-group predicate; HasShard alone is insufficient to authorize every special action. Product may explicitly exclude Set3 primary operations until that predicate is integrated.",
+      "evidence": [
+        {
+          "method": "addExtraAffixTier",
+          "sites": [
+            "0x11f5c4d-0x11f5ccd"
+          ]
+        },
+        {
+          "method": "forgeCapability",
+          "sites": [
+            "0x11682a6-0x116836f"
+          ]
+        }
+      ],
+      "unknowns": [
+        "Set3 duplicate-group closure details and all non-equipment categories are outside this bounded audit. Existing incompatible-affix exception IDs are covered by the separate affix-action audit, not decoded again here."
+      ]
+    }
+  ],
+  "referenceExamples": [
+    {
+      "id": "empty-affix-floor",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [],
+      "expected": 1
+    },
+    {
+      "id": "base-level-dominates",
+      "operation": "current",
+      "baseRequirement": 62,
+      "affixes": [],
+      "expected": 62
+    },
+    {
+      "id": "four-T1-floor",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 0,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 1,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 3,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "expected": 1
+    },
+    {
+      "id": "single-T5",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 1,
+          "displayTier": 5,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "expected": 32
+    },
+    {
+      "id": "four-T5",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 0,
+          "displayTier": 5,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 1,
+          "displayTier": 5,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 5,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 3,
+          "displayTier": 5,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "expected": 74
+    },
+    {
+      "id": "four-T6",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 0,
+          "displayTier": 6,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 1,
+          "displayTier": 6,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 6,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 3,
+          "displayTier": 6,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "expected": 80
+    },
+    {
+      "id": "four-T7",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 0,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 1,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 3,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "expected": 86
+    },
+    {
+      "id": "sealed-1-does-not-contribute",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 1,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 1
+        }
+      ],
+      "expected": 38
+    },
+    {
+      "id": "sealed-2-does-not-contribute",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 1,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 2
+        }
+      ],
+      "expected": 38
+    },
+    {
+      "id": "sealed-3-does-not-contribute",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 1,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 3
+        }
+      ],
+      "expected": 38
+    },
+    {
+      "id": "experimental-does-not-contribute",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 1,
+          "displayTier": 5,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 673,
+          "displayTier": 7,
+          "specialAffixType": 1,
+          "sealedAffixType": 0
+        }
+      ],
+      "expected": 32
+    },
+    {
+      "id": "personal-does-not-contribute",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 1,
+          "displayTier": 5,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 900,
+          "displayTier": 7,
+          "specialAffixType": 2,
+          "sealedAffixType": 0
+        }
+      ],
+      "expected": 32
+    },
+    {
+      "id": "771-current",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 7,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 10,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "expected": 55
+    },
+    {
+      "id": "771-add-A",
+      "operation": "afterShard",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 7,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 10,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "affixId": 4,
+      "expected": 56
+    },
+    {
+      "id": "absent-target-ignores-tiersToAdd",
+      "operation": "afterShard",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 7,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 10,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "affixId": 4,
+      "tiersToAdd": 3,
+      "expected": 56
+    },
+    {
+      "id": "771-upgrade-existing",
+      "operation": "afterShard",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 7,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 10,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "affixId": 2,
+      "expected": 57
+    },
+    {
+      "id": "7711-before-Despair",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 7,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 10,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 4,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "expected": 56
+    },
+    {
+      "id": "Despair-required-potential-upgrade",
+      "operation": "afterShard",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 7,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 10,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 4,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "affixId": 2,
+      "expected": 58
+    },
+    {
+      "id": "Despair-success-final-level-lower-than-gate",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 2,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 1
+        },
+        {
+          "id": 7,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 10,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 4,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "expected": 55
+    },
+    {
+      "id": "critical-add-primary-extra-level-gate",
+      "operation": "afterShard",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 7,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 10,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 4,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "affixId": 4,
+      "expected": 58
+    },
+    {
+      "id": "max-tier-zero-is-not-T1-eligibility",
+      "operation": "maxStoredTier",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 7,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 10,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "affixId": 4,
+      "playerLevel": 55,
+      "expected": 0
+    },
+    {
+      "id": "max-tier-player63-is-stored2",
+      "operation": "maxStoredTier",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 7,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 10,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "affixId": 4,
+      "playerLevel": 63,
+      "expected": 2
+    },
+    {
+      "id": "max-tier-player100-is-stored6",
+      "operation": "maxStoredTier",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 7,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 10,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 1,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "affixId": 4,
+      "playerLevel": 100,
+      "expected": 6
+    },
+    {
+      "id": "hypothetical-special-target-is-unconditionally-included",
+      "operation": "withAffix",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 1,
+          "displayTier": 5,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 673,
+          "displayTier": 4,
+          "specialAffixType": 1,
+          "sealedAffixType": 0
+        }
+      ],
+      "affixId": 673,
+      "targetStoredTier": 4,
+      "expected": 46
+    },
+    {
+      "id": "AfterShard-experimental-target-uses-hypothetical-T1",
+      "operation": "afterShard",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 1,
+          "displayTier": 5,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 673,
+          "displayTier": 4,
+          "specialAffixType": 1,
+          "sealedAffixType": 0
+        }
+      ],
+      "affixId": 673,
+      "expected": 33
+    },
+    {
+      "id": "AfterShard-sealed-target-uses-hypothetical-T1",
+      "operation": "afterShard",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 1,
+          "displayTier": 5,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 4,
+          "specialAffixType": 0,
+          "sealedAffixType": 1
+        }
+      ],
+      "affixId": 2,
+      "expected": 33
+    },
+    {
+      "id": "synthetic-five-ordinary-T7-exercises-affix-cap-only",
+      "operation": "current",
+      "baseRequirement": 0,
+      "affixes": [
+        {
+          "id": 0,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 1,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 3,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 4,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "validOrdinaryItem": false,
+      "expected": 90
+    },
+    {
+      "id": "synthetic-base95-is-not-capped-to90",
+      "operation": "current",
+      "baseRequirement": 95,
+      "affixes": [
+        {
+          "id": 0,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 1,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 2,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        },
+        {
+          "id": 3,
+          "displayTier": 7,
+          "specialAffixType": 0,
+          "sealedAffixType": 0
+        }
+      ],
+      "validOrdinaryItem": false,
+      "expected": 95
+    },
+    {
+      "id": "has-shard-standard",
+      "operation": "hasShard",
+      "definition": {
+        "specialAffixType": 0,
+        "rollsOn": 0,
+        "canRollOn": [
+          4
+        ]
+      },
+      "expected": true
+    },
+    {
+      "id": "has-shard-experimental",
+      "operation": "hasShard",
+      "definition": {
+        "specialAffixType": 1,
+        "rollsOn": 0,
+        "canRollOn": [
+          4
+        ]
+      },
+      "expected": false
+    },
+    {
+      "id": "has-shard-personal",
+      "operation": "hasShard",
+      "definition": {
+        "specialAffixType": 2,
+        "rollsOn": 0,
+        "canRollOn": [
+          4
+        ]
+      },
+      "expected": false
+    },
+    {
+      "id": "has-shard-set",
+      "operation": "hasShard",
+      "definition": {
+        "specialAffixType": 3,
+        "rollsOn": 0,
+        "canRollOn": [
+          4
+        ]
+      },
+      "expected": true
+    },
+    {
+      "id": "has-shard-only-type41",
+      "operation": "hasShard",
+      "definition": {
+        "specialAffixType": 0,
+        "rollsOn": 0,
+        "canRollOn": [
+          41
+        ]
+      },
+      "expected": false
+    },
+    {
+      "id": "has-shard-idol",
+      "operation": "hasShard",
+      "definition": {
+        "specialAffixType": 0,
+        "rollsOn": 1,
+        "canRollOn": [
+          29
+        ]
+      },
+      "expected": false
+    }
+  ],
+  "snapshotChecks": {
+    "hasShardCounts": {
+      "all": 508,
+      "experimental": 0
+    },
+    "experimentalDefinitionCount": 12
+  },
+  "remainingUnknowns": [
+    "Full Set3 duplicate-group predicate and non-ordinary item level branches are not implementation-ready from this document alone.",
+    "Affix definition levelRequirement uses outside current equipment/shard formulas are not re-audited.",
+    "This static model does not constitute client frequency testing or PRNG bit-level replication."
+  ]
+}

@@ -32,6 +32,8 @@ py -3.11 -X utf8 scripts/check_7710_monte_carlo.py --summary --no-timing
 py -3.11 -X utf8 scripts/check_common_patterns.py --verify-only
 py -3.11 -X utf8 scripts/check_common_patterns_monte_carlo.py --verify-only
 py -3.11 -X utf8 scripts/check_7732_redemption.py --verify-only
+py -3.11 -X utf8 scripts/check_crafting_level_examples.py --verify-only --summary
+py -3.11 -X utf8 scripts/build_runtime_model.py --verify-only
 py -3.11 -X utf8 -m unittest discover -s tests -v
 ```
 
@@ -52,6 +54,9 @@ py -3.11 -X utf8 -m unittest discover -s tests -v
 - `common-pattern-monte-carlo.json`：x=1／3／7的54点、108万条完整路线独立采样，与参考DP交叉核对。
 - `7732-redemption-reference.json`：四初始ID均非目标的指定合法7732手套例，一发精确参考可达证据与40万条完整重复救赎采样；与“目标身份已在低阶”分型独立。
 - `validation.json`：本轮实际执行的验证与范围，不替代客户端实测。
+- `legacy-forge-compatibility.json`：四属性例外的当前初始化表及完整提取链，新增／重抽不借此扩池。
+- `crafting-level-claims.json`：等级公式、闭包predicate、碎片存在性、雕文及暴击roll分支；含34项独立参考例。
+- `src/generated/model.json`位于源码目录，绑定当前快照、证据及核心实现哈希，由`build_runtime_model.py`显式生成。它是浏览器运行数据，不包含游戏原始二进制。
 
 原始.dll/.bundle/.dat、虚拟环境与缓存由gitignore排除。BOOTSTRAP.md与原始附件哈希一致；本轮产品修订在PRD／架构文档中记录。
 

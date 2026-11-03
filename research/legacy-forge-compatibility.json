@@ -1,0 +1,388 @@
+{
+  "affixResourceProjection": [
+    {
+      "affixName": "Strength",
+      "canRollOn": [
+        0,
+        1,
+        3,
+        21,
+        4,
+        22
+      ],
+      "classSpecificity": 11,
+      "id": 501,
+      "inExistingAffixOverride": true,
+      "levelRequirement": 0,
+      "rollsOn": 0,
+      "specialAffixType": 0,
+      "type": 0
+    },
+    {
+      "affixName": "Intelligence",
+      "canRollOn": [
+        0,
+        1,
+        3,
+        21,
+        4,
+        22
+      ],
+      "classSpecificity": 21,
+      "id": 502,
+      "inExistingAffixOverride": true,
+      "levelRequirement": 0,
+      "rollsOn": 0,
+      "specialAffixType": 0,
+      "type": 0
+    },
+    {
+      "affixName": "Dexterity",
+      "canRollOn": [
+        0,
+        1,
+        3,
+        21,
+        4,
+        22,
+        17
+      ],
+      "classSpecificity": 0,
+      "id": 503,
+      "inExistingAffixOverride": true,
+      "levelRequirement": 0,
+      "rollsOn": 0,
+      "specialAffixType": 0,
+      "type": 0
+    },
+    {
+      "affixName": "Attunement",
+      "canRollOn": [
+        0,
+        1,
+        3,
+        21,
+        4,
+        22
+      ],
+      "classSpecificity": 11,
+      "id": 504,
+      "inExistingAffixOverride": true,
+      "levelRequirement": 5,
+      "rollsOn": 0,
+      "specialAffixType": 0,
+      "type": 0
+    },
+    {
+      "affixName": "Vitality",
+      "canRollOn": [
+        0,
+        1,
+        3
+      ],
+      "classSpecificity": 0,
+      "id": 505,
+      "inExistingAffixOverride": false,
+      "levelRequirement": 0,
+      "rollsOn": 0,
+      "specialAffixType": 0,
+      "type": 0
+    }
+  ],
+  "auditDate": "2026-11-03",
+  "compatibilityTruthTable": [
+    {
+      "affixId": 501,
+      "alreadyOnItem": false,
+      "canForgeCompatibility": false,
+      "naturalCompatible": false
+    },
+    {
+      "affixId": 501,
+      "alreadyOnItem": true,
+      "canForgeCompatibility": true,
+      "naturalCompatible": false
+    },
+    {
+      "affixId": 502,
+      "alreadyOnItem": false,
+      "canForgeCompatibility": false,
+      "naturalCompatible": false
+    },
+    {
+      "affixId": 502,
+      "alreadyOnItem": true,
+      "canForgeCompatibility": true,
+      "naturalCompatible": false
+    },
+    {
+      "affixId": 503,
+      "alreadyOnItem": false,
+      "canForgeCompatibility": false,
+      "naturalCompatible": false
+    },
+    {
+      "affixId": 503,
+      "alreadyOnItem": true,
+      "canForgeCompatibility": true,
+      "naturalCompatible": false
+    },
+    {
+      "affixId": 504,
+      "alreadyOnItem": false,
+      "canForgeCompatibility": false,
+      "naturalCompatible": false
+    },
+    {
+      "affixId": 504,
+      "alreadyOnItem": true,
+      "canForgeCompatibility": true,
+      "naturalCompatible": false
+    },
+    {
+      "affixId": 505,
+      "alreadyOnItem": false,
+      "canForgeCompatibility": false,
+      "naturalCompatible": false
+    },
+    {
+      "affixId": 505,
+      "alreadyOnItem": true,
+      "canForgeCompatibility": false,
+      "naturalCompatible": false
+    },
+    {
+      "affixId": 505,
+      "alreadyOnItem": false,
+      "canForgeCompatibility": true,
+      "naturalCompatible": true
+    },
+    {
+      "affixId": 505,
+      "alreadyOnItem": true,
+      "canForgeCompatibility": true,
+      "naturalCompatible": true
+    }
+  ],
+  "confidence": "VERIFIED",
+  "gameVersion": "1.5.3",
+  "initializedTable": {
+    "arrayTypeInfoSlotRva": "0x534ee98",
+    "byteLength": 8,
+    "bytesHex": "f501f601f701f801",
+    "classTypeDefinitionIndex": 5809,
+    "classTypeInfoSlotRva": "0x53169d0",
+    "containsMetadata": {
+      "classInstantiationIndex": -1,
+      "declaringTypeDefinitionIndex": 29535,
+      "declaringTypeName": "System.Linq.Enumerable",
+      "methodDefinitionIndex": 211138,
+      "methodInstantiationIndex": 3227,
+      "methodSpecIndex": 83311,
+      "name": "Contains",
+      "slotRva": "0x531edf0"
+    },
+    "declaredConstants": [
+      {
+        "id": 501,
+        "name": "StrengthId"
+      },
+      {
+        "id": 502,
+        "name": "IntelligenceId"
+      },
+      {
+        "id": 503,
+        "name": "DexterityId"
+      },
+      {
+        "id": 504,
+        "name": "AttunementId"
+      },
+      {
+        "id": 505,
+        "name": "VitalityID"
+      }
+    ],
+    "elementType": "System.UInt16",
+    "field": "AttributeIds",
+    "fieldDefault": {
+      "dataIndex": 51064,
+      "fieldIndex": 95895,
+      "rowIndex": 16151,
+      "typeIndex": 60525
+    },
+    "fieldRefIndex": 66,
+    "fieldRefRelativeFieldIndex": 15,
+    "fieldRefTypeIndex": 42500,
+    "ids": [
+      501,
+      502,
+      503,
+      504
+    ],
+    "initializerField": {
+      "fieldIndex": 95895,
+      "name": "2B9C8630165929EF9F830778B88C1252C5B3BD4A5CE6A88ACBD5A470EE31AE70",
+      "token": "0x4017698",
+      "typeIndex": 60541
+    },
+    "initializerFieldInfoSlotRva": "0x53610d0",
+    "initializerOwnerTypeDefinitionIndex": 13553,
+    "length": 4,
+    "metadataFileOffset": 18417768,
+    "nativeClassTypeIndex": 76480,
+    "notIncludedDeclaredConstantIds": [
+      505
+    ],
+    "owner": "SwapAttributesItemContainer",
+    "sha256": "2b9c8630165929ef9f830778b88c1252c5b3bd4a5ce6a88acbd5a470ee31ae70"
+  },
+  "limitations": [
+    "Only this audited native build is supported by this extractor.",
+    "The term legacy is an audit label, not an inferred age or provenance requirement in the native branch.",
+    "This compatibility predicate alone does not establish whether a complete crafting action is legal.",
+    "No PRNG approximation, probability estimate, client execution or client measurement is involved."
+  ],
+  "methodEvidence": [
+    {
+      "fileOffset": 18546784,
+      "id": "canForge",
+      "length": 188,
+      "name": "Affix.CanForgeOnItem",
+      "rva": "0x11b1660",
+      "scope": "method",
+      "sha256": "196479eda47bd6f8183ad93fe2e4a6b2c1881605df6c1f7c7ac9d86caa747ff1"
+    },
+    {
+      "fileOffset": 18547632,
+      "id": "canRoll",
+      "length": 301,
+      "name": "Affix.CanRollOn(int,int,ClassRequirement)",
+      "rva": "0x11b19b0",
+      "scope": "method",
+      "sha256": "6f1c8d134ba61baae027515858bd6554afa327c59ad6095a4baae7b953ab5650"
+    },
+    {
+      "fileOffset": 21491696,
+      "id": "attributeInitializer",
+      "length": 140,
+      "name": "SwapAttributesItemContainer..cctor",
+      "rva": "0x14805f0",
+      "scope": "method",
+      "sha256": "5b18efbf94753388321af21d549dfbc36ba1438c6fd6f99eea7ac9be84c1b009"
+    },
+    {
+      "fileOffset": 21491568,
+      "id": "isAttribute",
+      "length": 115,
+      "name": "SwapAttributesItemContainer.IsAttribute(ushort)",
+      "rva": "0x1480570",
+      "scope": "method",
+      "sha256": "5bf57686e540fd8e7a3002ac74943f760cf4179ad2aa536b6454db55a90410ed"
+    },
+    {
+      "fileOffset": 8697312,
+      "id": "contains",
+      "length": 492,
+      "name": "System.Linq.Enumerable.Contains<T> shared native implementation",
+      "rva": "0x84cbe0",
+      "scope": "method",
+      "sha256": "c9a971bdaaa68486ecefb808ecf41cf8fcc4ac90bda1d6dcc8c782f44a8d74a9"
+    },
+    {
+      "fileOffset": 18245695,
+      "id": "compatibilityCall",
+      "length": 120,
+      "name": "CheckForgeCapability compatibility call-site fragment",
+      "rva": "0x1167e3f",
+      "scope": "fragment",
+      "sha256": "df6b75b481b3b7b7485110cbfd33c47e154301586a934e76be0cafd6eae5f306"
+    },
+    {
+      "fileOffset": 17704816,
+      "id": "classMatch",
+      "length": 74,
+      "name": "EpochExtensions.MatchesSpecificity",
+      "rva": "0x10e3d70",
+      "scope": "method",
+      "sha256": "5c4139a93570c0fce2166674a3a8b894eb615e5cd5dba4155e2b0eb0c71d9bc3"
+    },
+    {
+      "fileOffset": 19159600,
+      "id": "subtypeGroup",
+      "length": 64,
+      "name": "SubTypeGroupExtensionMethods.GetSubTypeGroup",
+      "rva": "0x1247030",
+      "scope": "method",
+      "sha256": "0f941d08cb4257ed04ecc2d1c46b014f0280faeb19014dda170ba02549f57e52"
+    },
+    {
+      "fileOffset": 19159424,
+      "id": "subtypeCompatibility",
+      "length": 175,
+      "name": "SubTypeGroupExtensionMethods.CanRollOn",
+      "rva": "0x1246f80",
+      "scope": "method",
+      "sha256": "3a1a63952bdc1fb7595bfdaa3aa5dede5a1483e644ba1aef2999b9fd47103a15"
+    },
+    {
+      "fileOffset": 18945040,
+      "id": "reroll",
+      "length": 1465,
+      "name": "ItemData.rerollAffixIDOfAffix",
+      "rva": "0x1212a10",
+      "scope": "method",
+      "sha256": "d70d73e0a024e5fee7be2dd7e8ae272a8eaf2fc1b0fb9fa10ca2d4888a443003"
+    }
+  ],
+  "reproduce": "python -X utf8 scripts/extract_legacy_forge.py --game-dir <installed-game> --verify-only",
+  "rule": {
+    "alreadyOnItemSource": "ItemData.hasAffix(selectedShardAffixId), passed by CheckForgeCapability at 0x1167e94; sealed-affix rejection follows at 0x1167eaa.",
+    "candidatePoolBoundary": "New IDs get no override because alreadyOnItem=false. Redemption/Chaos candidate enumeration calls CanRollOn directly (0x1212d6b and 0x1212e5d), with its other pool restrictions unchanged.",
+    "doesNotOverride": [
+      "FP and item-category eligibility",
+      "player-level gate",
+      "sealed-slot rejection",
+      "maximum craftable tier",
+      "prefix/suffix free capacity",
+      "glyph-specific requirements"
+    ],
+    "existingAttributeOverrideIds": [
+      501,
+      502,
+      503,
+      504
+    ],
+    "expression": "CanRollOn(baseType, subType, baseClassRequirement) || (affixAlreadyOnItem && existingAttributeOverrideIds.has(affixId))",
+    "naturalCompatibility": {
+      "classMatch": "req==31 || specificity==0 || (req==0 && (specificity&1)!=0) || (((req<<1)&specificity)!=0)",
+      "equipmentMatch": "canRollOn includes actual equipmentType OR the supported subtype-group fallback",
+      "subtypeGroup": "equipmentType29/30 and subType in 10..14 or17 => group1/2; otherwise0",
+      "subtypeGroupMatch": "group1 accepts canRollOn containing31 or33; group2 accepts32 or33",
+      "uses": [
+        "actual base equipmentType",
+        "actual base subType",
+        "actual base classRequirement"
+      ]
+    }
+  },
+  "schemaVersion": 1,
+  "sources": {
+    "GameAssembly.dll": {
+      "bytes": 97256960,
+      "sha256": "323e9183f3bee600b6c9e1c469218b9de926e9044f2ca3d44fae8a0ec9a91464"
+    },
+    "Last Epoch_Data/il2cpp_data/Metadata/global-metadata.dat": {
+      "bytes": 36457932,
+      "metadataVersion": 39,
+      "sha256": "2a4e8440606c420345934158b6784d8f5d8b0184f32fd91af0e9e0903ba94f83"
+    },
+    "data/game/1.5.3/affixes.json": {
+      "bytes": 3087707,
+      "sha256": "abdbea6ee8a01e02f16122943da57bf641a504a3ece3fa05ffd1550c1cc79794"
+    }
+  },
+  "steamBuildId": 26087601,
+  "verificationMethod": "Static control-flow and initialized-data extraction from pinned local native DLL and metadata; not a client experiment."
+}

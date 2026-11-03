@@ -1,0 +1,77 @@
+{
+  "status": "PASS_MATRIX_AND_ROUTE_PARITY",
+  "inputFile": "public-normal.json",
+  "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+  "checkedAt": "2026-11-03T05:37:13.496Z",
+  "mode": "NORMAL_ONLY",
+  "declaredDeviceClass": "DESKTOP_BASELINE",
+  "deviceLabel": "i5-13600KF / 32GB · Pages",
+  "physicalDeviceClassCertifiedByThisChecker": false,
+  "foregroundThroughout": true,
+  "totalCases": 5,
+  "completedCases": 5,
+  "noRecommendation": 0,
+  "checks": [
+    {
+      "id": "7732-ready",
+      "fpType": "NORMAL",
+      "comparison": "NUMERICALLY_EQUIVALENT_COMPLETE_ROUTE_REPORT",
+      "bitIdentical": true,
+      "score": 0.6236150286198845,
+      "routeId": "r-f5f04e6842bf1044",
+      "adapterMilliseconds": 1077.3999999985099,
+      "workerMilliseconds": 855,
+      "evaluatedRoutes": 48,
+      "searchStatus": "INCOMPLETE"
+    },
+    {
+      "id": "7710-direct",
+      "fpType": "NORMAL",
+      "comparison": "NUMERICALLY_EQUIVALENT_COMPLETE_ROUTE_REPORT",
+      "bitIdentical": true,
+      "score": 0.4472252707958129,
+      "routeId": "r-085e76281e31b18c",
+      "adapterMilliseconds": 7852.10000000149,
+      "workerMilliseconds": 7851,
+      "evaluatedRoutes": 23,
+      "searchStatus": "INCOMPLETE"
+    },
+    {
+      "id": "7713-prepare",
+      "fpType": "NORMAL",
+      "comparison": "NUMERICALLY_EQUIVALENT_COMPLETE_ROUTE_REPORT",
+      "bitIdentical": true,
+      "score": 0.2706208981291877,
+      "routeId": "r-7bf9a5c1def1c2d5",
+      "adapterMilliseconds": 842.7999999970198,
+      "workerMilliseconds": 842,
+      "evaluatedRoutes": 48,
+      "searchStatus": "INCOMPLETE"
+    },
+    {
+      "id": "removal-required",
+      "fpType": "NORMAL",
+      "comparison": "NUMERICALLY_EQUIVALENT_COMPLETE_ROUTE_REPORT",
+      "bitIdentical": true,
+      "score": 0.11396777798539454,
+      "routeId": "r-c0142a03a5924caf",
+      "adapterMilliseconds": 331.90000000596046,
+      "workerMilliseconds": 331,
+      "evaluatedRoutes": 48,
+      "searchStatus": "INCOMPLETE"
+    },
+    {
+      "id": "7732-missing",
+      "fpType": "NORMAL",
+      "comparison": "NUMERICALLY_EQUIVALENT_COMPLETE_ROUTE_REPORT",
+      "bitIdentical": true,
+      "score": 0.04344928075396827,
+      "routeId": "r-2724a8fa3ce4c0de",
+      "adapterMilliseconds": 1850,
+      "workerMilliseconds": 1849,
+      "evaluatedRoutes": 48,
+      "searchStatus": "INCOMPLETE"
+    }
+  ],
+  "qualification": "Same chosen fixed routes; search coverage and elapsed time are reported separately. Comparison tolerance is 1e-14 absolute plus 1e-12 relative, with bit identity reported separately. Production-kernel platform parity is not independent mechanics validation or proof of the physical device class."
+}

@@ -41,6 +41,7 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                 "research/browser-memory/7710-normal-memory.json", "research/browser-memory/7710-normal-input.json",
                 "research/browser-memory/7710-normal-plan.json", "research/browser-memory/validation.json",
                 "research/device-validation/desktop-baseline.json", "research/device-validation/desktop-baseline-validation.json",
+                "research/device-validation/public-normal.json", "research/device-validation/public-normal-validation.json",
                 "src/generated/model.json")
     model = {"schemaVersion": 1, "modelId": "le-1.5.3-26087601-r6-reporting-audit",
              "phase": "PUBLIC_PREVIEW", "productionReady": False,
@@ -85,6 +86,7 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                                        "observedSampleMaximumNotAllocationPeak": True},
              "deviceValidation": {"page": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/device-check/",
                                   "desktopRecord": "research/device-validation/desktop-baseline.json",
+                                  "publicRecord": "research/device-validation/public-normal.json", "publicMatrixCases": 5,
                                   "desktopMatrixCases": 15, "physicalLowEndTestCompleted": False},
              "deferredResearch": ["WEIGHTED_NATIVE_GRID_BOUNDARIES", "MULTI_PROPERTY_ROLL_DISPLAY_PROJECTION", "CLIENT_FREQUENCIES"],
              "validationNotClaimed": ["UNBOUNDED_GLOBAL_OPTIMALITY", "PHYSICAL_LOW_END_DEVICE", "BROWSER_INSTANTANEOUS_ALLOCATION_PEAK",

@@ -35,7 +35,9 @@
     "desktopMatrixCases": 15,
     "desktopRecord": "research/device-validation/desktop-baseline.json",
     "page": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/device-check/",
-    "physicalLowEndTestCompleted": false
+    "physicalLowEndTestCompleted": false,
+    "publicMatrixCases": 5,
+    "publicRecord": "research/device-validation/public-normal.json"
   },
   "fpDomain": {
     "defaultScoringDomain": [
@@ -128,6 +130,8 @@
     "research/crafting-level-claims.json": "6abd200337b5056e49069dd506d7e88dded175419fb8941648f6da893411749c",
     "research/device-validation/desktop-baseline-validation.json": "6620e9cc830ead68d58559e241dd0c909dd92cbef301bebbf57dad315e4e314b",
     "research/device-validation/desktop-baseline.json": "2f36d16385723bfffc82440ce1315af7aecc92425fad0a5e729bd25c62f65ea9",
+    "research/device-validation/public-normal-validation.json": "bf6c6eef88459e05361d821f9e6b83b1d0443acc0e4185dbb7e839ac0424578d",
+    "research/device-validation/public-normal.json": "3dee7539ad446fa250bb1037e5cfd13a3ef79d71d12863c19d47d1ce140d09f4",
     "research/forge-fp-claims.json": "618e6d5fa1db4b8db683b7fdefdfd3c4b70c17363634a36b99eb2e1cd914770c",
     "research/fp-examples.json": "ff72db932924dcd374e4c8a42af47525b34fb37c4e5e2aecda9173f85d49713e",
     "research/legacy-forge-compatibility.json": "f750857451068cd7470aa0b1802fcdff12b5d6ee8a997b144e34e858b34fdba0",
@@ -189,7 +193,7 @@
   "remainingAcceptance": [
     "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "b295c07501548a922c17a6cf988e76485d0973715225f82cb6d22d69d367e4ba",
+  "researchRevision": "e5b85323b07fe973b2e84a0a7a1f4dba29482144f5ff159a12a736908e3c9cca",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 1,
   "steamBuildId": 26087601,

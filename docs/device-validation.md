@@ -26,6 +26,8 @@ npx tsx scripts/check_device_benchmark.ts path/to/last-epoch-device-validation.j
 
 该基线复用生产BrowserPlanner，诊断入口独立构建，主应用及生产Worker字节保持。诊断入口包含自己的资源副本，其首次加载大小独立于主应用；本次计时未覆盖慢网络下载。
 
+同日Pages公网再运行五例普通潜能，全部在前台完成，[导出记录](../research/device-validation/public-normal.json)及[Node复核](../research/device-validation/public-normal-validation.json)保留；五条完整路线报告逐位一致，浏览器error日志为空。包括诊断入口在内的八个静态文件均通过[HTTP字节校验](../research/static-deployment.json)。设备验证页的[首次部署](https://github.com/BCSZSZ/Last-Epoch-Optimal-Crafting-Route-Planner/actions/runs/41584735545)成功，对应提交5dec1515d73bedda132798def99d4a4d8bd66a68。
+
 ## 待验收范围
 
 2026-11-03用户确认目前没有低性能电脑或手机用于验证，**保留物理低性能设备待验收项**。当前桌面基线、禁JIT代理和窄屏布局检查都不替代该项；公开预览可使用，完整设备覆盖验收仍未通过。

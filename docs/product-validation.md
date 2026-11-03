@@ -51,3 +51,5 @@
 [HTTP字节验证](../research/static-deployment.json)对HTML、主JS、CSS、Worker逐一核对200、MIME与SHA256，全部与本地仓库子路径正式构建相同。复现命令：以`PAGES_BASE=/Last-Epoch-Optimal-Crafting-Route-Planner/`构建，再运行`python scripts/check_static_site.py https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/`。本地子路径预览也须向`npm run preview`传相同`--base`。
 
 本轮报告增强提交f69c41abdbbc811a7d713614b3d89657a78565d7的[构建／部署](https://github.com/BCSZSZ/Last-Epoch-Optimal-Crafting-Route-Planner/actions/runs/41581627444)通过。公开版本模型为le-1.5.3-iid-f58515921fd9cbcc；新版公网完整报告与Node一致。内存记录已用`--require-live-match`检查，线上JS／CSS／Worker哈希与观测时一致。
+
+设备验证页提交5dec1515d73bedda132798def99d4a4d8bd66a68的[构建／部署](https://github.com/BCSZSZ/Last-Epoch-Optimal-Crafting-Route-Planner/actions/runs/41584735545)通过。公网五例快速矩阵的完整推荐报告与Node逐位一致，error日志为空；八个静态文件均与本地构建相同。主应用及Worker原字节保持，原生内存证据再次通过线上哈希核对。

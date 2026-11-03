@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 1,
+  "qualification": "Published 7272 fixture, normal potential, unnamed targets represented by IDs6/10; not a real player item",
+  "input": {
+    "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+    "inputModel": "FORGEABLE_EQUAL",
+    "item": {
+      "baseId": "19:0",
+      "itemLevel": 100,
+      "fpType": "NORMAL",
+      "corrupted": false,
+      "affixes": [
+        {
+          "id": 4,
+          "tier": 7,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 5,
+          "tier": 2,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 7,
+          "tier": 7,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 8,
+          "tier": 2,
+          "slot": "ordinary",
+          "roll": null
+        }
+      ]
+    },
+    "craftingContext": {
+      "playerLevel": 100
+    },
+    "target": {
+      "requirements": [
+        {
+          "ids": [
+            6
+          ],
+          "minTier": 7,
+          "maxTier": 7,
+          "slot": "ordinary"
+        },
+        {
+          "ids": [
+            10
+          ],
+          "minTier": 7,
+          "maxTier": 7,
+          "slot": "ordinary"
+        }
+      ]
+    },
+    "constraints": {},
+    "scoring": {},
+    "search": {
+      "milliseconds": 12000,
+      "maxRoutes": 48,
+      "macroStages": 12,
+      "maxStates": 25000
+    }
+  },
+  "route": {
+    "id": "r-2ede3de4f6f527b0",
+    "macros": [
+      {
+        "kind": "repeat",
+        "action": {
+          "kind": "redemption",
+          "glyph": "hope"
+        },
+        "until": {
+          "kind": "any",
+          "predicates": [
+            {
+              "kind": "identity",
+              "requirement": {
+                "ids": [
+                  6
+                ],
+                "minTier": 1,
+                "maxTier": 8,
+                "slot": "ordinary"
+              }
+            },
+            {
+              "kind": "identity",
+              "requirement": {
+                "ids": [
+                  10
+                ],
+                "minTier": 1,
+                "maxTier": 8,
+                "slot": "ordinary"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "kind": "conditional",
+        "when": {
+          "kind": "identity",
+          "requirement": {
+            "ids": [
+              6
+            ],
+            "minTier": 1,
+            "maxTier": 8,
+            "slot": "ordinary"
+          }
+        },
+        "then": [
+          {
+            "kind": "conditional",
+            "when": {
+              "kind": "identity",
+              "requirement": {
+                "ids": [
+                  10
+                ],
+                "minTier": 1,
+                "maxTier": 8,
+                "slot": "ordinary"
+              }
+            },
+            "then": [],
+            "otherwise": [
+              {
+                "kind": "fill",
+                "ids": [
+                  4,
+                  5,
+                  7,
+                  8,
+                  9,
+                  11,
+                  12,
+                  13,
+                  16,
+                  17,
+                  18,
+                  19,
+                  23,
+                  24,
+                  26,
+                  34,
+                  38,
+                  47,
+                  48,
+                  61,
+                  70,
+                  72,
+                  80,
+                  84,
+                  94,
+                  382
+                ],
+                "glyph": "hope"
+              },
+              {
+                "kind": "repeat",
+                "action": {
+                  "kind": "havoc",
+                  "glyph": "hope"
+                },
+                "until": {
+                  "kind": "exists",
+                  "selector": {
+                    "side": 1,
+                    "excludedIds": [
+                      6,
+                      10
+                    ],
+                    "minTier": 2,
+                    "maxTier": 2,
+                    "sealable": true
+                  }
+                }
+              },
+              {
+                "kind": "seal",
+                "selector": {
+                  "side": 1,
+                  "excludedIds": [
+                    6,
+                    10
+                  ],
+                  "minTier": 2,
+                  "maxTier": 2,
+                  "sealable": true
+                }
+              },
+              {
+                "kind": "once",
+                "action": {
+                  "kind": "add",
+                  "id": 10,
+                  "glyph": "hope"
+                }
+              }
+            ]
+          }
+        ],
+        "otherwise": [
+          {
+            "kind": "conditional",
+            "when": {
+              "kind": "identity",
+              "requirement": {
+                "ids": [
+                  6
+                ],
+                "minTier": 1,
+                "maxTier": 8,
+                "slot": "ordinary"
+              }
+            },
+            "then": [],
+            "otherwise": [
+              {
+                "kind": "fill",
+                "ids": [
+                  4,
+                  5,
+                  7,
+                  8,
+                  9,
+                  11,
+                  12,
+                  13,
+                  16,
+                  17,
+                  18,
+                  19,
+                  23,
+                  24,
+                  26,
+                  34,
+                  38,
+                  47,
+                  48,
+                  61,
+                  70,
+                  72,
+                  80,
+                  84,
+                  94,
+                  382
+                ],
+                "glyph": "hope"
+              },
+              {
+                "kind": "repeat",
+                "action": {
+                  "kind": "havoc",
+                  "glyph": "hope"
+                },
+                "until": {
+                  "kind": "exists",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      6,
+                      10
+                    ],
+                    "minTier": 2,
+                    "maxTier": 2,
+                    "sealable": true
+                  }
+                }
+              },
+              {
+                "kind": "seal",
+                "selector": {
+                  "side": 0,
+                  "excludedIds": [
+                    6,
+                    10
+                  ],
+                  "minTier": 2,
+                  "maxTier": 2,
+                  "sealable": true
+                }
+              },
+              {
+                "kind": "once",
+                "action": {
+                  "kind": "add",
+                  "id": 6,
+                  "glyph": "hope"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "fill",
+        "ids": [
+          4,
+          5,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          16,
+          17,
+          18,
+          19,
+          23,
+          24,
+          26,
+          34,
+          38,
+          47,
+          48,
+          61,
+          70,
+          72,
+          80,
+          84,
+          94,
+          382
+        ],
+        "glyph": "hope"
+      },
+      {
+        "kind": "repeat",
+        "action": {
+          "kind": "havoc",
+          "glyph": "hope"
+        },
+        "until": {
+          "kind": "target"
+        }
+      }
+    ],
+    "family": "REDEMPTION_ANY_THEN_ACQUIRE",
+    "upperNode": "200-N4-S0",
+    "description": "救赎首次命中任一目标 → 按既定分支补栏浩劫准备后封T2补另一目标 → 收尾"
+  },
+  "publishedScore": {
+    "lower": 0.7034782596521675,
+    "upper": 0.7034782617510326
+  },
+  "publishedSuccessFp": {
+    "lower": 82.67725523678432,
+    "upper": 82.6772558011398
+  }
+}

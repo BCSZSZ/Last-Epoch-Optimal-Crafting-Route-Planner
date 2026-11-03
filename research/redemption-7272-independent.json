@@ -1,0 +1,2223 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-03",
+  "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+  "qualification": "Independent nominal-probability Python recurrence; no TypeScript rule-engine calls or client crafting experiments. Normal FP only. Natural FP mixture is restricted to ordinary normal-context L100 generation with uncraftable affixes at roll time; verify source and historical FP edits separately.",
+  "postSingleHit": {
+    "sealProbability": 0.69,
+    "sealMeanFp": 5.157954545454546,
+    "addMeanFp": 5.099082352941176,
+    "finalHavocMeanAttempts": 5.47,
+    "finalHavocMeanFp": 35.209706249999996,
+    "totalFpGivenSealSuccess": 45.46674314839572
+  },
+  "fee": {
+    "baseAfterLucky": 8.5825,
+    "normalAndBlood": 6.436875,
+    "ice": 4.5058125,
+    "normalFraction": "10299/1600",
+    "iceFraction": "72093/16000"
+  },
+  "cases": [
+    {
+      "label": "PUBLISHED_EQUAL",
+      "baseId": "19:0",
+      "targetIds": [
+        6,
+        10
+      ],
+      "expectedRedemptionCasts": 6.217391304347831,
+      "doubleAtFirstHit": 0.04347826086956525,
+      "oneAtFirstHit": 0.9565217391304347,
+      "operationSuccess": 0.7034782608695652,
+      "redemptionFpGivenFinalSuccess": 40.02057065217394,
+      "postFpGivenFinalSuccess": 42.656684857394744,
+      "fullFpGivenFinalSuccess": 82.67725550956868,
+      "finiteFpCompletionCurve": [
+        {
+          "fp": 0,
+          "probability": 0.0
+        },
+        {
+          "fp": 1,
+          "probability": 0.008849557522123894
+        },
+        {
+          "fp": 2,
+          "probability": 0.01045849697067858
+        },
+        {
+          "fp": 3,
+          "probability": 0.012288677578458577
+        },
+        {
+          "fp": 4,
+          "probability": 0.013797218008477847
+        },
+        {
+          "fp": 5,
+          "probability": 0.015462344693561385
+        },
+        {
+          "fp": 6,
+          "probability": 0.01732121517453052
+        },
+        {
+          "fp": 7,
+          "probability": 0.01939192915279334
+        },
+        {
+          "fp": 8,
+          "probability": 0.021690178188313303
+        },
+        {
+          "fp": 9,
+          "probability": 0.024231153444680437
+        },
+        {
+          "fp": 10,
+          "probability": 0.027030071811287217
+        },
+        {
+          "fp": 11,
+          "probability": 0.030102416813632175
+        },
+        {
+          "fp": 12,
+          "probability": 0.03346407288216314
+        },
+        {
+          "fp": 13,
+          "probability": 0.03698141134155979
+        },
+        {
+          "fp": 14,
+          "probability": 0.04070038490104713
+        },
+        {
+          "fp": 15,
+          "probability": 0.04463547169698311
+        },
+        {
+          "fp": 16,
+          "probability": 0.0488135382746149
+        },
+        {
+          "fp": 17,
+          "probability": 0.05324880083645108
+        },
+        {
+          "fp": 18,
+          "probability": 0.057953715616377625
+        },
+        {
+          "fp": 19,
+          "probability": 0.06294071043889779
+        },
+        {
+          "fp": 20,
+          "probability": 0.06819112454566108
+        },
+        {
+          "fp": 21,
+          "probability": 0.0734777533848115
+        },
+        {
+          "fp": 22,
+          "probability": 0.0789127467972259
+        },
+        {
+          "fp": 23,
+          "probability": 0.08447772964124937
+        },
+        {
+          "fp": 24,
+          "probability": 0.090189506029037
+        },
+        {
+          "fp": 25,
+          "probability": 0.0960406621161275
+        },
+        {
+          "fp": 26,
+          "probability": 0.1020204696719547
+        },
+        {
+          "fp": 27,
+          "probability": 0.10811678153538797
+        },
+        {
+          "fp": 28,
+          "probability": 0.11431620980095403
+        },
+        {
+          "fp": 29,
+          "probability": 0.12060413404681508
+        },
+        {
+          "fp": 30,
+          "probability": 0.1269646624918574
+        },
+        {
+          "fp": 31,
+          "probability": 0.13339233710471657
+        },
+        {
+          "fp": 32,
+          "probability": 0.13987398419647543
+        },
+        {
+          "fp": 33,
+          "probability": 0.14641935003616566
+        },
+        {
+          "fp": 34,
+          "probability": 0.15302582001103482
+        },
+        {
+          "fp": 35,
+          "probability": 0.15968843682973402
+        },
+        {
+          "fp": 36,
+          "probability": 0.16639827578514665
+        },
+        {
+          "fp": 37,
+          "probability": 0.1731450779243008
+        },
+        {
+          "fp": 38,
+          "probability": 0.1799174360746108
+        },
+        {
+          "fp": 39,
+          "probability": 0.1867028151485309
+        },
+        {
+          "fp": 40,
+          "probability": 0.1934928091860024
+        },
+        {
+          "fp": 41,
+          "probability": 0.20028465182829439
+        },
+        {
+          "fp": 42,
+          "probability": 0.20707378450886937
+        },
+        {
+          "fp": 43,
+          "probability": 0.21385605797860693
+        },
+        {
+          "fp": 44,
+          "probability": 0.22062688907109462
+        },
+        {
+          "fp": 45,
+          "probability": 0.22738193034538565
+        },
+        {
+          "fp": 46,
+          "probability": 0.23411722098351775
+        },
+        {
+          "fp": 47,
+          "probability": 0.24082927297912948
+        },
+        {
+          "fp": 48,
+          "probability": 0.2475151507036149
+        },
+        {
+          "fp": 49,
+          "probability": 0.2541725514943964
+        },
+        {
+          "fp": 50,
+          "probability": 0.26079988965566314
+        },
+        {
+          "fp": 51,
+          "probability": 0.26739440520530033
+        },
+        {
+          "fp": 52,
+          "probability": 0.2739537146246195
+        },
+        {
+          "fp": 53,
+          "probability": 0.28047465908460834
+        },
+        {
+          "fp": 54,
+          "probability": 0.28695402844104906
+        },
+        {
+          "fp": 55,
+          "probability": 0.2933886972352072
+        },
+        {
+          "fp": 56,
+          "probability": 0.2997757898766847
+        },
+        {
+          "fp": 57,
+          "probability": 0.306112755116533
+        },
+        {
+          "fp": 58,
+          "probability": 0.31239743140487114
+        },
+        {
+          "fp": 59,
+          "probability": 0.3186281117515249
+        },
+        {
+          "fp": 60,
+          "probability": 0.32480333180700727
+        },
+        {
+          "fp": 61,
+          "probability": 0.3309217301303753
+        },
+        {
+          "fp": 62,
+          "probability": 0.3369820612350244
+        },
+        {
+          "fp": 63,
+          "probability": 0.3429831848570623
+        }
+      ],
+      "normalNaturalL100CompletionProbability": 0.19649140161743056,
+      "finiteFpMeaning": "Actually settle charged FP, last-charge preservation, critical refunds; final action can succeed at FP0; not merely P(total demand <= initial FP)."
+    },
+    {
+      "label": "SAME_IDS_REAL_WEIGHTS_ALL_CLASSES",
+      "baseId": "19:0",
+      "targetIds": [
+        6,
+        10
+      ],
+      "expectedRedemptionCasts": 6.122722502112292,
+      "doubleAtFirstHit": 0.04420252609462169,
+      "oneAtFirstHit": 0.9557974739053783,
+      "operationSuccess": 0.7037027830893327,
+      "redemptionFpGivenFinalSuccess": 39.41107852727864,
+      "postFpGivenFinalSuccess": 42.61078613252118,
+      "fullFpGivenFinalSuccess": 82.02186465979982,
+      "finiteFpCompletionCurve": [
+        {
+          "fp": 0,
+          "probability": 0.0
+        },
+        {
+          "fp": 1,
+          "probability": 0.009141983869674599
+        },
+        {
+          "fp": 2,
+          "probability": 0.010787528379013842
+        },
+        {
+          "fp": 3,
+          "probability": 0.012654839062879536
+        },
+        {
+          "fp": 4,
+          "probability": 0.014191304313224557
+        },
+        {
+          "fp": 5,
+          "probability": 0.01588608616323654
+        },
+        {
+          "fp": 6,
+          "probability": 0.017776951953641845
+        },
+        {
+          "fp": 7,
+          "probability": 0.01988225686056256
+        },
+        {
+          "fp": 8,
+          "probability": 0.0222178895558069
+        },
+        {
+          "fp": 9,
+          "probability": 0.024799216417167532
+        },
+        {
+          "fp": 10,
+          "probability": 0.027641619176977546
+        },
+        {
+          "fp": 11,
+          "probability": 0.03076074126540477
+        },
+        {
+          "fp": 12,
+          "probability": 0.03417262502603869
+        },
+        {
+          "fp": 13,
+          "probability": 0.03774161764451779
+        },
+        {
+          "fp": 14,
+          "probability": 0.041514313341007664
+        },
+        {
+          "fp": 15,
+          "probability": 0.045505341667218084
+        },
+        {
+          "fp": 16,
+          "probability": 0.04974189511293928
+        },
+        {
+          "fp": 17,
+          "probability": 0.054238320100941706
+        },
+        {
+          "fp": 18,
+          "probability": 0.059007172292406894
+        },
+        {
+          "fp": 19,
+          "probability": 0.06406097327230464
+        },
+        {
+          "fp": 20,
+          "probability": 0.06938069841719106
+        },
+        {
+          "fp": 21,
+          "probability": 0.07473282270910712
+        },
+        {
+          "fp": 22,
+          "probability": 0.08023366730685381
+        },
+        {
+          "fp": 23,
+          "probability": 0.08586467024566967
+        },
+        {
+          "fp": 24,
+          "probability": 0.09164292768134912
+        },
+        {
+          "fp": 25,
+          "probability": 0.09756089513272288
+        },
+        {
+          "fp": 26,
+          "probability": 0.10360766758760236
+        },
+        {
+          "fp": 27,
+          "probability": 0.10977090404164046
+        },
+        {
+          "fp": 28,
+          "probability": 0.11603700940223426
+        },
+        {
+          "fp": 29,
+          "probability": 0.12239114384330807
+        },
+        {
+          "fp": 30,
+          "probability": 0.12881718430112513
+        },
+        {
+          "fp": 31,
+          "probability": 0.13530960070121967
+        },
+        {
+          "fp": 32,
+          "probability": 0.14185503865959928
+        },
+        {
+          "fp": 33,
+          "probability": 0.14846338391184608
+        },
+        {
+          "fp": 34,
+          "probability": 0.15513198207567336
+        },
+        {
+          "fp": 35,
+          "probability": 0.1618558064161266
+        },
+        {
+          "fp": 36,
+          "probability": 0.16862581171788743
+        },
+        {
+          "fp": 37,
+          "probability": 0.1754316058583534
+        },
+        {
+          "fp": 38,
+          "probability": 0.182261638729212
+        },
+        {
+          "fp": 39,
+          "probability": 0.18910322340271934
+        },
+        {
+          "fp": 40,
+          "probability": 0.1959478658431439
+        },
+        {
+          "fp": 41,
+          "probability": 0.20279285975420547
+        },
+        {
+          "fp": 42,
+          "probability": 0.20963362038105995
+        },
+        {
+          "fp": 43,
+          "probability": 0.21646597396179723
+        },
+        {
+          "fp": 44,
+          "probability": 0.2232853082464086
+        },
+        {
+          "fp": 45,
+          "probability": 0.23008725136296188
+        },
+        {
+          "fp": 46,
+          "probability": 0.23686782443754456
+        },
+        {
+          "fp": 47,
+          "probability": 0.24362352870397438
+        },
+        {
+          "fp": 48,
+          "probability": 0.25035142584727316
+        },
+        {
+          "fp": 49,
+          "probability": 0.25704921931905095
+        },
+        {
+          "fp": 50,
+          "probability": 0.2637153390467494
+        },
+        {
+          "fp": 51,
+          "probability": 0.2703470237561163
+        },
+        {
+          "fp": 52,
+          "probability": 0.2769418937019161
+        },
+        {
+          "fp": 53,
+          "probability": 0.28349678541994444
+        },
+        {
+          "fp": 54,
+          "probability": 0.29000848498313603
+        },
+        {
+          "fp": 55,
+          "probability": 0.29647386552965355
+        },
+        {
+          "fp": 56,
+          "probability": 0.3028900541047477
+        },
+        {
+          "fp": 57,
+          "probability": 0.3092545067626078
+        },
+        {
+          "fp": 58,
+          "probability": 0.3155650744206109
+        },
+        {
+          "fp": 59,
+          "probability": 0.32182006817106507
+        },
+        {
+          "fp": 60,
+          "probability": 0.32801804458609773
+        },
+        {
+          "fp": 61,
+          "probability": 0.3341576625664971
+        },
+        {
+          "fp": 62,
+          "probability": 0.3402376980647596
+        },
+        {
+          "fp": 63,
+          "probability": 0.3462570333652564
+        }
+      ],
+      "normalNaturalL100CompletionProbability": 0.1989486095682652,
+      "finiteFpMeaning": "Actually settle charged FP, last-charge preservation, critical refunds; final action can succeed at FP0; not merely P(total demand <= initial FP)."
+    },
+    {
+      "label": "SAME_IDS_REAL_WEIGHTS_EXACT_BASE",
+      "baseId": "19:0",
+      "targetIds": [
+        6,
+        10
+      ],
+      "expectedRedemptionCasts": 6.122722502112292,
+      "doubleAtFirstHit": 0.04420252609462169,
+      "oneAtFirstHit": 0.9557974739053783,
+      "operationSuccess": 0.7037027830893327,
+      "redemptionFpGivenFinalSuccess": 39.41107852727864,
+      "postFpGivenFinalSuccess": 42.61078613252118,
+      "fullFpGivenFinalSuccess": 82.02186465979982,
+      "finiteFpCompletionCurve": [
+        {
+          "fp": 0,
+          "probability": 0.0
+        },
+        {
+          "fp": 1,
+          "probability": 0.009141983869674599
+        },
+        {
+          "fp": 2,
+          "probability": 0.010787528379013842
+        },
+        {
+          "fp": 3,
+          "probability": 0.012654839062879536
+        },
+        {
+          "fp": 4,
+          "probability": 0.014191304313224557
+        },
+        {
+          "fp": 5,
+          "probability": 0.01588608616323654
+        },
+        {
+          "fp": 6,
+          "probability": 0.017776951953641845
+        },
+        {
+          "fp": 7,
+          "probability": 0.01988225686056256
+        },
+        {
+          "fp": 8,
+          "probability": 0.0222178895558069
+        },
+        {
+          "fp": 9,
+          "probability": 0.024799216417167532
+        },
+        {
+          "fp": 10,
+          "probability": 0.027641619176977546
+        },
+        {
+          "fp": 11,
+          "probability": 0.03076074126540477
+        },
+        {
+          "fp": 12,
+          "probability": 0.03417262502603869
+        },
+        {
+          "fp": 13,
+          "probability": 0.03774161764451779
+        },
+        {
+          "fp": 14,
+          "probability": 0.041514313341007664
+        },
+        {
+          "fp": 15,
+          "probability": 0.045505341667218084
+        },
+        {
+          "fp": 16,
+          "probability": 0.04974189511293928
+        },
+        {
+          "fp": 17,
+          "probability": 0.054238320100941706
+        },
+        {
+          "fp": 18,
+          "probability": 0.059007172292406894
+        },
+        {
+          "fp": 19,
+          "probability": 0.06406097327230464
+        },
+        {
+          "fp": 20,
+          "probability": 0.06938069841719106
+        },
+        {
+          "fp": 21,
+          "probability": 0.07473282270910712
+        },
+        {
+          "fp": 22,
+          "probability": 0.08023366730685381
+        },
+        {
+          "fp": 23,
+          "probability": 0.08586467024566967
+        },
+        {
+          "fp": 24,
+          "probability": 0.09164292768134912
+        },
+        {
+          "fp": 25,
+          "probability": 0.09756089513272288
+        },
+        {
+          "fp": 26,
+          "probability": 0.10360766758760236
+        },
+        {
+          "fp": 27,
+          "probability": 0.10977090404164046
+        },
+        {
+          "fp": 28,
+          "probability": 0.11603700940223426
+        },
+        {
+          "fp": 29,
+          "probability": 0.12239114384330807
+        },
+        {
+          "fp": 30,
+          "probability": 0.12881718430112513
+        },
+        {
+          "fp": 31,
+          "probability": 0.13530960070121967
+        },
+        {
+          "fp": 32,
+          "probability": 0.14185503865959928
+        },
+        {
+          "fp": 33,
+          "probability": 0.14846338391184608
+        },
+        {
+          "fp": 34,
+          "probability": 0.15513198207567336
+        },
+        {
+          "fp": 35,
+          "probability": 0.1618558064161266
+        },
+        {
+          "fp": 36,
+          "probability": 0.16862581171788743
+        },
+        {
+          "fp": 37,
+          "probability": 0.1754316058583534
+        },
+        {
+          "fp": 38,
+          "probability": 0.182261638729212
+        },
+        {
+          "fp": 39,
+          "probability": 0.18910322340271934
+        },
+        {
+          "fp": 40,
+          "probability": 0.1959478658431439
+        },
+        {
+          "fp": 41,
+          "probability": 0.20279285975420547
+        },
+        {
+          "fp": 42,
+          "probability": 0.20963362038105995
+        },
+        {
+          "fp": 43,
+          "probability": 0.21646597396179723
+        },
+        {
+          "fp": 44,
+          "probability": 0.2232853082464086
+        },
+        {
+          "fp": 45,
+          "probability": 0.23008725136296188
+        },
+        {
+          "fp": 46,
+          "probability": 0.23686782443754456
+        },
+        {
+          "fp": 47,
+          "probability": 0.24362352870397438
+        },
+        {
+          "fp": 48,
+          "probability": 0.25035142584727316
+        },
+        {
+          "fp": 49,
+          "probability": 0.25704921931905095
+        },
+        {
+          "fp": 50,
+          "probability": 0.2637153390467494
+        },
+        {
+          "fp": 51,
+          "probability": 0.2703470237561163
+        },
+        {
+          "fp": 52,
+          "probability": 0.2769418937019161
+        },
+        {
+          "fp": 53,
+          "probability": 0.28349678541994444
+        },
+        {
+          "fp": 54,
+          "probability": 0.29000848498313603
+        },
+        {
+          "fp": 55,
+          "probability": 0.29647386552965355
+        },
+        {
+          "fp": 56,
+          "probability": 0.3028900541047477
+        },
+        {
+          "fp": 57,
+          "probability": 0.3092545067626078
+        },
+        {
+          "fp": 58,
+          "probability": 0.3155650744206109
+        },
+        {
+          "fp": 59,
+          "probability": 0.32182006817106507
+        },
+        {
+          "fp": 60,
+          "probability": 0.32801804458609773
+        },
+        {
+          "fp": 61,
+          "probability": 0.3341576625664971
+        },
+        {
+          "fp": 62,
+          "probability": 0.3402376980647596
+        },
+        {
+          "fp": 63,
+          "probability": 0.3462570333652564
+        }
+      ],
+      "normalNaturalL100CompletionProbability": 0.1989486095682652,
+      "finiteFpMeaning": "Actually settle charged FP, last-charge preservation, critical refunds; final action can succeed at FP0; not merely P(total demand <= initial FP)."
+    },
+    {
+      "label": "RAREST_MISSING_PAIR_REAL_WEIGHTS_EXACT_BASE",
+      "baseId": "19:0",
+      "targetIds": [
+        84,
+        94
+      ],
+      "expectedRedemptionCasts": 7.578947774316051,
+      "doubleAtFirstHit": 0.03508771728023671,
+      "oneAtFirstHit": 0.9649122827197633,
+      "operationSuccess": 0.7008771923568733,
+      "redemptionFpGivenFinalSuccess": 48.78473945480063,
+      "postFpGivenFinalSuccess": 43.19056089187318,
+      "fullFpGivenFinalSuccess": 91.9753003466738,
+      "finiteFpCompletionCurve": [
+        {
+          "fp": 0,
+          "probability": 0.0
+        },
+        {
+          "fp": 1,
+          "probability": 0.005912785757205523
+        },
+        {
+          "fp": 2,
+          "probability": 0.007111196316442021
+        },
+        {
+          "fp": 3,
+          "probability": 0.00852170749195007
+        },
+        {
+          "fp": 4,
+          "probability": 0.009712509381148402
+        },
+        {
+          "fp": 5,
+          "probability": 0.011038930555760135
+        },
+        {
+          "fp": 6,
+          "probability": 0.012531035128999272
+        },
+        {
+          "fp": 7,
+          "probability": 0.014203859256116553
+        },
+        {
+          "fp": 8,
+          "probability": 0.016070679860357234
+        },
+        {
+          "fp": 9,
+          "probability": 0.018144508392432895
+        },
+        {
+          "fp": 10,
+          "probability": 0.020438486931468953
+        },
+        {
+          "fp": 11,
+          "probability": 0.0229660678264107
+        },
+        {
+          "fp": 12,
+          "probability": 0.025741114594960122
+        },
+        {
+          "fp": 13,
+          "probability": 0.028652690785160164
+        },
+        {
+          "fp": 14,
+          "probability": 0.03173944978847159
+        },
+        {
+          "fp": 15,
+          "probability": 0.035014005715817594
+        },
+        {
+          "fp": 16,
+          "probability": 0.03849937192089268
+        },
+        {
+          "fp": 17,
+          "probability": 0.04220809445048271
+        },
+        {
+          "fp": 18,
+          "probability": 0.04615129921421964
+        },
+        {
+          "fp": 19,
+          "probability": 0.050340138579967095
+        },
+        {
+          "fp": 20,
+          "probability": 0.0547598521342934
+        },
+        {
+          "fp": 21,
+          "probability": 0.059253724815846266
+        },
+        {
+          "fp": 22,
+          "probability": 0.06388802376550741
+        },
+        {
+          "fp": 23,
+          "probability": 0.06864667873990561
+        },
+        {
+          "fp": 24,
+          "probability": 0.07354309453110455
+        },
+        {
+          "fp": 25,
+          "probability": 0.07857136058152327
+        },
+        {
+          "fp": 26,
+          "probability": 0.08372280571218456
+        },
+        {
+          "fp": 27,
+          "probability": 0.08898755369561737
+        },
+        {
+          "fp": 28,
+          "probability": 0.09435465914360983
+        },
+        {
+          "fp": 29,
+          "probability": 0.0998121040043777
+        },
+        {
+          "fp": 30,
+          "probability": 0.10534675616693948
+        },
+        {
+          "fp": 31,
+          "probability": 0.11095413698099066
+        },
+        {
+          "fp": 32,
+          "probability": 0.11662329114773068
+        },
+        {
+          "fp": 33,
+          "probability": 0.12236249975667092
+        },
+        {
+          "fp": 34,
+          "probability": 0.12816971567390625
+        },
+        {
+          "fp": 35,
+          "probability": 0.13404089876526265
+        },
+        {
+          "fp": 36,
+          "probability": 0.13996864066333023
+        },
+        {
+          "fp": 37,
+          "probability": 0.14594436134958133
+        },
+        {
+          "fp": 38,
+          "probability": 0.15195846179950237
+        },
+        {
+          "fp": 39,
+          "probability": 0.15800033537640137
+        },
+        {
+          "fp": 40,
+          "probability": 0.16406278591797133
+        },
+        {
+          "fp": 41,
+          "probability": 0.17014254083600566
+        },
+        {
+          "fp": 42,
+          "probability": 0.17623549342623307
+        },
+        {
+          "fp": 43,
+          "probability": 0.1823379174823859
+        },
+        {
+          "fp": 44,
+          "probability": 0.1884457154400635
+        },
+        {
+          "fp": 45,
+          "probability": 0.19455497175426956
+        },
+        {
+          "fp": 46,
+          "probability": 0.20066208192593327
+        },
+        {
+          "fp": 47,
+          "probability": 0.2067638269606627
+        },
+        {
+          "fp": 48,
+          "probability": 0.21285744286066846
+        },
+        {
+          "fp": 49,
+          "probability": 0.2189406916262464
+        },
+        {
+          "fp": 50,
+          "probability": 0.22501193577179285
+        },
+        {
+          "fp": 51,
+          "probability": 0.23106855115156893
+        },
+        {
+          "fp": 52,
+          "probability": 0.237108226637334
+        },
+        {
+          "fp": 53,
+          "probability": 0.2431279765091271
+        },
+        {
+          "fp": 54,
+          "probability": 0.24912475419231395
+        },
+        {
+          "fp": 55,
+          "probability": 0.2550955693358537
+        },
+        {
+          "fp": 56,
+          "probability": 0.2610376316966702
+        },
+        {
+          "fp": 57,
+          "probability": 0.2669484172129129
+        },
+        {
+          "fp": 58,
+          "probability": 0.27282572653399834
+        },
+        {
+          "fp": 59,
+          "probability": 0.2786677435306905
+        },
+        {
+          "fp": 60,
+          "probability": 0.2844728564120946
+        },
+        {
+          "fp": 61,
+          "probability": 0.2902395594272999
+        },
+        {
+          "fp": 62,
+          "probability": 0.29596644671803224
+        },
+        {
+          "fp": 63,
+          "probability": 0.30165220164579193
+        }
+      ],
+      "normalNaturalL100CompletionProbability": 0.16696866575307387,
+      "finiteFpMeaning": "Actually settle charged FP, last-charge preservation, critical refunds; final action can succeed at FP0; not merely P(total demand <= initial FP)."
+    },
+    {
+      "label": "GLOVES_COMMON_PAIR_EQUAL_ALL_CLASSES",
+      "baseId": "4:0",
+      "targetIds": [
+        2,
+        10
+      ],
+      "expectedRedemptionCasts": 9.228571428571426,
+      "doubleAtFirstHit": 0.02857142857142856,
+      "oneAtFirstHit": 0.9714285714285714,
+      "operationSuccess": 0.6988571428571428,
+      "redemptionFpGivenFinalSuccess": 59.40316071428569,
+      "postFpGivenFinalSuccess": 43.60792290520702,
+      "fullFpGivenFinalSuccess": 103.01108361949271,
+      "finiteFpCompletionCurve": [
+        {
+          "fp": 0,
+          "probability": 0.0
+        },
+        {
+          "fp": 1,
+          "probability": 0.00398406374501992
+        },
+        {
+          "fp": 2,
+          "probability": 0.004882474732092938
+        },
+        {
+          "fp": 3,
+          "probability": 0.005975433667640816
+        },
+        {
+          "fp": 4,
+          "probability": 0.006918877597166521
+        },
+        {
+          "fp": 5,
+          "probability": 0.00797845106091443
+        },
+        {
+          "fp": 6,
+          "probability": 0.00917850926571228
+        },
+        {
+          "fp": 7,
+          "probability": 0.010531529141156739
+        },
+        {
+          "fp": 8,
+          "probability": 0.012048697682139555
+        },
+        {
+          "fp": 9,
+          "probability": 0.013741086895503338
+        },
+        {
+          "fp": 10,
+          "probability": 0.015619954164198034
+        },
+        {
+          "fp": 11,
+          "probability": 0.017696877357786762
+        },
+        {
+          "fp": 12,
+          "probability": 0.019983831457860486
+        },
+        {
+          "fp": 13,
+          "probability": 0.02238887550411517
+        },
+        {
+          "fp": 14,
+          "probability": 0.024944417600897082
+        },
+        {
+          "fp": 15,
+          "probability": 0.02766134521444822
+        },
+        {
+          "fp": 16,
+          "probability": 0.030559247657553686
+        },
+        {
+          "fp": 17,
+          "probability": 0.033649064325792316
+        },
+        {
+          "fp": 18,
+          "probability": 0.03694058869410262
+        },
+        {
+          "fp": 19,
+          "probability": 0.04044367392997319
+        },
+        {
+          "fp": 20,
+          "probability": 0.04414662512307827
+        },
+        {
+          "fp": 21,
+          "probability": 0.04794164687556856
+        },
+        {
+          "fp": 22,
+          "probability": 0.05186551075193874
+        },
+        {
+          "fp": 23,
+          "probability": 0.055904376108374176
+        },
+        {
+          "fp": 24,
+          "probability": 0.06006896511507446
+        },
+        {
+          "fp": 25,
+          "probability": 0.06435460267217756
+        },
+        {
+          "fp": 26,
+          "probability": 0.06875432633669538
+        },
+        {
+          "fp": 27,
+          "probability": 0.07326015918936266
+        },
+        {
+          "fp": 28,
+          "probability": 0.07786321331800418
+        },
+        {
+          "fp": 29,
+          "probability": 0.08255367926556036
+        },
+        {
+          "fp": 30,
+          "probability": 0.08732078497242328
+        },
+        {
+          "fp": 31,
+          "probability": 0.09216092663256761
+        },
+        {
+          "fp": 32,
+          "probability": 0.09706508322184568
+        },
+        {
+          "fp": 33,
+          "probability": 0.1020403246051766
+        },
+        {
+          "fp": 34,
+          "probability": 0.10708511501646167
+        },
+        {
+          "fp": 35,
+          "probability": 0.11219623443198797
+        },
+        {
+          "fp": 36,
+          "probability": 0.11736761997178255
+        },
+        {
+          "fp": 37,
+          "probability": 0.12259219358471174
+        },
+        {
+          "fp": 38,
+          "probability": 0.12786198696967427
+        },
+        {
+          "fp": 39,
+          "probability": 0.1331681468394066
+        },
+        {
+          "fp": 40,
+          "probability": 0.13850463408368133
+        },
+        {
+          "fp": 41,
+          "probability": 0.14386808478880964
+        },
+        {
+          "fp": 42,
+          "probability": 0.14925492147438638
+        },
+        {
+          "fp": 43,
+          "probability": 0.15466191146556665
+        },
+        {
+          "fp": 44,
+          "probability": 0.16008550864723073
+        },
+        {
+          "fp": 45,
+          "probability": 0.16552230691243724
+        },
+        {
+          "fp": 46,
+          "probability": 0.17096914928807044
+        },
+        {
+          "fp": 47,
+          "probability": 0.1764231914855516
+        },
+        {
+          "fp": 48,
+          "probability": 0.18188196176913726
+        },
+        {
+          "fp": 49,
+          "probability": 0.1873434225815518
+        },
+        {
+          "fp": 50,
+          "probability": 0.19280603559888027
+        },
+        {
+          "fp": 51,
+          "probability": 0.19826743423269677
+        },
+        {
+          "fp": 52,
+          "probability": 0.20372550940874293
+        },
+        {
+          "fp": 53,
+          "probability": 0.2091775688305642
+        },
+        {
+          "fp": 54,
+          "probability": 0.21462085428315142
+        },
+        {
+          "fp": 55,
+          "probability": 0.22005264145797243
+        },
+        {
+          "fp": 56,
+          "probability": 0.22547036384163635
+        },
+        {
+          "fp": 57,
+          "probability": 0.2308716704060074
+        },
+        {
+          "fp": 58,
+          "probability": 0.23625447709095146
+        },
+        {
+          "fp": 59,
+          "probability": 0.241617018579305
+        },
+        {
+          "fp": 60,
+          "probability": 0.24695769798380093
+        },
+        {
+          "fp": 61,
+          "probability": 0.25227502045843675
+        },
+        {
+          "fp": 62,
+          "probability": 0.25756757467901126
+        },
+        {
+          "fp": 63,
+          "probability": 0.2628340225904473
+        }
+      ],
+      "normalNaturalL100CompletionProbability": 0.14123450389842016,
+      "finiteFpMeaning": "Actually settle charged FP, last-charge preservation, critical refunds; final action can succeed at FP0; not merely P(total demand <= initial FP)."
+    },
+    {
+      "label": "GLOVES_COMMON_PAIR_REAL_WEIGHTS",
+      "baseId": "4:0",
+      "targetIds": [
+        2,
+        10
+      ],
+      "expectedRedemptionCasts": 8.351344268376637,
+      "doubleAtFirstHit": 0.03174844286114214,
+      "oneAtFirstHit": 0.9682515571388579,
+      "operationSuccess": 0.6998420172869539,
+      "redemptionFpGivenFinalSuccess": 53.75628692597303,
+      "postFpGivenFinalSuccess": 43.40413721552388,
+      "fullFpGivenFinalSuccess": 97.16042414149692,
+      "finiteFpCompletionCurve": [
+        {
+          "fp": 0,
+          "probability": 0.0
+        },
+        {
+          "fp": 1,
+          "probability": 0.004896090875922146
+        },
+        {
+          "fp": 2,
+          "probability": 0.005936504226679731
+        },
+        {
+          "fp": 3,
+          "probability": 0.007181445613436857
+        },
+        {
+          "fp": 4,
+          "probability": 0.008244285350815011
+        },
+        {
+          "fp": 5,
+          "probability": 0.009433063315049735
+        },
+        {
+          "fp": 6,
+          "probability": 0.010774903437966502
+        },
+        {
+          "fp": 7,
+          "probability": 0.012283527579572415
+        },
+        {
+          "fp": 8,
+          "probability": 0.013971145783742542
+        },
+        {
+          "fp": 9,
+          "probability": 0.015849784610531513
+        },
+        {
+          "fp": 10,
+          "probability": 0.01793163285798013
+        },
+        {
+          "fp": 11,
+          "probability": 0.020229197661145875
+        },
+        {
+          "fp": 12,
+          "probability": 0.02275539254497002
+        },
+        {
+          "fp": 13,
+          "probability": 0.02540882617364993
+        },
+        {
+          "fp": 14,
+          "probability": 0.028225025772923816
+        },
+        {
+          "fp": 15,
+          "probability": 0.031215745121446873
+        },
+        {
+          "fp": 16,
+          "probability": 0.03440228538668958
+        },
+        {
+          "fp": 17,
+          "probability": 0.03779639348906178
+        },
+        {
+          "fp": 18,
+          "probability": 0.04140853514820812
+        },
+        {
+          "fp": 19,
+          "probability": 0.045249220351432376
+        },
+        {
+          "fp": 20,
+          "probability": 0.04930524046862305
+        },
+        {
+          "fp": 21,
+          "probability": 0.05344608663192433
+        },
+        {
+          "fp": 22,
+          "probability": 0.057721829976896594
+        },
+        {
+          "fp": 23,
+          "probability": 0.06211750564940578
+        },
+        {
+          "fp": 24,
+          "probability": 0.06664513433552362
+        },
+        {
+          "fp": 25,
+          "probability": 0.07129943956681487
+        },
+        {
+          "fp": 26,
+          "probability": 0.07607262517441583
+        },
+        {
+          "fp": 27,
+          "probability": 0.0809557868091891
+        },
+        {
+          "fp": 28,
+          "probability": 0.08593903098157755
+        },
+        {
+          "fp": 29,
+          "probability": 0.09101146767777799
+        },
+        {
+          "fp": 30,
+          "probability": 0.09616116888115295
+        },
+        {
+          "fp": 31,
+          "probability": 0.10138411353562041
+        },
+        {
+          "fp": 32,
+          "probability": 0.10667033506870759
+        },
+        {
+          "fp": 33,
+          "probability": 0.11202751893919843
+        },
+        {
+          "fp": 34,
+          "probability": 0.1174538873621634
+        },
+        {
+          "fp": 35,
+          "probability": 0.12294582418757083
+        },
+        {
+          "fp": 36,
+          "probability": 0.12849660861221213
+        },
+        {
+          "fp": 37,
+          "probability": 0.13409842606572442
+        },
+        {
+          "fp": 38,
+          "probability": 0.13974250671254676
+        },
+        {
+          "fp": 39,
+          "probability": 0.14541913361802727
+        },
+        {
+          "fp": 40,
+          "probability": 0.15112169878384724
+        },
+        {
+          "fp": 41,
+          "probability": 0.15684685499566056
+        },
+        {
+          "fp": 42,
+          "probability": 0.16259075914838583
+        },
+        {
+          "fp": 43,
+          "probability": 0.16834993078088234
+        },
+        {
+          "fp": 44,
+          "probability": 0.17412054732595456
+        },
+        {
+          "fp": 45,
+          "probability": 0.1798989461261782
+        },
+        {
+          "fp": 46,
+          "probability": 0.18568174339984878
+        },
+        {
+          "fp": 47,
+          "probability": 0.1914659032213047
+        },
+        {
+          "fp": 48,
+          "probability": 0.19724880220076457
+        },
+        {
+          "fp": 49,
+          "probability": 0.20302829581467224
+        },
+        {
+          "fp": 50,
+          "probability": 0.20880278822253684
+        },
+        {
+          "fp": 51,
+          "probability": 0.21456977589208667
+        },
+        {
+          "fp": 52,
+          "probability": 0.22032703977593218
+        },
+        {
+          "fp": 53,
+          "probability": 0.22607173187271382
+        },
+        {
+          "fp": 54,
+          "probability": 0.23180094023564032
+        },
+        {
+          "fp": 55,
+          "probability": 0.23751179736456257
+        },
+        {
+          "fp": 56,
+          "probability": 0.24320161402267304
+        },
+        {
+          "fp": 57,
+          "probability": 0.24886794114813365
+        },
+        {
+          "fp": 58,
+          "probability": 0.25450862490614934
+        },
+        {
+          "fp": 59,
+          "probability": 0.26012186189052067
+        },
+        {
+          "fp": 60,
+          "probability": 0.2657060347560415
+        },
+        {
+          "fp": 61,
+          "probability": 0.2712596306291455
+        },
+        {
+          "fp": 62,
+          "probability": 0.2767812282148871
+        },
+        {
+          "fp": 63,
+          "probability": 0.2822694873138088
+        }
+      ],
+      "normalNaturalL100CompletionProbability": 0.15394763509869852,
+      "finiteFpMeaning": "Actually settle charged FP, last-charge preservation, critical refunds; final action can succeed at FP0; not merely P(total demand <= initial FP)."
+    },
+    {
+      "label": "GLOVES_RARE_PAIR_EQUAL_ALL_CLASSES",
+      "baseId": "4:0",
+      "targetIds": [
+        83,
+        36
+      ],
+      "expectedRedemptionCasts": 9.228571428571426,
+      "doubleAtFirstHit": 0.02857142857142856,
+      "oneAtFirstHit": 0.9714285714285714,
+      "operationSuccess": 0.6988571428571428,
+      "redemptionFpGivenFinalSuccess": 59.40316071428569,
+      "postFpGivenFinalSuccess": 43.60792290520702,
+      "fullFpGivenFinalSuccess": 103.01108361949271,
+      "finiteFpCompletionCurve": [
+        {
+          "fp": 0,
+          "probability": 0.0
+        },
+        {
+          "fp": 1,
+          "probability": 0.00398406374501992
+        },
+        {
+          "fp": 2,
+          "probability": 0.004882474732092938
+        },
+        {
+          "fp": 3,
+          "probability": 0.005975433667640816
+        },
+        {
+          "fp": 4,
+          "probability": 0.006918877597166521
+        },
+        {
+          "fp": 5,
+          "probability": 0.00797845106091443
+        },
+        {
+          "fp": 6,
+          "probability": 0.00917850926571228
+        },
+        {
+          "fp": 7,
+          "probability": 0.010531529141156739
+        },
+        {
+          "fp": 8,
+          "probability": 0.012048697682139555
+        },
+        {
+          "fp": 9,
+          "probability": 0.013741086895503338
+        },
+        {
+          "fp": 10,
+          "probability": 0.015619954164198034
+        },
+        {
+          "fp": 11,
+          "probability": 0.017696877357786762
+        },
+        {
+          "fp": 12,
+          "probability": 0.019983831457860486
+        },
+        {
+          "fp": 13,
+          "probability": 0.02238887550411517
+        },
+        {
+          "fp": 14,
+          "probability": 0.024944417600897082
+        },
+        {
+          "fp": 15,
+          "probability": 0.02766134521444822
+        },
+        {
+          "fp": 16,
+          "probability": 0.030559247657553686
+        },
+        {
+          "fp": 17,
+          "probability": 0.033649064325792316
+        },
+        {
+          "fp": 18,
+          "probability": 0.03694058869410262
+        },
+        {
+          "fp": 19,
+          "probability": 0.04044367392997319
+        },
+        {
+          "fp": 20,
+          "probability": 0.04414662512307827
+        },
+        {
+          "fp": 21,
+          "probability": 0.04794164687556856
+        },
+        {
+          "fp": 22,
+          "probability": 0.05186551075193874
+        },
+        {
+          "fp": 23,
+          "probability": 0.055904376108374176
+        },
+        {
+          "fp": 24,
+          "probability": 0.06006896511507446
+        },
+        {
+          "fp": 25,
+          "probability": 0.06435460267217756
+        },
+        {
+          "fp": 26,
+          "probability": 0.06875432633669538
+        },
+        {
+          "fp": 27,
+          "probability": 0.07326015918936266
+        },
+        {
+          "fp": 28,
+          "probability": 0.07786321331800418
+        },
+        {
+          "fp": 29,
+          "probability": 0.08255367926556036
+        },
+        {
+          "fp": 30,
+          "probability": 0.08732078497242328
+        },
+        {
+          "fp": 31,
+          "probability": 0.09216092663256761
+        },
+        {
+          "fp": 32,
+          "probability": 0.09706508322184568
+        },
+        {
+          "fp": 33,
+          "probability": 0.1020403246051766
+        },
+        {
+          "fp": 34,
+          "probability": 0.10708511501646167
+        },
+        {
+          "fp": 35,
+          "probability": 0.11219623443198797
+        },
+        {
+          "fp": 36,
+          "probability": 0.11736761997178255
+        },
+        {
+          "fp": 37,
+          "probability": 0.12259219358471174
+        },
+        {
+          "fp": 38,
+          "probability": 0.12786198696967427
+        },
+        {
+          "fp": 39,
+          "probability": 0.1331681468394066
+        },
+        {
+          "fp": 40,
+          "probability": 0.13850463408368133
+        },
+        {
+          "fp": 41,
+          "probability": 0.14386808478880964
+        },
+        {
+          "fp": 42,
+          "probability": 0.14925492147438638
+        },
+        {
+          "fp": 43,
+          "probability": 0.15466191146556665
+        },
+        {
+          "fp": 44,
+          "probability": 0.16008550864723073
+        },
+        {
+          "fp": 45,
+          "probability": 0.16552230691243724
+        },
+        {
+          "fp": 46,
+          "probability": 0.17096914928807044
+        },
+        {
+          "fp": 47,
+          "probability": 0.1764231914855516
+        },
+        {
+          "fp": 48,
+          "probability": 0.18188196176913726
+        },
+        {
+          "fp": 49,
+          "probability": 0.1873434225815518
+        },
+        {
+          "fp": 50,
+          "probability": 0.19280603559888027
+        },
+        {
+          "fp": 51,
+          "probability": 0.19826743423269677
+        },
+        {
+          "fp": 52,
+          "probability": 0.20372550940874293
+        },
+        {
+          "fp": 53,
+          "probability": 0.2091775688305642
+        },
+        {
+          "fp": 54,
+          "probability": 0.21462085428315142
+        },
+        {
+          "fp": 55,
+          "probability": 0.22005264145797243
+        },
+        {
+          "fp": 56,
+          "probability": 0.22547036384163635
+        },
+        {
+          "fp": 57,
+          "probability": 0.2308716704060074
+        },
+        {
+          "fp": 58,
+          "probability": 0.23625447709095146
+        },
+        {
+          "fp": 59,
+          "probability": 0.241617018579305
+        },
+        {
+          "fp": 60,
+          "probability": 0.24695769798380093
+        },
+        {
+          "fp": 61,
+          "probability": 0.25227502045843675
+        },
+        {
+          "fp": 62,
+          "probability": 0.25756757467901126
+        },
+        {
+          "fp": 63,
+          "probability": 0.2628340225904473
+        }
+      ],
+      "normalNaturalL100CompletionProbability": 0.14123450389842016,
+      "finiteFpMeaning": "Actually settle charged FP, last-charge preservation, critical refunds; final action can succeed at FP0; not merely P(total demand <= initial FP)."
+    },
+    {
+      "label": "GLOVES_RARE_PAIR_REAL_WEIGHTS",
+      "baseId": "4:0",
+      "targetIds": [
+        83,
+        36
+      ],
+      "expectedRedemptionCasts": 26.64201544555206,
+      "doubleAtFirstHit": 0.008112143332348777,
+      "oneAtFirstHit": 0.9918878566676512,
+      "operationSuccess": 0.6925147644330281,
+      "redemptionFpGivenFinalSuccess": 171.49127337733125,
+      "postFpGivenFinalSuccess": 44.93414405272613,
+      "fullFpGivenFinalSuccess": 216.4254174300574,
+      "finiteFpCompletionCurve": [
+        {
+          "fp": 0,
+          "probability": 0.0
+        },
+        {
+          "fp": 1,
+          "probability": 0.0004024318262237078
+        },
+        {
+          "fp": 2,
+          "probability": 0.0005990563348090536
+        },
+        {
+          "fp": 3,
+          "probability": 0.0008862998195497753
+        },
+        {
+          "fp": 4,
+          "probability": 0.0011619807802175173
+        },
+        {
+          "fp": 5,
+          "probability": 0.0014829428072636378
+        },
+        {
+          "fp": 6,
+          "probability": 0.0018569741900892642
+        },
+        {
+          "fp": 7,
+          "probability": 0.0022884637534334984
+        },
+        {
+          "fp": 8,
+          "probability": 0.002781559806407113
+        },
+        {
+          "fp": 9,
+          "probability": 0.003340502508546282
+        },
+        {
+          "fp": 10,
+          "probability": 0.0039696943988224796
+        },
+        {
+          "fp": 11,
+          "probability": 0.004673730871500125
+        },
+        {
+          "fp": 12,
+          "probability": 0.005457418670907641
+        },
+        {
+          "fp": 13,
+          "probability": 0.006287941617243114
+        },
+        {
+          "fp": 14,
+          "probability": 0.007177291303009922
+        },
+        {
+          "fp": 15,
+          "probability": 0.008129845148620593
+        },
+        {
+          "fp": 16,
+          "probability": 0.009153184131713411
+        },
+        {
+          "fp": 17,
+          "probability": 0.010251834631620974
+        },
+        {
+          "fp": 18,
+          "probability": 0.011429954668538581
+        },
+        {
+          "fp": 19,
+          "probability": 0.012691772032604473
+        },
+        {
+          "fp": 20,
+          "probability": 0.014033750093947245
+        },
+        {
+          "fp": 21,
+          "probability": 0.015446154325496196
+        },
+        {
+          "fp": 22,
+          "probability": 0.01691955405764504
+        },
+        {
+          "fp": 23,
+          "probability": 0.01844844443323628
+        },
+        {
+          "fp": 24,
+          "probability": 0.02003600149511093
+        },
+        {
+          "fp": 25,
+          "probability": 0.021680916468469858
+        },
+        {
+          "fp": 26,
+          "probability": 0.023381096912972677
+        },
+        {
+          "fp": 27,
+          "probability": 0.025134085119048716
+        },
+        {
+          "fp": 28,
+          "probability": 0.026937081474081474
+        },
+        {
+          "fp": 29,
+          "probability": 0.02878693047882541
+        },
+        {
+          "fp": 30,
+          "probability": 0.030680097425700836
+        },
+        {
+          "fp": 31,
+          "probability": 0.03261560935861524
+        },
+        {
+          "fp": 32,
+          "probability": 0.034590510686785494
+        },
+        {
+          "fp": 33,
+          "probability": 0.0366077584919036
+        },
+        {
+          "fp": 34,
+          "probability": 0.03866719519888613
+        },
+        {
+          "fp": 35,
+          "probability": 0.040768033105993154
+        },
+        {
+          "fp": 36,
+          "probability": 0.04290841946893953
+        },
+        {
+          "fp": 37,
+          "probability": 0.045086096028334084
+        },
+        {
+          "fp": 38,
+          "probability": 0.04729844115442448
+        },
+        {
+          "fp": 39,
+          "probability": 0.04954246638346747
+        },
+        {
+          "fp": 40,
+          "probability": 0.05181617749452609
+        },
+        {
+          "fp": 41,
+          "probability": 0.0541176470688134
+        },
+        {
+          "fp": 42,
+          "probability": 0.05644555352269222
+        },
+        {
+          "fp": 43,
+          "probability": 0.05879874018394535
+        },
+        {
+          "fp": 44,
+          "probability": 0.061175946676969704
+        },
+        {
+          "fp": 45,
+          "probability": 0.06357595066999443
+        },
+        {
+          "fp": 46,
+          "probability": 0.06599760751886281
+        },
+        {
+          "fp": 47,
+          "probability": 0.06843987425791258
+        },
+        {
+          "fp": 48,
+          "probability": 0.07090183298615678
+        },
+        {
+          "fp": 49,
+          "probability": 0.07338271557639167
+        },
+        {
+          "fp": 50,
+          "probability": 0.07588193028779439
+        },
+        {
+          "fp": 51,
+          "probability": 0.07839857441995036
+        },
+        {
+          "fp": 52,
+          "probability": 0.08093183111164655
+        },
+        {
+          "fp": 53,
+          "probability": 0.08348064398003595
+        },
+        {
+          "fp": 54,
+          "probability": 0.08604391053618209
+        },
+        {
+          "fp": 55,
+          "probability": 0.08862052040768886
+        },
+        {
+          "fp": 56,
+          "probability": 0.09120940429164182
+        },
+        {
+          "fp": 57,
+          "probability": 0.09380955747881381
+        },
+        {
+          "fp": 58,
+          "probability": 0.09642006126416539
+        },
+        {
+          "fp": 59,
+          "probability": 0.09904010487270215
+        },
+        {
+          "fp": 60,
+          "probability": 0.10166892930893555
+        },
+        {
+          "fp": 61,
+          "probability": 0.10430583160039235
+        },
+        {
+          "fp": 62,
+          "probability": 0.10695013649028097
+        },
+        {
+          "fp": 63,
+          "probability": 0.10960119050773481
+        }
+      ],
+      "normalNaturalL100CompletionProbability": 0.053219981726864936,
+      "finiteFpMeaning": "Actually settle charged FP, last-charge preservation, critical refunds; final action can succeed at FP0; not merely P(total demand <= initial FP)."
+    }
+  ]
+}

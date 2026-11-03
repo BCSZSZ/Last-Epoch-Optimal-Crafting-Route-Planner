@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-03",
+  "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+  "qualification": "Fixed representative simple-input fixtures, all generated add/seal/removal/Havoc templates; excludes Redemption/Chaos. Infinite-FP intrinsic metrics, no global optimality assertion or actual-drop mixture. Thresholds are product-policy alternatives, not physical impossibility.",
+  "rows": [
+    {
+      "label": "7710-DIRECT_TWO_PREFIX_TARGETS",
+      "fpType": "NORMAL",
+      "templates": 134,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 0
+        },
+        {
+          "cap": 50,
+          "retained": 6,
+          "primary": {
+            "success": 1,
+            "successFp": 48.80489228921569,
+            "description": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾"
+          }
+        },
+        {
+          "cap": 60,
+          "retained": 12,
+          "primary": {
+            "success": 1,
+            "successFp": 48.80489228921569,
+            "description": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 36,
+          "primary": {
+            "success": 1,
+            "successFp": 48.80489228921569,
+            "description": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7710-DIRECT_TWO_PREFIX_TARGETS",
+      "fpType": "ICE",
+      "templates": 134,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 12,
+          "primary": {
+            "success": 1,
+            "successFp": 34.16342460245098,
+            "description": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾"
+          }
+        },
+        {
+          "cap": 50,
+          "retained": 36,
+          "primary": {
+            "success": 1,
+            "successFp": 34.16342460245098,
+            "description": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾"
+          }
+        },
+        {
+          "cap": 60,
+          "retained": 36,
+          "primary": {
+            "success": 1,
+            "successFp": 34.16342460245098,
+            "description": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 36,
+          "primary": {
+            "success": 1,
+            "successFp": 34.16342460245098,
+            "description": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7710-DIRECT_TWO_PREFIX_TARGETS",
+      "fpType": "BLOOD",
+      "templates": 134,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 0
+        },
+        {
+          "cap": 50,
+          "retained": 12,
+          "primary": {
+            "success": 1,
+            "successFp": 49.91787674745099,
+            "description": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾"
+          }
+        },
+        {
+          "cap": 60,
+          "retained": 28,
+          "primary": {
+            "success": 1,
+            "successFp": 49.91787674745099,
+            "description": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 42,
+          "primary": {
+            "success": 1,
+            "successFp": 49.91787674745099,
+            "description": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7710-PREPARE_MIXED_TARGETS",
+      "fpType": "NORMAL",
+      "templates": 120,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 0
+        },
+        {
+          "cap": 50,
+          "retained": 0
+        },
+        {
+          "cap": 60,
+          "retained": 2,
+          "primary": {
+            "success": 1,
+            "successFp": 54.46934228921569,
+            "description": "直接添加取得#8 → 补栏浩劫准备后封T1取得#5 → 收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 22,
+          "primary": {
+            "success": 1,
+            "successFp": 54.46934228921569,
+            "description": "直接添加取得#8 → 补栏浩劫准备后封T1取得#5 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7710-PREPARE_MIXED_TARGETS",
+      "fpType": "ICE",
+      "templates": 120,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 1,
+          "primary": {
+            "success": 1,
+            "successFp": 38.128539602450985,
+            "description": "直接添加取得#8 → 补栏浩劫准备后封T1取得#5 → 收尾"
+          }
+        },
+        {
+          "cap": 50,
+          "retained": 20,
+          "primary": {
+            "success": 1,
+            "successFp": 38.128539602450985,
+            "description": "直接添加取得#8 → 补栏浩劫准备后封T1取得#5 → 收尾"
+          }
+        },
+        {
+          "cap": 60,
+          "retained": 22,
+          "primary": {
+            "success": 1,
+            "successFp": 38.128539602450985,
+            "description": "直接添加取得#8 → 补栏浩劫准备后封T1取得#5 → 收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 22,
+          "primary": {
+            "success": 1,
+            "successFp": 38.128539602450985,
+            "description": "直接添加取得#8 → 补栏浩劫准备后封T1取得#5 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7710-PREPARE_MIXED_TARGETS",
+      "fpType": "BLOOD",
+      "templates": 120,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 0
+        },
+        {
+          "cap": 50,
+          "retained": 0
+        },
+        {
+          "cap": 60,
+          "retained": 3,
+          "primary": {
+            "success": 1,
+            "successFp": 53.88299174745099,
+            "description": "直接添加取得#8 → 补栏浩劫准备后封T1取得#5 → 收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 25,
+          "primary": {
+            "success": 1,
+            "successFp": 53.88299174745099,
+            "description": "直接添加取得#8 → 补栏浩劫准备后封T1取得#5 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7272",
+      "fpType": "NORMAL",
+      "templates": 100,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 0
+        },
+        {
+          "cap": 50,
+          "retained": 0
+        },
+        {
+          "cap": 60,
+          "retained": 36,
+          "primary": {
+            "success": 0.33465000000000006,
+            "successFp": 56.370590860680025,
+            "description": "剥离 → 按空槽补目标 → 直接封印剩余垃圾 → 补另一目标 → 收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 48,
+          "primary": {
+            "success": 0.4906999999999999,
+            "successFp": 69.20233747580784,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7272",
+      "fpType": "ICE",
+      "templates": 100,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 32,
+          "primary": {
+            "success": 0.33465000000000006,
+            "successFp": 39.45941360247601,
+            "description": "剥离 → 按空槽补目标 → 直接封印剩余垃圾 → 补另一目标 → 收尾"
+          }
+        },
+        {
+          "cap": 50,
+          "retained": 48,
+          "primary": {
+            "success": 0.4906999999999999,
+            "successFp": 48.44163623306548,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        },
+        {
+          "cap": 60,
+          "retained": 48,
+          "primary": {
+            "success": 0.4906999999999999,
+            "successFp": 48.44163623306548,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 48,
+          "primary": {
+            "success": 0.4906999999999999,
+            "successFp": 48.44163623306548,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7272",
+      "fpType": "BLOOD",
+      "templates": 100,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 0
+        },
+        {
+          "cap": 50,
+          "retained": 0
+        },
+        {
+          "cap": 60,
+          "retained": 28,
+          "primary": {
+            "success": 0.31188000000000005,
+            "successFp": 54.70201785797525,
+            "description": "剥离 → 按空槽补目标 → 直接封印剩余垃圾 → 补另一目标 → 收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 40,
+          "primary": {
+            "success": 0.47023999999999994,
+            "successFp": 64.88147618479911,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7372",
+      "fpType": "NORMAL",
+      "templates": 110,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 0
+        },
+        {
+          "cap": 50,
+          "retained": 0
+        },
+        {
+          "cap": 60,
+          "retained": 28,
+          "primary": {
+            "success": 0.25065000000000004,
+            "successFp": 57.22823036172854,
+            "description": "剥离 → 按空槽补目标 → 直接封印剩余垃圾 → 补另一目标 → 收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 41,
+          "primary": {
+            "success": 0.4906999999999999,
+            "successFp": 69.5418967336283,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7372",
+      "fpType": "ICE",
+      "templates": 110,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 20,
+          "primary": {
+            "success": 0.23,
+            "successFp": 39.40084163843583,
+            "description": "先封T2再剥离，开两个位置后补A/B"
+          }
+        },
+        {
+          "cap": 50,
+          "retained": 41,
+          "primary": {
+            "success": 0.4906999999999999,
+            "successFp": 48.679327713539806,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        },
+        {
+          "cap": 60,
+          "retained": 41,
+          "primary": {
+            "success": 0.4906999999999999,
+            "successFp": 48.679327713539806,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 41,
+          "primary": {
+            "success": 0.4906999999999999,
+            "successFp": 48.679327713539806,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7372",
+      "fpType": "BLOOD",
+      "templates": 110,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 0
+        },
+        {
+          "cap": 50,
+          "retained": 0
+        },
+        {
+          "cap": 60,
+          "retained": 24,
+          "primary": {
+            "success": 0.23283000000000004,
+            "successFp": 55.559139330594036,
+            "description": "剥离 → 按空槽补目标 → 直接封印剩余垃圾 → 补另一目标 → 收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 37,
+          "primary": {
+            "success": 0.47023999999999994,
+            "successFp": 65.95853467152929,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7474",
+      "fpType": "NORMAL",
+      "templates": 92,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 0
+        },
+        {
+          "cap": 50,
+          "retained": 0
+        },
+        {
+          "cap": 60,
+          "retained": 4,
+          "primary": {
+            "success": 0.16666666666666666,
+            "successFp": 59.17247770588236,
+            "description": "先连续剥离两个垃圾位置，再补A/B并收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 16,
+          "primary": {
+            "success": 0.4906999999999999,
+            "successFp": 69.88145599144876,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7474",
+      "fpType": "ICE",
+      "templates": 92,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 0
+        },
+        {
+          "cap": 50,
+          "retained": 16,
+          "primary": {
+            "success": 0.4906999999999999,
+            "successFp": 48.917019194014124,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        },
+        {
+          "cap": 60,
+          "retained": 16,
+          "primary": {
+            "success": 0.4906999999999999,
+            "successFp": 48.917019194014124,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 16,
+          "primary": {
+            "success": 0.4906999999999999,
+            "successFp": 48.917019194014124,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        }
+      ]
+    },
+    {
+      "label": "7474",
+      "fpType": "BLOOD",
+      "templates": 92,
+      "thresholds": [
+        {
+          "cap": 40,
+          "retained": 0
+        },
+        {
+          "cap": 50,
+          "retained": 0
+        },
+        {
+          "cap": 60,
+          "retained": 4,
+          "primary": {
+            "success": 0.16666666666666666,
+            "successFp": 57.17001466411765,
+            "description": "先连续剥离两个垃圾位置，再补A/B并收尾"
+          }
+        },
+        {
+          "cap": 100,
+          "retained": 16,
+          "primary": {
+            "success": 0.47023999999999994,
+            "successFp": 67.03559315825947,
+            "description": "剥离 → 按空槽补目标 → 固定T1／T2分支准备最低阶封印 → 补另一目标 → 收尾"
+          }
+        }
+      ]
+    }
+  ]
+}

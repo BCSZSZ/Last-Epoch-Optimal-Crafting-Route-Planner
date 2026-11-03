@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "qualification": "Production RuleEngine.sample vs separately implemented Python finite-budget recurrence; deterministic seeds, three fixed cases, five-binomial-SE tolerance declared before sampling. This is model validation, not gameplay sampling.",
+  "rows": [
+    {
+      "label": "PUBLISHED_EQUAL",
+      "samples": 50000,
+      "successes": 9731,
+      "estimate": 0.19462,
+      "exactReference": 0.19649140161743056,
+      "predeclaredTolerance": 0.008904889720977074,
+      "pass": true
+    },
+    {
+      "label": "SAME_IDS_REAL_WEIGHTS_EXACT_BASE",
+      "samples": 50000,
+      "successes": 9863,
+      "estimate": 0.19726,
+      "exactReference": 0.1989486095682652,
+      "predeclaredTolerance": 0.008946591183624328,
+      "pass": true
+    },
+    {
+      "label": "GLOVES_RARE_PAIR_REAL_WEIGHTS",
+      "samples": 50000,
+      "successes": 2610,
+      "estimate": 0.0522,
+      "exactReference": 0.053219981726864936,
+      "predeclaredTolerance": 0.005039343347085209,
+      "pass": true
+    }
+  ]
+}

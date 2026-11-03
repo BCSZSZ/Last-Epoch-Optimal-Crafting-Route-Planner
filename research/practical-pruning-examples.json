@@ -1,0 +1,2359 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-03",
+  "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+  "scope": "RESEARCH_ONLY_FIXED_ROUTES_NOT_SEARCH_OR_OPTIMALITY_PROOF",
+  "fpWeighting": "UNIFORM_HYPOTHETICAL_INITIAL_FP_1_TO_63_NOT_NATURAL_DROP_DISTRIBUTION",
+  "sourceHashes": {
+    "src/generated/model.json": "fcde9020026d43303cc6959fe2b4b5e4b7ff715313c972f1fcfea91dc0d60298",
+    "research/device-validation/desktop-baseline.json": "2f36d16385723bfffc82440ce1315af7aecc92425fad0a5e729bd25c62f65ea9",
+    "research/7710-route-results.json": "de9fdc10d16f72a3ab4f361815d42f622f24d6d3a8c5c9798e04be23ef19caf6",
+    "scripts/research_pruning_examples.ts": "389eeb4a8f16865a5ba42ad342fdfd67f872c04aa9a5ff44d5e1ad44b75b2741"
+  },
+  "fp7710": [
+    {
+      "fpType": "NORMAL",
+      "request": {
+        "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "NORMAL",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "route": {
+        "id": "r-085e76281e31b18c",
+        "macros": [
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "seal",
+            "selector": {
+              "side": 0,
+              "excludedIds": [
+                4,
+                5
+              ],
+              "minTier": 1,
+              "maxTier": 4
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ],
+        "description": "封印该侧垃圾，补入目标，再浩劫"
+      },
+      "score": {
+        "lower": 0.44722527079579805,
+        "upper": 0.4472252707958278
+      },
+      "expectedFp": {
+        "lower": 24.497262014956803,
+        "upper": 24.497262014958473
+      },
+      "expectedFpGivenSuccess": {
+        "lower": 26.765672298985642,
+        "upper": 26.76567229898931
+      },
+      "failedFpWaste": {
+        "lower": 12.526976973010564,
+        "upper": 12.526976973011386
+      },
+      "successQuantiles": {
+        "p50": {
+          "lower": 25,
+          "upper": 25
+        },
+        "p90": {
+          "lower": 45,
+          "upper": 45
+        },
+        "p95": {
+          "lower": 51,
+          "upper": 51
+        }
+      },
+      "fp63": {
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.7970079011575331,
+          "upper": 0.7970079011575764
+        },
+        "continuationSuccessUpper": 0.7970079011575764,
+        "expectedFp": {
+          "lower": 39.14118755470007,
+          "upper": 39.141187554702576
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 34.42884303627663,
+          "upper": 34.42884303628053
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 38,
+            "upper": 38
+          },
+          "p90": {
+            "lower": 63,
+            "upper": 63
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 33,
+            "upper": 33
+          },
+          "p90": {
+            "lower": 59,
+            "upper": 59
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        }
+      }
+    },
+    {
+      "fpType": "ICE",
+      "request": {
+        "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "ICE",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "route": {
+        "id": "r-085e76281e31b18c",
+        "macros": [
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "seal",
+            "selector": {
+              "side": 0,
+              "excludedIds": [
+                4,
+                5
+              ],
+              "minTier": 1,
+              "maxTier": 4
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ],
+        "description": "封印该侧垃圾，补入目标，再浩劫"
+      },
+      "score": {
+        "lower": 0.5789720513409813,
+        "upper": 0.5789720513410225
+      },
+      "expectedFp": {
+        "lower": 20.16444748651318,
+        "upper": 20.164447486514675
+      },
+      "expectedFpGivenSuccess": {
+        "lower": 20.538294702573126,
+        "upper": 20.538294702576128
+      },
+      "failedFpWaste": {
+        "lower": 8.27334887151796,
+        "upper": 8.273348871518563
+      },
+      "successQuantiles": {
+        "p50": {
+          "lower": 19,
+          "upper": 19
+        },
+        "p90": {
+          "lower": 39,
+          "upper": 39
+        },
+        "p95": {
+          "lower": 46,
+          "upper": 46
+        }
+      },
+      "fp63": {
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.8918021429478409,
+          "upper": 0.8918021429478905
+        },
+        "continuationSuccessUpper": 0.8918021429478905,
+        "expectedFp": {
+          "lower": 29.87859703780022,
+          "upper": 29.878597037802287
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 27.107845002037113,
+          "upper": 27.107845002040378
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 27,
+            "upper": 27
+          },
+          "p90": {
+            "lower": 63,
+            "upper": 63
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 25,
+            "upper": 25
+          },
+          "p90": {
+            "lower": 52,
+            "upper": 52
+          },
+          "p95": {
+            "lower": 59,
+            "upper": 59
+          }
+        }
+      }
+    },
+    {
+      "fpType": "BLOOD",
+      "request": {
+        "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "BLOOD",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "route": {
+        "id": "r-085e76281e31b18c",
+        "macros": [
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "seal",
+            "selector": {
+              "side": 0,
+              "excludedIds": [
+                4,
+                5
+              ],
+              "minTier": 1,
+              "maxTier": 4
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ],
+        "description": "封印该侧垃圾，补入目标，再浩劫"
+      },
+      "score": {
+        "lower": 0.45546551881390734,
+        "upper": 0.4554655188139371
+      },
+      "expectedFp": {
+        "lower": 22.725008796422205,
+        "upper": 22.725008796423793
+      },
+      "expectedFpGivenSuccess": {
+        "lower": 24.831032646125188,
+        "upper": 24.83103264612858
+      },
+      "failedFpWaste": {
+        "lower": 11.415329629568989,
+        "upper": 11.415329629569767
+      },
+      "successQuantiles": {
+        "p50": {
+          "lower": 23,
+          "upper": 23
+        },
+        "p90": {
+          "lower": 44,
+          "upper": 44
+        },
+        "p95": {
+          "lower": 50,
+          "upper": 50
+        }
+      },
+      "fp63": {
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.7709422319514415,
+          "upper": 0.7709422319514826
+        },
+        "continuationSuccessUpper": 0.7709422319514826,
+        "expectedFp": {
+          "lower": 35.98060673797012,
+          "upper": 35.98060673797246
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 32.57133078745764,
+          "upper": 32.57133078746133
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 35,
+            "upper": 35
+          },
+          "p90": {
+            "lower": 63,
+            "upper": 63
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 31,
+            "upper": 31
+          },
+          "p90": {
+            "lower": 58,
+            "upper": 58
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        }
+      }
+    }
+  ],
+  "fp7710ReferenceSummaries": [
+    {
+      "caseId": "direct_prefix_targets",
+      "fpType": "NORMAL",
+      "routeId": "direct_fill_seal_add_havoc",
+      "successProbability": 0.44722527079581287,
+      "expectedFp": 24.497262014957634,
+      "expectedFpGivenSuccess": 26.765672298987486,
+      "fp63": {
+        "expectedActualFpSpent": {
+          "lower": 39.14118755470101,
+          "upper": 39.14118755470162
+        },
+        "expectedAttempts": {
+          "lower": 7.034583887274883,
+          "upper": 7.034583887274983
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 34.42884303627778,
+          "upper": 34.42884303627935
+        },
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.7970079011575468,
+          "upper": 0.797007901157563
+        },
+        "successfulFpFirstMoment": {
+          "lower": 27.440059927626944,
+          "upper": 27.440059927627622
+        }
+      },
+      "summaryArithmetic": "NOMINAL_MIDPOINTS_OF_SAVED_OUTWARD_INTERVALS; DIRECT_ROUTE_MATCHES_PRODUCTION_WITHIN_1E-12"
+    },
+    {
+      "caseId": "direct_prefix_targets",
+      "fpType": "ICE",
+      "routeId": "direct_fill_seal_add_havoc",
+      "successProbability": 0.5789720513410016,
+      "expectedFp": 20.164447486513914,
+      "expectedFpGivenSuccess": 20.538294702574625,
+      "fp63": {
+        "expectedActualFpSpent": {
+          "lower": 29.878597037801,
+          "upper": 29.878597037801445
+        },
+        "expectedAttempts": {
+          "lower": 7.516097816078644,
+          "upper": 7.516097816078742
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 27.107845002038164,
+          "upper": 27.107845002039316
+        },
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.8918021429478571,
+          "upper": 0.8918021429478731
+        },
+        "successfulFpFirstMoment": {
+          "lower": 24.17483426351643,
+          "upper": 24.174834263517017
+        }
+      },
+      "summaryArithmetic": "NOMINAL_MIDPOINTS_OF_SAVED_OUTWARD_INTERVALS; DIRECT_ROUTE_MATCHES_PRODUCTION_WITHIN_1E-12"
+    },
+    {
+      "caseId": "direct_prefix_targets",
+      "fpType": "BLOOD",
+      "routeId": "direct_fill_seal_add_havoc",
+      "successProbability": 0.4554655188139222,
+      "expectedFp": 22.725008796423,
+      "expectedFpGivenSuccess": 24.83103264612688,
+      "fp63": {
+        "expectedActualFpSpent": {
+          "lower": 35.980606737971,
+          "upper": 35.98060673797157
+        },
+        "expectedAttempts": {
+          "lower": 6.976719913391206,
+          "upper": 6.976719913391306
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 32.57133078745875,
+          "upper": 32.57133078746023
+        },
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.7709422319514542,
+          "upper": 0.7709422319514697
+        },
+        "successfulFpFirstMoment": {
+          "lower": 25.110614454913073,
+          "upper": 25.110614454913698
+        }
+      },
+      "summaryArithmetic": "NOMINAL_MIDPOINTS_OF_SAVED_OUTWARD_INTERVALS; DIRECT_ROUTE_MATCHES_PRODUCTION_WITHIN_1E-12"
+    },
+    {
+      "caseId": "opposite_side_preparation",
+      "fpType": "NORMAL",
+      "routeId": "prepare_havoc_fill_seal_add_havoc",
+      "successProbability": 0.3701717031756235,
+      "expectedFp": 26.96286356704562,
+      "expectedFpGivenSuccess": 30.95288533691594,
+      "fp63": {
+        "expectedActualFpSpent": {
+          "lower": 44.73614698116341,
+          "upper": 44.73614698116422
+        },
+        "expectedAttempts": {
+          "lower": 7.978751532585897,
+          "upper": 7.9787515325860285
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 38.95705313225047,
+          "upper": 38.95705313225254
+        },
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.7596345456028651,
+          "upper": 0.7596345456028838
+        },
+        "successfulFpFirstMoment": {
+          "lower": 29.593123354144492,
+          "upper": 29.593123354145327
+        }
+      },
+      "summaryArithmetic": "NOMINAL_MIDPOINTS_OF_SAVED_OUTWARD_INTERVALS; DIRECT_ROUTE_MATCHES_PRODUCTION_WITHIN_1E-12"
+    },
+    {
+      "caseId": "opposite_side_preparation",
+      "fpType": "ICE",
+      "routeId": "prepare_havoc_fill_seal_add_havoc",
+      "successProbability": 0.521316901583214,
+      "expectedFp": 22.630374224844026,
+      "expectedFpGivenSuccess": 23.656510654508146,
+      "fp63": {
+        "expectedActualFpSpent": {
+          "lower": 34.55238100395286,
+          "upper": 34.552381003953464
+        },
+        "expectedAttempts": {
+          "lower": 8.608701094877949,
+          "upper": 8.608701094878084
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 30.77388111634917,
+          "upper": 30.773881116350683
+        },
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.8827503894823473,
+          "upper": 0.8827503894823665
+        },
+        "successfulFpFirstMoment": {
+          "lower": 27.165655541341277,
+          "upper": 27.165655541342016
+        }
+      },
+      "summaryArithmetic": "NOMINAL_MIDPOINTS_OF_SAVED_OUTWARD_INTERVALS; DIRECT_ROUTE_MATCHES_PRODUCTION_WITHIN_1E-12"
+    },
+    {
+      "caseId": "opposite_side_preparation",
+      "fpType": "BLOOD",
+      "routeId": "prepare_havoc_fill_seal_add_havoc",
+      "successProbability": 0.38386154222243485,
+      "expectedFp": 26.525602061297402,
+      "expectedFpGivenSuccess": 29.621991366114226,
+      "fp63": {
+        "expectedActualFpSpent": {
+          "lower": 43.87241378371474,
+          "upper": 43.872413783715544
+        },
+        "expectedAttempts": {
+          "lower": 8.317185228415696,
+          "upper": 8.317185228415832
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 37.80415584774091,
+          "upper": 37.80415584774294
+        },
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.7591563950267726,
+          "upper": 0.7591563950267913
+        },
+        "successfulFpFirstMoment": {
+          "lower": 28.699266670401986,
+          "upper": 28.69926667040281
+        }
+      },
+      "summaryArithmetic": "NOMINAL_MIDPOINTS_OF_SAVED_OUTWARD_INTERVALS; DIRECT_ROUTE_MATCHES_PRODUCTION_WITHIN_1E-12"
+    }
+  ],
+  "counterexamples": [
+    {
+      "pattern": "7732",
+      "fpType": "NORMAL",
+      "request": {
+        "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "NORMAL",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "route": {
+        "id": "research-two-removals-add-a-b-havoc",
+        "macros": [
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "score": {
+        "lower": 0.05325136875133164,
+        "upper": 0.05325136875133603
+      },
+      "expectedFp": {
+        "lower": 12.606129290062501,
+        "upper": 12.606129290063306
+      },
+      "expectedFpGivenSuccess": {
+        "lower": 32.51026498193744,
+        "upper": 32.51026498194287
+      },
+      "fp63": {
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.11876123102658977,
+          "upper": 0.118761231026598
+        },
+        "continuationSuccessUpper": 0.118761231026598,
+        "expectedFp": {
+          "lower": 17.31102734511452,
+          "upper": 17.311027345115395
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 41.33405569188476,
+          "upper": 41.33405569189061
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 13,
+            "upper": 13
+          },
+          "p90": {
+            "lower": 45,
+            "upper": 45
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 42,
+            "upper": 42
+          },
+          "p90": {
+            "lower": 62,
+            "upper": 62
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        }
+      },
+      "evaluationStatus": "BOUNDED_NUMERICAL"
+    },
+    {
+      "pattern": "7744",
+      "fpType": "NORMAL",
+      "request": {
+        "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "NORMAL",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 4,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 4,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "route": {
+        "id": "research-two-removals-add-a-b-havoc",
+        "macros": [
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "score": {
+        "lower": 0.05325136875133164,
+        "upper": 0.05325136875133603
+      },
+      "expectedFp": {
+        "lower": 12.606129290062501,
+        "upper": 12.606129290063306
+      },
+      "expectedFpGivenSuccess": {
+        "lower": 32.51026498193744,
+        "upper": 32.51026498194287
+      },
+      "fp63": {
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.11876123102658977,
+          "upper": 0.118761231026598
+        },
+        "continuationSuccessUpper": 0.118761231026598,
+        "expectedFp": {
+          "lower": 17.31102734511452,
+          "upper": 17.311027345115395
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 41.33405569188476,
+          "upper": 41.33405569189061
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 13,
+            "upper": 13
+          },
+          "p90": {
+            "lower": 45,
+            "upper": 45
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 42,
+            "upper": 42
+          },
+          "p90": {
+            "lower": 62,
+            "upper": 62
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        }
+      },
+      "evaluationStatus": "BOUNDED_NUMERICAL"
+    },
+    {
+      "pattern": "7732",
+      "fpType": "NORMAL",
+      "request": {
+        "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "NORMAL",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "route": {
+        "id": "research-seal-t2-remove-t3-add-a-b-havoc",
+        "macros": [
+          {
+            "kind": "seal",
+            "selector": {
+              "ids": [
+                26
+              ],
+              "minTier": 2,
+              "maxTier": 2,
+              "sealable": true
+            }
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "score": {
+        "lower": 0.08042146616735096,
+        "upper": 0.08042146616735708
+      },
+      "expectedFp": {
+        "lower": 12.857863136869387,
+        "upper": 12.857863136870185
+      },
+      "expectedFpGivenSuccess": {
+        "lower": 31.766911167977078,
+        "upper": 31.766911167981974
+      },
+      "fp63": {
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.1710214835351499,
+          "upper": 0.1710214835351606
+        },
+        "continuationSuccessUpper": 0.1710214835351606,
+        "expectedFp": {
+          "lower": 18.04206864608425,
+          "upper": 18.042068646085117
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 40.033893338216366,
+          "upper": 40.03389333822148
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 10,
+            "upper": 10
+          },
+          "p90": {
+            "lower": 53,
+            "upper": 53
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 40,
+            "upper": 40
+          },
+          "p90": {
+            "lower": 62,
+            "upper": 62
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        }
+      },
+      "evaluationStatus": "BOUNDED_NUMERICAL"
+    },
+    {
+      "pattern": "7732",
+      "fpType": "ICE",
+      "request": {
+        "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "ICE",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "route": {
+        "id": "research-two-removals-add-a-b-havoc",
+        "macros": [
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "score": {
+        "lower": 0.07986845131274609,
+        "upper": 0.0798684513127529
+      },
+      "expectedFp": {
+        "lower": 9.587139364829774,
+        "upper": 9.587139364830398
+      },
+      "expectedFpGivenSuccess": {
+        "lower": 24.83463442630604,
+        "upper": 24.83463442631033
+      },
+      "fp63": {
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.14298372395777548,
+          "upper": 0.1429837239577858
+        },
+        "continuationSuccessUpper": 0.1429837239577858,
+        "expectedFp": {
+          "lower": 12.75140412125207,
+          "upper": 12.751404121252754
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 32.804486461880224,
+          "upper": 32.80448646188513
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 7,
+            "upper": 7
+          },
+          "p90": {
+            "lower": 34,
+            "upper": 34
+          },
+          "p95": {
+            "lower": 50,
+            "upper": 50
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p90": {
+            "lower": 57,
+            "upper": 57
+          },
+          "p95": {
+            "lower": 62,
+            "upper": 62
+          }
+        }
+      },
+      "evaluationStatus": "BOUNDED_NUMERICAL"
+    },
+    {
+      "pattern": "7744",
+      "fpType": "ICE",
+      "request": {
+        "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "ICE",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 4,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 4,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "route": {
+        "id": "research-two-removals-add-a-b-havoc",
+        "macros": [
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "score": {
+        "lower": 0.07986845131274609,
+        "upper": 0.0798684513127529
+      },
+      "expectedFp": {
+        "lower": 9.587139364829774,
+        "upper": 9.587139364830398
+      },
+      "expectedFpGivenSuccess": {
+        "lower": 24.83463442630604,
+        "upper": 24.83463442631033
+      },
+      "fp63": {
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.14298372395777548,
+          "upper": 0.1429837239577858
+        },
+        "continuationSuccessUpper": 0.1429837239577858,
+        "expectedFp": {
+          "lower": 12.75140412125207,
+          "upper": 12.751404121252754
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 32.804486461880224,
+          "upper": 32.80448646188513
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 7,
+            "upper": 7
+          },
+          "p90": {
+            "lower": 34,
+            "upper": 34
+          },
+          "p95": {
+            "lower": 50,
+            "upper": 50
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 32,
+            "upper": 32
+          },
+          "p90": {
+            "lower": 57,
+            "upper": 57
+          },
+          "p95": {
+            "lower": 62,
+            "upper": 62
+          }
+        }
+      },
+      "evaluationStatus": "BOUNDED_NUMERICAL"
+    },
+    {
+      "pattern": "7732",
+      "fpType": "ICE",
+      "request": {
+        "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "ICE",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "route": {
+        "id": "research-seal-t2-remove-t3-add-a-b-havoc",
+        "macros": [
+          {
+            "kind": "seal",
+            "selector": {
+              "ids": [
+                26
+              ],
+              "minTier": 2,
+              "maxTier": 2,
+              "sealable": true
+            }
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "score": {
+        "lower": 0.11611639986395662,
+        "upper": 0.11611639986396555
+      },
+      "expectedFp": {
+        "lower": 9.96290670622507,
+        "upper": 9.96290670622573
+      },
+      "expectedFpGivenSuccess": {
+        "lower": 24.22997798017745,
+        "upper": 24.229977980181335
+      },
+      "fp63": {
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.20112420970899614,
+          "upper": 0.20112420970900935
+        },
+        "continuationSuccessUpper": 0.20112420970900935,
+        "expectedFp": {
+          "lower": 13.418709090597561,
+          "upper": 13.418709090598293
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 31.640635986018903,
+          "upper": 31.640635986023266
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 7,
+            "upper": 7
+          },
+          "p90": {
+            "lower": 38,
+            "upper": 38
+          },
+          "p95": {
+            "lower": 55,
+            "upper": 55
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 30,
+            "upper": 30
+          },
+          "p90": {
+            "lower": 56,
+            "upper": 56
+          },
+          "p95": {
+            "lower": 61,
+            "upper": 61
+          }
+        }
+      },
+      "evaluationStatus": "BOUNDED_NUMERICAL"
+    },
+    {
+      "pattern": "7732",
+      "fpType": "BLOOD",
+      "request": {
+        "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "BLOOD",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "route": {
+        "id": "research-two-removals-add-a-b-havoc",
+        "macros": [
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "score": {
+        "lower": 0.057993151078621304,
+        "upper": 0.05799315107862599
+      },
+      "expectedFp": {
+        "lower": 12.494936540396703,
+        "upper": 12.4949365403975
+      },
+      "expectedFpGivenSuccess": {
+        "lower": 30.684113544228836,
+        "upper": 30.6841135442339
+      },
+      "fp63": {
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.12144839925116827,
+          "upper": 0.12144839925117662
+        },
+        "continuationSuccessUpper": 0.12144839925117662,
+        "expectedFp": {
+          "lower": 17.03928708012583,
+          "upper": 17.03928708012669
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 39.57594089411914,
+          "upper": 39.575940894124734
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 13,
+            "upper": 13
+          },
+          "p90": {
+            "lower": 43,
+            "upper": 43
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 40,
+            "upper": 40
+          },
+          "p90": {
+            "lower": 62,
+            "upper": 62
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        }
+      },
+      "evaluationStatus": "BOUNDED_NUMERICAL"
+    },
+    {
+      "pattern": "7744",
+      "fpType": "BLOOD",
+      "request": {
+        "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "BLOOD",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 4,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 4,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "route": {
+        "id": "research-two-removals-add-a-b-havoc",
+        "macros": [
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2,
+                26
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "score": {
+        "lower": 0.057993151078621304,
+        "upper": 0.05799315107862599
+      },
+      "expectedFp": {
+        "lower": 12.494936540396703,
+        "upper": 12.4949365403975
+      },
+      "expectedFpGivenSuccess": {
+        "lower": 30.684113544228836,
+        "upper": 30.6841135442339
+      },
+      "fp63": {
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.12144839925116827,
+          "upper": 0.12144839925117662
+        },
+        "continuationSuccessUpper": 0.12144839925117662,
+        "expectedFp": {
+          "lower": 17.03928708012583,
+          "upper": 17.03928708012669
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 39.57594089411914,
+          "upper": 39.575940894124734
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 13,
+            "upper": 13
+          },
+          "p90": {
+            "lower": 43,
+            "upper": 43
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 40,
+            "upper": 40
+          },
+          "p90": {
+            "lower": 62,
+            "upper": 62
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        }
+      },
+      "evaluationStatus": "BOUNDED_NUMERICAL"
+    },
+    {
+      "pattern": "7732",
+      "fpType": "BLOOD",
+      "request": {
+        "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "BLOOD",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 2,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 26,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "route": {
+        "id": "research-seal-t2-remove-t3-add-a-b-havoc",
+        "macros": [
+          {
+            "kind": "seal",
+            "selector": {
+              "ids": [
+                26
+              ],
+              "minTier": 2,
+              "maxTier": 2,
+              "sealable": true
+            }
+          },
+          {
+            "kind": "removal",
+            "accepted": {
+              "ids": [
+                2
+              ]
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 4,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 5,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ]
+      },
+      "score": {
+        "lower": 0.08716649828249078,
+        "upper": 0.08716649828249731
+      },
+      "expectedFp": {
+        "lower": 12.287900728557306,
+        "upper": 12.287900728558078
+      },
+      "expectedFpGivenSuccess": {
+        "lower": 29.842593612718293,
+        "upper": 29.84259361272286
+      },
+      "fp63": {
+        "initialFp": 63,
+        "successProbability": {
+          "lower": 0.1740855260664935,
+          "upper": 0.1740855260665044
+        },
+        "continuationSuccessUpper": 0.1740855260665044,
+        "expectedFp": {
+          "lower": 17.225936390328155,
+          "upper": 17.225936390329
+        },
+        "expectedFpGivenSuccess": {
+          "lower": 38.174829374211754,
+          "upper": 38.17482937421667
+        },
+        "quantiles": {
+          "p50": {
+            "lower": 10,
+            "upper": 10
+          },
+          "p90": {
+            "lower": 51,
+            "upper": 51
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        },
+        "successQuantiles": {
+          "p50": {
+            "lower": 38,
+            "upper": 38
+          },
+          "p90": {
+            "lower": 61,
+            "upper": 61
+          },
+          "p95": {
+            "lower": 63,
+            "upper": 63
+          }
+        }
+      },
+      "evaluationStatus": "BOUNDED_NUMERICAL"
+    }
+  ],
+  "twoRemovalTierInvarianceVerified": true,
+  "actualClientTests": 0,
+  "qualification": "Existing production rule kernel, not independent validation. Each required seal/removal failure aborts after settlement. Counterexample has two T7 suffixes, two unwanted prefixes and two requested target prefixes. Ignoring FP exhaustion, both unwanted prefixes are removed with probability (2/4)*(1/3)=1/6; this is not the complete crafting success rate."
+}

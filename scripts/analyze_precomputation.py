@@ -73,13 +73,15 @@ def main():
               'literalNoExtraSlotStateTargetCellsAcrossPoolContexts': literal_cells,
               'literalTableTwoFloat64Bytes': literal_cells * 16,
               'literalTableTwoFloat64TiB': literal_cells * 16 / 2**40,
-              'iceFeeFactor': 1 - model['parameters']['ice'], 'normalCostCeilingNeededToRetainIce100': 100 / (1 - model['parameters']['ice']),
+              'iceFeeFactor': 1 - model['parameters']['ice'],
+              'maximumSuccessfulMeanFp': model['practicalPolicy']['maximumSuccessFp'],
+              'normalCostCeilingNeededToRetainIce': model['practicalPolicy']['maximumSuccessFp'] / (1 - model['parameters']['ice']),
               'pools': summaries,
               'qualifications': ['Structural products are capacity scenarios, NOT a proof of exact state equivalence or a final table schema.',
                                  '64 bytes per entry and four Pareto entries are illustrative storage assumptions; no encoding/compression benchmark is claimed.',
                                  'Literal total sums itemType/class pool contexts: Standard shard-bearing T7-capable IDs, four ordinary affixes, exactly two T7s, other tiers1..6, unordered two-target choice and native orders. No seal, extra slot, protection, roll, player-level or base-subtype multiplication. This is the full audited API, not the minimal UI reference space.',
                                  'Effective kernel fingerprints may collapse pool contexts; the literal total enumerates contexts as requested inputs, not a minimum information-theoretic table size.',
-                                 'Normal/ICE scaling applies to a fixed route under intrinsic no-balance rules, not necessarily to the chosen optimum after100FP filtering.'],
+                                 'Normal/ICE scaling applies to a fixed route under intrinsic no-balance rules, not necessarily to the chosen optimum after the versioned FP cutoff.'],
               'sourceSha256': {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in source_paths}}
     destination = ROOT / 'research/precomputation-capacity.json'
     destination.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')

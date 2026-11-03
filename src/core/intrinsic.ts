@@ -7,6 +7,7 @@ import { RuleEngine } from './rules';
 import type { DemandDistribution } from './rules';
 import { targetReached } from './target';
 import { redemptionCertificate } from './redemption-bound';
+import { MAXIMUM_SUCCESS_FP, maximumSuccessFp } from './policy';
 import type { Item, Macro, PlanRequest, Route } from './types';
 
 type Bounds = { readonly lower: number; readonly upper: number };
@@ -18,7 +19,7 @@ export interface IntrinsicStatistics {
   readonly probabilityMeaning: 'FULL_ROUTE' | 'PREFIX_SURVIVAL_UPPER_BOUND';
   readonly fpMeaning: 'FULL_ROUTE_GIVEN_SUCCESS' | 'PREFIX_GIVEN_PREFIX_SURVIVAL' | 'LOWER_BOUND_GIVEN_FINAL_SUCCESS';
   readonly minimumSuccess: 0.15;
-  readonly maximumSuccessFp: 100;
+  readonly maximumSuccessFp: typeof MAXIMUM_SUCCESS_FP;
   readonly stages: readonly { readonly successfulFpMoment: Bounds }[];
   readonly residualProbabilityBound: number;
   readonly nonTerminatingStates: number;
@@ -28,9 +29,9 @@ export interface IntrinsicStatistics {
 }
 export type IntrinsicReport = RouteReport & { readonly intrinsic: IntrinsicStatistics };
 
-export function practicalDecision(probability: Bounds, successfulFp: Bounds | null): 'RETAINED' | 'ABANDONED' | 'UNRESOLVED' {
-  if (probability.upper < 0.15 || (successfulFp && successfulFp.lower > 100)) return 'ABANDONED';
-  return probability.lower >= 0.15 && successfulFp !== null && successfulFp.upper <= 100 ? 'RETAINED' : 'UNRESOLVED';
+export function practicalDecision(probability: Bounds, successfulFp: Bounds | null, limit = MAXIMUM_SUCCESS_FP): 'RETAINED' | 'ABANDONED' | 'UNRESOLVED' {
+  if (probability.upper < 0.15 || (successfulFp && successfulFp.lower > limit)) return 'ABANDONED';
+  return probability.lower >= 0.15 && successfulFp !== null && successfulFp.upper <= limit ? 'RETAINED' : 'UNRESOLVED';
 }
 
 interface Instruction { macro: Macro; next: number; yes: number; no: number; stage: number }
@@ -212,7 +213,7 @@ function certainlySucceeds(nodes: readonly Node[]): boolean {
 }
 
 /** Monotone finite-horizon reward bound; future costs are zero. No assumption of a geometric Redemption hit rate. */
-function expensiveRepeatCertificate(nodes: readonly Node[], shouldStop?: () => boolean): number | null {
+function expensiveRepeatCertificate(nodes: readonly Node[], limit: number, shouldStop?: () => boolean): number | null {
   let values = new Float64Array(nodes.length);
   for (let iteration = 0; iteration < 64; iteration++) {
     if (shouldStop?.()) throw new EvaluationInterruptedError('重复费用下界计算已取消或超时');
@@ -225,22 +226,23 @@ function expensiveRepeatCertificate(nodes: readonly Node[], shouldStop?: () => b
       next[index] = Math.max(0, nextDown(sum / (1 + gamma)));
     }
     values = next;
-    if (values[0] > 100) return values[0];
+    if (values[0] > limit) return values[0];
   }
   return null;
 }
 
 function calculate(workspace: IntrinsicWorkspace, route: Route, prefix: boolean, shouldStop?: () => boolean): IntrinsicReport {
+  const limit = maximumSuccessFp(workspace.engine.catalog.model);
   const nodes = buildGraph(workspace, route, prefix, shouldStop);
   const first = route.macros[0];
   if (!prefix && first?.kind === 'repeat' && first.action.kind === 'redemption' && certainlySucceeds(nodes)) {
-    const bound = expensiveRepeatCertificate(nodes, shouldStop);
+    const bound = expensiveRepeatCertificate(nodes, limit, shouldStop);
     if (bound !== null) return { route, evaluationStatus: 'BOUNDED_NUMERICAL', score: ONE.report(), scoreEstimate: 1,
       expectedFpGivenSuccess: null, expectedFp: ZERO.report(), failedFpWaste: ZERO.report(), curve: [], quantiles: null,
       successQuantiles: null, consumption: [], attemptsByMacro: [], macroStatistics: [], failureReasons: [], states: nodes.length,
       intrinsic: { metric: 'OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2', decision: 'ABANDONED', reason: 'ABOVE_MAXIMUM_SUCCESS_FP',
         evaluatedThroughStage: 1, probabilityMeaning: 'FULL_ROUTE', fpMeaning: 'LOWER_BOUND_GIVEN_FINAL_SUCCESS',
-        minimumSuccess: 0.15, maximumSuccessFp: 100, stages: [], residualProbabilityBound: 0, nonTerminatingStates: 0,
+        minimumSuccess: 0.15, maximumSuccessFp: limit, stages: [], residualProbabilityBound: 0, nonTerminatingStates: 0,
         successfulFpLowerBound: bound, auxiliaryTotalsAvailable: false } };
   }
   const sys = system(nodes, true, shouldStop);
@@ -263,18 +265,18 @@ function calculate(workspace: IntrinsicWorkspace, route: Route, prefix: boolean,
     moment = moment.add(reward.bounds[0]);
     fp = p.lower > 0 ? moment.div(p).clamp(0, Infinity) : null;
     stages.push({ successfulFpMoment: reward.bounds[0].report() });
-    if (!prefix && fp && fp.lower > 100) { reason = 'ABOVE_MAXIMUM_SUCCESS_FP'; evaluatedThroughStage = stage + 1; break; }
+    if (!prefix && fp && fp.lower > limit) { reason = 'ABOVE_MAXIMUM_SUCCESS_FP'; evaluatedThroughStage = stage + 1; break; }
   }
   if (!reason && p.lower < 0.15 && p.upper >= 0.15) {
     // A threshold-straddling interval must remain unresolved, never silently abandoned.
   }
   const partialCost = reason === 'ABOVE_MAXIMUM_SUCCESS_FP' && evaluatedThroughStage < route.macros.length;
   const intrinsic: IntrinsicStatistics = {
-    metric: 'OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2', decision: reason ? 'ABANDONED' : practicalDecision(p, fp), reason,
+    metric: 'OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2', decision: reason ? 'ABANDONED' : practicalDecision(p, fp, limit), reason,
     evaluatedThroughStage, probabilityMeaning: prefix ? 'PREFIX_SURVIVAL_UPPER_BOUND' : 'FULL_ROUTE',
     fpMeaning: prefix ? 'PREFIX_GIVEN_PREFIX_SURVIVAL' : reason === 'ABOVE_MAXIMUM_SUCCESS_FP' && evaluatedThroughStage < route.macros.length ?
       'LOWER_BOUND_GIVEN_FINAL_SUCCESS' : 'FULL_ROUTE_GIVEN_SUCCESS',
-    minimumSuccess: 0.15, maximumSuccessFp: 100, stages, residualProbabilityBound: probability.residual * (sys.h[0] ?? 0),
+    minimumSuccess: 0.15, maximumSuccessFp: limit, stages, residualProbabilityBound: probability.residual * (sys.h[0] ?? 0),
     nonTerminatingStates: nodes.filter((node, index) => node.reason === 'NON_TERMINATING_MACRO' || (!node.terminal && !sys.allowed.has(index))).length,
     successfulFpLowerBound: partialCost ? fp?.lower ?? null : null,
     auxiliaryTotalsAvailable: false,
@@ -308,7 +310,7 @@ export function evaluateIntrinsic(workspace: IntrinsicWorkspace, route: Route, s
       intrinsic: { metric: 'OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2', decision: 'ABANDONED',
         reason: repeated ? 'ABOVE_MAXIMUM_SUCCESS_FP' : 'BELOW_MINIMUM_SUCCESS', evaluatedThroughStage: 1,
         probabilityMeaning: repeated ? 'FULL_ROUTE' : 'PREFIX_SURVIVAL_UPPER_BOUND', fpMeaning: 'LOWER_BOUND_GIVEN_FINAL_SUCCESS',
-        minimumSuccess: 0.15, maximumSuccessFp: 100, stages: [], residualProbabilityBound: 0, nonTerminatingStates: 0,
+        minimumSuccess: 0.15, maximumSuccessFp: maximumSuccessFp(workspace.engine.catalog.model), stages: [], residualProbabilityBound: 0, nonTerminatingStates: 0,
         successfulFpLowerBound: certificate.successfulFpLowerBound, auxiliaryTotalsAvailable: false,
         preflight: { rule: certificate.decision, perCastSuccessUpperBound: certificate.perCastSuccessUpperBound } } };
     workspace.results.set(key, result); return result;

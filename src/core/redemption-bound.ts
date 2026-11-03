@@ -1,6 +1,7 @@
 import { ordinary } from './catalog';
 import { exact, ONE, ZERO } from './interval';
 import { boundedCostKernel } from './probability';
+import { maximumSuccessFp } from './policy';
 import { RuleEngine } from './rules';
 import type { Macro, PlanRequest, Predicate, Route } from './types';
 
@@ -65,6 +66,6 @@ export function redemptionCertificate(request: PlanRequest, route: Route, engine
   if (first.kind !== 'repeat' || request.constraints.maxAttempts !== undefined || !bound.clearingPossible || bound.upper <= 0 ||
     !identityGoals(first.until, request.target.requirements.filter((row) => !row.optional).map((row) => row.ids[0]))) return null;
   const lower = cost.div(exact(bound.upper)).lower;
-  return lower > 100 ? { decision: 'REPEATED_SUCCESS_FP_ABOVE_MAXIMUM', perCastSuccessUpperBound: bound.upper,
+  return lower > maximumSuccessFp(engine.catalog.model) ? { decision: 'REPEATED_SUCCESS_FP_ABOVE_MAXIMUM', perCastSuccessUpperBound: bound.upper,
     successfulFpLowerBound: lower, certainlyEventuallySucceeds: true } : null;
 }

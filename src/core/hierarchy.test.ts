@@ -40,7 +40,7 @@ describe('all 28 input labels / 23 upper routing nodes', () => {
     expect(report.status).toBe('RECOMMENDATION');
     expect(report.primary?.intrinsic?.decision).toBe('RETAINED');
     expect(report.primary!.score.lower).toBeGreaterThanOrEqual(0.15);
-    expect(report.primary!.expectedFpGivenSuccess!.upper).toBeLessThanOrEqual(100);
+    expect(report.primary!.expectedFpGivenSuccess!.upper).toBeLessThanOrEqual(65);
     if (fixture.label.startsWith('220')) {
       expect(report.primary!.scoreEstimate).toBe(1);
       expect(report.primary!.expectedFpGivenSuccess).toEqual({ lower: 0, upper: 0 });

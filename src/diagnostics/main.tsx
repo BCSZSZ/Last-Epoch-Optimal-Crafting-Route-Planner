@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { MODEL_ID } from '../core/catalog';
 import type { PlanProgress } from '../core/planner';
+import { MAXIMUM_SUCCESS_FP } from '../core/policy';
 import { BrowserPlanner } from '../execution/browser';
 import { benchmarkMatrix } from './cases';
 import { deviceSummary } from './record';
@@ -9,7 +10,7 @@ import type { DeviceBenchmarkRecord, DeviceCaseRecord } from './record';
 import './styles.css';
 
 const fpNames = { NORMAL: '普通', ICE: '冰', BLOOD: '血' };
-const qualification = '固定验收装备、默认12秒/48模板，操作成功率与成功路径平均FP，15%／100FP门槛；结果只在本机生成。矩阵完成表示已执行全部规划请求，不表示模板穷尽或全局最优。设备类别由测试者声明，低性能物理设备验收保留待办。此页不测Worker内存。';
+const qualification = `固定验收装备、默认12秒/48模板，操作成功率与成功路径平均FP，15%／${MAXIMUM_SUCCESS_FP}FP门槛；结果只在本机生成。矩阵完成表示已执行全部规划请求，不表示模板穷尽或全局最优。设备类别由测试者声明，低性能物理设备验收保留待办。此页不测Worker内存。`;
 
 function DeviceCheck() {
   const [mode, setMode] = useState<DeviceBenchmarkRecord['mode']>('FULL');

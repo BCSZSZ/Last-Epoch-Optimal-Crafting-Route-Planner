@@ -59,7 +59,7 @@
     "research/7710-route-cases.json": "5e2eed34aeee3467606942e9af2f4fdd22a4b766e4627d8eaeadc13de2c0239a",
     "research/7710-route-results.json": "de9fdc10d16f72a3ab4f361815d42f622f24d6d3a8c5c9798e04be23ef19caf6",
     "research/7732-redemption-reference.json": "97ac364c816ea303cc1d8d5c169181b4e6a8f5ba2b718d46b24b881511c3770e",
-    "research/acquisition-order.json": "4b4820ef38ec8e69d3bf3c8f42d5afc552bb315b8c49a9dca74e9af88ff139d2",
+    "research/acquisition-order.json": "b9b4f291d4adf02c109f804fa79a2f35de642dd88641ef2cc7378b9293336636",
     "research/affix-action-claims.json": "d720c72a45da01dcfea09a7feb92c44087474e89d431e4378f08a7581ebe6aed",
     "research/audited-build.json": "997bdc0183fce5e9b1bf76925d1bdbdf093375e70bfc4f1013a913d2cb4de025",
     "research/browser-memory/7710-normal-input.json": "9da15a6b206a9c937c261ba3b6dc474c0ea70121f31eea304faee75d50991dd5",
@@ -76,16 +76,18 @@
     "research/device-validation/public-normal.json": "3dee7539ad446fa250bb1037e5cfd13a3ef79d71d12863c19d47d1ce140d09f4",
     "research/forge-fp-claims.json": "618e6d5fa1db4b8db683b7fdefdfd3c4b70c17363634a36b99eb2e1cd914770c",
     "research/fp-examples.json": "ff72db932924dcd374e4c8a42af47525b34fb37c4e5e2aecda9173f85d49713e",
-    "research/hierarchy-runtime-benchmark.json": "29d2dbbd819a2549f6e43b47ce7d01f2e324b7b631ff53c6bfe01bdff0b3f2d3",
-    "research/hierarchy-validation.json": "f8c27d29da8c29258845611ee16ef70800e0bf8dabdf0c3275d53aed030e211e",
+    "research/fp65-budget48.json": "f53fbbf74a92990a558c747f0973a6bd542a8ee95ce9e13b8dced0d029ffa95b",
+    "research/hierarchy-runtime-benchmark.json": "d1e7bfc70b9553e57b6ce07aed891aedf0e81a48014588135602b430a1ee4b5c",
+    "research/hierarchy-validation.json": "115c101d8ec8908aec10db3a7e2af066d05e93d391a27e7718964f8d211cc28d",
     "research/legacy-forge-compatibility.json": "f750857451068cd7470aa0b1802fcdff12b5d6ee8a997b144e34e858b34fdba0",
     "research/math-fixtures.json": "2e8f761032a1fb9710be3bdfe80d361982297d3cbf6663140f77bc517e6a978a",
     "research/reference-calculators.json": "fbbd966f057c2ed97ecca0ad8d2036eab93ac721cb506c993417c7faddbd831e",
-    "research/runtime-model-archive/manifest.json": "c77de66c31093a53c2a88aaa98587d03599b2cc7c5572c6d892fe8ff4d6516a6",
-    "research/ui-validation/parity.json": "24cf46156fc82eb9d816431b10f6938cfe1ea7a8f3a7755ae21329f1ab12d58f",
-    "src/generated/model.json": "512c7d0f367c317c09df92a9ca89ac54bc7bf96f147ba8d55f357f5d241502d3"
+    "research/runtime-model-archive/manifest.json": "2e530c61500edecc6560289365a9db0d80bb8a3387f7cc084b944a1161560e3b",
+    "research/ui-validation/parity.json": "b1dc56f6c446464eaf8862e25f25301261b830cd8ca8c6015107eb5875694093",
+    "src/core/policy.json": "4760eb1d5d50dc6a43d695217a267da1bce0f2868099eef3e064d70cb7934ded",
+    "src/generated/model.json": "33b9c2a7f6938130c6eba1856fda501d30b7edbc021f5fbe194130ba4d047e14"
   },
-  "modelId": "le-1.5.3-26087601-r7-hierarchical-intrinsic",
+  "modelId": "le-1.5.3-26087601-r8-fp65",
   "phase": "PUBLIC_PREVIEW",
   "policies": {
     "adaptiveReoptimization": false,
@@ -129,7 +131,7 @@
     "conditionalOnFinalSuccess": true,
     "finiteFpBoundaryBenefitsApplied": false,
     "kind": "INTRINSIC_V2",
-    "maximumSuccessfulMeanFp": 100,
+    "maximumSuccessfulMeanFp": 65,
     "minimumSuccess": 0.15,
     "preflightCertificates": [
       "STANDARD_T4_SEAL_REMOVAL",
@@ -141,7 +143,7 @@
     "upperRouteNodes": 23,
     "vacancyAwareInterleavedAcquisition": true
   },
-  "productionModelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+  "productionModelId": "le-1.5.3-iid-d3b4b828ff679b7c",
   "productionReady": false,
   "referenceExampleModels": [
     "INDEPENDENT_NORMALIZED_WEIGHTS_AND_UNIFORM_PERMUTATIONS",
@@ -151,7 +153,7 @@
   "remainingAcceptance": [
     "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "0636c8d6da7b76175ff0625e7c2153426e6093f5154c732423142d96da16975a",
+  "researchRevision": "58977bfebcf28936d9a029439abccd05ffd57452be657e480797b89740f59b7b",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 2,
   "steamBuildId": 26087601,

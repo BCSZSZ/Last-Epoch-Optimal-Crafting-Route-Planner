@@ -34,7 +34,7 @@ for (const fixture of fixtures) for (const fpType of ['NORMAL', 'ICE', 'BLOOD'] 
   const evaluated = candidates.map(route => evaluateIntrinsic(workspace, route));
   const retained = evaluated.filter(row => row.score.lower >= 0.15 && row.expectedFpGivenSuccess !== null);
   const ranked = [...retained].sort((a,b) => b.scoreEstimate - a.scoreEstimate || midpoint(a.expectedFpGivenSuccess!) - midpoint(b.expectedFpGivenSuccess!));
-  const thresholds = [40, 50, 60, 100].map(cap => {
+  const thresholds = [40, 50, 60, 65, 100].map(cap => {
     const primary = ranked.find(row => row.expectedFpGivenSuccess!.upper <= cap);
     return { cap, retained: retained.filter(row => row.expectedFpGivenSuccess!.upper <= cap).length,
       primary: primary && { success: midpoint(primary.score), successFp: midpoint(primary.expectedFpGivenSuccess!), description: primary.route.description } };

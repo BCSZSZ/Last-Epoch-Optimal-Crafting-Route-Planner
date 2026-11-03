@@ -4,16 +4,18 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
-import { Catalog, MODEL_ID, snapshot } from '../src/core/catalog';
+import { Catalog, MODEL_ID } from '../src/core/catalog';
 import { catalogForInputModel } from '../src/core/input-model';
 import { evaluateIntrinsic, IntrinsicWorkspace } from '../src/core/intrinsic';
 import { RuleEngine } from '../src/core/rules';
 import type { InputModel, Item, PlanRequest, Route } from '../src/core/types';
+import { recordCatalog } from './runtime_model_archive';
 
 const sourcePath = 'research/fixtures/redemption-7272-public-input.json';
 const source = JSON.parse(readFileSync(sourcePath, 'utf8'));
 const request: PlanRequest = source.input;
 const route: Route = source.route;
+const replay = recordCatalog(request.modelId, true).model;
 const middle = (value: { lower: number; upper: number } | null) => value && (value.lower + value.upper) / 2;
 const digest = (path: string) => createHash('sha256').update(readFileSync(path)).digest('hex');
 
@@ -35,7 +37,7 @@ function replaceGoals(original: Route, oldIds: readonly number[], newIds: readon
   return replace(original) as Route;
 }
 function run(mode: InputModel, label: string, ids = [6, 10], baseId = request.item.baseId) {
-  const catalog = catalogForInputModel(mode), engine = new RuleEngine(catalog);
+  const catalog = catalogForInputModel(mode, replay), engine = new RuleEngine(catalog);
   const req: PlanRequest = { ...request, item: { ...request.item, baseId }, inputModel: mode, search: { ...request.search, maxStates: 200000 },
     target: { ...request.target, requirements: request.target.requirements.map((entry, i) => ({ ...entry, ids: [ids[i]] })) } };
   const selected = replaceGoals(route, [6, 10], ids);
@@ -58,7 +60,7 @@ assert(Math.abs(middle(equal.score)! - 0.7034782607) < 1e-8);
 assert(Math.abs(middle(equal.expectedFpGivenSuccess)! - 82.67725552) < 1e-6);
 const weighted = run('FORGEABLE_WEIGHTED', 'SAME_IDS_REAL_WEIGHTS_ALL_CLASSES');
 const audited = run('AUDITED', 'SAME_IDS_REAL_WEIGHTS_EXACT_BASE');
-const real = new Catalog();
+const real = new Catalog(replay);
 const prefix = pool(real, request.item, 0).filter(row => !request.item.affixes.some(affix => affix.id === row.id));
 const suffix = pool(real, request.item, 1).filter(row => !request.item.affixes.some(affix => affix.id === row.id));
 const rarePrefix = [...prefix].sort((a, b) => a.weight - b.weight || a.id - b.id)[0];
@@ -74,11 +76,11 @@ const gloveCommonEqual = run('FORGEABLE_EQUAL', 'GLOVES_COMMON_PAIR_EQUAL_ALL_CL
 const gloveCommon = run('AUDITED', 'GLOVES_COMMON_PAIR_REAL_WEIGHTS', commonGloveIds, '4:0');
 const gloveRareEqual = run('FORGEABLE_EQUAL', 'GLOVES_RARE_PAIR_EQUAL_ALL_CLASSES', rareGloveIds, '4:0');
 const gloveRare = run('AUDITED', 'GLOVES_RARE_PAIR_REAL_WEIGHTS', rareGloveIds, '4:0');
-const result = { schemaVersion: 1, date: '2026-11-03', modelId: MODEL_ID,
+const result = { schemaVersion: 1, date: '2026-11-03', modelId: request.modelId,
   qualification: 'Actual audited resources and production controller, independent-draw nominal probability model; no client crafting sample. Fixed Glass Catalyst19:0, normal potential, 7272, one new prefix and suffix. Not all equipment or a player-specific recommendation.',
-  inputs: { sourceSha256: digest(sourcePath), modelSha256: digest('src/generated/model.json'), resourceSha256: digest('data/game/1.5.3/affixes.json') },
+  inputs: { sourceSha256: digest(sourcePath), modelSha256: digest(request.modelId === MODEL_ID ? 'src/generated/model.json' : `research/runtime-model-archive/${request.modelId}.json`), resourceSha256: digest('data/game/1.5.3/affixes.json') },
   sourceInput: request, sourceRoute: route, cases: [equal, weighted, audited, rare, gloveCommonEqual, gloveCommon, gloveRareEqual, gloveRare],
-  parameters: snapshot.parameters };
+  parameters: replay.parameters };
 const output = JSON.stringify(result, null, 2) + '\n';
 if (process.argv.includes('--verify-only')) assert.equal(readFileSync('research/redemption-7272-audit.json', 'utf8'), output);
 else writeFileSync('research/redemption-7272-audit.json', output);

@@ -43,8 +43,9 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                 "research/device-validation/desktop-baseline.json", "research/device-validation/desktop-baseline-validation.json",
                 "research/device-validation/public-normal.json", "research/device-validation/public-normal-validation.json",
                 "src/generated/model.json", "research/hierarchy-validation.json", "research/hierarchy-runtime-benchmark.json",
-                "research/runtime-model-archive/manifest.json", "research/ui-validation/parity.json", "research/acquisition-order.json")
-    model = {"schemaVersion": 2, "modelId": "le-1.5.3-26087601-r7-hierarchical-intrinsic",
+                "research/runtime-model-archive/manifest.json", "research/ui-validation/parity.json", "research/acquisition-order.json",
+                "src/core/policy.json", "research/fp65-budget48.json")
+    model = {"schemaVersion": 2, "modelId": "le-1.5.3-26087601-r8-fp65",
              "phase": "PUBLIC_PREVIEW", "productionReady": False,
              "productionModelId": load_json(root / "src/generated/model.json")["modelId"],
              "userInput": {"contract": "docs/minimal-ui.md", "assumeForgeable": True,
@@ -57,7 +58,8 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
              "dataRevision": manifest["dataRevision"],
              "fpDomain": {"minimum": 0, "maximum": 63, "defaultScoringDomain": [],
                           "weighting": "NOT_USED_IN_INTRINSIC_V2", "naturalDropDistribution": False},
-             "productionMetric": {"kind": "INTRINSIC_V2", "minimumSuccess": 0.15, "maximumSuccessfulMeanFp": 100,
+             "productionMetric": {"kind": "INTRINSIC_V2", "minimumSuccess": 0.15,
+                                  "maximumSuccessfulMeanFp": load_json(root / "src/generated/model.json")["practicalPolicy"]["maximumSuccessFp"],
                                   "conditionalOnFinalSuccess": True, "upperInputLabels": 28, "upperRouteNodes": 23,
                                   "vacancyAwareInterleavedAcquisition": True,
                                   "preflightCertificates": ["STANDARD_T4_SEAL_REMOVAL", "PURE_SINGLE_CAST_DOUBLE_HIT", "PURE_UNLIMITED_DOUBLE_HIT_SUCCESS_FP"],

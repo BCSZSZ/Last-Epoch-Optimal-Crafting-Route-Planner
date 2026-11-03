@@ -35,11 +35,13 @@ it('the default template head covers a vacancy-aware add-before-seal controller 
   const retained = reports.filter((row) => row.intrinsic.decision === 'RETAINED');
   const best = retained.sort((a, b) => b.scoreEstimate - a.scoreEstimate)[0];
   expect(compilation.templates.slice(0, 4).some((route) => route.family === 'INTERLEAVED_ACQUIRE')).toBe(true);
-  expect(best.expectedFpGivenSuccess!.upper).toBeLessThan(100);
+  expect(best.expectedFpGivenSuccess!.upper).toBeLessThanOrEqual(65);
   const lowest = compilation.templates.find((row) => row.family === 'INTERLEAVED_MIN_SEAL' && row.macros[0].kind === 'removal')!;
   const improved = evaluateIntrinsic(workspace, lowest);
   expect(improved.scoreEstimate).toBeCloseTo(0.5 * (0.94 + 0.06 * 0.69), 12);
   expect(improved.intrinsic.nonTerminatingStates).toBe(0);
+  expect(improved.intrinsic.decision).toBe('ABANDONED');
+  expect(improved.expectedFpGivenSuccess!.lower).toBeGreaterThan(65);
   expect(engine.sealChance(request.item, request.item.affixes[3].id)).toBeCloseTo(0.69, 12);
   expect(engine.sealChance({ ...request.item, affixes: request.item.affixes.filter((_, i) => i !== 1) }, request.item.affixes[3].id)).toBeCloseTo(0.621, 12);
   expect(reference.scoreEstimate).toBeCloseTo(0.25 * (0.94 * 0.69 + 0.06 * 0.345 + 0.94 * 0.345 + 0.06 * 0.15), 12);

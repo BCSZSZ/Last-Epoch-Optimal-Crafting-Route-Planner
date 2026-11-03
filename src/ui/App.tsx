@@ -5,6 +5,7 @@ import type { CompiledDraft, CraftingDraft, DraftScenario, DraftSlot, DraftSlots
 import { catalogForInputModel } from '../core/input-model';
 import type { IntrinsicReport } from '../core/intrinsic';
 import type { PlanProgress, PlanReport } from '../core/planner';
+import { MAXIMUM_SUCCESS_FP } from '../core/policy';
 import { BrowserPlanner } from '../execution/browser';
 import { affixName, fpNames, typeName } from './labels';
 import { routeSteps } from './route-view';
@@ -134,7 +135,7 @@ function ScenarioResults({ scenario, report }: ScenarioResult) {
     <div className="result-heading"><h2>{scenario.condition || '规划方案'}</h2><span className={`badge ${primary ? '' : 'amber'}`}>{primary ? '当前推荐' : shown ? '已放弃' : '未找到方案'}</span></div>
     {report.issues.length > 0 && <ul className="error-message">{report.issues.map((issue, index) => <li key={index}>{issue.message}</li>)}</ul>}
     {shown && <><RouteMetrics row={shown} /><RouteSteps row={shown} scenario={scenario} />
-      {!primary && <p className="abandon-note">已放弃 · 已算至第 {shown.intrinsic.evaluatedThroughStage} 步 · {shown.intrinsic.reason === 'ABOVE_MAXIMUM_SUCCESS_FP' ? '成功路径平均 FP 已超过 100' : shown.intrinsic.reason === 'NO_SUCCESS_EXIT' ? '该模板没有成功出口' : '成功率已低于 15%'}</p>}</>}
+      {!primary && <p className="abandon-note">已放弃 · 已算至第 {shown.intrinsic.evaluatedThroughStage} 步 · {shown.intrinsic.reason === 'ABOVE_MAXIMUM_SUCCESS_FP' ? `成功路径平均 FP 已超过 ${shown.intrinsic.maximumSuccessFp}` : shown.intrinsic.reason === 'NO_SUCCESS_EXIT' ? '该模板没有成功出口' : '成功率已低于 15%'}</p>}</>}
     {!shown && <p className="helper">当前计算范围尚未得到可用结果。</p>}
     <div className="result-tools"><button type="button" className="text-button" onClick={() => saveJson({ schemaVersion: 1, input: scenario.request, report }, 'last-epoch-crafting-report.json')}>导出报告</button>
       {abandoned.length > 0 && <details><summary>已放弃方案（{abandoned.length}）</summary><div className="abandoned-list">{abandoned.map((row, index) => <details key={row.route.id}><summary>已放弃 · 方案 {index + 1} · 已算至第 {row.intrinsic.evaluatedThroughStage} 阶段</summary><RouteMetrics row={row} /><RouteSteps row={row} scenario={scenario} /></details>)}</div></details>}
@@ -197,7 +198,7 @@ export function App() {
       {results.length > 0 && compiled && <section className="results" aria-label="规划结果" aria-live="polite">
         <div className="results-heading"><h2>规划结果</h2><span className="badge">{compiled.inputModel === 'FORGEABLE_EQUAL' ? '等权参考' : '实际词条权重 · 通用池'}</span></div>
         {results.map((result) => <ScenarioResults key={result.scenario.key} {...result} />)}
-        <p className="result-conventions">假设 FP 持续充足，剥离失手或必要封印失败即停止。FP 均值只统计最终成功的路线；成功率低于 15% 或均值超过 100 FP 时放弃。材料无限。</p>
+        <p className="result-conventions">假设 FP 持续充足，剥离失手或必要封印失败即停止。FP 均值只统计最终成功的路线；成功率低于 15% 或均值超过 {MAXIMUM_SUCCESS_FP} FP 时放弃。材料无限。</p>
         <details className="assumptions"><summary>计算假设</summary>{compiled.assumptions.map((assumption) => <p key={assumption}>{assumption}</p>)}<p>独立随机参考模型；已搜索的模板范围不代表全局最优。</p><p className="model-id">{MODEL_ID}</p></details>
       </section>}
     </main>

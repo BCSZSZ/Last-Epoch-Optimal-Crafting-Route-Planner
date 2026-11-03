@@ -84,10 +84,11 @@ describe('joint reward projection and intrinsic reference calculations', () => {
 
 describe('pruning, coverage and execution limits', () => {
   it('passes exact threshold equality and keeps numerical uncertainty unresolved', () => {
-    expect(practicalDecision({ lower: 0.15, upper: 0.15 }, { lower: 100, upper: 100 })).toBe('RETAINED');
+    expect(practicalDecision({ lower: 0.15, upper: 0.15 }, { lower: 65, upper: 65 })).toBe('RETAINED');
     expect(practicalDecision({ lower: 0.149, upper: 0.1499 }, { lower: 10, upper: 10 })).toBe('ABANDONED');
-    expect(practicalDecision({ lower: 1, upper: 1 }, { lower: 100.0001, upper: 101 })).toBe('ABANDONED');
-    expect(practicalDecision({ lower: 0.1499, upper: 0.1501 }, { lower: 99, upper: 101 })).toBe('UNRESOLVED');
+    expect(practicalDecision({ lower: 1, upper: 1 }, { lower: 65.0001, upper: 66 })).toBe('ABANDONED');
+    expect(practicalDecision({ lower: 0.1499, upper: 0.1501 }, { lower: 64, upper: 66 })).toBe('UNRESOLVED');
+    expect(practicalDecision({ lower: 1, upper: 1 }, { lower: 64.9999, upper: 65.0001 })).toBe('UNRESOLVED');
   });
   it('agrees with complete evaluation without prefix pruning for all 28 labels', async () => {
     for (const { label, request } of hierarchyFixtures()) {
@@ -126,15 +127,17 @@ describe('pruning, coverage and execution limits', () => {
     expect(text).toContain('CONTINUE');
     expect(templates.some((row) => row.family === 'REDEMPTION_PROTECTED_SECOND')).toBe(true);
   });
-  it('checks actual repeated Redemption instead of globally banning double-target rolls', () => {
+  it('abandons the formerly retained 70FP Ice Redemption loop under the new65FP cutoff', () => {
     const base = exampleRequest(), request: PlanRequest = { ...base, item: { ...base.item, baseId: '3:0', fpType: 'ICE',
       affixes: [[502, 7], [504, 7], [7, 3], [10, 2]].map(([id, tier]) => ({ id, tier, slot: 'ordinary', roll: null })) },
       target: { requirements: [28, 501].map((id) => ({ ids: [id], minTier: 7, maxTier: 7, slot: 'ordinary' })) } };
     const result = evaluateIntrinsic(new IntrinsicWorkspace(new RuleEngine(), request), { id: 'boots', macros: [
       { kind: 'repeat', action: { kind: 'redemption', glyph: 'hope' }, until: { kind: 'target' } }] });
     expect(result.score).toEqual({ lower: 1, upper: 1 });
-    expect(result.intrinsic.decision).toBe('RETAINED');
-    expect(middle(result.expectedFpGivenSuccess!)).toBeCloseTo(70.02429, 3);
+    expect(result.intrinsic.decision).toBe('ABANDONED');
+    expect(result.intrinsic.maximumSuccessFp).toBe(65);
+    expect(result.intrinsic.successfulFpLowerBound).toBeGreaterThan(65);
+    expect(result.intrinsic.successfulFpLowerBound).toBeLessThan(70.02430);
   }, 30000);
   it('certifies an expensive repeated route using a reward lower bound without pretending to finish its mean', () => {
     const request = exampleRequest('7732-missing');
@@ -142,7 +145,7 @@ describe('pruning, coverage and execution limits', () => {
       { kind: 'repeat', action: { kind: 'redemption', glyph: 'hope' }, until: { kind: 'target' } }] });
     expect(result.intrinsic.decision).toBe('ABANDONED');
     expect(result.score).toEqual({ lower: 1, upper: 1 });
-    expect(result.intrinsic.successfulFpLowerBound).toBeGreaterThan(100);
+    expect(result.intrinsic.successfulFpLowerBound).toBeGreaterThan(65);
     expect(result.intrinsic.successfulFpLowerBound).toBeLessThan(900.4417);
     expect(result.expectedFpGivenSuccess).toBeNull();
   });

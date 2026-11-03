@@ -12,6 +12,7 @@ import type { Structure } from './hierarchy';
 import { evaluateIntrinsic, IntrinsicWorkspace } from './intrinsic';
 import type { IntrinsicReport } from './intrinsic';
 import { catalogForInputModel, readInputModel } from './input-model';
+import { maximumSuccessFp } from './policy';
 
 export interface PlanProgress {
   readonly phase: 'VALIDATION' | 'SEARCH' | 'REFINEMENT' | 'DONE';
@@ -301,7 +302,7 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
     await options.yieldControl?.();
   }
   if (options.signal?.aborted) throw new PlanningCancelledError();
-  progress('DONE', primary ? '已得到通过15%／100FP门槛的当前主推荐' : '已返回放弃记录或尚未完成的候选范围');
+  progress('DONE', primary ? `已得到通过15%／${maximumSuccessFp(engine.catalog.model)}FP门槛的当前主推荐` : '已返回放弃记录或尚未完成的候选范围');
   const pareto = retained.filter((row) => !retained.some((other) => other !== row && other.score.lower >= row.score.upper &&
     other.expectedFpGivenSuccess!.upper < row.expectedFpGivenSuccess!.lower));
   return {

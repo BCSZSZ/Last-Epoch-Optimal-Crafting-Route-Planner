@@ -39,7 +39,7 @@ describe('pure double-hit preflight certificates', () => {
     const request = fixture(fpType), engine = new RuleEngine(catalogForInputModel(request.inputModel));
     const certificate = redemptionCertificate(request, repeated(request), engine)!;
     expect(certificate.certainlyEventuallySucceeds).toBe(true);
-    expect(certificate.successfulFpLowerBound).toBeGreaterThan(100);
+    expect(certificate.successfulFpLowerBound).toBeGreaterThan(65);
     const report = evaluateIntrinsic(new IntrinsicWorkspace(engine, request), repeated(request));
     expect(report.states).toBe(0);
     expect(report.score).toEqual({ lower: 1, upper: 1 });
@@ -56,10 +56,10 @@ describe('pure double-hit preflight certificates', () => {
     expect(twoTargetCastBound({ ...request, constraints: { protected: [{ id: request.item.affixes[0].id, identity: true }] } }, engine)).toBeNull();
   });
 
-  it('does not blacklist double-hit loops in a small valid kernel where the complete mean passes 100FP', () => {
+  it('does not blacklist double-hit loops in a small valid kernel where the complete mean passes65FP', () => {
     const request = fixture(), original = catalogForInputModel(request.inputModel);
     const poolIds = original.model.affixes.filter((row) => row.special === 0 && row.side === 0 && row.tiers.length >= 7 &&
-      original.canRollOn(row.id, request.item.baseId) && original.craftWeight(row.id, request.item.baseId) > 0).slice(0, 6).map((row) => row.id);
+      original.canRollOn(row.id, request.item.baseId) && original.craftWeight(row.id, request.item.baseId) > 0).slice(0, 5).map((row) => row.id);
     const [oldA, oldB, targetA, targetB] = poolIds;
     const suffix = request.item.affixes.filter((row) => original.side(row.id) === 1).map((row) => ({ ...row, tier: 1 }));
     const model = { ...original.model, affixes: original.model.affixes.map((row) => ({ ...row,
@@ -72,6 +72,6 @@ describe('pure double-hit preflight certificates', () => {
     expect(redemptionCertificate(tiny, repeated(tiny), engine)).toBeNull();
     const result = evaluateIntrinsic(new IntrinsicWorkspace(engine, tiny), repeated(tiny), undefined, true);
     expect(result.score.lower).toBeGreaterThan(0.99);
-    expect(result.expectedFpGivenSuccess!.upper).toBeLessThan(100);
+    expect(result.expectedFpGivenSuccess!.upper).toBeLessThan(65);
   });
 });

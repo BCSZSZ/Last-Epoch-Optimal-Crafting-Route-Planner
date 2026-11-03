@@ -1,6 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+  "currentModelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+  "historical": true,
   "status": "PASS",
   "checks": [
     {
@@ -52,5 +54,5 @@
       "browserMilliseconds": 2196
     }
   ],
-  "qualification": "Actual local Pages-subpath static UI exports from production Worker; replays the chosen full primary in Node. Does not prove searched-scope equality, independent mechanics correctness, actual unknown-item probabilities, low-end-device performance or client frequencies."
+  "qualification": "Actual local Pages-subpath static UI exports replayed with their original versioned data, input assumptions and FP policy. Historical reports do not certify the current UI or policy. Does not prove searched-scope equality, independent mechanics correctness, actual unknown-item probabilities, low-end-device performance or client frequencies."
 }

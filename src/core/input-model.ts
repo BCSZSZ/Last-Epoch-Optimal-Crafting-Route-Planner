@@ -9,17 +9,17 @@ export function readInputModel(value: unknown): InputModel {
 }
 
 /** Explicit user-input assumptions; audited snapshot remains immutable and is never relabelled as an exact item pool. */
-export function catalogForInputModel(mode: InputModel = 'AUDITED'): Catalog {
-  if (mode === 'AUDITED') return new Catalog();
-  const found = derived.get(mode); if (found) return found;
-  const model: Model = { ...snapshot,
-    bases: snapshot.bases.map((base) => ({ ...base, classRequirement: 31 })),
-    affixes: mode === 'FORGEABLE_EQUAL' ? snapshot.affixes.map((row) => ({ ...row,
+export function catalogForInputModel(mode: InputModel = 'AUDITED', source: Model = snapshot): Catalog {
+  if (mode === 'AUDITED') return new Catalog(source);
+  const found = source === snapshot ? derived.get(mode) : undefined; if (found) return found;
+  const model: Model = { ...source,
+    bases: source.bases.map((base) => ({ ...base, classRequirement: 31 })),
+    affixes: mode === 'FORGEABLE_EQUAL' ? source.affixes.map((row) => ({ ...row,
       weight: row.weight > 0 ? 1 : 0,
       overrides: row.overrides.map((entry) => ({ ...entry, weight: entry.weight > 0 ? 1 : 0 })),
-    })) : snapshot.affixes,
+    })) : source.affixes,
     rngModel: mode === 'FORGEABLE_EQUAL' ? 'ITEM_TYPE_ALL_CLASSES_EQUAL_POSITIVE_CANDIDATES_V1' : 'ITEM_TYPE_ALL_CLASSES_AUDITED_WEIGHTS_V1',
     qualification: 'Assume forgeable, player/item level100, all-class item-type pool; anonymous input uses equal positive candidate weights. Not an exact unknown item pool.',
   };
-  const catalog = new Catalog(model); derived.set(mode, catalog); return catalog;
+  const catalog = new Catalog(model); if (source === snapshot) derived.set(mode, catalog); return catalog;
 }

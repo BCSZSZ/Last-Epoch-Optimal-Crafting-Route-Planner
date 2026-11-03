@@ -2,13 +2,15 @@
 
 《最后纪元》自动装备打造路线规划器。
 
-**救赎与FP复核**：[7272单中路线、真实权重和阈值建议](docs/research/redemption-7272-and-fp-threshold-20261103.md)。70.35%是无限FP操作成功率；常规L100崇高初始FP均值40.44，固定法器真实权重例预算内完成率约19.89%。建议默认费用门槛改60FP，待采用；线上仍按100FP。[FP生成与63存储上限](docs/research/fp-generation-reaudit-20261103.md)。
+**当前放弃门槛：65FP**。恰好65通过，只统计最终成功路径；[为何均值65不能唯一推算48FP完成率及两个实际例子](docs/fp65-policy.md)。
+
+**救赎与FP复核**：[7272单中路线、真实权重和阈值建议](docs/research/redemption-7272-and-fp-threshold-20261103.md)。70.35%是无限FP操作成功率；常规L100崇高初始FP均值40.44，固定法器真实权重例预算内完成率约19.89%。用户已确认费用门槛为65FP，已接入生产；恰好65通过。[FP生成与63存储上限](docs/research/fp-generation-reaudit-20261103.md)。
 
 **本轮修复**：补入“剥离后按空槽先补目标，再准备最低阶封印”的固定分支，增加高阶封印组合与纯救赎双赌的有证预排除，简化路线展示。[顺序比较、缺陷原因与剪枝边界](docs/acquisition-order-review.md)。
 
 **极简界面已接入计算**：固定两前缀、两后缀和一封印，按钮选T级，词条可留空；左起始、右简易／详细目标，结果在跨栏按钮下方。简易目标分别填前后缀数量。缺省身份用等权参考，完整身份用实际权重通用池。[输入约定](docs/minimal-ui.md)、[后续预计算设计](docs/precomputation-plan.md)。
 
-**新版求解器**：[23节点的细分结构、完整模板与有证剪枝](docs/hierarchical-solver-v2.md)已接入生产入口。主指标改为操作成功率和最终成功路径平均FP，低于15%或高于100FP的模板显示“已放弃”；计算预算不足单列未完成。[112例逐标签／侧别验收](research/hierarchy-validation.json)
+**新版求解器**：[23节点的细分结构、完整模板与有证剪枝](docs/hierarchical-solver-v2.md)已接入生产入口。主指标改为操作成功率和最终成功路径平均FP，低于15%或高于65FP的模板显示“已放弃”；计算预算不足单列未完成。[112例逐标签／侧别验收](research/hierarchy-validation.json)
 
 **[打开公开预览版](https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/)**，无需登录。
 

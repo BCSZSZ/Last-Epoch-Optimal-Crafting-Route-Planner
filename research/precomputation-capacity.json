@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+  "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
   "scope": "PRECOMPUTATION_CAPACITY_ANALYSIS_NOT_IMPLEMENTATION",
   "ordinaryBases": 565,
   "typeClassPoolContexts": 38,
@@ -49,7 +49,8 @@
   "literalTableTwoFloat64Bytes": 287020426199040,
   "literalTableTwoFloat64TiB": 261.04355692863464,
   "iceFeeFactor": 0.7,
-  "normalCostCeilingNeededToRetainIce100": 142.85714285714286,
+  "maximumSuccessfulMeanFp": 65,
+  "normalCostCeilingNeededToRetainIce": 92.85714285714286,
   "pools": [
     {
       "equipmentType": 0,
@@ -513,14 +514,14 @@
     "64 bytes per entry and four Pareto entries are illustrative storage assumptions; no encoding/compression benchmark is claimed.",
     "Literal total sums itemType/class pool contexts: Standard shard-bearing T7-capable IDs, four ordinary affixes, exactly two T7s, other tiers1..6, unordered two-target choice and native orders. No seal, extra slot, protection, roll, player-level or base-subtype multiplication. This is the full audited API, not the minimal UI reference space.",
     "Effective kernel fingerprints may collapse pool contexts; the literal total enumerates contexts as requested inputs, not a minimum information-theoretic table size.",
-    "Normal/ICE scaling applies to a fixed route under intrinsic no-balance rules, not necessarily to the chosen optimum after100FP filtering."
+    "Normal/ICE scaling applies to a fixed route under intrinsic no-balance rules, not necessarily to the chosen optimum after the versioned FP cutoff."
   ],
   "sourceSha256": {
-    "src/generated/model.json": "7682651db84a66f58d16130668bc0ea301e158048a0325fb0cda4b10fd41632b",
+    "src/generated/model.json": "33b9c2a7f6938130c6eba1856fda501d30b7edbc021f5fbe194130ba4d047e14",
     "src/core/levels.ts": "d53a6f58306ba7d887752042208d9cc8ab71819b11d033f9cd0cbc234e82aa9a",
     "src/core/rules.ts": "380a9af9251160a4fa27928142ba10e6716021084c13205d71216c6aa90ff449",
     "src/core/catalog.ts": "8280dd7c469bcc48d1691033cecb7cbb68d9d37d7506907b33177636bae3e94d",
     "research/strategy-classification-coverage.json": "28ef356dc3ddc707e90838fdf22517a8465d83abd19b1db0003e1acd1085e24b",
-    "scripts/analyze_precomputation.py": "d681eca645b4c1be8507d5d8a5b18276237ae9959f2b0a52711bcd7d7b2c4043"
+    "scripts/analyze_precomputation.py": "e0fa5fd398e503639c294b3a2d704e4de02b6994191d8825b24465134b0fac65"
   }
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-11-03",
-  "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+  "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
   "qualification": "Fixed representative simple-input fixtures, all generated add/seal/removal/Havoc templates; excludes Redemption/Chaos. Infinite-FP intrinsic metrics, no global optimality assertion or actual-drop mixture. Thresholds are product-policy alternatives, not physical impossibility.",
   "rows": [
     {

@@ -6,6 +6,9 @@ import { catalogForInputModel } from '../core/input-model';
 import type { IntrinsicReport } from '../core/intrinsic';
 import type { PlanProgress, PlanReport } from '../core/planner';
 import { MAXIMUM_SUCCESS_FP } from '../core/policy';
+import { REFERENCE_FP } from '../core/policy';
+import type { CompletionReport } from '../core/completion';
+import { completionPercent } from './completion-view';
 import { BrowserPlanner } from '../execution/browser';
 import { affixName, fpNames, typeName } from './labels';
 import { routeSteps } from './route-view';
@@ -114,8 +117,9 @@ function RouteSteps({ row, scenario }: { row: IntrinsicReport; scenario: DraftSc
   return steps.length ? <ol className="route-list">{steps.map((step, index) => <li key={index}><div><StepInstructions step={step} /></div></li>)}</ol> : <p className="already-done">{row.intrinsic.decision === 'RETAINED' ? '目标已经达成，无需制作。' : '此模板未执行制作。'}</p>;
 }
 
-function RouteMetrics({ row }: { row: IntrinsicReport }) {
-  return <div className="metrics"><div><span>{row.intrinsic.probabilityMeaning === 'FULL_ROUTE' ? '操作成功率' : '成功率上界'}</span><strong>{row.intrinsic.probabilityMeaning === 'FULL_ROUTE' ? percent(row.score) : `≤${(row.score.upper * 100).toFixed(2)}%`}</strong></div>
+function RouteMetrics({ row, completion }: { row: IntrinsicReport; completion?: CompletionReport | null }) {
+  return <div className="metrics"><div><span>{row.intrinsic.probabilityMeaning === 'FULL_ROUTE' ? '成功率' : '成功率上界'}</span><strong>{row.intrinsic.probabilityMeaning === 'FULL_ROUTE' ? percent(row.score) : `≤${(row.score.upper * 100).toFixed(2)}%`}</strong></div>
+    <div><span>整件完成率（{completion?.initialFp ?? REFERENCE_FP} FP）</span><strong>{completion?.probability ? completionPercent(completion.probability) : completion?.status === 'INCOMPLETE' ? '未算完' : '—'}</strong></div>
     <div><span>{row.intrinsic.fpMeaning === 'PREFIX_GIVEN_PREFIX_SURVIVAL' ? '截至此步的过关平均 FP' : row.intrinsic.successfulFpLowerBound !== null ? '成功路径平均 FP 下界' : '成功路径平均 FP'}</span>
       <strong>{row.intrinsic.successfulFpLowerBound !== null ? `≥${row.intrinsic.successfulFpLowerBound.toFixed(2)}` : number(row.expectedFpGivenSuccess)}</strong></div></div>;
 }
@@ -131,16 +135,21 @@ function ScenarioResults({ scenario, report }: ScenarioResult) {
   const primary = report.primary as IntrinsicReport | null;
   const abandoned = [...report.abandoned ?? []].sort((a, b) => b.scoreEstimate - a.scoreEstimate || (a.expectedFpGivenSuccess?.lower ?? Infinity) - (b.expectedFpGivenSuccess?.lower ?? Infinity));
   const shown = primary ?? abandoned[0];
+  const recommendation = report.completion?.recommendation;
+  const badge = !primary ? shown ? '已放弃' : '未找到方案' : recommendation === 'RECOMMENDED' ? '推荐' :
+    recommendation === 'NOT_RECOMMENDED' ? '不推荐' : report.completion?.status === 'INCOMPLETE' || recommendation === 'UNRESOLVED' ? '完成率待确定' : '当前方案';
   return <section className="result-card">
-    <div className="result-heading"><h2>{scenario.condition || '规划方案'}</h2><span className={`badge ${primary ? '' : 'amber'}`}>{primary ? '当前推荐' : shown ? '已放弃' : '未找到方案'}</span></div>
+    <div className="result-heading"><h2>{scenario.condition || '规划方案'}</h2><span className={`badge ${!primary || recommendation === 'NOT_RECOMMENDED' ? 'amber' : recommendation !== 'RECOMMENDED' ? 'neutral' : ''}`}>{badge}</span></div>
     {report.issues.length > 0 && <ul className="error-message">{report.issues.map((issue, index) => <li key={index}>{issue.message}</li>)}</ul>}
-    {shown && <><RouteMetrics row={shown} /><RouteSteps row={shown} scenario={scenario} />
+    {shown && <><RouteMetrics row={shown} completion={primary ? report.completion : null} /><RouteSteps row={shown} scenario={scenario} />
       {!primary && <p className="abandon-note">已放弃 · 已算至第 {shown.intrinsic.evaluatedThroughStage} 步 · {shown.intrinsic.reason === 'ABOVE_MAXIMUM_SUCCESS_FP' ? `成功路径平均 FP 已超过 ${shown.intrinsic.maximumSuccessFp}` : shown.intrinsic.reason === 'NO_SUCCESS_EXIT' ? '该模板没有成功出口' : '成功率已低于 15%'}</p>}</>}
     {!shown && <p className="helper">当前计算范围尚未得到可用结果。</p>}
     <div className="result-tools"><button type="button" className="text-button" onClick={() => saveJson({ schemaVersion: 1, input: scenario.request, report }, 'last-epoch-crafting-report.json')}>导出报告</button>
       {abandoned.length > 0 && <details><summary>已放弃方案（{abandoned.length}）</summary><div className="abandoned-list">{abandoned.map((row, index) => <details key={row.route.id}><summary>已放弃 · 方案 {index + 1} · 已算至第 {row.intrinsic.evaluatedThroughStage} 阶段</summary><RouteMetrics row={row} /><RouteSteps row={row} scenario={scenario} /></details>)}</div></details>}
     </div>
     <details className="search-scope"><summary>计算说明</summary><p>已计算 {report.search.evaluatedRoutes} 个模板。{report.searchStatus === 'INCOMPLETE' ? '部分候选尚未完成，未证明最优。' : '本次模板范围已完成，不代表全局最优。'}</p>
+      <p>成功率不计FP耗尽；整件完成率按起始{REFERENCE_FP}FP完整结算。整件完成率低于25%标不推荐，高于65%标推荐，等于门槛时不额外标记。</p>
+      {report.completion?.reason && <p>{report.completion.reason}</p>}
       {report.hierarchy && <p>结构预排除 {report.hierarchy.structurallyRejected} 个候选；数值上界／下界预检与实际计算记录保留在导出报告。</p>}
       {!!report.hierarchy?.preExcluded?.length && <p>已放弃 {report.hierarchy.preExcluded.length} 个封印／剥离组合：成功率上界最高 {(Math.max(...report.hierarchy.preExcluded.map((row) => row.probabilityUpperBound)) * 100).toFixed(2)}%，无需展开后续计算。</p>}</details>
   </section>;
@@ -198,7 +207,7 @@ export function App() {
       {results.length > 0 && compiled && <section className="results" aria-label="规划结果" aria-live="polite">
         <div className="results-heading"><h2>规划结果</h2><span className="badge">{compiled.inputModel === 'FORGEABLE_EQUAL' ? '等权参考' : '实际词条权重 · 通用池'}</span></div>
         {results.map((result) => <ScenarioResults key={result.scenario.key} {...result} />)}
-        <p className="result-conventions">假设 FP 持续充足，剥离失手或必要封印失败即停止。FP 均值只统计最终成功的路线；成功率低于 15% 或均值超过 {MAXIMUM_SUCCESS_FP} FP 时放弃。材料无限。</p>
+        <p className="result-conventions">成功率假设 FP 持续充足；整件完成率按起始 {REFERENCE_FP} FP。剥离失手或必要封印失败即停止。FP 均值只统计最终成功路线，超过 {MAXIMUM_SUCCESS_FP} FP 放弃。材料无限。</p>
         <details className="assumptions"><summary>计算假设</summary>{compiled.assumptions.map((assumption) => <p key={assumption}>{assumption}</p>)}<p>独立随机参考模型；已搜索的模板范围不代表全局最优。</p><p className="model-id">{MODEL_ID}</p></details>
       </section>}
     </main>

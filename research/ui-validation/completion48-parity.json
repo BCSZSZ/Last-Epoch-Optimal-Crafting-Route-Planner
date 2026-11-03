@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
+  "status": "PASS",
+  "checks": [
+    {
+      "file": "completion48-7710.json",
+      "sha256": "6403f9d137c3ce9cfb8605d493b45a980cf313bd26f73576708023637c204258",
+      "routeId": "r-32e2603f38468323",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successMeanFp": {
+        "lower": 48.804892289212226,
+        "upper": 48.804892289219154
+      },
+      "completion": {
+        "routeId": "r-32e2603f38468323",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.6834347795614808,
+          "upper": 0.6834347901919642
+        },
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 47,
+        "reason": null
+      },
+      "fullPrimaryAndCompletionBitIdentical": true
+    },
+    {
+      "file": "completion48-not-recommended.json",
+      "sha256": "f1cd488f75a9e0624f0fca9a7dce9b7257421f6b19ea0d240572b7e0c5df07db",
+      "routeId": "r-80b93ecb2f6c4e57",
+      "operationSuccess": {
+        "lower": 0.3346499999999975,
+        "upper": 0.3346500000000026
+      },
+      "successMeanFp": {
+        "lower": 56.37059086067632,
+        "upper": 56.37059086068375
+      },
+      "completion": {
+        "routeId": "r-80b93ecb2f6c4e57",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.197491443059231,
+          "upper": 0.19749144306557875
+        },
+        "recommendation": "NOT_RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 68,
+        "reason": null
+      },
+      "fullPrimaryAndCompletionBitIdentical": true
+    },
+    {
+      "file": "completion48-7721.json",
+      "sha256": "92937849b07c443fe764a2d43ed6642124fb1375bd12641b63f35677ac2a07c8",
+      "routeId": "r-b3963f4483caa1a0",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successMeanFp": {
+        "lower": 44.61212193627247,
+        "upper": 44.61212193627655
+      },
+      "completion": {
+        "routeId": "r-b3963f4483caa1a0",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.7226272185846243,
+          "upper": 0.7226272356587926
+        },
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 18,
+        "reason": null
+      },
+      "fullPrimaryAndCompletionBitIdentical": true
+    },
+    {
+      "file": "completion48-neutral.json",
+      "sha256": "96ecf8c5ee0598368620dc1b8bf4fdbd1a05f42c7e0202fac49e3b62ad9c181d",
+      "routeId": "r-576a82d311271157",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successMeanFp": {
+        "lower": 54.469342289212754,
+        "upper": 54.469342289218616
+      },
+      "completion": {
+        "routeId": "r-576a82d311271157",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.6178322335417583,
+          "upper": 0.6178322436565451
+        },
+        "recommendation": "NEUTRAL",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 101,
+        "reason": null
+      },
+      "fullPrimaryAndCompletionBitIdentical": true
+    }
+  ],
+  "qualification": "Four actual local static Pages-subpath browser UI/Worker downloads, replayed in Node with full intrinsic and48FP completion equality. Includes recommended, not-recommended and neutral cases. Shares physical rules; independent mechanics evidence is separate. Not a low-end device or global-optimality claim."
+}

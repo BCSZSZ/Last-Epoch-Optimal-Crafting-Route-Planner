@@ -2745,7 +2745,7 @@
     "docs/strategy-classification.md": "b02cb966feb4059afb38acd1ae9425e0869ea9987bc3a9f6b1ce7a017ae8e006",
     "scripts/check_strategy_classification.py": "f7f0fbccff3989517e36078fbc192caa7af594e727b1a5dc297ae3fc98354516",
     "src/core/catalog.ts": "8280dd7c469bcc48d1691033cecb7cbb68d9d37d7506907b33177636bae3e94d",
-    "src/core/rules.ts": "380a9af9251160a4fa27928142ba10e6716021084c13205d71216c6aa90ff449",
+    "src/core/rules.ts": "fd851784c8cb5ec8096a54e1455467f76ce7affb3481c5961c5dca13b21ce096",
     "src/core/validation.ts": "486d5c02e303f9ecbeca8475dfef19943e7a3d8e3294131f5fa6394a5f509cab"
   },
   "orthogonalOrdinarySealOccupancyFlags": [

@@ -24,6 +24,12 @@
       "sha256": "512c7d0f367c317c09df92a9ca89ac54bc7bf96f147ba8d55f357f5d241502d3",
       "metric": "INTRINSIC_V2",
       "purpose": "Historical100FP policy, published acquisition and simplified-UI reports before the65FP revision."
+    },
+    "le-1.5.3-iid-d3b4b828ff679b7c": {
+      "file": "research/runtime-model-archive/le-1.5.3-iid-d3b4b828ff679b7c.json",
+      "sha256": "33b9c2a7f6938130c6eba1856fda501d30b7edbc021f5fbe194130ba4d047e14",
+      "metric": "INTRINSIC_V2",
+      "purpose": "Historical65FP release before the48FP completion metric."
     }
   }
 }

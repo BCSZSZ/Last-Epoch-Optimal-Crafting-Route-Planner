@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+  "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
   "confidence": 0.99,
   "qualification": "Two fixed real-catalog controllers with different structures and FP types; nominal independent-draw model. Actual48FP settlement includes final-action completion, low-FP preservation, NG and critical refunds. Joint99% Hoeffding sampling intervals across both cases. A conditional FP mean does not determine a finite-budget success probability; these are examples, not all-equipment averages or client measurements.",
   "rows": [
     {
       "label": "BLOOD_7272_INTERLEAVED",
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "inputModel": "AUDITED",
         "item": {
           "baseId": "19:0",
@@ -407,7 +407,7 @@
     {
       "label": "ICE_GLOVES_REDEMPTION_FIRST_HIT",
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "inputModel": "AUDITED",
         "item": {
           "baseId": "4:0",

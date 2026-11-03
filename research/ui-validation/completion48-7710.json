@@ -1,0 +1,4988 @@
+{
+  "schemaVersion": 1,
+  "input": {
+    "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
+    "inputModel": "FORGEABLE_EQUAL",
+    "item": {
+      "baseId": "4:0",
+      "itemLevel": 100,
+      "fpType": "NORMAL",
+      "corrupted": false,
+      "affixes": [
+        {
+          "id": 2,
+          "tier": 1,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 7,
+          "tier": 7,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 8,
+          "tier": 7,
+          "slot": "ordinary",
+          "roll": null
+        }
+      ]
+    },
+    "craftingContext": {
+      "playerLevel": 100
+    },
+    "target": {
+      "requirements": [
+        {
+          "ids": [
+            4
+          ],
+          "minTier": 7,
+          "maxTier": 7,
+          "slot": "ordinary"
+        },
+        {
+          "ids": [
+            5
+          ],
+          "minTier": 7,
+          "maxTier": 7,
+          "slot": "ordinary"
+        }
+      ]
+    },
+    "constraints": {},
+    "scoring": {},
+    "search": {
+      "milliseconds": 12000,
+      "maxRoutes": 48,
+      "macroStages": 12,
+      "maxStates": 25000
+    }
+  },
+  "report": {
+    "metric": "INTRINSIC_V2",
+    "inputModel": "FORGEABLE_EQUAL",
+    "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
+    "gameVersion": "1.5.3",
+    "completion": {
+      "routeId": "r-32e2603f38468323",
+      "initialFp": 48,
+      "status": "COMPLETE",
+      "probability": {
+        "lower": 0.6834347795614808,
+        "upper": 0.6834347901919642
+      },
+      "recommendation": "RECOMMENDED",
+      "evaluation": "BOUNDED_NUMERICAL",
+      "states": 47,
+      "reason": null
+    },
+    "status": "RECOMMENDATION",
+    "primary": {
+      "route": {
+        "id": "r-32e2603f38468323",
+        "macros": [
+          {
+            "kind": "conditional",
+            "when": {
+              "kind": "identity",
+              "requirement": {
+                "ids": [
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 8,
+                "slot": "ordinary"
+              }
+            },
+            "then": [],
+            "otherwise": [
+              {
+                "kind": "once",
+                "action": {
+                  "kind": "add",
+                  "id": 5,
+                  "glyph": "hope"
+                }
+              }
+            ]
+          },
+          {
+            "kind": "conditional",
+            "when": {
+              "kind": "identity",
+              "requirement": {
+                "ids": [
+                  4
+                ],
+                "minTier": 1,
+                "maxTier": 8,
+                "slot": "ordinary"
+              }
+            },
+            "then": [],
+            "otherwise": [
+              {
+                "kind": "fill",
+                "ids": [
+                  2,
+                  7,
+                  8,
+                  10,
+                  13,
+                  14,
+                  17,
+                  19,
+                  24,
+                  25,
+                  26,
+                  31,
+                  34,
+                  36,
+                  40,
+                  45,
+                  58,
+                  66,
+                  69,
+                  70,
+                  72,
+                  80,
+                  83,
+                  86,
+                  87,
+                  88,
+                  90,
+                  92,
+                  97,
+                  101,
+                  426,
+                  429,
+                  501,
+                  502,
+                  503,
+                  504,
+                  715,
+                  945
+                ],
+                "glyph": "hope"
+              },
+              {
+                "kind": "repeat",
+                "action": {
+                  "kind": "havoc",
+                  "glyph": "hope"
+                },
+                "until": {
+                  "kind": "exists",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 1,
+                    "maxTier": 1,
+                    "sealable": true
+                  }
+                }
+              },
+              {
+                "kind": "seal",
+                "selector": {
+                  "side": 0,
+                  "excludedIds": [
+                    4,
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 1,
+                  "sealable": true
+                }
+              },
+              {
+                "kind": "once",
+                "action": {
+                  "kind": "add",
+                  "id": 4,
+                  "glyph": "hope"
+                }
+              }
+            ]
+          },
+          {
+            "kind": "fill",
+            "ids": [
+              2,
+              7,
+              8,
+              10,
+              13,
+              14,
+              17,
+              19,
+              24,
+              25,
+              26,
+              31,
+              34,
+              36,
+              40,
+              45,
+              58,
+              66,
+              69,
+              70,
+              72,
+              80,
+              83,
+              86,
+              87,
+              88,
+              90,
+              92,
+              97,
+              101,
+              426,
+              429,
+              501,
+              502,
+              503,
+              504,
+              715,
+              945
+            ],
+            "glyph": "hope"
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ],
+        "family": "PREPARE_SEAL",
+        "upperNode": "200-N3-S0",
+        "description": "直接添加取得#5 → 补栏浩劫准备后封T1取得#4 → 收尾"
+      },
+      "intrinsic": {
+        "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+        "decision": "RETAINED",
+        "reason": null,
+        "evaluatedThroughStage": 4,
+        "probabilityMeaning": "FULL_ROUTE",
+        "fpMeaning": "FULL_ROUTE_GIVEN_SUCCESS",
+        "minimumSuccess": 0.15,
+        "maximumSuccessFp": 65,
+        "stages": [
+          {
+            "successfulFpMoment": {
+              "lower": 5.099082352941007,
+              "upper": 5.0990823529413465
+            }
+          },
+          {
+            "successfulFpMoment": {
+              "lower": 10.818528186273088,
+              "upper": 10.818528186275934
+            }
+          },
+          {
+            "successfulFpMoment": {
+              "lower": 0,
+              "upper": 0
+            }
+          },
+          {
+            "successfulFpMoment": {
+              "lower": 32.887281749998145,
+              "upper": 32.887281750001854
+            }
+          }
+        ],
+        "residualProbabilityBound": 4.44089653939275e-15,
+        "nonTerminatingStates": 0,
+        "successfulFpLowerBound": null,
+        "auxiliaryTotalsAvailable": true
+      },
+      "evaluationStatus": "BOUNDED_NUMERICAL",
+      "score": {
+        "lower": 1,
+        "upper": 1
+      },
+      "scoreEstimate": 1,
+      "expectedFpGivenSuccess": {
+        "lower": 48.804892289212226,
+        "upper": 48.804892289219154
+      },
+      "expectedFp": {
+        "lower": 48.80489228921383,
+        "upper": 48.80489228921754
+      },
+      "failedFpWaste": {
+        "lower": 0,
+        "upper": 5.307754236127949e-12
+      },
+      "curve": [],
+      "quantiles": null,
+      "successQuantiles": null,
+      "consumption": [],
+      "attemptsByMacro": [],
+      "macroStatistics": [],
+      "failureReasons": [],
+      "states": 47
+    },
+    "issues": [],
+    "abandoned": [
+      {
+        "route": {
+          "id": "r-bc6b93b761c1cc8b",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "fill",
+                  "ids": [
+                    2,
+                    7,
+                    8,
+                    10,
+                    13,
+                    14,
+                    17,
+                    19,
+                    24,
+                    25,
+                    26,
+                    31,
+                    34,
+                    36,
+                    40,
+                    45,
+                    58,
+                    66,
+                    69,
+                    70,
+                    72,
+                    80,
+                    83,
+                    86,
+                    87,
+                    88,
+                    90,
+                    92,
+                    97,
+                    101,
+                    426,
+                    429,
+                    501,
+                    502,
+                    503,
+                    504,
+                    715,
+                    945
+                  ],
+                  "glyph": "hope"
+                },
+                {
+                  "kind": "repeat",
+                  "action": {
+                    "kind": "havoc",
+                    "glyph": "hope"
+                  },
+                  "until": {
+                    "kind": "exists",
+                    "selector": {
+                      "side": 0,
+                      "excludedIds": [
+                        4,
+                        5
+                      ],
+                      "minTier": 1,
+                      "maxTier": 1,
+                      "sealable": true
+                    }
+                  }
+                },
+                {
+                  "kind": "seal",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 1,
+                    "maxTier": 1,
+                    "sealable": true
+                  }
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "DIRECT",
+          "upperNode": "200-N3-S0",
+          "description": "补栏浩劫准备后封T1取得#4 → 直接添加取得#5 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 22,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "NO_LEGAL_SLOT",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 30
+      },
+      {
+        "route": {
+          "id": "r-5226c4c7ad8bee63",
+          "macros": [
+            {
+              "kind": "removal",
+              "accepted": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 6,
+                "eligibleAction": "removal"
+              },
+              "glyph": "hope"
+            },
+            {
+              "kind": "removal",
+              "accepted": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 6,
+                "eligibleAction": "removal"
+              },
+              "glyph": "hope"
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 4,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 5,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "REMOVE",
+          "upperNode": "200-N3-S0",
+          "description": "先连续剥离两个垃圾位置，再补A/B并收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 2,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "UNACCEPTED_REMOVAL",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 4
+      },
+      {
+        "route": {
+          "id": "r-2cb8bd30e4f93c6c",
+          "macros": [
+            {
+              "kind": "once",
+              "action": {
+                "kind": "redemption",
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "REDEMPTION_SINGLE_CAST",
+          "upperNode": "200-N3-S0",
+          "description": "只救赎一发，身份仍缺即放弃该模板；身份齐全则收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "NO_SUCCESS_EXIT",
+          "evaluatedThroughStage": 3,
+          "probabilityMeaning": "FULL_ROUTE",
+          "fpMeaning": "FULL_ROUTE_GIVEN_SUCCESS",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 2528,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "NON_TERMINATING_MACRO",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 2528
+      },
+      {
+        "route": {
+          "id": "r-cab3051f5c489393",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "fill",
+                  "ids": [
+                    2,
+                    7,
+                    8,
+                    10,
+                    13,
+                    14,
+                    17,
+                    19,
+                    24,
+                    25,
+                    26,
+                    31,
+                    34,
+                    36,
+                    40,
+                    45,
+                    58,
+                    66,
+                    69,
+                    70,
+                    72,
+                    80,
+                    83,
+                    86,
+                    87,
+                    88,
+                    90,
+                    92,
+                    97,
+                    101,
+                    426,
+                    429,
+                    501,
+                    502,
+                    503,
+                    504,
+                    715,
+                    945
+                  ],
+                  "glyph": "hope"
+                },
+                {
+                  "kind": "repeat",
+                  "action": {
+                    "kind": "havoc",
+                    "glyph": "hope"
+                  },
+                  "until": {
+                    "kind": "exists",
+                    "selector": {
+                      "side": 0,
+                      "excludedIds": [
+                        4,
+                        5
+                      ],
+                      "minTier": 1,
+                      "maxTier": 1,
+                      "sealable": true
+                    }
+                  }
+                },
+                {
+                  "kind": "seal",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 1,
+                    "maxTier": 1,
+                    "sealable": true
+                  }
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "DIRECT",
+          "upperNode": "200-N3-S0",
+          "description": "补栏浩劫准备后封T1取得#5 → 直接添加取得#4 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 22,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "NO_LEGAL_SLOT",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 30
+      },
+      {
+        "route": {
+          "id": "r-6d349806eeacba82",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "DIRECT",
+          "upperNode": "200-N3-S0",
+          "description": "直接添加取得#5 → 直接添加取得#4 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 5,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "NO_LEGAL_SLOT",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 8
+      },
+      {
+        "route": {
+          "id": "r-6d3d95baf9e478b6",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "DIRECT",
+          "upperNode": "200-N3-S0",
+          "description": "直接添加取得#4 → 直接添加取得#5 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 5,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "NO_LEGAL_SLOT",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 8
+      },
+      {
+        "route": {
+          "id": "r-14b8d6d169302015",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "seal",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 2,
+                    "maxTier": 2,
+                    "sealable": true
+                  }
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "直接添加取得#4 → 封T2取得#5 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0.42464132759352674,
+                "upper": 0.4246413275936392
+              }
+            }
+          ],
+          "residualProbabilityBound": 1.4039450319636166e-15,
+          "nonTerminatingStates": 2,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0.04139999999999859,
+          "upper": 0.04140000000000141
+        },
+        "scoreEstimate": 0.0414,
+        "expectedFpGivenSuccess": {
+          "lower": 10.257036898394015,
+          "upper": 10.257036898397434
+        },
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          },
+          {
+            "reason": "REQUIRED_SEAL_FAILED",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 13
+      },
+      {
+        "route": {
+          "id": "r-2cfa5d31b1d34825",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "seal",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 3,
+                    "maxTier": 3,
+                    "sealable": true
+                  }
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "直接添加取得#4 → 封T3取得#5 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 5,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 8
+      },
+      {
+        "route": {
+          "id": "r-72335c819ce1a4b5",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "seal",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 4,
+                    "maxTier": 4,
+                    "sealable": true
+                  }
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "直接添加取得#4 → 封T4取得#5 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 5,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 8
+      },
+      {
+        "route": {
+          "id": "r-c8723ae187f1f2e5",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "seal",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 4,
+                    "maxTier": 4,
+                    "sealable": true
+                  }
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "直接添加取得#5 → 封T4取得#4 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 5,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 8
+      },
+      {
+        "route": {
+          "id": "r-f9a32e714a438af5",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "seal",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 3,
+                    "maxTier": 3,
+                    "sealable": true
+                  }
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "直接添加取得#5 → 封T3取得#4 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 5,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 8
+      },
+      {
+        "route": {
+          "id": "r-fd0e90417e6479c5",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "seal",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 2,
+                    "maxTier": 2,
+                    "sealable": true
+                  }
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "直接添加取得#5 → 封T2取得#4 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0.42464132759352674,
+                "upper": 0.4246413275936392
+              }
+            }
+          ],
+          "residualProbabilityBound": 1.4039450319636166e-15,
+          "nonTerminatingStates": 2,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0.04139999999999859,
+          "upper": 0.04140000000000141
+        },
+        "scoreEstimate": 0.0414,
+        "expectedFpGivenSuccess": {
+          "lower": 10.257036898394015,
+          "upper": 10.257036898397434
+        },
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          },
+          {
+            "reason": "REQUIRED_SEAL_FAILED",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 13
+      },
+      {
+        "route": {
+          "id": "r-18a118394df7328d",
+          "macros": [
+            {
+              "kind": "seal",
+              "selector": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 1,
+                "sealable": true
+              }
+            },
+            {
+              "kind": "removal",
+              "accepted": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 6,
+                "eligibleAction": "removal"
+              },
+              "glyph": "hope"
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 4,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 5,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "先封T1再剥离，开两个位置后补A/B"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 2,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "REQUIRED_SEAL_FAILED",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          },
+          {
+            "reason": "UNACCEPTED_REMOVAL",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 4
+      },
+      {
+        "route": {
+          "id": "r-1e6e15726e6ee13e",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "removal",
+                  "accepted": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 1,
+                    "maxTier": 6,
+                    "eligibleAction": "removal"
+                  },
+                  "glyph": "hope"
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "removal",
+                  "accepted": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 1,
+                    "maxTier": 6,
+                    "eligibleAction": "removal"
+                  },
+                  "glyph": "hope"
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "REMOVE",
+          "upperNode": "200-N3-S0",
+          "description": "剥离垃圾取得#5 → 剥离垃圾取得#4 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 7,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "UNACCEPTED_REMOVAL",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 9
+      },
+      {
+        "route": {
+          "id": "r-2f50c600fa687d84",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "seal",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 1,
+                    "maxTier": 1,
+                    "sealable": true
+                  }
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "removal",
+                  "accepted": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 1,
+                    "maxTier": 6,
+                    "eligibleAction": "removal"
+                  },
+                  "glyph": "hope"
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "REMOVE",
+          "upperNode": "200-N3-S0",
+          "description": "封T1取得#4 → 剥离垃圾取得#5 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 7,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "REQUIRED_SEAL_FAILED",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          },
+          {
+            "reason": "UNACCEPTED_REMOVAL",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 9
+      },
+      {
+        "route": {
+          "id": "r-3eea1d296329d3bd",
+          "macros": [
+            {
+              "kind": "removal",
+              "accepted": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 6,
+                "eligibleAction": "removal"
+              },
+              "glyph": "hope"
+            },
+            {
+              "kind": "seal",
+              "selector": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 4,
+                "maxTier": 4,
+                "sealable": true
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 5,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 4,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "先剥离再封T4，开两个位置后补A/B"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 1,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          },
+          {
+            "reason": "UNACCEPTED_REMOVAL",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 3
+      },
+      {
+        "route": {
+          "id": "r-4059140924be0bbd",
+          "macros": [
+            {
+              "kind": "removal",
+              "accepted": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 6,
+                "eligibleAction": "removal"
+              },
+              "glyph": "hope"
+            },
+            {
+              "kind": "seal",
+              "selector": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 2,
+                "maxTier": 2,
+                "sealable": true
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 5,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 4,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "先剥离再封T2，开两个位置后补A/B"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 1,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          },
+          {
+            "reason": "UNACCEPTED_REMOVAL",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 3
+      },
+      {
+        "route": {
+          "id": "r-437e0f62872046fe",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "removal",
+                  "accepted": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 1,
+                    "maxTier": 6,
+                    "eligibleAction": "removal"
+                  },
+                  "glyph": "hope"
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "seal",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 3,
+                    "maxTier": 3,
+                    "sealable": true
+                  }
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "剥离垃圾取得#5 → 封T3取得#4 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 5,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "UNACCEPTED_REMOVAL",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          },
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 8
+      },
+      {
+        "route": {
+          "id": "r-47708df967283acd",
+          "macros": [
+            {
+              "kind": "removal",
+              "accepted": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 6,
+                "eligibleAction": "removal"
+              },
+              "glyph": "hope"
+            },
+            {
+              "kind": "seal",
+              "selector": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 3,
+                "maxTier": 3,
+                "sealable": true
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 5,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 4,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "先剥离再封T3，开两个位置后补A/B"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 1,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          },
+          {
+            "reason": "UNACCEPTED_REMOVAL",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 3
+      },
+      {
+        "route": {
+          "id": "r-4fc2efb5febce2e9",
+          "macros": [
+            {
+              "kind": "removal",
+              "accepted": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 6,
+                "eligibleAction": "removal"
+              },
+              "glyph": "hope"
+            },
+            {
+              "kind": "seal",
+              "selector": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 4,
+                "maxTier": 4,
+                "sealable": true
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 4,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 5,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "先剥离再封T4，开两个位置后补A/B"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 1,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          },
+          {
+            "reason": "UNACCEPTED_REMOVAL",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 3
+      },
+      {
+        "route": {
+          "id": "r-6ed108243c0a0118",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "removal",
+                  "accepted": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 1,
+                    "maxTier": 6,
+                    "eligibleAction": "removal"
+                  },
+                  "glyph": "hope"
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "seal",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 2,
+                    "maxTier": 2,
+                    "sealable": true
+                  }
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "剥离垃圾取得#4 → 封T2取得#5 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 5,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "UNACCEPTED_REMOVAL",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          },
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 8
+      },
+      {
+        "route": {
+          "id": "r-727b6fc14871b675",
+          "macros": [
+            {
+              "kind": "removal",
+              "accepted": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 6,
+                "eligibleAction": "removal"
+              },
+              "glyph": "hope"
+            },
+            {
+              "kind": "seal",
+              "selector": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 1,
+                "sealable": true
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 5,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 4,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "先剥离再封T1，开两个位置后补A/B"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 1,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          },
+          {
+            "reason": "UNACCEPTED_REMOVAL",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 3
+      },
+      {
+        "route": {
+          "id": "r-7a8cb95ad0d1aea6",
+          "macros": [
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    5
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "removal",
+                  "accepted": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 1,
+                    "maxTier": 6,
+                    "eligibleAction": "removal"
+                  },
+                  "glyph": "hope"
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 5,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "conditional",
+              "when": {
+                "kind": "identity",
+                "requirement": {
+                  "ids": [
+                    4
+                  ],
+                  "minTier": 1,
+                  "maxTier": 8,
+                  "slot": "ordinary"
+                }
+              },
+              "then": [],
+              "otherwise": [
+                {
+                  "kind": "seal",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      4,
+                      5
+                    ],
+                    "minTier": 1,
+                    "maxTier": 1,
+                    "sealable": true
+                  }
+                },
+                {
+                  "kind": "once",
+                  "action": {
+                    "kind": "add",
+                    "id": 4,
+                    "glyph": "hope"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "剥离垃圾取得#5 → 封T1取得#4 → 收尾"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 5,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "UNACCEPTED_REMOVAL",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          },
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 8
+      },
+      {
+        "route": {
+          "id": "r-82aa9b058a547339",
+          "macros": [
+            {
+              "kind": "removal",
+              "accepted": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 1,
+                "maxTier": 6,
+                "eligibleAction": "removal"
+              },
+              "glyph": "hope"
+            },
+            {
+              "kind": "seal",
+              "selector": {
+                "excludedIds": [
+                  4,
+                  5
+                ],
+                "minTier": 3,
+                "maxTier": 3,
+                "sealable": true
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 4,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 5,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "fill",
+              "ids": [
+                2,
+                7,
+                8,
+                10,
+                13,
+                14,
+                17,
+                19,
+                24,
+                25,
+                26,
+                31,
+                34,
+                36,
+                40,
+                45,
+                58,
+                66,
+                69,
+                70,
+                72,
+                80,
+                83,
+                86,
+                87,
+                88,
+                90,
+                92,
+                97,
+                101,
+                426,
+                429,
+                501,
+                502,
+                503,
+                504,
+                715,
+                945
+              ],
+              "glyph": "hope"
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "family": "SEAL",
+          "upperNode": "200-N3-S0",
+          "description": "先剥离再封T3，开两个位置后补A/B"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 1,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "INAPPLICABLE_NEXT_STAGE",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          },
+          {
+            "reason": "UNACCEPTED_REMOVAL",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 3
+      }
+    ],
+    "unresolvedRoutes": 0,
+    "searchStatus": "INCOMPLETE",
+    "optimality": "NOT_PROVEN",
+    "samplingGuarantee": null,
+    "hierarchy": {
+      "structure": {
+        "node": {
+          "key": "200-N3-S0",
+          "group": "200",
+          "ordinaryCount": 3,
+          "sealedCount": 0,
+          "terminal": false,
+          "routeNode": "200-N3-S0",
+          "families": [
+            "DIRECT",
+            "SEAL",
+            "PREPARE_SEAL",
+            "INTERLEAVED_ACQUIRE",
+            "INTERLEAVED_MIN_SEAL",
+            "REMOVE",
+            "PREPARE_REMOVE",
+            "CHAOS",
+            "PREPARE_CHAOS",
+            "REDEMPTION",
+            "REDEMPTION_SINGLE_CAST",
+            "REDEMPTION_ANY_THEN_ACQUIRE",
+            "REDEMPTION_PROTECTED_SECOND"
+          ]
+        },
+        "targetIds": [
+          4,
+          5
+        ],
+        "targetSides": [
+          0,
+          0
+        ],
+        "presentMask": 0,
+        "emptyBySide": [
+          1,
+          0
+        ],
+        "sealedIds": [],
+        "ordinary": [
+          {
+            "id": 2,
+            "tier": 1,
+            "side": 0,
+            "special": 0,
+            "nativeIndex": 0,
+            "target": false
+          },
+          {
+            "id": 7,
+            "tier": 7,
+            "side": 1,
+            "special": 0,
+            "nativeIndex": 1,
+            "target": false
+          },
+          {
+            "id": 8,
+            "tier": 7,
+            "side": 1,
+            "special": 0,
+            "nativeIndex": 2,
+            "target": false
+          }
+        ],
+        "refinements": [
+          "EMPTY_PREFIX_SUFFIX",
+          "TARGET_IDENTITY_AND_TIER",
+          "GARBAGE_TIER_AND_ELIGIBILITY",
+          "NATIVE_ORDER",
+          "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+          "T6_REDEMPTION_PARTICIPATION",
+          "BASE_LEVEL_PROTECTION_ACTIONS"
+        ]
+      },
+      "upperLabels": 28,
+      "routeNodes": 23,
+      "generatedTemplates": 301,
+      "structurallyRejected": 228,
+      "preExcluded": [
+        {
+          "templateId": "r-61fd55c2cbdc3dde",
+          "reason": "CERTIFIED_SUCCESS_BELOW_15_PERCENT",
+          "probabilityUpperBound": 0.050000000000000044
+        },
+        {
+          "templateId": "r-f2bbadb2bc75a2ce",
+          "reason": "CERTIFIED_SUCCESS_BELOW_15_PERCENT",
+          "probabilityUpperBound": 0.07500000000000007
+        },
+        {
+          "templateId": "r-da8f947e833b0aba",
+          "reason": "CERTIFIED_SUCCESS_BELOW_15_PERCENT",
+          "probabilityUpperBound": 0.050000000000000044
+        },
+        {
+          "templateId": "r-91e106ae7d60a72a",
+          "reason": "CERTIFIED_SUCCESS_BELOW_15_PERCENT",
+          "probabilityUpperBound": 0.07500000000000007
+        }
+      ],
+      "workspaceCacheHits": 1215
+    },
+    "search": {
+      "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+      "macroStages": 12,
+      "librarySize": 56,
+      "candidateUpperBound": "301",
+      "evaluatedRoutes": 48,
+      "exactRoutes": 48,
+      "estimatedRoutes": 0,
+      "unevaluatedRoutes": 0,
+      "skippedDuplicates": 0,
+      "certifiedPrunedPrefixes": 23,
+      "elapsedMilliseconds": 370,
+      "stopReason": "ROUTE_BUDGET",
+      "paretoRouteIds": [
+        "r-32e2603f38468323",
+        "r-96ada66330cc5207",
+        "r-b9488ec56a997279",
+        "r-db4e370198968d45"
+      ]
+    },
+    "conventions": {
+      "fpDomain": [],
+      "weights": [],
+      "materials": "UNLIMITED",
+      "fixedRoute": true,
+      "rngModel": "ITEM_TYPE_ALL_CLASSES_EQUAL_POSITIVE_CANDIDATES_V1"
+    },
+    "qualification": "按可锻造前提、100级与该部位全职业通用池计算；未指定词条采用等权正权重候选池，仅为简化参考，不是未知真实词条的精确概率。成功率假设FP持续充足，只计操作NG；费用门槛65只统计最终成功路径。整件完成率另以起始48FP结算，包含耗尽保留及最后一次制作。模板及分支预先固定；上层标签只路由，数值保留ID、阶数、原生顺序和费用联合核。15%／65等号通过；区间跨阈或执行预算不足保留未完成。已搜索范围不代表任意长度策略全局最优。普通填充采用预先声明的合法碎片顺序，不宣称所有填充ID均等价。"
+  }
+}

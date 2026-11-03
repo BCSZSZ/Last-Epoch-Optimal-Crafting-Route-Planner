@@ -1,5 +1,7 @@
 import type { Catalog } from '../core/catalog';
-import type { Macro, PlanRequest, Selector } from '../core/types';
+import type { Macro, PlanRequest, Predicate, Selector } from '../core/types';
+import { macroStep, predicateReached } from '../core/evaluation';
+import { RuleEngine } from '../core/rules';
 import { affixName, macroText, predicateText } from './labels';
 import type { NameAliases } from './labels';
 
@@ -61,20 +63,40 @@ function vacancySteps(macro: Extract<Macro, { kind: 'conditional' }>, catalog: C
 export function routeSteps(macros: readonly Macro[], request: PlanRequest, catalog: Catalog, aliases: NameAliases = {}): readonly RouteStep[] {
   const ids = new Set(request.target.requirements.flatMap((row) => row.ids));
   const initial: Knowledge = new Map([...ids].map((id) => [id, request.item.affixes.some((row) => row.id === id && row.slot === 'ordinary')]));
-  const walk = (values: readonly Macro[], known: Knowledge, count: { value: number | null }): RouteStep[] => {
+  const engine = new RuleEngine(catalog);
+  const identityReached = (predicate: Predicate, known: Knowledge): boolean | null => {
+    if (predicate.kind === 'identity' && predicate.requirement.ids.length === 1 && predicate.requirement.slot === 'ordinary' &&
+      predicate.requirement.minTier === 1 && (predicate.requirement.maxTier ?? 8) === 8 && predicate.requirement.minRollByte === undefined) {
+      return known.get(predicate.requirement.ids[0]) ?? null;
+    }
+    if (predicate.kind === 'any' || predicate.kind === 'all') {
+      const children = predicate.predicates.map(row => identityReached(row, known));
+      if (predicate.kind === 'any') return children.includes(true) ? true : children.every(row => row === false) ? false : null;
+      return children.includes(false) ? false : children.every(row => row === true) ? true : null;
+    }
+    return null;
+  };
+  const walk = (values: readonly Macro[], known: Knowledge, count: { value: number | null }, unchanged: { value: boolean }): RouteStep[] => {
     const steps: RouteStep[] = [];
     const unknown = () => { for (const id of ids) known.set(id, null); };
     for (const macro of values) {
+      if (macro.kind === 'repeat' && identityReached(macro.until, known) === true) continue;
+      if (unchanged.value && macro.kind !== 'conditional' && macroStep(macro, request.item, request, engine) === 'SKIP') continue;
       if (macro.kind === 'conditional') {
+        if (unchanged.value) {
+          steps.push(...walk(predicateReached(request.item, macro.when, request, engine) ? macro.then : macro.otherwise ?? [], known, count, unchanged)); continue;
+        }
         const predicate = macro.when, requirement = predicate.kind === 'identity' ? predicate.requirement : null;
         const id = requirement?.ids.length === 1 ? requirement.ids[0] : undefined;
         const fact = id === undefined ? undefined : known.get(id);
         if (requirement && requirement.slot === 'ordinary' && requirement.minTier === 1 && (requirement.maxTier ?? 8) === 8 &&
           requirement.minRollByte === undefined && (fact === true || fact === false)) {
-          steps.push(...walk(fact ? macro.then : macro.otherwise ?? [], known, count)); continue;
+          steps.push(...walk(fact ? macro.then : macro.otherwise ?? [], known, count, unchanged)); continue;
         }
         const left = new Map(known), right = new Map(known), leftCount = { value: count.value }, rightCount = { value: count.value };
-        const yes = walk(macro.then, left, leftCount), no = walk(macro.otherwise ?? [], right, rightCount);
+        const leftUnchanged = { value: unchanged.value }, rightUnchanged = { value: unchanged.value };
+        const yes = walk(macro.then, left, leftCount, leftUnchanged), no = walk(macro.otherwise ?? [], right, rightCount, rightUnchanged);
+        unchanged.value = leftUnchanged.value && rightUnchanged.value;
         for (const entry of ids) known.set(entry, left.get(entry) === right.get(entry) ? left.get(entry)! : null);
         count.value = leftCount.value === rightCount.value ? leftCount.value : null;
         const merged = minimumSealSteps(macro) ?? vacancySteps(macro, catalog, aliases);
@@ -84,6 +106,7 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
         continue;
       }
       if (macro.kind === 'fill' && count.value === 4) continue;
+      unchanged.value = false;
       const text = macroText(macro, catalog, aliases);
       if (macro.kind === 'repeat' && macro.action.kind === 'havoc' && macro.until.kind === 'target' &&
         request.target.requirements.length === 2 && request.target.requirements.every((row) => row.ids.length === 1 && row.minTier === 7 && row.maxTier === 7)) {
@@ -109,5 +132,5 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
     }
     return steps;
   };
-  return walk(macros, initial, { value: request.item.affixes.filter((row) => row.slot === 'ordinary').length });
+  return walk(macros, initial, { value: request.item.affixes.filter((row) => row.slot === 'ordinary').length }, { value: true });
 }

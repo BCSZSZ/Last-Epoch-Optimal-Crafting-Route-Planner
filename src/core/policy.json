@@ -1,3 +1,6 @@
 {
-  "maximumSuccessFp": 65
+  "maximumSuccessFp": 65,
+  "referenceFp": 48,
+  "notRecommendedBelow": 0.25,
+  "recommendedAbove": 0.65
 }

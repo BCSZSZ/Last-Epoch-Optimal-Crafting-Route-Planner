@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+  "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
   "metric": "INTRINSIC_V2",
-  "measuredAt": "2026-11-03T13:54:53.575Z",
+  "measuredAt": "2026-11-03T15:21:59.495Z",
   "environment": {
     "node": "v22.20.0",
     "cpu": "13th Gen Intel(R) Core(TM) i5-13600KF",
@@ -13,14 +13,402 @@
     {
       "id": "7732-ready",
       "fpType": "NORMAL",
-      "milliseconds": 6.494899999999973,
+      "milliseconds": 14.46939999999995,
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
           "corrupted": false,
           "fpType": "NORMAL",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 4,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "COMPLETE",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 35.402812499999435,
+        "upper": 35.40281250000057
+      },
+      "routeId": "r-35c31b58e079a1bc",
+      "routeDescription": "身份齐全：必要时补满普通栏，再浩劫收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "202-N4-S0",
+            "group": "202",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "202-N4-S0",
+            "families": [
+              "FINISH"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 3,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 7,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 4,
+              "tier": 3,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": true
+            },
+            {
+              "id": 5,
+              "tier": 2,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": true
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 1,
+        "structurallyRejected": 0,
+        "preExcluded": [],
+        "workspaceCacheHits": 0
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 2,
+        "candidateUpperBound": "1",
+        "evaluatedRoutes": 1,
+        "exactRoutes": 1,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 0,
+        "elapsedMilliseconds": 13,
+        "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+        "paretoRouteIds": [
+          "r-35c31b58e079a1bc"
+        ]
+      },
+      "primaryStates": 4,
+      "completion": {
+        "routeId": "r-35c31b58e079a1bc",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.7900323174163928,
+          "upper": 0.7900323174166737
+        },
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 4,
+        "reason": null
+      },
+      "abandoned": 0,
+      "unresolved": 0
+    },
+    {
+      "id": "7732-ready",
+      "fpType": "ICE",
+      "milliseconds": 3.8933999999999855,
+      "request": {
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "ICE",
+          "affixes": [
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 4,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                4
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                5
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "status": "RECOMMENDATION",
+      "searchStatus": "COMPLETE",
+      "operationSuccess": {
+        "lower": 1,
+        "upper": 1
+      },
+      "successfulMeanFp": {
+        "lower": 24.78196874999956,
+        "upper": 24.78196875000045
+      },
+      "routeId": "r-35c31b58e079a1bc",
+      "routeDescription": "身份齐全：必要时补满普通栏，再浩劫收尾",
+      "hierarchy": {
+        "structure": {
+          "node": {
+            "key": "202-N4-S0",
+            "group": "202",
+            "ordinaryCount": 4,
+            "sealedCount": 0,
+            "terminal": false,
+            "routeNode": "202-N4-S0",
+            "families": [
+              "FINISH"
+            ]
+          },
+          "targetIds": [
+            4,
+            5
+          ],
+          "targetSides": [
+            0,
+            0
+          ],
+          "presentMask": 3,
+          "emptyBySide": [
+            0,
+            0
+          ],
+          "sealedIds": [],
+          "ordinary": [
+            {
+              "id": 7,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 0,
+              "target": false
+            },
+            {
+              "id": 10,
+              "tier": 7,
+              "side": 1,
+              "special": 0,
+              "nativeIndex": 1,
+              "target": false
+            },
+            {
+              "id": 4,
+              "tier": 3,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 2,
+              "target": true
+            },
+            {
+              "id": 5,
+              "tier": 2,
+              "side": 0,
+              "special": 0,
+              "nativeIndex": 3,
+              "target": true
+            }
+          ],
+          "refinements": [
+            "EMPTY_PREFIX_SUFFIX",
+            "TARGET_IDENTITY_AND_TIER",
+            "GARBAGE_TIER_AND_ELIGIBILITY",
+            "NATIVE_ORDER",
+            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+            "T6_REDEMPTION_PARTICIPATION",
+            "BASE_LEVEL_PROTECTION_ACTIONS"
+          ]
+        },
+        "upperLabels": 28,
+        "routeNodes": 23,
+        "generatedTemplates": 1,
+        "structurallyRejected": 0,
+        "preExcluded": [],
+        "workspaceCacheHits": 0
+      },
+      "search": {
+        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+        "macroStages": 12,
+        "librarySize": 2,
+        "candidateUpperBound": "1",
+        "evaluatedRoutes": 1,
+        "exactRoutes": 1,
+        "estimatedRoutes": 0,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 0,
+        "certifiedPrunedPrefixes": 0,
+        "elapsedMilliseconds": 4,
+        "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+        "paretoRouteIds": [
+          "r-35c31b58e079a1bc"
+        ]
+      },
+      "primaryStates": 4,
+      "completion": {
+        "routeId": "r-35c31b58e079a1bc",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.8758957816591258,
+          "upper": 0.8758957816592868
+        },
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 4,
+        "reason": null
+      },
+      "abandoned": 0,
+      "unresolved": 0
+    },
+    {
+      "id": "7732-ready",
+      "fpType": "BLOOD",
+      "milliseconds": 5.141900000000021,
+      "request": {
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
+        "item": {
+          "baseId": "4:0",
+          "itemLevel": 100,
+          "corrupted": false,
+          "fpType": "BLOOD",
           "affixes": [
             {
               "id": 7,
@@ -188,377 +576,28 @@
         ]
       },
       "primaryStates": 4,
-      "abandoned": 0,
-      "unresolved": 0
-    },
-    {
-      "id": "7732-ready",
-      "fpType": "ICE",
-      "milliseconds": 1.2250999999999976,
-      "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
-        "item": {
-          "baseId": "4:0",
-          "itemLevel": 100,
-          "corrupted": false,
-          "fpType": "ICE",
-          "affixes": [
-            {
-              "id": 7,
-              "tier": 7,
-              "slot": "ordinary",
-              "roll": null
-            },
-            {
-              "id": 10,
-              "tier": 7,
-              "slot": "ordinary",
-              "roll": null
-            },
-            {
-              "id": 4,
-              "tier": 3,
-              "slot": "ordinary",
-              "roll": null
-            },
-            {
-              "id": 5,
-              "tier": 2,
-              "slot": "ordinary",
-              "roll": null
-            }
-          ]
+      "completion": {
+        "routeId": "r-35c31b58e079a1bc",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.7900323174163928,
+          "upper": 0.7900323174166737
         },
-        "craftingContext": {
-          "playerLevel": 100
-        },
-        "target": {
-          "requirements": [
-            {
-              "ids": [
-                4
-              ],
-              "minTier": 7,
-              "maxTier": 7,
-              "slot": "ordinary"
-            },
-            {
-              "ids": [
-                5
-              ],
-              "minTier": 7,
-              "maxTier": 7,
-              "slot": "ordinary"
-            }
-          ]
-        },
-        "constraints": {},
-        "scoring": {},
-        "search": {
-          "milliseconds": 12000,
-          "maxRoutes": 48,
-          "macroStages": 12,
-          "maxStates": 25000
-        }
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 4,
+        "reason": null
       },
-      "status": "RECOMMENDATION",
-      "searchStatus": "COMPLETE",
-      "operationSuccess": {
-        "lower": 1,
-        "upper": 1
-      },
-      "successfulMeanFp": {
-        "lower": 24.78196874999956,
-        "upper": 24.78196875000045
-      },
-      "routeId": "r-35c31b58e079a1bc",
-      "routeDescription": "身份齐全：必要时补满普通栏，再浩劫收尾",
-      "hierarchy": {
-        "structure": {
-          "node": {
-            "key": "202-N4-S0",
-            "group": "202",
-            "ordinaryCount": 4,
-            "sealedCount": 0,
-            "terminal": false,
-            "routeNode": "202-N4-S0",
-            "families": [
-              "FINISH"
-            ]
-          },
-          "targetIds": [
-            4,
-            5
-          ],
-          "targetSides": [
-            0,
-            0
-          ],
-          "presentMask": 3,
-          "emptyBySide": [
-            0,
-            0
-          ],
-          "sealedIds": [],
-          "ordinary": [
-            {
-              "id": 7,
-              "tier": 7,
-              "side": 1,
-              "special": 0,
-              "nativeIndex": 0,
-              "target": false
-            },
-            {
-              "id": 10,
-              "tier": 7,
-              "side": 1,
-              "special": 0,
-              "nativeIndex": 1,
-              "target": false
-            },
-            {
-              "id": 4,
-              "tier": 3,
-              "side": 0,
-              "special": 0,
-              "nativeIndex": 2,
-              "target": true
-            },
-            {
-              "id": 5,
-              "tier": 2,
-              "side": 0,
-              "special": 0,
-              "nativeIndex": 3,
-              "target": true
-            }
-          ],
-          "refinements": [
-            "EMPTY_PREFIX_SUFFIX",
-            "TARGET_IDENTITY_AND_TIER",
-            "GARBAGE_TIER_AND_ELIGIBILITY",
-            "NATIVE_ORDER",
-            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
-            "T6_REDEMPTION_PARTICIPATION",
-            "BASE_LEVEL_PROTECTION_ACTIONS"
-          ]
-        },
-        "upperLabels": 28,
-        "routeNodes": 23,
-        "generatedTemplates": 1,
-        "structurallyRejected": 0,
-        "preExcluded": [],
-        "workspaceCacheHits": 0
-      },
-      "search": {
-        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
-        "macroStages": 12,
-        "librarySize": 2,
-        "candidateUpperBound": "1",
-        "evaluatedRoutes": 1,
-        "exactRoutes": 1,
-        "estimatedRoutes": 0,
-        "unevaluatedRoutes": 0,
-        "skippedDuplicates": 0,
-        "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 1,
-        "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
-        "paretoRouteIds": [
-          "r-35c31b58e079a1bc"
-        ]
-      },
-      "primaryStates": 4,
-      "abandoned": 0,
-      "unresolved": 0
-    },
-    {
-      "id": "7732-ready",
-      "fpType": "BLOOD",
-      "milliseconds": 1.2064000000000021,
-      "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
-        "item": {
-          "baseId": "4:0",
-          "itemLevel": 100,
-          "corrupted": false,
-          "fpType": "BLOOD",
-          "affixes": [
-            {
-              "id": 7,
-              "tier": 7,
-              "slot": "ordinary",
-              "roll": null
-            },
-            {
-              "id": 10,
-              "tier": 7,
-              "slot": "ordinary",
-              "roll": null
-            },
-            {
-              "id": 4,
-              "tier": 3,
-              "slot": "ordinary",
-              "roll": null
-            },
-            {
-              "id": 5,
-              "tier": 2,
-              "slot": "ordinary",
-              "roll": null
-            }
-          ]
-        },
-        "craftingContext": {
-          "playerLevel": 100
-        },
-        "target": {
-          "requirements": [
-            {
-              "ids": [
-                4
-              ],
-              "minTier": 7,
-              "maxTier": 7,
-              "slot": "ordinary"
-            },
-            {
-              "ids": [
-                5
-              ],
-              "minTier": 7,
-              "maxTier": 7,
-              "slot": "ordinary"
-            }
-          ]
-        },
-        "constraints": {},
-        "scoring": {},
-        "search": {
-          "milliseconds": 12000,
-          "maxRoutes": 48,
-          "macroStages": 12,
-          "maxStates": 25000
-        }
-      },
-      "status": "RECOMMENDATION",
-      "searchStatus": "COMPLETE",
-      "operationSuccess": {
-        "lower": 1,
-        "upper": 1
-      },
-      "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
-      },
-      "routeId": "r-35c31b58e079a1bc",
-      "routeDescription": "身份齐全：必要时补满普通栏，再浩劫收尾",
-      "hierarchy": {
-        "structure": {
-          "node": {
-            "key": "202-N4-S0",
-            "group": "202",
-            "ordinaryCount": 4,
-            "sealedCount": 0,
-            "terminal": false,
-            "routeNode": "202-N4-S0",
-            "families": [
-              "FINISH"
-            ]
-          },
-          "targetIds": [
-            4,
-            5
-          ],
-          "targetSides": [
-            0,
-            0
-          ],
-          "presentMask": 3,
-          "emptyBySide": [
-            0,
-            0
-          ],
-          "sealedIds": [],
-          "ordinary": [
-            {
-              "id": 7,
-              "tier": 7,
-              "side": 1,
-              "special": 0,
-              "nativeIndex": 0,
-              "target": false
-            },
-            {
-              "id": 10,
-              "tier": 7,
-              "side": 1,
-              "special": 0,
-              "nativeIndex": 1,
-              "target": false
-            },
-            {
-              "id": 4,
-              "tier": 3,
-              "side": 0,
-              "special": 0,
-              "nativeIndex": 2,
-              "target": true
-            },
-            {
-              "id": 5,
-              "tier": 2,
-              "side": 0,
-              "special": 0,
-              "nativeIndex": 3,
-              "target": true
-            }
-          ],
-          "refinements": [
-            "EMPTY_PREFIX_SUFFIX",
-            "TARGET_IDENTITY_AND_TIER",
-            "GARBAGE_TIER_AND_ELIGIBILITY",
-            "NATIVE_ORDER",
-            "SEALED_AND_EXTRA_ID_EXCLUSIONS",
-            "T6_REDEMPTION_PARTICIPATION",
-            "BASE_LEVEL_PROTECTION_ACTIONS"
-          ]
-        },
-        "upperLabels": 28,
-        "routeNodes": 23,
-        "generatedTemplates": 1,
-        "structurallyRejected": 0,
-        "preExcluded": [],
-        "workspaceCacheHits": 0
-      },
-      "search": {
-        "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
-        "macroStages": 12,
-        "librarySize": 2,
-        "candidateUpperBound": "1",
-        "evaluatedRoutes": 1,
-        "exactRoutes": 1,
-        "estimatedRoutes": 0,
-        "unevaluatedRoutes": 0,
-        "skippedDuplicates": 0,
-        "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 1,
-        "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
-        "paretoRouteIds": [
-          "r-35c31b58e079a1bc"
-        ]
-      },
-      "primaryStates": 4,
       "abandoned": 0,
       "unresolved": 0
     },
     {
       "id": "7710-direct",
       "fpType": "NORMAL",
-      "milliseconds": 192.51809999999998,
+      "milliseconds": 283.7132,
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -743,7 +782,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 23,
-        "elapsedMilliseconds": 192,
+        "elapsedMilliseconds": 284,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-32e2603f38468323",
@@ -753,15 +792,28 @@
         ]
       },
       "primaryStates": 47,
+      "completion": {
+        "routeId": "r-32e2603f38468323",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.6834347795614808,
+          "upper": 0.6834347901919642
+        },
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 47,
+        "reason": null
+      },
       "abandoned": 24,
       "unresolved": 0
     },
     {
       "id": "7710-direct",
       "fpType": "ICE",
-      "milliseconds": 125.5152,
+      "milliseconds": 171.94119999999998,
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -946,7 +998,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 23,
-        "elapsedMilliseconds": 125,
+        "elapsedMilliseconds": 171,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-32e2603f38468323",
@@ -956,15 +1008,28 @@
         ]
       },
       "primaryStates": 47,
+      "completion": {
+        "routeId": "r-32e2603f38468323",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.8180672349909418,
+          "upper": 0.8180672363773603
+        },
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 47,
+        "reason": null
+      },
       "abandoned": 24,
       "unresolved": 0
     },
     {
       "id": "7710-direct",
       "fpType": "BLOOD",
-      "milliseconds": 108.65809999999999,
+      "milliseconds": 150.4072000000001,
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1149,7 +1214,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 23,
-        "elapsedMilliseconds": 109,
+        "elapsedMilliseconds": 150,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-32e2603f38468323",
@@ -1159,15 +1224,28 @@
         ]
       },
       "primaryStates": 47,
+      "completion": {
+        "routeId": "r-32e2603f38468323",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.6656712744876236,
+          "upper": 0.6656714638322523
+        },
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 47,
+        "reason": null
+      },
       "abandoned": 28,
       "unresolved": 0
     },
     {
       "id": "7713-prepare",
       "fpType": "NORMAL",
-      "milliseconds": 7054.8125,
+      "milliseconds": 7005.7988000000005,
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1345,7 +1423,7 @@
         "unevaluatedRoutes": 5,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 2,
-        "elapsedMilliseconds": 7055,
+        "elapsedMilliseconds": 7005,
         "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
         "paretoRouteIds": [
           "r-f1e1237c5a28bbb0",
@@ -1353,15 +1431,28 @@
         ]
       },
       "primaryStates": 63,
+      "completion": {
+        "routeId": "r-41dff94263a0dc26",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.13807060210189287,
+          "upper": 0.1380706021090387
+        },
+        "recommendation": "NOT_RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 63,
+        "reason": null
+      },
       "abandoned": 15,
       "unresolved": 5
     },
     {
       "id": "7713-prepare",
       "fpType": "ICE",
-      "milliseconds": 7219.6601,
+      "milliseconds": 7057.8618,
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1539,7 +1630,7 @@
         "unevaluatedRoutes": 5,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 2,
-        "elapsedMilliseconds": 7220,
+        "elapsedMilliseconds": 7057,
         "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
         "paretoRouteIds": [
           "r-54a76475201aba49",
@@ -1549,15 +1640,28 @@
         ]
       },
       "primaryStates": 33,
+      "completion": {
+        "routeId": "r-54a76475201aba49",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.6484597566186139,
+          "upper": 0.6484597578213513
+        },
+        "recommendation": "NEUTRAL",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 33,
+        "reason": null
+      },
       "abandoned": 5,
       "unresolved": 5
     },
     {
       "id": "7713-prepare",
       "fpType": "BLOOD",
-      "milliseconds": 7000.777799999998,
+      "milliseconds": 7085.194600000001,
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1735,7 +1839,7 @@
         "unevaluatedRoutes": 5,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 2,
-        "elapsedMilliseconds": 7000,
+        "elapsedMilliseconds": 7085,
         "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
         "paretoRouteIds": [
           "r-f1e1237c5a28bbb0",
@@ -1743,15 +1847,28 @@
         ]
       },
       "primaryStates": 63,
+      "completion": {
+        "routeId": "r-41dff94263a0dc26",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.14177119644281636,
+          "upper": 0.141771196443603
+        },
+        "recommendation": "NOT_RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 63,
+        "reason": null
+      },
       "abandoned": 15,
       "unresolved": 5
     },
     {
       "id": "removal-required",
       "fpType": "NORMAL",
-      "milliseconds": 2.687900000000809,
+      "milliseconds": 9.035499999998137,
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1935,7 +2052,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 3,
+        "elapsedMilliseconds": 9,
         "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
         "paretoRouteIds": [
           "r-117f6f3bf12838af",
@@ -1943,15 +2060,28 @@
         ]
       },
       "primaryStates": 12,
+      "completion": {
+        "routeId": "r-117f6f3bf12838af",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.1704781931037063,
+          "upper": 0.17047819310691312
+        },
+        "recommendation": "NOT_RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 12,
+        "reason": null
+      },
       "abandoned": 0,
       "unresolved": 0
     },
     {
       "id": "removal-required",
       "fpType": "ICE",
-      "milliseconds": 1.3404000000009546,
+      "milliseconds": 5.9782000000013795,
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2135,7 +2265,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 1,
+        "elapsedMilliseconds": 6,
         "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
         "paretoRouteIds": [
           "r-117f6f3bf12838af",
@@ -2143,15 +2273,28 @@
         ]
       },
       "primaryStates": 12,
+      "completion": {
+        "routeId": "r-117f6f3bf12838af",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.20284552433085956,
+          "upper": 0.20284552433155884
+        },
+        "recommendation": "NOT_RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 12,
+        "reason": null
+      },
       "abandoned": 0,
       "unresolved": 0
     },
     {
       "id": "removal-required",
       "fpType": "BLOOD",
-      "milliseconds": 1.506600000000617,
+      "milliseconds": 6.082300000001851,
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2335,7 +2478,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 1,
+        "elapsedMilliseconds": 6,
         "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
         "paretoRouteIds": [
           "r-117f6f3bf12838af",
@@ -2343,15 +2486,28 @@
         ]
       },
       "primaryStates": 12,
+      "completion": {
+        "routeId": "r-117f6f3bf12838af",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.17399139093055538,
+          "upper": 0.17399139093091082
+        },
+        "recommendation": "NOT_RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 12,
+        "reason": null
+      },
       "abandoned": 0,
       "unresolved": 0
     },
     {
       "id": "7732-missing",
       "fpType": "NORMAL",
-      "milliseconds": 2723.119600000002,
+      "milliseconds": 2802.0707,
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2564,20 +2720,21 @@
         "unevaluatedRoutes": 2,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 32,
-        "elapsedMilliseconds": 2723,
+        "elapsedMilliseconds": 2802,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": []
       },
       "primaryStates": null,
+      "completion": null,
       "abandoned": 46,
       "unresolved": 2
     },
     {
       "id": "7732-missing",
       "fpType": "ICE",
-      "milliseconds": 2943.976999999999,
+      "milliseconds": 4092.786,
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2796,7 +2953,7 @@
         "unevaluatedRoutes": 2,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 32,
-        "elapsedMilliseconds": 2944,
+        "elapsedMilliseconds": 4092,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-bd1f58826aef5c66",
@@ -2805,15 +2962,28 @@
         ]
       },
       "primaryStates": 1737,
+      "completion": {
+        "routeId": "r-bd1f58826aef5c66",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.3077514559600762,
+          "upper": 0.30775145622649597
+        },
+        "recommendation": "NEUTRAL",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 1737,
+        "reason": null
+      },
       "abandoned": 43,
       "unresolved": 2
     },
     {
       "id": "7732-missing",
       "fpType": "BLOOD",
-      "milliseconds": 2716.8418999999994,
+      "milliseconds": 2672.4753999999994,
       "request": {
-        "modelId": "le-1.5.3-iid-d3b4b828ff679b7c",
+        "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3026,14 +3196,15 @@
         "unevaluatedRoutes": 2,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 32,
-        "elapsedMilliseconds": 2717,
+        "elapsedMilliseconds": 2672,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": []
       },
       "primaryStates": null,
+      "completion": null,
       "abandoned": 46,
       "unresolved": 2
     }
   ],
-  "qualification": "Node sequential production planner; all allowed actions, real versioned pools, default 12s/48-route request. Time includes template compilation and intrinsic search, excludes module startup. Per-template budgets can leave candidates unresolved; no global-optimality claim. New metrics differ from the archived finite-FP release, so elapsed ratios are not an equal-work speedup benchmark. Not browser, peak-memory, or low-end-device evidence."
+  "qualification": "Node sequential production planner matrix recorded during concurrent development validation, not a controlled performance baseline. All allowed actions, versioned pools, default12s/48-route request. Time includes compilation, intrinsic search and48FP completion, excludes module startup. State/time budgets can leave search or completion unresolved; no global-optimality claim or equal-work speedup comparison. Not browser, peak-memory or low-end-device evidence."
 }

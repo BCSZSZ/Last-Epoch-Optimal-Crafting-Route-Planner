@@ -13,6 +13,9 @@ import { evaluateIntrinsic, IntrinsicWorkspace } from './intrinsic';
 import type { IntrinsicReport } from './intrinsic';
 import { catalogForInputModel, readInputModel } from './input-model';
 import { maximumSuccessFp } from './policy';
+import { evaluateCompletion } from './completion';
+import type { CompletionReport } from './completion';
+import { REFERENCE_FP } from './policy';
 
 export interface PlanProgress {
   readonly phase: 'VALIDATION' | 'SEARCH' | 'REFINEMENT' | 'DONE';
@@ -23,6 +26,7 @@ export interface PlanProgress {
 }
 
 export interface PlanReport {
+  readonly completion?: CompletionReport | null;
   readonly inputModel?: PlanRequest['inputModel'];
   readonly metric?: 'INTRINSIC_V2' | 'FINITE_FP_V1';
   readonly hierarchy?: {
@@ -263,12 +267,13 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
   const request = parsed.request, now = options.now ?? Date.now, start = now();
   const elapsed = () => Math.max(0, now() - start);
   const stopped = () => Boolean(options.signal?.aborted) || elapsed() >= request.search.milliseconds;
+  const searchStopped = () => Boolean(options.signal?.aborted) || elapsed() >= request.search.milliseconds * 0.75;
   if (options.signal?.aborted) throw new PlanningCancelledError();
   const compiled = compileTemplates(request, engine), workspace = new IntrinsicWorkspace(engine, request);
   const terminal = !compiled && !options.intrinsicRoutes && !options.seedRoutes && targetReached(request.item, request.target);
   const seeds = options.intrinsicRoutes ?? options.seedRoutes ?? (compiled?.templates ?? (terminal ? [{ id: routeId([]), macros: [], description: '目标已经达成' }] : commonRoutes(request, engine)));
   const library = compiled || terminal || options.intrinsicRoutes ? [] : macroLibrary(request, engine, seeds);
-  const general = routeSpace(library, request.search.macroStages, stopped);
+  const general = routeSpace(library, request.search.macroStages, searchStopped);
   const routes = function* () { yield* seeds; if (!compiled && !terminal && !options.intrinsicRoutes) yield* general.routes; };
   const seen = new Set<string>(), abandoned: IntrinsicReport[] = [], retained: IntrinsicReport[] = [];
   let primary: IntrinsicReport | null = null, evaluated = 0, unresolved = 0, exhausted = true, duplicates = 0;
@@ -282,13 +287,13 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
     (macro.kind === 'conditional' && containsChaos([...macro.then, ...(macro.otherwise ?? [])])));
   for (const route of routes()) {
     if (options.signal?.aborted) throw new PlanningCancelledError();
-    if (stopped() || evaluated >= request.search.maxRoutes) { exhausted = false; stopReason = stopped() ? 'TIME_BUDGET' : 'ROUTE_BUDGET'; break; }
+    if (searchStopped() || evaluated >= request.search.maxRoutes) { exhausted = false; stopReason = searchStopped() ? 'TIME_BUDGET' : 'ROUTE_BUDGET'; break; }
     const key = routeKey(route); if (seen.has(key)) { duplicates++; continue; } seen.add(key);
     progress('SEARCH', route.description ?? '计算完整固定策略的操作成功率与成功路径FP');
     evaluated++;
     try {
       const routeStart = now();
-      const routeStopped = () => stopped() || now() - routeStart >= Math.min(containsChaos(route.macros) ? 300 : 1500, request.search.milliseconds / 4);
+      const routeStopped = () => searchStopped() || now() - routeStart >= Math.min(containsChaos(route.macros) ? 300 : 1500, request.search.milliseconds / 4);
       const report = evaluateIntrinsic(workspace, route, routeStopped, options.disableCertifiedPruning);
       if (report.intrinsic.decision === 'ABANDONED') abandoned.push(report);
       else if (report.intrinsic.decision === 'UNRESOLVED') unresolved++;
@@ -297,16 +302,28 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
       if (options.signal?.aborted) throw new PlanningCancelledError();
       if (!(error instanceof EvaluationLimitError || error instanceof OutcomeLimitError)) throw error;
       unresolved++;
-      if (stopped()) { exhausted = false; stopReason = 'TIME_BUDGET'; break; }
+      if (searchStopped()) { exhausted = false; stopReason = 'TIME_BUDGET'; break; }
     }
     await options.yieldControl?.();
   }
   if (options.signal?.aborted) throw new PlanningCancelledError();
+  let completion: CompletionReport | null = null;
+  if (primary) {
+    progress('REFINEMENT', `正在计算起始${REFERENCE_FP}FP的整件完成率`);
+    await options.yieldControl?.();
+    try { completion = evaluateCompletion(engine, request, primary.route, stopped); }
+    catch (error) {
+      if (options.signal?.aborted) throw new PlanningCancelledError();
+      if (!(error instanceof EvaluationLimitError || error instanceof OutcomeLimitError)) throw error;
+      completion = { routeId: primary.route.id, initialFp: REFERENCE_FP, status: 'INCOMPLETE', probability: null,
+        recommendation: 'UNRESOLVED', evaluation: 'BOUNDED_NUMERICAL', states: 0, reason: error.message };
+    }
+  }
   progress('DONE', primary ? `已得到通过15%／${maximumSuccessFp(engine.catalog.model)}FP门槛的当前主推荐` : '已返回放弃记录或尚未完成的候选范围');
   const pareto = retained.filter((row) => !retained.some((other) => other !== row && other.score.lower >= row.score.upper &&
     other.expectedFpGivenSuccess!.upper < row.expectedFpGivenSuccess!.lower));
   return {
-    metric: 'INTRINSIC_V2', inputModel: request.inputModel ?? 'AUDITED', modelId: engine.catalog.model.modelId, gameVersion: engine.catalog.model.gameVersion,
+    metric: 'INTRINSIC_V2', inputModel: request.inputModel ?? 'AUDITED', modelId: engine.catalog.model.modelId, gameVersion: engine.catalog.model.gameVersion, completion,
     status: primary ? 'RECOMMENDATION' : 'NO_ROUTE_FOUND_IN_SCOPE', primary, issues: [], abandoned, unresolvedRoutes: unresolved,
     searchStatus: exhausted && unresolved === 0 ? 'COMPLETE' : 'INCOMPLETE', optimality: 'NOT_PROVEN', samplingGuarantee: null,
     hierarchy: compiled ? { structure: compiled.structure, upperLabels: 28, routeNodes: 23, generatedTemplates: compiled.templates.length,
@@ -322,8 +339,8 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
     conventions: { fpDomain: [], weights: [], materials: 'UNLIMITED', fixedRoute: true, rngModel: engine.catalog.model.rngModel },
     qualification: (request.inputModel && request.inputModel !== 'AUDITED' ? '按可锻造前提、100级与该部位全职业通用池计算；' +
       (request.inputModel === 'FORGEABLE_EQUAL' ? '未指定词条采用等权正权重候选池，仅为简化参考，不是未知真实词条的精确概率。' : '已指定词条采用实际制作权重；通用池不冒充指定底材职业池。') : '') +
-      'FP持续充足；成功率只计操作NG，FP只以最终成功路径的均值判断100门槛。未使用起始FP分布或耗尽保留福利。' +
-      '模板及分支预先固定；上层标签只路由，数值保留ID、阶数、原生顺序和费用联合核。15%／100等号通过；区间跨阈或执行预算不足保留未完成。' +
+      `成功率假设FP持续充足，只计操作NG；费用门槛${maximumSuccessFp(engine.catalog.model)}只统计最终成功路径。整件完成率另以起始${REFERENCE_FP}FP结算，包含耗尽保留及最后一次制作。` +
+      `模板及分支预先固定；上层标签只路由，数值保留ID、阶数、原生顺序和费用联合核。15%／${maximumSuccessFp(engine.catalog.model)}等号通过；区间跨阈或执行预算不足保留未完成。` +
       '已搜索范围不代表任意长度策略全局最优。普通填充采用预先声明的合法碎片顺序，不宣称所有填充ID均等价。',
   };
 }

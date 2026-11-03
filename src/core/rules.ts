@@ -35,6 +35,18 @@ export interface DemandDistribution {
   readonly issues: readonly Issue[];
 }
 
+export type BalanceKernel = readonly (readonly { readonly value: number; readonly bounds: Interval }[])[];
+export interface BudgetDistribution {
+  readonly outcomes: readonly {
+    readonly item: Item;
+    readonly abort: AtomicOutcome['abort'];
+    readonly probability: { readonly lower: number; readonly upper: number };
+    /** Conditional remaining-FP distributions, indexed by pre-action balance. Shared between compatible exits. */
+    readonly balances: BalanceKernel;
+  }[];
+  readonly issues: readonly Issue[];
+}
+
 export class OutcomeLimitError extends Error {
   constructor(readonly limit: number) { super(`原子分布超过${limit}个结果；计算未完成`); }
 }
@@ -185,6 +197,29 @@ export class RuleEngine {
     }
     assertUnitMass([...exits.values()].map((row) => row.probability.midpoint));
     return { outcomes: [...exits.values()].map((row) => ({ ...row, probability: row.probability.report(), fpMoment: row.fpMoment.report() })), issues: [] };
+  }
+
+  /** Factorized joint settlement: preserves critical/identity correlation without copying fees across every exit. */
+  budgetTransition(item: Item, action: AtomicAction, context: CraftingContext, maximumFp: number,
+    options: TransitionOptions = {}): BudgetDistribution {
+    if (!Number.isInteger(maximumFp) || maximumFp < 1 || maximumFp > this.catalog.model.fpMaximum) throw new RangeError('无效参考FP');
+    const constraints = options.constraints ?? {};
+    const issues = this.eligibility(item, 63, action, context, constraints);
+    if (issues.length) return { outcomes: [], issues };
+    const states = this.#variants(item, action, context, Boolean(options.trackRolls || constraints.protected?.some(row => row.roll)), options.maxOutcomes ?? 200000);
+    if (states.some(row => row.weight.upper > 0 && protectionViolated(item, row.item, constraints))) {
+      return { outcomes: [], issues: [{ code: 'PROTECTION_RISK', message: '该动作可能违反明确设置的全程保护条件' }] };
+    }
+    const paid: BalanceKernel = Array.from({ length: maximumFp + 1 }, (_, fp) => fp ? this.#cost(item, fp, action) : []);
+    const refunded: BalanceKernel = Array.from({ length: maximumFp + 1 }, (_, fp) => [{ value: fp, bounds: ONE }]);
+    const grouped = new Map<string, { item: Item; abort: AtomicOutcome['abort']; probability: Interval; balances: BalanceKernel }>();
+    for (const state of states) {
+      const key = `${itemKey(state.item)}|${state.abort ?? '-'}|${Number(state.critical)}`;
+      const previous = grouped.get(key);
+      grouped.set(key, { item: state.item, abort: state.abort, probability: (previous?.probability ?? ZERO).add(state.weight),
+        balances: state.critical ? refunded : paid });
+    }
+    return { outcomes: [...grouped.values()].map(row => ({ ...row, probability: row.probability.report() })), issues: [] };
   }
 
   sample(item: Item, fp: number, action: AtomicAction, context: CraftingContext, draw: Draw, options: TransitionOptions = {}): AtomicSample {

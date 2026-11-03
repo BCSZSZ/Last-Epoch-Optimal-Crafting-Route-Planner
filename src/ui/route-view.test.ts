@@ -4,7 +4,23 @@ import { compileTemplates } from '../core/hierarchy';
 import { catalogForInputModel } from '../core/input-model';
 import { RuleEngine } from '../core/rules';
 import type { Macro } from '../core/types';
+import type { PlanRequest } from '../core/types';
 import { routeSteps } from './route-view';
+
+it('omits initially satisfied Redemption and preparation macros for an ownedT7 example', () => {
+  const { request: base, catalog } = fixture();
+  const request: PlanRequest = { ...base, item: { ...base.item, affixes: [[4,7],[26,7],[7,2],[10,1]]
+    .map(([id,tier]) => ({id,tier,slot:'ordinary',roll:null})) },
+    target: { requirements: [4,8].map(id=>({ids:[id],minTier:7,maxTier:7,slot:'ordinary'})) } };
+  const selector={side:1 as const,excludedIds:[4,8],minTier:1,maxTier:1,sealable:true};
+  const macros:Macro[]=[{kind:'repeat',action:{kind:'redemption',glyph:'hope'},until:{kind:'any',predicates:[4,8]
+    .map(id=>({kind:'identity',requirement:{ids:[id],minTier:1,maxTier:8,slot:'ordinary'}}))}},
+    {kind:'conditional',when:{kind:'identity',requirement:{ids:[4],minTier:1,maxTier:8,slot:'ordinary'}},then:[
+      {kind:'repeat',action:{kind:'havoc',glyph:'hope'},until:{kind:'exists',selector}}, {kind:'seal',selector},
+      {kind:'once',action:{kind:'add',id:8,glyph:'hope'}}]},
+    {kind:'repeat',action:{kind:'havoc',glyph:'hope'},until:{kind:'target'}}];
+  expect(routeSteps(macros,request,catalog).map(row=>row.title)).toEqual(['封印','添加词缀','浩劫直至两项目标均为T7']);
+});
 
 function fixture() {
   const draft = emptyDraft();

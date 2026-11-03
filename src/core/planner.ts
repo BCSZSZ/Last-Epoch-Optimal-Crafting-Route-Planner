@@ -25,6 +25,12 @@ export interface PlanReport {
   readonly primary: RouteReport | null;
   readonly searchStatus: 'COMPLETE' | 'INCOMPLETE' | 'NOT_STARTED';
   readonly optimality: 'PROVEN_WITHIN_DECLARED_SCOPE' | 'NOT_PROVEN';
+  readonly samplingGuarantee: {
+    readonly scope: 'ALL_STATISTICAL_REPORTS_IN_ONE_PLANNING_CALL_UNDER_IID';
+    readonly confidence: number;
+    readonly maximumReports: number;
+    readonly reportConfidence: number;
+  } | null;
   readonly search: {
     readonly grammar: string;
     readonly macroStages: number;
@@ -99,7 +105,7 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
   const parsed = parsePlanRequest(input, engine.catalog);
   if (!parsed.request) return {
     modelId: engine.catalog.model.modelId, gameVersion: engine.catalog.model.gameVersion, status: 'INVALID_INPUT', issues: parsed.issues,
-    primary: null, searchStatus: 'NOT_STARTED', optimality: 'NOT_PROVEN',
+    primary: null, searchStatus: 'NOT_STARTED', optimality: 'NOT_PROVEN', samplingGuarantee: null,
     search: { grammar: 'NOT_COMPILED', macroStages: 0, librarySize: 0, candidateUpperBound: '0', evaluatedRoutes: 0,
       exactRoutes: 0, estimatedRoutes: 0, unevaluatedRoutes: 0, skippedDuplicates: 0, certifiedPrunedPrefixes: 0,
       elapsedMilliseconds: elapsed(), stopReason: 'INVALID_INPUT', paretoRouteIds: [] },
@@ -108,6 +114,11 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
     qualification: '输入未通过校验，没有放宽目标或启动搜索。',
   };
   const request = parsed.request;
+  // At most one screening and one refinement report per attempted route. A union bound
+  // also covers choosing the displayed route after inspecting several sampled candidates.
+  const maximumSamplingReports = 2 * request.search.maxRoutes;
+  const planningConfidence = 0.99;
+  const reportConfidence = 1 - (1 - planningConfidence) / maximumSamplingReports;
   const maximum = request.scoring.maximumFp ?? 63;
   const rawWeights = request.scoring.weights ?? Array<number>(maximum).fill(1);
   const sumWeights = rawWeights.reduce((a, b) => a + b, 0);
@@ -134,6 +145,8 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
     const allRanked = primary !== null && reports.every((candidate) => candidate === primary ||
       (primary!.evaluationStatus === 'BOUNDED_NUMERICAL' && candidate.evaluationStatus === 'BOUNDED_NUMERICAL' && primary!.score.lower > candidate.score.upper));
     return { modelId: engine.catalog.model.modelId, gameVersion: engine.catalog.model.gameVersion, status, issues, primary,
+      samplingGuarantee: estimatedCount > 0 ? { scope: 'ALL_STATISTICAL_REPORTS_IN_ONE_PLANNING_CALL_UNDER_IID',
+        confidence: planningConfidence, maximumReports: maximumSamplingReports, reportConfidence } : null,
       searchStatus, optimality: searchStatus === 'COMPLETE' && estimatedCount === 0 && unevaluated === 0 && allRanked ? 'PROVEN_WITHIN_DECLARED_SCOPE' : 'NOT_PROVEN',
       search: { grammar: options.library ? 'EXPLICIT_FINITE_MACRO_LIBRARY' : 'FINITE_FIXED_MACRO_GRAMMAR_V1',
         macroStages: request.search.macroStages, librarySize, candidateUpperBound: upper, evaluatedRoutes: reports.length,
@@ -176,7 +189,7 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
       if (!(error instanceof SamplingRequiredError || error instanceof EvaluationLimitError || error instanceof OutcomeLimitError)) throw error;
       try {
         evaluated = sampleRoute(engine, request, route, { samplesPerFp: options.screeningSamplesPerFp ?? 64,
-          seed: options.seed ?? 'planner-screen-v1', shouldStop: () => cancelled() || searchTimedOut() });
+          seed: options.seed ?? 'planner-screen-v1', confidence: reportConfidence, shouldStop: () => cancelled() || searchTimedOut() });
       } catch (sampleError) {
         if (sampleError instanceof SamplingInterruptedError) { unevaluated++; stopReason = searchTimedOut() ? 'TIME_BUDGET' : 'EVALUATION_INCOMPLETE'; if (searchTimedOut()) break; continue; }
         if (sampleError instanceof OutcomeLimitError) { unevaluated++; continue; }
@@ -203,7 +216,7 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
     try {
       const key = routeKey(primary.route);
       const result = sampleRoute(engine, request, primary.route, { samplesPerFp: options.finalSamplesPerFp ?? 1024,
-        seed: `${options.seed ?? 'planner'}|final`, shouldStop: () => cancelled() || timedOut() });
+        seed: `${options.seed ?? 'planner'}|final`, confidence: reportConfidence, shouldStop: () => cancelled() || timedOut() });
       const index = reports.findIndex((candidate) => routeKey(candidate.route) === key);
       reports[index] = result;
       refined.add(key);

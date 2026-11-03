@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 1,
+  "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+  "build": {
+    "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+    "artifacts": {
+      "assets/index-RYQ1cWqO.css": "d5316820de29f62b1f0fe93dcf707b580d45d66857a428cb8cbe60ed6c107190",
+      "assets/index-yKPq1W9G.js": "e8fc6b3670924783e13b963a105f45f7208e6b8e3e2c056540f3881ef30cead8",
+      "assets/planner.worker-C4ua7Twe.js": "0216b2d31ce13f7a8de85f8352d44cbf9a0904fb7a6f51dde813cdcea50f7c03",
+      "index.html": "5500bb117b35ab8c1088b7a131b4dd94ed461d8f4d749ee4f8d1db624950326d"
+    }
+  },
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 20,
+    "deviceMemoryGiB": 32,
+    "secureContext": true,
+    "crossOriginIsolated": true,
+    "measurementApi": "function"
+  },
+  "measuredOn": "2026-11-03T04:49:54.492Z",
+  "active": false,
+  "measurementPending": false,
+  "scope": "ACTUAL_PRODUCTION_APP_AND_WORKER_WITH_LOCAL_COOP_COEP_OBSERVER",
+  "qualification": "Native browser memory estimates including workers. Each completed call may perform GC and affect timing. Maximum samples are observed post-GC sample maxima, not a proof of the allocation peak between samples. Not OS process RSS or a low-end-device emulation.",
+  "maximumTotalBytesObserved": 30198518,
+  "maximumWorkerExclusiveBytesObserved": 20842705,
+  "samples": [
+    {
+      "beginMilliseconds": 1.2599999979138374,
+      "endMilliseconds": 768.2149999961257,
+      "startProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "endProgress": "正在比较路线…\n取消\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n先浩劫制造合侧垃圾T1，再封印补词和最终浩劫\n已评价 5 条\n导出输入\n导入输入JSON",
+      "workerExclusiveBytes": 16312353,
+      "measurement": {
+        "breakdown": [
+          {
+            "attribution": [],
+            "bytes": 0,
+            "types": []
+          },
+          {
+            "attribution": [
+              {
+                "scope": "Window",
+                "url": "http://127.0.0.1:4175/app/"
+              }
+            ],
+            "bytes": 6754734,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 437136,
+            "types": [
+              "DOM"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "DedicatedWorkerGlobalScope",
+                "url": "http://127.0.0.1:4175/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4ua7Twe.js"
+              }
+            ],
+            "bytes": 16312353,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 1734769,
+            "types": [
+              "Shared"
+            ]
+          }
+        ],
+        "bytes": 25238992
+      }
+    },
+    {
+      "beginMilliseconds": 1269.5600000023842,
+      "endMilliseconds": 12405.280000001192,
+      "startProgress": "正在比较路线…\n取消\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n混沌至出现目标身份，再最终浩劫\n已评价 7 条\n导出输入\n导入输入JSON",
+      "endProgress": "正在比较路线…\n取消\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n比较固定宏动作候选\n已评价 122 条\n导出输入\n导入输入JSON",
+      "workerExclusiveBytes": 7020105,
+      "measurement": {
+        "breakdown": [
+          {
+            "attribution": [
+              {
+                "scope": "Window",
+                "url": "http://127.0.0.1:4175/app/"
+              }
+            ],
+            "bytes": 6972967,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 447888,
+            "types": [
+              "DOM"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 0,
+            "types": []
+          },
+          {
+            "attribution": [
+              {
+                "scope": "DedicatedWorkerGlobalScope",
+                "url": "http://127.0.0.1:4175/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4ua7Twe.js"
+              }
+            ],
+            "bytes": 7020105,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 1357963,
+            "types": [
+              "Shared"
+            ]
+          }
+        ],
+        "bytes": 15798923
+      }
+    },
+    {
+      "beginMilliseconds": 12906.77499999851,
+      "endMilliseconds": 13422.57500000298,
+      "startProgress": "正在比较路线…\n取消\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n比较固定宏动作候选\n已评价 210 条\n导出输入\n导入输入JSON",
+      "endProgress": "正在比较路线…\n取消\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n比较固定宏动作候选\n已评价 301 条\n导出输入\n导入输入JSON",
+      "workerExclusiveBytes": 15496445,
+      "measurement": {
+        "breakdown": [
+          {
+            "attribution": [
+              {
+                "scope": "DedicatedWorkerGlobalScope",
+                "url": "http://127.0.0.1:4175/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4ua7Twe.js"
+              }
+            ],
+            "bytes": 15496445,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "Window",
+                "url": "http://127.0.0.1:4175/app/"
+              }
+            ],
+            "bytes": 6011466,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 2344821,
+            "types": [
+              "Shared"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 0,
+            "types": []
+          },
+          {
+            "attribution": [],
+            "bytes": 458448,
+            "types": [
+              "DOM"
+            ]
+          }
+        ],
+        "bytes": 24311180
+      }
+    },
+    {
+      "beginMilliseconds": 13924.869999997318,
+      "endMilliseconds": 25719.015000000596,
+      "startProgress": "正在比较路线…\n取消\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n比较固定宏动作候选\n已评价 386 条\n导出输入\n导入输入JSON",
+      "endProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "workerExclusiveBytes": 20842705,
+      "measurement": {
+        "breakdown": [
+          {
+            "attribution": [],
+            "bytes": 0,
+            "types": []
+          },
+          {
+            "attribution": [],
+            "bytes": 2310597,
+            "types": [
+              "Shared"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "DedicatedWorkerGlobalScope",
+                "url": "http://127.0.0.1:4175/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4ua7Twe.js"
+              }
+            ],
+            "bytes": 20842705,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 607872,
+            "types": [
+              "DOM"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "Window",
+                "url": "http://127.0.0.1:4175/app/"
+              }
+            ],
+            "bytes": 6437344,
+            "types": [
+              "JavaScript"
+            ]
+          }
+        ],
+        "bytes": 30198518
+      }
+    },
+    {
+      "beginMilliseconds": 26222.045000001788,
+      "endMilliseconds": 32943.875,
+      "startProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "endProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "workerExclusiveBytes": 20590545,
+      "measurement": {
+        "breakdown": [
+          {
+            "attribution": [],
+            "bytes": 0,
+            "types": []
+          },
+          {
+            "attribution": [],
+            "bytes": 1377272,
+            "types": [
+              "Shared"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "DedicatedWorkerGlobalScope",
+                "url": "http://127.0.0.1:4175/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4ua7Twe.js"
+              }
+            ],
+            "bytes": 20590545,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 618432,
+            "types": [
+              "DOM"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "Window",
+                "url": "http://127.0.0.1:4175/app/"
+              }
+            ],
+            "bytes": 7390850,
+            "types": [
+              "JavaScript"
+            ]
+          }
+        ],
+        "bytes": 29977099
+      }
+    },
+    {
+      "beginMilliseconds": 33448.02499999851,
+      "endMilliseconds": 51470.14999999851,
+      "startProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "endProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "workerExclusiveBytes": 20590477,
+      "measurement": {
+        "breakdown": [
+          {
+            "attribution": [],
+            "bytes": 0,
+            "types": []
+          },
+          {
+            "attribution": [],
+            "bytes": 628992,
+            "types": [
+              "DOM"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "DedicatedWorkerGlobalScope",
+                "url": "http://127.0.0.1:4175/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4ua7Twe.js"
+              }
+            ],
+            "bytes": 20590477,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 4610565,
+            "types": [
+              "Shared"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "Window",
+                "url": "http://127.0.0.1:4175/app/"
+              }
+            ],
+            "bytes": 4101270,
+            "types": [
+              "JavaScript"
+            ]
+          }
+        ],
+        "bytes": 29931304
+      }
+    },
+    {
+      "beginMilliseconds": 51972.5,
+      "endMilliseconds": 63997.35499999672,
+      "startProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "endProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "workerExclusiveBytes": 20590493,
+      "measurement": {
+        "breakdown": [
+          {
+            "attribution": [
+              {
+                "scope": "DedicatedWorkerGlobalScope",
+                "url": "http://127.0.0.1:4175/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4ua7Twe.js"
+              }
+            ],
+            "bytes": 20590493,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 0,
+            "types": []
+          },
+          {
+            "attribution": [],
+            "bytes": 1175688,
+            "types": [
+              "Shared"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "Window",
+                "url": "http://127.0.0.1:4175/app/"
+              }
+            ],
+            "bytes": 7406463,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 639552,
+            "types": [
+              "DOM"
+            ]
+          }
+        ],
+        "bytes": 29812196
+      }
+    },
+    {
+      "beginMilliseconds": 64501.460000000894,
+      "endMilliseconds": 80522.77499999851,
+      "startProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "endProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "workerExclusiveBytes": 20590505,
+      "measurement": {
+        "breakdown": [
+          {
+            "attribution": [
+              {
+                "scope": "Window",
+                "url": "http://127.0.0.1:4175/app/"
+              }
+            ],
+            "bytes": 7417311,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 1171874,
+            "types": [
+              "Shared"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 650112,
+            "types": [
+              "DOM"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "DedicatedWorkerGlobalScope",
+                "url": "http://127.0.0.1:4175/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4ua7Twe.js"
+              }
+            ],
+            "bytes": 20590505,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 0,
+            "types": []
+          }
+        ],
+        "bytes": 29829802
+      }
+    },
+    {
+      "beginMilliseconds": 81028.39500000328,
+      "endMilliseconds": 100055.42499999702,
+      "startProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "endProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "workerExclusiveBytes": 20590517,
+      "measurement": {
+        "breakdown": [
+          {
+            "attribution": [
+              {
+                "scope": "DedicatedWorkerGlobalScope",
+                "url": "http://127.0.0.1:4175/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4ua7Twe.js"
+              }
+            ],
+            "bytes": 20590517,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 660672,
+            "types": [
+              "DOM"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 0,
+            "types": []
+          },
+          {
+            "attribution": [],
+            "bytes": 4531205,
+            "types": [
+              "Shared"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "Window",
+                "url": "http://127.0.0.1:4175/app/"
+              }
+            ],
+            "bytes": 4088067,
+            "types": [
+              "JavaScript"
+            ]
+          }
+        ],
+        "bytes": 29870461
+      }
+    },
+    {
+      "beginMilliseconds": 100560.56499999762,
+      "endMilliseconds": 113578.5700000003,
+      "startProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "endProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "workerExclusiveBytes": 20590529,
+      "measurement": {
+        "breakdown": [
+          {
+            "attribution": [],
+            "bytes": 4826522,
+            "types": [
+              "Shared"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 0,
+            "types": []
+          },
+          {
+            "attribution": [
+              {
+                "scope": "Window",
+                "url": "http://127.0.0.1:4175/app/"
+              }
+            ],
+            "bytes": 3774065,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "DedicatedWorkerGlobalScope",
+                "url": "http://127.0.0.1:4175/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4ua7Twe.js"
+              }
+            ],
+            "bytes": 20590529,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 671232,
+            "types": [
+              "DOM"
+            ]
+          }
+        ],
+        "bytes": 29862348
+      }
+    },
+    {
+      "beginMilliseconds": 114085.72999999672,
+      "endMilliseconds": 133105.0700000003,
+      "startProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "endProgress": "开始规划\n\n材料无限 · 1–63假设预算等权 · 不输入实际剩余FP\n\n导出输入\n导入输入JSON",
+      "workerExclusiveBytes": 20590541,
+      "measurement": {
+        "breakdown": [
+          {
+            "attribution": [],
+            "bytes": 681792,
+            "types": [
+              "DOM"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "DedicatedWorkerGlobalScope",
+                "url": "http://127.0.0.1:4175/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4ua7Twe.js"
+              }
+            ],
+            "bytes": 20590541,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [
+              {
+                "scope": "Window",
+                "url": "http://127.0.0.1:4175/app/"
+              }
+            ],
+            "bytes": 6485308,
+            "types": [
+              "JavaScript"
+            ]
+          },
+          {
+            "attribution": [],
+            "bytes": 0,
+            "types": []
+          },
+          {
+            "attribution": [],
+            "bytes": 2422950,
+            "types": [
+              "Shared"
+            ]
+          }
+        ],
+        "bytes": 30180591
+      }
+    }
+  ]
+}

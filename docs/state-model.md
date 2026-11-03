@@ -51,3 +51,5 @@
 ## 精度与搜索状态
 
 `evaluationStatus` 描述按哪个随机原语模型精确求解、近似及误差；`searchStatus` 描述候选语言是否穷尽；`optimality` 描述证明范围。三个概念不得互相代替。方法地址登记也不等于其全部行为已验证。
+
+报告中的`macroStatistics`区分到达事件、实际执行事件及无条件／到达后条件奖励。`samplingGuarantee`声明一次规划内全部统计报告的联合覆盖，单路线`sampling.confidence`记录分配后的置信度。它们都是数据字段，不扩张Worker消息为函数、引擎实例或完整状态树。

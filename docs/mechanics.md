@@ -35,3 +35,7 @@
 - [官方冰／血潜能介绍](https://forum.lastepoch.com/t/rage-of-morditas-coming-to-last-epoch-october-1/81757/)：核对冰保留FP、血提高暴击的总体作用；不据这份概述填具体联合概率。
 
 原始文件读取与本报告均未启动游戏或收集线上制作频次。剩余边界和实施前完成条件见[未决事项](open-questions.md)。
+
+## 适用公开计算器交叉核对
+
+已实际操作Tunklab计算器，比较32封印格、三类FP的T1→T2完整费用分布和三组浩劫布局。其站点标注1.5.2，只有本地1.5.3已核相同公式的部分进入补充回归，详见[范围与冻结观察值](research/reference-calculators.md)。其无限预算平均次数／费用不冒充本产品的有限FP整路线指标。

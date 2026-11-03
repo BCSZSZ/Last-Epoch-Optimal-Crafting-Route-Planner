@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "observedOn": "2026-11-03",
+  "sourceSite": "https://lastepoch.tunklab.com/",
+  "sourceSiteVersion": "1.5.2",
+  "observation": "Public tables and live browser UI; never used as the primary source of game rules.",
+  "applicability": "Only the formulas independently confirmed in local 1.5.3 code. FP comparison uses entrance F=63 so low-FP preservation cannot activate. Havoc attempts and until-target FP are infinite-budget reference quantities, not the product finite-budget route metrics.",
+  "seal": {
+    "url": "https://lastepoch.tunklab.com/seal-chance",
+    "axes": "rows T1..T4; columns ordinary count 1..4",
+    "rawChancePercent": {
+      "exalted": [
+        [
+          73.5,
+          84,
+          94.5,
+          105
+        ],
+        [
+          48.3,
+          55.2,
+          62.1,
+          69
+        ],
+        [
+          24.15,
+          27.6,
+          31.05,
+          34.5
+        ],
+        [
+          10.5,
+          12,
+          13.5,
+          15
+        ]
+      ],
+      "ordinary": [
+        [
+          52.5,
+          63,
+          73.5,
+          84
+        ],
+        [
+          34.5,
+          41.4,
+          48.3,
+          55.2
+        ],
+        [
+          17.25,
+          20.7,
+          24.15,
+          27.6
+        ],
+        [
+          7.5,
+          9,
+          10.5,
+          12
+        ]
+      ]
+    },
+    "qualification": "Published 105% is an unsaturated threshold. Product event probability is clamped to 100% by the audited native Roll short circuit."
+  },
+  "fp": {
+    "url": "https://lastepoch.tunklab.com/fp-chance",
+    "upgrade": "T1_TO_T2",
+    "affixCount": 3,
+    "hope": true,
+    "displayedMeanFp": {
+      "NORMAL": "2.84",
+      "ICE": "1.99",
+      "BLOOD": "1.99"
+    },
+    "displayedCriticalPercent": {
+      "NORMAL": "12.00",
+      "ICE": "12.00",
+      "BLOOD": "38.40"
+    },
+    "rows": {
+      "NORMAL": [
+        [
+          "0 (free)",
+          "34.00%",
+          "34.00%"
+        ],
+        [
+          "1",
+          "13.01%",
+          "47.01%"
+        ],
+        [
+          "2",
+          "8.834%",
+          "55.85%"
+        ],
+        [
+          "3",
+          "7.789%",
+          "63.64%"
+        ],
+        [
+          "4",
+          "7.092%",
+          "70.73%"
+        ],
+        [
+          "5",
+          "6.569%",
+          "77.30%"
+        ],
+        [
+          "6",
+          "6.151%",
+          "83.45%"
+        ],
+        [
+          "7",
+          "5.803%",
+          "89.25%"
+        ],
+        [
+          "8",
+          "5.505%",
+          "94.76%"
+        ],
+        [
+          "9",
+          "5.243%",
+          "100.0%"
+        ]
+      ],
+      "ICE": [
+        [
+          "0 (free)",
+          "53.80%",
+          "53.80%"
+        ],
+        [
+          "1",
+          "9.110%",
+          "62.91%"
+        ],
+        [
+          "2",
+          "6.184%",
+          "69.09%"
+        ],
+        [
+          "3",
+          "5.452%",
+          "74.55%"
+        ],
+        [
+          "4",
+          "4.964%",
+          "79.51%"
+        ],
+        [
+          "5",
+          "4.599%",
+          "84.11%"
+        ],
+        [
+          "6",
+          "4.306%",
+          "88.41%"
+        ],
+        [
+          "7",
+          "4.062%",
+          "92.48%"
+        ],
+        [
+          "8",
+          "3.853%",
+          "96.33%"
+        ],
+        [
+          "9",
+          "3.670%",
+          "100.0%"
+        ]
+      ],
+      "BLOOD": [
+        [
+          "0 (free)",
+          "53.80%",
+          "53.80%"
+        ],
+        [
+          "1",
+          "9.110%",
+          "62.91%"
+        ],
+        [
+          "2",
+          "6.184%",
+          "69.09%"
+        ],
+        [
+          "3",
+          "5.452%",
+          "74.55%"
+        ],
+        [
+          "4",
+          "4.964%",
+          "79.51%"
+        ],
+        [
+          "5",
+          "4.599%",
+          "84.11%"
+        ],
+        [
+          "6",
+          "4.306%",
+          "88.41%"
+        ],
+        [
+          "7",
+          "4.062%",
+          "92.48%"
+        ],
+        [
+          "8",
+          "3.853%",
+          "96.33%"
+        ],
+        [
+          "9",
+          "3.670%",
+          "100.0%"
+        ]
+      ]
+    }
+  },
+  "havoc": {
+    "fpType": "NORMAL",
+    "hope": true,
+    "targetTiers": [
+      7,
+      7,
+      null,
+      null
+    ],
+    "cases": [
+      {
+        "currentTiers": [
+          1,
+          1,
+          7,
+          7
+        ],
+        "url": "https://lastepoch.tunklab.com/havoc?t=1,1,7,7&g=7,7,0,0",
+        "displayedChancePercent": "20.00",
+        "displayedAttempts": "5.0",
+        "displayedMeanFp": "6.44",
+        "displayedUntilTargetFp": "32.18"
+      },
+      {
+        "currentTiers": [
+          3,
+          2,
+          7,
+          7
+        ],
+        "url": "https://lastepoch.tunklab.com/havoc?t=3,2,7,7&g=7,7,0,0",
+        "displayedChancePercent": "18.18",
+        "displayedAttempts": "5.5",
+        "displayedMeanFp": "6.44",
+        "displayedUntilTargetFp": "35.40"
+      },
+      {
+        "currentTiers": [
+          3,
+          7,
+          7,
+          7
+        ],
+        "url": "https://lastepoch.tunklab.com/havoc?t=3,7,7,7&g=7,7,0,0",
+        "displayedChancePercent": "66.67",
+        "displayedAttempts": "1.5",
+        "displayedMeanFp": "6.44",
+        "displayedUntilTargetFp": "9.66"
+      }
+    ]
+  }
+}

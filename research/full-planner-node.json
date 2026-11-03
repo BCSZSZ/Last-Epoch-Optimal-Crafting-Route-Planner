@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "measuredOn": "2026-11-03T03:57:26.562Z",
-  "modelId": "le-1.5.3-iid-de87d96b5479099b",
+  "measuredOn": "2026-11-03T04:30:37.214Z",
+  "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
   "scope": "COMPLETE_PLANNER_WITH_DEFAULT_TIME_AND_ROUTE_LIMITS_ALL_FP_0_TO_63",
   "environment": {
     "node": "v22.20.0",
@@ -23,8 +23,8 @@
     {
       "id": "7732-ready",
       "fpType": "NORMAL",
-      "milliseconds": 1101.5716,
-      "peakRssMiB": 122.83203125,
+      "milliseconds": 1028.2115999999999,
+      "peakRssMiB": 123.1796875,
       "status": "RECOMMENDATION",
       "score": 0.6236150286198845,
       "scoreBounds": {
@@ -56,7 +56,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 3,
         "certifiedPrunedPrefixes": 18,
-        "elapsedMilliseconds": 1100,
+        "elapsedMilliseconds": 1027,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -111,13 +111,13 @@
       },
       "states": 64,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7732-ready",
       "fpType": "ICE",
-      "milliseconds": 1374.3286,
-      "peakRssMiB": 122.890625,
+      "milliseconds": 1213.4686000000002,
+      "peakRssMiB": 125.21875,
       "status": "RECOMMENDATION",
       "score": 0.7146364783343879,
       "scoreBounds": {
@@ -149,7 +149,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 3,
         "certifiedPrunedPrefixes": 18,
-        "elapsedMilliseconds": 1374,
+        "elapsedMilliseconds": 1213,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -204,13 +204,13 @@
       },
       "states": 64,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7732-ready",
       "fpType": "BLOOD",
-      "milliseconds": 1163.9733,
-      "peakRssMiB": 124.4765625,
+      "milliseconds": 994.1646999999999,
+      "peakRssMiB": 126.46484375,
       "status": "RECOMMENDATION",
       "score": 0.6236150286198845,
       "scoreBounds": {
@@ -242,7 +242,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 3,
         "certifiedPrunedPrefixes": 18,
-        "elapsedMilliseconds": 1163,
+        "elapsedMilliseconds": 993,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -297,13 +297,13 @@
       },
       "states": 64,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7710-direct",
       "fpType": "NORMAL",
-      "milliseconds": 7836.7925000000005,
-      "peakRssMiB": 177.6015625,
+      "milliseconds": 7830.9051,
+      "peakRssMiB": 186.46875,
       "status": "RECOMMENDATION",
       "score": 0.4472252707958129,
       "scoreBounds": {
@@ -363,7 +363,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 6,
-        "elapsedMilliseconds": 7836,
+        "elapsedMilliseconds": 7831,
         "stopReason": "TIME_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -383,13 +383,13 @@
       },
       "states": 942,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7710-direct",
       "fpType": "ICE",
-      "milliseconds": 7821.2762,
-      "peakRssMiB": 171.81640625,
+      "milliseconds": 7805.9797,
+      "peakRssMiB": 194.3125,
       "status": "RECOMMENDATION",
       "score": 0.5789720513410019,
       "scoreBounds": {
@@ -449,7 +449,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 6,
-        "elapsedMilliseconds": 7820,
+        "elapsedMilliseconds": 7805,
         "stopReason": "TIME_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -469,13 +469,13 @@
       },
       "states": 953,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7710-direct",
       "fpType": "BLOOD",
-      "milliseconds": 7817.238600000001,
-      "peakRssMiB": 179.453125,
+      "milliseconds": 7815.8301,
+      "peakRssMiB": 195.01171875,
       "status": "RECOMMENDATION",
       "score": 0.4554655188139222,
       "scoreBounds": {
@@ -535,7 +535,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 6,
-        "elapsedMilliseconds": 7816,
+        "elapsedMilliseconds": 7815,
         "stopReason": "TIME_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -555,13 +555,13 @@
       },
       "states": 942,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7713-prepare",
       "fpType": "NORMAL",
-      "milliseconds": 931.002,
-      "peakRssMiB": 122.28125,
+      "milliseconds": 871.633,
+      "peakRssMiB": 123.0390625,
       "status": "RECOMMENDATION",
       "score": 0.2706208981291877,
       "scoreBounds": {
@@ -634,7 +634,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 3,
         "certifiedPrunedPrefixes": 26,
-        "elapsedMilliseconds": 930,
+        "elapsedMilliseconds": 871,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -687,13 +687,13 @@
       },
       "states": 1006,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7713-prepare",
       "fpType": "ICE",
-      "milliseconds": 1052.0557,
-      "peakRssMiB": 122.23046875,
+      "milliseconds": 983.9780999999999,
+      "peakRssMiB": 125.2421875,
       "status": "RECOMMENDATION",
       "score": 0.4181926481670739,
       "scoreBounds": {
@@ -766,7 +766,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 3,
         "certifiedPrunedPrefixes": 26,
-        "elapsedMilliseconds": 1051,
+        "elapsedMilliseconds": 984,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -819,13 +819,13 @@
       },
       "states": 1018,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7713-prepare",
       "fpType": "BLOOD",
-      "milliseconds": 945.9096999999999,
-      "peakRssMiB": 125.953125,
+      "milliseconds": 902.2029,
+      "peakRssMiB": 123.24609375,
       "status": "RECOMMENDATION",
       "score": 0.28520123204436654,
       "scoreBounds": {
@@ -898,7 +898,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 3,
         "certifiedPrunedPrefixes": 26,
-        "elapsedMilliseconds": 946,
+        "elapsedMilliseconds": 901,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -951,13 +951,13 @@
       },
       "states": 1006,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "removal-required",
       "fpType": "NORMAL",
-      "milliseconds": 230.88519999999997,
-      "peakRssMiB": 120.08203125,
+      "milliseconds": 220.8015,
+      "peakRssMiB": 120.2265625,
       "status": "RECOMMENDATION",
       "score": 0.11396777798539454,
       "scoreBounds": {
@@ -1008,7 +1008,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 2,
         "certifiedPrunedPrefixes": 43,
-        "elapsedMilliseconds": 230,
+        "elapsedMilliseconds": 221,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -1062,13 +1062,13 @@
       },
       "states": 255,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "removal-required",
       "fpType": "ICE",
-      "milliseconds": 237.46649999999997,
-      "peakRssMiB": 121.90625,
+      "milliseconds": 220.10649999999998,
+      "peakRssMiB": 118.0390625,
       "status": "RECOMMENDATION",
       "score": 0.14652147112506547,
       "scoreBounds": {
@@ -1119,7 +1119,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 2,
         "certifiedPrunedPrefixes": 43,
-        "elapsedMilliseconds": 236,
+        "elapsedMilliseconds": 219,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -1173,13 +1173,13 @@
       },
       "states": 255,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "removal-required",
       "fpType": "BLOOD",
-      "milliseconds": 230.8973,
-      "peakRssMiB": 118.8125,
+      "milliseconds": 223.3306,
+      "peakRssMiB": 119.3359375,
       "status": "RECOMMENDATION",
       "score": 0.11879691133445106,
       "scoreBounds": {
@@ -1230,7 +1230,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 2,
         "certifiedPrunedPrefixes": 43,
-        "elapsedMilliseconds": 230,
+        "elapsedMilliseconds": 223,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -1284,18 +1284,18 @@
       },
       "states": 255,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7732-missing",
       "fpType": "NORMAL",
-      "milliseconds": 3422.9712999999997,
-      "peakRssMiB": 125.859375,
+      "milliseconds": 3022.9387,
+      "peakRssMiB": 129.08984375,
       "status": "RECOMMENDATION",
-      "score": 0.04296875000000001,
+      "score": 0.04344928075396827,
       "scoreBounds": {
-        "lower": 0.0321718587556224,
-        "upper": 0.05376564124437761
+        "lower": 0.03111783703146883,
+        "upper": 0.05578072447646771
       },
       "evaluation": "ESTIMATED",
       "routeId": "r-2724a8fa3ce4c0de",
@@ -1322,7 +1322,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 2,
         "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 3423,
+        "elapsedMilliseconds": 3022,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -1375,20 +1375,20 @@
           "r-fa76450142584145"
         ]
       },
-      "states": 375819,
+      "states": 376253,
       "samples": 64512,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7732-missing",
       "fpType": "ICE",
-      "milliseconds": 4497.0373,
-      "peakRssMiB": 124.87890625,
+      "milliseconds": 4105.7478,
+      "peakRssMiB": 128.32421875,
       "status": "RECOMMENDATION",
-      "score": 0.06001984126984126,
+      "score": 0.06057787698412697,
       "scoreBounds": {
-        "lower": 0.04922295002546365,
-        "upper": 0.07081673251421887
+        "lower": 0.04824643326162753,
+        "upper": 0.07290932070662641
       },
       "evaluation": "ESTIMATED",
       "routeId": "r-2724a8fa3ce4c0de",
@@ -1415,7 +1415,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 2,
         "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 4496,
+        "elapsedMilliseconds": 4105,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -1468,20 +1468,20 @@
           "r-fa76450142584145"
         ]
       },
-      "states": 529834,
+      "states": 530340,
       "samples": 64512,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7732-missing",
       "fpType": "BLOOD",
-      "milliseconds": 3354.0771,
-      "peakRssMiB": 126.1328125,
+      "milliseconds": 3094.3307,
+      "peakRssMiB": 128.29296875,
       "status": "RECOMMENDATION",
-      "score": 0.04296875000000001,
+      "score": 0.04344928075396827,
       "scoreBounds": {
-        "lower": 0.0321718587556224,
-        "upper": 0.05376564124437761
+        "lower": 0.03111783703146883,
+        "upper": 0.05578072447646771
       },
       "evaluation": "ESTIMATED",
       "routeId": "r-2724a8fa3ce4c0de",
@@ -1508,7 +1508,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 2,
         "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 3353,
+        "elapsedMilliseconds": 3093,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -1561,9 +1561,9 @@
           "r-fa76450142584145"
         ]
       },
-      "states": 375819,
+      "states": 376253,
       "samples": 64512,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     }
   ]
 }

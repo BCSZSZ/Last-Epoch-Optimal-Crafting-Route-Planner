@@ -116,6 +116,9 @@ describe('bounded search and safe pruning', () => {
     expect(result.status).toBe('RECOMMENDATION');
     expect(result.primary?.evaluationStatus).toBe('ESTIMATED');
     expect(result.primary?.sampling?.samplesPerFp).toBe(256);
+    expect(result.samplingGuarantee).toEqual({ scope: 'ALL_STATISTICAL_REPORTS_IN_ONE_PLANNING_CALL_UNDER_IID',
+      confidence: 0.99, maximumReports: 6, reportConfidence: 1 - 0.01 / 6 });
+    expect(result.primary?.sampling?.confidence).toBe(result.samplingGuarantee?.reportConfidence);
     expect(result.primary!.scoreEstimate).toBeGreaterThan(0);
     expect(result.optimality).toBe('NOT_PROVEN');
     expect(result.searchStatus).toBe('INCOMPLETE');

@@ -1,4 +1,9 @@
 {
+  "browserMemoryEvidence": {
+    "method": "NATIVE_POST_GC_MEMORY_ESTIMATES_WITH_WORKER_ATTRIBUTION",
+    "observedSampleMaximumNotAllocationPeak": true,
+    "record": "research/browser-memory/validation.json"
+  },
   "dataRevision": "e13bd6ad1c607782651e98ab7eafa959cc8883b89d570eb100ac55fa36b086a2",
   "defaultRngModel": "DISPLAY_PARAMETERS_INDEPENDENT_DRAWS_V1",
   "deferredResearch": [
@@ -98,6 +103,10 @@
     "research/7732-redemption-reference.json": "97ac364c816ea303cc1d8d5c169181b4e6a8f5ba2b718d46b24b881511c3770e",
     "research/affix-action-claims.json": "d720c72a45da01dcfea09a7feb92c44087474e89d431e4378f08a7581ebe6aed",
     "research/audited-build.json": "997bdc0183fce5e9b1bf76925d1bdbdf093375e70bfc4f1013a913d2cb4de025",
+    "research/browser-memory/7710-normal-input.json": "9da15a6b206a9c937c261ba3b6dc474c0ea70121f31eea304faee75d50991dd5",
+    "research/browser-memory/7710-normal-memory.json": "7e31831a4719a9f4a7cdad3f87d16fda14563a170cb42e2f130022f5885d954b",
+    "research/browser-memory/7710-normal-plan.json": "88a74ed0cbc9d34504444519a6e0ab1c2067a00bf6d7cad161e727305bf75c98",
+    "research/browser-memory/validation.json": "48226bec4c3d5c64df59390e2f7ac4bbc62d37ed52f494ee95ce916ae5eba589",
     "research/common-pattern-cases.json": "56a99d9902d5c10400a6bbe0867228963ff3fb0f5d95e720dbcd8123eef66e93",
     "research/common-pattern-monte-carlo.json": "0949743091e215ee325121fb3a1ca096afbd607a48cddbc2b9a62bfa64f3e465",
     "research/common-pattern-results.json": "c74b2af851671ed22425b508b7f227785e558a5f4595a873a04451b57cb12a86",
@@ -106,9 +115,10 @@
     "research/fp-examples.json": "ff72db932924dcd374e4c8a42af47525b34fb37c4e5e2aecda9173f85d49713e",
     "research/legacy-forge-compatibility.json": "f750857451068cd7470aa0b1802fcdff12b5d6ee8a997b144e34e858b34fdba0",
     "research/math-fixtures.json": "2e8f761032a1fb9710be3bdfe80d361982297d3cbf6663140f77bc517e6a978a",
-    "src/generated/model.json": "2dbfba24975cd2df43a30ce39f3dbbdec5e3a3c635665b3d52423cfca17554ff"
+    "research/reference-calculators.json": "fbbd966f057c2ed97ecca0ad8d2036eab93ac721cb506c993417c7faddbd831e",
+    "src/generated/model.json": "fcde9020026d43303cc6959fe2b4b5e4b7ff715313c972f1fcfea91dc0d60298"
   },
-  "modelId": "le-1.5.3-26087601-r5-public-preview",
+  "modelId": "le-1.5.3-26087601-r6-reporting-audit",
   "phase": "PUBLIC_PREVIEW",
   "policies": {
     "adaptiveReoptimization": false,
@@ -117,6 +127,7 @@
     "fixedMacroOrder": true,
     "inventoryInputSupported": false,
     "macroStageLimitDraft": 12,
+    "macroStatistics": "UNCONDITIONAL_AND_REACHED_CONDITIONAL",
     "mandatoryConformanceCases": [
       "direct_prefix_targets",
       "opposite_side_preparation",
@@ -137,6 +148,7 @@
       "OTHER_LEGAL_INPUTS"
     ],
     "policyAbortBeforeIncidentalSuccess": true,
+    "samplingCoverage": "PLANNING_CALL_FAMILYWISE_UNDER_IID",
     "successBeforeFpExhaustion": true,
     "tieBreakers": [
       "SUCCESS_CONDITIONAL_FP_MEAN",
@@ -150,7 +162,7 @@
     "unassessedPatternStatus": "UNASSESSED",
     "uncompletedSearchStatus": "INCOMPLETE"
   },
-  "productionModelId": "le-1.5.3-iid-de87d96b5479099b",
+  "productionModelId": "le-1.5.3-iid-f58515921fd9cbcc",
   "productionReady": false,
   "referenceExampleModels": [
     "INDEPENDENT_NORMALIZED_WEIGHTS_AND_UNIFORM_PERMUTATIONS",
@@ -158,10 +170,9 @@
     "native_uniform_grid_iid"
   ],
   "remainingAcceptance": [
-    "PHYSICAL_LOW_END_DEVICE",
-    "BROWSER_WORKER_HEAP_PEAK"
+    "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "8243c9ec833ba0291fb78f824b9514183441374a1ac7e2d3d7bec5f7dd24715c",
+  "researchRevision": "1518071bd83ee73af1524e46c9583523c84e02bfd8e52fe8475eaaf9d851a5cf",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 1,
   "steamBuildId": 26087601,
@@ -173,7 +184,7 @@
   "validationNotClaimed": [
     "UNBOUNDED_GLOBAL_OPTIMALITY",
     "PHYSICAL_LOW_END_DEVICE",
-    "BROWSER_WORKER_HEAP_PEAK",
+    "BROWSER_INSTANTANEOUS_ALLOCATION_PEAK",
     "GAME_CLIENT_CRAFTING_FREQUENCIES",
     "ONLINE_SERVER_PARITY"
   ]

@@ -58,17 +58,22 @@ function Results({ report }: { report: PlanReport }) {
       <p className="score-caption">跨假设预算的加权成功率 J</p>
       <p className="muted">评分采用{domain[0]}–{domain.at(-1)}假设预算{uniform ? '各整数等权' : '自定义权重'}；不是玩家实际FP或自然掉落分布。</p>
       <div className="precision"><span className={`badge ${estimated ? 'amber' : 'mint'}`}>{estimated ? '直接采样估计' : '模型内区间计算'}</span>
-        <span>{estimated ? `${primary.sampling!.confidence * 100}%同时统计区间：` : '算术区间：'}{percent(primary.score)}</span></div>
-      {estimated && <p className="chart-note">{primary.sampling!.totalTrials.toLocaleString()}条完整路线采样；每次重抽均更新候选池。统计区间不包含游戏机制模型与客户端的差异。</p>}
+        <span>{estimated ? `本次规划${(report.samplingGuarantee?.confidence ?? primary.sampling!.confidence) * 100}%联合统计区间：` : '算术区间：'}{percent(primary.score)}</span></div>
+      {estimated && <p className="chart-note">{primary.sampling!.totalTrials.toLocaleString()}条完整路线采样；每次重抽均更新候选池。统计界已为本次规划的多候选比较分配置信度，不包含游戏机制模型与客户端的差异。</p>}
       <div className="stats"><div><span>总期望FP消耗</span><strong>{number(primary.expectedFp)}</strong></div><div><span>成功条件期望FP</span><strong>{number(primary.expectedFpGivenSuccess)}</strong></div>
         <div><span>宏阶段</span><strong>{primary.route.macros.length}</strong></div></div>
     </section>
     <section className="panel"><div className="row between"><h2>固定执行路线</h2><Download value={report} name="last-epoch-crafting-report.json">导出报告</Download></div>
       {primary.route.macros.length === 0 ? <p>起始装备已经满足全部目标，无需制作。</p> : <ol className="route-list">{primary.route.macros.map((macro, index) => {
         const text = macroText(macro, catalog);
+        const stats = primary.macroStatistics[index];
         return <li key={index}><span className="step-number">{index + 1}</span><div><h3>{text.title}</h3><p>{text.condition}</p>
-          <small>平均尝试：{number(primary.attemptsByMacro[index])} 次</small></div></li>;
+          <p className="macro-statistics">到达概率 {percent(stats.reachedProbability)} · 实际执行概率 {percent(stats.executedProbability)}<br />
+            全路线平均贡献：{number(stats.expectedAttempts)} 次 · {number(stats.expectedFp)} FP</p>
+          <details className="macro-conditional"><summary>到达本阶段后的平均</summary><p>尝试 {number(stats.expectedAttemptsGivenReached)} 次；净FP消耗 {number(stats.expectedFpGivenReached)}。</p></details>
+        </div></li>;
       })}</ol>}
+      {primary.route.macros.length > 0 && <p className="chart-note">以上按同一评分权重统计。到达包括零次跳过或因潜能不足停止；“全路线平均贡献”也包含未到达时的零消耗，各阶段FP贡献可相加为总期望消耗。</p>}
       <div className="stop-note">目标提前达成即停止；必要封印失败、剥离失手即终止。不要在途中重新选择路线，也不需要回填每次结果。</div>
     </section>
     <section className="panel"><h2>全预算成功率</h2><ProbabilityChart report={primary} /></section>

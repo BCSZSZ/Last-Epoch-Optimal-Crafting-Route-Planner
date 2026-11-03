@@ -1,5 +1,5 @@
 {
-  "modelId": "le-1.5.3-iid-de87d96b5479099b",
+  "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
   "gameVersion": "1.5.3",
   "status": "RECOMMENDATION",
   "issues": [],
@@ -3604,6 +3604,112 @@
         "upper": 2.2774507277739757
       }
     ],
+    "macroStatistics": [
+      {
+        "reachedProbability": {
+          "lower": 0.9999999999999913,
+          "upper": 1
+        },
+        "executedProbability": {
+          "lower": 0.9999999999999913,
+          "upper": 1
+        },
+        "expectedAttempts": {
+          "lower": 0.9999999999999852,
+          "upper": 1.0000000000000147
+        },
+        "expectedFp": {
+          "lower": 4.686264421131245,
+          "upper": 4.686264421131365
+        },
+        "expectedAttemptsGivenReached": {
+          "lower": 0.9999999999999851,
+          "upper": 1.0000000000000235
+        },
+        "expectedFpGivenReached": {
+          "lower": 4.686264421131244,
+          "upper": 4.686264421131407
+        }
+      },
+      {
+        "reachedProbability": {
+          "lower": 0.9999999999999852,
+          "upper": 1
+        },
+        "executedProbability": {
+          "lower": 0.9254920494569168,
+          "upper": 0.9254920494569435
+        },
+        "expectedAttempts": {
+          "lower": 0.9254920494569162,
+          "upper": 0.9254920494569442
+        },
+        "expectedFp": {
+          "lower": 3.8244102541825598,
+          "upper": 3.8244102541826805
+        },
+        "expectedAttemptsGivenReached": {
+          "lower": 0.9254920494569161,
+          "upper": 0.925492049456958
+        },
+        "expectedFpGivenReached": {
+          "lower": 3.8244102541825593,
+          "upper": 3.8244102541827374
+        }
+      },
+      {
+        "reachedProbability": {
+          "lower": 0.9068920494569158,
+          "upper": 0.9068920494569436
+        },
+        "executedProbability": {
+          "lower": 0.8381772725647438,
+          "upper": 0.8381772725647691
+        },
+        "expectedAttempts": {
+          "lower": 0.8381772725647411,
+          "upper": 0.8381772725647734
+        },
+        "expectedFp": {
+          "lower": 3.8466527534068433,
+          "upper": 3.8466527534069934
+        },
+        "expectedAttemptsGivenReached": {
+          "lower": 0.9242304782213608,
+          "upper": 0.9242304782214249
+        },
+        "expectedFpGivenReached": {
+          "lower": 4.2415773252287945,
+          "upper": 4.241577325229092
+        }
+      },
+      {
+        "reachedProbability": {
+          "lower": 0.8381772725647411,
+          "upper": 0.8381772725647734
+        },
+        "executedProbability": {
+          "lower": 0.7618227414745425,
+          "upper": 0.7618227414745712
+        },
+        "expectedAttempts": {
+          "lower": 2.277450727773823,
+          "upper": 2.2774507277739757
+        },
+        "expectedFp": {
+          "lower": 12.139934586236418,
+          "upper": 12.13993458623718
+        },
+        "expectedAttemptsGivenReached": {
+          "lower": 2.7171468403157206,
+          "upper": 2.7171468403160084
+        },
+        "expectedFpGivenReached": {
+          "lower": 14.483731525061431,
+          "upper": 14.483731525062902
+        }
+      }
+    ],
     "failureReasons": [
       {
         "reason": "FP_EXHAUSTED",
@@ -3622,6 +3728,12 @@
     ],
     "states": 942
   },
+  "samplingGuarantee": {
+    "scope": "ALL_STATISTICAL_REPORTS_IN_ONE_PLANNING_CALL_UNDER_IID",
+    "confidence": 0.99,
+    "maximumReports": 96,
+    "reportConfidence": 0.9998958333333333
+  },
   "searchStatus": "INCOMPLETE",
   "optimality": "NOT_PROVEN",
   "search": {
@@ -3635,7 +3747,7 @@
     "unevaluatedRoutes": 0,
     "skippedDuplicates": 0,
     "certifiedPrunedPrefixes": 6,
-    "elapsedMilliseconds": 7820,
+    "elapsedMilliseconds": 7812,
     "stopReason": "TIME_BUDGET",
     "paretoRouteIds": [
       "r-741638a568efd6f9",

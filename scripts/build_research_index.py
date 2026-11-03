@@ -37,8 +37,10 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                 "research/7710-monte-carlo.json", "research/common-pattern-cases.json",
                 "research/common-pattern-results.json", "research/common-pattern-monte-carlo.json",
                 "research/7732-redemption-reference.json", "research/legacy-forge-compatibility.json",
-                "research/crafting-level-claims.json", "src/generated/model.json")
-    model = {"schemaVersion": 1, "modelId": "le-1.5.3-26087601-r5-public-preview",
+                "research/crafting-level-claims.json", "research/reference-calculators.json",
+                "research/browser-memory/7710-normal-memory.json", "research/browser-memory/7710-normal-input.json",
+                "research/browser-memory/7710-normal-plan.json", "research/browser-memory/validation.json", "src/generated/model.json")
+    model = {"schemaVersion": 1, "modelId": "le-1.5.3-26087601-r6-reporting-audit",
              "phase": "PUBLIC_PREVIEW", "productionReady": False,
              "productionModelId": load_json(root / "src/generated/model.json")["modelId"],
              "userApproval": {"date": "2026-11-03", "codeDerivedRulesSufficient": True, "clientBitExactRequired": False},
@@ -60,6 +62,8 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                           "patternSearchPriority": ["TARGET_IDENTITIES_ALREADY_PRESENT", "ONE_TARGET_ALREADY_T7_771X",
                                                     "MISSING_BOTH_TARGETS_7710", "OTHER_LEGAL_INPUTS"],
                           "commonPatternsPrioritizedNotExclusive": True,
+                          "macroStatistics": "UNCONDITIONAL_AND_REACHED_CONDITIONAL",
+                          "samplingCoverage": "PLANNING_CALL_FAMILYWISE_UNDER_IID",
                           "unassessedPatternStatus": "UNASSESSED", "uncompletedSearchStatus": "INCOMPLETE",
                           "mandatoryConformanceCases": ["direct_prefix_targets", "opposite_side_preparation",
                                                         "EXISTING_A_DIRECT_X1_TO_X7", "EXISTING_A_PREPARE_X1_TO_X7",
@@ -70,9 +74,12 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                             "audience": "PUBLIC_WITHOUT_LOGIN", "publicRepositoryAuthorizedIfPagesRequiresIt": True,
                             "publicPreviewUrl": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/",
                             "liveStaticValidation": "research/static-deployment.json"},
-             "remainingAcceptance": ["PHYSICAL_LOW_END_DEVICE", "BROWSER_WORKER_HEAP_PEAK"],
+             "remainingAcceptance": ["PHYSICAL_LOW_END_DEVICE"],
+             "browserMemoryEvidence": {"record": "research/browser-memory/validation.json",
+                                       "method": "NATIVE_POST_GC_MEMORY_ESTIMATES_WITH_WORKER_ATTRIBUTION",
+                                       "observedSampleMaximumNotAllocationPeak": True},
              "deferredResearch": ["WEIGHTED_NATIVE_GRID_BOUNDARIES", "MULTI_PROPERTY_ROLL_DISPLAY_PROJECTION", "CLIENT_FREQUENCIES"],
-             "validationNotClaimed": ["UNBOUNDED_GLOBAL_OPTIMALITY", "PHYSICAL_LOW_END_DEVICE", "BROWSER_WORKER_HEAP_PEAK",
+             "validationNotClaimed": ["UNBOUNDED_GLOBAL_OPTIMALITY", "PHYSICAL_LOW_END_DEVICE", "BROWSER_INSTANTANEOUS_ALLOCATION_PEAK",
                                       "GAME_CLIENT_CRAFTING_FREQUENCIES", "ONLINE_SERVER_PARITY"],
              "inputs": {path: hashlib.sha256((root / path).read_bytes()).hexdigest() for path in required}}
     model["researchRevision"] = hashlib.sha256(encode_json(model)).hexdigest()

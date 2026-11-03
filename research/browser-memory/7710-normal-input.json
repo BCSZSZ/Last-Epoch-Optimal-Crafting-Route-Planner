@@ -1,0 +1,60 @@
+{
+  "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+  "item": {
+    "baseId": "4:0",
+    "itemLevel": 100,
+    "corrupted": false,
+    "fpType": "NORMAL",
+    "affixes": [
+      {
+        "id": 7,
+        "tier": 7,
+        "slot": "ordinary",
+        "roll": null
+      },
+      {
+        "id": 10,
+        "tier": 7,
+        "slot": "ordinary",
+        "roll": null
+      },
+      {
+        "id": 2,
+        "tier": 1,
+        "slot": "ordinary",
+        "roll": null
+      }
+    ]
+  },
+  "craftingContext": {
+    "playerLevel": 100
+  },
+  "target": {
+    "requirements": [
+      {
+        "ids": [
+          4
+        ],
+        "minTier": 7,
+        "maxTier": 7,
+        "slot": "ordinary"
+      },
+      {
+        "ids": [
+          5
+        ],
+        "minTier": 7,
+        "maxTier": 7,
+        "slot": "ordinary"
+      }
+    ]
+  },
+  "constraints": {},
+  "scoring": {},
+  "search": {
+    "milliseconds": 60000,
+    "maxRoutes": 500,
+    "macroStages": 12,
+    "maxStates": 25000
+  }
+}

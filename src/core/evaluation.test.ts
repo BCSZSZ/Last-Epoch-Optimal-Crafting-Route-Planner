@@ -56,6 +56,9 @@ describe('complete fixed routes using production atomic rules', () => {
         expect((actual.expectedFp.lower + actual.expectedFp.upper) / 2).toBeCloseTo((target.expectedActualFpSpent.lower + target.expectedActualFpSpent.upper) / 2, 9);
       }
       expect(report.attemptsByMacro).toHaveLength(source.steps.length);
+      const stageCost = report.macroStatistics.reduce((sum, row) => sum + (row.expectedFp.lower + row.expectedFp.upper) / 2, 0);
+      expect(stageCost).toBeCloseTo((report.expectedFp.lower + report.expectedFp.upper) / 2, 9);
+      expect(report.macroStatistics.every((row) => row.executedProbability.lower <= row.reachedProbability.upper)).toBe(true);
       expect(report.consumption).toHaveLength(64);
     });
   }
@@ -95,6 +98,47 @@ describe('complete fixed routes using production atomic rules', () => {
     const missed = new RouteEvaluator(engine, { ...request(start), target }, removal).evaluate(1);
     expect(missed.attempts[1].upper).toBe(0);
     expect(missed.reasons.get('UNACCEPTED_REMOVAL')?.midpoint).toBeCloseTo(1, 12);
+  });
+
+  it('distinguishes reaching a later stage at FP0 from executing it after a T2 seal', () => {
+    const start = simple([[4, 7], [5, 7], [7, 2], [10, 1]]);
+    const input: PlanRequest = { ...request(start), scoring: { maximumFp: 1 }, target: { requirements: [
+      { ids: [7], minTier: 2, maxTier: 2, slot: 'sealed' }, { ids: [8], minTier: 1, slot: 'ordinary' },
+    ] } };
+    const route: Route = { id: 'hand-calculated-stage-rewards', macros: [
+      { kind: 'once', action: { kind: 'seal', id: 7 } }, { kind: 'once', action: { kind: 'add', id: 8, glyph: 'hope' } },
+    ] };
+    const report = reportRoute(engine, input, route);
+    const first = report.macroStatistics[0];
+    const next = report.macroStatistics[1];
+    const middle = (value: { lower: number; upper: number }) => (value.lower + value.upper) / 2;
+    expect(middle(first.reachedProbability)).toBeCloseTo(1, 12);
+    expect(middle(first.executedProbability)).toBeCloseTo(1, 12);
+    // Successful seal pays the final FP; failed seal is settled, and a 12% critical can refund it.
+    expect(middle(first.expectedFp)).toBeCloseTo(1 - 0.31 * 0.12, 12);
+    expect(middle(next.reachedProbability)).toBeCloseTo(0.69, 12);
+    expect(next.executedProbability.upper).toBe(0);
+    expect(next.expectedFp.upper).toBe(0);
+    expect(next.expectedFpGivenReached?.upper).toBe(0);
+    expect(next.expectedAttemptsGivenReached?.upper).toBe(0);
+  });
+
+  it('counts a skipped macro once on entry and never mutates the cached following stage', () => {
+    const input = { ...request(simple([[4, 2], [7, 7], [10, 1]]), [4]), scoring: { maximumFp: 10 },
+      target: { requirements: [{ ids: [4], minTier: 5, slot: 'ordinary' as const }] } };
+    const route: Route = { id: 'skip-then-add', macros: [
+      { kind: 'upgrade', id: 4, tier: 2, glyph: 'hope' },
+      { kind: 'once', action: { kind: 'add', id: 5, glyph: 'hope' } },
+    ] };
+    const evaluator = new RouteEvaluator(engine, input, route);
+    const first = evaluator.evaluate(10);
+    expect(first.reached.map((value) => value.midpoint)).toEqual([1, 1]);
+    expect(first.executed.map((value) => value.midpoint)).toEqual([0, 1]);
+    expect(first.spent[0].upper).toBe(0);
+    expect(first.spent[1].lower).toBeGreaterThan(0);
+    expect(evaluator.evaluate(10)).toEqual(first);
+    const complete = new RouteEvaluator(engine, { ...input, target: { requirements: [{ ids: [4], minTier: 2, slot: 'ordinary' }] } }, route).evaluate(10);
+    expect(complete.reached.every((value) => value.upper === 0)).toBe(true);
   });
 
   it('counts success at FP0 before exhaustion, including the empty route', () => {

@@ -23,6 +23,8 @@ export interface Trajectory {
   readonly spent: number;
   readonly reason: string;
   readonly attempts: readonly number[];
+  readonly reached: readonly boolean[];
+  readonly spentByMacro: readonly number[];
 }
 
 /** Execute one fixed macro sequence; no draw can trigger a fresh route search. */
@@ -33,12 +35,15 @@ export function simulateRoute(engine: RuleEngine, request: PlanRequest, route: R
   let stage = 0;
   let count = 0;
   const attempts = Array<number>(route.macros.length).fill(0);
+  const reached = Array<boolean>(route.macros.length).fill(false);
+  const spentByMacro = Array<number>(route.macros.length).fill(0);
   const trackRolls = request.target.requirements.some((row) => row.minRollByte !== undefined) ||
     request.constraints.protected?.some((row) => row.roll) || false;
-  const finish = (success: boolean, reason: string): Trajectory => ({ success, spent: initialFp - fp, reason, attempts });
+  const finish = (success: boolean, reason: string): Trajectory => ({ success, spent: initialFp - fp, reason, attempts, reached, spentByMacro });
   while (true) {
     if (targetReached(item, request.target)) return finish(true, 'SUCCESS');
     if (stage >= route.macros.length) return finish(false, 'ROUTE_EXHAUSTED');
+    reached[stage] = true;
     const step = macroStep(route.macros[stage], item, request, engine);
     if (step === 'SKIP') { stage++; continue; }
     if (step === 'INAPPLICABLE') return finish(false, 'INAPPLICABLE_NEXT_STAGE');
@@ -51,6 +56,7 @@ export function simulateRoute(engine: RuleEngine, request: PlanRequest, route: R
     count++;
     attempts[stage]++;
     item = sampled.outcome.item;
+    spentByMacro[stage] += fp - sampled.outcome.fp;
     fp = sampled.outcome.fp;
     // Policy failure is applied after full native settlement and before incidental target success.
     if (sampled.outcome.abort) return finish(false, sampled.outcome.abort);
@@ -108,7 +114,7 @@ export function sampleRoute(engine: RuleEngine, request: PlanRequest, route: Rou
   const ratio = 1 - paid + paid * Math.exp(-lambda);
   const attemptTail = Math.exp(lambda * maximum + guard * Math.log(ratio)) / (1 - ratio);
   // A union bound covers all bins, CDF thresholds, moments and curve values returned below.
-  const events = (maximum + 1) * (256 + route.macros.length * 2) + 512;
+  const events = (maximum + 1) * (256 + route.macros.length * 6) + 512;
   const logarithm = Math.log(2 * events / (1 - confidence));
   const pointError = Math.sqrt(logarithm / (2 * n));
   const aggregateVariance = weights.reduce((value, weight) => value + weight * weight / n, 0);
@@ -118,6 +124,9 @@ export function sampleRoute(engine: RuleEngine, request: PlanRequest, route: Rou
   const success = Array<number>(64).fill(0);
   const failure = Array<number>(64).fill(0);
   const attempts = Array<number>(route.macros.length).fill(0);
+  const reached = Array<number>(route.macros.length).fill(0);
+  const executed = Array<number>(route.macros.length).fill(0);
+  const spentByMacro = Array<number>(route.macros.length).fill(0);
   const reasons = new Map<string, number>();
   const curve: CurvePoint[] = [];
   let score = 0;
@@ -136,6 +145,9 @@ export function sampleRoute(engine: RuleEngine, request: PlanRequest, route: Rou
     const successes = Array<number>(64).fill(0);
     const failures = Array<number>(64).fill(0);
     const stageAttempts = Array<number>(route.macros.length).fill(0);
+    const stageReached = Array<number>(route.macros.length).fill(0);
+    const stageExecuted = Array<number>(route.macros.length).fill(0);
+    const stageSpent = Array<number>(route.macros.length).fill(0);
     const failedReasons = new Map<string, number>();
     let hits = 0;
     let spent = 0;
@@ -149,7 +161,12 @@ export function sampleRoute(engine: RuleEngine, request: PlanRequest, route: Rou
       spentSuccess += result.success ? result.spent : 0;
       (result.success ? successes : failures)[result.spent]++;
       if (!result.success) failedReasons.set(result.reason, (failedReasons.get(result.reason) ?? 0) + 1);
-      result.attempts.forEach((value, index) => { stageAttempts[index] += value; actions += value; });
+      result.attempts.forEach((value, index) => {
+        stageAttempts[index] += value; actions += value;
+        stageReached[index] += Number(result.reached[index]);
+        stageExecuted[index] += Number(value > 0);
+        stageSpent[index] += result.spentByMacro[index];
+      });
     }
     const weight = weights[fp - 1];
     const probability = band(hits / n, pointError);
@@ -165,7 +182,12 @@ export function sampleRoute(engine: RuleEngine, request: PlanRequest, route: Rou
     successMoment += weight * spentSuccess / n;
     failureMoment += weight * (spent - spentSuccess) / n;
     for (let cost = 0; cost < 64; cost++) { success[cost] += weight * empiricalSuccess[cost]; failure[cost] += weight * empiricalFailure[cost]; }
-    for (let stage = 0; stage < attempts.length; stage++) attempts[stage] += weight * stageAttempts[stage] / n;
+    for (let stage = 0; stage < attempts.length; stage++) {
+      attempts[stage] += weight * stageAttempts[stage] / n;
+      reached[stage] += weight * stageReached[stage] / n;
+      executed[stage] += weight * stageExecuted[stage] / n;
+      spentByMacro[stage] += weight * stageSpent[stage] / n;
+    }
     for (const [reason, count] of failedReasons) reasons.set(reason, (reasons.get(reason) ?? 0) + weight * count / n);
     options.onProgress?.(fp, trials);
   }
@@ -178,6 +200,14 @@ export function sampleRoute(engine: RuleEngine, request: PlanRequest, route: Rou
     consumption: success.map((value, spent) => ({ spent, success: spent > maximum ? exact(0).report() : band(value, aggregateError), failure: spent > maximum ? exact(0).report() : band(failure[spent], aggregateError),
       successEstimate: value, failureEstimate: failure[spent] })),
     attemptsByMacro: attempts.map((value) => ({ lower: Math.max(0, value - guard * aggregateError), upper: value + guard * aggregateError + attemptTail })),
+    macroStatistics: reached.map((value, stage) => {
+      const probability = band(value, aggregateError);
+      const attemptBounds = new Interval(Math.max(0, attempts[stage] - guard * aggregateError), attempts[stage] + guard * aggregateError + attemptTail);
+      return { reachedProbability: probability, executedProbability: band(executed[stage], aggregateError),
+        expectedAttempts: attemptBounds.report(), expectedFp: band(spentByMacro[stage], fpError, maximum),
+        expectedAttemptsGivenReached: probability.lower > 0 ? attemptBounds.div(new Interval(probability.lower, probability.upper)).clamp(0, Infinity).report() : null,
+        expectedFpGivenReached: conditionalMoment(spentByMacro[stage], fpError, probability, maximum) };
+    }),
     failureReasons: [...reasons].map(([reason, value]) => ({ reason, probability: band(value, aggregateError) })), states: actions,
     sampling: { seed, samplesPerFp: n, totalTrials: trials, confidence, method: 'SIMULTANEOUS_HOEFFDING_UNDER_IID_SAMPLING',
       attemptGuard: guard, unobservedAttemptMeanBound: attemptTail, minimumPaidProbability: paid } };

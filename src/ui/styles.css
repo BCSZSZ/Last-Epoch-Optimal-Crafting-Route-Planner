@@ -315,6 +315,15 @@ label select,label input {
   line-height:1.8;
   margin-top:10px
 }
+.macro-statistics {
+  font-size:11px;
+  color:var(--muted);
+  margin-top:8px
+}
+.macro-conditional {
+  font-size:11px;
+  margin-top:5px
+}
 .small-label {
   font-size:11px;
   color:var(--mint)

@@ -1,6 +1,6 @@
 {
-  "modelId": "le-1.5.3-iid-de87d96b5479099b",
-  "checkedOn": "2026-11-03T04:08:01.047Z",
+  "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+  "checkedOn": "2026-11-03T04:55:10.690Z",
   "checks": [
     {
       "file": "7710-normal",
@@ -9,7 +9,7 @@
       "score": 0.4472252707958129,
       "routeId": "r-085e76281e31b18c",
       "evaluation": "BOUNDED_NUMERICAL",
-      "milliseconds": 7820,
+      "milliseconds": 7812,
       "evaluatedRoutes": 13,
       "comparison": "IDENTICAL_COMPLETE_ROUTE_REPORT",
       "scope": "Same chosen fixed route; wall-clock search coverage is reported separately."
@@ -18,10 +18,10 @@
       "file": "7732-normal",
       "example": "7732-missing",
       "fpType": "NORMAL",
-      "score": 0.04296875000000001,
+      "score": 0.04344928075396827,
       "routeId": "r-2724a8fa3ce4c0de",
       "evaluation": "ESTIMATED",
-      "milliseconds": 3250,
+      "milliseconds": 2606,
       "evaluatedRoutes": 48,
       "comparison": "IDENTICAL_COMPLETE_ROUTE_REPORT",
       "scope": "Same chosen fixed route; wall-clock search coverage is reported separately."
@@ -33,7 +33,7 @@
       "score": 0.4181926481670739,
       "routeId": "r-7bf9a5c1def1c2d5",
       "evaluation": "BOUNDED_NUMERICAL",
-      "milliseconds": 1232,
+      "milliseconds": 1073,
       "evaluatedRoutes": 48,
       "comparison": "IDENTICAL_COMPLETE_ROUTE_REPORT",
       "scope": "Same chosen fixed route; wall-clock search coverage is reported separately."
@@ -45,20 +45,35 @@
       "score": 0.832412452442701,
       "routeId": "r-d98eb2830c5645f7",
       "evaluation": "BOUNDED_NUMERICAL",
-      "milliseconds": 7815,
+      "milliseconds": 7802,
       "evaluatedRoutes": 15,
       "comparison": "IDENTICAL_COMPLETE_ROUTE_REPORT",
       "scope": "Same chosen fixed route; wall-clock search coverage is reported separately."
     },
     {
-      "file": "public-7710-normal",
+      "file": "removal-normal",
       "example": "7710-direct",
       "fpType": "NORMAL",
+      "input": "removal-normal-input",
+      "score": 0.11396777798539454,
+      "routeId": "r-c0142a03a5924caf",
+      "evaluation": "BOUNDED_NUMERICAL",
+      "milliseconds": 338,
+      "evaluatedRoutes": 48,
+      "comparison": "IDENTICAL_COMPLETE_ROUTE_REPORT",
+      "scope": "Same chosen fixed route; wall-clock search coverage is reported separately."
+    },
+    {
+      "file": "7710-normal-plan",
+      "example": "7710-direct",
+      "fpType": "NORMAL",
+      "folder": "browser-memory",
+      "input": "7710-normal-input",
       "score": 0.4472252707958129,
       "routeId": "r-085e76281e31b18c",
       "evaluation": "BOUNDED_NUMERICAL",
-      "milliseconds": 7859,
-      "evaluatedRoutes": 13,
+      "milliseconds": 14404,
+      "evaluatedRoutes": 500,
       "comparison": "IDENTICAL_COMPLETE_ROUTE_REPORT",
       "scope": "Same chosen fixed route; wall-clock search coverage is reported separately."
     }

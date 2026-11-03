@@ -1,5 +1,5 @@
 {
-  "modelId": "le-1.5.3-iid-de87d96b5479099b",
+  "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
   "gameVersion": "1.5.3",
   "status": "RECOMMENDATION",
   "issues": [],
@@ -22,10 +22,10 @@
     },
     "evaluationStatus": "ESTIMATED",
     "score": {
-      "lower": 0.0321718587556224,
-      "upper": 0.05376564124437761
+      "lower": 0.03111783703146883,
+      "upper": 0.05578072447646771
     },
-    "scoreEstimate": 0.04296875000000001,
+    "scoreEstimate": 0.04344928075396827,
     "curve": [
       {
         "initialFp": 0,
@@ -59,11 +59,11 @@
         "initialFp": 1,
         "successProbability": {
           "lower": 0,
-          "upper": 0.09839297999570149
+          "upper": 0.10666686268836627
         },
-        "successEstimate": 0.0126953125,
+        "successEstimate": 0.0087890625,
         "expectedFp": {
-          "lower": 0.9113726450042985,
+          "lower": 0.9001690748116338,
           "upper": 1
         },
         "expectedFpGivenSuccess": null,
@@ -87,11 +87,11 @@
         "initialFp": 2,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10132266749570149
+          "upper": 0.10959655018836627
         },
-        "successEstimate": 0.015625,
+        "successEstimate": 0.01171875,
         "expectedFp": {
-          "lower": 1.818839040008597,
+          "lower": 1.8003381496232675,
           "upper": 2
         },
         "expectedFpGivenSuccess": null,
@@ -115,11 +115,11 @@
         "initialFp": 3,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10425235499570149
+          "upper": 0.11545592518836627
         },
-        "successEstimate": 0.0185546875,
+        "successEstimate": 0.017578125,
         "expectedFp": {
-          "lower": 2.7243523100128955,
+          "lower": 2.6887884744349013,
           "upper": 3
         },
         "expectedFpGivenSuccess": null,
@@ -143,11 +143,11 @@
         "initialFp": 4,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10522891749570149
+          "upper": 0.11350280018836627
         },
-        "successEstimate": 0.01953125,
+        "successEstimate": 0.015625,
         "expectedFp": {
-          "lower": 3.634748392517194,
+          "lower": 3.587980986746535,
           "upper": 4
         },
         "expectedFpGivenSuccess": null,
@@ -171,11 +171,11 @@
         "initialFp": 5,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10815860499570149
+          "upper": 0.11154967518836627
         },
-        "successEstimate": 0.0224609375,
+        "successEstimate": 0.013671875,
         "expectedFp": {
-          "lower": 4.539285100021493,
+          "lower": 4.481314124058168,
           "upper": 5
         },
         "expectedFpGivenSuccess": null,
@@ -199,11 +199,11 @@
         "initialFp": 6,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10522891749570149
+          "upper": 0.11252623768836627
         },
-        "successEstimate": 0.01953125,
+        "successEstimate": 0.0146484375,
         "expectedFp": {
-          "lower": 5.443821807525791,
+          "lower": 5.382459761369803,
           "upper": 6
         },
         "expectedFpGivenSuccess": null,
@@ -227,11 +227,11 @@
         "initialFp": 7,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10718204249570149
+          "upper": 0.11252623768836627
         },
-        "successEstimate": 0.021484375,
+        "successEstimate": 0.0146484375,
         "expectedFp": {
-          "lower": 6.35519445253009,
+          "lower": 6.282628836181436,
           "upper": 7
         },
         "expectedFpGivenSuccess": null,
@@ -255,11 +255,11 @@
         "initialFp": 8,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10425235499570149
+          "upper": 0.11838561268836627
         },
-        "successEstimate": 0.0185546875,
+        "successEstimate": 0.0205078125,
         "expectedFp": {
-          "lower": 7.253871785034388,
+          "lower": 7.13592291099307,
           "upper": 8
         },
         "expectedFpGivenSuccess": null,
@@ -283,11 +283,11 @@
         "initialFp": 9,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10815860499570149
+          "upper": 0.11838561268836627
         },
-        "successEstimate": 0.0224609375,
+        "successEstimate": 0.0205078125,
         "expectedFp": {
-          "lower": 8.155478805038687,
+          "lower": 8.043904485804704,
           "upper": 9
         },
         "expectedFpGivenSuccess": null,
@@ -311,11 +311,11 @@
         "initialFp": 10,
         "successProbability": {
           "lower": 0,
-          "upper": 0.11597110499570149
+          "upper": 0.11350280018836627
         },
-        "successEstimate": 0.0302734375,
+        "successEstimate": 0.015625,
         "expectedFp": {
-          "lower": 9.005328012542986,
+          "lower": 8.943096998116337,
           "upper": 10
         },
         "expectedFpGivenSuccess": null,
@@ -339,11 +339,11 @@
         "initialFp": 11,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10425235499570149
+          "upper": 0.11545592518836627
         },
-        "successEstimate": 0.0185546875,
+        "successEstimate": 0.017578125,
         "expectedFp": {
-          "lower": 9.986036595047283,
+          "lower": 9.833500447927971,
           "upper": 11
         },
         "expectedFpGivenSuccess": null,
@@ -367,11 +367,11 @@
         "initialFp": 12,
         "successProbability": {
           "lower": 0,
-          "upper": 0.11011172999570149
+          "upper": 0.11447936268836627
         },
-        "successEstimate": 0.0244140625,
+        "successEstimate": 0.0166015625,
         "expectedFp": {
-          "lower": 10.894479552551582,
+          "lower": 10.767849210239605,
           "upper": 12
         },
         "expectedFpGivenSuccess": null,
@@ -395,11 +395,11 @@
         "initialFp": 13,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10425235499570149
+          "upper": 0.12815123768836628
         },
-        "successEstimate": 0.0185546875,
+        "successEstimate": 0.0302734375,
         "expectedFp": {
-          "lower": 11.79511001005588,
+          "lower": 11.56450266005124,
           "upper": 13
         },
         "expectedFpGivenSuccess": null,
@@ -423,11 +423,11 @@
         "initialFp": 14,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10522891749570149
+          "upper": 0.12522155018836628
         },
-        "successEstimate": 0.01953125,
+        "successEstimate": 0.02734375,
         "expectedFp": {
-          "lower": 12.67327953006018,
+          "lower": 12.500804547362872,
           "upper": 14
         },
         "expectedFpGivenSuccess": null,
@@ -451,11 +451,11 @@
         "initialFp": 15,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10620547999570149
+          "upper": 0.11936217518836627
         },
-        "successEstimate": 0.0205078125,
+        "successEstimate": 0.021484375,
         "expectedFp": {
-          "lower": 13.653011550064477,
+          "lower": 13.386325184674506,
           "upper": 15
         },
         "expectedFpGivenSuccess": null,
@@ -479,11 +479,11 @@
         "initialFp": 16,
         "successProbability": {
           "lower": 0,
-          "upper": 0.11694766749570149
+          "upper": 0.12522155018836628
         },
-        "successEstimate": 0.03125,
+        "successEstimate": 0.02734375,
         "expectedFp": {
-          "lower": 14.430595132568776,
+          "lower": 14.29918957198614,
           "upper": 16
         },
         "expectedFpGivenSuccess": null,
@@ -507,11 +507,11 @@
         "initialFp": 17,
         "successProbability": {
           "lower": 0,
-          "upper": 0.11108829249570149
+          "upper": 0.12033873768836627
         },
-        "successEstimate": 0.025390625,
+        "successEstimate": 0.0224609375,
         "expectedFp": {
-          "lower": 15.415209965073075,
+          "lower": 15.207171146797773,
           "upper": 17
         },
         "expectedFpGivenSuccess": null,
@@ -535,11 +535,11 @@
         "initialFp": 18,
         "successProbability": {
           "lower": 0,
-          "upper": 0.11597110499570149
+          "upper": 0.12717467518836628
         },
-        "successEstimate": 0.0302734375,
+        "successEstimate": 0.029296875,
         "expectedFp": {
-          "lower": 16.226973235077374,
+          "lower": 16.03800428410941,
           "upper": 18
         },
         "expectedFpGivenSuccess": null,
@@ -563,11 +563,11 @@
         "initialFp": 19,
         "successProbability": {
           "lower": 0,
-          "upper": 0.11011172999570149
+          "upper": 0.13010436268836628
         },
-        "successEstimate": 0.0244140625,
+        "successEstimate": 0.0322265625,
         "expectedFp": {
-          "lower": 17.250650567581673,
+          "lower": 16.86297804642104,
           "upper": 19
         },
         "expectedFpGivenSuccess": null,
@@ -591,11 +591,11 @@
         "initialFp": 20,
         "successProbability": {
           "lower": 0,
-          "upper": 0.11792422999570149
+          "upper": 0.12424498768836627
         },
-        "successEstimate": 0.0322265625,
+        "successEstimate": 0.0263671875,
         "expectedFp": {
-          "lower": 18.08975758758597,
+          "lower": 17.807092433732674,
           "upper": 20
         },
         "expectedFpGivenSuccess": null,
@@ -619,11 +619,11 @@
         "initialFp": 21,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10815860499570149
+          "upper": 0.12717467518836628
         },
-        "successEstimate": 0.0224609375,
+        "successEstimate": 0.029296875,
         "expectedFp": {
-          "lower": 19.02945054509027,
+          "lower": 18.72972244604431,
           "upper": 21
         },
         "expectedFpGivenSuccess": null,
@@ -647,11 +647,11 @@
         "initialFp": 22,
         "successProbability": {
           "lower": 0,
-          "upper": 0.10913516749570149
+          "upper": 0.12912780018836628
         },
-        "successEstimate": 0.0234375,
+        "successEstimate": 0.03125,
         "expectedFp": {
-          "lower": 19.869534127594566,
+          "lower": 19.642586833355942,
           "upper": 22
         },
         "expectedFpGivenSuccess": null,
@@ -675,11 +675,11 @@
         "initialFp": 23,
         "successProbability": {
           "lower": 0,
-          "upper": 0.11401797999570149
+          "upper": 0.13205748768836628
         },
-        "successEstimate": 0.0283203125,
+        "successEstimate": 0.0341796875,
         "expectedFp": {
-          "lower": 20.809227085098865,
+          "lower": 20.438263720667575,
           "upper": 23
         },
         "expectedFpGivenSuccess": null,
@@ -703,11 +703,11 @@
         "initialFp": 24,
         "successProbability": {
           "lower": 0,
-          "upper": 0.12183047999570149
+          "upper": 0.14182311268836628
         },
-        "successEstimate": 0.0361328125,
+        "successEstimate": 0.0439453125,
         "expectedFp": {
-          "lower": 21.484271605103164,
+          "lower": 21.19976092047921,
           "upper": 24
         },
         "expectedFpGivenSuccess": null,
@@ -731,11 +731,11 @@
         "initialFp": 25,
         "successProbability": {
           "lower": 0,
-          "upper": 0.11694766749570149
+          "upper": 0.12717467518836628
         },
-        "successEstimate": 0.03125,
+        "successEstimate": 0.029296875,
         "expectedFp": {
-          "lower": 22.534316125107463,
+          "lower": 22.262039370290843,
           "upper": 25
         },
         "expectedFpGivenSuccess": null,
@@ -759,11 +759,11 @@
         "initialFp": 26,
         "successProbability": {
           "lower": 0,
-          "upper": 0.12768985499570149
+          "upper": 0.13596373768836628
         },
-        "successEstimate": 0.0419921875,
+        "successEstimate": 0.0380859375,
         "expectedFp": {
-          "lower": 23.30799345761176,
+          "lower": 23.12607563260248,
           "upper": 26
         },
         "expectedFpGivenSuccess": null,
@@ -787,11 +787,11 @@
         "initialFp": 27,
         "successProbability": {
           "lower": 0,
-          "upper": 0.12671329249570149
+          "upper": 0.13986998768836628
         },
-        "successEstimate": 0.041015625,
+        "successEstimate": 0.0419921875,
         "expectedFp": {
-          "lower": 24.15003016511606,
+          "lower": 23.84460408241411,
           "upper": 27
         },
         "expectedFpGivenSuccess": null,
@@ -815,11 +815,11 @@
         "initialFp": 28,
         "successProbability": {
           "lower": 0,
-          "upper": 0.12768985499570149
+          "upper": 0.13889342518836628
         },
-        "successEstimate": 0.0419921875,
+        "successEstimate": 0.041015625,
         "expectedFp": {
-          "lower": 25.15612937262036,
+          "lower": 24.803366907225744,
           "upper": 28
         },
         "expectedFpGivenSuccess": null,
@@ -843,11 +843,11 @@
         "initialFp": 29,
         "successProbability": {
           "lower": 0,
-          "upper": 0.12085391749570149
+          "upper": 0.14475280018836628
         },
-        "successEstimate": 0.03515625,
+        "successEstimate": 0.046875,
         "expectedFp": {
-          "lower": 25.95324420512466,
+          "lower": 25.59904379453738,
           "upper": 29
         },
         "expectedFpGivenSuccess": null,
@@ -871,11 +871,11 @@
         "initialFp": 30,
         "successProbability": {
           "lower": 0,
-          "upper": 0.11987735499570149
+          "upper": 0.14377623768836628
         },
-        "successEstimate": 0.0341796875,
+        "successEstimate": 0.0458984375,
         "expectedFp": {
-          "lower": 27.002312162628954,
+          "lower": 26.513861306849012,
           "upper": 30
         },
         "expectedFpGivenSuccess": null,
@@ -899,11 +899,11 @@
         "initialFp": 31,
         "successProbability": {
           "lower": 0,
-          "upper": 0.12964297999570149
+          "upper": 0.13303405018836628
         },
-        "successEstimate": 0.0439453125,
+        "successEstimate": 0.03515625,
         "expectedFp": {
-          "lower": 27.749622307633253,
+          "lower": 27.567350694160645,
           "upper": 31
         },
         "expectedFpGivenSuccess": null,
@@ -927,11 +927,11 @@
         "initialFp": 32,
         "successProbability": {
           "lower": 0,
-          "upper": 0.12378360499570149
+          "upper": 0.14084655018836628
         },
-        "successEstimate": 0.0380859375,
+        "successEstimate": 0.04296875,
         "expectedFp": {
-          "lower": 28.70982307763755,
+          "lower": 28.44017601897228,
           "upper": 32
         },
         "expectedFpGivenSuccess": null,
@@ -955,11 +955,11 @@
         "initialFp": 33,
         "successProbability": {
           "lower": 0,
-          "upper": 0.14038516749570149
+          "upper": 0.13694030018836628
         },
-        "successEstimate": 0.0546875,
+        "successEstimate": 0.0390625,
         "expectedFp": {
-          "lower": 29.46299259764185,
+          "lower": 29.200696656283913,
           "upper": 33
         },
         "expectedFpGivenSuccess": null,
@@ -983,11 +983,11 @@
         "initialFp": 34,
         "successProbability": {
           "lower": 0,
-          "upper": 0.12378360499570149
+          "upper": 0.15256530018836628
         },
-        "successEstimate": 0.0380859375,
+        "successEstimate": 0.0546875,
         "expectedFp": {
-          "lower": 30.64291993014615,
+          "lower": 29.879186043595546,
           "upper": 34
         },
         "expectedFpGivenSuccess": null,
@@ -1011,11 +1011,11 @@
         "initialFp": 35,
         "successProbability": {
           "lower": 0,
-          "upper": 0.12671329249570149
+          "upper": 0.14377623768836628
         },
-        "successEstimate": 0.041015625,
+        "successEstimate": 0.0458984375,
         "expectedFp": {
-          "lower": 31.40585507515045,
+          "lower": 30.83208949340718,
           "upper": 35
         },
         "expectedFpGivenSuccess": null,
@@ -1039,11 +1039,11 @@
         "initialFp": 36,
         "successProbability": {
           "lower": 0,
-          "upper": 0.12671329249570149
+          "upper": 0.13694030018836628
         },
-        "successEstimate": 0.041015625,
+        "successEstimate": 0.0390625,
         "expectedFp": {
-          "lower": 32.34945428265475,
+          "lower": 31.826985130718814,
           "upper": 36
         },
         "expectedFpGivenSuccess": null,
@@ -1067,11 +1067,11 @@
         "initialFp": 37,
         "successProbability": {
           "lower": 0,
-          "upper": 0.13354922999570149
+          "upper": 0.15549498768836628
         },
-        "successEstimate": 0.0478515625,
+        "successEstimate": 0.0576171875,
         "expectedFp": {
-          "lower": 33.044030052659046,
+          "lower": 32.52793545553045,
           "upper": 37
         },
         "expectedFpGivenSuccess": null,
@@ -1095,11 +1095,11 @@
         "initialFp": 38,
         "successProbability": {
           "lower": 0,
-          "upper": 0.14136172999570149
+          "upper": 0.14377623768836628
         },
-        "successEstimate": 0.0556640625,
+        "successEstimate": 0.0458984375,
         "expectedFp": {
-          "lower": 33.777668322663345,
+          "lower": 33.47302640534208,
           "upper": 38
         },
         "expectedFpGivenSuccess": null,
@@ -1123,11 +1123,11 @@
         "initialFp": 39,
         "successProbability": {
           "lower": 0,
-          "upper": 0.12476016749570149
+          "upper": 0.14963561268836628
         },
-        "successEstimate": 0.0390625,
+        "successEstimate": 0.0517578125,
         "expectedFp": {
-          "lower": 35.046462842667644,
+          "lower": 34.31948454265372,
           "upper": 39
         },
         "expectedFpGivenSuccess": null,
@@ -1151,11 +1151,11 @@
         "initialFp": 40,
         "successProbability": {
           "lower": 0,
-          "upper": 0.13647891749570149
+          "upper": 0.14084655018836628
         },
-        "successEstimate": 0.05078125,
+        "successEstimate": 0.04296875,
         "expectedFp": {
-          "lower": 35.62287455017194,
+          "lower": 35.23234892996535,
           "upper": 40
         },
         "expectedFpGivenSuccess": null,
@@ -1179,11 +1179,11 @@
         "initialFp": 41,
         "successProbability": {
           "lower": 0,
-          "upper": 0.13257266749570149
+          "upper": 0.15061217518836628
         },
-        "successEstimate": 0.046875,
+        "successEstimate": 0.052734375,
         "expectedFp": {
-          "lower": 36.79889563267624,
+          "lower": 36.04853362977698,
           "upper": 41
         },
         "expectedFpGivenSuccess": null,
@@ -1207,11 +1207,11 @@
         "initialFp": 42,
         "successProbability": {
           "lower": 0,
-          "upper": 0.13940860499570149
+          "upper": 0.14670592518836628
         },
-        "successEstimate": 0.0537109375,
+        "successEstimate": 0.048828125,
         "expectedFp": {
-          "lower": 37.48077609018054,
+          "lower": 37.02585114208862,
           "upper": 42
         },
         "expectedFpGivenSuccess": null,
@@ -1235,11 +1235,11 @@
         "initialFp": 43,
         "successProbability": {
           "lower": 0,
-          "upper": 0.13257266749570149
+          "upper": 0.16428405018836628
         },
-        "successEstimate": 0.046875,
+        "successEstimate": 0.06640625,
         "expectedFp": {
-          "lower": 38.27789092268483,
+          "lower": 37.50609834190025,
           "upper": 43
         },
         "expectedFpGivenSuccess": null,
@@ -1263,11 +1263,11 @@
         "initialFp": 44,
         "successProbability": {
           "lower": 0,
-          "upper": 0.13940860499570149
+          "upper": 0.15744811268836628
         },
-        "successEstimate": 0.0537109375,
+        "successEstimate": 0.0595703125,
         "expectedFp": {
-          "lower": 39.19805263018913,
+          "lower": 38.500993979211884,
           "upper": 44
         },
         "expectedFpGivenSuccess": null,
@@ -1291,11 +1291,11 @@
         "initialFp": 45,
         "successProbability": {
           "lower": 0,
-          "upper": 0.15991641749570149
+          "upper": 0.14865905018836628
         },
-        "successEstimate": 0.07421875,
+        "successEstimate": 0.05078125,
         "expectedFp": {
-          "lower": 39.47954246269343,
+          "lower": 39.46952242902352,
           "upper": 45
         },
         "expectedFpGivenSuccess": null,
@@ -1319,11 +1319,11 @@
         "initialFp": 46,
         "successProbability": {
           "lower": 0,
-          "upper": 0.15015079249570149
+          "upper": 0.15158873768836628
         },
-        "successEstimate": 0.064453125,
+        "successEstimate": 0.0537109375,
         "expectedFp": {
-          "lower": 40.68486042019773,
+          "lower": 40.46930087883515,
           "upper": 46
         },
         "expectedFpGivenSuccess": null,
@@ -1347,11 +1347,11 @@
         "initialFp": 47,
         "successProbability": {
           "lower": 0,
-          "upper": 0.13647891749570149
+          "upper": 0.16330748768836628
         },
-        "successEstimate": 0.05078125,
+        "successEstimate": 0.0654296875,
         "expectedFp": {
-          "lower": 41.88822525270203,
+          "lower": 40.973962141146785,
           "upper": 47
         },
         "expectedFpGivenSuccess": null,
@@ -1375,11 +1375,11 @@
         "initialFp": 48,
         "successProbability": {
           "lower": 0,
-          "upper": 0.14526797999570149
+          "upper": 0.14768248768836628
         },
-        "successEstimate": 0.0595703125,
+        "successEstimate": 0.0498046875,
         "expectedFp": {
-          "lower": 42.45780102270633,
+          "lower": 42.21397496595842,
           "upper": 48
         },
         "expectedFpGivenSuccess": null,
@@ -1403,11 +1403,11 @@
         "initialFp": 49,
         "successProbability": {
           "lower": 0,
-          "upper": 0.14722110499570149
+          "upper": 0.16135436268836628
         },
-        "successEstimate": 0.0615234375,
+        "successEstimate": 0.0634765625,
         "expectedFp": {
-          "lower": 43.503939292710626,
+          "lower": 42.85437841577005,
           "upper": 49
         },
         "expectedFpGivenSuccess": null,
@@ -1431,11 +1431,11 @@
         "initialFp": 50,
         "successProbability": {
           "lower": 0,
-          "upper": 0.13745547999570149
+          "upper": 0.16135436268836628
         },
-        "successEstimate": 0.0517578125,
+        "successEstimate": 0.0634765625,
         "expectedFp": {
-          "lower": 44.484647875214925,
+          "lower": 43.793609990581686,
           "upper": 50
         },
         "expectedFpGivenSuccess": null,
@@ -1459,11 +1459,11 @@
         "initialFp": 51,
         "successProbability": {
           "lower": 0,
-          "upper": 0.15796329249570149
+          "upper": 0.17600280018836628
         },
-        "successEstimate": 0.072265625,
+        "successEstimate": 0.078125,
         "expectedFp": {
-          "lower": 44.716333020219224,
+          "lower": 44.32073219039332,
           "upper": 51
         },
         "expectedFpGivenSuccess": null,
@@ -1487,11 +1487,11 @@
         "initialFp": 52,
         "successProbability": {
           "lower": 0,
-          "upper": 0.16089297999570149
+          "upper": 0.16233092518836628
         },
-        "successEstimate": 0.0751953125,
+        "successEstimate": 0.064453125,
         "expectedFp": {
-          "lower": 45.64626035272352,
+          "lower": 45.34590126520496,
           "upper": 52
         },
         "expectedFpGivenSuccess": null,
@@ -1515,11 +1515,11 @@
         "initialFp": 53,
         "successProbability": {
           "lower": 0,
-          "upper": 0.15015079249570149
+          "upper": 0.16819030018836628
         },
-        "successEstimate": 0.064453125,
+        "successEstimate": 0.0703125,
         "expectedFp": {
-          "lower": 47.24708612272782,
+          "lower": 46.03415627751659,
           "upper": 53
         },
         "expectedFpGivenSuccess": null,
@@ -1543,11 +1543,11 @@
         "initialFp": 54,
         "successProbability": {
           "lower": 0,
-          "upper": 0.14722110499570149
+          "upper": 0.17795592518836628
         },
-        "successEstimate": 0.0615234375,
+        "successEstimate": 0.080078125,
         "expectedFp": {
-          "lower": 47.44068533023212,
+          "lower": 46.80444253982822,
           "upper": 54
         },
         "expectedFpGivenSuccess": null,
@@ -1571,11 +1571,11 @@
         "initialFp": 55,
         "successProbability": {
           "lower": 0,
-          "upper": 0.14722110499570149
+          "upper": 0.17014342518836628
         },
-        "successEstimate": 0.0615234375,
+        "successEstimate": 0.072265625,
         "expectedFp": {
-          "lower": 48.66162828773642,
+          "lower": 47.72414286463986,
           "upper": 55
         },
         "expectedFpGivenSuccess": null,
@@ -1599,11 +1599,11 @@
         "initialFp": 56,
         "successProbability": {
           "lower": 0,
-          "upper": 0.15601016749570149
+          "upper": 0.16819030018836628
         },
         "successEstimate": 0.0703125,
         "expectedFp": {
-          "lower": 49.67749312024072,
+          "lower": 48.68974162695149,
           "upper": 56
         },
         "expectedFpGivenSuccess": null,
@@ -1627,11 +1627,11 @@
         "initialFp": 57,
         "successProbability": {
           "lower": 0,
-          "upper": 0.14917422999570149
+          "upper": 0.16330748768836628
         },
-        "successEstimate": 0.0634765625,
+        "successEstimate": 0.0654296875,
         "expectedFp": {
-          "lower": 50.54687357774502,
+          "lower": 49.389715389263124,
           "upper": 57
         },
         "expectedFpGivenSuccess": null,
@@ -1654,18 +1654,15 @@
       {
         "initialFp": 58,
         "successProbability": {
-          "lower": 0.002192957504298515,
-          "upper": 0.17358829249570149
-        },
-        "successEstimate": 0.087890625,
-        "expectedFp": {
-          "lower": 50.61742591024932,
-          "upper": 58
-        },
-        "expectedFpGivenSuccess": {
           "lower": 0,
+          "upper": 0.15842467518836628
+        },
+        "successEstimate": 0.060546875,
+        "expectedFp": {
+          "lower": 50.91976727657476,
           "upper": 58
         },
+        "expectedFpGivenSuccess": null,
         "quantiles": {
           "p50": {
             "lower": 58,
@@ -1680,30 +1677,17 @@
             "upper": 58
           }
         },
-        "successQuantiles": {
-          "p50": {
-            "lower": 0,
-            "upper": 58
-          },
-          "p90": {
-            "lower": 0,
-            "upper": 58
-          },
-          "p95": {
-            "lower": 0,
-            "upper": 58
-          }
-        }
+        "successQuantiles": null
       },
       {
         "initialFp": 59,
         "successProbability": {
           "lower": 0,
-          "upper": 0.13940860499570149
+          "upper": 0.17697936268836628
         },
-        "successEstimate": 0.0537109375,
+        "successEstimate": 0.0791015625,
         "expectedFp": {
-          "lower": 52.523915742753616,
+          "lower": 51.24864728888639,
           "upper": 59
         },
         "expectedFpGivenSuccess": null,
@@ -1727,11 +1711,11 @@
         "initialFp": 60,
         "successProbability": {
           "lower": 0,
-          "upper": 0.15991641749570149
+          "upper": 0.16819030018836628
         },
-        "successEstimate": 0.07421875,
+        "successEstimate": 0.0703125,
         "expectedFp": {
-          "lower": 52.63646026275791,
+          "lower": 52.085339801198025,
           "upper": 60
         },
         "expectedFpGivenSuccess": null,
@@ -1755,11 +1739,11 @@
         "initialFp": 61,
         "successProbability": {
           "lower": 0,
-          "upper": 0.15503360499570149
+          "upper": 0.16623717518836628
         },
-        "successEstimate": 0.0693359375,
+        "successEstimate": 0.068359375,
         "expectedFp": {
-          "lower": 54.184551657762206,
+          "lower": 52.97379012600966,
           "upper": 61
         },
         "expectedFpGivenSuccess": null,
@@ -1783,11 +1767,11 @@
         "initialFp": 62,
         "successProbability": {
           "lower": 0,
-          "upper": 0.15405704249570149
+          "upper": 0.17404967518836628
         },
-        "successEstimate": 0.068359375,
+        "successEstimate": 0.076171875,
         "expectedFp": {
-          "lower": 54.850807115266505,
+          "lower": 53.54290451332129,
           "upper": 62
         },
         "expectedFpGivenSuccess": null,
@@ -1810,18 +1794,15 @@
       {
         "initialFp": 63,
         "successProbability": {
-          "lower": 0.003169520004298515,
-          "upper": 0.17456485499570149
-        },
-        "successEstimate": 0.0888671875,
-        "expectedFp": {
-          "lower": 55.025851635270804,
-          "upper": 63
-        },
-        "expectedFpGivenSuccess": {
           "lower": 0,
+          "upper": 0.16428405018836628
+        },
+        "successEstimate": 0.06640625,
+        "expectedFp": {
+          "lower": 55.071979838132926,
           "upper": 63
         },
+        "expectedFpGivenSuccess": null,
         "quantiles": {
           "p50": {
             "lower": 63,
@@ -1836,33 +1817,20 @@
             "upper": 63
           }
         },
-        "successQuantiles": {
-          "p50": {
-            "lower": 0,
-            "upper": 63
-          },
-          "p90": {
-            "lower": 0,
-            "upper": 63
-          },
-          "p95": {
-            "lower": 0,
-            "upper": 63
-          }
-        }
+        "successQuantiles": null
       }
     ],
     "expectedFp": {
-      "lower": 30.84328021923998,
-      "upper": 31.638056586315578
+      "lower": 30.773143418781338,
+      "upper": 31.68088063875834
     },
     "expectedFpGivenSuccess": {
-      "lower": 10.259592182042356,
-      "upper": 41.849926355704085
+      "lower": 9.22489578612974,
+      "upper": 45.70718037725045
     },
     "failedFpWaste": {
-      "lower": 29.89427848312887,
-      "upper": 30.689054850204467
+      "lower": 29.804703438622614,
+      "upper": 30.712440658599615
     },
     "quantiles": {
       "p50": {
@@ -1880,15 +1848,15 @@
     },
     "successQuantiles": {
       "p50": {
-        "lower": 3,
-        "upper": 44
+        "lower": 1,
+        "upper": 49
       },
       "p90": {
-        "lower": 16,
+        "lower": 14,
         "upper": 63
       },
       "p95": {
-        "lower": 17,
+        "lower": 16,
         "upper": 63
       }
     },
@@ -1897,861 +1865,895 @@
         "spent": 0,
         "success": {
           "lower": 0,
-          "upper": 0.013277049974536334
+          "upper": 0.01505961832567404
         },
         "failure": {
           "lower": 0,
-          "upper": 0.010796891244377606
+          "upper": 0.01233144372249944
         },
-        "successEstimate": 0.0024801587301587283,
+        "successEstimate": 0.0027281746031746013,
         "failureEstimate": 0
       },
       {
         "spent": 1,
         "success": {
           "lower": 0,
-          "upper": 0.0121764795380284
+          "upper": 0.013633527055832772
         },
         "failure": {
-          "lower": 0.00487461173181287,
-          "upper": 0.026468394220568084
+          "lower": 0.0034020632219450044,
+          "upper": 0.028064950666943884
         },
-        "successEstimate": 0.001379588293650793,
-        "failureEstimate": 0.015671502976190476
+        "successEstimate": 0.0013020833333333326,
+        "failureEstimate": 0.015733506944444444
       },
       {
         "spent": 2,
         "success": {
           "lower": 0,
-          "upper": 0.011850958704695066
+          "upper": 0.013447515151070868
         },
         "failure": {
-          "lower": 0.004828108755622394,
-          "upper": 0.026421891244377604
+          "lower": 0.0033555602457545283,
+          "upper": 0.028018447690753408
         },
-        "successEstimate": 0.0010540674603174596,
-        "failureEstimate": 0.015625
+        "successEstimate": 0.001116071428571428,
+        "failureEstimate": 0.015687003968253968
       },
       {
         "spent": 3,
         "success": {
           "lower": 0,
-          "upper": 0.011990467633266494
+          "upper": 0.01315299630186452
         },
         "failure": {
-          "lower": 0.004781605779431916,
-          "upper": 0.02637538826818713
+          "lower": 0.0032625542933735745,
+          "upper": 0.027925441738372456
         },
-        "successEstimate": 0.0011935763888888881,
-        "failureEstimate": 0.015578497023809522
+        "successEstimate": 0.000821552579365079,
+        "failureEstimate": 0.015593998015873014
       },
       {
         "spent": 4,
         "success": {
           "lower": 0,
-          "upper": 0.01180445572850459
+          "upper": 0.013432014159007376
         },
         "failure": {
-          "lower": 0.004766104787368424,
-          "upper": 0.026359887276123636
+          "lower": 0.0032935562775005603,
+          "upper": 0.02795644372249944
         },
-        "successEstimate": 0.001007564484126984,
-        "failureEstimate": 0.01556299603174603
+        "successEstimate": 0.0011005704365079356,
+        "failureEstimate": 0.015625
       },
       {
         "spent": 5,
         "success": {
           "lower": 0,
-          "upper": 0.01166494679993316
+          "upper": 0.013199499278054996
         },
         "failure": {
-          "lower": 0.004719601811177948,
-          "upper": 0.02631338429993316
+          "lower": 0.0033245582616275443,
+          "upper": 0.027987445706626424
         },
-        "successEstimate": 0.000868055555555555,
-        "failureEstimate": 0.015516493055555554
+        "successEstimate": 0.0008680555555555551,
+        "failureEstimate": 0.015656001984126984
       },
       {
         "spent": 6,
         "success": {
           "lower": 0,
-          "upper": 0.01172695076818713
+          "upper": 0.013215000270118488
         },
         "failure": {
-          "lower": 0.004766104787368424,
-          "upper": 0.026359887276123636
+          "lower": 0.0033090572695640523,
+          "upper": 0.02797194471456293
         },
-        "successEstimate": 0.0009300595238095238,
-        "failureEstimate": 0.01556299603174603
+        "successEstimate": 0.0008835565476190472,
+        "failureEstimate": 0.015640500992063492
       },
       {
         "spent": 7,
         "success": {
           "lower": 0,
-          "upper": 0.01172695076818713
+          "upper": 0.01330800622249944
         },
         "failure": {
-          "lower": 0.00473510280324144,
-          "upper": 0.026328885291996652
+          "lower": 0.0033090572695640523,
+          "upper": 0.02797194471456293
         },
-        "successEstimate": 0.0009300595238095238,
-        "failureEstimate": 0.015531994047619046
+        "successEstimate": 0.0009765624999999996,
+        "failureEstimate": 0.015640500992063492
       },
       {
         "spent": 8,
         "success": {
           "lower": 0,
-          "upper": 0.01180445572850459
+          "upper": 0.013370010190753408
         },
         "failure": {
-          "lower": 0.004781605779431916,
-          "upper": 0.02637538826818713
+          "lower": 0.0032160513171830985,
+          "upper": 0.027878938762181976
         },
-        "successEstimate": 0.0010075644841269838,
-        "failureEstimate": 0.015578497023809522
+        "successEstimate": 0.0010385664682539676,
+        "failureEstimate": 0.015547495039682538
       },
       {
         "spent": 9,
         "success": {
           "lower": 0,
-          "upper": 0.01180445572850459
+          "upper": 0.013261503246308964
         },
         "failure": {
-          "lower": 0.004719601811177948,
-          "upper": 0.02631338429993316
+          "lower": 0.0032160513171830985,
+          "upper": 0.027878938762181976
         },
-        "successEstimate": 0.0010075644841269836,
-        "failureEstimate": 0.015516493055555554
+        "successEstimate": 0.0009300595238095238,
+        "failureEstimate": 0.015547495039682538
       },
       {
         "spent": 10,
         "success": {
           "lower": 0,
-          "upper": 0.011819956720568082
+          "upper": 0.013121994317737536
         },
         "failure": {
-          "lower": 0.004595593874670012,
-          "upper": 0.026189376363425224
+          "lower": 0.0032935562775005603,
+          "upper": 0.02795644372249944
         },
-        "successEstimate": 0.0010230654761904758,
-        "failureEstimate": 0.015392485119047618
+        "successEstimate": 0.000790550595238095,
+        "failureEstimate": 0.015625
       },
       {
         "spent": 11,
         "success": {
           "lower": 0,
-          "upper": 0.011695948784060146
+          "upper": 0.013199499278054996
         },
         "failure": {
-          "lower": 0.004781605779431916,
-          "upper": 0.02637538826818713
+          "lower": 0.0032625542933735745,
+          "upper": 0.027925441738372456
         },
-        "successEstimate": 0.0008990575396825394,
-        "failureEstimate": 0.015578497023809522
+        "successEstimate": 0.0008680555555555555,
+        "failureEstimate": 0.015593998015873014
       },
       {
         "spent": 12,
         "success": {
           "lower": 0,
-          "upper": 0.011866459696758558
+          "upper": 0.013354509198689916
         },
         "failure": {
-          "lower": 0.004688599827050964,
-          "upper": 0.026282382315806176
+          "lower": 0.0032780552854370665,
+          "upper": 0.027940942730435944
         },
-        "successEstimate": 0.0010695684523809516,
-        "failureEstimate": 0.01548549107142857
+        "successEstimate": 0.0010230654761904758,
+        "failureEstimate": 0.015609499007936506
       },
       {
         "spent": 13,
         "success": {
           "lower": 0,
-          "upper": 0.01164944580786967
+          "upper": 0.013323507214562932
         },
         "failure": {
-          "lower": 0.004781605779431916,
-          "upper": 0.02637538826818713
+          "lower": 0.0030610413965481784,
+          "upper": 0.027723928841547056
         },
-        "successEstimate": 0.0008525545634920633,
-        "failureEstimate": 0.015578497023809522
+        "successEstimate": 0.000992063492063492,
+        "failureEstimate": 0.015392485119047618
       },
       {
         "spent": 14,
         "success": {
           "lower": 0,
-          "upper": 0.01180445572850459
+          "upper": 0.013354509198689916
         },
         "failure": {
-          "lower": 0.004766104787368424,
-          "upper": 0.026359887276123636
+          "lower": 0.0031075443727386545,
+          "upper": 0.027770431817737536
         },
-        "successEstimate": 0.0010075644841269836,
-        "failureEstimate": 0.01556299603174603
+        "successEstimate": 0.001023065476190476,
+        "failureEstimate": 0.015438988095238094
       },
       {
         "spent": 15,
         "success": {
           "lower": 0,
-          "upper": 0.011866459696758558
+          "upper": 0.012982485389166106
         },
         "failure": {
-          "lower": 0.004750603795304932,
-          "upper": 0.026344386284060144
+          "lower": 0.0032005503251196065,
+          "upper": 0.027863437770118488
         },
-        "successEstimate": 0.0010695684523809523,
-        "failureEstimate": 0.015547495039682538
+        "successEstimate": 0.0006510416666666663,
+        "failureEstimate": 0.015531994047619046
       },
       {
         "spent": 16,
         "success": {
           "lower": 0,
-          "upper": 0.011881960688822052
+          "upper": 0.01346301614313436
         },
         "failure": {
-          "lower": 0.00458009288260652,
-          "upper": 0.026173875371361732
+          "lower": 0.0031075443727386545,
+          "upper": 0.027770431817737536
         },
-        "successEstimate": 0.001085069444444445,
-        "failureEstimate": 0.015376984126984126
+        "successEstimate": 0.0011315724206349203,
+        "failureEstimate": 0.015438988095238094
       },
       {
         "spent": 17,
         "success": {
           "lower": 0,
-          "upper": 0.01172695076818713
+          "upper": 0.013432014159007376
         },
         "failure": {
-          "lower": 0.004673098834987472,
-          "upper": 0.026266881323742684
+          "lower": 0.0031850493330561145,
+          "upper": 0.027847936778054992
         },
-        "successEstimate": 0.0009300595238095238,
-        "failureEstimate": 0.015469990079365078
+        "successEstimate": 0.001100570436507936,
+        "failureEstimate": 0.015516493055555554
       },
       {
         "spent": 18,
         "success": {
           "lower": 0,
-          "upper": 0.011974966641203002
+          "upper": 0.013649028047896266
         },
         "failure": {
-          "lower": 0.004595593874670012,
-          "upper": 0.026189376363425224
+          "lower": 0.0030765423886116704,
+          "upper": 0.02773942983361055
         },
-        "successEstimate": 0.0011780753968253963,
-        "failureEstimate": 0.015392485119047618
+        "successEstimate": 0.0013175843253968253,
+        "failureEstimate": 0.01540798611111111
       },
       {
         "spent": 19,
         "success": {
           "lower": 0,
-          "upper": 0.012207481522155384
+          "upper": 0.013246002254245472
         },
         "failure": {
-          "lower": 0.004688599827050964,
-          "upper": 0.026282382315806176
+          "lower": 0.0030300394124211944,
+          "upper": 0.027692926857420072
         },
-        "successEstimate": 0.0014105902777777775,
-        "failureEstimate": 0.01548549107142857
+        "successEstimate": 0.0009145585317460313,
+        "failureEstimate": 0.015361483134920634
       },
       {
         "spent": 20,
         "success": {
           "lower": 0,
-          "upper": 0.01143243191898078
+          "upper": 0.013121994317737534
         },
         "failure": {
-          "lower": 0.004564591890543028,
-          "upper": 0.02615837437929824
+          "lower": 0.0031230453648021465,
+          "upper": 0.027785932809801024
         },
-        "successEstimate": 0.0006355406746031746,
-        "failureEstimate": 0.015361483134920634
+        "successEstimate": 0.0007905505952380949,
+        "failureEstimate": 0.015454489087301586
       },
       {
         "spent": 21,
         "success": {
           "lower": 0,
-          "upper": 0.01143243191898078
+          "upper": 0.01316849729392801
         },
         "failure": {
-          "lower": 0.004719601811177948,
-          "upper": 0.02631338429993316
+          "lower": 0.0030765423886116704,
+          "upper": 0.02773942983361055
         },
-        "successEstimate": 0.0006355406746031745,
-        "failureEstimate": 0.015516493055555554
+        "successEstimate": 0.0008370535714285708,
+        "failureEstimate": 0.01540798611111111
       },
       {
         "spent": 22,
         "success": {
           "lower": 0,
-          "upper": 0.011385928942790304
+          "upper": 0.013028988365356582
         },
         "failure": {
-          "lower": 0.004704100819114456,
-          "upper": 0.02629788330786967
+          "lower": 0.0030455404044846864,
+          "upper": 0.027708427849483568
         },
-        "successEstimate": 0.0005890376984126983,
-        "failureEstimate": 0.015500992063492062
+        "successEstimate": 0.0006975446428571427,
+        "failureEstimate": 0.015376984126984126
       },
       {
         "spent": 23,
         "success": {
           "lower": 0,
-          "upper": 0.01164944580786967
+          "upper": 0.01323050126218198
         },
         "failure": {
-          "lower": 0.004626595858796996,
-          "upper": 0.02622037834755221
+          "lower": 0.0029990374282942104,
+          "upper": 0.027661924873293088
         },
-        "successEstimate": 0.0008525545634920633,
-        "failureEstimate": 0.015423487103174602
+        "successEstimate": 0.0008990575396825395,
+        "failureEstimate": 0.01533048115079365
       },
       {
         "spent": 24,
         "success": {
           "lower": 0,
-          "upper": 0.011540938863425224
+          "upper": 0.013044489357420074
         },
         "failure": {
-          "lower": 0.00450258792228906,
-          "upper": 0.026096370411044272
+          "lower": 0.0028440275076592903,
+          "upper": 0.027506914952658168
         },
-        "successEstimate": 0.0007440476190476189,
-        "failureEstimate": 0.015299479166666666
+        "successEstimate": 0.0007130456349206346,
+        "failureEstimate": 0.01517547123015873
       },
       {
         "spent": 25,
         "success": {
           "lower": 0,
-          "upper": 0.011525437871361732
+          "upper": 0.013137495309801028
         },
         "failure": {
-          "lower": 0.00458009288260652,
-          "upper": 0.026173875371361732
+          "lower": 0.0030765423886116704,
+          "upper": 0.02773942983361055
         },
-        "successEstimate": 0.0007285466269841268,
-        "failureEstimate": 0.015376984126984126
+        "successEstimate": 0.0008060515873015873,
+        "failureEstimate": 0.01540798611111111
       },
       {
         "spent": 26,
         "success": {
           "lower": 0,
-          "upper": 0.011447932911044272
+          "upper": 0.013121994317737536
         },
         "failure": {
-          "lower": 0.004409581969908108,
-          "upper": 0.02600336445866332
+          "lower": 0.0029370334600402424,
+          "upper": 0.02759992090503912
         },
-        "successEstimate": 0.0006510416666666663,
-        "failureEstimate": 0.015206473214285714
+        "successEstimate": 0.000790550595238095,
+        "failureEstimate": 0.015268477182539682
       },
       {
         "spent": 27,
         "success": {
           "lower": 0,
-          "upper": 0.011494435887234748
+          "upper": 0.013075491341547058
         },
         "failure": {
-          "lower": 0.0044250829619716,
-          "upper": 0.026018865450726812
+          "lower": 0.0028750294917862743,
+          "upper": 0.027537916936785152
         },
-        "successEstimate": 0.0006975446428571428,
-        "failureEstimate": 0.015221974206349206
+        "successEstimate": 0.0007440476190476187,
+        "failureEstimate": 0.015206473214285714
       },
       {
         "spent": 28,
         "success": {
           "lower": 0,
-          "upper": 0.011664946799933162
+          "upper": 0.013028988365356584
         },
         "failure": {
-          "lower": 0.004409581969908108,
-          "upper": 0.02600336445866332
+          "lower": 0.0028905304838497663,
+          "upper": 0.027553417928848647
         },
-        "successEstimate": 0.0008680555555555552,
-        "failureEstimate": 0.015206473214285714
+        "successEstimate": 0.000697544642857143,
+        "failureEstimate": 0.015221974206349206
       },
       {
         "spent": 29,
         "success": {
           "lower": 0,
-          "upper": 0.011571940847552208
+          "upper": 0.013075491341547058
         },
         "failure": {
-          "lower": 0.004518088914352552,
-          "upper": 0.026111871403107764
+          "lower": 0.0027975245314688126,
+          "upper": 0.027460411976467692
         },
-        "successEstimate": 0.000775049603174603,
-        "failureEstimate": 0.015314980158730158
+        "successEstimate": 0.0007440476190476188,
+        "failureEstimate": 0.015128968253968252
       },
       {
         "spent": 30,
         "success": {
           "lower": 0,
-          "upper": 0.011323924974536336
+          "upper": 0.013168497293928012
         },
         "failure": {
-          "lower": 0.004533589906416044,
-          "upper": 0.026127372395171256
+          "lower": 0.0028130255235323063,
+          "upper": 0.027475912968531184
         },
-        "successEstimate": 0.0005270337301587301,
-        "failureEstimate": 0.01533048115079365
+        "successEstimate": 0.0008370535714285712,
+        "failureEstimate": 0.015144469246031746
       },
       {
         "spent": 31,
         "success": {
           "lower": 0,
-          "upper": 0.011370427950726812
+          "upper": 0.013044489357420076
         },
         "failure": {
-          "lower": 0.004378579985781124,
-          "upper": 0.025972362474536336
+          "lower": 0.0029835364362307184,
+          "upper": 0.0276464238812296
         },
-        "successEstimate": 0.0005735367063492063,
-        "failureEstimate": 0.01517547123015873
+        "successEstimate": 0.000713045634920635,
+        "failureEstimate": 0.015314980158730158
       },
       {
         "spent": 32,
         "success": {
           "lower": 0,
-          "upper": 0.01150993687929824
+          "upper": 0.013215000270118488
         },
         "failure": {
-          "lower": 0.004471585938162076,
-          "upper": 0.026065368426917288
+          "lower": 0.0028595284997227823,
+          "upper": 0.027522415944721663
         },
-        "successEstimate": 0.0007130456349206348,
-        "failureEstimate": 0.015268477182539682
+        "successEstimate": 0.0008835565476190473,
+        "failureEstimate": 0.015190972222222222
       },
       {
         "spent": 33,
         "success": {
           "lower": 0,
-          "upper": 0.011323924974536336
+          "upper": 0.012982485389166106
         },
         "failure": {
-          "lower": 0.00420806907308271,
-          "upper": 0.025801851561837924
+          "lower": 0.0029215324679767504,
+          "upper": 0.02758441991297563
         },
-        "successEstimate": 0.00052703373015873,
-        "failureEstimate": 0.015004960317460316
+        "successEstimate": 0.0006510416666666665,
+        "failureEstimate": 0.01525297619047619
       },
       {
         "spent": 34,
         "success": {
           "lower": 0,
-          "upper": 0.011571940847552208
+          "upper": 0.013028988365356582
         },
         "failure": {
-          "lower": 0.004471585938162076,
-          "upper": 0.026065368426917288
+          "lower": 0.0026735165949608765,
+          "upper": 0.027336404039959756
         },
-        "successEstimate": 0.000775049603174603,
-        "failureEstimate": 0.015268477182539682
+        "successEstimate": 0.0006975446428571428,
+        "failureEstimate": 0.015004960317460316
       },
       {
         "spent": 35,
         "success": {
           "lower": 0,
-          "upper": 0.011323924974536336
+          "upper": 0.012951483405039122
         },
         "failure": {
-          "lower": 0.0044250829619716,
-          "upper": 0.026018865450726812
+          "lower": 0.0028130255235323063,
+          "upper": 0.027475912968531184
         },
-        "successEstimate": 0.0005270337301587301,
-        "failureEstimate": 0.015221974206349206
+        "successEstimate": 0.0006200396825396823,
+        "failureEstimate": 0.015144469246031746
       },
       {
         "spent": 36,
         "success": {
           "lower": 0,
-          "upper": 0.011292922990409352
+          "upper": 0.012873978444721662
         },
         "failure": {
-          "lower": 0.0044250829619716,
-          "upper": 0.026018865450726812
+          "lower": 0.0029215324679767504,
+          "upper": 0.02758441991297563
         },
-        "successEstimate": 0.000496031746031746,
-        "failureEstimate": 0.015221974206349206
+        "successEstimate": 0.0005425347222222222,
+        "failureEstimate": 0.01525297619047619
       },
       {
         "spent": 37,
         "success": {
           "lower": 0,
-          "upper": 0.011385928942790304
+          "upper": 0.012982485389166106
         },
         "failure": {
-          "lower": 0.004316576017527154,
-          "upper": 0.025910358506282365
+          "lower": 0.0026270136187704005,
+          "upper": 0.02728990106376928
         },
-        "successEstimate": 0.0005890376984126984,
-        "failureEstimate": 0.01511346726190476
+        "successEstimate": 0.0006510416666666664,
+        "failureEstimate": 0.01495845734126984
       },
       {
         "spent": 38,
         "success": {
           "lower": 0,
-          "upper": 0.011385928942790304
+          "upper": 0.012873978444721662
         },
         "failure": {
-          "lower": 0.004192568081019218,
-          "upper": 0.02578635056977443
+          "lower": 0.0028130255235323063,
+          "upper": 0.027475912968531184
         },
-        "successEstimate": 0.0005890376984126983,
-        "failureEstimate": 0.014989459325396824
+        "successEstimate": 0.0005425347222222222,
+        "failureEstimate": 0.015144469246031746
       },
       {
         "spent": 39,
         "success": {
           "lower": 0,
-          "upper": 0.01127742199834586
+          "upper": 0.012966984397102614
         },
         "failure": {
-          "lower": 0.004456084946098584,
-          "upper": 0.026049867434853796
+          "lower": 0.0027200195711513525,
+          "upper": 0.027382907016150232
         },
-        "successEstimate": 0.00048053075396825394,
-        "failureEstimate": 0.01525297619047619
+        "successEstimate": 0.0006355406746031744,
+        "failureEstimate": 0.015051463293650792
       },
       {
         "spent": 40,
         "success": {
           "lower": 0,
-          "upper": 0.011370427950726812
+          "upper": 0.01270346753202325
         },
         "failure": {
-          "lower": 0.004270073041336678,
-          "upper": 0.025863855530091892
+          "lower": 0.0028595284997227823,
+          "upper": 0.027522415944721663
         },
-        "successEstimate": 0.0005735367063492063,
-        "failureEstimate": 0.015066964285714284
+        "successEstimate": 0.0003720238095238095,
+        "failureEstimate": 0.015190972222222222
       },
       {
         "spent": 41,
         "success": {
           "lower": 0,
-          "upper": 0.011385928942790304
+          "upper": 0.012827475468531186
         },
         "failure": {
-          "lower": 0.004332077009590646,
-          "upper": 0.02592585949834586
+          "lower": 0.0027045185790878605,
+          "upper": 0.02736740602408674
         },
-        "successEstimate": 0.0005890376984126983,
-        "failureEstimate": 0.015128968253968252
+        "successEstimate": 0.000496031746031746,
+        "failureEstimate": 0.0150359623015873
       },
       {
         "spent": 42,
         "success": {
           "lower": 0,
-          "upper": 0.01127742199834586
+          "upper": 0.01278097249234071
         },
         "failure": {
-          "lower": 0.004223570065146202,
-          "upper": 0.025817352553901413
+          "lower": 0.0027665225473418285,
+          "upper": 0.027429409992340708
         },
-        "successEstimate": 0.00048053075396825394,
-        "failureEstimate": 0.015020461309523808
+        "successEstimate": 0.0004495287698412698,
+        "failureEstimate": 0.015097966269841268
       },
       {
         "spent": 43,
         "success": {
           "lower": 0,
-          "upper": 0.0111999170380284
+          "upper": 0.012920481420912138
         },
         "failure": {
-          "lower": 0.004332077009590646,
-          "upper": 0.02592585949834586
+          "lower": 0.0024875046901989724,
+          "upper": 0.027150392135197852
         },
-        "successEstimate": 0.00040302579365079363,
-        "failureEstimate": 0.015128968253968252
+        "successEstimate": 0.0005890376984126983,
+        "failureEstimate": 0.014818948412698412
       },
       {
         "spent": 44,
         "success": {
           "lower": 0,
-          "upper": 0.0111999170380284
+          "upper": 0.01270346753202325
         },
         "failure": {
-          "lower": 0.004223570065146202,
-          "upper": 0.025817352553901413
+          "lower": 0.0025960116346434164,
+          "upper": 0.027258899079642296
         },
-        "successEstimate": 0.00040302579365079363,
-        "failureEstimate": 0.015020461309523808
+        "successEstimate": 0.0003720238095238095,
+        "failureEstimate": 0.014927455357142856
       },
       {
         "spent": 45,
         "success": {
           "lower": 0,
-          "upper": 0.011339425966599828
+          "upper": 0.012842976460594678
         },
         "failure": {
-          "lower": 0.00389804923181287,
-          "upper": 0.025491831720568084
+          "lower": 0.0027355205632148445,
+          "upper": 0.027398408008213724
         },
-        "successEstimate": 0.0005425347222222222,
-        "failureEstimate": 0.014694940476190476
+        "successEstimate": 0.000511532738095238,
+        "failureEstimate": 0.015066964285714284
       },
       {
         "spent": 46,
         "success": {
           "lower": 0,
-          "upper": 0.011184416045964908
+          "upper": 0.012749970508213726
         },
         "failure": {
-          "lower": 0.00405305915244779,
-          "upper": 0.025646841641203004
+          "lower": 0.0026890175870243685,
+          "upper": 0.027351905032023248
         },
-        "successEstimate": 0.00038752480158730157,
-        "failureEstimate": 0.014849950396825396
+        "successEstimate": 0.0004185267857142857,
+        "failureEstimate": 0.015020461309523808
       },
       {
         "spent": 47,
         "success": {
           "lower": 0,
-          "upper": 0.011106911085647448
+          "upper": 0.012656964555832774
         },
         "failure": {
-          "lower": 0.004270073041336678,
-          "upper": 0.025863855530091892
+          "lower": 0.0025030056822624644,
+          "upper": 0.027165893127261344
         },
-        "successEstimate": 0.00031001984126984125,
-        "failureEstimate": 0.015066964285714284
+        "successEstimate": 0.0003255208333333333,
+        "failureEstimate": 0.014834449404761904
       },
       {
         "spent": 48,
         "success": {
           "lower": 0,
-          "upper": 0.01112241207771094
+          "upper": 0.012749970508213726
         },
         "failure": {
-          "lower": 0.00413056411276525,
-          "upper": 0.02572434660152046
+          "lower": 0.0027510215552783365,
+          "upper": 0.027413909000277216
         },
-        "successEstimate": 0.0003255208333333333,
-        "failureEstimate": 0.014927455357142856
+        "successEstimate": 0.0004185267857142857,
+        "failureEstimate": 0.015082465277777776
       },
       {
         "spent": 49,
         "success": {
           "lower": 0,
-          "upper": 0.011075909101520464
+          "upper": 0.012548457611388328
         },
         "failure": {
-          "lower": 0.004099562128638266,
-          "upper": 0.025693344617393477
+          "lower": 0.0025340076663894484,
+          "upper": 0.027196895111388328
         },
-        "successEstimate": 0.00027901785714285713,
-        "failureEstimate": 0.014896453373015872
+        "successEstimate": 0.00021701388888888888,
+        "failureEstimate": 0.014865451388888888
       },
       {
         "spent": 50,
         "success": {
           "lower": 0,
-          "upper": 0.011137913069774432
+          "upper": 0.012734469516150234
         },
         "failure": {
-          "lower": 0.004254572049273186,
-          "upper": 0.025848354538028397
+          "lower": 0.0025340076663894484,
+          "upper": 0.027196895111388328
         },
-        "successEstimate": 0.0003410218253968254,
-        "failureEstimate": 0.015051463293650792
+        "successEstimate": 0.00040302579365079363,
+        "failureEstimate": 0.014865451388888888
       },
       {
         "spent": 51,
         "success": {
           "lower": 0,
-          "upper": 0.011168915053901416
+          "upper": 0.012641463563769282
         },
         "failure": {
-          "lower": 0.003929051215939854,
-          "upper": 0.025522833704695068
+          "lower": 0.0023014927854370683,
+          "upper": 0.026964380230435948
         },
-        "successEstimate": 0.0003720238095238095,
-        "failureEstimate": 0.01472594246031746
+        "successEstimate": 0.00031001984126984125,
+        "failureEstimate": 0.014632936507936508
       },
       {
         "spent": 52,
         "success": {
           "lower": 0,
-          "upper": 0.011013905133266494
+          "upper": 0.012656964555832774
         },
         "failure": {
-          "lower": 0.003882548239749378,
-          "upper": 0.02547633072850459
-        },
-        "successEstimate": 0.00021701388888888888,
-        "failureEstimate": 0.014679439484126984
-      },
-      {
-        "spent": 53,
-        "success": {
-          "lower": 0,
-          "upper": 0.01112241207771094
-        },
-        "failure": {
-          "lower": 0.00405305915244779,
-          "upper": 0.025646841641203004
+          "lower": 0.0025185066743259564,
+          "upper": 0.027181394119324836
         },
         "successEstimate": 0.0003255208333333333,
         "failureEstimate": 0.014849950396825396
       },
       {
+        "spent": 53,
+        "success": {
+          "lower": 0,
+          "upper": 0.01256395860345182
+        },
+        "failure": {
+          "lower": 0.0024255007219450044,
+          "upper": 0.027088388166943884
+        },
+        "successEstimate": 0.00023251488095238094,
+        "failureEstimate": 0.014756944444444444
+      },
+      {
         "spent": 54,
         "success": {
           "lower": 0,
-          "upper": 0.010951901165012526
+          "upper": 0.012687966539959758
         },
         "failure": {
-          "lower": 0.004099562128638266,
-          "upper": 0.025693344617393477
+          "lower": 0.0022704908013100825,
+          "upper": 0.02693337824630896
         },
-        "successEstimate": 0.00015500992063492063,
-        "failureEstimate": 0.014896453373015872
+        "successEstimate": 0.00035652281746031744,
+        "failureEstimate": 0.014601934523809522
       },
       {
         "spent": 55,
         "success": {
           "lower": 0,
-          "upper": 0.011029406125329986
+          "upper": 0.012579459595515312
         },
         "failure": {
-          "lower": 0.004099562128638266,
-          "upper": 0.025693344617393477
+          "lower": 0.0023944987378180203,
+          "upper": 0.0270573861828169
         },
-        "successEstimate": 0.00023251488095238094,
-        "failureEstimate": 0.014896453373015872
+        "successEstimate": 0.000248015873015873,
+        "failureEstimate": 0.01472594246031746
       },
       {
         "spent": 56,
         "success": {
           "lower": 0,
-          "upper": 0.011168915053901416
+          "upper": 0.012656964555832774
         },
         "failure": {
-          "lower": 0.003960053200066838,
-          "upper": 0.025553835688822052
+          "lower": 0.0024255007219450044,
+          "upper": 0.027088388166943884
         },
-        "successEstimate": 0.0003720238095238095,
+        "successEstimate": 0.0003255208333333333,
         "failureEstimate": 0.014756944444444444
       },
       {
         "spent": 57,
         "success": {
           "lower": 0,
-          "upper": 0.011060408109456972
+          "upper": 0.012455451659007376
         },
         "failure": {
-          "lower": 0.004068560144511282,
-          "upper": 0.025662342633266493
+          "lower": 0.0025030056822624644,
+          "upper": 0.027165893127261344
         },
-        "successEstimate": 0.00026351686507936506,
-        "failureEstimate": 0.014865451388888888
+        "successEstimate": 0.0001240079365079365,
+        "failureEstimate": 0.014834449404761904
       },
       {
         "spent": 58,
         "success": {
           "lower": 0,
-          "upper": 0.011091410093583956
+          "upper": 0.01256395860345182
         },
         "failure": {
-          "lower": 0.00368103534292398,
-          "upper": 0.025274817831679192
+          "lower": 0.0025805106425799244,
+          "upper": 0.027243398087578804
         },
-        "successEstimate": 0.0002945188492063492,
-        "failureEstimate": 0.014477926587301586
+        "successEstimate": 0.00023251488095238094,
+        "failureEstimate": 0.014911954365079364
       },
       {
         "spent": 59,
         "success": {
           "lower": 0,
-          "upper": 0.01098290314913951
+          "upper": 0.012579459595515312
         },
         "failure": {
-          "lower": 0.004223570065146202,
-          "upper": 0.025817352553901413
+          "lower": 0.0022859917933735745,
+          "upper": 0.026948879238372456
         },
-        "successEstimate": 0.00018601190476190475,
-        "failureEstimate": 0.015020461309523808
+        "successEstimate": 0.000248015873015873,
+        "failureEstimate": 0.014617435515873014
       },
       {
         "spent": 60,
         "success": {
           "lower": 0,
-          "upper": 0.010920899180885542
+          "upper": 0.012455451659007376
         },
         "failure": {
-          "lower": 0.00389804923181287,
-          "upper": 0.025491831720568084
+          "lower": 0.0024255007219450044,
+          "upper": 0.027088388166943884
         },
         "successEstimate": 0.0001240079365079365,
-        "failureEstimate": 0.014694940476190476
+        "failureEstimate": 0.014756944444444444
       },
       {
         "spent": 61,
         "success": {
           "lower": 0,
-          "upper": 0.01098290314913951
+          "upper": 0.012377946698689916
         },
         "failure": {
-          "lower": 0.00397555419213033,
-          "upper": 0.02556933668088554
+          "lower": 0.0024565027060719884,
+          "upper": 0.027119390151070868
         },
-        "successEstimate": 0.00018601190476190475,
-        "failureEstimate": 0.014772445436507936
+        "successEstimate": 0.00004650297619047619,
+        "failureEstimate": 0.014787946428571428
       },
       {
         "spent": 62,
         "success": {
           "lower": 0,
-          "upper": 0.010920899180885542
+          "upper": 0.012455451659007376
         },
         "failure": {
-          "lower": 0.003991055184193822,
-          "upper": 0.025584837672949036
+          "lower": 0.0023324947695640523,
+          "upper": 0.02699538221456293
         },
         "successEstimate": 0.0001240079365079365,
-        "failureEstimate": 0.014787946428571428
+        "failureEstimate": 0.014663938492063492
       },
       {
         "spent": 63,
         "success": {
           "lower": 0,
-          "upper": 0.010920899180885542
+          "upper": 0.012439950666943884
         },
         "failure": {
-          "lower": 0.003665534350860488,
-          "upper": 0.0252593168396157
+          "lower": 0.0024875046901989724,
+          "upper": 0.027150392135197852
         },
-        "successEstimate": 0.0001240079365079365,
-        "failureEstimate": 0.014462425595238094
+        "successEstimate": 0.00010850694444444444,
+        "failureEstimate": 0.014818948412698412
       }
     ],
     "attemptsByMacro": [
       {
         "lower": 0,
-        "upper": 16.881583970552192
+        "upper": 18.459693138704505
+      }
+    ],
+    "macroStatistics": [
+      {
+        "reachedProbability": {
+          "lower": 0.9876685562774988,
+          "upper": 1
+        },
+        "executedProbability": {
+          "lower": 0.9876685562774988,
+          "upper": 1
+        },
+        "expectedAttempts": {
+          "lower": 0,
+          "upper": 18.459693138704505
+        },
+        "expectedFp": {
+          "lower": 30.773143418781338,
+          "upper": 31.68088063875834
+        },
+        "expectedAttemptsGivenReached": {
+          "lower": 0,
+          "upper": 18.690169917202475
+        },
+        "expectedFpGivenReached": {
+          "lower": 30.773143418781334,
+          "upper": 32.0764293217584
+        }
       }
     ],
     "failureReasons": [
       {
         "reason": "FP_EXHAUSTED",
         "probability": {
-          "lower": 0.9462343587556222,
-          "upper": 0.9678281412443775
+          "lower": 0.9442192755235321,
+          "upper": 0.9688821629685309
         }
       }
     ],
-    "states": 375819,
+    "states": 376253,
     "sampling": {
       "seed": "planner|final",
       "samplesPerFp": 1024,
       "totalTrials": 64512,
-      "confidence": 0.99,
+      "confidence": 0.9998958333333333,
       "method": "SIMULTANEOUS_HOEFFDING_UNDER_IID_SAMPLING",
       "attemptGuard": 1024,
       "unobservedAttemptMeanBound": 2.076027267557976e-59,
       "minimumPaidProbability": 0.32339999999999997
     }
+  },
+  "samplingGuarantee": {
+    "scope": "ALL_STATISTICAL_REPORTS_IN_ONE_PLANNING_CALL_UNDER_IID",
+    "confidence": 0.99,
+    "maximumReports": 96,
+    "reportConfidence": 0.9998958333333333
   },
   "searchStatus": "INCOMPLETE",
   "optimality": "NOT_PROVEN",
@@ -2766,7 +2768,7 @@
     "unevaluatedRoutes": 0,
     "skippedDuplicates": 2,
     "certifiedPrunedPrefixes": 0,
-    "elapsedMilliseconds": 3250,
+    "elapsedMilliseconds": 2606,
     "stopReason": "ROUTE_BUDGET",
     "paretoRouteIds": [
       "r-741638a568efd6f9",

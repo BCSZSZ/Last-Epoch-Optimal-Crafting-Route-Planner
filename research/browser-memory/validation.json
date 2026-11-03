@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
+  "samples": 11,
+  "samplesOverlappingPlanning": 4,
+  "workerUrls": [
+    "http://127.0.0.1:4175/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4ua7Twe.js"
+  ],
+  "maximumTotalMiBObserved": 28.799551010131836,
+  "maximumWorkerExclusiveMiBObserved": 19.87715244293213,
+  "requestScope": {
+    "milliseconds": 60000,
+    "maxRoutes": 500,
+    "macroStages": 12,
+    "maxStates": 25000
+  },
+  "evaluatedRoutes": 500,
+  "planningMillisecondsWithObserver": 14404,
+  "liveBytesChecked": false,
+  "qualification": "Native post-GC memory estimates and observed maxima under local COOP/COEP. Not an allocation peak between samples, OS RSS, or low-end hardware."
+}

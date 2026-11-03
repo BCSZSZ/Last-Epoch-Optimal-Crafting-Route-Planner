@@ -7,18 +7,21 @@ import { sampleRoute } from '../src/core/sampling';
 import type { PlanReport } from '../src/core/planner';
 import type { FpType } from '../src/core/types';
 
-const cases: { file: string; example: string; fpType: FpType }[] = [
+const cases: { file: string; example: string; fpType: FpType; folder?: string; input?: string }[] = [
   { file: '7710-normal', example: '7710-direct', fpType: 'NORMAL' },
   { file: '7732-normal', example: '7732-missing', fpType: 'NORMAL' },
   { file: '7713-ice', example: '7713-prepare', fpType: 'ICE' },
   { file: '7717-blood', example: '7717-existing', fpType: 'BLOOD' },
   { file: 'public-7710-normal', example: '7710-direct', fpType: 'NORMAL' },
+  { file: 'removal-normal', example: '7710-direct', fpType: 'NORMAL', input: 'removal-normal-input' },
+  { file: '7710-normal-plan', example: '7710-direct', fpType: 'NORMAL', folder: 'browser-memory', input: '7710-normal-input' },
 ];
 const checks = [];
-for (const entry of cases) {
-  const browser: PlanReport = JSON.parse(readFileSync(new URL(`../research/browser-validation/${entry.file}.json`, import.meta.url), 'utf8'));
+for (const entry of cases.filter((entry) => !process.argv.includes('--local-only') || !entry.file.startsWith('public-'))) {
+  const folder = entry.folder ?? 'browser-validation';
+  const browser: PlanReport = JSON.parse(readFileSync(new URL(`../research/${folder}/${entry.file}.json`, import.meta.url), 'utf8'));
   if (browser.modelId !== MODEL_ID || !browser.primary) throw new Error(`Wrong model or absent recommendation: ${entry.file}`);
-  const request = exampleRequest(entry.example);
+  const request = entry.input ? JSON.parse(readFileSync(new URL(`../research/${folder}/${entry.input}.json`, import.meta.url), 'utf8')) : exampleRequest(entry.example);
   const input = { ...request, item: { ...request.item, fpType: entry.fpType } };
   const primary = browser.primary;
   const engine = new RuleEngine();

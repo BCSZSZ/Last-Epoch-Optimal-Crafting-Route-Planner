@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "measuredOn": "2026-11-03T03:59:46.649Z",
-  "modelId": "le-1.5.3-iid-de87d96b5479099b",
+  "measuredOn": "2026-11-03T04:32:22.483Z",
+  "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
   "scope": "COMPLETE_PLANNER_WITH_DEFAULT_TIME_AND_ROUTE_LIMITS_ALL_FP_0_TO_63",
   "environment": {
     "node": "v22.20.0",
@@ -23,8 +23,8 @@
     {
       "id": "7732-ready",
       "fpType": "NORMAL",
-      "milliseconds": 5808.6817,
-      "peakRssMiB": 118.21875,
+      "milliseconds": 5507.223199999999,
+      "peakRssMiB": 118.875,
       "status": "RECOMMENDATION",
       "score": 0.6236150286198845,
       "scoreBounds": {
@@ -56,7 +56,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 3,
         "certifiedPrunedPrefixes": 18,
-        "elapsedMilliseconds": 5808,
+        "elapsedMilliseconds": 5507,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -111,13 +111,13 @@
       },
       "states": 64,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7732-ready",
       "fpType": "ICE",
-      "milliseconds": 7825.1645,
-      "peakRssMiB": 117.39453125,
+      "milliseconds": 7798.269,
+      "peakRssMiB": 117.96875,
       "status": "RECOMMENDATION",
       "score": 0.7146364783343879,
       "scoreBounds": {
@@ -143,105 +143,13 @@
         "macroStages": 12,
         "librarySize": 1016,
         "candidateUpperBound": "1211022357648499479475860072608191033",
-        "evaluatedRoutes": 47,
-        "exactRoutes": 42,
-        "estimatedRoutes": 5,
-        "unevaluatedRoutes": 0,
-        "skippedDuplicates": 3,
-        "certifiedPrunedPrefixes": 18,
-        "elapsedMilliseconds": 7825,
-        "stopReason": "TIME_BUDGET",
-        "paretoRouteIds": [
-          "r-741638a568efd6f9",
-          "r-f5f04e6842bf1044",
-          "r-2724a8fa3ce4c0de",
-          "r-76da380bc5a10f67",
-          "r-022133e836edcecc",
-          "r-1581db107181f64c",
-          "r-ae62abbd04ed89a9",
-          "r-5430c05ef175f762",
-          "r-f7e86e2a54bf484e",
-          "r-5c76026e8482978a",
-          "r-ec16b768d6c53b5c",
-          "r-9f54de0a8ed38f06",
-          "r-330360d72b7906c3",
-          "r-cac346c3587e4bff",
-          "r-d2bfd19347ebf76f",
-          "r-d0a80f8c21464400",
-          "r-b21c5d2260aa59ce",
-          "r-90965f185e66d4dc",
-          "r-db689d9525a54b49",
-          "r-31019c651c456c09",
-          "r-3fe60b31789c6215",
-          "r-78dab9f8ea4d1734",
-          "r-3cf8cca41d355400",
-          "r-d1330f3c6cd0f290",
-          "r-57c4a512ff778f9e",
-          "r-738acda86589bdcc",
-          "r-027fd50591d6d6d9",
-          "r-3bac89d58f880759",
-          "r-fa76450142584145",
-          "r-5365539ea9e8ef1a",
-          "r-c14742189adb82ec",
-          "r-12cd289a4ca8c8f6",
-          "r-2d993c47e14af213",
-          "r-3b091df3c484c98f",
-          "r-28662ba39e03845f",
-          "r-6282ffe336a47677",
-          "r-c079387f58d7c133",
-          "r-21d7e28f74daa56b",
-          "r-18d19b3bd4f47a67",
-          "r-5a00c7bb7ab23b47",
-          "r-c95f70a627a6f9d2",
-          "r-68f9cd60c6230ea4",
-          "r-f52772b2c366cf9e",
-          "r-51b9eb4d09bbbfb1",
-          "r-5f66e07dd98f7371",
-          "r-a40154990086212d",
-          "r-eb31a424f3654128"
-        ]
-      },
-      "states": 64,
-      "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
-    },
-    {
-      "id": "7732-ready",
-      "fpType": "BLOOD",
-      "milliseconds": 6879.782700000001,
-      "peakRssMiB": 117.76953125,
-      "status": "RECOMMENDATION",
-      "score": 0.6236150286198845,
-      "scoreBounds": {
-        "lower": 0.6236150286198664,
-        "upper": 0.6236150286199025
-      },
-      "evaluation": "BOUNDED_NUMERICAL",
-      "routeId": "r-f5f04e6842bf1044",
-      "macros": [
-        {
-          "kind": "repeat",
-          "action": {
-            "kind": "havoc",
-            "glyph": "hope"
-          },
-          "until": {
-            "kind": "target"
-          }
-        }
-      ],
-      "search": {
-        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
-        "macroStages": 12,
-        "librarySize": 1016,
-        "candidateUpperBound": "1211022357648499479475860072608191033",
         "evaluatedRoutes": 48,
         "exactRoutes": 43,
         "estimatedRoutes": 5,
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 3,
         "certifiedPrunedPrefixes": 18,
-        "elapsedMilliseconds": 6879,
+        "elapsedMilliseconds": 7798,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -296,13 +204,106 @@
       },
       "states": 64,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
+    },
+    {
+      "id": "7732-ready",
+      "fpType": "BLOOD",
+      "milliseconds": 6423.6708,
+      "peakRssMiB": 118.72265625,
+      "status": "RECOMMENDATION",
+      "score": 0.6236150286198845,
+      "scoreBounds": {
+        "lower": 0.6236150286198664,
+        "upper": 0.6236150286199025
+      },
+      "evaluation": "BOUNDED_NUMERICAL",
+      "routeId": "r-f5f04e6842bf1044",
+      "macros": [
+        {
+          "kind": "repeat",
+          "action": {
+            "kind": "havoc",
+            "glyph": "hope"
+          },
+          "until": {
+            "kind": "target"
+          }
+        }
+      ],
+      "search": {
+        "grammar": "FINITE_FIXED_MACRO_GRAMMAR_V1",
+        "macroStages": 12,
+        "librarySize": 1016,
+        "candidateUpperBound": "1211022357648499479475860072608191033",
+        "evaluatedRoutes": 48,
+        "exactRoutes": 43,
+        "estimatedRoutes": 5,
+        "unevaluatedRoutes": 0,
+        "skippedDuplicates": 3,
+        "certifiedPrunedPrefixes": 18,
+        "elapsedMilliseconds": 6423,
+        "stopReason": "ROUTE_BUDGET",
+        "paretoRouteIds": [
+          "r-741638a568efd6f9",
+          "r-f5f04e6842bf1044",
+          "r-2724a8fa3ce4c0de",
+          "r-76da380bc5a10f67",
+          "r-022133e836edcecc",
+          "r-1581db107181f64c",
+          "r-ae62abbd04ed89a9",
+          "r-5430c05ef175f762",
+          "r-f7e86e2a54bf484e",
+          "r-5c76026e8482978a",
+          "r-ec16b768d6c53b5c",
+          "r-9f54de0a8ed38f06",
+          "r-330360d72b7906c3",
+          "r-cac346c3587e4bff",
+          "r-d2bfd19347ebf76f",
+          "r-d0a80f8c21464400",
+          "r-b21c5d2260aa59ce",
+          "r-90965f185e66d4dc",
+          "r-db689d9525a54b49",
+          "r-31019c651c456c09",
+          "r-3fe60b31789c6215",
+          "r-78dab9f8ea4d1734",
+          "r-3cf8cca41d355400",
+          "r-d1330f3c6cd0f290",
+          "r-57c4a512ff778f9e",
+          "r-738acda86589bdcc",
+          "r-027fd50591d6d6d9",
+          "r-3bac89d58f880759",
+          "r-fa76450142584145",
+          "r-5365539ea9e8ef1a",
+          "r-c14742189adb82ec",
+          "r-12cd289a4ca8c8f6",
+          "r-2d993c47e14af213",
+          "r-3b091df3c484c98f",
+          "r-28662ba39e03845f",
+          "r-6282ffe336a47677",
+          "r-c079387f58d7c133",
+          "r-21d7e28f74daa56b",
+          "r-18d19b3bd4f47a67",
+          "r-5a00c7bb7ab23b47",
+          "r-c95f70a627a6f9d2",
+          "r-68f9cd60c6230ea4",
+          "r-f52772b2c366cf9e",
+          "r-51b9eb4d09bbbfb1",
+          "r-5f66e07dd98f7371",
+          "r-a40154990086212d",
+          "r-eb31a424f3654128",
+          "r-8d284f3a2c527116"
+        ]
+      },
+      "states": 64,
+      "samples": 0,
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7710-direct",
       "fpType": "NORMAL",
-      "milliseconds": 7853.7241,
-      "peakRssMiB": 124.55859375,
+      "milliseconds": 8000.9973,
+      "peakRssMiB": 127.76953125,
       "status": "RECOMMENDATION",
       "score": 0.4472252707958129,
       "scoreBounds": {
@@ -362,7 +363,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 2,
-        "elapsedMilliseconds": 7853,
+        "elapsedMilliseconds": 8000,
         "stopReason": "TIME_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -376,13 +377,13 @@
       },
       "states": 942,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7710-direct",
       "fpType": "ICE",
-      "milliseconds": 7899.0243,
-      "peakRssMiB": 122.36328125,
+      "milliseconds": 7842.6702,
+      "peakRssMiB": 126.21875,
       "status": "RECOMMENDATION",
       "score": 0.5789720513410019,
       "scoreBounds": {
@@ -442,7 +443,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 2,
-        "elapsedMilliseconds": 7899,
+        "elapsedMilliseconds": 7842,
         "stopReason": "TIME_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -456,13 +457,13 @@
       },
       "states": 953,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7710-direct",
       "fpType": "BLOOD",
-      "milliseconds": 7884.6353,
-      "peakRssMiB": 123.82421875,
+      "milliseconds": 7835.371300000001,
+      "peakRssMiB": 124.3515625,
       "status": "RECOMMENDATION",
       "score": 0.4554655188139222,
       "scoreBounds": {
@@ -522,7 +523,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 0,
         "certifiedPrunedPrefixes": 2,
-        "elapsedMilliseconds": 7884,
+        "elapsedMilliseconds": 7835,
         "stopReason": "TIME_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -536,13 +537,13 @@
       },
       "states": 942,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7713-prepare",
       "fpType": "NORMAL",
-      "milliseconds": 4450.607,
-      "peakRssMiB": 113.12890625,
+      "milliseconds": 5399.407,
+      "peakRssMiB": 113.03515625,
       "status": "RECOMMENDATION",
       "score": 0.2706208981291877,
       "scoreBounds": {
@@ -615,7 +616,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 3,
         "certifiedPrunedPrefixes": 26,
-        "elapsedMilliseconds": 4450,
+        "elapsedMilliseconds": 5399,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -668,13 +669,13 @@
       },
       "states": 1006,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7713-prepare",
       "fpType": "ICE",
-      "milliseconds": 5417.5335,
-      "peakRssMiB": 112.23828125,
+      "milliseconds": 6027.550200000001,
+      "peakRssMiB": 111.78125,
       "status": "RECOMMENDATION",
       "score": 0.4181926481670739,
       "scoreBounds": {
@@ -747,7 +748,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 3,
         "certifiedPrunedPrefixes": 26,
-        "elapsedMilliseconds": 5417,
+        "elapsedMilliseconds": 6027,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -800,13 +801,13 @@
       },
       "states": 1018,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7713-prepare",
       "fpType": "BLOOD",
-      "milliseconds": 4826.140700000001,
-      "peakRssMiB": 112.63671875,
+      "milliseconds": 4835.937199999999,
+      "peakRssMiB": 112.10546875,
       "status": "RECOMMENDATION",
       "score": 0.28520123204436654,
       "scoreBounds": {
@@ -879,7 +880,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 3,
         "certifiedPrunedPrefixes": 26,
-        "elapsedMilliseconds": 4825,
+        "elapsedMilliseconds": 4835,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -932,13 +933,13 @@
       },
       "states": 1006,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "removal-required",
       "fpType": "NORMAL",
-      "milliseconds": 987.175,
-      "peakRssMiB": 110.859375,
+      "milliseconds": 981.6616000000001,
+      "peakRssMiB": 111.3359375,
       "status": "RECOMMENDATION",
       "score": 0.11396777798539454,
       "scoreBounds": {
@@ -989,7 +990,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 2,
         "certifiedPrunedPrefixes": 43,
-        "elapsedMilliseconds": 987,
+        "elapsedMilliseconds": 981,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -1043,13 +1044,13 @@
       },
       "states": 255,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "removal-required",
       "fpType": "ICE",
-      "milliseconds": 1001.925,
-      "peakRssMiB": 110.08984375,
+      "milliseconds": 987.0621999999998,
+      "peakRssMiB": 111.1640625,
       "status": "RECOMMENDATION",
       "score": 0.14652147112506547,
       "scoreBounds": {
@@ -1100,7 +1101,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 2,
         "certifiedPrunedPrefixes": 43,
-        "elapsedMilliseconds": 1001,
+        "elapsedMilliseconds": 986,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -1154,13 +1155,13 @@
       },
       "states": 255,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "removal-required",
       "fpType": "BLOOD",
-      "milliseconds": 969.7058,
-      "peakRssMiB": 110.96484375,
+      "milliseconds": 1002.0213000000001,
+      "peakRssMiB": 111.36328125,
       "status": "RECOMMENDATION",
       "score": 0.11879691133445106,
       "scoreBounds": {
@@ -1211,7 +1212,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 2,
         "certifiedPrunedPrefixes": 43,
-        "elapsedMilliseconds": 970,
+        "elapsedMilliseconds": 1002,
         "stopReason": "ROUTE_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -1265,18 +1266,18 @@
       },
       "states": 255,
       "samples": 0,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7732-missing",
       "fpType": "NORMAL",
-      "milliseconds": 12026.817,
-      "peakRssMiB": 111.0546875,
+      "milliseconds": 12031.675899999998,
+      "peakRssMiB": 112.31640625,
       "status": "RECOMMENDATION",
-      "score": 0.04786706349206349,
+      "score": 0.038442460317460306,
       "scoreBounds": {
-        "lower": 0.004679498514553064,
-        "upper": 0.0910546284695739
+        "lower": 0,
+        "upper": 0.08776823520745806
       },
       "evaluation": "ESTIMATED",
       "routeId": "r-2724a8fa3ce4c0de",
@@ -1303,7 +1304,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 2,
         "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 12026,
+        "elapsedMilliseconds": 12031,
         "stopReason": "TIME_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -1356,20 +1357,20 @@
           "r-fa76450142584145"
         ]
       },
-      "states": 23326,
+      "states": 23490,
       "samples": 4032,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7732-missing",
       "fpType": "ICE",
-      "milliseconds": 12017.1126,
-      "peakRssMiB": 110.4921875,
+      "milliseconds": 12028.115699999998,
+      "peakRssMiB": 112.43359375,
       "status": "RECOMMENDATION",
-      "score": 0.06572420634920632,
+      "score": 0.05555555555555555,
       "scoreBounds": {
-        "lower": 0.0225366413716959,
-        "upper": 0.10891177132671676
+        "lower": 0.006229780665557794,
+        "upper": 0.10488133044555331
       },
       "evaluation": "ESTIMATED",
       "routeId": "r-2724a8fa3ce4c0de",
@@ -1396,7 +1397,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 2,
         "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 12017,
+        "elapsedMilliseconds": 12027,
         "stopReason": "TIME_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -1449,20 +1450,20 @@
           "r-fa76450142584145"
         ]
       },
-      "states": 32911,
+      "states": 33220,
       "samples": 4032,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     },
     {
       "id": "7732-missing",
       "fpType": "BLOOD",
-      "milliseconds": 12018.5682,
-      "peakRssMiB": 110.984375,
+      "milliseconds": 12013.626900000001,
+      "peakRssMiB": 112.515625,
       "status": "RECOMMENDATION",
-      "score": 0.04786706349206349,
+      "score": 0.038442460317460306,
       "scoreBounds": {
-        "lower": 0.004679498514553064,
-        "upper": 0.0910546284695739
+        "lower": 0,
+        "upper": 0.08776823520745806
       },
       "evaluation": "ESTIMATED",
       "routeId": "r-2724a8fa3ce4c0de",
@@ -1489,7 +1490,7 @@
         "unevaluatedRoutes": 0,
         "skippedDuplicates": 2,
         "certifiedPrunedPrefixes": 0,
-        "elapsedMilliseconds": 12018,
+        "elapsedMilliseconds": 12012,
         "stopReason": "TIME_BUDGET",
         "paretoRouteIds": [
           "r-741638a568efd6f9",
@@ -1542,9 +1543,9 @@
           "r-fa76450142584145"
         ]
       },
-      "states": 23326,
+      "states": 23490,
       "samples": 4032,
-      "modelId": "le-1.5.3-iid-de87d96b5479099b"
+      "modelId": "le-1.5.3-iid-f58515921fd9cbcc"
     }
   ]
 }

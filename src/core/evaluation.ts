@@ -9,6 +9,9 @@ export interface Absorption {
   readonly success: readonly Interval[];
   readonly failure: readonly Interval[];
   readonly attempts: readonly Interval[];
+  readonly reached: readonly Interval[];
+  readonly executed: readonly Interval[];
+  readonly spent: readonly Interval[];
   readonly reasons: ReadonlyMap<string, Interval>;
 }
 
@@ -18,7 +21,8 @@ export class EvaluationInterruptedError extends EvaluationLimitError {}
 
 function zero(stages: number): Absorption {
   return { success: Array<Interval>(64).fill(ZERO), failure: Array<Interval>(64).fill(ZERO),
-    attempts: Array<Interval>(stages).fill(ZERO), reasons: new Map() };
+    attempts: Array<Interval>(stages).fill(ZERO), reached: Array<Interval>(stages).fill(ZERO),
+    executed: Array<Interval>(stages).fill(ZERO), spent: Array<Interval>(stages).fill(ZERO), reasons: new Map() };
 }
 
 function terminal(stages: number, fp: number, success: boolean, reason = 'ROUTE_EXHAUSTED'): Absorption {
@@ -37,6 +41,9 @@ function addScaled(destination: Absorption, source: Absorption, weight: Interval
   }
   for (let stage = 0; stage < destination.attempts.length; stage++) {
     (destination.attempts as Interval[])[stage] = destination.attempts[stage].add(source.attempts[stage].mul(weight));
+    (destination.reached as Interval[])[stage] = destination.reached[stage].add(source.reached[stage].mul(weight));
+    (destination.executed as Interval[])[stage] = destination.executed[stage].add(source.executed[stage].mul(weight));
+    (destination.spent as Interval[])[stage] = destination.spent[stage].add(source.spent[stage].mul(weight));
   }
   const reasons = destination.reasons as Map<string, Interval>;
   for (const [reason, value] of source.reasons) reasons.set(reason, (reasons.get(reason) ?? ZERO).add(value.mul(weight)));
@@ -45,6 +52,8 @@ function addScaled(destination: Absorption, source: Absorption, weight: Interval
 function divide(source: Absorption, denominator: Interval): Absorption {
   return { success: source.success.map((row) => row.div(denominator)), failure: source.failure.map((row) => row.div(denominator)),
     attempts: source.attempts.map((row) => row.div(denominator)),
+    reached: source.reached.map((row) => row.div(denominator)), executed: source.executed.map((row) => row.div(denominator)),
+    spent: source.spent.map((row) => row.div(denominator)),
     reasons: new Map([...source.reasons].map(([key, value]) => [key, value.div(denominator)])) };
 }
 
@@ -110,12 +119,14 @@ export class RouteEvaluator {
     const macro = this.route.macros[stage];
     const step = macroStep(macro, item, this.request, this.engine);
     let result: Absorption;
+    let executed = false;
     if (step === 'SKIP') result = this.#visit(stage + 1, item, fp, attemptsLeft);
     else if (step === 'INAPPLICABLE') result = terminal(this.route.macros.length, fp, false, 'INAPPLICABLE_NEXT_STAGE');
     else if (fp === 0) result = terminal(this.route.macros.length, fp, false, 'FP_EXHAUSTED');
     else if (attemptsLeft === 0) result = terminal(this.route.macros.length, fp, false, 'OPERATION_LIMIT');
     else if (macro.kind === 'repeat' && step.action.kind === 'havoc' && attemptsLeft === undefined) {
       result = this.#havocUntil(stage, item, fp, macro);
+      executed = result.attempts[stage].lower > 0;
     } else {
       if (macro.kind === 'repeat' && step.action.kind === 'redemption' && attemptsLeft === undefined) {
         throw new SamplingRequiredError('救赎会逐次改变候选池；使用直接路线采样，不套固定命中率几何分布');
@@ -124,6 +135,7 @@ export class RouteEvaluator {
         { constraints: this.request.constraints, trackRolls: this.#trackRolls, maxOutcomes: this.request.search.maxStates });
       if (transition.issues.length) result = terminal(this.route.macros.length, fp, false, transition.issues[0].code);
       else {
+        executed = true;
         result = zero(this.route.macros.length);
         for (const outcome of transition.outcomes) {
           const weight = new Interval(outcome.probabilityBounds.lower, outcome.probabilityBounds.upper);
@@ -131,9 +143,15 @@ export class RouteEvaluator {
             this.#visit(stage + Number(step.advance), outcome.item, outcome.fp, attemptsLeft === undefined ? undefined : attemptsLeft - 1);
           addScaled(result, child, weight);
           (result.attempts as Interval[])[stage] = result.attempts[stage].add(weight);
+          (result.spent as Interval[])[stage] = result.spent[stage].add(weight.mul(exact(fp - outcome.fp)));
         }
       }
     }
+    // Entry/execution are events, not rewards: repeated attempts must not count them again.
+    // Copy these vectors because a skipped stage may directly reuse a cached child.
+    const reached = [...result.reached]; reached[stage] = ONE;
+    const execution = [...result.executed]; execution[stage] = executed ? ONE : ZERO;
+    result = { ...result, reached, executed: execution };
     this.#cache.set(key, result);
     return result;
   }
@@ -171,6 +189,7 @@ export class RouteEvaluator {
           if (remaining.value < budget) addScaled(numerator, table[remaining.value], remaining.bounds.mul(miss));
           else loop = loop.add(remaining.bounds.mul(miss));
           (numerator.attempts as Interval[])[stage] = numerator.attempts[stage].add(remaining.bounds);
+          (numerator.spent as Interval[])[stage] = numerator.spent[stage].add(remaining.bounds.mul(exact(budget - remaining.value)));
         }
         if (loop.upper >= 1) throw new EvaluationLimitError('无法在当前精度下证明零成本循环会终止');
         table.push(divide(numerator, loop.complement()));
@@ -231,6 +250,18 @@ export interface CurvePoint {
   readonly successQuantiles: Quantiles | null;
 }
 
+export interface MacroStatistics {
+  /** Reached before local skip/eligibility/FP checks; an earlier completed goal never reaches later stages. */
+  readonly reachedProbability: { lower: number; upper: number };
+  /** At least one legal atomic action actually executed in this stage. */
+  readonly executedProbability: { lower: number; upper: number };
+  /** Unconditional contributions under the declared FP scoring weights. */
+  readonly expectedAttempts: { lower: number; upper: number };
+  readonly expectedFp: { lower: number; upper: number };
+  readonly expectedAttemptsGivenReached: { lower: number; upper: number } | null;
+  readonly expectedFpGivenReached: { lower: number; upper: number } | null;
+}
+
 export interface RouteReport {
   readonly route: Route;
   readonly evaluationStatus: 'BOUNDED_NUMERICAL' | 'ESTIMATED';
@@ -244,6 +275,7 @@ export interface RouteReport {
   readonly successQuantiles: Quantiles | null;
   readonly consumption: readonly { spent: number; success: { lower: number; upper: number }; failure: { lower: number; upper: number }; successEstimate?: number; failureEstimate?: number }[];
   readonly attemptsByMacro: readonly { lower: number; upper: number }[];
+  readonly macroStatistics: readonly MacroStatistics[];
   readonly failureReasons: readonly { reason: string; probability: { lower: number; upper: number } }[];
   readonly states: number;
   readonly sampling?: {
@@ -266,6 +298,9 @@ export function reportRoute(engine: RuleEngine, request: PlanRequest, route: Rou
   const success = Array<Interval>(64).fill(ZERO);
   const failure = Array<Interval>(64).fill(ZERO);
   const attempts = Array<Interval>(route.macros.length).fill(ZERO);
+  const reached = Array<Interval>(route.macros.length).fill(ZERO);
+  const executed = Array<Interval>(route.macros.length).fill(ZERO);
+  const spent = Array<Interval>(route.macros.length).fill(ZERO);
   const reasons = new Map<string, Interval>();
   const curve: CurvePoint[] = [];
   for (let fp = 0; fp <= maximum; fp++) {
@@ -286,7 +321,12 @@ export function reportRoute(engine: RuleEngine, request: PlanRequest, route: Rou
       success[cost] = success[cost].add(successes[cost].mul(weight));
       failure[cost] = failure[cost].add(failures[cost].mul(weight));
     }
-    for (let stage = 0; stage < attempts.length; stage++) attempts[stage] = attempts[stage].add(evaluated.attempts[stage].mul(weight));
+    for (let stage = 0; stage < attempts.length; stage++) {
+      attempts[stage] = attempts[stage].add(evaluated.attempts[stage].mul(weight));
+      reached[stage] = reached[stage].add(evaluated.reached[stage].mul(weight));
+      executed[stage] = executed[stage].add(evaluated.executed[stage].mul(weight));
+      spent[stage] = spent[stage].add(evaluated.spent[stage].mul(weight));
+    }
     for (const [reason, probability] of evaluated.reasons) reasons.set(reason, (reasons.get(reason) ?? ZERO).add(probability.mul(weight)));
   }
   const combined = summarizeDistribution(success, failure);
@@ -294,6 +334,14 @@ export function reportRoute(engine: RuleEngine, request: PlanRequest, route: Rou
     expectedFp: combined.expectedFp.report(), expectedFpGivenSuccess: combined.expectedFpGivenSuccess?.report() ?? null,
     failedFpWaste: combined.failedMoment.report(), quantiles: combined.quantiles, successQuantiles: combined.successQuantiles,
     consumption: success.map((value, spent) => ({ spent, success: value.report(), failure: failure[spent].report() })),
-    attemptsByMacro: attempts.map((row) => row.report()), failureReasons: [...reasons].map(([reason, value]) => ({ reason, probability: value.report() })),
+    attemptsByMacro: attempts.map((row) => row.report()),
+    macroStatistics: reached.map((row, stage) => {
+      const probability = row.clamp(0, 1);
+      return { reachedProbability: probability.report(), executedProbability: executed[stage].clamp(0, 1).report(),
+        expectedAttempts: attempts[stage].report(), expectedFp: spent[stage].report(),
+        expectedAttemptsGivenReached: probability.lower > 0 ? attempts[stage].div(probability).clamp(0, Infinity).report() : null,
+        expectedFpGivenReached: probability.lower > 0 ? spent[stage].div(probability).clamp(0, maximum).report() : null };
+    }),
+    failureReasons: [...reasons].map(([reason, value]) => ({ reason, probability: value.report() })),
     states: evaluator.nodes };
 }

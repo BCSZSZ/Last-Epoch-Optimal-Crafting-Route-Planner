@@ -67,6 +67,8 @@ describe('direct sampling through the single production rule implementation', ()
     expect(result.reason).toBe('REQUIRED_SEAL_FAILED');
     expect(result.attempts).toEqual([1, 0]);
     expect(result.spent).toBe(0); // Complete failed action received the critical refund.
+    expect(result.reached).toEqual([true, false]);
+    expect(result.spentByMacro).toEqual([0, 0]);
   });
 
   it('handles FP0 success and refuses to turn a computational guard into failure', () => {
@@ -92,6 +94,10 @@ describe('direct sampling through the single production rule implementation', ()
     expect(report.quantiles!.p95.upper).toBeLessThanOrEqual(15);
     expect(report.curve.every((row) => row.quantiles!.p95.upper <= row.initialFp)).toBe(true);
     expect(report.sampling!.unobservedAttemptMeanBound).toBeLessThan(1e-30);
+    expect(report.macroStatistics[0].reachedProbability.upper).toBe(1);
+    expect(report.macroStatistics[0].expectedFp).toEqual(report.expectedFp);
+    expect(report.macroStatistics[0].expectedFp.lower).toBeLessThan(exact.macroStatistics[0].expectedFp.upper);
+    expect(report.macroStatistics[0].expectedFp.upper).toBeGreaterThan(exact.macroStatistics[0].expectedFp.lower);
     expect(sampleRoute(engine, input, route, options)).toEqual(report);
   });
 
@@ -116,5 +122,29 @@ describe('direct sampling through the single production rule implementation', ()
     const first = simulateRoute(engine, input, route, 63, seededRandom('coupled'));
     const blood = simulateRoute(engine, { ...input, item: { ...input.item, fpType: 'BLOOD' } }, route, 63, seededRandom('coupled'));
     expect(blood).toEqual(first);
+  });
+
+  it('reports stage entry and settled FP contributions against a hand-calculated failed-seal case', () => {
+    const input: PlanRequest = { ...request(item([[4, 7], [5, 7], [7, 2], [10, 1]])), scoring: { maximumFp: 1 },
+      target: { requirements: [{ ids: [7], minTier: 2, maxTier: 2, slot: 'sealed' }, { ids: [8], minTier: 1, slot: 'ordinary' }] } };
+    const route: Route = { id: 'stage-statistics-independent-hand-case', macros: [
+      { kind: 'once', action: { kind: 'seal', id: 7 } }, { kind: 'once', action: { kind: 'add', id: 8, glyph: 'hope' } },
+    ] };
+    const engine = new RuleEngine();
+    const report = sampleRoute(engine, input, route, { samplesPerFp: 8192, seed: 'stage-reach-bound' });
+    const seal = report.macroStatistics[0];
+    const next = report.macroStatistics[1];
+    expect(seal.expectedFp.lower).toBeLessThan(1 - 0.31 * 0.12);
+    expect(seal.expectedFp.upper).toBeGreaterThan(1 - 0.31 * 0.12);
+    expect(next.reachedProbability.lower).toBeLessThan(0.69);
+    expect(next.reachedProbability.upper).toBeGreaterThan(0.69);
+    expect(next.expectedAttemptsGivenReached?.lower).toBe(0);
+    expect(next.expectedFpGivenReached?.lower).toBe(0);
+    const draw = seededRandom('stage-reward-conservation');
+    for (let i = 0; i < 100; i++) {
+      const trajectory = simulateRoute(engine, input, route, 1, draw);
+      expect(trajectory.spentByMacro.reduce((sum, value) => sum + value, 0)).toBe(trajectory.spent);
+      expect(trajectory.attempts[1]).toBe(0);
+    }
   });
 });

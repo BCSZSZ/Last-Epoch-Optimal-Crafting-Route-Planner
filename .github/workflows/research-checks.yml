@@ -16,6 +16,7 @@ jobs:
           python-version: '3.11'
       - run: python -X utf8 scripts/validate_research.py
       - run: python -X utf8 -m unittest discover -s tests -v
+      - run: python -X utf8 scripts/check_browser_memory.py
       - uses: actions/setup-node@v6
         with:
           node-version: '22'

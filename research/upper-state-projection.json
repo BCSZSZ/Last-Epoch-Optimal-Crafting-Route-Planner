@@ -1,0 +1,2328 @@
+{
+  "GNSBucketDetails": [
+    {
+      "G": "200",
+      "N": 2,
+      "S": 0,
+      "T": 2,
+      "directAddHomogeneous": false,
+      "directAddVariants": [
+        [],
+        [
+          "A"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B"
+        ]
+      ],
+      "flagReplicas": 24,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 4,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "200",
+      "N": 2,
+      "S": 1,
+      "T": 3,
+      "directAddHomogeneous": false,
+      "directAddVariants": [
+        [],
+        [
+          "A"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B"
+        ]
+      ],
+      "flagReplicas": 24,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 4,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "200",
+      "N": 3,
+      "S": 0,
+      "T": 3,
+      "directAddHomogeneous": false,
+      "directAddVariants": [
+        [],
+        [
+          "A"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B"
+        ]
+      ],
+      "flagReplicas": 288,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 36,
+      "potentialGarbageSealHomogeneous": false,
+      "potentialGarbageSealVariants": [
+        [],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "G": "200",
+      "N": 3,
+      "S": 1,
+      "T": 4,
+      "directAddHomogeneous": false,
+      "directAddVariants": [
+        [],
+        [
+          "A"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B"
+        ]
+      ],
+      "flagReplicas": 288,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 4,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "200",
+      "N": 4,
+      "S": 0,
+      "T": 4,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 864,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        true
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 37,
+      "potentialGarbageSealHomogeneous": false,
+      "potentialGarbageSealVariants": [
+        [],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "G": "200",
+      "N": 4,
+      "S": 1,
+      "T": 5,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 864,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        true
+      ],
+      "jointHomogeneous": true,
+      "jointSignatureCount": 1,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "201",
+      "N": 3,
+      "S": 0,
+      "T": 3,
+      "directAddHomogeneous": false,
+      "directAddVariants": [
+        [],
+        [
+          "A"
+        ],
+        [
+          "B"
+        ]
+      ],
+      "flagReplicas": 288,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 3,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "201",
+      "N": 3,
+      "S": 1,
+      "T": 4,
+      "directAddHomogeneous": false,
+      "directAddVariants": [
+        [],
+        [
+          "A"
+        ],
+        [
+          "B"
+        ]
+      ],
+      "flagReplicas": 288,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 3,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "201",
+      "N": 4,
+      "S": 0,
+      "T": 4,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 1728,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        true
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 9,
+      "potentialGarbageSealHomogeneous": false,
+      "potentialGarbageSealVariants": [
+        [],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "G": "201",
+      "N": 4,
+      "S": 1,
+      "T": 5,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 1728,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        true
+      ],
+      "jointHomogeneous": true,
+      "jointSignatureCount": 1,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "202",
+      "N": 4,
+      "S": 0,
+      "T": 4,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 432,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        true
+      ],
+      "jointHomogeneous": true,
+      "jointSignatureCount": 1,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "202",
+      "N": 4,
+      "S": 1,
+      "T": 5,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 432,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        true
+      ],
+      "jointHomogeneous": true,
+      "jointSignatureCount": 1,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "210",
+      "N": 2,
+      "S": 0,
+      "T": 2,
+      "directAddHomogeneous": false,
+      "directAddVariants": [
+        [],
+        [
+          "A"
+        ],
+        [
+          "B"
+        ]
+      ],
+      "flagReplicas": 48,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 3,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "210",
+      "N": 2,
+      "S": 1,
+      "T": 3,
+      "directAddHomogeneous": false,
+      "directAddVariants": [
+        [],
+        [
+          "A"
+        ],
+        [
+          "B"
+        ]
+      ],
+      "flagReplicas": 48,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 3,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "210",
+      "N": 3,
+      "S": 0,
+      "T": 3,
+      "directAddHomogeneous": false,
+      "directAddVariants": [
+        [],
+        [
+          "A"
+        ],
+        [
+          "B"
+        ]
+      ],
+      "flagReplicas": 576,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 27,
+      "potentialGarbageSealHomogeneous": false,
+      "potentialGarbageSealVariants": [
+        [],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "G": "210",
+      "N": 3,
+      "S": 1,
+      "T": 4,
+      "directAddHomogeneous": false,
+      "directAddVariants": [
+        [],
+        [
+          "A"
+        ],
+        [
+          "B"
+        ]
+      ],
+      "flagReplicas": 576,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 3,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "210",
+      "N": 4,
+      "S": 0,
+      "T": 4,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 1728,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        true
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 37,
+      "potentialGarbageSealHomogeneous": false,
+      "potentialGarbageSealVariants": [
+        [],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "G": "210",
+      "N": 4,
+      "S": 1,
+      "T": 5,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 1728,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        true
+      ],
+      "jointHomogeneous": true,
+      "jointSignatureCount": 1,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "211",
+      "N": 3,
+      "S": 0,
+      "T": 3,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 288,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": true,
+      "jointSignatureCount": 1,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "211",
+      "N": 3,
+      "S": 1,
+      "T": 4,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 288,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": true,
+      "jointSignatureCount": 1,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "211",
+      "N": 4,
+      "S": 0,
+      "T": 4,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 1728,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        true
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 9,
+      "potentialGarbageSealHomogeneous": false,
+      "potentialGarbageSealVariants": [
+        [],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "G": "211",
+      "N": 4,
+      "S": 1,
+      "T": 5,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 1728,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        true
+      ],
+      "jointHomogeneous": true,
+      "jointSignatureCount": 1,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "220",
+      "N": 2,
+      "S": 0,
+      "T": 2,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 12,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": true,
+      "jointSignatureCount": 1,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "220",
+      "N": 2,
+      "S": 1,
+      "T": 3,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 12,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": true,
+      "jointSignatureCount": 1,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "220",
+      "N": 3,
+      "S": 0,
+      "T": 3,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 144,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 9,
+      "potentialGarbageSealHomogeneous": false,
+      "potentialGarbageSealVariants": [
+        [],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "G": "220",
+      "N": 3,
+      "S": 1,
+      "T": 4,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 144,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        false
+      ],
+      "jointHomogeneous": true,
+      "jointSignatureCount": 1,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    },
+    {
+      "G": "220",
+      "N": 4,
+      "S": 0,
+      "T": 4,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 432,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        true
+      ],
+      "jointHomogeneous": false,
+      "jointSignatureCount": 37,
+      "potentialGarbageSealHomogeneous": false,
+      "potentialGarbageSealVariants": [
+        [],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "G": "220",
+      "N": 4,
+      "S": 1,
+      "T": 5,
+      "directAddHomogeneous": true,
+      "directAddVariants": [
+        []
+      ],
+      "flagReplicas": 432,
+      "havocEligibilityHomogeneous": true,
+      "havocEligibilityVariants": [
+        true
+      ],
+      "jointHomogeneous": true,
+      "jointSignatureCount": 1,
+      "potentialGarbageSealHomogeneous": true,
+      "potentialGarbageSealVariants": [
+        []
+      ]
+    }
+  ],
+  "auditedOn": "2026-11-03",
+  "categories": [
+    {
+      "G": "220",
+      "GNSLabels": 6,
+      "allowedN": [
+        2,
+        3,
+        4
+      ],
+      "allowedTWithS0": [
+        2,
+        3,
+        4
+      ],
+      "allowedTWithS1": [
+        3,
+        4,
+        5
+      ],
+      "terminal": true
+    },
+    {
+      "G": "211",
+      "GNSLabels": 4,
+      "allowedN": [
+        3,
+        4
+      ],
+      "allowedTWithS0": [
+        3,
+        4
+      ],
+      "allowedTWithS1": [
+        4,
+        5
+      ],
+      "terminal": false
+    },
+    {
+      "G": "202",
+      "GNSLabels": 2,
+      "allowedN": [
+        4
+      ],
+      "allowedTWithS0": [
+        4
+      ],
+      "allowedTWithS1": [
+        5
+      ],
+      "terminal": false
+    },
+    {
+      "G": "210",
+      "GNSLabels": 6,
+      "allowedN": [
+        2,
+        3,
+        4
+      ],
+      "allowedTWithS0": [
+        2,
+        3,
+        4
+      ],
+      "allowedTWithS1": [
+        3,
+        4,
+        5
+      ],
+      "terminal": false
+    },
+    {
+      "G": "201",
+      "GNSLabels": 4,
+      "allowedN": [
+        3,
+        4
+      ],
+      "allowedTWithS0": [
+        3,
+        4
+      ],
+      "allowedTWithS1": [
+        4,
+        5
+      ],
+      "terminal": false
+    },
+    {
+      "G": "200",
+      "GNSLabels": 6,
+      "allowedN": [
+        2,
+        3,
+        4
+      ],
+      "allowedTWithS0": [
+        2,
+        3,
+        4
+      ],
+      "allowedTWithS1": [
+        3,
+        4,
+        5
+      ],
+      "terminal": false
+    }
+  ],
+  "contexts": {
+    "A0_B0": {
+      "flagReplicas": 3784,
+      "labelCountsWithinThisFixedContext": {
+        "G": 6,
+        "G_N": 14,
+        "G_N_S": 28,
+        "G_N_S_EMPTY": 40,
+        "G_N_S_EMPTY_CONTEXT_MASK": 56,
+        "G_T": 20,
+        "G_T_S": 28
+      },
+      "ordinaryStructureRepresentatives": 1892
+    },
+    "A0_B1": {
+      "flagReplicas": 4796,
+      "labelCountsWithinThisFixedContext": {
+        "G": 6,
+        "G_N": 14,
+        "G_N_S": 28,
+        "G_N_S_EMPTY": 46,
+        "G_N_S_EMPTY_CONTEXT_MASK": 60,
+        "G_T": 20,
+        "G_T_S": 28
+      },
+      "ordinaryStructureRepresentatives": 2398
+    },
+    "A1_B0": {
+      "flagReplicas": 4796,
+      "labelCountsWithinThisFixedContext": {
+        "G": 6,
+        "G_N": 14,
+        "G_N_S": 28,
+        "G_N_S_EMPTY": 46,
+        "G_N_S_EMPTY_CONTEXT_MASK": 60,
+        "G_T": 20,
+        "G_T_S": 28
+      },
+      "ordinaryStructureRepresentatives": 2398
+    },
+    "A1_B1": {
+      "flagReplicas": 3784,
+      "labelCountsWithinThisFixedContext": {
+        "G": 6,
+        "G_N": 14,
+        "G_N_S": 28,
+        "G_N_S_EMPTY": 40,
+        "G_N_S_EMPTY_CONTEXT_MASK": 56,
+        "G_T": 20,
+        "G_T_S": 28
+      },
+      "ordinaryStructureRepresentatives": 1892
+    }
+  },
+  "definitions": {
+    "G": "Two ordinaryT7 identity class220/211/202/210/201/200",
+    "N": "Ordinary unsealed affix count",
+    "S": "Ordinary Despair sealed-slot occupancy0or1",
+    "T": "N+S; excludes primordialT8/corrupted extra slots",
+    "presentTargetMask": "A=1,B=2; ordinary identity present at any tier, not justT7"
+  },
+  "inputSha256": {
+    "research/upper-state-havoc-check.json": "e4d6bbc356a4a4002fa951b6e45550de3b599749d24d4172164e79aaa86bf15a",
+    "scripts/analyze_upper_state_projection.py": "311893d0599c680e87d1141270ecdc2c76c2d2764e95d6da6c3cf3513b1802e4",
+    "scripts/check_strategy_classification.py": "3cf69c5f56844029365e65f993df35e9507a491767d9821e2192be896afc064b",
+    "scripts/check_upper_state_havoc.ts": "118a4156ea94114db04eba5359c23dd07d7ae2bded9cf63296351abeca43372c",
+    "src/core/catalog.ts": "8280dd7c469bcc48d1691033cecb7cbb68d9d37d7506907b33177636bae3e94d",
+    "src/core/rules.ts": "f315ff7bca3d2311631c8138371f870fe08f8d5ab57fc27444b6f6be24306dcb",
+    "src/core/validation.ts": "205c559a009b16974e3ba9ea8f07f240508406d6a5b7b42b278fb50cb6c1e2a6"
+  },
+  "population": {
+    "additionalPhysicalGameStatesVerified": 0,
+    "flagReplicas": 17160,
+    "ordinaryStructureRepresentatives": 8580,
+    "sealFlagAssumption": "Only an orthogonal flag with fresh non-target sealed identity; level/protection/weight-pool effects are not modeled",
+    "targetSideContexts": 4
+  },
+  "projectionSummaries": {
+    "G": {
+      "activeLabels": 5,
+      "heterogeneousActiveJointBuckets": 4,
+      "heterogeneousDirectAddBuckets": 3,
+      "heterogeneousHavocEligibilityBuckets": 5,
+      "heterogeneousJointBuckets": 5,
+      "heterogeneousPotentialGarbageSealBuckets": 5,
+      "labels": 6,
+      "labelsAfterMerging220IntoOneTerminal": 6,
+      "maximumJointSignaturesInOneBucket": 73,
+      "terminal220Labels": 1
+    },
+    "G_N": {
+      "activeLabels": 11,
+      "heterogeneousActiveJointBuckets": 9,
+      "heterogeneousDirectAddBuckets": 5,
+      "heterogeneousHavocEligibilityBuckets": 0,
+      "heterogeneousJointBuckets": 11,
+      "heterogeneousPotentialGarbageSealBuckets": 8,
+      "labels": 14,
+      "labelsAfterMerging220IntoOneTerminal": 12,
+      "maximumJointSignaturesInOneBucket": 37,
+      "terminal220Labels": 3
+    },
+    "G_N_S": {
+      "activeLabels": 22,
+      "heterogeneousActiveJointBuckets": 14,
+      "heterogeneousDirectAddBuckets": 10,
+      "heterogeneousHavocEligibilityBuckets": 0,
+      "heterogeneousJointBuckets": 16,
+      "heterogeneousPotentialGarbageSealBuckets": 8,
+      "labels": 28,
+      "labelsAfterMerging220IntoOneTerminal": 23,
+      "maximumJointSignaturesInOneBucket": 37,
+      "terminal220Labels": 6
+    },
+    "G_N_S_EMPTY": {
+      "activeLabels": 38,
+      "heterogeneousActiveJointBuckets": 26,
+      "heterogeneousDirectAddBuckets": 22,
+      "heterogeneousHavocEligibilityBuckets": 0,
+      "heterogeneousJointBuckets": 29,
+      "heterogeneousPotentialGarbageSealBuckets": 11,
+      "labels": 50,
+      "labelsAfterMerging220IntoOneTerminal": 39,
+      "maximumJointSignaturesInOneBucket": 37,
+      "terminal220Labels": 12
+    },
+    "G_N_S_EMPTY_CONTEXT_MASK": {
+      "activeLabels": 204,
+      "heterogeneousActiveJointBuckets": 48,
+      "heterogeneousDirectAddBuckets": 0,
+      "heterogeneousHavocEligibilityBuckets": 0,
+      "heterogeneousJointBuckets": 58,
+      "heterogeneousPotentialGarbageSealBuckets": 58,
+      "labels": 232,
+      "labelsAfterMerging220IntoOneTerminal": 205,
+      "maximumJointSignaturesInOneBucket": 37,
+      "terminal220Labels": 28
+    },
+    "G_T": {
+      "activeLabels": 16,
+      "heterogeneousActiveJointBuckets": 9,
+      "heterogeneousDirectAddBuckets": 8,
+      "heterogeneousHavocEligibilityBuckets": 5,
+      "heterogeneousJointBuckets": 11,
+      "heterogeneousPotentialGarbageSealBuckets": 8,
+      "labels": 20,
+      "labelsAfterMerging220IntoOneTerminal": 17,
+      "maximumJointSignaturesInOneBucket": 41,
+      "terminal220Labels": 4
+    },
+    "G_T_S": {
+      "activeLabels": 22,
+      "heterogeneousActiveJointBuckets": 14,
+      "heterogeneousDirectAddBuckets": 10,
+      "heterogeneousHavocEligibilityBuckets": 0,
+      "heterogeneousJointBuckets": 16,
+      "heterogeneousPotentialGarbageSealBuckets": 8,
+      "labels": 28,
+      "labelsAfterMerging220IntoOneTerminal": 23,
+      "maximumJointSignaturesInOneBucket": 37,
+      "terminal220Labels": 6
+    }
+  },
+  "qualifications": [
+    "The signatures test only side-capacity/ID-absence additions, four-slot Havoc eligibility and potential tier1..4 non-target seals.",
+    "No game probabilities or FP were computed; the existing production-kernel evidence is referenced separately.",
+    "Homogeneous tested signatures are necessary checks, not proof of Markov lumpability or equal transition/cost distributions.",
+    "Counts are across all four target-side contexts; with one fixed context the most-refined tested label set has56or60 labels, not232.",
+    "Base/model/target can be fixed external context, but native order, actual IDs, tiers, sealed identity, protections and roll requirements remain relevant to particular macros."
+  ],
+  "schemaVersion": 1,
+  "witnesses": {
+    "same210N3S0DifferentVacancySide": {
+      "blockedAdds": [],
+      "blockedState": [
+        {
+          "idRole": "A",
+          "position": "P0",
+          "tier": 7
+        },
+        {
+          "idRole": "X1",
+          "position": "P1",
+          "tier": 1
+        },
+        {
+          "idRole": "X2",
+          "position": "S0",
+          "tier": 7
+        },
+        {
+          "empty": true,
+          "position": "S1"
+        }
+      ],
+      "coarseLabel": [
+        "210",
+        3,
+        0
+      ],
+      "directAdds": [
+        "B"
+      ],
+      "directState": [
+        {
+          "idRole": "A",
+          "position": "P0",
+          "tier": 7
+        },
+        {
+          "empty": true,
+          "position": "P1"
+        },
+        {
+          "idRole": "X2",
+          "position": "S0",
+          "tier": 7
+        },
+        {
+          "idRole": "X3",
+          "position": "S1",
+          "tier": 1
+        }
+      ]
+    },
+    "same210N3S1DifferentSealedIdentity": {
+      "label": [
+        "210",
+        3,
+        1
+      ],
+      "ordinaryState": [
+        {
+          "idRole": "A",
+          "position": "P0",
+          "tier": 7
+        },
+        {
+          "empty": true,
+          "position": "P1"
+        },
+        {
+          "idRole": "X2",
+          "position": "S0",
+          "tier": 7
+        },
+        {
+          "idRole": "X3",
+          "position": "S1",
+          "tier": 1
+        }
+      ],
+      "outsideFlagOnlyPopulation": true,
+      "proof": "Full item IDs block add/reroll duplicates; no current operation removes/unseals sealedB. GarbageC leaves the empty prefix available forB.",
+      "sealedB": {
+        "directAdds": [],
+        "requiredOrdinaryBReachable": false
+      },
+      "sealedFreshGarbageC": {
+        "canThenReachBothT7": true,
+        "directAdds": [
+          "B"
+        ]
+      }
+    },
+    "same211N4S0DifferentLowTierMultiplicity": {
+      "differentLowState": [
+        {
+          "idRole": "A",
+          "position": "P0",
+          "tier": 7
+        },
+        {
+          "idRole": "B",
+          "position": "P1",
+          "tier": 1
+        },
+        {
+          "idRole": "X2",
+          "position": "S0",
+          "tier": 7
+        },
+        {
+          "idRole": "X3",
+          "position": "S1",
+          "tier": 2
+        }
+      ],
+      "equalLowState": [
+        {
+          "idRole": "A",
+          "position": "P0",
+          "tier": 7
+        },
+        {
+          "idRole": "B",
+          "position": "P1",
+          "tier": 1
+        },
+        {
+          "idRole": "X2",
+          "position": "S0",
+          "tier": 7
+        },
+        {
+          "idRole": "X3",
+          "position": "S1",
+          "tier": 1
+        }
+      ],
+      "probabilitiesNotRecomputedByThisScript": true,
+      "productionKernelEvidence": "research/upper-state-havoc-check.json",
+      "sameFinestProjection": {
+        "G": "211",
+        "N": 4,
+        "S": 0,
+        "T": 4,
+        "emptyPrefix": 0,
+        "emptySuffix": 0,
+        "presentTargetMask": 3,
+        "sideA": 0,
+        "sideB": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-03",
+  "sourceModelId": "le-1.5.3-iid-f58515921fd9cbcc",
+  "analysisModel": "INTRINSIC_OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V1",
+  "rows": [
+    {
+      "item": {
+        "baseId": "4:0",
+        "itemLevel": 100,
+        "fpType": "NORMAL",
+        "corrupted": false,
+        "affixes": [
+          {
+            "id": 4,
+            "tier": 7,
+            "slot": "ordinary",
+            "roll": null
+          },
+          {
+            "id": 7,
+            "tier": 7,
+            "slot": "ordinary",
+            "roll": null
+          },
+          {
+            "id": 5,
+            "tier": 1,
+            "slot": "ordinary",
+            "roll": null
+          },
+          {
+            "id": 10,
+            "tier": 1,
+            "slot": "ordinary",
+            "roll": null
+          }
+        ]
+      },
+      "coarseLabel": {
+        "category": "211",
+        "ordinaryCount": 4,
+        "ordinarySealedCount": 0,
+        "totalCount": 4
+      },
+      "perCastSuccessProbability": 0.20000000000000004,
+      "meanFpPerCastWithoutBalanceBoundary": 6.436874999999999,
+      "eventualOperationSuccessProbability": 1,
+      "meanAttemptsUntilSuccess": 4.999999999999999,
+      "expectedSuccessPathFp": 32.18437499999999
+    },
+    {
+      "item": {
+        "baseId": "4:0",
+        "itemLevel": 100,
+        "fpType": "NORMAL",
+        "corrupted": false,
+        "affixes": [
+          {
+            "id": 4,
+            "tier": 7,
+            "slot": "ordinary",
+            "roll": null
+          },
+          {
+            "id": 7,
+            "tier": 7,
+            "slot": "ordinary",
+            "roll": null
+          },
+          {
+            "id": 5,
+            "tier": 1,
+            "slot": "ordinary",
+            "roll": null
+          },
+          {
+            "id": 10,
+            "tier": 2,
+            "slot": "ordinary",
+            "roll": null
+          }
+        ]
+      },
+      "coarseLabel": {
+        "category": "211",
+        "ordinaryCount": 4,
+        "ordinarySealedCount": 0,
+        "totalCount": 4
+      },
+      "perCastSuccessProbability": 0.18181818181818185,
+      "meanFpPerCastWithoutBalanceBoundary": 6.436874999999996,
+      "eventualOperationSuccessProbability": 1,
+      "meanAttemptsUntilSuccess": 5.499999999999999,
+      "expectedSuccessPathFp": 35.402812499999975
+    }
+  ],
+  "sameCoarseLabelButDifferentTransitionAndCost": true,
+  "qualification": "One legal concrete no-roll target example. Current production atomic kernel with continuously sufficient FP; Havoc changed-layout symmetry gives the repeated-macro mean. Not a benchmark or client measurement.",
+  "inputSha256": {
+    "src/generated/model.json": "fcde9020026d43303cc6959fe2b4b5e4b7ff715313c972f1fcfea91dc0d60298",
+    "src/core/rules.ts": "f315ff7bca3d2311631c8138371f870fe08f8d5ab57fc27444b6f6be24306dcb",
+    "src/core/probability.ts": "6a88f44bba1543b55c97e9ad56957f44f5a4cbe51c7ed2da1b181cc77b7906be",
+    "scripts/check_upper_state_havoc.ts": "118a4156ea94114db04eba5359c23dd07d7ae2bded9cf63296351abeca43372c"
+  }
+}

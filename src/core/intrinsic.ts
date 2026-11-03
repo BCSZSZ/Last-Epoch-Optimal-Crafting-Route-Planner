@@ -6,6 +6,7 @@ import { tierPermutations } from './probability';
 import { RuleEngine } from './rules';
 import type { DemandDistribution } from './rules';
 import { targetReached } from './target';
+import { redemptionCertificate } from './redemption-bound';
 import type { Item, Macro, PlanRequest, Route } from './types';
 
 type Bounds = { readonly lower: number; readonly upper: number };
@@ -23,6 +24,7 @@ export interface IntrinsicStatistics {
   readonly nonTerminatingStates: number;
   readonly successfulFpLowerBound: number | null;
   readonly auxiliaryTotalsAvailable: boolean;
+  readonly preflight?: { readonly rule: string; readonly perCastSuccessUpperBound: number };
 }
 export type IntrinsicReport = RouteReport & { readonly intrinsic: IntrinsicStatistics };
 
@@ -296,6 +298,21 @@ function calculate(workspace: IntrinsicWorkspace, route: Route, prefix: boolean,
 export function evaluateIntrinsic(workspace: IntrinsicWorkspace, route: Route, shouldStop?: () => boolean, disablePruning = false): IntrinsicReport {
   const key = `${disablePruning}|${JSON.stringify(route.macros)}`;
   const cached = workspace.results.get(key); if (cached) { workspace.cacheHits++; return { ...cached, route }; }
+  const certificate = disablePruning ? null : redemptionCertificate(workspace.request, route, workspace.engine);
+  if (certificate) {
+    const repeated = certificate.certainlyEventuallySucceeds;
+    const score = repeated ? ONE.report() : { lower: 0, upper: certificate.perCastSuccessUpperBound };
+    const result: IntrinsicReport = { route, evaluationStatus: 'BOUNDED_NUMERICAL', score, scoreEstimate: repeated ? 1 : certificate.perCastSuccessUpperBound / 2,
+      expectedFpGivenSuccess: null, expectedFp: ZERO.report(), failedFpWaste: ZERO.report(), curve: [], quantiles: null,
+      successQuantiles: null, consumption: [], attemptsByMacro: [], macroStatistics: [], failureReasons: [], states: 0,
+      intrinsic: { metric: 'OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2', decision: 'ABANDONED',
+        reason: repeated ? 'ABOVE_MAXIMUM_SUCCESS_FP' : 'BELOW_MINIMUM_SUCCESS', evaluatedThroughStage: 1,
+        probabilityMeaning: repeated ? 'FULL_ROUTE' : 'PREFIX_SURVIVAL_UPPER_BOUND', fpMeaning: 'LOWER_BOUND_GIVEN_FINAL_SUCCESS',
+        minimumSuccess: 0.15, maximumSuccessFp: 100, stages: [], residualProbabilityBound: 0, nonTerminatingStates: 0,
+        successfulFpLowerBound: certificate.successfulFpLowerBound, auxiliaryTotalsAvailable: false,
+        preflight: { rule: certificate.decision, perCastSuccessUpperBound: certificate.perCastSuccessUpperBound } } };
+    workspace.results.set(key, result); return result;
+  }
   if (!disablePruning) for (let stage = 1; stage < route.macros.length; stage++) {
     // Check prefixes ending at risk-bearing stages. Repeated pure preparation alone cannot cause a required NG.
     const macro = route.macros[stage - 1];

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+  "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
   "status": "PASS",
   "checks": [
     {
       "file": "simple-7710.json",
-      "sha256": "33b5cc688b14609a0a34847142186b727c634a49daca9b18dfb3355e45584549",
+      "sha256": "c5d0521fc3110d51ad90c53c19797656f01e14836961014086db52193baa212e",
       "inputModel": "FORGEABLE_EQUAL",
       "routeId": "r-a633bb0371133d27",
       "success": {
@@ -17,11 +17,11 @@
         "upper": 48.804892289219154
       },
       "fullPrimaryBitIdentical": true,
-      "browserMilliseconds": 278
+      "browserMilliseconds": 316
     },
     {
       "file": "detailed-wildcard.json",
-      "sha256": "c2957a3db76518fa60620495e4a8d22cf987e9c373bb3c61c8ecdfd11dd7315f",
+      "sha256": "dbe9556d280aaa67259ddaad96cb8454bd464c4c1fd78c9cac2dbdf2b05b60fa",
       "inputModel": "FORGEABLE_WEIGHTED",
       "routeId": "r-174a5839b2cfc7c5",
       "success": {
@@ -33,7 +33,23 @@
         "upper": 11.613199852941417
       },
       "fullPrimaryBitIdentical": true,
-      "browserMilliseconds": 231
+      "browserMilliseconds": 248
+    },
+    {
+      "file": "interleaved-7732.json",
+      "sha256": "466969649da1604507d4ee4bae1283a7931f5af4e8a41cf8dd593d4cb9846a56",
+      "inputModel": "FORGEABLE_EQUAL",
+      "routeId": "r-2ede3de4f6f527b0",
+      "success": {
+        "lower": 0.7034782596521675,
+        "upper": 0.7034782617510326
+      },
+      "successfulMeanFp": {
+        "lower": 88.89747244681264,
+        "upper": 88.89747312739937
+      },
+      "fullPrimaryBitIdentical": true,
+      "browserMilliseconds": 2196
     }
   ],
   "qualification": "Actual local Pages-subpath static UI exports from production Worker; replays the chosen full primary in Node. Does not prove searched-scope equality, independent mechanics correctness, actual unknown-item probabilities, low-end-device performance or client frequencies."

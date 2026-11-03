@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "input": {
-    "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+    "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
     "inputModel": "FORGEABLE_WEIGHTED",
     "item": {
       "baseId": "19:0",
@@ -70,7 +70,7 @@
   "report": {
     "metric": "INTRINSIC_V2",
     "inputModel": "FORGEABLE_WEIGHTED",
-    "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+    "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
     "gameVersion": "1.5.3",
     "status": "RECOMMENDATION",
     "primary": {
@@ -5432,7 +5432,7 @@
       "unevaluatedRoutes": 0,
       "skippedDuplicates": 0,
       "certifiedPrunedPrefixes": 37,
-      "elapsedMilliseconds": 231,
+      "elapsedMilliseconds": 248,
       "stopReason": "ROUTE_BUDGET",
       "paretoRouteIds": [
         "r-174a5839b2cfc7c5",

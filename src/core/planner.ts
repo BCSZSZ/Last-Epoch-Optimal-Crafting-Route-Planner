@@ -30,6 +30,7 @@ export interface PlanReport {
     readonly routeNodes: 23;
     readonly generatedTemplates: number;
     readonly structurallyRejected: number;
+    readonly preExcluded?: readonly { readonly templateId: string; readonly reason: string; readonly probabilityUpperBound: number }[];
     readonly workspaceCacheHits: number;
   };
   readonly abandoned?: readonly IntrinsicReport[];
@@ -308,7 +309,9 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
     status: primary ? 'RECOMMENDATION' : 'NO_ROUTE_FOUND_IN_SCOPE', primary, issues: [], abandoned, unresolvedRoutes: unresolved,
     searchStatus: exhausted && unresolved === 0 ? 'COMPLETE' : 'INCOMPLETE', optimality: 'NOT_PROVEN', samplingGuarantee: null,
     hierarchy: compiled ? { structure: compiled.structure, upperLabels: 28, routeNodes: 23, generatedTemplates: compiled.templates.length,
-      structurallyRejected: compiled.rejected.length, workspaceCacheHits: workspace.cacheHits } : undefined,
+      structurallyRejected: compiled.rejected.length,
+      preExcluded: compiled.rejected.flatMap((row) => row.probabilityUpperBound === undefined ? [] : [{ ...row, probabilityUpperBound: row.probabilityUpperBound }]),
+      workspaceCacheHits: workspace.cacheHits } : undefined,
     search: { grammar: options.intrinsicRoutes ? 'EXPLICIT_FIXED_INTRINSIC_ROUTES' : compiled?.grammar ?? 'GENERAL_FIXED_GRAMMAR_INTRINSIC_V2',
       macroStages: request.search.macroStages, librarySize: compiled ? new Set(compiled.templates.flatMap((row) => row.macros.map((macro) => JSON.stringify(macro)))).size : library.length,
       candidateUpperBound: String(options.intrinsicRoutes?.length ?? compiled?.templates.length ?? general.candidateUpperBound),

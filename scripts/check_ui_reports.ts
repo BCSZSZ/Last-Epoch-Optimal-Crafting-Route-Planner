@@ -8,7 +8,7 @@ import { parsePlanRequest } from '../src/core/request';
 import { RuleEngine } from '../src/core/rules';
 import type { PlanRequest } from '../src/core/types';
 
-const checks = ['simple-7710.json', 'detailed-wildcard.json'].map((file) => {
+const checks = ['simple-7710.json', 'detailed-wildcard.json', 'interleaved-7732.json'].map((file) => {
   const bytes = readFileSync(new URL('../research/ui-validation/' + file, import.meta.url));
   const exported: { schemaVersion: number; input: PlanRequest; report: PlanReport } = JSON.parse(bytes.toString('utf8'));
   const { input, report } = exported, catalog = catalogForInputModel(input.inputModel);

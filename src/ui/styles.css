@@ -467,28 +467,20 @@ h1 {
   color:#d3ebd8
 }
 .route-list {
-  list-style:none;
-  padding:0;
+  list-style:decimal;
+  padding:0 0 0 22px;
   margin:22px 0;
   display:flex;
   flex-direction:column;
   gap:22px
 }
 .route-list>li {
-  display:flex;
-  gap:14px;
-  align-items:flex-start
+  display:list-item;
+  padding-left:10px
 }
-.step-number {
-  display:grid;
-  place-items:center;
-  width:25px;
-  height:25px;
-  background:#2c4734;
+.route-list>li::marker {
   color:#c3e2ca;
-  border-radius:50%;
-  font-size:11px;
-  flex-shrink:0
+  font-size:13px
 }
 .route-list h3 {
   font-size:14px;
@@ -504,6 +496,8 @@ h1 {
 .macro-branch {
   margin-top:12px
 }
+.branch-details { margin-top: 8px; }
+.search-scope { margin-top: 12px; }
 .branch-step {
   border-left:1px solid #48614e;
   margin:8px 0 0 2px;

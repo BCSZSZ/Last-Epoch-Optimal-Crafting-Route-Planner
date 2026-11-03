@@ -12,6 +12,12 @@
       "sha256": "e96a4a59055df2cc1c7f285806a969cac5bf17a979de07206c57bbbf2fa3d925",
       "metric": "INTRINSIC_V2",
       "purpose": "Historical 23-node release before simplified UI input contract."
+    },
+    "le-1.5.3-iid-67c53ae6d74b301f": {
+      "file": "research/runtime-model-archive/le-1.5.3-iid-67c53ae6d74b301f.json",
+      "sha256": "7682651db84a66f58d16130668bc0ea301e158048a0325fb0cda4b10fd41632b",
+      "metric": "INTRINSIC_V2",
+      "purpose": "Historical minimal UI release before vacancy-aware acquisition and pruning certificates."
     }
   }
 }

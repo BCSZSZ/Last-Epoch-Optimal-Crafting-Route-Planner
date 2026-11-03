@@ -43,7 +43,7 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                 "research/device-validation/desktop-baseline.json", "research/device-validation/desktop-baseline-validation.json",
                 "research/device-validation/public-normal.json", "research/device-validation/public-normal-validation.json",
                 "src/generated/model.json", "research/hierarchy-validation.json", "research/hierarchy-runtime-benchmark.json",
-                "research/runtime-model-archive/manifest.json", "research/ui-validation/parity.json")
+                "research/runtime-model-archive/manifest.json", "research/ui-validation/parity.json", "research/acquisition-order.json")
     model = {"schemaVersion": 2, "modelId": "le-1.5.3-26087601-r7-hierarchical-intrinsic",
              "phase": "PUBLIC_PREVIEW", "productionReady": False,
              "productionModelId": load_json(root / "src/generated/model.json")["modelId"],
@@ -59,6 +59,9 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                           "weighting": "NOT_USED_IN_INTRINSIC_V2", "naturalDropDistribution": False},
              "productionMetric": {"kind": "INTRINSIC_V2", "minimumSuccess": 0.15, "maximumSuccessfulMeanFp": 100,
                                   "conditionalOnFinalSuccess": True, "upperInputLabels": 28, "upperRouteNodes": 23,
+                                  "vacancyAwareInterleavedAcquisition": True,
+                                  "preflightCertificates": ["STANDARD_T4_SEAL_REMOVAL", "PURE_SINGLE_CAST_DOUBLE_HIT", "PURE_UNLIMITED_DOUBLE_HIT_SUCCESS_FP"],
+                                  "preflightDoesNotBlacklistAllRedemptionOrHighTierSources": True,
                                   "finiteFpBoundaryBenefitsApplied": False},
              "defaultRngModel": "DISPLAY_PARAMETERS_INDEPENDENT_DRAWS_V1",
              "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",

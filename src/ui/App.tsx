@@ -5,10 +5,10 @@ import type { CompiledDraft, CraftingDraft, DraftScenario, DraftSlot, DraftSlots
 import { catalogForInputModel } from '../core/input-model';
 import type { IntrinsicReport } from '../core/intrinsic';
 import type { PlanProgress, PlanReport } from '../core/planner';
-import type { Macro } from '../core/types';
 import { BrowserPlanner } from '../execution/browser';
-import { affixName, fpNames, macroText, typeName } from './labels';
-import type { NameAliases } from './labels';
+import { affixName, fpNames, typeName } from './labels';
+import { routeSteps } from './route-view';
+import type { RouteStep } from './route-view';
 
 const catalog = catalogForInputModel('FORGEABLE_WEIGHTED');
 const STORAGE = 'le-crafting-draft-v2';
@@ -101,20 +101,20 @@ function CountGoals({ draft, onChange }: { draft: CraftingDraft; onChange: (coun
   })}<p className="helper">目标词条最终均为 T7。已有数量按普通槽统计，不包含封印。</p></div>;
 }
 
-function MacroInstructions({ macro, aliases }: { macro: Macro; aliases: NameAliases }) {
-  const text = macroText(macro, catalog, aliases);
-  return <><h3>{text.title}</h3>{macro.kind === 'conditional' ?
-    [{ label: '条件成立', steps: macro.then }, { label: '条件不成立', steps: macro.otherwise ?? [] }].map((branch) =>
-      <div className="macro-branch" key={branch.label}><p>{branch.label}{branch.steps.length ? '' : '：跳过'}</p>{branch.steps.map((part, index) => <div className="branch-step" key={index}><MacroInstructions macro={part} aliases={aliases} /></div>)}</div>) : <p>{text.condition}</p>}</>;
+function StepInstructions({ step }: { step: RouteStep }) {
+  return <><h3>{step.title}</h3>{step.condition && <p>{step.condition}</p>}{step.branches && <details className="branch-details"><summary>查看分支</summary>
+    {step.branches.map((branch) => <div className="macro-branch" key={branch.label}><p>{branch.label}{branch.steps.length ? '' : '：跳过'}</p>
+      {branch.steps.map((part, index) => <div className="branch-step" key={index}><StepInstructions step={part} /></div>)}</div>)}</details>}</>;
 }
 
-function RouteSteps({ row, aliases }: { row: IntrinsicReport; aliases: NameAliases }) {
+function RouteSteps({ row, scenario }: { row: IntrinsicReport; scenario: DraftScenario }) {
   const macros = row.route.macros.slice(0, row.intrinsic.evaluatedThroughStage);
-  return macros.length ? <ol className="route-list">{macros.map((macro, index) => <li key={index}><span className="step-number">{index + 1}</span><div><MacroInstructions macro={macro} aliases={aliases} /></div></li>)}</ol> : <p className="already-done">{row.intrinsic.decision === 'RETAINED' ? '目标已经达成，无需制作。' : '此模板未执行制作。'}</p>;
+  const steps = routeSteps(macros, scenario.request, catalog, scenario.aliases);
+  return steps.length ? <ol className="route-list">{steps.map((step, index) => <li key={index}><div><StepInstructions step={step} /></div></li>)}</ol> : <p className="already-done">{row.intrinsic.decision === 'RETAINED' ? '目标已经达成，无需制作。' : '此模板未执行制作。'}</p>;
 }
 
 function RouteMetrics({ row }: { row: IntrinsicReport }) {
-  return <div className="metrics"><div><span>{row.intrinsic.probabilityMeaning === 'FULL_ROUTE' ? '操作成功率' : '成功率上界'}</span><strong>{percent(row.score)}</strong></div>
+  return <div className="metrics"><div><span>{row.intrinsic.probabilityMeaning === 'FULL_ROUTE' ? '操作成功率' : '成功率上界'}</span><strong>{row.intrinsic.probabilityMeaning === 'FULL_ROUTE' ? percent(row.score) : `≤${(row.score.upper * 100).toFixed(2)}%`}</strong></div>
     <div><span>{row.intrinsic.fpMeaning === 'PREFIX_GIVEN_PREFIX_SURVIVAL' ? '截至此步的过关平均 FP' : row.intrinsic.successfulFpLowerBound !== null ? '成功路径平均 FP 下界' : '成功路径平均 FP'}</span>
       <strong>{row.intrinsic.successfulFpLowerBound !== null ? `≥${row.intrinsic.successfulFpLowerBound.toFixed(2)}` : number(row.expectedFpGivenSuccess)}</strong></div></div>;
 }
@@ -133,13 +133,15 @@ function ScenarioResults({ scenario, report }: ScenarioResult) {
   return <section className="result-card">
     <div className="result-heading"><h2>{scenario.condition || '规划方案'}</h2><span className={`badge ${primary ? '' : 'amber'}`}>{primary ? '当前推荐' : shown ? '已放弃' : '未找到方案'}</span></div>
     {report.issues.length > 0 && <ul className="error-message">{report.issues.map((issue, index) => <li key={index}>{issue.message}</li>)}</ul>}
-    {shown && <><RouteMetrics row={shown} /><RouteSteps row={shown} aliases={scenario.aliases} />
+    {shown && <><RouteMetrics row={shown} /><RouteSteps row={shown} scenario={scenario} />
       {!primary && <p className="abandon-note">已放弃 · 已算至第 {shown.intrinsic.evaluatedThroughStage} 步 · {shown.intrinsic.reason === 'ABOVE_MAXIMUM_SUCCESS_FP' ? '成功路径平均 FP 已超过 100' : shown.intrinsic.reason === 'NO_SUCCESS_EXIT' ? '该模板没有成功出口' : '成功率已低于 15%'}</p>}</>}
-    {report.searchStatus === 'INCOMPLETE' && <p className="helper">部分模板尚未算完，当前结果未证明最优。</p>}
     {!shown && <p className="helper">当前计算范围尚未得到可用结果。</p>}
     <div className="result-tools"><button type="button" className="text-button" onClick={() => saveJson({ schemaVersion: 1, input: scenario.request, report }, 'last-epoch-crafting-report.json')}>导出报告</button>
-      {abandoned.length > 0 && <details><summary>已放弃方案（{abandoned.length}）</summary><div className="abandoned-list">{abandoned.map((row, index) => <details key={row.route.id}><summary>已放弃 · 方案 {index + 1} · 已算至第 {row.intrinsic.evaluatedThroughStage} 步</summary><RouteMetrics row={row} /><RouteSteps row={row} aliases={scenario.aliases} /></details>)}</div></details>}
+      {abandoned.length > 0 && <details><summary>已放弃方案（{abandoned.length}）</summary><div className="abandoned-list">{abandoned.map((row, index) => <details key={row.route.id}><summary>已放弃 · 方案 {index + 1} · 已算至第 {row.intrinsic.evaluatedThroughStage} 阶段</summary><RouteMetrics row={row} /><RouteSteps row={row} scenario={scenario} /></details>)}</div></details>}
     </div>
+    <details className="search-scope"><summary>计算说明</summary><p>已计算 {report.search.evaluatedRoutes} 个模板。{report.searchStatus === 'INCOMPLETE' ? '部分候选尚未完成，未证明最优。' : '本次模板范围已完成，不代表全局最优。'}</p>
+      {report.hierarchy && <p>结构预排除 {report.hierarchy.structurallyRejected} 个候选；数值上界／下界预检与实际计算记录保留在导出报告。</p>}
+      {!!report.hierarchy?.preExcluded?.length && <p>已放弃 {report.hierarchy.preExcluded.length} 个封印／剥离组合：成功率上界最高 {(Math.max(...report.hierarchy.preExcluded.map((row) => row.probabilityUpperBound)) * 100).toFixed(2)}%，无需展开后续计算。</p>}</details>
   </section>;
 }
 
@@ -199,6 +201,6 @@ export function App() {
         <details className="assumptions"><summary>计算假设</summary>{compiled.assumptions.map((assumption) => <p key={assumption}>{assumption}</p>)}<p>独立随机参考模型；已搜索的模板范围不代表全局最优。</p><p className="model-id">{MODEL_ID}</p></details>
       </section>}
     </main>
-    <footer><span>Last Epoch {catalog.model.gameVersion}</span><a href="https://github.com/BCSZSZ/Last-Epoch-Optimal-Crafting-Route-Planner" target="_blank" rel="noreferrer">研究与源代码 ↗</a></footer>
+    <footer><span>Last Epoch {catalog.model.gameVersion}<br />默认希望雕文；封印用绝望，混沌用混沌。</span><a href="https://github.com/BCSZSZ/Last-Epoch-Optimal-Crafting-Route-Planner" target="_blank" rel="noreferrer">研究与源代码 ↗</a></footer>
   </div>;
 }

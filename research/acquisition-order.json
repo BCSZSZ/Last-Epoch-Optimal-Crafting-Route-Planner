@@ -1,0 +1,2164 @@
+{
+  "schemaVersion": 1,
+  "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+  "status": "PASS",
+  "rows": [
+    {
+      "fpType": "NORMAL",
+      "tiers": [
+        7,
+        7,
+        2,
+        2
+      ],
+      "request": {
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+        "inputModel": "FORGEABLE_EQUAL",
+        "item": {
+          "baseId": "19:0",
+          "itemLevel": 100,
+          "fpType": "NORMAL",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 8,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                6
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                10
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "metrics": [
+        {
+          "id": "two-removals",
+          "success": {
+            "lower": 0.1666666666666653,
+            "upper": 0.16666666666666802
+          },
+          "successfulMeanFp": {
+            "lower": 59.1724777058771,
+            "upper": 59.172477705887616
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-add-both",
+          "success": {
+            "lower": 0.31049999999999844,
+            "upper": 0.31050000000000155
+          },
+          "successfulMeanFp": {
+            "lower": 56.286916626333614,
+            "upper": 56.28691662634019
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-t2-add-both",
+          "success": {
+            "lower": 0.31049999999999844,
+            "upper": 0.31050000000000155
+          },
+          "successfulMeanFp": {
+            "lower": 56.286916626333614,
+            "upper": 56.28691662634019
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-add",
+          "success": {
+            "lower": 0.33464999999999767,
+            "upper": 0.33465000000000245
+          },
+          "successfulMeanFp": {
+            "lower": 56.37059086067659,
+            "upper": 56.370590860683464
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-only-t2-add",
+          "success": {
+            "lower": 0.32429999999999815,
+            "upper": 0.3243000000000019
+          },
+          "successfulMeanFp": {
+            "lower": 56.46415010630852,
+            "upper": 56.46415010631523
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-t1-seal-add",
+          "success": {
+            "lower": 0.4699999999999957,
+            "upper": 0.47000000000000414
+          },
+          "successfulMeanFp": {
+            "lower": 69.893456686739,
+            "upper": 69.89345668674875
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-lowest-seal-add",
+          "success": {
+            "lower": 0.4906999999999952,
+            "upper": 0.49070000000000463
+          },
+          "successfulMeanFp": {
+            "lower": 69.20233747580258,
+            "upper": 69.20233747581311
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        }
+      ],
+      "pureDoubleHit": {
+        "perCast": {
+          "upper": 0.006993006993007017,
+          "clearingPossible": true
+        },
+        "certificate": {
+          "decision": "REPEATED_SUCCESS_FP_ABOVE_MAXIMUM",
+          "perCastSuccessUpperBound": 0.006993006993007017,
+          "successfulFpLowerBound": 920.4731249999935,
+          "certainlyEventuallySucceeds": true
+        }
+      }
+    },
+    {
+      "fpType": "NORMAL",
+      "tiers": [
+        7,
+        7,
+        3,
+        2
+      ],
+      "request": {
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+        "inputModel": "FORGEABLE_EQUAL",
+        "item": {
+          "baseId": "19:0",
+          "itemLevel": 100,
+          "fpType": "NORMAL",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 8,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                6
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                10
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "metrics": [
+        {
+          "id": "two-removals",
+          "success": {
+            "lower": 0.1666666666666653,
+            "upper": 0.16666666666666802
+          },
+          "successfulMeanFp": {
+            "lower": 59.1724777058771,
+            "upper": 59.172477705887616
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-add-both",
+          "success": {
+            "lower": 0.23287499999999856,
+            "upper": 0.23287500000000144
+          },
+          "successfulMeanFp": {
+            "lower": 57.14289256216176,
+            "upper": 57.14289256216979
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-t2-add-both",
+          "success": {
+            "lower": 0.15524999999999878,
+            "upper": 0.15525000000000122
+          },
+          "successfulMeanFp": {
+            "lower": 56.28691662633191,
+            "upper": 56.286916626341906
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-add",
+          "success": {
+            "lower": 0.25064999999999776,
+            "upper": 0.2506500000000023
+          },
+          "successfulMeanFp": {
+            "lower": 57.22823036172423,
+            "upper": 57.22823036173286
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-only-t2-add",
+          "success": {
+            "lower": 0.16214999999999863,
+            "upper": 0.1621500000000014
+          },
+          "successfulMeanFp": {
+            "lower": 56.46415010630713,
+            "upper": 56.46415010631662
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-t1-seal-add",
+          "success": {
+            "lower": 0.4699999999999957,
+            "upper": 0.47000000000000414
+          },
+          "successfulMeanFp": {
+            "lower": 69.98384684631345,
+            "upper": 69.98384684632322
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-lowest-seal-add",
+          "success": {
+            "lower": 0.4906999999999952,
+            "upper": 0.49070000000000463
+          },
+          "successfulMeanFp": {
+            "lower": 69.54189673362303,
+            "upper": 69.54189673363358
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        }
+      ],
+      "pureDoubleHit": {
+        "perCast": {
+          "upper": 0.006993006993007017,
+          "clearingPossible": true
+        },
+        "certificate": {
+          "decision": "REPEATED_SUCCESS_FP_ABOVE_MAXIMUM",
+          "perCastSuccessUpperBound": 0.006993006993007017,
+          "successfulFpLowerBound": 920.4731249999935,
+          "certainlyEventuallySucceeds": true
+        }
+      }
+    },
+    {
+      "fpType": "NORMAL",
+      "tiers": [
+        7,
+        7,
+        3,
+        3
+      ],
+      "request": {
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+        "inputModel": "FORGEABLE_EQUAL",
+        "item": {
+          "baseId": "19:0",
+          "itemLevel": 100,
+          "fpType": "NORMAL",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 8,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                6
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                10
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "metrics": [
+        {
+          "id": "two-removals",
+          "success": {
+            "lower": 0.1666666666666653,
+            "upper": 0.16666666666666802
+          },
+          "successfulMeanFp": {
+            "lower": 59.1724777058771,
+            "upper": 59.172477705887616
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-add-both",
+          "success": {
+            "lower": 0.15524999999999867,
+            "upper": 0.15525000000000133
+          },
+          "successfulMeanFp": {
+            "lower": 58.85484443381807,
+            "upper": 58.854844433829
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-t2-add-both",
+          "success": {
+            "lower": 0,
+            "upper": 0
+          },
+          "successfulMeanFp": null,
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-seal-add",
+          "success": {
+            "lower": 0.1666499999999983,
+            "upper": 0.16665000000000174
+          },
+          "successfulMeanFp": {
+            "lower": 58.95045693853576,
+            "upper": 58.9504569385473
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-only-t2-add",
+          "success": {
+            "lower": 0,
+            "upper": 0
+          },
+          "successfulMeanFp": null,
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-prepare-t1-seal-add",
+          "success": {
+            "lower": 0.4699999999999957,
+            "upper": 0.47000000000000414
+          },
+          "successfulMeanFp": {
+            "lower": 70.07423700588792,
+            "upper": 70.07423700589769
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-lowest-seal-add",
+          "success": {
+            "lower": 0.4906999999999952,
+            "upper": 0.49070000000000463
+          },
+          "successfulMeanFp": {
+            "lower": 69.88145599144347,
+            "upper": 69.88145599145405
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        }
+      ],
+      "pureDoubleHit": {
+        "perCast": {
+          "upper": 0.006993006993007017,
+          "clearingPossible": true
+        },
+        "certificate": {
+          "decision": "REPEATED_SUCCESS_FP_ABOVE_MAXIMUM",
+          "perCastSuccessUpperBound": 0.006993006993007017,
+          "successfulFpLowerBound": 920.4731249999935,
+          "certainlyEventuallySucceeds": true
+        }
+      }
+    },
+    {
+      "fpType": "NORMAL",
+      "tiers": [
+        7,
+        7,
+        4,
+        4
+      ],
+      "request": {
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+        "inputModel": "FORGEABLE_EQUAL",
+        "item": {
+          "baseId": "19:0",
+          "itemLevel": 100,
+          "fpType": "NORMAL",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 4,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 8,
+              "tier": 4,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                6
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                10
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "metrics": [
+        {
+          "id": "two-removals",
+          "success": {
+            "lower": 0.1666666666666653,
+            "upper": 0.16666666666666802
+          },
+          "successfulMeanFp": {
+            "lower": 59.1724777058771,
+            "upper": 59.172477705887616
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-add-both",
+          "success": {
+            "lower": 0.0674999999999988,
+            "upper": 0.06750000000000121
+          },
+          "successfulMeanFp": {
+            "lower": 61.42515773304513,
+            "upper": 61.425157733067415
+          },
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-seal-t2-add-both",
+          "success": {
+            "lower": 0,
+            "upper": 0
+          },
+          "successfulMeanFp": null,
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-seal-add",
+          "success": {
+            "lower": 0.0704999999999984,
+            "upper": 0.07050000000000164
+          },
+          "successfulMeanFp": {
+            "lower": 61.60239121301859,
+            "upper": 61.60239121304387
+          },
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-seal-only-t2-add",
+          "success": {
+            "lower": 0,
+            "upper": 0
+          },
+          "successfulMeanFp": null,
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-prepare-t1-seal-add",
+          "success": {
+            "lower": 0.4699999999999957,
+            "upper": 0.47000000000000414
+          },
+          "successfulMeanFp": {
+            "lower": 70.07423700588792,
+            "upper": 70.07423700589769
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-lowest-seal-add",
+          "success": {
+            "lower": 0.4906999999999952,
+            "upper": 0.49070000000000463
+          },
+          "successfulMeanFp": {
+            "lower": 69.88145599144347,
+            "upper": 69.88145599145405
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        }
+      ],
+      "pureDoubleHit": {
+        "perCast": {
+          "upper": 0.006993006993007017,
+          "clearingPossible": true
+        },
+        "certificate": {
+          "decision": "REPEATED_SUCCESS_FP_ABOVE_MAXIMUM",
+          "perCastSuccessUpperBound": 0.006993006993007017,
+          "successfulFpLowerBound": 920.4731249999935,
+          "certainlyEventuallySucceeds": true
+        }
+      }
+    },
+    {
+      "fpType": "ICE",
+      "tiers": [
+        7,
+        7,
+        2,
+        2
+      ],
+      "request": {
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+        "inputModel": "FORGEABLE_EQUAL",
+        "item": {
+          "baseId": "19:0",
+          "itemLevel": 100,
+          "fpType": "ICE",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 8,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                6
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                10
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "metrics": [
+        {
+          "id": "two-removals",
+          "success": {
+            "lower": 0.1666666666666653,
+            "upper": 0.16666666666666802
+          },
+          "successfulMeanFp": {
+            "lower": 41.420734394113595,
+            "upper": 41.420734394121695
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-add-both",
+          "success": {
+            "lower": 0.31049999999999844,
+            "upper": 0.31050000000000155
+          },
+          "successfulMeanFp": {
+            "lower": 39.400841638433285,
+            "upper": 39.400841638438365
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-t2-add-both",
+          "success": {
+            "lower": 0.31049999999999844,
+            "upper": 0.31050000000000155
+          },
+          "successfulMeanFp": {
+            "lower": 39.400841638433285,
+            "upper": 39.400841638438365
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-add",
+          "success": {
+            "lower": 0.33464999999999767,
+            "upper": 0.33465000000000245
+          },
+          "successfulMeanFp": {
+            "lower": 39.45941360247339,
+            "upper": 39.45941360247864
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-only-t2-add",
+          "success": {
+            "lower": 0.32429999999999815,
+            "upper": 0.3243000000000019
+          },
+          "successfulMeanFp": {
+            "lower": 39.52490507441576,
+            "upper": 39.52490507442086
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-t1-seal-add",
+          "success": {
+            "lower": 0.4699999999999957,
+            "upper": 0.47000000000000414
+          },
+          "successfulMeanFp": {
+            "lower": 48.925419680716956,
+            "upper": 48.92541968072444
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-lowest-seal-add",
+          "success": {
+            "lower": 0.4906999999999952,
+            "upper": 0.49070000000000463
+          },
+          "successfulMeanFp": {
+            "lower": 48.44163623306146,
+            "upper": 48.44163623306951
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        }
+      ],
+      "pureDoubleHit": {
+        "perCast": {
+          "upper": 0.006993006993007017,
+          "clearingPossible": true
+        },
+        "certificate": {
+          "decision": "REPEATED_SUCCESS_FP_ABOVE_MAXIMUM",
+          "perCastSuccessUpperBound": 0.006993006993007017,
+          "successfulFpLowerBound": 644.3311874999952,
+          "certainlyEventuallySucceeds": true
+        }
+      }
+    },
+    {
+      "fpType": "ICE",
+      "tiers": [
+        7,
+        7,
+        3,
+        2
+      ],
+      "request": {
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+        "inputModel": "FORGEABLE_EQUAL",
+        "item": {
+          "baseId": "19:0",
+          "itemLevel": 100,
+          "fpType": "ICE",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 8,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                6
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                10
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "metrics": [
+        {
+          "id": "two-removals",
+          "success": {
+            "lower": 0.1666666666666653,
+            "upper": 0.16666666666666802
+          },
+          "successfulMeanFp": {
+            "lower": 41.420734394113595,
+            "upper": 41.420734394121695
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-add-both",
+          "success": {
+            "lower": 0.23287499999999856,
+            "upper": 0.23287500000000144
+          },
+          "successfulMeanFp": {
+            "lower": 40.00002479351293,
+            "upper": 40.00002479351916
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-t2-add-both",
+          "success": {
+            "lower": 0.15524999999999878,
+            "upper": 0.15525000000000122
+          },
+          "successfulMeanFp": {
+            "lower": 39.40084163843195,
+            "upper": 39.4008416384397
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-add",
+          "success": {
+            "lower": 0.25064999999999776,
+            "upper": 0.2506500000000023
+          },
+          "successfulMeanFp": {
+            "lower": 40.059761253206666,
+            "upper": 40.05976125321329
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-only-t2-add",
+          "success": {
+            "lower": 0.16214999999999863,
+            "upper": 0.1621500000000014
+          },
+          "successfulMeanFp": {
+            "lower": 39.5249050744147,
+            "upper": 39.524905074421916
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-t1-seal-add",
+          "success": {
+            "lower": 0.4699999999999957,
+            "upper": 0.47000000000000414
+          },
+          "successfulMeanFp": {
+            "lower": 48.98869279241909,
+            "upper": 48.98869279242657
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-lowest-seal-add",
+          "success": {
+            "lower": 0.4906999999999952,
+            "upper": 0.49070000000000463
+          },
+          "successfulMeanFp": {
+            "lower": 48.67932771353578,
+            "upper": 48.679327713543834
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        }
+      ],
+      "pureDoubleHit": {
+        "perCast": {
+          "upper": 0.006993006993007017,
+          "clearingPossible": true
+        },
+        "certificate": {
+          "decision": "REPEATED_SUCCESS_FP_ABOVE_MAXIMUM",
+          "perCastSuccessUpperBound": 0.006993006993007017,
+          "successfulFpLowerBound": 644.3311874999952,
+          "certainlyEventuallySucceeds": true
+        }
+      }
+    },
+    {
+      "fpType": "ICE",
+      "tiers": [
+        7,
+        7,
+        3,
+        3
+      ],
+      "request": {
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+        "inputModel": "FORGEABLE_EQUAL",
+        "item": {
+          "baseId": "19:0",
+          "itemLevel": 100,
+          "fpType": "ICE",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 8,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                6
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                10
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "metrics": [
+        {
+          "id": "two-removals",
+          "success": {
+            "lower": 0.1666666666666653,
+            "upper": 0.16666666666666802
+          },
+          "successfulMeanFp": {
+            "lower": 41.420734394113595,
+            "upper": 41.420734394121695
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-add-both",
+          "success": {
+            "lower": 0.15524999999999867,
+            "upper": 0.15525000000000133
+          },
+          "successfulMeanFp": {
+            "lower": 41.19839110367225,
+            "upper": 41.198391103680684
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-t2-add-both",
+          "success": {
+            "lower": 0,
+            "upper": 0
+          },
+          "successfulMeanFp": null,
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-seal-add",
+          "success": {
+            "lower": 0.1666499999999983,
+            "upper": 0.16665000000000174
+          },
+          "successfulMeanFp": {
+            "lower": 41.265319856974614,
+            "upper": 41.265319856983524
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-only-t2-add",
+          "success": {
+            "lower": 0,
+            "upper": 0
+          },
+          "successfulMeanFp": null,
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-prepare-t1-seal-add",
+          "success": {
+            "lower": 0.4699999999999957,
+            "upper": 0.47000000000000414
+          },
+          "successfulMeanFp": {
+            "lower": 49.05196590412121,
+            "upper": 49.0519659041287
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-lowest-seal-add",
+          "success": {
+            "lower": 0.4906999999999952,
+            "upper": 0.49070000000000463
+          },
+          "successfulMeanFp": {
+            "lower": 48.917019194010095,
+            "upper": 48.91701919401815
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        }
+      ],
+      "pureDoubleHit": {
+        "perCast": {
+          "upper": 0.006993006993007017,
+          "clearingPossible": true
+        },
+        "certificate": {
+          "decision": "REPEATED_SUCCESS_FP_ABOVE_MAXIMUM",
+          "perCastSuccessUpperBound": 0.006993006993007017,
+          "successfulFpLowerBound": 644.3311874999952,
+          "certainlyEventuallySucceeds": true
+        }
+      }
+    },
+    {
+      "fpType": "ICE",
+      "tiers": [
+        7,
+        7,
+        4,
+        4
+      ],
+      "request": {
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+        "inputModel": "FORGEABLE_EQUAL",
+        "item": {
+          "baseId": "19:0",
+          "itemLevel": 100,
+          "fpType": "ICE",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 4,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 8,
+              "tier": 4,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                6
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                10
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "metrics": [
+        {
+          "id": "two-removals",
+          "success": {
+            "lower": 0.1666666666666653,
+            "upper": 0.16666666666666802
+          },
+          "successfulMeanFp": {
+            "lower": 41.420734394113595,
+            "upper": 41.420734394121695
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-add-both",
+          "success": {
+            "lower": 0.0674999999999988,
+            "upper": 0.06750000000000121
+          },
+          "successfulMeanFp": {
+            "lower": 42.9976104131308,
+            "upper": 42.997610413147974
+          },
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-seal-t2-add-both",
+          "success": {
+            "lower": 0,
+            "upper": 0
+          },
+          "successfulMeanFp": null,
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-seal-add",
+          "success": {
+            "lower": 0.0704999999999984,
+            "upper": 0.07050000000000164
+          },
+          "successfulMeanFp": {
+            "lower": 43.12167384911209,
+            "upper": 43.12167384913163
+          },
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-seal-only-t2-add",
+          "success": {
+            "lower": 0,
+            "upper": 0
+          },
+          "successfulMeanFp": null,
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-prepare-t1-seal-add",
+          "success": {
+            "lower": 0.4699999999999957,
+            "upper": 0.47000000000000414
+          },
+          "successfulMeanFp": {
+            "lower": 49.05196590412121,
+            "upper": 49.0519659041287
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-lowest-seal-add",
+          "success": {
+            "lower": 0.4906999999999952,
+            "upper": 0.49070000000000463
+          },
+          "successfulMeanFp": {
+            "lower": 48.917019194010095,
+            "upper": 48.91701919401815
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        }
+      ],
+      "pureDoubleHit": {
+        "perCast": {
+          "upper": 0.006993006993007017,
+          "clearingPossible": true
+        },
+        "certificate": {
+          "decision": "REPEATED_SUCCESS_FP_ABOVE_MAXIMUM",
+          "perCastSuccessUpperBound": 0.006993006993007017,
+          "successfulFpLowerBound": 644.3311874999952,
+          "certainlyEventuallySucceeds": true
+        }
+      }
+    },
+    {
+      "fpType": "BLOOD",
+      "tiers": [
+        7,
+        7,
+        2,
+        2
+      ],
+      "request": {
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+        "inputModel": "FORGEABLE_EQUAL",
+        "item": {
+          "baseId": "19:0",
+          "itemLevel": 100,
+          "fpType": "BLOOD",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 8,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                6
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                10
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "metrics": [
+        {
+          "id": "two-removals",
+          "success": {
+            "lower": 0.16666666666666397,
+            "upper": 0.16666666666666935
+          },
+          "successfulMeanFp": {
+            "lower": 57.17001466411187,
+            "upper": 57.17001466412344
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-add-both",
+          "success": {
+            "lower": 0.3104999999999969,
+            "upper": 0.3105000000000031
+          },
+          "successfulMeanFp": {
+            "lower": 54.284453584568574,
+            "upper": 54.28445358457582
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-t2-add-both",
+          "success": {
+            "lower": 0.3104999999999969,
+            "upper": 0.3105000000000031
+          },
+          "successfulMeanFp": {
+            "lower": 54.284453584568574,
+            "upper": 54.28445358457582
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-add",
+          "success": {
+            "lower": 0.3118799999999963,
+            "upper": 0.31188000000000377
+          },
+          "successfulMeanFp": {
+            "lower": 54.702017857971335,
+            "upper": 54.70201785797918
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-only-t2-add",
+          "success": {
+            "lower": 0.27875999999999646,
+            "upper": 0.27876000000000356
+          },
+          "successfulMeanFp": {
+            "lower": 54.93287020248304,
+            "upper": 54.9328702024913
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-t1-seal-add",
+          "success": {
+            "lower": 0.4039999999999954,
+            "upper": 0.4040000000000044
+          },
+          "successfulMeanFp": {
+            "lower": 67.06637567352888,
+            "upper": 67.0663756735397
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-lowest-seal-add",
+          "success": {
+            "lower": 0.4702399999999946,
+            "upper": 0.47024000000000526
+          },
+          "successfulMeanFp": {
+            "lower": 64.88147618479357,
+            "upper": 64.88147618480467
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        }
+      ],
+      "pureDoubleHit": {
+        "perCast": {
+          "upper": 0.006993006993007017,
+          "clearingPossible": true
+        },
+        "certificate": {
+          "decision": "REPEATED_SUCCESS_FP_ABOVE_MAXIMUM",
+          "perCastSuccessUpperBound": 0.006993006993007017,
+          "successfulFpLowerBound": 920.4731249999935,
+          "certainlyEventuallySucceeds": true
+        }
+      }
+    },
+    {
+      "fpType": "BLOOD",
+      "tiers": [
+        7,
+        7,
+        3,
+        2
+      ],
+      "request": {
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+        "inputModel": "FORGEABLE_EQUAL",
+        "item": {
+          "baseId": "19:0",
+          "itemLevel": 100,
+          "fpType": "BLOOD",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 8,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                6
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                10
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "metrics": [
+        {
+          "id": "two-removals",
+          "success": {
+            "lower": 0.16666666666666397,
+            "upper": 0.16666666666666935
+          },
+          "successfulMeanFp": {
+            "lower": 57.17001466411187,
+            "upper": 57.17001466412344
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-add-both",
+          "success": {
+            "lower": 0.23287499999999714,
+            "upper": 0.23287500000000286
+          },
+          "successfulMeanFp": {
+            "lower": 55.14042952039665,
+            "upper": 55.1404295204055
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-t2-add-both",
+          "success": {
+            "lower": 0.15524999999999756,
+            "upper": 0.15525000000000244
+          },
+          "successfulMeanFp": {
+            "lower": 54.284453584566734,
+            "upper": 54.284453584577676
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-add",
+          "success": {
+            "lower": 0.23282999999999648,
+            "upper": 0.2328300000000036
+          },
+          "successfulMeanFp": {
+            "lower": 55.559139330589076,
+            "upper": 55.55913933059901
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-only-t2-add",
+          "success": {
+            "lower": 0.13937999999999734,
+            "upper": 0.13938000000000267
+          },
+          "successfulMeanFp": {
+            "lower": 54.93287020248129,
+            "upper": 54.93287020249305
+          },
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-prepare-t1-seal-add",
+          "success": {
+            "lower": 0.4039999999999954,
+            "upper": 0.4040000000000044
+          },
+          "successfulMeanFp": {
+            "lower": 67.30192705966749,
+            "upper": 67.3019270596783
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-lowest-seal-add",
+          "success": {
+            "lower": 0.4702399999999946,
+            "upper": 0.47024000000000526
+          },
+          "successfulMeanFp": {
+            "lower": 65.95853467152372,
+            "upper": 65.95853467153486
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        }
+      ],
+      "pureDoubleHit": {
+        "perCast": {
+          "upper": 0.006993006993007017,
+          "clearingPossible": true
+        },
+        "certificate": {
+          "decision": "REPEATED_SUCCESS_FP_ABOVE_MAXIMUM",
+          "perCastSuccessUpperBound": 0.006993006993007017,
+          "successfulFpLowerBound": 920.4731249999935,
+          "certainlyEventuallySucceeds": true
+        }
+      }
+    },
+    {
+      "fpType": "BLOOD",
+      "tiers": [
+        7,
+        7,
+        3,
+        3
+      ],
+      "request": {
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+        "inputModel": "FORGEABLE_EQUAL",
+        "item": {
+          "baseId": "19:0",
+          "itemLevel": 100,
+          "fpType": "BLOOD",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 8,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                6
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                10
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "metrics": [
+        {
+          "id": "two-removals",
+          "success": {
+            "lower": 0.16666666666666397,
+            "upper": 0.16666666666666935
+          },
+          "successfulMeanFp": {
+            "lower": 57.17001466411187,
+            "upper": 57.17001466412344
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-add-both",
+          "success": {
+            "lower": 0.15524999999999733,
+            "upper": 0.15525000000000266
+          },
+          "successfulMeanFp": {
+            "lower": 56.85238139205283,
+            "upper": 56.852381392064835
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-t2-add-both",
+          "success": {
+            "lower": 0,
+            "upper": 0
+          },
+          "successfulMeanFp": null,
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-seal-add",
+          "success": {
+            "lower": 0.1537799999999966,
+            "upper": 0.15378000000000344
+          },
+          "successfulMeanFp": {
+            "lower": 57.29746060045541,
+            "upper": 57.29746060046928
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-seal-only-t2-add",
+          "success": {
+            "lower": 0,
+            "upper": 0
+          },
+          "successfulMeanFp": null,
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-prepare-t1-seal-add",
+          "success": {
+            "lower": 0.4039999999999954,
+            "upper": 0.4040000000000044
+          },
+          "successfulMeanFp": {
+            "lower": 67.53747844580612,
+            "upper": 67.53747844581693
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-lowest-seal-add",
+          "success": {
+            "lower": 0.4702399999999946,
+            "upper": 0.47024000000000526
+          },
+          "successfulMeanFp": {
+            "lower": 67.0355931582539,
+            "upper": 67.03559315826506
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        }
+      ],
+      "pureDoubleHit": {
+        "perCast": {
+          "upper": 0.006993006993007017,
+          "clearingPossible": true
+        },
+        "certificate": {
+          "decision": "REPEATED_SUCCESS_FP_ABOVE_MAXIMUM",
+          "perCastSuccessUpperBound": 0.006993006993007017,
+          "successfulFpLowerBound": 920.4731249999935,
+          "certainlyEventuallySucceeds": true
+        }
+      }
+    },
+    {
+      "fpType": "BLOOD",
+      "tiers": [
+        7,
+        7,
+        4,
+        4
+      ],
+      "request": {
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
+        "inputModel": "FORGEABLE_EQUAL",
+        "item": {
+          "baseId": "19:0",
+          "itemLevel": 100,
+          "fpType": "BLOOD",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 4,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 5,
+              "tier": 4,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 8,
+              "tier": 4,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                6
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                10
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "metrics": [
+        {
+          "id": "two-removals",
+          "success": {
+            "lower": 0.16666666666666397,
+            "upper": 0.16666666666666935
+          },
+          "successfulMeanFp": {
+            "lower": 57.17001466411187,
+            "upper": 57.17001466412344
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-seal-add-both",
+          "success": {
+            "lower": 0.06749999999999759,
+            "upper": 0.06750000000000242
+          },
+          "successfulMeanFp": {
+            "lower": 59.422694691279375,
+            "upper": 59.422694691303775
+          },
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-seal-t2-add-both",
+          "success": {
+            "lower": 0,
+            "upper": 0
+          },
+          "successfulMeanFp": null,
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-seal-add",
+          "success": {
+            "lower": 0.06059999999999687,
+            "upper": 0.060600000000003144
+          },
+          "successfulMeanFp": {
+            "lower": 60.07111130919052,
+            "upper": 60.071111309222566
+          },
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-seal-only-t2-add",
+          "success": {
+            "lower": 0,
+            "upper": 0
+          },
+          "successfulMeanFp": null,
+          "fpLowerBound": null,
+          "decision": "ABANDONED"
+        },
+        {
+          "id": "remove-add-prepare-t1-seal-add",
+          "success": {
+            "lower": 0.4039999999999954,
+            "upper": 0.4040000000000044
+          },
+          "successfulMeanFp": {
+            "lower": 67.53747844580612,
+            "upper": 67.53747844581693
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        },
+        {
+          "id": "remove-add-prepare-lowest-seal-add",
+          "success": {
+            "lower": 0.4702399999999946,
+            "upper": 0.47024000000000526
+          },
+          "successfulMeanFp": {
+            "lower": 67.0355931582539,
+            "upper": 67.03559315826506
+          },
+          "fpLowerBound": null,
+          "decision": "RETAINED"
+        }
+      ],
+      "pureDoubleHit": {
+        "perCast": {
+          "upper": 0.006993006993007017,
+          "clearingPossible": true
+        },
+        "certificate": {
+          "decision": "REPEATED_SUCCESS_FP_ABOVE_MAXIMUM",
+          "perCastSuccessUpperBound": 0.006993006993007017,
+          "successfulFpLowerBound": 920.4731249999935,
+          "certainlyEventuallySucceeds": true
+        }
+      }
+    }
+  ],
+  "previousReleaseRegression": {
+    "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+    "sourceTiers": [
+      7,
+      7,
+      3,
+      2
+    ],
+    "goals": "ONE_PREFIX_ONE_SUFFIX_BOTH_MISSING",
+    "constrainedActions": [
+      "add",
+      "havoc",
+      "seal",
+      "removal"
+    ],
+    "oldAll90TemplateBestSuccess": 0.235,
+    "oldSuccessfulMeanFp": 69.89345668674386,
+    "missingVacancyAwareDirectSuccess": 0.25065,
+    "missingVacancyAwareDirectFp": 57.22823036172855
+  },
+  "qualification": "Audited local native rules under explicit forgeable equal-positive-candidate item-type model. All low affixes and both T7s initially non-target, one ordinary affix of each tier on each side. Fixed vacancy branches, add criticals and complete successful-path FP jointly evaluated. Pure Redemptions use certified bounds, not exact means. No client frequency or global optimality claim."
+}

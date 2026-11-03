@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+  "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
   "metric": "INTRINSIC_V2",
   "status": "PASS",
   "upperInputLabels": 28,
@@ -26,6 +26,8 @@
         "DIRECT",
         "SEAL",
         "PREPARE_SEAL",
+        "INTERLEAVED_ACQUIRE",
+        "INTERLEAVED_MIN_SEAL",
         "REMOVE",
         "PREPARE_REMOVE",
         "CHAOS",
@@ -66,6 +68,8 @@
         "DIRECT",
         "SEAL",
         "PREPARE_SEAL",
+        "INTERLEAVED_ACQUIRE",
+        "INTERLEAVED_MIN_SEAL",
         "REMOVE",
         "PREPARE_REMOVE",
         "CHAOS",
@@ -106,6 +110,8 @@
         "DIRECT",
         "SEAL",
         "PREPARE_SEAL",
+        "INTERLEAVED_ACQUIRE",
+        "INTERLEAVED_MIN_SEAL",
         "REMOVE",
         "PREPARE_REMOVE",
         "CHAOS",
@@ -146,6 +152,8 @@
         "DIRECT",
         "SEAL",
         "PREPARE_SEAL",
+        "INTERLEAVED_ACQUIRE",
+        "INTERLEAVED_MIN_SEAL",
         "REMOVE",
         "PREPARE_REMOVE",
         "CHAOS",
@@ -186,6 +194,8 @@
         "DIRECT",
         "SEAL",
         "PREPARE_SEAL",
+        "INTERLEAVED_ACQUIRE",
+        "INTERLEAVED_MIN_SEAL",
         "REMOVE",
         "PREPARE_REMOVE",
         "CHAOS",
@@ -248,6 +258,8 @@
         "DIRECT",
         "SEAL",
         "PREPARE_SEAL",
+        "INTERLEAVED_ACQUIRE",
+        "INTERLEAVED_MIN_SEAL",
         "REMOVE",
         "PREPARE_REMOVE",
         "CHAOS",
@@ -288,6 +300,8 @@
         "DIRECT",
         "SEAL",
         "PREPARE_SEAL",
+        "INTERLEAVED_ACQUIRE",
+        "INTERLEAVED_MIN_SEAL",
         "REMOVE",
         "PREPARE_REMOVE",
         "CHAOS",
@@ -328,6 +342,8 @@
         "DIRECT",
         "SEAL",
         "PREPARE_SEAL",
+        "INTERLEAVED_ACQUIRE",
+        "INTERLEAVED_MIN_SEAL",
         "REMOVE",
         "PREPARE_REMOVE",
         "CHAOS",
@@ -476,7 +492,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -547,10 +563,10 @@
         "lower": 43.0854464558808,
         "upper": 43.08544645588391
       },
-      "generatedTemplates": 118,
-      "evaluatedTemplates": 118,
-      "abandonedTemplates": 96,
-      "certifiedPrunedPrefixes": 96,
+      "generatedTemplates": 126,
+      "evaluatedTemplates": 126,
+      "abandonedTemplates": 98,
+      "certifiedPrunedPrefixes": 98,
       "primaryStates": 22,
       "pruningMatchesCompleteEvaluation": true
     },
@@ -561,7 +577,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -652,7 +668,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -729,10 +745,10 @@
         "lower": 48.804892289212226,
         "upper": 48.804892289219154
       },
-      "generatedTemplates": 126,
-      "evaluatedTemplates": 126,
-      "abandonedTemplates": 96,
-      "certifiedPrunedPrefixes": 96,
+      "generatedTemplates": 134,
+      "evaluatedTemplates": 134,
+      "abandonedTemplates": 98,
+      "certifiedPrunedPrefixes": 98,
       "primaryStates": 47,
       "pruningMatchesCompleteEvaluation": true
     },
@@ -743,7 +759,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -840,7 +856,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -914,20 +930,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-17ddebe3f713b2ef",
+      "primaryRouteId": "r-23995bef0c1371d3",
       "operationSuccess": {
-        "lower": 0.484999999999996,
-        "upper": 0.485000000000004
+        "lower": 0.49534999999999657,
+        "upper": 0.49535000000000334
       },
       "successfulMeanFp": {
-        "lower": 68.88718476790658,
-        "upper": 68.88718476792324
+        "lower": 68.5658943993935,
+        "upper": 68.56589439940888
       },
-      "generatedTemplates": 96,
-      "evaluatedTemplates": 96,
-      "abandonedTemplates": 44,
-      "certifiedPrunedPrefixes": 44,
-      "primaryStates": 112,
+      "generatedTemplates": 116,
+      "evaluatedTemplates": 116,
+      "abandonedTemplates": 48,
+      "certifiedPrunedPrefixes": 48,
+      "primaryStates": 119,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -937,7 +953,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1040,7 +1056,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1131,7 +1147,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1228,7 +1244,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1325,7 +1341,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1428,7 +1444,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1525,7 +1541,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1628,7 +1644,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1713,7 +1729,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1804,7 +1820,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1895,7 +1911,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1992,7 +2008,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2089,7 +2105,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2192,7 +2208,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2283,7 +2299,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2380,7 +2396,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2477,7 +2493,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2580,7 +2596,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2665,7 +2681,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2756,7 +2772,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2847,7 +2863,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2944,7 +2960,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3041,7 +3057,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3144,7 +3160,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3215,10 +3231,10 @@
         "lower": 43.0854464558808,
         "upper": 43.08544645588391
       },
-      "generatedTemplates": 118,
-      "evaluatedTemplates": 118,
-      "abandonedTemplates": 96,
-      "certifiedPrunedPrefixes": 96,
+      "generatedTemplates": 126,
+      "evaluatedTemplates": 126,
+      "abandonedTemplates": 98,
+      "certifiedPrunedPrefixes": 98,
       "primaryStates": 22,
       "pruningMatchesCompleteEvaluation": true
     },
@@ -3229,7 +3245,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3320,7 +3336,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3397,10 +3413,10 @@
         "lower": 48.09683603921276,
         "upper": 48.096836039218616
       },
-      "generatedTemplates": 112,
-      "evaluatedTemplates": 112,
-      "abandonedTemplates": 90,
-      "certifiedPrunedPrefixes": 90,
+      "generatedTemplates": 120,
+      "evaluatedTemplates": 120,
+      "abandonedTemplates": 92,
+      "certifiedPrunedPrefixes": 92,
       "primaryStates": 76,
       "pruningMatchesCompleteEvaluation": true
     },
@@ -3411,7 +3427,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3508,7 +3524,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3582,20 +3598,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-0ca93defbf2d25b3",
+      "primaryRouteId": "r-2110af2fcdd40493",
       "operationSuccess": {
-        "lower": 0.33333333333333043,
-        "upper": 0.3333333333333362
+        "lower": 0.4953499999999937,
+        "upper": 0.49535000000000623
       },
       "successfulMeanFp": {
-        "lower": 55.4322954142101,
-        "upper": 55.432295414221265
+        "lower": 62.610036167840875,
+        "upper": 62.6100361678546
       },
-      "generatedTemplates": 90,
-      "evaluatedTemplates": 90,
-      "abandonedTemplates": 49,
-      "certifiedPrunedPrefixes": 49,
-      "primaryStates": 24,
+      "generatedTemplates": 110,
+      "evaluatedTemplates": 110,
+      "abandonedTemplates": 53,
+      "certifiedPrunedPrefixes": 53,
+      "primaryStates": 201,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -3605,7 +3621,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3708,7 +3724,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3799,7 +3815,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3896,7 +3912,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3993,7 +4009,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4096,7 +4112,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4193,7 +4209,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4296,7 +4312,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4381,7 +4397,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4472,7 +4488,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4563,7 +4579,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4660,7 +4676,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4757,7 +4773,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4860,7 +4876,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4951,7 +4967,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5048,7 +5064,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5145,7 +5161,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5248,7 +5264,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5333,7 +5349,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5424,7 +5440,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5515,7 +5531,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5612,7 +5628,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5709,7 +5725,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5812,7 +5828,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5883,10 +5899,10 @@
         "lower": 43.0854464558808,
         "upper": 43.08544645588391
       },
-      "generatedTemplates": 118,
-      "evaluatedTemplates": 118,
-      "abandonedTemplates": 96,
-      "certifiedPrunedPrefixes": 96,
+      "generatedTemplates": 126,
+      "evaluatedTemplates": 126,
+      "abandonedTemplates": 98,
+      "certifiedPrunedPrefixes": 98,
       "primaryStates": 22,
       "pruningMatchesCompleteEvaluation": true
     },
@@ -5897,7 +5913,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5988,7 +6004,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6065,10 +6081,10 @@
         "lower": 48.09683603921276,
         "upper": 48.096836039218616
       },
-      "generatedTemplates": 112,
-      "evaluatedTemplates": 112,
-      "abandonedTemplates": 90,
-      "certifiedPrunedPrefixes": 90,
+      "generatedTemplates": 120,
+      "evaluatedTemplates": 120,
+      "abandonedTemplates": 92,
+      "certifiedPrunedPrefixes": 92,
       "primaryStates": 76,
       "pruningMatchesCompleteEvaluation": true
     },
@@ -6079,7 +6095,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6176,7 +6192,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6250,20 +6266,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-53dd0f71e1b965e5",
+      "primaryRouteId": "r-1c3c88414850ded5",
       "operationSuccess": {
-        "lower": 0.3333333333333313,
-        "upper": 0.3333333333333353
+        "lower": 0.49534999999999524,
+        "upper": 0.4953500000000047
       },
       "successfulMeanFp": {
-        "lower": 55.43229541421185,
-        "upper": 55.432295414219524
+        "lower": 62.61003616784259,
+        "upper": 62.6100361678529
       },
-      "generatedTemplates": 90,
-      "evaluatedTemplates": 90,
-      "abandonedTemplates": 49,
-      "certifiedPrunedPrefixes": 49,
-      "primaryStates": 22,
+      "generatedTemplates": 110,
+      "evaluatedTemplates": 110,
+      "abandonedTemplates": 53,
+      "certifiedPrunedPrefixes": 53,
+      "primaryStates": 199,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -6273,7 +6289,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6376,7 +6392,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6467,7 +6483,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6564,7 +6580,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6661,7 +6677,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6764,7 +6780,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6861,7 +6877,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6964,7 +6980,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7049,7 +7065,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7140,7 +7156,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7231,7 +7247,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7328,7 +7344,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7425,7 +7441,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7528,7 +7544,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7619,7 +7635,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7716,7 +7732,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7813,7 +7829,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7916,7 +7932,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8001,7 +8017,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8092,7 +8108,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8183,7 +8199,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8280,7 +8296,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8377,7 +8393,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8480,7 +8496,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8551,10 +8567,10 @@
         "lower": 43.0854464558808,
         "upper": 43.08544645588391
       },
-      "generatedTemplates": 118,
-      "evaluatedTemplates": 118,
-      "abandonedTemplates": 96,
-      "certifiedPrunedPrefixes": 96,
+      "generatedTemplates": 126,
+      "evaluatedTemplates": 126,
+      "abandonedTemplates": 98,
+      "certifiedPrunedPrefixes": 98,
       "primaryStates": 22,
       "pruningMatchesCompleteEvaluation": true
     },
@@ -8565,7 +8581,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8656,7 +8672,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8733,10 +8749,10 @@
         "lower": 48.804892289212226,
         "upper": 48.804892289219154
       },
-      "generatedTemplates": 126,
-      "evaluatedTemplates": 126,
-      "abandonedTemplates": 96,
-      "certifiedPrunedPrefixes": 96,
+      "generatedTemplates": 134,
+      "evaluatedTemplates": 134,
+      "abandonedTemplates": 98,
+      "certifiedPrunedPrefixes": 98,
       "primaryStates": 47,
       "pruningMatchesCompleteEvaluation": true
     },
@@ -8747,7 +8763,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8844,7 +8860,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8918,20 +8934,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-4d9c20c26e48fb1e",
+      "primaryRouteId": "r-485d286e638ddafa",
       "operationSuccess": {
-        "lower": 0.4849999999999969,
-        "upper": 0.4850000000000031
+        "lower": 0.49534999999999746,
+        "upper": 0.49535000000000246
       },
       "successfulMeanFp": {
-        "lower": 68.88718476790844,
-        "upper": 68.88718476792138
+        "lower": 68.56589439939553,
+        "upper": 68.56589439940684
       },
-      "generatedTemplates": 96,
-      "evaluatedTemplates": 96,
-      "abandonedTemplates": 44,
-      "certifiedPrunedPrefixes": 44,
-      "primaryStates": 110,
+      "generatedTemplates": 116,
+      "evaluatedTemplates": 116,
+      "abandonedTemplates": 48,
+      "certifiedPrunedPrefixes": 48,
+      "primaryStates": 117,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -8941,7 +8957,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9044,7 +9060,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9135,7 +9151,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9232,7 +9248,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9329,7 +9345,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9432,7 +9448,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9529,7 +9545,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9632,7 +9648,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9717,7 +9733,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9808,7 +9824,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9899,7 +9915,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9996,7 +10012,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10093,7 +10109,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10196,7 +10212,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10287,7 +10303,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10384,7 +10400,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10481,7 +10497,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10584,7 +10600,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10669,7 +10685,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10760,7 +10776,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10851,7 +10867,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10948,7 +10964,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -11045,7 +11061,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-67c53ae6d74b301f",
+        "modelId": "le-1.5.3-iid-112b3bf85ebabd0d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -11182,11 +11198,11 @@
   ],
   "qualification": "All raw labels in four side contexts, real legal catalog IDs. Coverage fixtures explicitly constrain actions to add/havoc/seal/removal for a complete inexpensive pruning baseline. Chaos, all three FP types, dynamic Redemption, fixed branches and numerical boundary cases have separate production tests. This is not all game states, all arbitrary controllers, a physical device test, or global optimality.",
   "sourceSha256": {
-    "src/generated/model.json": "7682651db84a66f58d16130668bc0ea301e158048a0325fb0cda4b10fd41632b",
-    "src/core/hierarchy.ts": "8548c3f30f9510870a2fdeee96b3fdafbc106642b29c387ef608bd067d1355a4",
+    "src/generated/model.json": "512c7d0f367c317c09df92a9ca89ac54bc7bf96f147ba8d55f357f5d241502d3",
+    "src/core/hierarchy.ts": "fa61302f8e155fccb4644a80be9e783751a5383c29ed23f7c793ae69144598a1",
     "src/core/hierarchy-fixtures.ts": "e39a00ca1095876b6152529b958bc5695a521ba591af2727e6e9cad3ebe38dc1",
-    "src/core/intrinsic.ts": "998aa687d76b4343fb717f85383b7daccbab85600e6d04d80ff3b8d98e6a3b0c",
-    "src/core/planner.ts": "6c51794b7a3dea70dcedf7a12186285523a73aad5ea9f7db6811e1e35288fe85",
+    "src/core/intrinsic.ts": "321e0c0c4c672b16cc56eafc4b4957b4d080c8ba8770cd8c7c22d4465810ee46",
+    "src/core/planner.ts": "f970a377e06f8d11545b58581ca50ef5fd77dde15021f894098138e85dcc5379",
     "src/core/rules.ts": "380a9af9251160a4fa27928142ba10e6716021084c13205d71216c6aa90ff449",
     "src/core/evaluation.ts": "292c9920fb64143f070d1b6a47e1a8b6504064e7ecffe016e03f8816dd1c3544",
     "src/core/types.ts": "c0ad7ea12fb5c3fe7b9284f120cbfcea27579c7199729cefe6f42e70bd211d71",

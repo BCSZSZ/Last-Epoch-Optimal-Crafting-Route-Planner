@@ -4,11 +4,12 @@ import { macroStep, predicateReached } from './evaluation';
 import { RuleEngine } from './rules';
 import { tierPermutations } from './probability';
 import { matches, targetReached } from './target';
+import { exact } from './interval';
 import type { Item, Macro, PlanRequest, Predicate, Route, Selector } from './types';
 
 export type StructureClass = '220' | '211' | '202' | '210' | '201' | '200';
 export type TemplateFamily = 'DONE' | 'FINISH' | 'DIRECT' | 'SEAL' | 'PREPARE_SEAL' | 'REMOVE' | 'PREPARE_REMOVE' |
-  'CHAOS' | 'PREPARE_CHAOS' | 'REDEMPTION' | 'REDEMPTION_SINGLE_CAST' | 'REDEMPTION_ANY_THEN_ACQUIRE' | 'REDEMPTION_PROTECTED_SECOND';
+  'INTERLEAVED_ACQUIRE' | 'INTERLEAVED_MIN_SEAL' | 'CHAOS' | 'PREPARE_CHAOS' | 'REDEMPTION' | 'REDEMPTION_SINGLE_CAST' | 'REDEMPTION_ANY_THEN_ACQUIRE' | 'REDEMPTION_PROTECTED_SECOND';
 export interface UpperNode {
   readonly key: string;
   readonly group: StructureClass;
@@ -25,7 +26,7 @@ export const UPPER_NODES: readonly UpperNode[] = Object.entries(occupations).fla
   ([0, 1] as const).map((s): UpperNode => ({ key: `${group}-N${n}-S${s}`, group: group as StructureClass,
     ordinaryCount: n, sealedCount: s, terminal: group === '220', routeNode: group === '220' ? 'DONE' : `${group}-N${n}-S${s}`,
     families: group === '220' ? ['DONE'] : ['211', '202'].includes(group) ? ['FINISH'] : [
-      'DIRECT', ...(s ? [] : ['SEAL', 'PREPARE_SEAL'] as const), 'REMOVE', 'PREPARE_REMOVE', 'CHAOS', 'PREPARE_CHAOS',
+      'DIRECT', ...(s ? [] : ['SEAL', 'PREPARE_SEAL', 'INTERLEAVED_ACQUIRE', 'INTERLEAVED_MIN_SEAL'] as const), 'REMOVE', 'PREPARE_REMOVE', 'CHAOS', 'PREPARE_CHAOS',
       'REDEMPTION', 'REDEMPTION_SINGLE_CAST', 'REDEMPTION_ANY_THEN_ACQUIRE', 'REDEMPTION_PROTECTED_SECOND'],
   }))));
 
@@ -67,7 +68,7 @@ export interface StrategyTemplate extends Route { readonly family: TemplateFamil
 export interface TemplateCompilation {
   readonly structure: Structure;
   readonly templates: readonly StrategyTemplate[];
-  readonly rejected: readonly { templateId: string; reason: string }[];
+  readonly rejected: readonly { templateId: string; reason: string; probabilityUpperBound?: number }[];
   readonly grammar: 'HIERARCHICAL_FIXED_TEMPLATES_V2';
 }
 export function macroStages(macros: readonly Macro[]): number {
@@ -80,7 +81,7 @@ export function compileTemplates(request: PlanRequest, engine: RuleEngine): Temp
   const structure = classifyStructure(request, engine);
   if (!structure) return null;
   const templates: StrategyTemplate[] = [];
-  const rejected: { templateId: string; reason: string }[] = [];
+  const rejected: { templateId: string; reason: string; probabilityUpperBound?: number }[] = [];
   const seen = new Set<string>();
   const ids = structure.targetIds;
   const excluded = [...ids, ...(request.constraints.protected?.map((row) => row.id) ?? [])];
@@ -92,12 +93,17 @@ export function compileTemplates(request: PlanRequest, engine: RuleEngine): Temp
   const add = (id: number): Macro => ({ kind: 'once', action: { kind: 'add', id, glyph: 'hope' } });
   const prepare = (selector: Selector): Macro => ({ kind: 'repeat', action: { kind: 'havoc', glyph: 'hope' }, until: { kind: 'exists', selector } });
   const allIds = (values: readonly number[]): Predicate => ({ kind: 'all', predicates: values.map((id) => identity(id)) });
-  const append = (macros: readonly Macro[], family: TemplateFamily, description: string) => {
+  const t4Cap = exact(0.6).add(exact(0.15).mul(exact(4))).add(exact(0.3))
+    .mul(exact(engine.catalog.model.parameters.sealMultipliers[3])).clamp(0, 1);
+  const append = (macros: readonly Macro[], family: TemplateFamily, description: string, probabilityUpperBound?: number) => {
     const id = routeId(macros), key = routeKey({ id, macros });
     if (seen.has(key)) return;
     seen.add(key);
     if (macroStages(macros) > request.search.macroStages) { rejected.push({ templateId: id, reason: 'DECLARED_MACRO_STAGE_SCOPE' }); return; }
     if (macros.some((macro) => !allowedMacro(macro, request))) { rejected.push({ templateId: id, reason: 'ACTION_DISABLED' }); return; }
+    if (probabilityUpperBound !== undefined && probabilityUpperBound < 0.15) {
+      rejected.push({ templateId: id, reason: 'CERTIFIED_SUCCESS_BELOW_15_PERCENT', probabilityUpperBound }); return;
+    }
     // Only prove a first-step rejection on the actual entry. Never extrapolate it past a random preparation.
     const initial = firstAction(macros, request.item, request, engine);
     if (initial === 'INAPPLICABLE') { rejected.push({ templateId: id, reason: 'PROVEN_INAPPLICABLE_FIRST_STEP' }); return; }
@@ -145,10 +151,50 @@ export function compileTemplates(request: PlanRequest, engine: RuleEngine): Temp
       for (const order of orders) for (const prepared of [false, true]) {
         const before = prepared ? [fill, reposition] : [];
         append([...before, remove, remove, ...order.map(add), ...finish], 'REMOVE', '先连续剥离两个垃圾位置，再补A/B并收尾');
+        if (!structure.node.sealedCount && (prepared || structure.node.ordinaryCount === 4)) {
+          const [a, b] = order, sameSide = engine.catalog.side(a) === engine.catalog.side(b);
+          const accepted: Selector = sameSide ? { ...garbage, side: engine.catalog.side(a) as 0 | 1 } : garbage;
+          // Accept either useful vacancy. The branch is declared BEFORE rolling, not optimized after the result.
+          for (const sealTier of [0, null, 1, 2, 3, 4] as const) {
+            const complete = (first: number, last: number): readonly Macro[] => {
+              if (sealTier === 0) {
+                const sealAt = (tier: number): readonly Macro[] => {
+                  const selector: Selector = { excludedIds: excluded, side: engine.catalog.side(last) as 0 | 1, minTier: tier, maxTier: tier, sealable: true };
+                  return [prepare(selector), { kind: 'seal', selector }];
+                };
+                // A newly added T1 can rise only to T2. Choose the lowest available tier by a fixed, exhaustive branch.
+                return [add(first), { kind: 'conditional', when: { kind: 'exists', selector: { minTier: 1, maxTier: 1 } },
+                  then: sealAt(1), otherwise: sealAt(2) }, add(last)];
+              }
+              const selector: Selector = { excludedIds: excluded, side: engine.catalog.side(last) as 0 | 1,
+                minTier: sealTier ?? 1, maxTier: sealTier ?? 4, sealable: true };
+              return [add(first), ...(sealTier === null ? [] : [prepare(selector)]), { kind: 'seal', selector }, add(last)];
+            };
+            const after: readonly Macro[] = sameSide ? complete(a, b) : [{ kind: 'conditional',
+              when: { kind: 'count', selector: { side: engine.catalog.side(a) as 0 | 1 }, minimum: 2 },
+              then: complete(b, a), otherwise: complete(a, b) }];
+            const directHighTier = sealTier === null && structure.node.ordinaryCount === 4 && structure.ordinary.every((row) => row.special === 0) &&
+              structure.ordinary.filter((row) => row.tier !== 7).every((row) => row.tier >= 4);
+            append([...before, { kind: 'removal', accepted, glyph: 'hope' }, ...after, ...finish], sealTier === 0 ? 'INTERLEAVED_MIN_SEAL' : 'INTERLEAVED_ACQUIRE',
+              `剥离 → 按空槽补目标 → ${sealTier === 0 ? '固定T1／T2分支准备最低阶封印' : sealTier === null ? '直接封印剩余垃圾' : `浩劫准备T${sealTier}再封印`} → 补另一目标 → 收尾`,
+              directHighTier ? t4Cap.mul(exact(0.5)).upper : undefined);
+          }
+        }
         if (!structure.node.sealedCount) for (let tier = 1; tier <= 4; tier++) {
           const seal: Macro = { kind: 'seal', selector: { excludedIds: excluded, minTier: tier, maxTier: tier, sealable: true } };
-          append([...before, seal, remove, ...order.map(add), ...finish], 'SEAL', `先封T${tier}再剥离，开两个位置后补A/B`);
-          append([...before, remove, seal, ...order.map(add), ...finish], 'SEAL', `先剥离再封T${tier}，开两个位置后补A/B`);
+          const sealFirst = [...before, seal, remove, ...order.map(add), ...finish];
+          const removalFirst = [...before, remove, seal, ...order.map(add), ...finish];
+          if (tier === 4 && structure.ordinary.every((row) => row.special === 0) && (prepared || structure.node.ordinaryCount === 4)) {
+            // Two T7s + two Standard garbage slots: seal→remove <= .15/3; remove→seal <= (2/4)*.15.
+            // This is a probability threshold certificate, NOT a universal seal-vs-removal dominance claim.
+            for (const [macros, bound] of [[sealFirst, t4Cap.div(exact(3)).upper], [removalFirst, t4Cap.mul(exact(0.5)).upper]] as const) {
+              if (bound < 0.15) rejected.push({ templateId: routeId(macros), reason: 'CERTIFIED_SUCCESS_BELOW_15_PERCENT', probabilityUpperBound: bound });
+              else append(macros, 'SEAL', 'T4封印与剥离开位后补A/B');
+            }
+          } else {
+            append(sealFirst, 'SEAL', `先封T${tier}再剥离，开两个位置后补A/B`);
+            append(removalFirst, 'SEAL', `先剥离再封T${tier}，开两个位置后补A/B`);
+          }
         }
       }
     }
@@ -205,6 +251,9 @@ export function compileTemplates(request: PlanRequest, engine: RuleEngine): Temp
   const head: StrategyTemplate[] = [];
   const pick = (test: (route: StrategyTemplate) => boolean) => { const found = templates.find((row) => !head.includes(row) && test(row)); if (found) head.push(found); };
   pick((row) => row.family === 'DONE' || row.family === 'FINISH');
+  pick((row) => row.family === 'INTERLEAVED_MIN_SEAL');
+  pick((row) => row.family === 'INTERLEAVED_ACQUIRE' && guardedT1(row.macros));
+  pick((row) => row.family === 'INTERLEAVED_ACQUIRE' && !guardedT1(row.macros));
   pick((row) => guardedT1(row.macros) && !containsRedemption(row.macros) && !containsChaos(row.macros));
   pick((row) => row.family === 'DIRECT');
   pick((row) => row.description?.includes('连续剥离') ?? false);

@@ -2062,7 +2062,7 @@
     "presentTargetMask": "A=1,B=2; ordinary identity present at any tier, not justT7"
   },
   "inputSha256": {
-    "research/upper-state-havoc-check.json": "0d8a3cc31c7a3ee6adb66e7a12af6c187c3850cc5104d7e5f12507e795c2d20d",
+    "research/upper-state-havoc-check.json": "62908516a06f4f335f3d7920187a83e7db60079e3c1692695d199e5cffeb81b4",
     "scripts/analyze_upper_state_projection.py": "311893d0599c680e87d1141270ecdc2c76c2d2764e95d6da6c3cf3513b1802e4",
     "scripts/check_strategy_classification.py": "3cf69c5f56844029365e65f993df35e9507a491767d9821e2192be896afc064b",
     "scripts/check_upper_state_havoc.ts": "118a4156ea94114db04eba5359c23dd07d7ae2bded9cf63296351abeca43372c",

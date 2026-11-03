@@ -71,6 +71,111 @@
       ],
       "status": "PASS"
     },
+    "allTargetsAbsent7732": {
+      "bloodEqualsNormal": true,
+      "oneCastFraction": "140737488355328/16257994501799281",
+      "rows": [
+        {
+          "estimatedP": 0.01064,
+          "fpType": "NORMAL",
+          "initialFp": 1,
+          "wilson99": [
+            0.009521326449882513,
+            0.011888530438403981
+          ]
+        },
+        {
+          "estimatedP": 0.01966,
+          "fpType": "NORMAL",
+          "initialFp": 10,
+          "wilson99": [
+            0.01812333361980841,
+            0.021324129715403983
+          ]
+        },
+        {
+          "estimatedP": 0.04212,
+          "fpType": "NORMAL",
+          "initialFp": 30,
+          "wilson99": [
+            0.03986627577490568,
+            0.04449522756008004
+          ]
+        },
+        {
+          "estimatedP": 0.07608,
+          "fpType": "NORMAL",
+          "initialFp": 63,
+          "wilson99": [
+            0.07308182168103222,
+            0.0791906700062377
+          ]
+        },
+        {
+          "estimatedP": 0.01588,
+          "fpType": "ICE",
+          "initialFp": 1,
+          "wilson99": [
+            0.014502834263079526,
+            0.017385632135394517
+          ]
+        },
+        {
+          "estimatedP": 0.02694,
+          "fpType": "ICE",
+          "initialFp": 10,
+          "wilson99": [
+            0.025136739773961844,
+            0.02886879173570958
+          ]
+        },
+        {
+          "estimatedP": 0.05656,
+          "fpType": "ICE",
+          "initialFp": 30,
+          "wilson99": [
+            0.053957367739324635,
+            0.059280303787857314
+          ]
+        },
+        {
+          "estimatedP": 0.10396,
+          "fpType": "ICE",
+          "initialFp": 63,
+          "wilson99": [
+            0.1004965488358192,
+            0.1075285445964944
+          ]
+        }
+      ],
+      "status": "PASS",
+      "trials": 400000,
+      "verifiedOnly": true
+    },
+    "commonPatterns": {
+      "exactAtomicMassChecks": 20304,
+      "maxSuccessProbabilityIntervalWidth": 1.9095836023552692e-14,
+      "negativeRecipeInputs": 1,
+      "scenarios": 90,
+      "status": "PASS",
+      "structuralCases": {
+        "alreadyOwnedTargetNotAddedAgain": true,
+        "targetAExcludedFromSeal": true,
+        "x0RecipeInapplicableNotGloballyImpossible": true,
+        "x7ThreeT7Handled": true
+      },
+      "validPatternInputs": 14,
+      "verifiedOnly": true
+    },
+    "commonPatternsMonteCarlo": {
+      "baseSeed": 771120261103,
+      "comparedWithDp": true,
+      "passed": true,
+      "pointCount": 54,
+      "samplesPerPoint": 20000,
+      "totalSamples": 1080000,
+      "verifiedOnly": true
+    },
     "fp": {
       "exactUnitMassCases": 1536,
       "scope": "research_reference_only",
@@ -116,20 +221,23 @@
   "claimedProductionSolverTest": false,
   "documents": {
     "bootstrapUnchanged": true,
-    "localLinks": 84,
+    "localLinks": 103,
     "requiredDocuments": 11
   },
   "inputs": {
-    "scripts/build_research_index.py": "24e4193750241e35f661f1cf94e844fec1f48c5edef247db57f5fdf82b3d301d",
+    "scripts/build_research_index.py": "dc708db5fb8b71a7e69a07bbfec8a400bea8403d663912a485d7ec8992f98fff",
     "scripts/check_7710_monte_carlo.py": "d7e40b9aed16910123b55dd75346dad6d8abe429d0198202f8388dcc796814b9",
-    "scripts/check_7710_routes.py": "05fa0844cfbc5078b8718327dac3c82cfa06a041cf85fab94062e7cee6ee1a1c",
+    "scripts/check_7710_routes.py": "2cd2b15df713b53a5c6da9e4b9c2a1b25a6a266545aea72e12a7856b2d9c9dc8",
+    "scripts/check_7732_redemption.py": "e534bb29d35492d8295dcd89adf631bed689f099f874af15bb1b11852810d122",
     "scripts/check_action_examples.py": "e393f25b274ff9c203fa8026eb38765d4d4a1d8f2a66688596379cbbb6ffa5f0",
+    "scripts/check_common_patterns.py": "8bf83fb954640a7caae4a414c64a1bbc42e3034f0aba5806def0804161877b10",
+    "scripts/check_common_patterns_monte_carlo.py": "c33bcb343cd12c9dcc9b87f60f4ebd36f8b9c0904c8a2f86bd60b390f1871342",
     "scripts/check_fp_examples.py": "3a413c0f56738862cbc7cf34b1d3f1badbdc80edc2aab60f8a413c06c9199257",
     "scripts/check_math_fixtures.py": "25c3d9154e604d00aa625eed52a780768af42c8d6a21fa31bbb49190fc0b4295",
     "scripts/extract_game_snapshot.py": "94c58a91f80bd510954e0d762f596d261b257976cd0ec46ec51fb82ba1a3fdc8",
     "scripts/inspect_native_method.py": "d1efb2a6e47ddfd5c63eab7b20bd01fe34906db6aa1a059bd169575509090ca6",
     "scripts/register_audited_build.py": "11f4fc697b2cb0f041ee5f830793000415adcac9a7612a41617b193f0ff98a34",
-    "scripts/validate_research.py": "8eb8b44517bc8d51c3af2bcca9366a05647dc1745687cb6df37ab4f5d5db3edf"
+    "scripts/validate_research.py": "54f178ad32ec57d6b2693bf25ea71527e15491676c769e932d6e36861aec54bf"
   },
   "phase": "PHASE_0_RESEARCH_ONLY",
   "schemaVersion": 1,

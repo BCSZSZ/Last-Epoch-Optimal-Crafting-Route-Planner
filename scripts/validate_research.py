@@ -118,17 +118,28 @@ def main() -> None:
     checks = {"math": run_example("check_math_fixtures.py"), "actions": run_example("check_action_examples.py"),
               "fp": run_example("check_fp_examples.py", "--verify-only"),
               "user7710": run_example("check_7710_routes.py", "--verify-only"),
-              "user7710MonteCarlo": run_example("check_7710_monte_carlo.py", "--summary", "--no-timing")}
+              "user7710MonteCarlo": run_example("check_7710_monte_carlo.py", "--summary", "--no-timing"),
+              "commonPatterns": run_example("check_common_patterns.py", "--verify-only"),
+              "commonPatternsMonteCarlo": run_example("check_common_patterns_monte_carlo.py", "--verify-only", "--no-timing"),
+              "allTargetsAbsent7732": run_example("check_7732_redemption.py", "--verify-only")}
     checks["user7710MonteCarlo"].pop("elapsedSeconds", None)
+    checks["commonPatternsMonteCarlo"].pop("elapsedSeconds", None)
     model = load_json(ROOT / "research/model-snapshot.json")
     require(model["policies"]["materialsAvailability"] == "UNLIMITED" and
             model["policies"]["materialCostInObjective"] is False and
-            model["policies"]["inventoryInputSupported"] is False,
+            model["policies"]["inventoryInputSupported"] is False and
+            model["policies"]["commonPatternsPrioritizedNotExclusive"] is True and
+            model["policies"]["unassessedPatternStatus"] == "UNASSESSED",
             "User's unlimited-material policy is not reflected in the model")
     saved_mc = load_json(ROOT / "research/7710-monte-carlo.json")
     require(saved_mc["passed"] is True and saved_mc["fixtureSha256"] == sha(ROOT / "research/7710-route-cases.json") and
             saved_mc["referenceResultsSha256"] == sha(ROOT / "research/7710-route-results.json"),
             "Stale complete-route Monte Carlo baseline")
+    common_mc = load_json(ROOT / "research/common-pattern-monte-carlo.json")
+    require(common_mc["passed"] is True and
+            common_mc["fixtureSha256"] == sha(ROOT / "research/common-pattern-cases.json") and
+            common_mc["referenceResultsSha256"] == sha(ROOT / "research/common-pattern-results.json"),
+            "Stale common-pattern Monte Carlo baseline")
     report = {"schemaVersion": 1, "auditedOn": "2026-11-03", "status": "PASS", "phase": "PHASE_0_RESEARCH_ONLY",
               "snapshot": snapshot, "documents": documents, "checks": checks,
               "claimedClientTest": False, "claimedProductionSolverTest": False,
@@ -141,6 +152,9 @@ def main() -> None:
                       "actionMonteCarloSamples": sum(row["samples"] for row in checks["actions"]["redemption"]),
                       "user7710Scenarios": checks["user7710"]["scenarios"],
                       "completeRouteMonteCarloSamples": checks["user7710MonteCarlo"]["totalSamples"],
+                      "commonPatternScenarios": checks["commonPatterns"]["scenarios"],
+                      "commonPatternMonteCarloSamples": checks["commonPatternsMonteCarlo"]["totalSamples"],
+                      "allTargetsAbsent7732Trials": checks["allTargetsAbsent7732"]["trials"],
                       "wroteReport": args.write_report}, ensure_ascii=False))
 
 

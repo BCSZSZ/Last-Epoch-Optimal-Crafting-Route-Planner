@@ -1,0 +1,663 @@
+{
+  "cases": [
+    {
+      "baseId": "4:0",
+      "id": "existing_a_direct_x1",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 2,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 1
+        }
+      ],
+      "patternFamily": "existing_a_direct",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_direct_route",
+          "primary": true,
+          "steps": [
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 1
+    },
+    {
+      "baseId": "4:0",
+      "id": "existing_a_prepare_x1",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 26,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 1
+        }
+      ],
+      "patternFamily": "existing_a_prepare",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_prepare_route",
+          "primary": true,
+          "steps": [
+            "PREPARE_HAVOC",
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 1
+    },
+    {
+      "baseId": "4:0",
+      "id": "existing_a_direct_x2",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 2,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 2
+        }
+      ],
+      "patternFamily": "existing_a_direct",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_direct_route",
+          "primary": true,
+          "steps": [
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 2
+    },
+    {
+      "baseId": "4:0",
+      "id": "existing_a_prepare_x2",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 26,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 2
+        }
+      ],
+      "patternFamily": "existing_a_prepare",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_prepare_route",
+          "primary": true,
+          "steps": [
+            "PREPARE_HAVOC",
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 2
+    },
+    {
+      "baseId": "4:0",
+      "id": "existing_a_direct_x3",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 2,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 3
+        }
+      ],
+      "patternFamily": "existing_a_direct",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_direct_route",
+          "primary": true,
+          "steps": [
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 3
+    },
+    {
+      "baseId": "4:0",
+      "id": "existing_a_prepare_x3",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 26,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 3
+        }
+      ],
+      "patternFamily": "existing_a_prepare",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_prepare_route",
+          "primary": true,
+          "steps": [
+            "PREPARE_HAVOC",
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 3
+    },
+    {
+      "baseId": "4:0",
+      "id": "existing_a_direct_x4",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 2,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 4
+        }
+      ],
+      "patternFamily": "existing_a_direct",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_direct_route",
+          "primary": true,
+          "steps": [
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 4
+    },
+    {
+      "baseId": "4:0",
+      "id": "existing_a_prepare_x4",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 26,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 4
+        }
+      ],
+      "patternFamily": "existing_a_prepare",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_prepare_route",
+          "primary": true,
+          "steps": [
+            "PREPARE_HAVOC",
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 4
+    },
+    {
+      "baseId": "4:0",
+      "id": "existing_a_direct_x5",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 2,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 5
+        }
+      ],
+      "patternFamily": "existing_a_direct",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_direct_route",
+          "primary": true,
+          "steps": [
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 5
+    },
+    {
+      "baseId": "4:0",
+      "id": "existing_a_prepare_x5",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 26,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 5
+        }
+      ],
+      "patternFamily": "existing_a_prepare",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_prepare_route",
+          "primary": true,
+          "steps": [
+            "PREPARE_HAVOC",
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 5
+    },
+    {
+      "baseId": "4:0",
+      "id": "existing_a_direct_x6",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 2,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 6
+        }
+      ],
+      "patternFamily": "existing_a_direct",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_direct_route",
+          "primary": true,
+          "steps": [
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 6
+    },
+    {
+      "baseId": "4:0",
+      "id": "existing_a_prepare_x6",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 26,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 6
+        }
+      ],
+      "patternFamily": "existing_a_prepare",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_prepare_route",
+          "primary": true,
+          "steps": [
+            "PREPARE_HAVOC",
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 6
+    },
+    {
+      "baseId": "4:0",
+      "id": "existing_a_direct_x7",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 2,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 7
+        }
+      ],
+      "patternFamily": "existing_a_direct",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_direct_route",
+          "primary": true,
+          "steps": [
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 7
+    },
+    {
+      "baseId": "4:0",
+      "id": "existing_a_prepare_x7",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 26,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 10,
+          "sealed": false,
+          "tier": 1
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 7
+        }
+      ],
+      "patternFamily": "existing_a_prepare",
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "existing_a_prepare_route",
+          "primary": true,
+          "steps": [
+            "PREPARE_HAVOC",
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5,
+      "x": 7
+    }
+  ],
+  "gameVersion": "1.5.3",
+  "materials": {
+    "availability": "UNLIMITED",
+    "costInObjective": false
+  },
+  "negativeCases": [
+    {
+      "baseId": "4:0",
+      "expected": "RECIPE_CANNOT_REACH_FOUR_ORDINARY_SLOTS",
+      "id": "existing_a_x0_needs_extra_filler",
+      "initialAffixes": [
+        {
+          "id": 4,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 7,
+          "sealed": false,
+          "tier": 7
+        },
+        {
+          "id": 2,
+          "sealed": false,
+          "tier": 1
+        }
+      ],
+      "notGloballyImpossible": true,
+      "playerLevel": 100,
+      "routes": [
+        {
+          "id": "incomplete_seal_add_havoc",
+          "primary": false,
+          "steps": [
+            "SEAL_CURRENT_JUNK",
+            "ADD_B",
+            "FINAL_HAVOC"
+          ]
+        }
+      ],
+      "targetAId": 4,
+      "targetBId": 5
+    }
+  ],
+  "pattern": "771x_WITH_ONE_TARGET_ALREADY_T7",
+  "schemaVersion": 1,
+  "scope": "Four ordinary unsealed affixes; A alreadyT7, B absent, regular sealed slot empty. x7 includes threeT7 and is a boundary case. x0 is separately tested as an incomplete three-slot recipe.",
+  "steamBuildId": 26087601,
+  "supportGlyphs": {
+    "ADD_A": "HOPE",
+    "ADD_B": "HOPE",
+    "FINAL_HAVOC": "HOPE",
+    "PREPARE_HAVOC": "HOPE",
+    "SEAL_CURRENT_JUNK": "DESPAIR"
+  },
+  "xDomain": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

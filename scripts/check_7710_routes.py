@@ -111,6 +111,7 @@ class Evaluator:
     def __init__(self, case: dict, route: dict, fp_type: str, profile: str, definitions: dict):
         self.case, self.route, self.fp_type, self.profile, self.definitions = case, route, fp_type, profile, definitions
         self.a, self.b = case["targetAId"], case["targetBId"]
+        self.initial_t7_count = sum(not row["sealed"] and row["tier"] == 7 for row in case["initialAffixes"])
         claims = json.loads((ROOT / "research/forge-fp-claims.json").read_text(encoding="utf-8"))
         facts = {claim["id"]: claim for claim in claims["claims"]}
         self.q_lucky = threshold(facts["FP-COST"]["luckyThresholdFloat32"], profile)
@@ -231,7 +232,8 @@ class Evaluator:
         for (new_state, after, _), _p in output.items():
             require(0 <= after <= before <= 63, "FP cannot grow above action entrance")
             require(len({row[0] for row in new_state}) == len(new_state), "Duplicate affix introduced")
-            require(sum(not row[2] and row[1] == 7 for row in new_state) == 2, "Preparation lost an ordinary T7")
+            require(sum(not row[2] and row[1] == 7 for row in new_state) == self.initial_t7_count,
+                    "Preparation changed the number of ordinary T7 affixes")
         self.atomic_mass_checks += 1
         return tuple((*key, p) for key, p in output.items())
 

@@ -1,0 +1,392 @@
+{
+  "bloodNormalEquivalence": {
+    "bloodRowsAlias": "NORMAL",
+    "couplingTrialChecks": 1000,
+    "equalKernelForThisRuneRoute": true,
+    "independentlySampledBloodRows": false,
+    "source": "forge-fp-claims.json FP-CRITICAL-GATE/FP-CRITICAL-ROLL: pure rune route has no primary-shard critical entrance; only Ice changes noCost branch."
+  },
+  "conditionalHitRateCounterexamples": [
+    {
+      "case": "bothTargetsAbsent",
+      "startingAffixIds": [
+        2,
+        26,
+        7,
+        10
+      ],
+      "successProbability": {
+        "decimal": 0.00865650977675952,
+        "fraction": "140737488355328/16257994501799281"
+      },
+      "unitMass": "1"
+    },
+    {
+      "case": "targetAInFirstT7",
+      "startingAffixIds": [
+        4,
+        26,
+        7,
+        10
+      ],
+      "successProbability": {
+        "decimal": 0.00432825488837976,
+        "fraction": "70368744177664/16257994501799281"
+      },
+      "unitMass": "1"
+    },
+    {
+      "case": "targetAInLastT7",
+      "startingAffixIds": [
+        26,
+        4,
+        7,
+        10
+      ],
+      "successProbability": {
+        "decimal": 0.0,
+        "fraction": "0"
+      },
+      "unitMass": "1"
+    }
+  ],
+  "dataRevision": "e13bd6ad1c607782651e98ab7eafa959cc8883b89d570eb100ac55fa36b086a2",
+  "fixture": {
+    "baseId": "4:0",
+    "bothTargetsAbsentInitially": true,
+    "glyphOfHope": true,
+    "initialAffixes": [
+      {
+        "id": 2,
+        "sealed": false,
+        "tier": 7
+      },
+      {
+        "id": 26,
+        "sealed": false,
+        "tier": 7
+      },
+      {
+        "id": 7,
+        "sealed": false,
+        "tier": 3
+      },
+      {
+        "id": 10,
+        "sealed": false,
+        "tier": 2
+      }
+    ],
+    "materialCostInObjective": false,
+    "materials": "UNLIMITED",
+    "ordinaryGlovePoolCount": 40,
+    "playerLevel": 100,
+    "targetOrdinaryT7Ids": [
+      4,
+      5
+    ]
+  },
+  "gameAssemblySha256": "323e9183f3bee600b6c9e1c469218b9de926e9044f2ca3d44fae8a0ec9a91464",
+  "gameVersion": "1.5.3",
+  "inputs": {
+    "data/game/1.5.3/affixes.json": "abdbea6ee8a01e02f16122943da57bf641a504a3ece3fa05ffd1550c1cc79794",
+    "data/game/1.5.3/items.json": "ebb84bc1ef39ae40d538e131e38d7eadeb330b07e841303d13822fb8c9f45f1c",
+    "data/game/1.5.3/manifest.json": "f1127461629a61b3d0a6970ab26ccc2032491bceed849298849a6b842f2251b9",
+    "data/game/1.5.3/resource-parameters.json": "06b25b738cd53a1b7e6de2da931ccd3274d6fdc55f9c34c184d809ac7833de28",
+    "research/affix-action-claims.json": "d720c72a45da01dcfea09a7feb92c44087474e89d431e4378f08a7581ebe6aed",
+    "research/forge-fp-claims.json": "618e6d5fa1db4b8db683b7fdefdfd3c4b70c17363634a36b99eb2e1cd914770c",
+    "scripts/check_7732_redemption.py": "e534bb29d35492d8295dcd89adf631bed689f099f874af15bb1b11852810d122",
+    "scripts/check_action_examples.py": "e393f25b274ff9c203fa8026eb38765d4d4a1d8f2a66688596379cbbb6ffa5f0"
+  },
+  "kind": "FIXED_INPUT_7732_REPEATED_REDEMPTION_FEASIBILITY_REFERENCE",
+  "limitations": [
+    "This is one concrete both-targets-absent7732 fixture, not a universal7732 probability or global route optimum.",
+    "A7732 item already containing both target identities can instead use a tier-permutation macro; it is a different subtype.",
+    "Displayed thresholds and normalized weight draws are explicit model assumptions; finite native cumulative boundaries and seeded RNG correlations are outside this artifact.",
+    "Wilson intervals quantify binomial sampling uncertainty only, not mechanics-model uncertainty.",
+    "Materials are unlimited; no currency or inventory input and no material-expense infeasibility criterion is used."
+  ],
+  "oneCastFeasibilityWitness": {
+    "exitStates": 289,
+    "mass": "1",
+    "probability": {
+      "decimal": 0.00865650977675952,
+      "fraction": "140737488355328/16257994501799281"
+    },
+    "source": "Current snapshot weights and native sequential-ID exclusion rule; tiers3/2 do not enter Redemption reroll pool."
+  },
+  "probabilityModel": {
+    "actualClientTests": 0,
+    "evidenceConfidence": "VERIFIED",
+    "exactOneCastArithmetic": "fractions.Fraction",
+    "id": "display_parameters_iid_with_current_normalized_craft_weights",
+    "nativeGridBitExact": false,
+    "rng": "Python random.Random(MT19937), fixed per-point seeds; independent-draw model, not native RNG replay.",
+    "routeEvaluation": "MONTE_CARLO_ESTIMATED",
+    "thresholdsRawFloat32": {
+      "hope": 0.25,
+      "ice": 0.30000001192092896,
+      "lowFpPreservation": 0.05000000074505806,
+      "lucky": 0.2849999964237213
+    },
+    "thresholdsUsed": {
+      "hope": 0.25,
+      "ice": 0.3,
+      "lowFpPreservation": 0.05,
+      "lucky": 0.285
+    },
+    "weightedDraw": "Current candidate exclusions are recalculated after EACH identity replacement; candidate CDFs are cached only by current complete ID set."
+  },
+  "researchDate": "2026-11-03",
+  "route": {
+    "continue": "After a non-successful complete action, repeat using updated IDs if FP remains positive.",
+    "failure": "FP is exhausted after a complete unsuccessful action.",
+    "fixedInitialHitProbabilityGeometricShortcutUsed": false,
+    "fixedTiers": [
+      7,
+      7,
+      3,
+      2
+    ],
+    "operation": "REPEAT_REDEMPTION",
+    "success": "After the COMPLETE rune action, A4 and B5 are both nonsealedT7 prefixes.",
+    "suffixIdsRemain": [
+      7,
+      10
+    ]
+  },
+  "rows": [
+    {
+      "actualFpSpent": {
+        "mean": 0.99748,
+        "standardError": 0.000224218637673033
+      },
+      "attempts": {
+        "mean": 1.32684,
+        "standardError": 0.0029683140847575605
+      },
+      "estimatedSuccessProbability": 0.01064,
+      "failures": 49468,
+      "fpType": "NORMAL",
+      "initialFp": 1,
+      "maximumObservedAttempts": 11,
+      "meanFpConditionalOnFailure": 1,
+      "meanFpConditionalOnSuccess": 0.7631578947368421,
+      "samples": 50000,
+      "seed": 202611037732,
+      "successProbabilityInterval": {
+        "high": 0.011888530438403981,
+        "level": 0.99,
+        "low": 0.009521326449882513,
+        "method": "two_sided_Wilson_score",
+        "z": 2.5758293035489004
+      },
+      "successes": 532
+    },
+    {
+      "actualFpSpent": {
+        "mean": 9.93254,
+        "standardError": 0.003174899142916402
+      },
+      "attempts": {
+        "mean": 2.50914,
+        "standardError": 0.006713451468254785
+      },
+      "estimatedSuccessProbability": 0.01966,
+      "failures": 49017,
+      "fpType": "NORMAL",
+      "initialFp": 10,
+      "maximumObservedAttempts": 13,
+      "meanFpConditionalOnFailure": 10,
+      "meanFpConditionalOnSuccess": 6.568667344862665,
+      "samples": 50000,
+      "seed": 202611142461,
+      "successProbabilityInterval": {
+        "high": 0.021324129715403983,
+        "level": 0.99,
+        "low": 0.01812333361980841,
+        "method": "two_sided_Wilson_score",
+        "z": 2.5758293035489004
+      },
+      "successes": 983
+    },
+    {
+      "actualFpSpent": {
+        "mean": 29.45544,
+        "standardError": 0.014844119882495635
+      },
+      "attempts": {
+        "mean": 5.53542,
+        "standardError": 0.010198283609106554
+      },
+      "estimatedSuccessProbability": 0.04212,
+      "failures": 47894,
+      "fpType": "NORMAL",
+      "initialFp": 30,
+      "maximumObservedAttempts": 21,
+      "meanFpConditionalOnFailure": 30,
+      "meanFpConditionalOnSuccess": 17.071225071225072,
+      "samples": 50000,
+      "seed": 202611247190,
+      "successProbabilityInterval": {
+        "high": 0.04449522756008004,
+        "level": 0.99,
+        "low": 0.03986627577490568,
+        "method": "two_sided_Wilson_score",
+        "z": 2.5758293035489004
+      },
+      "successes": 2106
+    },
+    {
+      "actualFpSpent": {
+        "mean": 60.77604,
+        "standardError": 0.042435306685271734
+      },
+      "attempts": {
+        "mean": 10.36732,
+        "standardError": 0.015041291339539409
+      },
+      "estimatedSuccessProbability": 0.07608,
+      "failures": 46196,
+      "fpType": "NORMAL",
+      "initialFp": 63,
+      "maximumObservedAttempts": 27,
+      "meanFpConditionalOnFailure": 63,
+      "meanFpConditionalOnSuccess": 33.76813880126183,
+      "samples": 50000,
+      "seed": 202611351919,
+      "successProbabilityInterval": {
+        "high": 0.0791906700062377,
+        "level": 0.99,
+        "low": 0.07308182168103222,
+        "method": "two_sided_Wilson_score",
+        "z": 2.5758293035489004
+      },
+      "successes": 3804
+    },
+    {
+      "actualFpSpent": {
+        "mean": 0.99304,
+        "standardError": 0.000371798241898284
+      },
+      "attempts": {
+        "mean": 1.89122,
+        "standardError": 0.0058419535089228505
+      },
+      "estimatedSuccessProbability": 0.01588,
+      "failures": 49206,
+      "fpType": "ICE",
+      "initialFp": 1,
+      "maximumObservedAttempts": 18,
+      "meanFpConditionalOnFailure": 1,
+      "meanFpConditionalOnSuccess": 0.5617128463476071,
+      "samples": 50000,
+      "seed": 202611456648,
+      "successProbabilityInterval": {
+        "high": 0.017385632135394517,
+        "level": 0.99,
+        "low": 0.014502834263079526,
+        "method": "two_sided_Wilson_score",
+        "z": 2.5758293035489004
+      },
+      "successes": 794
+    },
+    {
+      "actualFpSpent": {
+        "mean": 9.86952,
+        "standardError": 0.004616744055989395
+      },
+      "attempts": {
+        "mean": 3.56894,
+        "standardError": 0.010940426837504454
+      },
+      "estimatedSuccessProbability": 0.02694,
+      "failures": 48653,
+      "fpType": "ICE",
+      "initialFp": 10,
+      "maximumObservedAttempts": 23,
+      "meanFpConditionalOnFailure": 10,
+      "meanFpConditionalOnSuccess": 5.156644394951744,
+      "samples": 50000,
+      "seed": 202611561377,
+      "successProbabilityInterval": {
+        "high": 0.02886879173570958,
+        "level": 0.99,
+        "low": 0.025136739773961844,
+        "method": "two_sided_Wilson_score",
+        "z": 2.5758293035489004
+      },
+      "successes": 1347
+    },
+    {
+      "actualFpSpent": {
+        "mean": 29.19418,
+        "standardError": 0.018344007539364264
+      },
+      "attempts": {
+        "mean": 7.79208,
+        "standardError": 0.01674677863243828
+      },
+      "estimatedSuccessProbability": 0.05656,
+      "failures": 47172,
+      "fpType": "ICE",
+      "initialFp": 30,
+      "maximumObservedAttempts": 33,
+      "meanFpConditionalOnFailure": 30,
+      "meanFpConditionalOnSuccess": 15.752828854314004,
+      "samples": 50000,
+      "seed": 202611666106,
+      "successProbabilityInterval": {
+        "high": 0.059280303787857314,
+        "level": 0.99,
+        "low": 0.053957367739324635,
+        "method": "two_sided_Wilson_score",
+        "z": 2.5758293035489004
+      },
+      "successes": 2828
+    },
+    {
+      "actualFpSpent": {
+        "mean": 59.73238,
+        "standardError": 0.05172864494422944
+      },
+      "attempts": {
+        "mean": 14.5509,
+        "standardError": 0.024694833072843595
+      },
+      "estimatedSuccessProbability": 0.10396,
+      "failures": 44802,
+      "fpType": "ICE",
+      "initialFp": 63,
+      "maximumObservedAttempts": 49,
+      "meanFpConditionalOnFailure": 63,
+      "meanFpConditionalOnSuccess": 31.568487879953828,
+      "samples": 50000,
+      "seed": 202611770835,
+      "successProbabilityInterval": {
+        "high": 0.1075285445964944,
+        "level": 0.99,
+        "low": 0.1004965488358192,
+        "method": "two_sided_Wilson_score",
+        "z": 2.5758293035489004
+      },
+      "successes": 5198
+    }
+  ],
+  "schemaVersion": 1,
+  "steamBuildId": 26087601,
+  "validation": {
+    "fpZeroBoundary": {
+      "actualFpSpent": 0,
+      "attempts": 0,
+      "successProbability": 0.0
+    },
+    "importedRouteDynamicProgramming": false,
+    "oneCastPositive": true,
+    "oneCastUnitMass": true,
+    "replicateSamplesPerPoint": 50000,
+    "sampledPoints": 8,
+    "totalRouteTrials": 400000,
+    "wilsonConfidenceLevel": 0.99
+  }
+}

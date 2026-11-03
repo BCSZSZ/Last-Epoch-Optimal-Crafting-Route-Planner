@@ -29,6 +29,9 @@ py -3.11 -X utf8 scripts/check_action_examples.py
 py -3.11 -X utf8 scripts/check_fp_examples.py --verify-only
 py -3.11 -X utf8 scripts/check_7710_routes.py --verify-only
 py -3.11 -X utf8 scripts/check_7710_monte_carlo.py --summary --no-timing
+py -3.11 -X utf8 scripts/check_common_patterns.py --verify-only
+py -3.11 -X utf8 scripts/check_common_patterns_monte_carlo.py --verify-only
+py -3.11 -X utf8 scripts/check_7732_redemption.py --verify-only
 py -3.11 -X utf8 -m unittest discover -s tests -v
 ```
 
@@ -45,6 +48,9 @@ py -3.11 -X utf8 -m unittest discover -s tests -v
 - `fp-examples.json`：当前证据下的费用研究样例；其随机模型与完整产品求解器分开说明。
 - `7710-route-cases.json`、`7710-route-results.json`：用户完整准备路线、负例及三类FP的全预算区间曲线；正常补词、暴击、必要封印和两种浩劫一起结算。
 - `7710-native-claims.json`、`7710-monte-carlo.json`：补词／封印／等级资格附加原生证据与独立完整路线抽样验证。
+- `common-pattern-cases.json`、`common-pattern-results.json`：已有A@T7的771x两种模式各x=1…7，及三栏不完整路线负例；共90场景参考曲线。
+- `common-pattern-monte-carlo.json`：x=1／3／7的54点、108万条完整路线独立采样，与参考DP交叉核对。
+- `7732-redemption-reference.json`：四初始ID均非目标的指定合法7732手套例，一发精确参考可达证据与40万条完整重复救赎采样；与“目标身份已在低阶”分型独立。
 - `validation.json`：本轮实际执行的验证与范围，不替代客户端实测。
 
 原始.dll/.bundle/.dat、虚拟环境与缓存由gitignore排除。BOOTSTRAP.md与原始附件哈希一致；本轮产品修订在PRD／架构文档中记录。

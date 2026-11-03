@@ -4,7 +4,7 @@
 
 当前交付为 **Phase 0：机制研究与数学架构审阅包**。本轮基于当前安装的 1.5.3 / Steam build 26087601 重新读取游戏资源与原生代码；生产求解器、React 网页及部署在研究审阅后实施。
 
-先读 [首阶段审阅结论](docs/phase0-review.md)，再看 [用户7710完整准备路线校验](docs/examples/7710-to-target-double-t7.md)、[产品需求](docs/PRD.md)、[机制与证据](docs/mechanics.md)及[未决事项](docs/open-questions.md)。所有碎片、符文和雕文固定无限，材料代价不参与优化。
+先读 [首阶段审阅结论](docs/phase0-review.md)，再看 [常见打造模式与771x校验](docs/examples/common-crafting-patterns.md)、[7710完整准备路线](docs/examples/7710-to-target-double-t7.md)、[产品需求](docs/PRD.md)、[机制与证据](docs/mechanics.md)及[未决事项](docs/open-questions.md)。所有碎片、符文和雕文固定无限，材料代价不参与优化。
 
 ## 原始规范与当前政策
 

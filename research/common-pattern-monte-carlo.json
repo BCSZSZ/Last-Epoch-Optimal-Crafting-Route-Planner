@@ -1,0 +1,1614 @@
+{
+  "acceptance": "Per point: DP success interval plus5*sqrt(p_mid*(1-p_mid)/N)+1/N, preregistered. FP consumption means are diagnostic only.",
+  "affixCatalogSha256": "abdbea6ee8a01e02f16122943da57bf641a504a3ece3fa05ffd1550c1cc79794",
+  "assumptions": [
+    "Display-parameter independent draws, not a native PRNG replay or client test.",
+    "Havoc is uniform conditional on changing the tier sequence; finite native rejection-cap mass is not sampled.",
+    "Role100 and gloves4:0 use the audited six ordinary affix identities; roll values are marginalized because no roll target exists.",
+    "PREPARE_HAVOC and SEAL selectors exclude both target identities; A cannot be sealed even after its tier changes.",
+    "Unlimited physical materials, no material objective cost; seal failure completes native settlement before route abort."
+  ],
+  "baseSeed": 771120261103,
+  "comparedWithDp": true,
+  "fixtureSha256": "56a99d9902d5c10400a6bbe0867228963ff3fb0f5d95e720dbcd8123eef66e93",
+  "gameVersion": "1.5.3",
+  "independentSamplerSha256": "d7e40b9aed16910123b55dd75346dad6d8abe429d0198202f8388dcc796814b9",
+  "method": "Independent direct-operation sampling reused from check_7710_monte_carlo; never imports check_7710_routes or its kernels.",
+  "model": "display_parameters_iid",
+  "passed": true,
+  "pointCount": 54,
+  "referenceResultsSha256": "c74b2af851671ed22425b508b7f227785e558a5f4595a873a04451b57cb12a86",
+  "rows": [
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0052326057879499566,
+      "caseId": "existing_a_direct_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.652611961804949,
+        "upper": 9.652611961804988
+      },
+      "dpSuccessLower": 0.19583260578794995,
+      "dpSuccessUpper": 0.19583260578795134,
+      "fpSpentMeanStandardError": 0.0091205096074726,
+      "fpType": "NORMAL",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 9.6647,
+      "meanAtomicActions": 2.99815,
+      "observedSuccessProbability": 0.1906,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.014080422138083184,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 16297166815703841894,
+      "successes": 3812,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 16188,
+        "SUCCESS": 3812
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.006254632016152506,
+      "caseId": "existing_a_direct_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 24.387740827508242,
+        "upper": 24.387740827508477
+      },
+      "dpSuccessLower": 0.5617953679838404,
+      "dpSuccessUpper": 0.5617953679838475,
+      "fpSpentMeanStandardError": 0.05680084439403174,
+      "fpType": "NORMAL",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 24.35515,
+      "meanAtomicActions": 4.82615,
+      "observedSuccessProbability": 0.56805,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.017592139710413797,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 391045038537231219,
+      "successes": 11361,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 8639,
+        "SUCCESS": 11361
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0024543336134742466,
+      "caseId": "existing_a_direct_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 35.71678008706193,
+        "upper": 35.71678008706245
+      },
+      "dpSuccessLower": 0.8441456663865105,
+      "dpSuccessUpper": 0.8441456663865258,
+      "fpSpentMeanStandardError": 0.13586731681635217,
+      "fpType": "NORMAL",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 35.61935,
+      "meanAtomicActions": 6.2704,
+      "observedSuccessProbability": 0.8466,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.012873989253903179,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 10716989642820364321,
+      "successes": 16932,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 3068,
+        "SUCCESS": 16932
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0007438791949060941,
+      "caseId": "existing_a_direct_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 8.894887693672937,
+        "upper": 8.894887693672983
+      },
+      "dpSuccessLower": 0.3268938791949061,
+      "dpSuccessUpper": 0.3268938791949085,
+      "fpSpentMeanStandardError": 0.01788729288838867,
+      "fpType": "ICE",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 8.89025,
+      "meanAtomicActions": 3.6773,
+      "observedSuccessProbability": 0.32615,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.016634415536122032,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 9769708121120389082,
+      "successes": 6523,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 13477,
+        "SUCCESS": 6523
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.00416031925682836,
+      "caseId": "existing_a_direct_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 20.335928824986173,
+        "upper": 20.33592882498638
+      },
+      "dpSuccessLower": 0.7008103192568284,
+      "dpSuccessUpper": 0.7008103192568369,
+      "fpSpentMeanStandardError": 0.0709467924918033,
+      "fpType": "ICE",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 20.33705,
+      "meanAtomicActions": 5.55165,
+      "observedSuccessProbability": 0.69665,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.016239318070875045,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 6671639554409242620,
+      "successes": 13933,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 6067,
+        "SUCCESS": 13933
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0004881337749450543,
+      "caseId": "existing_a_direct_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 27.09266583379056,
+        "upper": 27.092665833790946
+      },
+      "dpSuccessLower": 0.9243618662250404,
+      "dpSuccessUpper": 0.9243618662250549,
+      "fpSpentMeanStandardError": 0.13352509566323106,
+      "fpType": "ICE",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 27.18875,
+      "meanAtomicActions": 6.6764,
+      "observedSuccessProbability": 0.92485,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.009398596585450322,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 7648680124608765067,
+      "successes": 18497,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 1503,
+        "SUCCESS": 18497
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.000221312419834363,
+      "caseId": "existing_a_direct_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.556499335378254,
+        "upper": 9.556499335378296
+      },
+      "dpSuccessLower": 0.23082131241983436,
+      "dpSuccessUpper": 0.23082131241983597,
+      "fpSpentMeanStandardError": 0.010561811817817972,
+      "fpType": "BLOOD",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 9.56215,
+      "meanAtomicActions": 3.2186,
+      "observedSuccessProbability": 0.2306,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.014947266282468574,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 13318054301164182396,
+      "successes": 4612,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 15388,
+        "SUCCESS": 4612
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.002004682132492941,
+      "caseId": "existing_a_direct_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 23.847040939805634,
+        "upper": 23.847040939805865
+      },
+      "dpSuccessLower": 0.5736546821324929,
+      "dpSuccessUpper": 0.5736546821325,
+      "fpSpentMeanStandardError": 0.05955640779861556,
+      "fpType": "BLOOD",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 23.88195,
+      "meanAtomicActions": 4.9962,
+      "observedSuccessProbability": 0.57165,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.017534814404218054,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 16723373194672269661,
+      "successes": 11433,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 8567,
+        "SUCCESS": 11433
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0012087804663809543,
+      "caseId": "existing_a_direct_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 34.923028303016174,
+        "upper": 34.92302830301669
+      },
+      "dpSuccessLower": 0.844458780466381,
+      "dpSuccessUpper": 0.8444587804663961,
+      "fpSpentMeanStandardError": 0.1392835997950764,
+      "fpType": "BLOOD",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 35.01125,
+      "meanAtomicActions": 6.40015,
+      "observedSuccessProbability": 0.84325,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.012863476721776585,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 13816236515118037388,
+      "successes": 16865,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 3135,
+        "SUCCESS": 16865
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0019126494571686525,
+      "caseId": "existing_a_prepare_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.904251547805403,
+        "upper": 9.904251547805456
+      },
+      "dpSuccessLower": 0.0654873505428307,
+      "dpSuccessUpper": 0.06548735054283135,
+      "fpSpentMeanStandardError": 0.004849733897339058,
+      "fpType": "NORMAL",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 9.89535,
+      "meanAtomicActions": 2.66265,
+      "observedSuccessProbability": 0.0674,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.008796339052834577,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 8754626774970913274,
+      "successes": 1348,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 18652,
+        "SUCCESS": 1348
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0038002906176277107,
+      "caseId": "existing_a_prepare_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 27.314499773737804,
+        "upper": 27.31449977373812
+      },
+      "dpSuccessLower": 0.3809502906176277,
+      "dpSuccessUpper": 0.3809502906176341,
+      "fpSpentMeanStandardError": 0.04004977902560763,
+      "fpType": "NORMAL",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 27.348,
+      "meanAtomicActions": 5.4264,
+      "observedSuccessProbability": 0.37715,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.017219273670425514,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 7252364289310141998,
+      "successes": 7543,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 12457,
+        "SUCCESS": 7543
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.001134683977736639,
+      "caseId": "existing_a_prepare_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 43.3937960261537,
+        "upper": 43.39379602615446
+      },
+      "dpSuccessLower": 0.7684653160222449,
+      "dpSuccessUpper": 0.7684653160222633,
+      "fpSpentMeanStandardError": 0.12348952025931194,
+      "fpType": "NORMAL",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 43.44835,
+      "meanAtomicActions": 7.55,
+      "observedSuccessProbability": 0.7696,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.01496334863859687,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 13847416665871699706,
+      "successes": 15392,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 4608,
+        "SUCCESS": 15392
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0013842005178739403,
+      "caseId": "existing_a_prepare_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.479995577930083,
+        "upper": 9.479995577930142
+      },
+      "dpSuccessLower": 0.17513420051787393,
+      "dpSuccessUpper": 0.17513420051787573,
+      "fpSpentMeanStandardError": 0.012431287765151296,
+      "fpType": "ICE",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 9.4763,
+      "meanAtomicActions": 3.58845,
+      "observedSuccessProbability": 0.17375,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.013487922659717516,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 13834902245817428237,
+      "successes": 3475,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 16525,
+        "SUCCESS": 3475
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0017982193013778014,
+      "caseId": "existing_a_prepare_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 23.722458099590153,
+        "upper": 23.72245809959044
+      },
+      "dpSuccessLower": 0.5693482193013778,
+      "dpSuccessUpper": 0.5693482193013871,
+      "fpSpentMeanStandardError": 0.06046095961858368,
+      "fpType": "ICE",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 23.7918,
+      "meanAtomicActions": 6.47645,
+      "observedSuccessProbability": 0.56755,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.01755681383346665,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 15336832431920347957,
+      "successes": 11351,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 8649,
+        "SUCCESS": 11351
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0028475629080449982,
+      "caseId": "existing_a_prepare_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 33.48281998053349,
+        "upper": 33.48281998053407
+      },
+      "dpSuccessLower": 0.887397562908045,
+      "dpSuccessUpper": 0.8873975629080636,
+      "fpSpentMeanStandardError": 0.13295083440129288,
+      "fpType": "ICE",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 33.5708,
+      "meanAtomicActions": 8.14075,
+      "observedSuccessProbability": 0.88455,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.011226041800034803,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 15589415568993178537,
+      "successes": 17691,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 2309,
+        "SUCCESS": 17691
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.002328101966600854,
+      "caseId": "existing_a_prepare_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.876088607078758,
+        "upper": 9.876088607078813
+      },
+      "dpSuccessLower": 0.07962810196660085,
+      "dpSuccessUpper": 0.07962810196660168,
+      "fpSpentMeanStandardError": 0.005421007240356818,
+      "fpType": "BLOOD",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 9.8769,
+      "meanAtomicActions": 2.7234,
+      "observedSuccessProbability": 0.0773,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.009621276517776887,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 16598375039067852374,
+      "successes": 1546,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 18454,
+        "SUCCESS": 1546
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.007748107883613686,
+      "caseId": "existing_a_prepare_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 26.989119814327236,
+        "upper": 26.989119814327548
+      },
+      "dpSuccessLower": 0.3992518921163796,
+      "dpSuccessUpper": 0.3992518921163863,
+      "fpSpentMeanStandardError": 0.043076217033010275,
+      "fpType": "BLOOD",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 26.94765,
+      "meanAtomicActions": 5.59835,
+      "observedSuccessProbability": 0.407,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.01736508802886485,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 18212145659836708038,
+      "successes": 8140,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 11860,
+        "SUCCESS": 8140
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0004834987524583445,
+      "caseId": "existing_a_prepare_x1",
+      "dpExpectedActualFpSpent": {
+        "lower": 42.653080643467,
+        "upper": 42.65308064346775
+      },
+      "dpSuccessLower": 0.7714165012475233,
+      "dpSuccessUpper": 0.7714165012475417,
+      "fpSpentMeanStandardError": 0.1266737504137104,
+      "fpType": "BLOOD",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 42.73285,
+      "meanAtomicActions": 7.6835,
+      "observedSuccessProbability": 0.7719,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.014896425615722637,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 9667702869907024894,
+      "successes": 15438,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 4562,
+        "SUCCESS": 15438
+      },
+      "x": 1
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.001935471641044989,
+      "caseId": "existing_a_direct_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.674422454437295,
+        "upper": 9.674422454437336
+      },
+      "dpSuccessLower": 0.1833145283589537,
+      "dpSuccessUpper": 0.183314528358955,
+      "fpSpentMeanStandardError": 0.009040878766746127,
+      "fpType": "NORMAL",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 9.67335,
+      "meanAtomicActions": 3.008,
+      "observedSuccessProbability": 0.18525,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.013729835162177963,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 5974761361955820821,
+      "successes": 3705,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 16295,
+        "SUCCESS": 3705
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0002664524473744434,
+      "caseId": "existing_a_direct_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 24.72966489260796,
+        "upper": 24.729664892608195
+      },
+      "dpSuccessLower": 0.5317835475526186,
+      "dpSuccessUpper": 0.5317835475526256,
+      "fpSpentMeanStandardError": 0.05558575657373928,
+      "fpType": "NORMAL",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 24.70365,
+      "meanAtomicActions": 4.91925,
+      "observedSuccessProbability": 0.53205,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.017691917629079124,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 3377357386421976656,
+      "successes": 10641,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 9359,
+        "SUCCESS": 10641
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.001186006631434311,
+      "caseId": "existing_a_direct_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 37.02487651133579,
+        "upper": 37.02487651133636
+      },
+      "dpSuccessLower": 0.8184639933685504,
+      "dpSuccessUpper": 0.8184639933685657,
+      "fpSpentMeanStandardError": 0.13858331514110922,
+      "fpType": "NORMAL",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 36.8477,
+      "meanAtomicActions": 6.4915,
+      "observedSuccessProbability": 0.81965,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.013678127390059457,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 15925638751879156069,
+      "successes": 16393,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 3607,
+        "SUCCESS": 16393
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0020861793117059046,
+      "caseId": "existing_a_direct_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 8.960726510873615,
+        "upper": 8.960726510873661
+      },
+      "dpSuccessLower": 0.3081138206882918,
+      "dpSuccessUpper": 0.30811382068829407,
+      "fpSpentMeanStandardError": 0.01765687853217552,
+      "fpType": "ICE",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 8.9409,
+      "meanAtomicActions": 3.68875,
+      "observedSuccessProbability": 0.3102,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.016374050285895482,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 17418622470853273026,
+      "successes": 6204,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 13796,
+        "SUCCESS": 6204
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0026445294736845426,
+      "caseId": "existing_a_direct_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 20.834570461959554,
+        "upper": 20.834570461959768
+      },
+      "dpSuccessLower": 0.6722445294736845,
+      "dpSuccessUpper": 0.6722445294736927,
+      "fpSpentMeanStandardError": 0.07021011766031303,
+      "fpType": "ICE",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 20.93725,
+      "meanAtomicActions": 5.71655,
+      "observedSuccessProbability": 0.6696,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.016645625254354975,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 13678553582424741405,
+      "successes": 13392,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 6608,
+        "SUCCESS": 13392
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0008716579727519047,
+      "caseId": "existing_a_direct_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 28.399588904899964,
+        "upper": 28.39958890490037
+      },
+      "dpSuccessLower": 0.907721657972752,
+      "dpSuccessUpper": 0.9077216579727668,
+      "fpSpentMeanStandardError": 0.13796940171239058,
+      "fpType": "ICE",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 28.47385,
+      "meanAtomicActions": 7.0035,
+      "observedSuccessProbability": 0.90685,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.010282488066200236,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 762057007684697118,
+      "successes": 18137,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 1863,
+        "SUCCESS": 18137
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0019913417804614253,
+      "caseId": "existing_a_direct_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.571766680220898,
+        "upper": 9.571766680220941
+      },
+      "dpSuccessLower": 0.22205865821953694,
+      "dpSuccessUpper": 0.22205865821953857,
+      "fpSpentMeanStandardError": 0.01043944153199777,
+      "fpType": "BLOOD",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 9.5739,
+      "meanAtomicActions": 3.22195,
+      "observedSuccessProbability": 0.22405,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.014744752912573772,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 17716476263844158991,
+      "successes": 4481,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 15519,
+        "SUCCESS": 4481
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0031535921693552904,
+      "caseId": "existing_a_direct_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 24.086387785375432,
+        "upper": 24.086387785375667
+      },
+      "dpSuccessLower": 0.5526464078306377,
+      "dpSuccessUpper": 0.5526464078306447,
+      "fpSpentMeanStandardError": 0.05920622591839476,
+      "fpType": "BLOOD",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 24.0275,
+      "meanAtomicActions": 5.03275,
+      "observedSuccessProbability": 0.5558,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.01762940399098224,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 14715737846030546182,
+      "successes": 11116,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 8884,
+        "SUCCESS": 11116
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.00013160935380873706,
+      "caseId": "existing_a_direct_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 35.838695800007876,
+        "upper": 35.838695800008416
+      },
+      "dpSuccessLower": 0.8264816093538088,
+      "dpSuccessUpper": 0.8264816093538241,
+      "fpSpentMeanStandardError": 0.1408671811383865,
+      "fpType": "BLOOD",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 35.93075,
+      "meanAtomicActions": 6.57675,
+      "observedSuccessProbability": 0.82635,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.01343888339041675,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 398836145580659090,
+      "successes": 16527,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 3473,
+        "SUCCESS": 16527
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0009644017423311516,
+      "caseId": "existing_a_prepare_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.952339088599961,
+        "upper": 9.952339088600016
+      },
+      "dpSuccessLower": 0.03343559825766849,
+      "dpSuccessUpper": 0.03343559825766885,
+      "fpSpentMeanStandardError": 0.0032032776183152116,
+      "fpType": "NORMAL",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 9.9555,
+      "meanAtomicActions": 2.6106,
+      "observedSuccessProbability": 0.0344,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.006405869239020385,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 2469139709212379499,
+      "successes": 688,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 19312,
+        "SUCCESS": 688
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0023599680330189388,
+      "caseId": "existing_a_prepare_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 28.502416649813362,
+        "upper": 28.5024166498137
+      },
+      "dpSuccessLower": 0.23339003196697689,
+      "dpSuccessUpper": 0.23339003196698105,
+      "fpSpentMeanStandardError": 0.031125852034522762,
+      "fpType": "NORMAL",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 28.47705,
+      "meanAtomicActions": 5.57075,
+      "observedSuccessProbability": 0.23575,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.015004895726209172,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 3814030182520472371,
+      "successes": 4715,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 15285,
+        "SUCCESS": 4715
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.004148858832712543,
+      "caseId": "existing_a_prepare_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 49.866766907346886,
+        "upper": 49.86676690734788
+      },
+      "dpSuccessLower": 0.6062488588327125,
+      "dpSuccessUpper": 0.6062488588327288,
+      "fpSpentMeanStandardError": 0.11399039764602971,
+      "fpType": "NORMAL",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 49.8933,
+      "meanAtomicActions": 8.6821,
+      "observedSuccessProbability": 0.6021,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.017323939185835142,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 11617237328079008845,
+      "successes": 12042,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 7958,
+        "SUCCESS": 12042
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0013720696058863446,
+      "caseId": "existing_a_prepare_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.703037078426505,
+        "upper": 9.703037078426561
+      },
+      "dpSuccessLower": 0.10392793039411254,
+      "dpSuccessUpper": 0.10392793039411366,
+      "fpSpentMeanStandardError": 0.009546098653376646,
+      "fpType": "ICE",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 9.7001,
+      "meanAtomicActions": 3.63475,
+      "observedSuccessProbability": 0.1053,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.010839283785202651,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 8466893130035746504,
+      "successes": 2106,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 17894,
+        "SUCCESS": 2106
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0095997247280728,
+      "caseId": "existing_a_prepare_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 25.935365128868398,
+        "upper": 25.935365128868714
+      },
+      "dpSuccessLower": 0.4088997247280728,
+      "dpSuccessUpper": 0.40889972472808,
+      "fpSpentMeanStandardError": 0.05135161192090275,
+      "fpType": "ICE",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 26.02625,
+      "meanAtomicActions": 7.0524,
+      "observedSuccessProbability": 0.3993,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.017431769898566853,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 13603614825488342467,
+      "successes": 7986,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 12014,
+        "SUCCESS": 7986
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.00038783429820554716,
+      "caseId": "existing_a_prepare_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 40.46966492422398,
+        "upper": 40.46966492422474
+      },
+      "dpSuccessLower": 0.7832878342982056,
+      "dpSuccessUpper": 0.7832878342982246,
+      "fpSpentMeanStandardError": 0.13469543837441197,
+      "fpType": "ICE",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 40.61215,
+      "meanAtomicActions": 9.8775,
+      "observedSuccessProbability": 0.7829,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.014616571445377386,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 15481535061884548295,
+      "successes": 15658,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 4342,
+        "SUCCESS": 15658
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0019653237482916072,
+      "caseId": "existing_a_prepare_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.936312887389533,
+        "upper": 9.936312887389592
+      },
+      "dpSuccessLower": 0.04201532374829161,
+      "dpSuccessUpper": 0.04201532374829207,
+      "fpSpentMeanStandardError": 0.0036042875682997595,
+      "fpType": "BLOOD",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 9.94585,
+      "meanAtomicActions": 2.63385,
+      "observedSuccessProbability": 0.04005,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.007143133679712555,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 7961709468372984877,
+      "successes": 801,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 19199,
+        "SUCCESS": 801
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0017484927887385648,
+      "caseId": "existing_a_prepare_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 28.269429253288216,
+        "upper": 28.269429253288557
+      },
+      "dpSuccessLower": 0.25250150721125686,
+      "dpSuccessUpper": 0.2525015072112614,
+      "fpSpentMeanStandardError": 0.03356509579161059,
+      "fpType": "BLOOD",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 28.2617,
+      "meanAtomicActions": 5.68465,
+      "observedSuccessProbability": 0.25425,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.015410033205827614,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 10147529717866298544,
+      "successes": 5085,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 14915,
+        "SUCCESS": 5085
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0006154171307597434,
+      "caseId": "existing_a_prepare_x3",
+      "dpExpectedActualFpSpent": {
+        "lower": 49.04580271963875,
+        "upper": 49.04580271963971
+      },
+      "dpSuccessLower": 0.6201345828692235,
+      "dpSuccessUpper": 0.6201345828692403,
+      "fpSpentMeanStandardError": 0.11750761452774036,
+      "fpType": "BLOOD",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 2,
+      "meanActualFpSpent": 49.0584,
+      "meanAtomicActions": 8.7501,
+      "observedSuccessProbability": 0.62075,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.01720982524673677,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 9402265060707786636,
+      "successes": 12415,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 7585,
+        "SUCCESS": 12415
+      },
+      "x": 3
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.003564717663250172,
+      "caseId": "existing_a_direct_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.066969963869878,
+        "upper": 9.066969963869916
+      },
+      "dpSuccessLower": 0.49068528233674663,
+      "dpSuccessUpper": 0.49068528233674985,
+      "fpSpentMeanStandardError": 0.014537977851131874,
+      "fpType": "NORMAL",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 9.062,
+      "meanAtomicActions": 2.73455,
+      "observedSuccessProbability": 0.49425,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.017724601694057138,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 1651905097414809347,
+      "successes": 9885,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 10115,
+        "SUCCESS": 9885
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.001931979299683917,
+      "caseId": "existing_a_direct_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 17.792762340086522,
+        "upper": 17.792762340086657
+      },
+      "dpSuccessLower": 0.9498319792996839,
+      "dpSuccessUpper": 0.9498319792996934,
+      "fpSpentMeanStandardError": 0.060785521429860254,
+      "fpType": "NORMAL",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 17.8137,
+      "meanAtomicActions": 3.4219,
+      "observedSuccessProbability": 0.9479,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.007767770921655786,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 9914818737810881128,
+      "successes": 18958,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 1042,
+        "SUCCESS": 18958
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.00021037124004019692,
+      "caseId": "existing_a_direct_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 19.03630219673377,
+        "upper": 19.03630219673394
+      },
+      "dpSuccessLower": 0.9991396287599492,
+      "dpSuccessUpper": 0.9991396287599598,
+      "fpSpentMeanStandardError": 0.07815488343587366,
+      "fpType": "NORMAL",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 19.07095,
+      "meanAtomicActions": 3.4989,
+      "observedSuccessProbability": 0.99935,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.001086599610128446,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 17057138890452096510,
+      "successes": 19987,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 13,
+        "SUCCESS": 19987
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0012686474498325717,
+      "caseId": "existing_a_direct_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 7.571680491418519,
+        "upper": 7.571680491418553
+      },
+      "dpSuccessLower": 0.6613313525501631,
+      "dpSuccessUpper": 0.6613313525501674,
+      "fpSpentMeanStandardError": 0.02410259901960782,
+      "fpType": "ICE",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 7.5479,
+      "meanAtomicActions": 3.0011,
+      "observedSuccessProbability": 0.6626,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.016782161945051152,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 886102404365455384,
+      "successes": 13252,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 6748,
+        "SUCCESS": 13252
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.000521509164463807,
+      "caseId": "existing_a_direct_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 12.865463479303498,
+        "upper": 12.8654634793036
+      },
+      "dpSuccessLower": 0.9779284908355278,
+      "dpSuccessUpper": 0.9779284908355362,
+      "fpSpentMeanStandardError": 0.0630973340799752,
+      "fpType": "ICE",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 12.8308,
+      "meanAtomicActions": 3.4685,
+      "observedSuccessProbability": 0.97845,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.005244270599380483,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 9862102989902945443,
+      "successes": 19569,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 431,
+        "SUCCESS": 19569
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.00013669906400770593,
+      "caseId": "existing_a_direct_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 13.33644107142831,
+        "upper": 13.336441071428416
+      },
+      "dpSuccessLower": 0.9998133009359834,
+      "dpSuccessUpper": 0.9998133009359923,
+      "fpSpentMeanStandardError": 0.07071819677777424,
+      "fpType": "ICE",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 13.3267,
+      "meanAtomicActions": 3.50425,
+      "observedSuccessProbability": 0.99995,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.0005330427096433066,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 14923421870052065093,
+      "successes": 19999,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 1,
+        "SUCCESS": 19999
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.00310122326464346,
+      "caseId": "existing_a_direct_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 8.777721428212441,
+        "upper": 8.777721428212477
+      },
+      "dpSuccessLower": 0.5865487767353529,
+      "dpSuccessUpper": 0.5865487767353565,
+      "fpSpentMeanStandardError": 0.016530636708850625,
+      "fpType": "BLOOD",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 8.781,
+      "meanAtomicActions": 2.88515,
+      "observedSuccessProbability": 0.58965,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.017460819525714957,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 12680158240756565342,
+      "successes": 11793,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 8207,
+        "SUCCESS": 11793
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0010417290741452367,
+      "caseId": "existing_a_direct_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 16.486057943219322,
+        "upper": 16.486057943219446
+      },
+      "dpSuccessLower": 0.9588417290741452,
+      "dpSuccessUpper": 0.9588417290741543,
+      "fpSpentMeanStandardError": 0.06203196562156482,
+      "fpType": "BLOOD",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 16.60865,
+      "meanAtomicActions": 3.4427,
+      "observedSuccessProbability": 0.9578,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.0070735556931874385,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 16759148970340379230,
+      "successes": 19156,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 844,
+        "SUCCESS": 19156
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 5.879455759760788e-05,
+      "caseId": "existing_a_direct_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 17.510346730867102,
+        "upper": 17.510346730867248
+      },
+      "dpSuccessLower": 0.9992912054423924,
+      "dpSuccessUpper": 0.9992912054424024,
+      "fpSpentMeanStandardError": 0.07585881623120677,
+      "fpType": "BLOOD",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 17.36,
+      "meanAtomicActions": 3.48575,
+      "observedSuccessProbability": 0.99935,
+      "passed": true,
+      "patternFamily": "existing_a_direct",
+      "preRegisteredAllowance": 0.0009909384729339082,
+      "routeId": "existing_a_direct_route",
+      "samples": 20000,
+      "seed": 1206383290054599251,
+      "successes": 19987,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 13,
+        "SUCCESS": 19987
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.001296196141288758,
+      "caseId": "existing_a_prepare_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.836308032535742,
+        "upper": 9.836308032535795
+      },
+      "dpSuccessLower": 0.10880380385871022,
+      "dpSuccessUpper": 0.10880380385871125,
+      "fpSpentMeanStandardError": 0.006453193163078233,
+      "fpType": "NORMAL",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 9.8314,
+      "meanAtomicActions": 2.5625,
+      "observedSuccessProbability": 0.1101,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.011059401444026484,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 15193392322501477650,
+      "successes": 2202,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 17798,
+        "SUCCESS": 2202
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.004024023890343953,
+      "caseId": "existing_a_prepare_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 25.773077530089786,
+        "upper": 25.773077530090063
+      },
+      "dpSuccessLower": 0.555024023890344,
+      "dpSuccessUpper": 0.5550240238903525,
+      "fpSpentMeanStandardError": 0.04758277234330719,
+      "fpType": "NORMAL",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 25.79765,
+      "meanAtomicActions": 4.92515,
+      "observedSuccessProbability": 0.551,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.01762030011108641,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 13062472481148805633,
+      "successes": 11020,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 8980,
+        "SUCCESS": 11020
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0022499636537092194,
+      "caseId": "existing_a_prepare_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 36.06649847770534,
+        "upper": 36.066498477705906
+      },
+      "dpSuccessLower": 0.9177500363462721,
+      "dpSuccessUpper": 0.9177500363462908,
+      "fpSpentMeanStandardError": 0.1181420067122614,
+      "fpType": "NORMAL",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 36.105,
+      "meanAtomicActions": 6.221,
+      "observedSuccessProbability": 0.92,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.00976370855625444,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 5403447939330371662,
+      "successes": 18400,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 1600,
+        "SUCCESS": 18400
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0017128487315708485,
+      "caseId": "existing_a_prepare_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.19345899434385,
+        "upper": 9.193458994343901
+      },
+      "dpSuccessLower": 0.2624371512684266,
+      "dpSuccessUpper": 0.26243715126842915,
+      "fpSpentMeanStandardError": 0.015299833622461383,
+      "fpType": "ICE",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 9.18615,
+      "meanAtomicActions": 3.3576,
+      "observedSuccessProbability": 0.26415,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.015604898460876409,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 4722731638804623092,
+      "successes": 5283,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 14717,
+        "SUCCESS": 5283
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0013824159270031666,
+      "caseId": "existing_a_prepare_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 21.113038164825145,
+        "upper": 21.113038164825365
+      },
+      "dpSuccessLower": 0.7384175840729866,
+      "dpSuccessUpper": 0.7384175840729968,
+      "fpSpentMeanStandardError": 0.06606575238351561,
+      "fpType": "ICE",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 21.0918,
+      "meanAtomicActions": 5.57895,
+      "observedSuccessProbability": 0.7398,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.015588543030348675,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 1140318841634828380,
+      "successes": 14796,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 5204,
+        "SUCCESS": 14796
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.00014352981307863555,
+      "caseId": "existing_a_prepare_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 26.226492071743372,
+        "upper": 26.226492071743728
+      },
+      "dpSuccessLower": 0.9711935298130786,
+      "dpSuccessUpper": 0.9711935298130946,
+      "fpSpentMeanStandardError": 0.11469833128690234,
+      "fpType": "ICE",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 26.266,
+      "meanAtomicActions": 6.39765,
+      "observedSuccessProbability": 0.97105,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.005963613263298069,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 15069421350238572025,
+      "successes": 19421,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 579,
+        "SUCCESS": 19421
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.006556903269242298,
+      "caseId": "existing_a_prepare_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 9.782033830966231,
+        "upper": 9.782033830966284
+      },
+      "dpSuccessLower": 0.13545690326924228,
+      "dpSuccessUpper": 0.1354569032692435,
+      "fpSpentMeanStandardError": 0.007189675618551955,
+      "fpType": "BLOOD",
+      "initialFp": 10,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 9.7877,
+      "meanAtomicActions": 2.5913,
+      "observedSuccessProbability": 0.1289,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.012148983977278314,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 15518599914341258853,
+      "successes": 2578,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 17422,
+        "SUCCESS": 2578
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.0019703514248471388,
+      "caseId": "existing_a_prepare_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 25.166776575042707,
+        "upper": 25.16677657504298
+      },
+      "dpSuccessLower": 0.586779648575144,
+      "dpSuccessUpper": 0.5867796485751529,
+      "fpSpentMeanStandardError": 0.051447126351964495,
+      "fpType": "BLOOD",
+      "initialFp": 30,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 25.09805,
+      "meanAtomicActions": 4.96315,
+      "observedSuccessProbability": 0.58875,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.01745938297991825,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 16033272427179092902,
+      "successes": 11775,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 8225,
+        "SUCCESS": 11775
+      },
+      "x": 7
+    },
+    {
+      "absoluteDistanceOutsideDpInterval": 0.00012931602012933308,
+      "caseId": "existing_a_prepare_x7",
+      "dpExpectedActualFpSpent": {
+        "lower": 34.72513849076219,
+        "upper": 34.725138490762724
+      },
+      "dpSuccessLower": 0.9243706839798527,
+      "dpSuccessUpper": 0.9243706839798707,
+      "fpSpentMeanStandardError": 0.1196414706007077,
+      "fpType": "BLOOD",
+      "initialFp": 63,
+      "initialOrdinaryT7Count": 3,
+      "meanActualFpSpent": 34.7455,
+      "meanAtomicActions": 6.2394,
+      "observedSuccessProbability": 0.9245,
+      "passed": true,
+      "patternFamily": "existing_a_prepare",
+      "preRegisteredAllowance": 0.009398096235227816,
+      "routeId": "existing_a_prepare_route",
+      "samples": 20000,
+      "seed": 11841941027669067901,
+      "successes": 18490,
+      "terminalReasons": {
+        "FP_EXHAUSTED": 1510,
+        "SUCCESS": 18490
+      },
+      "x": 7
+    }
+  ],
+  "samplesPerPoint": 20000,
+  "schemaVersion": 1,
+  "scope": "Four ordinary starting affixes with A alreadyT7 and B missing; x7 starts with threeT7. The x0 three-slot recipe is a separate structural negative case, not silently treated as a full four-slot route.",
+  "selection": {
+    "families": [
+      "existing_a_direct",
+      "existing_a_prepare"
+    ],
+    "fpTypes": [
+      "NORMAL",
+      "ICE",
+      "BLOOD"
+    ],
+    "initialFp": [
+      10,
+      30,
+      63
+    ],
+    "x": [
+      1,
+      3,
+      7
+    ]
+  },
+  "totalSamples": 1080000
+}

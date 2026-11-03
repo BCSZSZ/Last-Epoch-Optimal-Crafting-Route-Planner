@@ -14,6 +14,10 @@
 
 每个宏固定以下内容：kind、参数、actionSelector、entryPredicate、successPredicate、abortPredicate、nextStage。selector 若读取状态，只能使用该 kind 事先审阅的有限规则；不得是任意 callback 或隐藏的优化器。
 
+“已有目标 A”与“需要添加目标 A”必须由入口状态区分。771x 已有 A@T7 时，本模式不重复 ADD_A，封印／移除选择器排除 A，允许浩劫临时改变 A 的 tier／roll。终局要求 A@T7 不等于全程身份、tier≥7 或 roll 的硬保护；只有用户明确设置的硬约束才限制整个搜索，其他合法路线不继承本候选自身的保留选择。
+
+若 A／B 身份本已齐全，则先生成单个 FINAL_HAVOC 基线，不添加缺失身份步骤。例如 7732 的两条 T7 可能都是垃圾，而 A、B 正好位于 T3、T2；这与四个 ID 都非 A／B 的 7732 是不同入口。基线不是最优证明，其他合法候选不因此被裁剪。
+
 局部 successPredicate 可表示中间准备状态，与整条路线的最终目标分开。HAVOC_UNTIL 必须支持“在所需侧制造一个可封垃圾 T1”等准备谓词，不仅支持最终目标 ID 都达到 T7。SEAL_ONCE 必须支持非最终目标对象：先按所需侧、垃圾身份、可封及声明阶数条件过滤，再选择最低原生列表索引；这条选择规则在规划前固定。
 
 条件与选择器用可序列化的受限描述表达，并由固定版本的编译器解释。跨 Worker 只传数据；未知描述、未支持原子操作或不匹配模型版本直接拒绝。
@@ -81,7 +85,37 @@ HAVOC_UNTIL(A@ordinaryT7 AND B@ordinaryT7)
 
 两条路线均是强制覆盖的候选与评价案例，不预断全局最优。准备宏用尽 FP、没有可封对象或封印失手都会保留其失败质量；不能只报告准备成功条件下的最终概率。
 
-## 7. 验收案例
+## 7. 已有 A@T7、缺 B 的 771x 基线
+
+本模式的四条普通词缀为 771x，x 分别取 1…7，A 已占其中一条 T7。封印槽空，B 与底材及声明侧别兼容。x=7 是三个 T7；不同 x 保留各自阶数与转移，不能使用一份不区分 x 的固定概率表。
+
+### B 所需侧有垃圾 T1
+
+~~~text
+SEAL_ONCE(FIRST_SEALABLE_GARBAGE_ON_SIDE(side(B), tier=1,
+          exclude={A,B,protected}))
+ADD_AFFIX(B)
+HAVOC_UNTIL(A@ordinaryT7 AND B@ordinaryT7)
+~~~
+
+### T1 在错侧
+
+~~~text
+HAVOC_UNTIL(exists garbage on side(B)
+            with currentTier=1 and sealable and id not in {A,B,protected})
+SEAL_ONCE(FIRST_SEALABLE_GARBAGE_ON_SIDE(side(B), tier=1,
+          exclude={A,B,protected}))
+ADD_AFFIX(B)
+HAVOC_UNTIL(A@ordinaryT7 AND B@ordinaryT7)
+~~~
+
+准备浩劫可把 A 的 T7 暂时移走，但不改变其身份。本模式不为腾位封印 A，也不能把救赎视为可单独锁住 A 的 T7。只有用户明确设置 A 的全程身份硬保护时，才据此拒绝可能改掉 A 的其他路线；否则可比较暂时更换后重新获得 A 的合法路线，不能假装救赎始终保住它。添加 B 后继续保留暴击及 FP 退款导致的真实分支。
+
+x=0 只有三条普通词缀：SEAL→ADD_B 后仍为三条，必须补到四条才允许执行最终浩劫。若 B 可直接填入原空栏，应保留 ADD_B→FINAL_HAVOC 候选；若仍需封印腾出 B 侧位置，则为剩余空栏增加合法填充 C，并把该步及其副作用计入路线。不能仅因短记号形似 771x 就跳过栏位计数。
+
+这些模式只用于优先生成和验证候选。7732 等 A／B 都缺的起点，仍可由其他合法宏组合评价；没有匹配的常见模式不能成为全局失败条件。详细资格见[常见打造模式](examples/common-crafting-patterns.md)。
+
+## 8. 验收案例
 
 - 必要封印第一次未成功：即使剩余 FP 足够且后续升级合法，整个路线后续动作次数为零。
 - 剥离删错：即使还可以补回，整个路线失败，不执行 ADD_AFFIX。
@@ -91,3 +125,6 @@ HAVOC_UNTIL(A@ordinaryT7 AND B@ordinaryT7)
 - 最后一发达到目标且 FP 归零：成功；未达到目标则资源失败。
 - 封印成功但 FP 归零、还需补词：不能把局部封印成功当整条路线成功。
 - 一个闭合零消耗未命中类：报告非终止，不假设最终一定成功。
+- 771x 已有 A@T7：没有 ADD_A，准备浩劫可移动 A 的 tier，封印／移除选择器始终排除 A。
+- x=1…7 逐值检验；x=7 保留三个 T7，x=0 单独验证三栏及必要补栏。
+- 没有常见模式覆盖的 7732：保持 UNASSESSED／INCOMPLETE，不从未列入模式推出 IMPOSSIBLE。

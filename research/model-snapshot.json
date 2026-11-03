@@ -106,7 +106,7 @@
     "research/browser-memory/7710-normal-input.json": "9da15a6b206a9c937c261ba3b6dc474c0ea70121f31eea304faee75d50991dd5",
     "research/browser-memory/7710-normal-memory.json": "7e31831a4719a9f4a7cdad3f87d16fda14563a170cb42e2f130022f5885d954b",
     "research/browser-memory/7710-normal-plan.json": "88a74ed0cbc9d34504444519a6e0ab1c2067a00bf6d7cad161e727305bf75c98",
-    "research/browser-memory/validation.json": "48226bec4c3d5c64df59390e2f7ac4bbc62d37ed52f494ee95ce916ae5eba589",
+    "research/browser-memory/validation.json": "68eea4e757a48609379893eb257381c6232d4496f54e4e3272813fb894687a94",
     "research/common-pattern-cases.json": "56a99d9902d5c10400a6bbe0867228963ff3fb0f5d95e720dbcd8123eef66e93",
     "research/common-pattern-monte-carlo.json": "0949743091e215ee325121fb3a1ca096afbd607a48cddbc2b9a62bfa64f3e465",
     "research/common-pattern-results.json": "c74b2af851671ed22425b508b7f227785e558a5f4595a873a04451b57cb12a86",
@@ -172,7 +172,7 @@
   "remainingAcceptance": [
     "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "1518071bd83ee73af1524e46c9583523c84e02bfd8e52fe8475eaaf9d851a5cf",
+  "researchRevision": "d34404cc136542c1caf55ea812dbde5e9245783ee3411bb405bb40a7f468bd4b",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 1,
   "steamBuildId": 26087601,

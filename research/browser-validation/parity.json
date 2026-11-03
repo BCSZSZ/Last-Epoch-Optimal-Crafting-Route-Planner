@@ -1,6 +1,6 @@
 {
   "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
-  "checkedOn": "2026-11-03T04:55:10.690Z",
+  "checkedOn": "2026-11-03T05:07:00.182Z",
   "checks": [
     {
       "file": "7710-normal",
@@ -47,6 +47,18 @@
       "evaluation": "BOUNDED_NUMERICAL",
       "milliseconds": 7802,
       "evaluatedRoutes": 15,
+      "comparison": "IDENTICAL_COMPLETE_ROUTE_REPORT",
+      "scope": "Same chosen fixed route; wall-clock search coverage is reported separately."
+    },
+    {
+      "file": "public-7710-normal",
+      "example": "7710-direct",
+      "fpType": "NORMAL",
+      "score": 0.4472252707958129,
+      "routeId": "r-085e76281e31b18c",
+      "evaluation": "BOUNDED_NUMERICAL",
+      "milliseconds": 7836,
+      "evaluatedRoutes": 23,
       "comparison": "IDENTICAL_COMPLETE_ROUTE_REPORT",
       "scope": "Same chosen fixed route; wall-clock search coverage is reported separately."
     },

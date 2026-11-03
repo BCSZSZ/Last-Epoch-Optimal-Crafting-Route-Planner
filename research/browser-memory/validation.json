@@ -16,6 +16,6 @@
   },
   "evaluatedRoutes": 500,
   "planningMillisecondsWithObserver": 14404,
-  "liveBytesChecked": false,
+  "liveBytesChecked": true,
   "qualification": "Native post-GC memory estimates and observed maxima under local COOP/COEP. Not an allocation peak between samples, OS RSS, or low-end hardware."
 }

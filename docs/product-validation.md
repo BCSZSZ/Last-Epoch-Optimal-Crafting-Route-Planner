@@ -10,7 +10,7 @@
 
 ## 实际浏览器
 
-使用本机ChatGPT in-app Chromium浏览器访问Vite正式构建预览及公开Pages站点。新版[六份本地完整报告及逐字段对照](../research/browser-validation/parity.json)和上一模型公网记录如下；本轮发布后再更新公网项：
+使用本机ChatGPT in-app Chromium浏览器访问Vite正式构建预览及公开Pages站点。新版[七份完整报告及逐字段对照](../research/browser-validation/parity.json)包含本地正式构建、公网及内存压力搜索：
 
 | 输入 | 潜能 | 加权J | 浏览器耗时 | 精度 |
 |---|---|---:|---:|---|
@@ -20,7 +20,7 @@
 | 7732全部非目标 | 普通 | 4.3449% | 2.606s | 每F1024条、共64512条路径采样 |
 | 剥离后补词 | 普通 | 11.3968% | 0.338s | 向外舍入区间 |
 | 7710内存压力搜索 | 普通 | 44.7225% | 14.404s | 60秒／500候选，含内存观测开销 |
-| 上一模型公网7710直接准备 | 普通 | 44.7225% | 7.859s | 向外舍入区间；模型de87d96b5479099b |
+| 新版公网7710直接准备 | 普通 | 44.7225% | 7.836s | 向外舍入区间 |
 
 表中为同一具体底材／ID／顺序的候选推荐，不是所有同tier串物品的统一概率，亦未证明全局最优。Node重算同一选中路线后，完整RouteReport的JSON逐字段一致，含采样曲线与种子。命令：`npx tsx scripts/check-browser-reports.ts`。
 
@@ -28,7 +28,7 @@
 
 实际UI额外核对：长任务取消后恢复；取消后切换冰潜能重新计算；计算中编辑角色等级使旧任务终止并清空旧结果；有效JSON导入；含inventory未知字段的输入拒绝且原输入保留；自定义F1–3权重[0,0,1]正确展示；输入保存后刷新恢复；下载报告；无浏览器error日志。
 
-390×844视口覆盖窄屏布局检查，实际CSS可用宽341px，修复后document scrollWidth与clientWidth均为341px，横向无溢出。此项验证布局，不声称手机CPU性能。临时视口已恢复。
+390×844视口覆盖窄屏布局检查，实际CSS可用宽341px，修复后document scrollWidth与clientWidth均为341px，横向无溢出。此项验证布局，不声称手机CPU性能。本轮375px实际可用宽度下，新版结果scrollWidth与clientWidth均375px；恢复后默认宽1265px。临时视口已恢复。
 
 ## 完整规划性能
 
@@ -47,3 +47,5 @@
 公开地址：[制作路线规划](https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/)。[首次构建／部署运行](https://github.com/BCSZSZ/Last-Epoch-Optimal-Crafting-Route-Planner/actions/runs/41576011780)成功，代码提交deaaac730d199a95edf91d7461e123dba88b252a。无登录访问后实际完成7710整路线规划；结果与本地逐字段一致。已核刷新、取消、重新规划、报告下载；error日志为空。
 
 [HTTP字节验证](../research/static-deployment.json)对HTML、主JS、CSS、Worker逐一核对200、MIME与SHA256，全部与本地仓库子路径正式构建相同。复现命令：以`PAGES_BASE=/Last-Epoch-Optimal-Crafting-Route-Planner/`构建，再运行`python scripts/check_static_site.py https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/`。本地子路径预览也须向`npm run preview`传相同`--base`。
+
+本轮报告增强提交f69c41abdbbc811a7d713614b3d89657a78565d7的[构建／部署](https://github.com/BCSZSZ/Last-Epoch-Optimal-Crafting-Route-Planner/actions/runs/41581627444)通过。公开版本模型为le-1.5.3-iid-f58515921fd9cbcc；新版公网完整报告与Node一致。内存记录已用`--require-live-match`检查，线上JS／CSS／Worker哈希与观测时一致。

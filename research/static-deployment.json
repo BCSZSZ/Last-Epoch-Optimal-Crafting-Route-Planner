@@ -1,33 +1,33 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-03T04:07:55.895325+00:00",
+  "checkedAt": "2026-11-03T05:05:53.436537+00:00",
   "site": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/",
-  "modelId": "le-1.5.3-iid-de87d96b5479099b",
+  "modelId": "le-1.5.3-iid-f58515921fd9cbcc",
   "status": "PASS",
   "checks": [
     {
-      "file": "assets/index-BRKD7pHp.js",
-      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-BRKD7pHp.js",
-      "status": 200,
-      "contentType": "application/javascript",
-      "bytes": 1176690,
-      "sha256": "990b2559f07bbde640803fae690643d79ae758ad18de6bcba8539a3e7acd3e6b"
-    },
-    {
-      "file": "assets/index-DwtTLkYq.css",
-      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-DwtTLkYq.css",
+      "file": "assets/index-RYQ1cWqO.css",
+      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-RYQ1cWqO.css",
       "status": 200,
       "contentType": "text/css",
-      "bytes": 12155,
-      "sha256": "3d6c3e785f99a4cfb56f9e2cb974f2682985f06f53ff1ff0b1f7e8e95da6a60d"
+      "bytes": 12271,
+      "sha256": "d5316820de29f62b1f0fe93dcf707b580d45d66857a428cb8cbe60ed6c107190"
     },
     {
-      "file": "assets/planner.worker-DCzUFNNi.js",
-      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-DCzUFNNi.js",
+      "file": "assets/index-yKPq1W9G.js",
+      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-yKPq1W9G.js",
       "status": 200,
       "contentType": "application/javascript",
-      "bytes": 960259,
-      "sha256": "19f65fc24330c7d80e9356c9bd5f5dd82249074b70c15509b6e6212b66f4703c"
+      "bytes": 1177510,
+      "sha256": "e8fc6b3670924783e13b963a105f45f7208e6b8e3e2c056540f3881ef30cead8"
+    },
+    {
+      "file": "assets/planner.worker-C4ua7Twe.js",
+      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4ua7Twe.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 962358,
+      "sha256": "0216b2d31ce13f7a8de85f8352d44cbf9a0904fb7a6f51dde813cdcea50f7c03"
     },
     {
       "file": "index.html",
@@ -35,7 +35,7 @@
       "status": 200,
       "contentType": "text/html",
       "bytes": 734,
-      "sha256": "5c859f7f968ec4fc1bfa60f74c8c39b3d33dbd37455a5d14a8f068e029e1c5e1"
+      "sha256": "5500bb117b35ab8c1088b7a131b4dd94ed461d8f4d749ee4f8d1db624950326d"
     }
   ],
   "qualification": "HTTP byte identity and repository subpath only. Actual UI and Worker behavior are checked separately in the browser."

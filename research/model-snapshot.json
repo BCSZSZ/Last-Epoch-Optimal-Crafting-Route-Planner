@@ -71,6 +71,7 @@
     "research/common-pattern-monte-carlo.json": "0949743091e215ee325121fb3a1ca096afbd607a48cddbc2b9a62bfa64f3e465",
     "research/common-pattern-results.json": "c74b2af851671ed22425b508b7f227785e558a5f4595a873a04451b57cb12a86",
     "research/crafting-level-claims.json": "6abd200337b5056e49069dd506d7e88dded175419fb8941648f6da893411749c",
+    "research/deployment-completion48.json": "b0b395b5bc855d59c704754d59976d1e7d381ed32bc9f3d9eef6e5db85e28349",
     "research/device-validation/desktop-baseline-validation.json": "6620e9cc830ead68d58559e241dd0c909dd92cbef301bebbf57dad315e4e314b",
     "research/device-validation/desktop-baseline.json": "2f36d16385723bfffc82440ce1315af7aecc92425fad0a5e729bd25c62f65ea9",
     "research/device-validation/public-normal-validation.json": "bf6c6eef88459e05361d821f9e6b83b1d0443acc0e4185dbb7e839ac0424578d",
@@ -84,8 +85,10 @@
     "research/math-fixtures.json": "2e8f761032a1fb9710be3bdfe80d361982297d3cbf6663140f77bc517e6a978a",
     "research/reference-calculators.json": "fbbd966f057c2ed97ecca0ad8d2036eab93ac721cb506c993417c7faddbd831e",
     "research/runtime-model-archive/manifest.json": "25ea66f4698dc66c7042d5be33291682b30af19403a49744a730ab1be40ce9e7",
+    "research/static-deployment.json": "3ef8a0357504d35837c5117063095f459a81755bc6cfaebb0cf3439cdaa3b8a5",
     "research/ui-validation/completion48-parity.json": "9af63e801b95e3a6c2383b3354bca5574242d35b186ca52f16402f7658ed7b92",
     "research/ui-validation/parity.json": "097d156efa1085ca6bf9b329f3c5043aa33ca62b6430e3c3e2f76bf25de4f40f",
+    "research/ui-validation/public-completion48-parity.json": "38df226e802083b420e9af1255d645f2106b07fdf094bf24ccefd9c5702aa8ce",
     "src/core/policy.json": "8917aad6d1077eff2b043ff68a3b8ff8b54257cf4105cf3bc9fdf8bbd03fa1cb",
     "src/generated/model.json": "561ebf67f9aebabbbf838fdb4e656af989a4d7fa271bc6d97c0ddf14474da599"
   },
@@ -165,7 +168,7 @@
   "remainingAcceptance": [
     "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "b15ba5e55aa35101b2aabc6de7ee0ed47b604e7a583a93b87872f9ee5538f7f6",
+  "researchRevision": "585537c2aa3ee450a91324c5cbcdba54bfff71516e8b5a22f7fa291417678473",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 2,
   "steamBuildId": 26087601,
@@ -182,8 +185,9 @@
     "countsSplitByPrefixSuffix": true,
     "defaultAnonymousPool": "FORGEABLE_EQUAL",
     "knownIdentityPool": "FORGEABLE_WEIGHTED",
+    "localUiWorkerParity": "research/ui-validation/completion48-parity.json",
     "optionalAffixIdentities": true,
-    "uiWorkerParity": "research/ui-validation/parity.json"
+    "uiWorkerParity": "research/ui-validation/public-completion48-parity.json"
   },
   "validationNotClaimed": [
     "UNBOUNDED_GLOBAL_OPTIMALITY",

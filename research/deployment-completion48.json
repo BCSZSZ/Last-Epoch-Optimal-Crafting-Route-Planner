@@ -1,7 +1,9 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-03T15:42:00Z",
-  "status": "BLOCKED_BY_PAGES_DEPLOYMENT_LOCK",
+  "blockedRecordCheckedAt": "2026-11-03T15:42:00Z",
+  "verifiedOn": "2026-11-04",
+  "status": "PASS",
+  "previousStatus": "BLOCKED_BY_PAGES_DEPLOYMENT_LOCK",
   "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
   "implementationCommit": "3d7dcd8b4334cd419543fd57abe905abfcb1a643",
   "unchangedSourceRetryCommit": "cad0af61c71f31fea038fcbaa698df5b13bef72e",
@@ -25,10 +27,20 @@
     "oldDeploymentGetStatusAfterCancel": "deployment_cancelled",
     "inconsistentBackendStateStillObservedAfterExplicitCancel": true,
     "publicPage": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/",
-    "observedPublicScript": "/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-DK0nWmd7.js",
+    "previousPublicScript": "/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-DK0nWmd7.js",
+    "observedPublicScript": "/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-BugJVJ1v.js",
     "newBuildScript": "/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-BugJVJ1v.js",
-    "newPublicVersionVerified": false
+    "newPublicVersionVerified": true,
+    "successfulRunAttempt": 4,
+    "successfulDeploymentJob": 126531128790,
+    "deploymentConclusion": "success",
+    "pagesDeploymentStatus": "succeed",
+    "staticFilesByteIdentical": 8,
+    "publicUiCasesWithMatchingMetricsAndLabels": 4,
+    "staticProof": "research/static-deployment.json",
+    "uiWorkerProof": "research/ui-validation/public-completion48-parity.json"
   },
-  "remainingWork": "After GitHub releases the old Pages deployment lock, rerun the failed deployment, then verify current model, all three metrics, route steps and full Worker/Node report parity on the public site.",
-  "qualification": "Observed repository-specific deployment failures; no claim of a GitHub-wide outage. Local UI proof is not public-release proof. Original public input restored; temporary test tabs and local server closed."
+  "resolution": "The old Pages deployment lock had cleared when work resumed on2026-11-04. Re-running the failed deploy job published the unchanged audited build. No Pages settings, game rules or solver implementation changes were required. Actual public UI/Worker execution and exact static-byte verification then passed.",
+  "remainingWork": null,
+  "qualification": "Observed repository-specific deployment recovery, not a GitHub-wide outage or client-mechanics claim. Four actual public UI/Worker downloads match Node; all three label categories checked. Original public input restored and temporary test tab closed."
 }

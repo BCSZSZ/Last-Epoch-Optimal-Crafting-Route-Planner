@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-04T10:57:38.176Z",
+  "observations": [
+    {
+      "id": "7710-direct",
+      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/",
+      "displayedText": "规划方案\n推荐\n成功率\n100.00%\n整件完成率（48 FP）\n68.34%\n成功路径平均 FP\n48.80\n添加词缀\n\n待补目标前缀2\n\n浩劫直至出现非目标前缀（T1）\n封印\n\n非目标前缀（T1）\n\n添加词缀\n\n待补目标前缀1\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（24）\n计算说明",
+      "file": "public-completion48-7710-direct.json"
+    },
+    {
+      "id": "7710-neutral",
+      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/",
+      "displayedText": "规划方案\n当前方案\n成功率\n100.00%\n整件完成率（48 FP）\n61.78%\n成功路径平均 FP\n54.47\n添加词缀\n\n待补目标后缀1\n\n浩劫直至出现非目标前缀（T1）\n封印\n\n非目标前缀（T1）\n\n添加词缀\n\n待补目标前缀1\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（45）\n计算说明",
+      "file": "public-completion48-7710-neutral.json"
+    },
+    {
+      "id": "7272-not-recommended",
+      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/",
+      "displayedText": "规划方案\n不推荐\n成功率\n33.47%\n整件完成率（48 FP）\n19.75%\n成功路径平均 FP\n56.37\n剥离\n\n仅接受非目标普通词缀（T1–T6）\n\n添加词缀\n\n先补入剥离空槽对应的目标词缀。\n\n封印\n\n剩余非目标普通词缀（T1–T4）\n\n添加词缀\n\n补入另一条目标词缀。\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（34）\n计算说明",
+      "file": "public-completion48-7272-not-recommended.json"
+    },
+    {
+      "id": "7721-owned-t7",
+      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/",
+      "displayedText": "规划方案\n推荐\n成功率\n100.00%\n整件完成率（48 FP）\n72.26%\n成功路径平均 FP\n44.61\n封印\n\n非目标后缀（T1）\n\n添加词缀\n\n待补目标后缀1\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（2）\n计算说明",
+      "file": "public-completion48-7721-owned-t7.json"
+    }
+  ]
+}

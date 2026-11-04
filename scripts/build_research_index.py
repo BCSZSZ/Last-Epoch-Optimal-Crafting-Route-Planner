@@ -45,7 +45,8 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                 "src/generated/model.json", "research/hierarchy-validation.json", "research/hierarchy-runtime-benchmark.json",
                 "research/runtime-model-archive/manifest.json", "research/ui-validation/parity.json", "research/acquisition-order.json",
                 "src/core/policy.json", "research/fp65-budget48.json", "research/7710-7721-completion.json",
-                "research/ui-validation/completion48-parity.json")
+                "research/ui-validation/completion48-parity.json", "research/ui-validation/public-completion48-parity.json",
+                "research/static-deployment.json", "research/deployment-completion48.json")
     model = {"schemaVersion": 2, "modelId": "le-1.5.3-26087601-r9-completion48",
              "phase": "PUBLIC_PREVIEW", "productionReady": False,
              "productionModelId": load_json(root / "src/generated/model.json")["modelId"],
@@ -53,7 +54,8 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                            "optionalAffixIdentities": True, "countsSplitByPrefixSuffix": True,
                            "defaultAnonymousPool": "FORGEABLE_EQUAL", "knownIdentityPool": "FORGEABLE_WEIGHTED",
                            "bothReferencePoolsAllClassesPerItemType": True, "auditedApiPreserved": True,
-                           "uiWorkerParity": "research/ui-validation/parity.json"},
+                           "uiWorkerParity": "research/ui-validation/public-completion48-parity.json",
+                           "localUiWorkerParity": "research/ui-validation/completion48-parity.json"},
              "userApproval": {"date": "2026-11-03", "codeDerivedRulesSufficient": True, "clientBitExactRequired": False},
              "gameVersion": manifest["gameVersion"], "steamBuildId": manifest["steamBuildId"],
              "dataRevision": manifest["dataRevision"],

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
+  "observedAt": "2026-11-04T10:57:38.176Z",
+  "observationsSha256": "1b4eb68fae400ba74c380b3fc1e229908a7e885a35cbfdb88ce1195be6d238f4",
+  "checks": [
+    {
+      "id": "7710-direct",
+      "file": "public-completion48-7710-direct.json",
+      "sha256": "c58033807d506a4bbc293c07b53a5745b7eec28c01887184649e71d0f69639a3",
+      "routeId": "r-32e2603f38468323",
+      "displayedSuccess": "100.00%",
+      "displayedCompletion48": "68.34%",
+      "displayedBadge": "推荐",
+      "successfulMeanFp": {
+        "lower": 48.804892289212226,
+        "upper": 48.804892289219154
+      },
+      "fullPrimaryAndCompletionBitIdentical": true,
+      "visibleMetricsAndBadgeMatch": true
+    },
+    {
+      "id": "7710-neutral",
+      "file": "public-completion48-7710-neutral.json",
+      "sha256": "ab295c0a8894c452da1394b3c9060dfe126cd1bc48f1fc772da96ede4886345c",
+      "routeId": "r-576a82d311271157",
+      "displayedSuccess": "100.00%",
+      "displayedCompletion48": "61.78%",
+      "displayedBadge": "当前方案",
+      "successfulMeanFp": {
+        "lower": 54.469342289212754,
+        "upper": 54.469342289218616
+      },
+      "fullPrimaryAndCompletionBitIdentical": true,
+      "visibleMetricsAndBadgeMatch": true
+    },
+    {
+      "id": "7272-not-recommended",
+      "file": "public-completion48-7272-not-recommended.json",
+      "sha256": "30b8a1c600f5cb2a082bd1907972eeaa1fbe7d943ffbb4a72b19cec4c4820721",
+      "routeId": "r-80b93ecb2f6c4e57",
+      "displayedSuccess": "33.47%",
+      "displayedCompletion48": "19.75%",
+      "displayedBadge": "不推荐",
+      "successfulMeanFp": {
+        "lower": 56.37059086067632,
+        "upper": 56.37059086068375
+      },
+      "fullPrimaryAndCompletionBitIdentical": true,
+      "visibleMetricsAndBadgeMatch": true
+    },
+    {
+      "id": "7721-owned-t7",
+      "file": "public-completion48-7721-owned-t7.json",
+      "sha256": "95a4d2adaaf5c0fb3da10bcf3dcf4f92ecf261df1866d89e939d81d1799e239d",
+      "routeId": "r-b3963f4483caa1a0",
+      "displayedSuccess": "100.00%",
+      "displayedCompletion48": "72.26%",
+      "displayedBadge": "推荐",
+      "successfulMeanFp": {
+        "lower": 44.61212193627247,
+        "upper": 44.61212193627655
+      },
+      "fullPrimaryAndCompletionBitIdentical": true,
+      "visibleMetricsAndBadgeMatch": true
+    }
+  ],
+  "qualification": "Four actual public Pages UI/Worker exports and captured visible text. Full selected-route and48FP calculations match Node bit for bit; recommended, neutral and not-recommended labels match the exported probabilities. Not a physical-device benchmark or independent mechanics validation."
+}

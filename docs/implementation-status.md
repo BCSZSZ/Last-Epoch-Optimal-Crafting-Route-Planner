@@ -4,7 +4,7 @@
 
 **当前为[极简输入v3](minimal-ui.md)＋[23节点求解器v2](hierarchical-solver-v2.md)**，模型`le-1.5.3-iid-591a4fa7a4d6e547`。左侧明确普通槽目标归属，右侧只选前后缀目标T7数，已有统计只读；默认任意部位、阶数按钮仅数字。155项TS、30项Python及112例分层对照通过；48FP指标和15%／65FP门槛保持。
 
-**本轮槽位输入UI已完成本地验收，待发布复核**：[三例静态UI／Worker记录](../research/ui-validation/slot-targets-local-parity.json)覆盖任意7710、任意7721与指定手套7721，完整主路线及48FP结果与Node逐位一致，勾选、只读统计、刷新、搜索、窄屏均已检查。上一版48FP于2026-11-04恢复发布，[历史发布记录](../research/deployment-completion48.json)及[历史公网复算](../research/ui-validation/public-completion48-parity.json)保留原模型，不作为本轮UI发布通过声明。
+**本轮槽位输入UI已发布并完成公网验收**：[发布记录](../research/deployment-slot-targets.json)中Pages及研究CI均通过，八个静态文件与本地构建逐字节一致。任意7710、任意7721和指定手套7721的[三例公网UI／Worker报告](../research/ui-validation/slot-targets-public-parity.json)与Node完整主路线及48FP结果逐位一致；左侧勾选、只读计数和数字阶数在公网已确认。此前48FP公网及本地UI记录作为历史版本保留，不混称当前验收。
 
 页面固定五槽和按钮T级，移除样例、底材和等级输入；简易目标分别填前后缀数量，详细目标忽略留空。缺省身份使用显式等权参考，完整身份使用实际权重通用池。[此前四例静态页面／Worker与Node历史对照](../research/ui-validation/completion48-parity.json)覆盖推荐、不推荐和中性，完整主报告与48FP评价一致。[7710／7721全部合法位置对照](7710-7721-completion.md)含396例；有限模板／状态预算下的见证不构成全局最优证明。预计算完成[分析设计](precomputation-plan.md)，尚未发布离线查表。
 

@@ -37,3 +37,5 @@
 [三份本地静态页面／Worker导出](../research/ui-validation/slot-targets-local-parity.json)与Node完整主报告及48FP结果逐位一致：任意7710为100%／68.34%／48.80FP；任意及指定手套7721为100%／72.26%／44.61FP。实际检查了勾选、只读统计、改阶、清空、刷新保留、可选词条搜索与选择、390px视口无横向溢出。先前UI记录按[原模型归档](../research/runtime-model-archive/manifest.json)重放，不作为本轮UI证据。
 
 这些验证不冒充游戏客户端实测或物理手机性能；低性能实机按用户约定继续待验收。[预计算设计](precomputation-plan.md)。
+
+公网已发布并通过[相同三例UI／Worker复算](../research/ui-validation/slot-targets-public-parity.json)，八个静态文件字节相同，Pages与研究CI通过；详见[发布记录](../research/deployment-slot-targets.json)。

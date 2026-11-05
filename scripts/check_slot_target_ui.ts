@@ -7,11 +7,13 @@ import { evaluateCompletion } from '../src/core/completion';
 import { ANY_BASE_ID, catalogForInputModel } from '../src/core/input-model';
 import { evaluateIntrinsic, IntrinsicWorkspace } from '../src/core/intrinsic';
 import { RuleEngine } from '../src/core/rules';
+import { recordCatalog } from './runtime_model_archive';
 
 const context = process.argv.includes('--public') ? 'public' : 'local';
 const root = 'research/ui-validation/', path = root + `slot-targets-${context}-observations.json`;
 const sourceBytes = readFileSync(path), data = JSON.parse(sourceBytes.toString('utf8'));
-assert.equal(data.modelId, MODEL_ID);
+const historical = process.argv.includes('--historical');
+recordCatalog(data.modelId, historical);
 const snapshot = (id: string) => { const found = data.snapshots.find((row: {id: string}) => row.id === id); assert(found, id); return found; };
 const count = (row: {readonlyCounts: {label: string; value: string}[]}, label: string) => row.readonlyCounts.find(entry => entry.label === label)?.value;
 for (const row of data.snapshots) {
@@ -40,8 +42,8 @@ assert.equal(data.reports.length, 3);
 for (const entry of data.reports) {
   assert.match(entry.file, new RegExp(`^slot-targets-${context}-[\\w-]+\\.json$`));
   const bytes = readFileSync(root + entry.file), record = JSON.parse(bytes.toString('utf8'));
-  assert.equal(record.input.modelId, MODEL_ID); assert.equal(record.report.modelId, MODEL_ID);
-  const catalog = catalogForInputModel(record.input.inputModel), engine = new RuleEngine(catalog), row = snapshot(entry.id);
+  assert.equal(record.input.modelId, data.modelId); assert.equal(record.report.modelId, data.modelId);
+  const catalog = catalogForInputModel(record.input.inputModel, recordCatalog(data.modelId, historical).model), engine = new RuleEngine(catalog), row = snapshot(entry.id);
   const primary = record.report.primary, completion = record.report.completion; assert(primary);
   assert.deepEqual(evaluateIntrinsic(new IntrinsicWorkspace(engine, record.input), primary.route), primary);
   assert.deepEqual(evaluateCompletion(engine, record.input, primary.route), completion);
@@ -67,9 +69,9 @@ for (const entry of data.reports) {
     displayedCompletion, inputModel: record.input.inputModel, exactMarkedSlotPreserved: entry.id.endsWith('7721'),
     readonlyCountsMatchRequest: true, fullPrimaryAndCompletionBitIdentical: true });
 }
-const result = { schemaVersion: 1, modelId: MODEL_ID, context, status: 'PASS', observedAt: data.observedAt,
+const result = { schemaVersion: 2, modelId: data.modelId, currentModelId: MODEL_ID, historical: data.modelId !== MODEL_ID, context, status: 'PASS', observedAt: data.observedAt,
   sourceSha256: createHash('sha256').update(sourceBytes).digest('hex'), checks,
-  qualification: 'Actual static UI/Worker records checked against DOM observations and Node route evaluation. Explicit slot ownership, readonly counters, numeric tier buttons and separate Any reference model; local-only transition/refresh/search/layout observations are not a physical-device benchmark.' };
+  qualification: 'Actual static UI/Worker records checked against DOM observations and Node route evaluation using their original archived model. Explicit slot ownership, readonly counters, numeric tier buttons and separate Any reference model; historical reports do not certify current input UI. Local-only transition/refresh/search/layout observations are not a physical-device benchmark.' };
 const encoded = JSON.stringify(result, null, 2) + '\n', destination = root + `slot-targets-${context}-parity.json`;
 if (process.argv.includes('--verify-only')) assert.equal(readFileSync(destination, 'utf8'), encoded); else writeFileSync(destination, encoded);
 console.log(JSON.stringify({status:'PASS', modelId:MODEL_ID, context, workerCases:checks.length, uiContractAndRouteParity:true}));

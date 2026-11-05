@@ -1,6 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "modelId": "le-1.5.3-iid-591a4fa7a4d6e547",
+  "currentModelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "historical": true,
   "context": "public",
   "status": "PASS",
   "observedAt": "2026-11-05T14:55:49.789Z",
@@ -37,5 +39,5 @@
       "fullPrimaryAndCompletionBitIdentical": true
     }
   ],
-  "qualification": "Actual static UI/Worker records checked against DOM observations and Node route evaluation. Explicit slot ownership, readonly counters, numeric tier buttons and separate Any reference model; local-only transition/refresh/search/layout observations are not a physical-device benchmark."
+  "qualification": "Actual static UI/Worker records checked against DOM observations and Node route evaluation using their original archived model. Explicit slot ownership, readonly counters, numeric tier buttons and separate Any reference model; historical reports do not certify current input UI. Local-only transition/refresh/search/layout observations are not a physical-device benchmark."
 }

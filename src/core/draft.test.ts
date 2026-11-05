@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { Catalog, snapshot } from './catalog';
-import { compileDraft, DRAFT_SLOTS, draftAffixPool, emptyDraft, ownedGoalCounts, readDraft, withDraftSlots } from './draft';
+import { compileDraft, DRAFT_SLOTS, draftAffixPool, emptyDraft, maximumGoalCount, ownedGoalCounts, readDraft, withDraftSlots } from './draft';
 import type { CraftingDraft } from './draft';
 import { ANY_BASE_ID, catalogForInputModel } from './input-model';
 import { plan } from './planner';
@@ -13,6 +13,19 @@ const source7710 = (): CraftingDraft => ({ ...emptyDraft(), part: 19,
   counts: [{ desired: 2 }, { desired: 0 }] });
 
 describe('minimal draft input and fixed slots', () => {
+  it('shares only ordinary source T7 capacity across prefix and suffix goals', () => {
+    const source = { ...source7710(), counts: [{ desired: 1 }, { desired: 0 }] as const,
+      slots: { ...source7710().slots, sealed: { tier: 7, id: null } } };
+    expect(maximumGoalCount(source, 0)).toBe(2);
+    expect(maximumGoalCount(source, 1)).toBe(1);
+    const full = { ...source, counts: [{ desired: 2 }, { desired: 0 }] as const };
+    expect(maximumGoalCount(full, 1)).toBe(0);
+    const invalid = compileDraft({ ...source, counts: [{ desired: 2 }, { desired: 1 }] });
+    expect(invalid.scenarios).toEqual([]);
+    expect(invalid.issues.some(row => row.message.includes('目标T7合计不能超过起始普通栏的2条T7'))).toBe(true);
+    // The two source T7s are suffixes; Havoc can still place both on prefix goals.
+    expect(compileDraft(full).issues).toEqual([]);
+  });
   it('starts empty without example gear or a hidden default target', () => {
     const draft = emptyDraft();
     expect(draft.part).toBeNull();

@@ -123,6 +123,16 @@ export function compileTemplates(request: PlanRequest, engine: RuleEngine): Temp
           } });
       }
     }
+    // A first-hit set is a different fixed controller from waiting for one tier.
+    // Accepting T1 OR T2 can save enough preparation FP to pass the practical limit.
+    if (structure.node.sealedCount === 0) for (const maximum of [2, 3, 4]) {
+      methods.push({ family: 'PREPARE_SEAL', name: `补栏浩劫准备后封T1至T${maximum}`,
+        build: (id) => {
+          const selector: Selector = { side: engine.catalog.side(id) as 0 | 1, excludedIds: excluded,
+            minTier: 1, maxTier: maximum, sealable: true };
+          return [fill, prepare(selector), { kind: 'seal', selector }, add(id)];
+        } });
+    }
     for (const preparation of [false, true]) methods.push({ family: preparation ? 'PREPARE_REMOVE' : 'REMOVE', name: `${preparation ? '补栏浩劫准备后' : ''}剥离垃圾`,
       build: (id) => { const accepted: Selector = { side: engine.catalog.side(id) as 0 | 1, excludedIds: excluded, minTier: 1, maxTier: 6, eligibleAction: 'removal' };
         return [...(preparation ? [fill, prepare(accepted)] : []), { kind: 'removal', accepted, glyph: 'hope' }, add(id)]; } });
@@ -255,6 +265,8 @@ export function compileTemplates(request: PlanRequest, engine: RuleEngine): Temp
   pick((row) => row.family === 'INTERLEAVED_ACQUIRE' && guardedT1(row.macros));
   pick((row) => row.family === 'INTERLEAVED_ACQUIRE' && !guardedT1(row.macros));
   pick((row) => guardedT1(row.macros) && !containsRedemption(row.macros) && !containsChaos(row.macros));
+  pick((row) => row.family === 'PREPARE_SEAL' && row.description?.includes('封T1至T2') === true &&
+    !containsRedemption(row.macros) && !containsChaos(row.macros));
   pick((row) => row.family === 'DIRECT');
   pick((row) => row.description?.includes('连续剥离') ?? false);
   pick((row) => (row.family === 'SEAL' || row.family === 'PREPARE_SEAL') && !containsRedemption(row.macros) && !containsChaos(row.macros));

@@ -1,0 +1,2086 @@
+{
+  "schemaVersion": 1,
+  "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "observedAt": "2026-11-05T15:16:47.885Z",
+  "snapshots": [
+    {
+      "id": "empty",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "disabled": false,
+          "label": "前缀目标T7数0",
+          "selected": true,
+          "value": "0"
+        },
+        {
+          "disabled": true,
+          "label": "前缀目标T7数1",
+          "selected": false,
+          "value": "1"
+        },
+        {
+          "disabled": true,
+          "label": "前缀目标T7数2",
+          "selected": false,
+          "value": "2"
+        },
+        {
+          "disabled": false,
+          "label": "后缀目标T7数0",
+          "selected": true,
+          "value": "0"
+        },
+        {
+          "disabled": true,
+          "label": "后缀目标T7数1",
+          "selected": false,
+          "value": "1"
+        },
+        {
+          "disabled": true,
+          "label": "后缀目标T7数2",
+          "selected": false,
+          "value": "2"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": null,
+      "scrollWidth": 1265,
+      "selectedPart": "任意",
+      "tiers": [
+        [
+          {
+            "label": "起始前缀1空",
+            "selected": true,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀1T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀1T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始前缀2空",
+            "selected": true,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀2T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀2T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀1空",
+            "selected": true,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀1T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀1T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀2空",
+            "selected": true,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀2T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀2T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始封印空",
+            "selected": true,
+            "text": "空"
+          },
+          {
+            "label": "起始封印T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始封印T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始封印T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始封印T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始封印T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始封印T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始封印T7",
+            "selected": false,
+            "text": "7"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "two-sources-one-goal",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "disabled": true,
+          "label": "前缀目标T7数0",
+          "selected": false,
+          "value": "0"
+        },
+        {
+          "disabled": false,
+          "label": "前缀目标T7数1",
+          "selected": true,
+          "value": "1"
+        },
+        {
+          "disabled": false,
+          "label": "前缀目标T7数2",
+          "selected": false,
+          "value": "2"
+        },
+        {
+          "disabled": false,
+          "label": "后缀目标T7数0",
+          "selected": true,
+          "value": "0"
+        },
+        {
+          "disabled": false,
+          "label": "后缀目标T7数1",
+          "selected": false,
+          "value": "1"
+        },
+        {
+          "disabled": true,
+          "label": "后缀目标T7数2",
+          "selected": false,
+          "value": "2"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "1"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": null,
+      "scrollWidth": 1265,
+      "selectedPart": "胸甲",
+      "tiers": [
+        [
+          {
+            "label": "起始前缀1空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀1T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀1T7",
+            "selected": true,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始前缀2空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀2T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀2T2",
+            "selected": true,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀1空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀1T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀1T7",
+            "selected": true,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀2空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀2T1",
+            "selected": true,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀2T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始封印空",
+            "selected": true,
+            "text": "空"
+          },
+          {
+            "label": "起始封印T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始封印T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始封印T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始封印T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始封印T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始封印T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始封印T7",
+            "selected": false,
+            "text": "7"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "two-sources-two-goals",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "disabled": true,
+          "label": "前缀目标T7数0",
+          "selected": false,
+          "value": "0"
+        },
+        {
+          "disabled": false,
+          "label": "前缀目标T7数1",
+          "selected": false,
+          "value": "1"
+        },
+        {
+          "disabled": false,
+          "label": "前缀目标T7数2",
+          "selected": true,
+          "value": "2"
+        },
+        {
+          "disabled": false,
+          "label": "后缀目标T7数0",
+          "selected": true,
+          "value": "0"
+        },
+        {
+          "disabled": true,
+          "label": "后缀目标T7数1",
+          "selected": false,
+          "value": "1"
+        },
+        {
+          "disabled": true,
+          "label": "后缀目标T7数2",
+          "selected": false,
+          "value": "2"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "1"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": null,
+      "scrollWidth": 1265,
+      "selectedPart": "胸甲",
+      "tiers": [
+        [
+          {
+            "label": "起始前缀1空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀1T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀1T7",
+            "selected": true,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始前缀2空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀2T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀2T2",
+            "selected": true,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀1空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀1T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀1T7",
+            "selected": true,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀2空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀2T1",
+            "selected": true,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀2T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始封印空",
+            "selected": true,
+            "text": "空"
+          },
+          {
+            "label": "起始封印T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始封印T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始封印T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始封印T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始封印T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始封印T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始封印T7",
+            "selected": false,
+            "text": "7"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "sealed-t7-excluded",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "disabled": true,
+          "label": "前缀目标T7数0",
+          "selected": false,
+          "value": "0"
+        },
+        {
+          "disabled": false,
+          "label": "前缀目标T7数1",
+          "selected": false,
+          "value": "1"
+        },
+        {
+          "disabled": false,
+          "label": "前缀目标T7数2",
+          "selected": true,
+          "value": "2"
+        },
+        {
+          "disabled": false,
+          "label": "后缀目标T7数0",
+          "selected": true,
+          "value": "0"
+        },
+        {
+          "disabled": true,
+          "label": "后缀目标T7数1",
+          "selected": false,
+          "value": "1"
+        },
+        {
+          "disabled": true,
+          "label": "后缀目标T7数2",
+          "selected": false,
+          "value": "2"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "1"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": null,
+      "scrollWidth": 1265,
+      "selectedPart": "胸甲",
+      "tiers": [
+        [
+          {
+            "label": "起始前缀1空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀1T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀1T7",
+            "selected": true,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始前缀2空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀2T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀2T2",
+            "selected": true,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀1空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀1T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀1T7",
+            "selected": true,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀2空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀2T1",
+            "selected": true,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀2T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始封印空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始封印T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始封印T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始封印T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始封印T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始封印T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始封印T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始封印T7",
+            "selected": true,
+            "text": "7"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "source-t7-lowered",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "disabled": true,
+          "label": "前缀目标T7数0",
+          "selected": false,
+          "value": "0"
+        },
+        {
+          "disabled": false,
+          "label": "前缀目标T7数1",
+          "selected": false,
+          "value": "1"
+        },
+        {
+          "disabled": true,
+          "label": "前缀目标T7数2",
+          "selected": true,
+          "value": "2"
+        },
+        {
+          "disabled": false,
+          "label": "后缀目标T7数0",
+          "selected": true,
+          "value": "0"
+        },
+        {
+          "disabled": true,
+          "label": "后缀目标T7数1",
+          "selected": false,
+          "value": "1"
+        },
+        {
+          "disabled": true,
+          "label": "后缀目标T7数2",
+          "selected": false,
+          "value": "2"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "1"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": null,
+      "scrollWidth": 1265,
+      "selectedPart": "胸甲",
+      "tiers": [
+        [
+          {
+            "label": "起始前缀1空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀1T6",
+            "selected": true,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀1T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始前缀2空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀2T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀2T2",
+            "selected": true,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀1空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀1T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀1T7",
+            "selected": true,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀2空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀2T1",
+            "selected": true,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀2T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始封印空",
+            "selected": true,
+            "text": "空"
+          },
+          {
+            "label": "起始封印T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始封印T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始封印T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始封印T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始封印T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始封印T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始封印T7",
+            "selected": false,
+            "text": "7"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "split-goals",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "disabled": true,
+          "label": "前缀目标T7数0",
+          "selected": false,
+          "value": "0"
+        },
+        {
+          "disabled": false,
+          "label": "前缀目标T7数1",
+          "selected": true,
+          "value": "1"
+        },
+        {
+          "disabled": true,
+          "label": "前缀目标T7数2",
+          "selected": false,
+          "value": "2"
+        },
+        {
+          "disabled": false,
+          "label": "后缀目标T7数0",
+          "selected": false,
+          "value": "0"
+        },
+        {
+          "disabled": false,
+          "label": "后缀目标T7数1",
+          "selected": true,
+          "value": "1"
+        },
+        {
+          "disabled": true,
+          "label": "后缀目标T7数2",
+          "selected": false,
+          "value": "2"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "1"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": null,
+      "scrollWidth": 1265,
+      "selectedPart": "胸甲",
+      "tiers": [
+        [
+          {
+            "label": "起始前缀1空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀1T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀1T7",
+            "selected": true,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始前缀2空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀2T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀2T2",
+            "selected": true,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀1空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀1T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀1T7",
+            "selected": true,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀2空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀2T1",
+            "selected": true,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀2T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始封印空",
+            "selected": true,
+            "text": "空"
+          },
+          {
+            "label": "起始封印T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始封印T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始封印T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始封印T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始封印T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始封印T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始封印T7",
+            "selected": false,
+            "text": "7"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "7271-result",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "disabled": true,
+          "label": "前缀目标T7数0",
+          "selected": false,
+          "value": "0"
+        },
+        {
+          "disabled": false,
+          "label": "前缀目标T7数1",
+          "selected": false,
+          "value": "1"
+        },
+        {
+          "disabled": false,
+          "label": "前缀目标T7数2",
+          "selected": true,
+          "value": "2"
+        },
+        {
+          "disabled": false,
+          "label": "后缀目标T7数0",
+          "selected": true,
+          "value": "0"
+        },
+        {
+          "disabled": true,
+          "label": "后缀目标T7数1",
+          "selected": false,
+          "value": "1"
+        },
+        {
+          "disabled": true,
+          "label": "后缀目标T7数2",
+          "selected": false,
+          "value": "2"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "1"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": "规划方案\n当前方案\n成功率\n84.50%\n整件完成率（48 FP）\n50.55%\n成功路径平均 FP\n55.68\n浩劫至前缀1为T1或T2\n封印\n\n前缀1（T1或T2）；封印失败即停止。\n\n添加词缀\n\n待补目标前缀2\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（4）\n计算说明",
+      "scrollWidth": 1265,
+      "selectedPart": "胸甲",
+      "tiers": [
+        [
+          {
+            "label": "起始前缀1空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀1T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀1T7",
+            "selected": true,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始前缀2空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始前缀2T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始前缀2T2",
+            "selected": true,
+            "text": "2"
+          },
+          {
+            "label": "起始前缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始前缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始前缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始前缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始前缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀1空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀1T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀1T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀1T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀1T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀1T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀1T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀1T7",
+            "selected": true,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始后缀2空",
+            "selected": false,
+            "text": "空"
+          },
+          {
+            "label": "起始后缀2T1",
+            "selected": true,
+            "text": "1"
+          },
+          {
+            "label": "起始后缀2T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始后缀2T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始后缀2T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始后缀2T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始后缀2T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始后缀2T7",
+            "selected": false,
+            "text": "7"
+          }
+        ],
+        [
+          {
+            "label": "起始封印空",
+            "selected": true,
+            "text": "空"
+          },
+          {
+            "label": "起始封印T1",
+            "selected": false,
+            "text": "1"
+          },
+          {
+            "label": "起始封印T2",
+            "selected": false,
+            "text": "2"
+          },
+          {
+            "label": "起始封印T3",
+            "selected": false,
+            "text": "3"
+          },
+          {
+            "label": "起始封印T4",
+            "selected": false,
+            "text": "4"
+          },
+          {
+            "label": "起始封印T5",
+            "selected": false,
+            "text": "5"
+          },
+          {
+            "label": "起始封印T6",
+            "selected": false,
+            "text": "6"
+          },
+          {
+            "label": "起始封印T7",
+            "selected": false,
+            "text": "7"
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "currentModelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "historical": false,
+  "context": "local",
+  "observedAt": "2026-11-05T15:16:47.885Z",
+  "observationSha256": "35e13fda6837838a43bd97b86d7991f5d19940a6aa7942d9344d270bafcc541d",
+  "reportSha256": "fca8f30324befc4f8c12a4e8a07b52199d429b79c12ba93cc12363d02ce6e6f6",
+  "operationSuccess": {
+    "lower": 0.8449999999999956,
+    "upper": 0.8450000000000043
+  },
+  "successPathMeanFp": {
+    "lower": 55.68447760127968,
+    "upper": 55.684477601285494
+  },
+  "completion": {
+    "routeId": "r-42ab1cbb5b58ebb7",
+    "initialFp": 48,
+    "status": "COMPLETE",
+    "probability": {
+      "lower": 0.5055162472070336,
+      "upper": 0.5055162576516714
+    },
+    "recommendation": "NEUTRAL",
+    "evaluation": "BOUNDED_NUMERICAL",
+    "states": 60,
+    "reason": null
+  },
+  "sharedGoalCapacityChecked": true,
+  "localTransitionChecks": true,
+  "exactOriginalSlotAndTierTextChecked": true,
+  "fullPrimaryAndCompletionBitIdentical": true,
+  "qualification": "Actual static UI/Worker result for the user 7271 screenshot. Anonymous chest equal-positive model; not an equipment average, game-client frequency test, physical low-end benchmark or global optimality proof."
+}

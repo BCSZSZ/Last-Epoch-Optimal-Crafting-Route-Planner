@@ -31,6 +31,31 @@ function fixture() {
   return { ...scenario, catalog, engine: new RuleEngine(catalog) };
 }
 
+it('names the original garbage prefix and only reachable tiers for the 7271 preparation', () => {
+  const draft = emptyDraft();
+  const { request, aliases } = compileDraft({ ...draft, part: 1, slots: { ...draft.slots,
+    prefix1: { tier: 7, id: null }, prefix2: { tier: 2, id: null, isTarget: true },
+    suffix1: { tier: 7, id: null }, suffix2: { tier: 1, id: null } },
+    counts: [{ desired: 2 }, { desired: 0 }] }).scenarios[0];
+  const catalog = catalogForInputModel(request.inputModel);
+  const accepted = { side: 0 as const, excludedIds: request.target.requirements.flatMap(row => row.ids), minTier: 1, maxTier: 6 };
+  const steps = routeSteps([{ kind: 'repeat', action: { kind: 'havoc', glyph: 'hope' }, until: { kind: 'exists', selector: accepted } },
+    { kind: 'removal', accepted, glyph: 'hope' }], request, catalog, aliases);
+  expect(steps[0].title).toBe('浩劫至前缀1为T1或T2');
+  expect(steps[1].condition).toBe('仅接受前缀1（T1或T2）；剥歪即停止。');
+});
+
+it('keeps a multiple-slot stop explicit and drops original slot facts after Redemption', () => {
+  const { request: source, catalog } = fixture();
+  const request = { ...source, item: { ...source.item, affixes: source.item.affixes.map((row, index) => ({ ...row, tier: [7, 7, 3, 2][index] })) } };
+  const prepare: Macro = { kind: 'repeat', action: { kind: 'havoc', glyph: 'hope' },
+    until: { kind: 'exists', selector: { side: 0, minTier: 1, maxTier: 6 } } };
+  expect(routeSteps([prepare], request, catalog)[0].title).toBe('浩劫至前缀1／前缀2中至少一条为T2或T3');
+  const changed = routeSteps([{ kind: 'once', action: { kind: 'redemption', glyph: 'hope' } }, prepare], request, catalog);
+  expect(changed[1].title).not.toContain('前缀1');
+  expect(changed[1].title).toContain('T1–T6');
+});
+
 it('renders the actual vacancy-aware controller as five concise steps with no repeated Hope or redundant fill', () => {
   const { request, aliases, catalog, engine } = fixture();
   const route = compileTemplates(request, engine)!.templates.find((row) => row.family === 'INTERLEAVED_ACQUIRE' &&

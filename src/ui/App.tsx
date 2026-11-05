@@ -1,6 +1,6 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { MODEL_ID } from '../core/catalog';
-import { compileDraft, DRAFT_SLOTS, draftAffixPool, emptyDraft, ownedGoalCounts, readDraft, withDraftSlots } from '../core/draft';
+import { compileDraft, DRAFT_SLOTS, draftAffixPool, emptyDraft, maximumGoalCount, ownedGoalCounts, readDraft, withDraftSlots } from '../core/draft';
 import type { CompiledDraft, CraftingDraft, DraftScenario, DraftSlot, DraftSlots } from '../core/draft';
 import { catalogForInputModel } from '../core/input-model';
 import type { IntrinsicReport } from '../core/intrinsic';
@@ -102,21 +102,21 @@ function SlotEditor({ slots, part, target = false, markTargets = false, onChange
 
 function CountButtons({ label, value, minimum = 0, maximum = 2, onChange }: { label: string; value: number; minimum?: number; maximum?: number; onChange: (n: number) => void }) {
   return <div className="count-row"><span>{label}</span><div role="group" aria-label={label} className="count-buttons">{[0, 1, 2].map((n) =>
-    <button type="button" key={n} disabled={n < minimum || n > maximum} aria-label={`${label}${n}`} aria-pressed={value === n} className={value === n ? 'selected' : ''} onClick={() => onChange(n)}>{n}</button>)}</div></div>;
+    <button type="button" key={n} disabled={n < minimum || n > maximum && n >= value} aria-label={`${label}${n}`} aria-pressed={value === n} className={value === n ? 'selected' : ''} onClick={() => onChange(n)}>{n}</button>)}</div></div>;
 }
 
 function CountGoals({ draft, onChange }: { draft: CraftingDraft; onChange: (counts: CraftingDraft['counts']) => void }) {
   return <div className="count-goals">{([0, 1] as const).map((side) => {
     const name = side === 0 ? '前缀' : '后缀', row = ownedGoalCounts(draft, side);
     return <fieldset className="count-card" key={side}><legend>目标{name}</legend>
-      <CountButtons label={`${name}目标T7数`} value={row.desired} minimum={row.owned}
+      <CountButtons label={`${name}目标T7数`} value={row.desired} minimum={row.owned} maximum={maximumGoalCount(draft, side)}
         onChange={(desired) => onChange(side === 0 ? [{ desired }, draft.counts[1]] : [draft.counts[0], { desired }])} />
       <div className="count-row"><span>{name}已有目标词条数</span><output className="readonly-count" aria-label={`${name}已有目标词条数`}>{row.owned}</output></div>
       <div className="count-row"><span>{name}已有目标T7数</span><output className="readonly-count" aria-label={`${name}已有目标T7数`}>{row.ownedT7}</output></div>
     </fieldset>;
   })}{!!draft.legacyOwnership?.length && <p className="helper migration-note" role="status">旧输入需在左侧确认已有目标的位置：{draft.legacyOwnership.map(row =>
     `${row.side === 0 ? '前缀' : '后缀'}已有${row.owned}条，其中T7为${row.ownedT7}条`).join('；')}。</p>}
-    <p className="helper">已有数量由左侧勾选自动统计，不包含封印。</p></div>;
+    <p className="helper">目标T7合计不超过起始普通槽的T7数。已有数量由左侧勾选统计。</p></div>;
 }
 
 function StepInstructions({ step }: { step: RouteStep }) {

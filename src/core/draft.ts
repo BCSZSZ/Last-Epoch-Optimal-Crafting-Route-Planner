@@ -107,6 +107,12 @@ export function ownedGoalCounts(draft: CraftingDraft, side: 0 | 1): GoalCounts {
   return { desired: draft.counts[side].desired, owned: slots.length, ownedT7: slots.filter(row => row.tier === 7).length };
 }
 
+/** Havoc can move source T7s across sides, but cannot create another one. */
+export function maximumGoalCount(draft: CraftingDraft, side: 0 | 1): number {
+  const sources = DRAFT_SLOTS.filter(row => row.slot === 'ordinary' && draft.slots[row.key].tier === 7).length;
+  return Math.max(0, Math.min(2, sources - draft.counts[side === 0 ? 1 : 0].desired));
+}
+
 /** Membership is stored only on starting slots; editing an empty slot clears its membership. */
 export function withDraftSlots(draft: CraftingDraft, slots: DraftSlots, confirmedSide?: 0 | 1): CraftingDraft {
   const { legacyOwnership, ...source } = draft;
@@ -182,6 +188,8 @@ export function compileDraft(draft: CraftingDraft): CompiledDraft {
     if (draft.legacyOwnership?.length) { fail('旧输入未明确已有目标的位置，请在左侧勾选确认目标词缀。'); return result(); }
     const selected = ([0, 1] as const).map(side => DRAFT_SLOTS.filter(row => row.side === side && draft.slots[row.key].tier > 0 && draft.slots[row.key].isTarget)
       .map(row => slotIndex.get(row.key)!));
+    const sourceT7s = DRAFT_SLOTS.filter(row => row.slot === 'ordinary' && draft.slots[row.key].tier === 7).length;
+    if (draft.counts[0].desired + draft.counts[1].desired > sourceT7s) fail(`目标T7合计不能超过起始普通栏的${sourceT7s}条T7；封印词缀不计入。`);
     for (const side of [0, 1] as const) if (selected[side].length > draft.counts[side].desired) fail(`${side === 0 ? '前缀' : '后缀'}目标T7数不能少于左侧勾选的目标词缀数。`);
     if (issues.length) return result();
     {

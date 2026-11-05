@@ -12,6 +12,14 @@ export interface RouteStep {
 }
 type Knowledge = Map<number, boolean | null>;
 const sameSelector = (a: Selector, b: Selector) => JSON.stringify({ ...a, side: undefined }) === JSON.stringify({ ...b, side: undefined });
+interface SlotFacts { ids: number[]; tiers: number[] }
+
+function tierText(tiers: readonly number[]): string {
+  if (tiers.length === 1) return `T${tiers[0]}`;
+  if (tiers.length === 2) return `T${tiers[0]}或T${tiers[1]}`;
+  if (tiers.every((tier, index) => !index || tier === tiers[index - 1] + 1)) return `T${tiers[0]}–T${tiers.at(-1)}`;
+  return tiers.map(tier => `T${tier}`).join('或');
+}
 
 function minimumSealSteps(macro: Macro, expectedSide?: number): readonly RouteStep[] | null {
   if (macro.kind !== 'conditional' || macro.when.kind !== 'exists' || macro.when.selector.side !== undefined ||
@@ -64,6 +72,24 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
   const ids = new Set(request.target.requirements.flatMap((row) => row.ids));
   const initial: Knowledge = new Map([...ids].map((id) => [id, request.item.affixes.some((row) => row.id === id && row.slot === 'ordinary')]));
   const engine = new RuleEngine(catalog);
+  // Slot labels refer to identities in the input. Havoc changes tiers, never this order.
+  const slots = new Map<number, string>(), sides = [0, 0];
+  for (const row of request.item.affixes.filter(row => row.slot === 'ordinary')) {
+    const side = catalog.side(row.id);
+    slots.set(row.id, `${side === 0 ? '前缀' : '后缀'}${++sides[side]}`);
+  }
+  const candidates = (selector: Selector, facts: SlotFacts): number[] => facts.ids.filter(id =>
+    (!selector.ids || selector.ids.includes(id)) && !selector.excludedIds?.includes(id) &&
+    (selector.side === undefined || catalog.side(id) === selector.side));
+  const describe = (selector: Selector, facts: SlotFacts | null): { subject: string; tiers: string } | null => {
+    if (!facts) return null;
+    const selected = candidates(selector, facts);
+    if (!selected.length) return null;
+    const tiers = facts.tiers.filter(tier => tier >= (selector.minTier ?? 1) && tier <= (selector.maxTier ?? 8) &&
+      (!selector.sealable || tier <= 4));
+    if (!tiers.length) return null;
+    return { subject: selected.map(id => slots.get(id) ?? affixName(catalog, id, aliases)).join('／'), tiers: tierText(tiers) };
+  };
   const identityReached = (predicate: Predicate, known: Knowledge): boolean | null => {
     if (predicate.kind === 'identity' && predicate.requirement.ids.length === 1 && predicate.requirement.slot === 'ordinary' &&
       predicate.requirement.minTier === 1 && (predicate.requirement.maxTier ?? 8) === 8 && predicate.requirement.minRollByte === undefined) {
@@ -76,7 +102,7 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
     }
     return null;
   };
-  const walk = (values: readonly Macro[], known: Knowledge, count: { value: number | null }, unchanged: { value: boolean }): RouteStep[] => {
+  const walk = (values: readonly Macro[], known: Knowledge, count: { value: number | null }, unchanged: { value: boolean }, layout: { value: SlotFacts | null }): RouteStep[] => {
     const steps: RouteStep[] = [];
     const unknown = () => { for (const id of ids) known.set(id, null); };
     for (const macro of values) {
@@ -84,18 +110,20 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
       if (unchanged.value && macro.kind !== 'conditional' && macroStep(macro, request.item, request, engine) === 'SKIP') continue;
       if (macro.kind === 'conditional') {
         if (unchanged.value) {
-          steps.push(...walk(predicateReached(request.item, macro.when, request, engine) ? macro.then : macro.otherwise ?? [], known, count, unchanged)); continue;
+          steps.push(...walk(predicateReached(request.item, macro.when, request, engine) ? macro.then : macro.otherwise ?? [], known, count, unchanged, layout)); continue;
         }
         const predicate = macro.when, requirement = predicate.kind === 'identity' ? predicate.requirement : null;
         const id = requirement?.ids.length === 1 ? requirement.ids[0] : undefined;
         const fact = id === undefined ? undefined : known.get(id);
         if (requirement && requirement.slot === 'ordinary' && requirement.minTier === 1 && (requirement.maxTier ?? 8) === 8 &&
           requirement.minRollByte === undefined && (fact === true || fact === false)) {
-          steps.push(...walk(fact ? macro.then : macro.otherwise ?? [], known, count, unchanged)); continue;
+          steps.push(...walk(fact ? macro.then : macro.otherwise ?? [], known, count, unchanged, layout)); continue;
         }
         const left = new Map(known), right = new Map(known), leftCount = { value: count.value }, rightCount = { value: count.value };
         const leftUnchanged = { value: unchanged.value }, rightUnchanged = { value: unchanged.value };
-        const yes = walk(macro.then, left, leftCount, leftUnchanged), no = walk(macro.otherwise ?? [], right, rightCount, rightUnchanged);
+        const leftLayout = { value: layout.value }, rightLayout = { value: layout.value };
+        const yes = walk(macro.then, left, leftCount, leftUnchanged, leftLayout), no = walk(macro.otherwise ?? [], right, rightCount, rightUnchanged, rightLayout);
+        layout.value = JSON.stringify(leftLayout.value) === JSON.stringify(rightLayout.value) ? leftLayout.value : null;
         unchanged.value = leftUnchanged.value && rightUnchanged.value;
         for (const entry of ids) known.set(entry, left.get(entry) === right.get(entry) ? left.get(entry)! : null);
         count.value = leftCount.value === rightCount.value ? leftCount.value : null;
@@ -107,11 +135,33 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
       }
       if (macro.kind === 'fill' && count.value === 4) continue;
       unchanged.value = false;
-      const text = macroText(macro, catalog, aliases);
+      let text = macroText(macro, catalog, aliases);
+      if (macro.kind === 'repeat' && macro.action.kind === 'havoc' && macro.until.kind === 'exists') {
+        const selected = describe(macro.until.selector, layout.value);
+        if (selected) text = { title: `浩劫至${selected.subject}${selected.subject.includes('／') ? '中至少一条' : ''}为${selected.tiers}`, condition: '' };
+      } else if (macro.kind === 'seal' || macro.kind === 'removal') {
+        const selected = describe(macro.kind === 'seal' ? macro.selector : macro.accepted, layout.value);
+        if (selected) text = { ...text, condition: macro.kind === 'seal' ?
+          `${selected.subject}（${selected.tiers}）；封印失败即停止。` : `仅接受${selected.subject}（${selected.tiers}）；剥歪即停止。` };
+      }
       if (macro.kind === 'repeat' && macro.action.kind === 'havoc' && macro.until.kind === 'target' &&
         request.target.requirements.length === 2 && request.target.requirements.every((row) => row.ids.length === 1 && row.minTier === 7 && row.maxTier === 7)) {
         steps.push({ ...text, title: '浩劫直至两项目标均为T7' });
       } else steps.push(text);
+      if (layout.value) {
+        const facts = layout.value;
+        if (macro.kind === 'once' && macro.action.kind === 'add') {
+          // Add can critically upgrade itself OR an existing low affix. Keep a conservative tier support.
+          layout.value = { ids: [...facts.ids, macro.action.id], tiers: [...new Set([...facts.tiers, 1, 2,
+            ...facts.tiers.filter(tier => tier < 5).map(tier => tier + 1)])].sort((a, b) => a - b) };
+        } else if (macro.kind === 'seal' || macro.kind === 'removal') {
+          const selected = candidates(macro.kind === 'seal' ? macro.selector : macro.accepted, facts);
+          layout.value = selected.length === 1 ? { ...facts, ids: facts.ids.filter(id => id !== selected[0]) } : null;
+        } else if (macro.kind === 'once' && macro.action.kind === 'seal') {
+          const removed = macro.action.id;
+          layout.value = { ...facts, ids: facts.ids.filter(id => id !== removed) };
+        } else if (!((macro.kind === 'once' || macro.kind === 'repeat') && macro.action.kind === 'havoc')) layout.value = null;
+      }
       if (macro.kind === 'once' && macro.action.kind === 'add') { known.set(macro.action.id, true); if (count.value !== null) count.value++; }
       else if (macro.kind === 'fill') { count.value = 4; for (const id of ids) if (known.get(id) === false && macro.ids.includes(id)) known.set(id, null); }
       else if (macro.kind === 'seal' || macro.kind === 'removal') {
@@ -132,5 +182,7 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
     }
     return steps;
   };
-  return walk(macros, initial, { value: request.item.affixes.filter((row) => row.slot === 'ordinary').length }, { value: true });
+  return walk(macros, initial, { value: request.item.affixes.filter((row) => row.slot === 'ordinary').length }, { value: true },
+    { value: { ids: request.item.affixes.filter(row => row.slot === 'ordinary').map(row => row.id),
+      tiers: [...new Set(request.item.affixes.filter(row => row.slot === 'ordinary').map(row => row.tier))].sort((a, b) => a - b) } });
 }

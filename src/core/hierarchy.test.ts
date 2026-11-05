@@ -8,6 +8,9 @@ import { RuleEngine } from './rules';
 import { parsePlanRequest } from './request';
 import { Catalog } from './catalog';
 import type { Macro, PlanRequest, Route } from './types';
+import { compileDraft, emptyDraft } from './draft';
+import { catalogForInputModel } from './input-model';
+import { evaluateCompletion } from './completion';
 
 const final: Macro = { kind: 'repeat', action: { kind: 'havoc', glyph: 'hope' }, until: { kind: 'target' } };
 const add = (id: number): Macro => ({ kind: 'once', action: { kind: 'add', id, glyph: 'hope' } });
@@ -49,6 +52,26 @@ describe('all 28 input labels / 23 upper routing nodes', () => {
 });
 
 describe('structural refinements and fixed templates', () => {
+  it('includes a combined T1-or-T2 sealing stop and finds the better 7271 route within the default budget', async () => {
+    const draft = emptyDraft();
+    const { request } = compileDraft({ ...draft, part: 1, slots: { ...draft.slots,
+      prefix1: { tier: 7, id: null }, prefix2: { tier: 2, id: null, isTarget: true },
+      suffix1: { tier: 7, id: null }, suffix2: { tier: 1, id: null } },
+      counts: [{ desired: 2 }, { desired: 0 }] }).scenarios[0];
+    const engine = new RuleEngine(catalogForInputModel(request.inputModel));
+    expect(compileTemplates(request, engine)!.templates.some(route => route.description?.includes('封T1至T2'))).toBe(true);
+    const report = await plan({ ...request, search: { ...request.search, maxRoutes: 8, maxStates: 512 } }, { now: () => 0 });
+    expect(report.primary!.scoreEstimate).toBeCloseTo(0.845, 10);
+    expect(mean(report.primary!.expectedFpGivenSuccess!)).toBeCloseTo(55.6844776013, 8);
+    const completion = evaluateCompletion(engine, request, report.primary!.route);
+    expect(mean(completion.probability!)).toBeCloseTo(0.505516252429, 8);
+    const protectedId = request.target.requirements[0].ids[0];
+    const selector = { ids: [protectedId], minTier: 1, maxTier: 2, sealable: true };
+    const impossible: Route = { id: 'sealed-existing-target', macros: [
+      { kind: 'repeat', action: { kind: 'havoc', glyph: 'hope' }, until: { kind: 'exists', selector } },
+      { kind: 'seal', selector }, add(request.target.requirements[1].ids[0]), final] };
+    expect(evaluateIntrinsic(new IntrinsicWorkspace(engine, request), impossible).score.upper).toBe(0);
+  }, 30000);
   it('does not merge equal-label Havoc kernels with different low-tier multiplicities', () => {
     const engine = new RuleEngine();
     for (const [tier, expected] of [[1, 32.184375], [2, 35.4028125]]) {

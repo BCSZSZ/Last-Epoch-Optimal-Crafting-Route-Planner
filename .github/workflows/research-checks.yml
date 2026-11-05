@@ -38,7 +38,9 @@ jobs:
       - run: npx tsx scripts/check_completion_patterns.ts
       - run: npx tsx scripts/check_completion_ui.ts --historical --verify-only
       - run: npx tsx scripts/check_public_completion_ui.ts --historical --verify-only
-      - run: npx tsx scripts/check_slot_target_ui.ts --verify-only
-      - run: npx tsx scripts/check_slot_target_ui.ts --public --verify-only
+      - run: npx tsx scripts/check_slot_target_ui.ts --historical --verify-only
+      - run: npx tsx scripts/check_slot_target_ui.ts --public --historical --verify-only
+      - run: npx tsx scripts/research_7271_routes.ts --verify-only
+      - run: npx tsx scripts/check_capacity_ui.ts --verify-only
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/desktop-baseline.json --historical
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/public-normal.json --historical

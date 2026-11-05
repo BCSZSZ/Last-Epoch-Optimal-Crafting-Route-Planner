@@ -1,0 +1,75 @@
+{
+  "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "request": {
+    "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+    "inputModel": "FORGEABLE_EQUAL",
+    "item": {
+      "baseId": "1:0",
+      "itemLevel": 100,
+      "fpType": "NORMAL",
+      "corrupted": false,
+      "affixes": [
+        {
+          "id": 34,
+          "tier": 7,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 53,
+          "tier": 3,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 1,
+          "tier": 7,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 7,
+          "tier": 2,
+          "slot": "ordinary",
+          "roll": null
+        }
+      ]
+    },
+    "craftingContext": {
+      "playerLevel": 100
+    },
+    "target": {
+      "requirements": [
+        {
+          "ids": [
+            70
+          ],
+          "minTier": 7,
+          "maxTier": 7,
+          "slot": "ordinary"
+        },
+        {
+          "ids": [
+            8
+          ],
+          "minTier": 7,
+          "maxTier": 7,
+          "slot": "ordinary"
+        }
+      ]
+    },
+    "constraints": {},
+    "scoring": {},
+    "search": {
+      "milliseconds": 12000,
+      "maxRoutes": 48,
+      "macroStages": 12,
+      "maxStates": 25000
+    }
+  },
+  "generatedTemplates": 388,
+  "standaloneCombinedWindowExists": true,
+  "vacancyAwareControllers": 24,
+  "vacancyAwareCombinedWindowExists": false,
+  "qualification": "Structural compositional-coverage check, not proof that a missing controller improves every input. Distinct from numerical rule correctness or global optimality."
+}

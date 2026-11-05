@@ -1,6 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
+  "currentModelId": "le-1.5.3-iid-591a4fa7a4d6e547",
+  "historical": true,
   "status": "PASS",
   "checks": [
     {
@@ -112,5 +114,5 @@
       "fullPrimaryAndCompletionBitIdentical": true
     }
   ],
-  "qualification": "Four actual local static Pages-subpath browser UI/Worker downloads, replayed in Node with full intrinsic and48FP completion equality. Includes recommended, not-recommended and neutral cases. Shares physical rules; independent mechanics evidence is separate. Not a low-end device or global-optimality claim."
+  "qualification": "Four actual local static Pages-subpath browser UI/Worker downloads replayed with their original archived model. Includes recommended, not-recommended and neutral cases. Historical reports do not certify the current input UI. Shares physical rules; independent mechanics evidence is separate. Not a low-end device or global-optimality claim."
 }

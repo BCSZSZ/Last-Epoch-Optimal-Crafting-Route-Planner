@@ -1,5 +1,7 @@
 # Last Epoch Optimal Crafting Route Planner
 
+**槽位目标输入**：左侧直接勾选目标词缀，右侧已有数量只读；部位默认任意，阶数按钮仅显示1–7。[输入与参考模型](docs/minimal-ui.md)。
+
 《最后纪元》自动装备打造路线规划器。
 
 **新增48FP整件完成率**：结果显示成功率、整件完成率和FP；低于25%标“不推荐”，高于65%标“推荐”，保留65FP放弃。[计算与接口](docs/completion48.md)、[7710／7721全部位置对照](docs/7710-7721-completion.md)。

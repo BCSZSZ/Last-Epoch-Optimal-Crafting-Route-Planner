@@ -1,0 +1,1122 @@
+{
+  "schemaVersion": 1,
+  "modelId": "le-1.5.3-iid-591a4fa7a4d6e547",
+  "observedAt": "2026-11-05T14:38:30.910Z",
+  "source": "LOCAL_STATIC_PAGES_SUBPATH",
+  "url": "http://127.0.0.1:4176/Last-Epoch-Optimal-Crafting-Route-Planner/",
+  "snapshots": [
+    {
+      "id": "initial",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "label": "前缀目标T7数0",
+          "value": "0"
+        },
+        {
+          "label": "后缀目标T7数0",
+          "value": "0"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": null,
+      "scrollWidth": 1265,
+      "selectedPart": "任意",
+      "tiers": [
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ]
+      ]
+    },
+    {
+      "id": "any-7710",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "label": "前缀目标T7数2",
+          "value": "2"
+        },
+        {
+          "label": "后缀目标T7数0",
+          "value": "0"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": "规划方案\n推荐\n成功率\n100.00%\n整件完成率（48 FP）\n68.34%\n成功路径平均 FP\n48.80\n添加词缀\n\n待补目标前缀1\n\n浩劫直至出现非目标前缀（T1）\n封印\n\n非目标前缀（T1）\n\n添加词缀\n\n待补目标前缀2\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（23）\n计算说明",
+      "scrollWidth": 1265,
+      "selectedPart": "任意",
+      "tiers": [
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ]
+      ]
+    },
+    {
+      "id": "marked-t7",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "label": "前缀目标T7数1",
+          "value": "1"
+        },
+        {
+          "label": "后缀目标T7数1",
+          "value": "1"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "1"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "1"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": null,
+      "scrollWidth": 1265,
+      "selectedPart": "任意",
+      "tiers": [
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ]
+      ]
+    },
+    {
+      "id": "lowered-to2",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "label": "前缀目标T7数1",
+          "value": "1"
+        },
+        {
+          "label": "后缀目标T7数1",
+          "value": "1"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "1"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": null,
+      "scrollWidth": 1265,
+      "selectedPart": "任意",
+      "tiers": [
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ]
+      ]
+    },
+    {
+      "id": "emptied-slot",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "label": "前缀目标T7数1",
+          "value": "1"
+        },
+        {
+          "label": "后缀目标T7数1",
+          "value": "1"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": null,
+      "scrollWidth": 1265,
+      "selectedPart": "任意",
+      "tiers": [
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ]
+      ]
+    },
+    {
+      "id": "any-7721",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "label": "前缀目标T7数1",
+          "value": "1"
+        },
+        {
+          "label": "后缀目标T7数1",
+          "value": "1"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "1"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "1"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": "规划方案\n推荐\n成功率\n100.00%\n整件完成率（48 FP）\n72.26%\n成功路径平均 FP\n44.61\n封印\n\n非目标后缀（T1）\n\n添加词缀\n\n待补目标后缀1\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（3）\n计算说明",
+      "scrollWidth": 1265,
+      "selectedPart": "任意",
+      "tiers": [
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ]
+      ]
+    },
+    {
+      "id": "gloves-7721",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "label": "前缀目标T7数1",
+          "value": "1"
+        },
+        {
+          "label": "后缀目标T7数1",
+          "value": "1"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "1"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "1"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": "规划方案\n推荐\n成功率\n100.00%\n整件完成率（48 FP）\n72.26%\n成功路径平均 FP\n44.61\n封印\n\n非目标后缀（T1）\n\n添加词缀\n\n待补目标后缀1\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（2）\n计算说明",
+      "scrollWidth": 1265,
+      "selectedPart": "手套",
+      "tiers": [
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ]
+      ]
+    },
+    {
+      "id": "after-refresh",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "label": "前缀目标T7数1",
+          "value": "1"
+        },
+        {
+          "label": "后缀目标T7数1",
+          "value": "1"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "1"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "1"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": null,
+      "scrollWidth": 1265,
+      "selectedPart": "手套",
+      "tiers": [
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ]
+      ]
+    },
+    {
+      "id": "named-affix",
+      "clientWidth": 1265,
+      "goalButtons": [
+        {
+          "label": "前缀目标T7数1",
+          "value": "1"
+        },
+        {
+          "label": "后缀目标T7数1",
+          "value": "1"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "1"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "1"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": null,
+      "scrollWidth": 1265,
+      "selectedPart": "任意",
+      "tiers": [
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ]
+      ]
+    },
+    {
+      "id": "narrow-layout",
+      "clientWidth": 375,
+      "goalButtons": [
+        {
+          "label": "前缀目标T7数1",
+          "value": "1"
+        },
+        {
+          "label": "后缀目标T7数1",
+          "value": "1"
+        }
+      ],
+      "memberships": [
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "readonlyCounts": [
+        {
+          "label": "前缀已有目标词条数",
+          "value": "1"
+        },
+        {
+          "label": "前缀已有目标T7数",
+          "value": "1"
+        },
+        {
+          "label": "后缀已有目标词条数",
+          "value": "0"
+        },
+        {
+          "label": "后缀已有目标T7数",
+          "value": "0"
+        }
+      ],
+      "resultText": null,
+      "scrollWidth": 375,
+      "selectedPart": "任意",
+      "tiers": [
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "空",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ]
+      ]
+    }
+  ],
+  "search": {
+    "query": "Cast Speed",
+    "options": [
+      "不指定词条✓",
+      "施法速度",
+      "Primalist Totem Increased Cast Speed",
+      "Primalist Attack and Cast Speed for Summoned Vines"
+    ]
+  },
+  "reports": [
+    {
+      "id": "any-7710",
+      "file": "slot-targets-local-any-7710.json"
+    },
+    {
+      "id": "any-7721",
+      "file": "slot-targets-local-any-7721.json"
+    },
+    {
+      "id": "gloves-7721",
+      "file": "slot-targets-local-gloves-7721.json"
+    }
+  ]
+}

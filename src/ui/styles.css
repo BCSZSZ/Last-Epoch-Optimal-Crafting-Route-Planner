@@ -179,6 +179,9 @@ h1 {
 .slot-heading small {
   font-size:11px
 }
+.target-check { display:flex; align-items:center; gap:6px; color:var(--muted); font-size:11px; cursor:pointer; }
+.target-check input { margin:0; accent-color:var(--mint); width:14px; height:14px; }
+.target-check.disabled { opacity:.45; cursor:default; }
 .sealed-slot {
   border-style:dashed;
   border-color:#52725d
@@ -334,6 +337,8 @@ h1 {
 .count-buttons button {
   padding:5px 0
 }
+.readonly-count { display:inline-grid; place-items:center; min-width:38px; min-height:32px; padding:4px 10px; border:1px solid var(--line); border-radius:6px; color:#bdd0c5; background:#1b2924; font-variant-numeric:tabular-nums; }
+.migration-note { color:#e0bc87; }
 .helper {
   color:var(--muted);
   font-size:12px;

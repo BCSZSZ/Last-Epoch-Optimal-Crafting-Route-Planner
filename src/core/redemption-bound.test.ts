@@ -11,7 +11,7 @@ function fixture(fpType: FpType = 'NORMAL'): PlanRequest {
   const draft = emptyDraft();
   return compileDraft({ ...draft, part: 19, fpType, slots: { ...draft.slots,
     prefix1: { tier: 7, id: null }, prefix2: { tier: 3, id: null }, suffix1: { tier: 7, id: null }, suffix2: { tier: 2, id: null } },
-    counts: [{ desired: 1, owned: 0, ownedT7: 0 }, { desired: 1, owned: 0, ownedT7: 0 }] }).scenarios[0].request;
+    counts: [{ desired: 1 }, { desired: 1 }] }).scenarios[0].request;
 }
 const final: Macro = { kind: 'repeat', action: { kind: 'havoc', glyph: 'hope' }, until: { kind: 'target' } };
 const single: Route = { id: 'single', macros: [{ kind: 'once', action: { kind: 'redemption', glyph: 'hope' } }, final] };

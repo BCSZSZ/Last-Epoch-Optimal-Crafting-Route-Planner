@@ -12,7 +12,7 @@ const rows = [];
 for (const fpType of ['NORMAL', 'ICE', 'BLOOD'] as const) for (const lows of [[2, 2], [3, 2], [3, 3], [4, 4]]) {
   const draft = emptyDraft(), compiled = compileDraft({ ...draft, part: 19, fpType: fpType as FpType,
     slots: { ...draft.slots, prefix1: { tier: 7, id: null }, prefix2: { tier: lows[0], id: null }, suffix1: { tier: 7, id: null }, suffix2: { tier: lows[1], id: null } },
-    counts: [{ desired: 1, owned: 0, ownedT7: 0 }, { desired: 1, owned: 0, ownedT7: 0 }] });
+    counts: [{ desired: 1 }, { desired: 1 }] });
   if (compiled.issues.length) throw new Error('Fixture input invalid');
   const request = compiled.scenarios[0].request, engine = new RuleEngine(catalogForInputModel(request.inputModel));
   const [a, b] = request.target.requirements.map((row) => row.ids[0]);

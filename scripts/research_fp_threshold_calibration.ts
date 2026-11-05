@@ -25,7 +25,7 @@ for (const fixture of fixtures) for (const fpType of ['NORMAL', 'ICE', 'BLOOD'] 
   const compiled = compileDraft({ ...draft, part: fixture.part, fpType,
     slots: { ...draft.slots, prefix1: { tier: fixture.tiers[0], id: null }, prefix2: { tier: fixture.tiers[1], id: null },
       suffix1: { tier: fixture.tiers[2], id: null }, suffix2: { tier: fixture.tiers[3], id: null } },
-    counts: [{ desired: fixture.desired[0], owned: 0, ownedT7: 0 }, { desired: fixture.desired[1], owned: 0, ownedT7: 0 }] });
+    counts: [{ desired: fixture.desired[0] }, { desired: fixture.desired[1] }] });
   assert.deepEqual(compiled.issues, []); assert.equal(compiled.scenarios.length, 1);
   const request = compiled.scenarios[0].request;
   const engine = new RuleEngine(catalogForInputModel(request.inputModel));

@@ -30,6 +30,12 @@
       "sha256": "33b9c2a7f6938130c6eba1856fda501d30b7edbc021f5fbe194130ba4d047e14",
       "metric": "INTRINSIC_V2",
       "purpose": "Historical65FP release before the48FP completion metric."
+    },
+    "le-1.5.3-iid-d93682261ec6c6f1": {
+      "file": "research/runtime-model-archive/le-1.5.3-iid-d93682261ec6c6f1.json",
+      "sha256": "561ebf67f9aebabbbf838fdb4e656af989a4d7fa271bc6d97c0ddf14474da599",
+      "metric": "INTRINSIC_V2",
+      "purpose": "Historical48FP release before explicit slot target ownership and unspecified-equipment reference input."
     }
   }
 }

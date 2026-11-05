@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "modelId": "le-1.5.3-iid-591a4fa7a4d6e547",
+  "context": "local",
+  "status": "PASS",
+  "observedAt": "2026-11-05T14:38:30.910Z",
+  "sourceSha256": "16d86ece7c00082196078de8d1be7b0627ef5ab7deb457020792276560b2c913",
+  "checks": [
+    {
+      "id": "any-7710",
+      "file": "slot-targets-local-any-7710.json",
+      "sha256": "47aa1dc2d16e28c92331aaf1ae4bde6326ec91ee0e3a317447332dad3c4bbb59",
+      "displayedCompletion": "68.34%",
+      "inputModel": "FORGEABLE_ANY_EQUAL",
+      "exactMarkedSlotPreserved": false,
+      "readonlyCountsMatchRequest": true,
+      "fullPrimaryAndCompletionBitIdentical": true
+    },
+    {
+      "id": "any-7721",
+      "file": "slot-targets-local-any-7721.json",
+      "sha256": "01beffad82aeded775c0adcaf728f66e8211675d35751118d8d766beb99fe6e6",
+      "displayedCompletion": "72.26%",
+      "inputModel": "FORGEABLE_ANY_EQUAL",
+      "exactMarkedSlotPreserved": true,
+      "readonlyCountsMatchRequest": true,
+      "fullPrimaryAndCompletionBitIdentical": true
+    },
+    {
+      "id": "gloves-7721",
+      "file": "slot-targets-local-gloves-7721.json",
+      "sha256": "3c27966cf8fc8d63adfbc5f46fa2724f5224f7b383956fe1615a25f22b69e756",
+      "displayedCompletion": "72.26%",
+      "inputModel": "FORGEABLE_EQUAL",
+      "exactMarkedSlotPreserved": true,
+      "readonlyCountsMatchRequest": true,
+      "fullPrimaryAndCompletionBitIdentical": true
+    }
+  ],
+  "qualification": "Actual static UI/Worker records checked against DOM observations and Node route evaluation. Explicit slot ownership, readonly counters, numeric tier buttons and separate Any reference model; local-only transition/refresh/search/layout observations are not a physical-device benchmark."
+}

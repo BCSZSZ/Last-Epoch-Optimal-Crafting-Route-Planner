@@ -1,7 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { MODEL_ID } from '../core/catalog';
-import { compileDraft, DRAFT_SLOTS, draftAffixPool, emptyDraft, readDraft } from '../core/draft';
-import type { CompiledDraft, CraftingDraft, DraftScenario, DraftSlot, DraftSlots, GoalCounts } from '../core/draft';
+import { compileDraft, DRAFT_SLOTS, draftAffixPool, emptyDraft, ownedGoalCounts, readDraft, withDraftSlots } from '../core/draft';
+import type { CompiledDraft, CraftingDraft, DraftScenario, DraftSlot, DraftSlots } from '../core/draft';
 import { catalogForInputModel } from '../core/input-model';
 import type { IntrinsicReport } from '../core/intrinsic';
 import type { PlanProgress, PlanReport } from '../core/planner';
@@ -21,7 +21,14 @@ const number = (value: { lower: number; upper: number } | null | undefined) => !
 const percent = (value: { lower: number; upper: number }) => value.upper - value.lower < 1e-5 ? `${((value.lower + value.upper) * 50).toFixed(2)}%` : `${(value.lower * 100).toFixed(1)}–${(value.upper * 100).toFixed(1)}%`;
 
 function initialDraft(): CraftingDraft {
-  try { const raw = localStorage.getItem(STORAGE); if (raw) return readDraft(JSON.parse(raw)) ?? emptyDraft(); }
+  try {
+    const raw = localStorage.getItem(STORAGE);
+    if (raw) {
+      const value = JSON.parse(raw), migrated = readDraft(value);
+      if (migrated && value.version === 2 && !localStorage.getItem(`${STORAGE}.before-v3`)) localStorage.setItem(`${STORAGE}.before-v3`, raw);
+      return migrated ?? emptyDraft();
+    }
+  }
   catch { /* Optional local preferences. */ }
   return emptyDraft();
 }
@@ -69,40 +76,47 @@ function AffixDropdown({ value, pool, disabled, label, target, onChange }: {
   </div>;
 }
 
-function SlotEditor({ slots, part, target = false, onChange }: { slots: DraftSlots; part: number | null; target?: boolean; onChange: (slots: DraftSlots) => void }) {
-  const update = (key: keyof DraftSlots, slot: DraftSlot) => onChange({ ...slots, [key]: slot });
+function SlotEditor({ slots, part, target = false, markTargets = false, onChange }: {
+  slots: DraftSlots; part: number | null; target?: boolean; markTargets?: boolean;
+  onChange: (slots: DraftSlots, confirmedSide?: 0 | 1) => void;
+}) {
+  const update = (key: keyof DraftSlots, slot: DraftSlot, confirmedSide?: 0 | 1) => onChange({ ...slots, [key]: slot }, confirmedSide);
   return <div className="slots">{DRAFT_SLOTS.map((descriptor) => {
     const slot = slots[descriptor.key], label = `${target ? '目标' : '起始'}${descriptor.label}`;
     const pool = draftAffixPool(catalog, part, descriptor.side, slot.tier);
     return <div className={`slot-card ${descriptor.slot === 'sealed' ? 'sealed-slot' : ''}`} key={descriptor.key}>
-      <div className="slot-heading"><span>{descriptor.label}</span><small>{slot.tier ? `T${slot.tier}` : target ? '不限制' : '空槽'}</small></div>
+      <div className="slot-heading"><span>{descriptor.label}</span>{markTargets && descriptor.side !== null ?
+        <label className={`target-check ${!slot.tier ? 'disabled' : ''}`}><input type="checkbox" checked={Boolean(slot.isTarget)} disabled={!slot.tier}
+          aria-label={`${label}已是目标词缀`} onChange={(event) => update(descriptor.key, { ...slot, isTarget: event.target.checked }, descriptor.side)} />已是目标词缀</label> :
+        <small>{slot.tier || (target ? '不限制' : '空槽')}</small>}</div>
       <div className="tier-row" role="group" aria-label={`${label}T级`}>{Array.from({ length: 8 }, (_, tier) => <button type="button" key={tier}
         aria-label={`${label}${tier ? `T${tier}` : target ? '不限' : '空'}`} aria-pressed={slot.tier === tier}
         className={slot.tier === tier ? `selected ${tier === 7 ? 'tier-seven' : ''}` : ''}
-        onClick={() => update(descriptor.key, { tier, id: tier && slot.id !== null && draftAffixPool(catalog, part, descriptor.side, tier).includes(slot.id) ? slot.id : null })}>{tier ? `T${tier}` : target ? '不限' : '空'}</button>)}</div>
-      <AffixDropdown value={slot.id} pool={pool} disabled={!slot.tier || part === null} label={`${label}词条`} target={target}
+        onClick={() => update(descriptor.key, { tier, id: tier && slot.id !== null && draftAffixPool(catalog, part, descriptor.side, tier).includes(slot.id) ? slot.id : null,
+          isTarget: tier > 0 && Boolean(slot.isTarget) })}>{tier || (target ? '不限' : '空')}</button>)}</div>
+      <AffixDropdown value={slot.id} pool={pool} disabled={!slot.tier} label={`${label}词条`} target={target}
         onChange={(id) => update(descriptor.key, { ...slot, id })} />
     </div>;
   })}</div>;
 }
 
-function CountButtons({ label, value, maximum = 2, onChange }: { label: string; value: number; maximum?: number; onChange: (n: number) => void }) {
+function CountButtons({ label, value, minimum = 0, maximum = 2, onChange }: { label: string; value: number; minimum?: number; maximum?: number; onChange: (n: number) => void }) {
   return <div className="count-row"><span>{label}</span><div role="group" aria-label={label} className="count-buttons">{[0, 1, 2].map((n) =>
-    <button type="button" key={n} disabled={n > maximum} aria-label={`${label}${n}`} aria-pressed={value === n} className={value === n ? 'selected' : ''} onClick={() => onChange(n)}>{n}</button>)}</div></div>;
+    <button type="button" key={n} disabled={n < minimum || n > maximum} aria-label={`${label}${n}`} aria-pressed={value === n} className={value === n ? 'selected' : ''} onClick={() => onChange(n)}>{n}</button>)}</div></div>;
 }
 
-function CountGoals({ draft, onChange }: { draft: CraftingDraft; onChange: (counts: readonly [GoalCounts, GoalCounts]) => void }) {
+function CountGoals({ draft, onChange }: { draft: CraftingDraft; onChange: (counts: CraftingDraft['counts']) => void }) {
   return <div className="count-goals">{([0, 1] as const).map((side) => {
-    const name = side === 0 ? '前缀' : '后缀', row = draft.counts[side];
-    const occupied = DRAFT_SLOTS.filter((slot) => slot.side === side && draft.slots[slot.key].tier > 0);
-    const sevens = occupied.filter((slot) => draft.slots[slot.key].tier === 7).length;
-    const update = (next: GoalCounts) => onChange(side === 0 ? [next, draft.counts[1]] : [draft.counts[0], next]);
+    const name = side === 0 ? '前缀' : '后缀', row = ownedGoalCounts(draft, side);
     return <fieldset className="count-card" key={side}><legend>目标{name}</legend>
-      <CountButtons label={`${name}目标词条数`} value={row.desired} onChange={(desired) => update({ desired, owned: Math.min(row.owned, desired), ownedT7: Math.min(row.ownedT7, row.owned, desired) })} />
-      <CountButtons label={`${name}已有目标词条数`} value={row.owned} maximum={Math.min(row.desired, occupied.length)} onChange={(owned) => update({ ...row, owned, ownedT7: Math.min(row.ownedT7, owned) })} />
-      <CountButtons label={`${name}已有目标T7数`} value={row.ownedT7} maximum={Math.min(row.owned, sevens)} onChange={(ownedT7) => update({ ...row, ownedT7 })} />
+      <CountButtons label={`${name}目标T7数`} value={row.desired} minimum={row.owned}
+        onChange={(desired) => onChange(side === 0 ? [{ desired }, draft.counts[1]] : [draft.counts[0], { desired }])} />
+      <div className="count-row"><span>{name}已有目标词条数</span><output className="readonly-count" aria-label={`${name}已有目标词条数`}>{row.owned}</output></div>
+      <div className="count-row"><span>{name}已有目标T7数</span><output className="readonly-count" aria-label={`${name}已有目标T7数`}>{row.ownedT7}</output></div>
     </fieldset>;
-  })}<p className="helper">目标词条最终均为 T7。已有数量按普通槽统计，不包含封印。</p></div>;
+  })}{!!draft.legacyOwnership?.length && <p className="helper migration-note" role="status">旧输入需在左侧确认已有目标的位置：{draft.legacyOwnership.map(row =>
+    `${row.side === 0 ? '前缀' : '后缀'}已有${row.owned}条，其中T7为${row.ownedT7}条`).join('；')}。</p>}
+    <p className="helper">已有数量由左侧勾选自动统计，不包含封印。</p></div>;
 }
 
 function StepInstructions({ step }: { step: RouteStep }) {
@@ -113,7 +127,7 @@ function StepInstructions({ step }: { step: RouteStep }) {
 
 function RouteSteps({ row, scenario }: { row: IntrinsicReport; scenario: DraftScenario }) {
   const macros = row.route.macros.slice(0, row.intrinsic.evaluatedThroughStage);
-  const steps = routeSteps(macros, scenario.request, catalog, scenario.aliases);
+  const steps = routeSteps(macros, scenario.request, catalogForInputModel(scenario.request.inputModel), scenario.aliases);
   return steps.length ? <ol className="route-list">{steps.map((step, index) => <li key={index}><div><StepInstructions step={step} /></div></li>)}</ol> : <p className="already-done">{row.intrinsic.decision === 'RETAINED' ? '目标已经达成，无需制作。' : '此模板未执行制作。'}</p>;
 }
 
@@ -166,6 +180,11 @@ export function App() {
   const edit = (next: CraftingDraft) => {
     generation.current++; controller.current?.abort(); setBusy(false); setProgress(null); setResults([]); setCompiled(null); setMessage(''); setDraft(next);
   };
+  const changePart = (part: number | null) => {
+    const clean = (slots: DraftSlots): DraftSlots => Object.fromEntries(DRAFT_SLOTS.map(slot => [slot.key, { ...slots[slot.key],
+      id: slots[slot.key].id !== null && draftAffixPool(catalog, part, slot.side, slots[slot.key].tier).includes(slots[slot.key].id!) ? slots[slot.key].id : null }])) as unknown as DraftSlots;
+    edit({ ...draft, part, slots: clean(draft.slots), targetSlots: clean(draft.targetSlots) });
+  };
   const run = async () => {
     controller.current?.abort(); const job = ++generation.current, abort = new AbortController(); controller.current = abort;
     const value = compileDraft(draft); setCompiled(value); setResults([]); setMessage(''); setProgress(null);
@@ -187,12 +206,13 @@ export function App() {
     <main>
       <div className="editors">
         <section className="panel input-panel" aria-label="起始装备"><div className="panel-title"><span className="panel-index">01</span><h2>起始装备</h2></div>
-          <fieldset className="part-field"><legend>装备部位</legend><div className="part-buttons" role="group" aria-label="装备部位">{parts.map((part) => <button type="button" key={part} aria-pressed={draft.part === part} className={draft.part === part ? 'selected' : ''} onClick={() => {
-            const clean = (slots: DraftSlots): DraftSlots => Object.fromEntries(DRAFT_SLOTS.map((slot) => [slot.key, { ...slots[slot.key], id: slots[slot.key].id !== null && draftAffixPool(catalog, part, slot.side, slots[slot.key].tier).includes(slots[slot.key].id!) ? slots[slot.key].id : null }])) as unknown as DraftSlots;
-            edit({ ...draft, part, slots: clean(draft.slots), targetSlots: clean(draft.targetSlots) });
-          }}>{typeName(part, String(part))}</button>)}</div></fieldset>
+          <fieldset className="part-field"><legend>装备部位</legend><div className="part-buttons" role="group" aria-label="装备部位">
+            <button type="button" aria-pressed={draft.part === null} className={draft.part === null ? 'selected' : ''} onClick={() => changePart(null)}>任意</button>
+            {parts.map(part => <button type="button" key={part} aria-pressed={draft.part === part} className={draft.part === part ? 'selected' : ''}
+              onClick={() => changePart(part)}>{typeName(part, String(part))}</button>)}</div></fieldset>
           <div className="fp-row" role="group" aria-label="潜能类型">{(['NORMAL', 'ICE', 'BLOOD'] as const).map((fpType) => <button type="button" key={fpType} aria-pressed={draft.fpType === fpType} className={draft.fpType === fpType ? 'selected' : ''} onClick={() => edit({ ...draft, fpType })}>{fpNames[fpType]}</button>)}</div>
-          <SlotEditor slots={draft.slots} part={draft.part} onChange={(slots) => edit({ ...draft, slots })} />
+          <SlotEditor slots={draft.slots} part={draft.part} markTargets={draft.targetMode === 'COUNTS'}
+            onChange={(slots, side) => edit(withDraftSlots(draft, slots, side))} />
         </section>
         <section className="panel target-panel" aria-label="目标装备"><div className="panel-title"><span className="panel-index">02</span><h2>目标装备</h2></div>
           <div className="mode-tabs" role="group" aria-label="目标填写方式">{([{ key: 'COUNTS', text: '简易目标' }, { key: 'SLOTS', text: '详细目标' }] as const).map((mode) => <button type="button" key={mode.key} aria-pressed={draft.targetMode === mode.key} className={draft.targetMode === mode.key ? 'selected' : ''} onClick={() => edit({ ...draft, targetMode: mode.key })}>{mode.text}</button>)}</div>
@@ -205,7 +225,7 @@ export function App() {
         {message && <p role="alert" className="error-message">{message}</p>}
       </section>
       {results.length > 0 && compiled && <section className="results" aria-label="规划结果" aria-live="polite">
-        <div className="results-heading"><h2>规划结果</h2><span className="badge">{compiled.inputModel === 'FORGEABLE_EQUAL' ? '等权参考' : '实际词条权重 · 通用池'}</span></div>
+        <div className="results-heading"><h2>规划结果</h2><span className="badge">{compiled.inputModel === 'FORGEABLE_ANY_EQUAL' ? '通用等权参考' : compiled.inputModel === 'FORGEABLE_EQUAL' ? '等权参考' : '实际词条权重 · 通用池'}</span></div>
         {results.map((result) => <ScenarioResults key={result.scenario.key} {...result} />)}
         <p className="result-conventions">成功率假设 FP 持续充足；整件完成率按起始 {REFERENCE_FP} FP。剥离失手或必要封印失败即停止。FP 均值只统计最终成功路线，超过 {MAXIMUM_SUCCESS_FP} FP 放弃。材料无限。</p>
         <details className="assumptions"><summary>计算假设</summary>{compiled.assumptions.map((assumption) => <p key={assumption}>{assumption}</p>)}<p>独立随机参考模型；已搜索的模板范围不代表全局最优。</p><p className="model-id">{MODEL_ID}</p></details>

@@ -26,7 +26,7 @@ function fixture() {
   const draft = emptyDraft();
   const scenario = compileDraft({ ...draft, part: 19, slots: { ...draft.slots,
     prefix1: { tier: 7, id: null }, prefix2: { tier: 3, id: null }, suffix1: { tier: 7, id: null }, suffix2: { tier: 2, id: null } },
-    counts: [{ desired: 1, owned: 0, ownedT7: 0 }, { desired: 1, owned: 0, ownedT7: 0 }] }).scenarios[0];
+    counts: [{ desired: 1 }, { desired: 1 }] }).scenarios[0];
   const catalog = catalogForInputModel(scenario.request.inputModel);
   return { ...scenario, catalog, engine: new RuleEngine(catalog) };
 }

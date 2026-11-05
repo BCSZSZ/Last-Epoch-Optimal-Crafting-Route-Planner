@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "modelId": "le-1.5.3-iid-d93682261ec6c6f1",
+  "modelId": "le-1.5.3-iid-591a4fa7a4d6e547",
   "scope": "PRECOMPUTATION_CAPACITY_ANALYSIS_NOT_IMPLEMENTATION",
   "ordinaryBases": 565,
   "typeClassPoolContexts": 38,
@@ -517,7 +517,7 @@
     "Normal/ICE scaling applies to a fixed route under intrinsic no-balance rules, not necessarily to the chosen optimum after the versioned FP cutoff."
   ],
   "sourceSha256": {
-    "src/generated/model.json": "561ebf67f9aebabbbf838fdb4e656af989a4d7fa271bc6d97c0ddf14474da599",
+    "src/generated/model.json": "4d94b990e229be3df4fd1a62d71f14934728633eb90350bd8bca980797040b47",
     "src/core/levels.ts": "d53a6f58306ba7d887752042208d9cc8ab71819b11d033f9cd0cbc234e82aa9a",
     "src/core/rules.ts": "fd851784c8cb5ec8096a54e1455467f76ce7affb3481c5961c5dca13b21ce096",
     "src/core/catalog.ts": "8280dd7c469bcc48d1691033cecb7cbb68d9d37d7506907b33177636bae3e94d",

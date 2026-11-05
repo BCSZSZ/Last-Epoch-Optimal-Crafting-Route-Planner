@@ -72,6 +72,7 @@
     "research/common-pattern-monte-carlo.json": "0949743091e215ee325121fb3a1ca096afbd607a48cddbc2b9a62bfa64f3e465",
     "research/common-pattern-results.json": "c74b2af851671ed22425b508b7f227785e558a5f4595a873a04451b57cb12a86",
     "research/crafting-level-claims.json": "6abd200337b5056e49069dd506d7e88dded175419fb8941648f6da893411749c",
+    "research/deployment-capacity-seal.json": "3386cf0ce5bf227cf1622077fbbc62f3373bdcb707f18b10a252c52453974b98",
     "research/deployment-completion48.json": "b0b395b5bc855d59c704754d59976d1e7d381ed32bc9f3d9eef6e5db85e28349",
     "research/deployment-slot-targets.json": "fe44d42f8d53093d8b62e75555eef930f576f1efcfc25860db3ef8b7d152a0c7",
     "research/device-validation/desktop-baseline-validation.json": "6620e9cc830ead68d58559e241dd0c909dd92cbef301bebbf57dad315e4e314b",
@@ -87,8 +88,9 @@
     "research/math-fixtures.json": "2e8f761032a1fb9710be3bdfe80d361982297d3cbf6663140f77bc517e6a978a",
     "research/reference-calculators.json": "fbbd966f057c2ed97ecca0ad8d2036eab93ac721cb506c993417c7faddbd831e",
     "research/runtime-model-archive/manifest.json": "df28be4ff757e981afeab2c50aef60a85da644166d74b398b34f1ec76d784af6",
-    "research/static-deployment.json": "65b7fd9905de52495d29af7f2c49252db86f42a3a09a86457c0ccb07916af482",
+    "research/static-deployment.json": "7a2d756557f93b83952da0c407656f32f544eb79614009db388efb0a9396932b",
     "research/ui-validation/capacity-local-parity.json": "04a336ecbe0ce212d42757c6e9f74a9f10616fabec91ecd0df5be5df8e9fda59",
+    "research/ui-validation/capacity-public-parity.json": "6a5b830332dd12743bc31b109d9d286352dc2760d51613104ca934fa69f1aade",
     "research/ui-validation/completion48-parity.json": "394704976f4402e5144620cb734523f5bee2b6ec0eb4f25de8504ced6f53a15b",
     "research/ui-validation/parity.json": "a86f96a72408083ed92c0aee2154cffc6b2fa17b8e7a60c9c6ffbc09d16ddc31",
     "research/ui-validation/public-completion48-parity.json": "c3c71573d67e27ecd283ba96fc7fdf9bb296037dd38c8749da5156db486302fe",
@@ -173,7 +175,7 @@
   "remainingAcceptance": [
     "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "e18db31a376895201fb8a7571a85aa3d00b61be8ef0e624c5ecfb2da9e4d9fc2",
+  "researchRevision": "f261c96cad6bb979572f93199950352fd6639ea4054012acb47f2afbed7e734d",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 2,
   "steamBuildId": 26087601,
@@ -198,7 +200,7 @@
     "ownedCountersReadOnly": true,
     "savedDraftVersion": 3,
     "totalT7GoalsBoundedByOrdinarySourceT7": true,
-    "uiWorkerParity": "research/ui-validation/slot-targets-public-parity.json",
+    "uiWorkerParity": "research/ui-validation/capacity-public-parity.json",
     "unspecifiedEquipmentModel": "FORGEABLE_ANY_EQUAL"
   },
   "validationNotClaimed": [

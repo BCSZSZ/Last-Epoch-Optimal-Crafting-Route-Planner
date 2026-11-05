@@ -39,4 +39,4 @@
 
 这些验证不冒充游戏客户端实测或物理手机性能；低性能实机按用户约定继续待验收。[预计算设计](precomputation-plan.md)。
 
-上一版公网记录见[三例UI／Worker复算](../research/ui-validation/slot-targets-public-parity.json)与[发布记录](../research/deployment-slot-targets.json)。本轮发布验证单独记录，历史观测不更换模型ID。
+本轮公网已通过[7271实际UI／Worker复算](../research/ui-validation/capacity-public-parity.json)，8个静态文件与本地构建相同；[发布记录](../research/deployment-capacity-seal.json)。上一版记录见[三例UI／Worker复算](../research/ui-validation/slot-targets-public-parity.json)与[发布记录](../research/deployment-slot-targets.json)，历史观测不更换模型ID。

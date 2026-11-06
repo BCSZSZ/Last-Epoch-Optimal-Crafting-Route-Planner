@@ -22,6 +22,10 @@ if(context==='local'){
  for(const label of ['起始前缀2实验词缀','起始前缀2已是目标词缀'])assert.equal(checked(snap('empty-clears-both'),label),false);
  for(const id of ['edit-cancels-program','cancel-settled'])assert.equal(snap(id).resultText,null);
 }
+if(context==='public'){
+ for(const key of ['mode','part','tiers','comboboxes','checks','resultText'])assert.deepEqual(snap('public-initial')[key],snap('public-input-restored')[key]);
+ for(const label of ['起始前缀2实验词缀','起始前缀2已是目标词缀'])assert.equal(checked(snap('public-both-checks'),label),true);
+}
 const checks=[];
 for(const row of observations.reports){
  assert.match(row.file,new RegExp('^programs-'+context+'-[\\w-]+\\.json$'));

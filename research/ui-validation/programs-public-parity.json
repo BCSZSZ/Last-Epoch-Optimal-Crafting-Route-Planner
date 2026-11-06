@@ -1,0 +1,358 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "context": "public",
+  "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
+  "observationSha256": "a42df01a69d8a4452a900e0902f4dcc77bdf3228b4378267d6e4285425a8fe34",
+  "checks": [
+    {
+      "id": "reference-1771-owned0",
+      "sha256": "589b4ec79f2f064e02819d90c7776f63dd056b241ef9d25be56b3790ff92afd4",
+      "success": {
+        "lower": 0.25393700786951273,
+        "upper": 0.2539370078786813
+      },
+      "fp": {
+        "lower": 72.06829958193943,
+        "upper": 72.0682995891345
+      },
+      "primary": false,
+      "completion": null,
+      "elapsedMs": 1640,
+      "evaluated": 280,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    },
+    {
+      "id": "reference-1771-owned1",
+      "sha256": "89d93548b976790ae0308ddbb8520065668e72da17bd92a5ea085559c2adca21",
+      "success": {
+        "lower": 1,
+        "upper": 1
+      },
+      "fp": {
+        "lower": 59.084153439595994,
+        "upper": 59.08415344119918
+      },
+      "primary": true,
+      "completion": {
+        "routeId": "r-010a15b3823ea90f",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.5493757363198503,
+          "upper": 0.54937574356904
+        },
+        "recommendation": "NEUTRAL",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 25,
+        "reason": null
+      },
+      "elapsedMs": 1575,
+      "evaluated": 280,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    },
+    {
+      "id": "reference-7712-owned0",
+      "sha256": "908e1a8bbabe4ca7cfb7b18a7a3050d7b31084dc12dbbd77012d9b93280c8ded",
+      "success": {
+        "lower": 0.2905810169159808,
+        "upper": 0.29058101696187233
+      },
+      "fp": {
+        "lower": 85.94400338526289,
+        "upper": 85.94400342679485
+      },
+      "primary": false,
+      "completion": null,
+      "elapsedMs": 1933,
+      "evaluated": 280,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    },
+    {
+      "id": "reference-7712-owned1",
+      "sha256": "59d620119ac991112fbebd12add6a0d03e6c42949e65e1d37fb3157705f4adb7",
+      "success": {
+        "lower": 1,
+        "upper": 1
+      },
+      "fp": {
+        "lower": 92.26615959067578,
+        "upper": 92.26615959327913
+      },
+      "primary": false,
+      "completion": null,
+      "elapsedMs": 3452,
+      "evaluated": 560,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    },
+    {
+      "id": "reference-7710-owned0",
+      "sha256": "a349b4bdf7109a828236e544c5a036c165ff3734526022d6ed602a830892f4a2",
+      "success": {
+        "lower": 0.2984180855430462,
+        "upper": 0.2984180856030331
+      },
+      "fp": {
+        "lower": 83.01550615253399,
+        "upper": 83.01550620723523
+      },
+      "primary": false,
+      "completion": null,
+      "elapsedMs": 4155,
+      "evaluated": 560,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    },
+    {
+      "id": "reference-7710-owned1",
+      "sha256": "9d94d6dbd926f651b3e05629d7c41cb7730db779ca1ec3bcda2957627164ba90",
+      "success": {
+        "lower": 1,
+        "upper": 1
+      },
+      "fp": {
+        "lower": 82.32620152993698,
+        "upper": 82.3262015331197
+      },
+      "primary": false,
+      "completion": null,
+      "elapsedMs": 5862,
+      "evaluated": 840,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    },
+    {
+      "id": "reference-1770-owned0",
+      "sha256": "c267b00c714bb1377dd1ebc79b575bebc699e8185c497859feff729dd54e0058",
+      "success": {
+        "lower": 0.33094593175412124,
+        "upper": 0.3309459317628133
+      },
+      "fp": {
+        "lower": 80.74442288616916,
+        "upper": 80.74442289289902
+      },
+      "primary": false,
+      "completion": null,
+      "elapsedMs": 3468,
+      "evaluated": 560,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    },
+    {
+      "id": "reference-1770-owned1",
+      "sha256": "7b6ecd857ed4e79e441a4261705d50d539c3080f1c6535d2b13dd90e6527758d",
+      "success": {
+        "lower": 0.9814488188798463,
+        "upper": 0.9814488189150548
+      },
+      "fp": {
+        "lower": 64.58705342552663,
+        "upper": 64.58705343290183
+      },
+      "primary": true,
+      "completion": {
+        "routeId": "r-0d177867cb1ba72b",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.4608629405652967,
+          "upper": 0.4608629466687439
+        },
+        "recommendation": "NEUTRAL",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 74,
+        "reason": null
+      },
+      "elapsedMs": 4750,
+      "evaluated": 840,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    },
+    {
+      "id": "detailed-1771-owned0",
+      "sha256": "633d8382c285b4f34435821bde407ad4221395e4d788e05359e5d328030a23fb",
+      "success": {
+        "lower": 0.342592593001348,
+        "upper": 0.3425925930014598
+      },
+      "fp": {
+        "lower": 63.862169507825314,
+        "upper": 63.86216950788565
+      },
+      "primary": true,
+      "completion": {
+        "routeId": "r-0705e3c84996f774",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.16157433085066383,
+          "upper": 0.16157433734462331
+        },
+        "recommendation": "NOT_RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 69,
+        "reason": null
+      },
+      "elapsedMs": 1542,
+      "evaluated": 280,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    },
+    {
+      "id": "detailed-7712-owned1",
+      "sha256": "ea3c78f6332fc0ee85257da85eb60c94cc7e8340117474a9ff8e21c0f47279bf",
+      "success": {
+        "lower": 0.18499677455422606,
+        "upper": 0.1849967745542442
+      },
+      "fp": {
+        "lower": 62.293550653316636,
+        "upper": 62.29355065334643
+      },
+      "primary": true,
+      "completion": {
+        "routeId": "r-0849dc17a9b0064b",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.09278733747598819,
+          "upper": 0.09278734366924238
+        },
+        "recommendation": "NOT_RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 190,
+        "reason": null
+      },
+      "elapsedMs": 3294,
+      "evaluated": 560,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    },
+    {
+      "id": "known-7710",
+      "sha256": "4826243de1626f66daee89c8ece091710ec97cd96ae2db370aff3e28a57d9845",
+      "success": {
+        "lower": 1,
+        "upper": 1
+      },
+      "fp": {
+        "lower": 48.804892289213555,
+        "upper": 48.80489228921782
+      },
+      "primary": true,
+      "completion": {
+        "routeId": "r-4bdb5cc0f1f46fac",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.6834347844964269,
+          "upper": 0.6834347852570178
+        },
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 29,
+        "reason": null
+      },
+      "elapsedMs": 362,
+      "evaluated": 76,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    },
+    {
+      "id": "known-7732",
+      "sha256": "9838d52ccd64d9c403f573bc8bc08356dd9bda9101d7a9eaa5b9d3ecf2c40ad9",
+      "success": {
+        "lower": 0.42249999999999616,
+        "upper": 0.4225000000000038
+      },
+      "fp": {
+        "lower": 64.54632517611253,
+        "upper": 64.54632517612198
+      },
+      "primary": true,
+      "completion": {
+        "routeId": "r-62eac969516c5dad",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.2030322140139298,
+          "upper": 0.2030322146750393
+        },
+        "recommendation": "NOT_RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 185,
+        "reason": null
+      },
+      "elapsedMs": 2075,
+      "evaluated": 408,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    },
+    {
+      "id": "known-7271",
+      "sha256": "e293ddaf33b476ac547bc28c14aaa80625761ea01dad7ef6e612a2cd3dbf3c05",
+      "success": {
+        "lower": 0.8449999999999973,
+        "upper": 0.8450000000000026
+      },
+      "fp": {
+        "lower": 55.684477601280655,
+        "upper": 55.68447760128452
+      },
+      "primary": true,
+      "completion": {
+        "routeId": "r-2dee36c3ef4f6abf",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.5055162524290734,
+          "upper": 0.5055162524296316
+        },
+        "recommendation": "NEUTRAL",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 40,
+        "reason": null
+      },
+      "elapsedMs": 50,
+      "evaluated": 13,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    },
+    {
+      "id": "experimental-owned-target",
+      "sha256": "fa6701dfa822299c709a019a76f8423b6dda39b8716c189c45a53998faab08f8",
+      "success": {
+        "lower": 1,
+        "upper": 1
+      },
+      "fp": {
+        "lower": 41.97300318627365,
+        "upper": 41.97300318627537
+      },
+      "primary": true,
+      "completion": {
+        "routeId": "r-52dbdd9ff1eb79ab",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.750617285572208,
+          "upper": 0.7506172855727085
+        },
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 8,
+        "reason": null
+      },
+      "elapsedMs": 38,
+      "evaluated": 12,
+      "fullReportReplay": true,
+      "labelsAndNativeIdsMatch": true
+    }
+  ],
+  "qualification": "Actual rendered UI and Worker exports, eight user reference cases, two full-ID weighted cases, three teacher cases and experimental-target coexistence. Node replay checks the full shown intrinsic report and48FP completion. Complete covers the declared finite grammar, not global optimality or a low-end device."
+}

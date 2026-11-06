@@ -95,17 +95,18 @@
     "research/program-release-validation.json": "a691843cce523bf751ebaac104607acfa269fc75a062be57cd9f8ba37639d3d0",
     "research/reference-calculators.json": "fbbd966f057c2ed97ecca0ad8d2036eab93ac721cb506c993417c7faddbd831e",
     "research/runtime-model-archive/manifest.json": "7285a7c670961d4ef351a420230a93addd79a8d833f53ad221ef916bcdd70436",
-    "research/static-deployment.json": "5e4937d7f4631816a6ff8a1fb6606192b5a07d1688d1e5f0257365f2c404bd55",
+    "research/static-deployment.json": "04191280d7fa70e24ac23d04507c9d8ddf85fc466ba77fabd046f150c28528cf",
     "research/ui-validation/capacity-local-parity.json": "0d77e79ceebfcec2f502c062d0a65f13f93c0be6819d12144872fcc8ac68e72f",
     "research/ui-validation/capacity-public-parity.json": "667cf3abd34c3c6b19af24b45d5763f7c3429d79e9ba6fe12a4c139a6f99662c",
-    "research/ui-validation/completion48-parity.json": "394704976f4402e5144620cb734523f5bee2b6ec0eb4f25de8504ced6f53a15b",
+    "research/ui-validation/completion48-parity.json": "3649126334fcd3af0cd7fe44542fd398b5c97a83c0892eaa25057fa2da9f9e62",
     "research/ui-validation/detailed-local-parity.json": "13424b403e787fce3c9f01bf652adc9c1e3b4b473cc0d3480ea9edc1e8d6c360",
     "research/ui-validation/detailed-public-parity.json": "aa99b6f68ace7fc8c87bf74350390d3a113019536ff26eff88bf7103f15c9294",
-    "research/ui-validation/parity.json": "a86f96a72408083ed92c0aee2154cffc6b2fa17b8e7a60c9c6ffbc09d16ddc31",
+    "research/ui-validation/parity.json": "9e93e052977677f40421aeb31ce7d13291c1e1c5a30b3f1128408f149fb7c922",
     "research/ui-validation/programs-local-parity.json": "4b863af7aebd19dc83069355808a8ac9a02888ffa63b75b3797e890dacf5e257",
-    "research/ui-validation/public-completion48-parity.json": "c3c71573d67e27ecd283ba96fc7fdf9bb296037dd38c8749da5156db486302fe",
-    "research/ui-validation/slot-targets-local-parity.json": "ece712882d8653a52ade837fae3510dd581591a905a6a2ae058fa21bc976eef0",
-    "research/ui-validation/slot-targets-public-parity.json": "e9019f98874bb3542002726760140292e4bfa9d0785442ddb87fdf31871e745b",
+    "research/ui-validation/programs-public-parity.json": "2594cee0921a834f5798cf91226125d68a7fcdbdd82c05fc32b31a5e6fdb0b45",
+    "research/ui-validation/public-completion48-parity.json": "eb76c3337dcb48b072f493cdccb04c5c1a04427436a7d07055c8ac5e7125f75f",
+    "research/ui-validation/slot-targets-local-parity.json": "8f477cdcbf7c2bcf04a29d2147d2eba82e79323dfcdb89a14cfe04b2c8f73416",
+    "research/ui-validation/slot-targets-public-parity.json": "2ab6c4befaa5f0a9d22a6e8cd8ca221db9e1bb642feb44b78ae0866bca73a468",
     "src/core/policy.json": "8917aad6d1077eff2b043ff68a3b8ff8b54257cf4105cf3bc9fdf8bbd03fa1cb",
     "src/generated/model.json": "85cf8b2bf971939b77769d8c86d573c298c63e66391379ee9e43457a7c4fc386"
   },
@@ -185,7 +186,7 @@
   "remainingAcceptance": [
     "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "f5381c2d4fbaee9f3f93de344e75b1a287bbe45621ccdf248e745bd83fecea67",
+  "researchRevision": "821cbaa236f1446d421a7bef08045caaaebf48015a1c96a027c281a045853de7",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 2,
   "steamBuildId": 26087601,
@@ -215,7 +216,7 @@
     "ownedCountersReadOnly": true,
     "savedDraftVersion": 3,
     "totalT7GoalsBoundedByOrdinarySourceT7": true,
-    "uiWorkerParity": "research/ui-validation/detailed-public-parity.json",
+    "uiWorkerParity": "research/ui-validation/programs-public-parity.json",
     "unspecifiedEquipmentModel": "FORGEABLE_ANY_EQUAL"
   },
   "validationNotClaimed": [

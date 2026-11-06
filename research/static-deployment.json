@@ -1,41 +1,41 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-06T14:50:51.446284+00:00",
+  "checkedAt": "2026-11-06T16:38:53.139778+00:00",
   "site": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/",
-  "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
   "status": "PASS",
   "checks": [
     {
-      "file": "assets/index-4IkFFuP3.js",
-      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-4IkFFuP3.js",
-      "status": 200,
-      "contentType": "application/javascript",
-      "bytes": 1245755,
-      "sha256": "effd2aba16afec7b3da8f5b2cb241f8cf38628cd1c46e2f57b0c966d1ffb829b"
-    },
-    {
-      "file": "assets/index-D5S-S99x.css",
-      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-D5S-S99x.css",
+      "file": "assets/index-DAraLGKx.css",
+      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-DAraLGKx.css",
       "status": 200,
       "contentType": "text/css",
-      "bytes": 9935,
-      "sha256": "f02319164910c087ce748ffdfdca8d8c532353de9e2d4ec406e52276ac56423a"
+      "bytes": 10030,
+      "sha256": "b1c3635d570314d53ba87747c277e0d346edaa139d6b60beaf9a0a3147e4f95e"
     },
     {
-      "file": "assets/planner.worker-C4w_w7LH.js",
-      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-C4w_w7LH.js",
+      "file": "assets/index-DnzPgc01.js",
+      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-DnzPgc01.js",
       "status": 200,
       "contentType": "application/javascript",
-      "bytes": 1006612,
-      "sha256": "99eefb97c61c2a7a22a8ab601dfe72621da9514549f1c9be93b77d5cf8e4e6cd"
+      "bytes": 1248532,
+      "sha256": "86d3df8cbe785a2bea5e3079588d29ecacd727f725e8dd6acaf9ecb45038ff69"
     },
     {
-      "file": "device-check/assets/planner.worker-C4w_w7LH.js",
-      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/device-check/assets/planner.worker-C4w_w7LH.js",
+      "file": "assets/planner.worker-OsbHGbs-.js",
+      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/planner.worker-OsbHGbs-.js",
       "status": 200,
       "contentType": "application/javascript",
-      "bytes": 1006612,
-      "sha256": "99eefb97c61c2a7a22a8ab601dfe72621da9514549f1c9be93b77d5cf8e4e6cd"
+      "bytes": 1021213,
+      "sha256": "031fdd8f8fbed7776f1286b406dbb91b4ac3ccb5fc30a2156524859538d531de"
+    },
+    {
+      "file": "device-check/assets/planner.worker-OsbHGbs-.js",
+      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/device-check/assets/planner.worker-OsbHGbs-.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 1021213,
+      "sha256": "031fdd8f8fbed7776f1286b406dbb91b4ac3ccb5fc30a2156524859538d531de"
     },
     {
       "file": "device-check/device-check.css",
@@ -50,8 +50,8 @@
       "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/device-check/device-check.js",
       "status": 200,
       "contentType": "application/javascript",
-      "bytes": 1647212,
-      "sha256": "992bd4b1d507727f5419470a769596f22daf72a7959d37980387475fc00115b7"
+      "bytes": 1647580,
+      "sha256": "73c68e09b25f49257d2feb9831568050b53c681c39ab2a1ef021b6d3e67408d7"
     },
     {
       "file": "device-check/index.html",
@@ -67,7 +67,7 @@
       "status": 200,
       "contentType": "text/html",
       "bytes": 748,
-      "sha256": "9e793fc41bc4e35dabe531044b93276adeeb0dbd78c71f749ab775cab4fc40b6"
+      "sha256": "b3a91fd1bf51147764ebb35829b4703ede212d139b945ac320999ef75d8a399b"
     }
   ],
   "qualification": "HTTP byte identity and repository subpath only. Actual UI and Worker behavior are checked separately in the browser."

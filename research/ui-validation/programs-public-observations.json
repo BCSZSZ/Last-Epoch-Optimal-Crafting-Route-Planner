@@ -1,0 +1,1884 @@
+{
+  "schemaVersion": 1,
+  "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
+  "observedAt": "2026-11-06T16:39:14.007Z",
+  "snapshots": [
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀2实验词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": true,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        }
+      ],
+      "id": "public-initial",
+      "mode": "简易目标",
+      "options": [],
+      "part": "法器",
+      "resultText": null,
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1空"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2空"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1空"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2空"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀2实验词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": true,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标前缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标前缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "id": "public-hidden-targets-before",
+      "mode": "详细目标",
+      "options": [],
+      "part": "法器",
+      "resultText": null,
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1空"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2空"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1空"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2空"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1不限"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2不限"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        }
+      ],
+      "id": "reference-1771-owned0-result",
+      "mode": "简易目标",
+      "options": [],
+      "part": "任意",
+      "resultText": "规划方案\n已放弃\n成功率\n25.39%\n整件完成率（48 FP）\n—\n成功路径平均 FP\n72.07\n救赎\n补齐剩余目标词缀\n查看分支\n浩劫直至两项目标均为T7\n\n已放弃 · 已算至第 3 步 · 成功路径平均 FP 已超过 65\n\n导出报告\n已放弃方案（280）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T7"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T1"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        }
+      ],
+      "id": "reference-1771-owned1-result",
+      "mode": "简易目标",
+      "options": [],
+      "part": "任意",
+      "resultText": "规划方案\n当前方案\n成功率\n100.00%\n整件完成率（48 FP）\n54.94%\n成功路径平均 FP\n59.08\n救赎\n补齐剩余目标词缀\n查看分支\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（177）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T7"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T1"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        }
+      ],
+      "id": "reference-7712-owned0-result",
+      "mode": "简易目标",
+      "options": [],
+      "part": "任意",
+      "resultText": "规划方案\n已放弃\n成功率\n29.06%\n整件完成率（48 FP）\n—\n成功路径平均 FP\n85.94\n救赎\n补齐剩余目标词缀\n查看分支\n浩劫直至两项目标均为T7\n\n已放弃 · 已算至第 3 步 · 成功路径平均 FP 已超过 65\n\n导出报告\n已放弃方案（280）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T7"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T7"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T1"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T2"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        }
+      ],
+      "id": "reference-7712-owned1-result",
+      "mode": "简易目标",
+      "options": [],
+      "part": "任意",
+      "resultText": "规划方案\n已放弃\n成功率\n100.00%\n整件完成率（48 FP）\n—\n成功路径平均 FP\n92.27\n浩劫直至未指定实验前缀2词条（T6–T7，普通未封印栏），且已有目标前缀1（T1–T5，普通未封印栏）\n救赎\n补齐剩余目标词缀\n查看分支\n浩劫直至两项目标均为T7\n\n已放弃 · 已算至第 4 步 · 成功路径平均 FP 已超过 65\n\n导出报告\n已放弃方案（560）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T7"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T7"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T1"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T2"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        }
+      ],
+      "id": "reference-7710-owned0-result",
+      "mode": "简易目标",
+      "options": [],
+      "part": "任意",
+      "resultText": "规划方案\n已放弃\n成功率\n29.84%\n整件完成率（48 FP）\n—\n成功路径平均 FP\n83.02\n救赎\n补齐剩余目标词缀\n查看分支\n浩劫直至两项目标均为T7\n\n已放弃 · 已算至第 3 步 · 成功路径平均 FP 已超过 65\n\n导出报告\n已放弃方案（560）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T7"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T7"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T1"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2空"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        }
+      ],
+      "id": "reference-7710-owned1-result",
+      "mode": "简易目标",
+      "options": [],
+      "part": "任意",
+      "resultText": "规划方案\n已放弃\n成功率\n100.00%\n整件完成率（48 FP）\n—\n成功路径平均 FP\n82.33\n补词\n\n补满普通槽；已有四条则跳过。\n\n浩劫直至未指定实验前缀2词条（T6–T7，普通未封印栏），且已有目标前缀1（T1–T5，普通未封印栏）\n救赎\n补齐剩余目标词缀\n查看分支\n浩劫直至两项目标均为T7\n\n已放弃 · 已算至第 5 步 · 成功路径平均 FP 已超过 65\n\n导出报告\n已放弃方案（840）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T7"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T7"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T1"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2空"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        }
+      ],
+      "id": "reference-1770-owned0-result",
+      "mode": "简易目标",
+      "options": [],
+      "part": "任意",
+      "resultText": "规划方案\n已放弃\n成功率\n33.09%\n整件完成率（48 FP）\n—\n成功路径平均 FP\n80.74\n救赎\n补齐剩余目标词缀\n查看分支\n浩劫直至两项目标均为T7\n\n已放弃 · 已算至第 3 步 · 成功路径平均 FP 已超过 65\n\n导出报告\n已放弃方案（560）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T7"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2空"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        }
+      ],
+      "id": "reference-1770-owned1-result",
+      "mode": "简易目标",
+      "options": [],
+      "part": "任意",
+      "resultText": "规划方案\n当前方案\n成功率\n98.14%\n整件完成率（48 FP）\n46.09%\n成功路径平均 FP\n64.59\n救赎\n补齐剩余目标词缀\n查看分支\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（723）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T7"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2空"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Increased Melee Attack Speed · #2",
+          "value": "近战攻击速度⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": "Experimental Ward on Kill · #673",
+          "value": "击杀时的实验性护盾⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Added Dodge Rating · #8",
+          "value": "增加躲避值⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Increased Cast Speed · #4",
+          "value": "施法速度⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀2词条",
+          "title": "Increased Critical Strike Chance · #5",
+          "value": "暴击几率⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "id": "detailed-1771-owned0-result",
+      "mode": "详细目标",
+      "options": [],
+      "part": "手套",
+      "resultText": "规划方案\n不推荐\n成功率\n34.26%\n整件完成率（48 FP）\n16.16%\n成功路径平均 FP\n63.86\n救赎\n补齐剩余目标词缀\n查看分支\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（260）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T7"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T1"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2T7"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Increased Melee Attack Speed · #2",
+          "value": "近战攻击速度⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": "Experimental Ward on Kill · #673",
+          "value": "击杀时的实验性护盾⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Added Dodge Rating · #8",
+          "value": "增加躲避值⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Increased Melee Attack Speed · #2",
+          "value": "近战攻击速度⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀2词条",
+          "title": "Increased Cast Speed · #4",
+          "value": "施法速度⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "id": "detailed-7712-owned1-result",
+      "mode": "详细目标",
+      "options": [],
+      "part": "手套",
+      "resultText": "规划方案\n不推荐\n成功率\n18.50%\n整件完成率（48 FP）\n9.28%\n成功路径平均 FP\n62.29\n救赎\n补齐剩余目标词缀\n查看分支\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（542）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T7"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T7"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T1"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T2"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2T7"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀2实验词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀2词条",
+          "title": "Minion Health · #70",
+          "value": "召唤物生命⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "id": "known-7710-result",
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": "规划方案\n推荐\n成功率\n100.00%\n整件完成率（48 FP）\n68.34%\n成功路径平均 FP\n48.80\n添加词缀\n\n伤害由魔力优先承受而非生命\n\n浩劫至前缀1为T1\n封印\n\n前缀1（T1）；封印失败即停止。\n\n添加词缀\n\n召唤物生命\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（58）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2空"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T7"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2T7"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Minion Health · #70",
+          "value": "召唤物生命⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标前缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标后缀1词条",
+          "title": "Added Dodge Rating · #8",
+          "value": "增加躲避值⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "id": "known-7732-result",
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": "规划方案\n不推荐\n成功率\n42.25%\n整件完成率（48 FP）\n20.30%\n成功路径平均 FP\n64.55\n剥离\n\n仅接受前缀2／后缀2（T2或T3）；剥歪即停止。\n\n添加词缀\n\n先补入剥离空槽对应的目标词缀。\n\n浩劫直至出现非目标普通词缀（T1–T2）\n封印\n\n剩余非目标普通词缀（T1–T2）\n\n添加词缀\n\n补入另一条目标词缀。\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（350）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T7"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T3"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T2"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2不限"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1T7"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀2词条",
+          "title": "Minion Health · #70",
+          "value": "召唤物生命⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "id": "known-7271-result",
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": "规划方案\n当前方案\n成功率\n84.50%\n整件完成率（48 FP）\n50.55%\n成功路径平均 FP\n55.68\n浩劫至前缀1为T1或T2\n封印\n\n前缀1（T1或T2）；封印失败即停止。\n\n添加词缀\n\n召唤物生命\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（9）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T7"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T2"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T1"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2T7"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        }
+      ],
+      "id": "public-both-checks",
+      "mode": "简易目标",
+      "options": [],
+      "part": "任意",
+      "resultText": null,
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T7"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T1"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2实验词缀"
+        },
+        {
+          "checked": true,
+          "disabled": false,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": false,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        }
+      ],
+      "id": "experimental-owned-target-result",
+      "mode": "简易目标",
+      "options": [],
+      "part": "任意",
+      "resultText": "规划方案\n推荐\n成功率\n100.00%\n整件完成率（48 FP）\n75.06%\n成功路径平均 FP\n41.97\n封印\n\n前缀1（T1）；封印失败即停止。\n\n添加词缀\n\n待补目标前缀2\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（7）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T7"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T1"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        }
+      ]
+    },
+    {
+      "alerts": [],
+      "checks": [
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀2实验词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始前缀2已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始后缀1已是目标词缀"
+        },
+        {
+          "checked": false,
+          "disabled": true,
+          "label": "起始后缀2已是目标词缀"
+        }
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": true,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        }
+      ],
+      "id": "public-input-restored",
+      "mode": "简易目标",
+      "options": [],
+      "part": "法器",
+      "resultText": null,
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1空"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2空"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1空"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2空"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "id": "reference-1771-owned0",
+      "file": "programs-public-reference-1771-owned0.json"
+    },
+    {
+      "id": "reference-1771-owned1",
+      "file": "programs-public-reference-1771-owned1.json"
+    },
+    {
+      "id": "reference-7712-owned0",
+      "file": "programs-public-reference-7712-owned0.json"
+    },
+    {
+      "id": "reference-7712-owned1",
+      "file": "programs-public-reference-7712-owned1.json"
+    },
+    {
+      "id": "reference-7710-owned0",
+      "file": "programs-public-reference-7710-owned0.json"
+    },
+    {
+      "id": "reference-7710-owned1",
+      "file": "programs-public-reference-7710-owned1.json"
+    },
+    {
+      "id": "reference-1770-owned0",
+      "file": "programs-public-reference-1770-owned0.json"
+    },
+    {
+      "id": "reference-1770-owned1",
+      "file": "programs-public-reference-1770-owned1.json"
+    },
+    {
+      "id": "detailed-1771-owned0",
+      "file": "programs-public-detailed-1771-owned0.json"
+    },
+    {
+      "id": "detailed-7712-owned1",
+      "file": "programs-public-detailed-7712-owned1.json"
+    },
+    {
+      "id": "known-7710",
+      "file": "programs-public-known-7710.json"
+    },
+    {
+      "id": "known-7732",
+      "file": "programs-public-known-7732.json"
+    },
+    {
+      "id": "known-7271",
+      "file": "programs-public-known-7271.json"
+    },
+    {
+      "id": "experimental-owned-target",
+      "file": "programs-public-experimental-owned-target.json"
+    }
+  ],
+  "context": "public"
+}

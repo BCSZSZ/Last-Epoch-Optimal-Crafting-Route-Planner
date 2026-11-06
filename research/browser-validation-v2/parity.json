@@ -2,7 +2,7 @@
   "schemaVersion": 3,
   "status": "PASS",
   "modelId": "le-1.5.3-iid-b88b0a4321c1f217",
-  "currentModelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "currentModelId": "le-1.5.3-iid-a925bc35e78eed9f",
   "historical": true,
   "metric": "INTRINSIC_V2",
   "checks": [

@@ -55,7 +55,7 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                 "research/ui-validation/detailed-local-parity.json", "research/ui-validation/detailed-public-parity.json",
                 "research/deployment-detailed-locale.json", "research/program-release-validation.json",
                 "research/program-release-performance.json", "research/program-release-monte-carlo.json",
-                "research/ui-validation/programs-local-parity.json")
+                "research/ui-validation/programs-local-parity.json", "research/ui-validation/programs-public-parity.json")
     model = {"schemaVersion": 2, "modelId": "le-1.5.3-26087601-r13-programs-experimental",
              "phase": "PUBLIC_PREVIEW", "productionReady": False,
              "productionModelId": load_json(root / "src/generated/model.json")["modelId"],
@@ -70,7 +70,7 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                            "unspecifiedEquipmentModel": "FORGEABLE_ANY_EQUAL",
                            "defaultAnonymousPool": "FORGEABLE_EQUAL", "knownIdentityPool": "FORGEABLE_WEIGHTED",
                            "bothReferencePoolsAllClassesPerItemType": True, "auditedApiPreserved": True,
-                           "uiWorkerParity": "research/ui-validation/detailed-public-parity.json",
+                           "uiWorkerParity": "research/ui-validation/programs-public-parity.json",
                            "localUiWorkerParity": "research/ui-validation/programs-local-parity.json",
                            "historicalPublicUiWorkerParity": "research/ui-validation/public-completion48-parity.json"},
              "userApproval": {"date": "2026-11-03", "codeDerivedRulesSufficient": True, "clientBitExactRequired": False},

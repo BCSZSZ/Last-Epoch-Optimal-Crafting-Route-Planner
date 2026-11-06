@@ -1,0 +1,1006 @@
+{
+  "schemaVersion": 1,
+  "input": {
+    "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
+    "inputModel": "FORGEABLE_ANY_EQUAL",
+    "item": {
+      "baseId": "reference:any-equipment",
+      "itemLevel": 100,
+      "fpType": "NORMAL",
+      "corrupted": false,
+      "affixes": [
+        {
+          "id": 0,
+          "tier": 1,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 673,
+          "tier": 7,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 1,
+          "tier": 7,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 7,
+          "tier": 1,
+          "slot": "ordinary",
+          "roll": null
+        }
+      ]
+    },
+    "craftingContext": {
+      "playerLevel": 100
+    },
+    "target": {
+      "requirements": [
+        {
+          "ids": [
+            673
+          ],
+          "minTier": 7,
+          "maxTier": 7,
+          "slot": "ordinary"
+        },
+        {
+          "ids": [
+            2
+          ],
+          "minTier": 7,
+          "maxTier": 7,
+          "slot": "ordinary"
+        }
+      ]
+    },
+    "constraints": {},
+    "scoring": {},
+    "search": {
+      "milliseconds": 12000,
+      "maxRoutes": 4096,
+      "macroStages": 12,
+      "maxStates": 25000
+    }
+  },
+  "report": {
+    "metric": "INTRINSIC_V2",
+    "inputModel": "FORGEABLE_ANY_EQUAL",
+    "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
+    "gameVersion": "1.5.3",
+    "completion": {
+      "routeId": "r-52dbdd9ff1eb79ab",
+      "initialFp": 48,
+      "status": "COMPLETE",
+      "probability": {
+        "lower": 0.750617285572208,
+        "upper": 0.7506172855727085
+      },
+      "recommendation": "RECOMMENDED",
+      "evaluation": "BOUNDED_NUMERICAL",
+      "states": 8,
+      "reason": null
+    },
+    "status": "RECOMMENDATION",
+    "primary": {
+      "route": {
+        "id": "r-52dbdd9ff1eb79ab",
+        "macros": [
+          {
+            "kind": "seal",
+            "selector": {
+              "excludedIds": [
+                673,
+                2
+              ],
+              "side": 0,
+              "minTier": 1,
+              "maxTier": 1,
+              "sealable": true
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 2,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ],
+        "description": "固定添加顺序／开槽顺序"
+      },
+      "intrinsic": {
+        "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+        "decision": "RETAINED",
+        "reason": null,
+        "evaluatedThroughStage": 3,
+        "probabilityMeaning": "FULL_ROUTE",
+        "fpMeaning": "FULL_ROUTE_GIVEN_SUCCESS",
+        "minimumSuccess": 0.15,
+        "maximumSuccessFp": 65,
+        "stages": [
+          {
+            "successfulFpMoment": {
+              "lower": 4.303333333333304,
+              "upper": 4.303333333333363
+            }
+          },
+          {
+            "successfulFpMoment": {
+              "lower": 5.0990823529411085,
+              "upper": 5.099082352941245
+            }
+          },
+          {
+            "successfulFpMoment": {
+              "lower": 32.570587499999256,
+              "upper": 32.57058750000075
+            }
+          }
+        ],
+        "residualProbabilityBound": 1.776358615757093e-15,
+        "nonTerminatingStates": 0,
+        "successfulFpLowerBound": null,
+        "auxiliaryTotalsAvailable": true
+      },
+      "evaluationStatus": "BOUNDED_NUMERICAL",
+      "score": {
+        "lower": 1,
+        "upper": 1
+      },
+      "scoreEstimate": 1,
+      "expectedFpGivenSuccess": {
+        "lower": 41.97300318627365,
+        "upper": 41.97300318627537
+      },
+      "expectedFp": {
+        "lower": 41.97300318627377,
+        "upper": 41.973003186275264
+      },
+      "failedFpWaste": {
+        "lower": 0,
+        "upper": 1.6058265828178266e-12
+      },
+      "curve": [],
+      "quantiles": null,
+      "successQuantiles": null,
+      "consumption": [],
+      "attemptsByMacro": [],
+      "macroStatistics": [],
+      "failureReasons": [],
+      "states": 8
+    },
+    "issues": [],
+    "abandoned": [
+      {
+        "route": {
+          "id": "r-5430c05ef175f762",
+          "macros": [
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 2,
+                "glyph": "hope"
+              }
+            }
+          ],
+          "description": "固定添加顺序／开槽顺序"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "NO_SUCCESS_EXIT",
+          "evaluatedThroughStage": 1,
+          "probabilityMeaning": "FULL_ROUTE",
+          "fpMeaning": "FULL_ROUTE_GIVEN_SUCCESS",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 0,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "NO_LEGAL_SLOT",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 1
+      },
+      {
+        "route": {
+          "id": "r-b861fb109f66ae54",
+          "macros": [
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "exists",
+                "selector": {
+                  "excludedIds": [
+                    673,
+                    2
+                  ],
+                  "side": 0,
+                  "minTier": 2,
+                  "maxTier": 2,
+                  "sealable": true
+                }
+              }
+            },
+            {
+              "kind": "seal",
+              "selector": {
+                "excludedIds": [
+                  673,
+                  2
+                ],
+                "side": 0,
+                "minTier": 2,
+                "maxTier": 2,
+                "sealable": true
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 2,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "description": "固定添加顺序／开槽顺序"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 1,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "NON_TERMINATING_MACRO",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 1
+      },
+      {
+        "route": {
+          "id": "r-bfe87bd081f9c0a4",
+          "macros": [
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "exists",
+                "selector": {
+                  "excludedIds": [
+                    673,
+                    2
+                  ],
+                  "side": 0,
+                  "minTier": 3,
+                  "maxTier": 3,
+                  "sealable": true
+                }
+              }
+            },
+            {
+              "kind": "seal",
+              "selector": {
+                "excludedIds": [
+                  673,
+                  2
+                ],
+                "side": 0,
+                "minTier": 3,
+                "maxTier": 3,
+                "sealable": true
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 2,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "description": "固定添加顺序／开槽顺序"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 1,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "NON_TERMINATING_MACRO",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 1
+      },
+      {
+        "route": {
+          "id": "r-cd2ea7de151c1ffa",
+          "macros": [
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "exists",
+                "selector": {
+                  "excludedIds": [
+                    673,
+                    2
+                  ],
+                  "side": 0,
+                  "minTier": 2,
+                  "maxTier": 3,
+                  "sealable": true
+                }
+              }
+            },
+            {
+              "kind": "seal",
+              "selector": {
+                "excludedIds": [
+                  673,
+                  2
+                ],
+                "side": 0,
+                "minTier": 2,
+                "maxTier": 3,
+                "sealable": true
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 2,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "description": "固定添加顺序／开槽顺序"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 1,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "NON_TERMINATING_MACRO",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 1
+      },
+      {
+        "route": {
+          "id": "r-80c8ce10319eec44",
+          "macros": [
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "exists",
+                "selector": {
+                  "excludedIds": [
+                    673,
+                    2
+                  ],
+                  "side": 0,
+                  "minTier": 4,
+                  "maxTier": 4,
+                  "sealable": true
+                }
+              }
+            },
+            {
+              "kind": "seal",
+              "selector": {
+                "excludedIds": [
+                  673,
+                  2
+                ],
+                "side": 0,
+                "minTier": 4,
+                "maxTier": 4,
+                "sealable": true
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 2,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "description": "固定添加顺序／开槽顺序"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 1,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "NON_TERMINATING_MACRO",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 1
+      },
+      {
+        "route": {
+          "id": "r-6ed01502169d7efe",
+          "macros": [
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "exists",
+                "selector": {
+                  "excludedIds": [
+                    673,
+                    2
+                  ],
+                  "side": 0,
+                  "minTier": 3,
+                  "maxTier": 4,
+                  "sealable": true
+                }
+              }
+            },
+            {
+              "kind": "seal",
+              "selector": {
+                "excludedIds": [
+                  673,
+                  2
+                ],
+                "side": 0,
+                "minTier": 3,
+                "maxTier": 4,
+                "sealable": true
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 2,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "description": "固定添加顺序／开槽顺序"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 1,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "NON_TERMINATING_MACRO",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 1
+      },
+      {
+        "route": {
+          "id": "r-c54bf0b02803ee54",
+          "macros": [
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "exists",
+                "selector": {
+                  "excludedIds": [
+                    673,
+                    2
+                  ],
+                  "side": 0,
+                  "minTier": 2,
+                  "maxTier": 4,
+                  "sealable": true
+                }
+              }
+            },
+            {
+              "kind": "seal",
+              "selector": {
+                "excludedIds": [
+                  673,
+                  2
+                ],
+                "side": 0,
+                "minTier": 2,
+                "maxTier": 4,
+                "sealable": true
+              }
+            },
+            {
+              "kind": "once",
+              "action": {
+                "kind": "add",
+                "id": 2,
+                "glyph": "hope"
+              }
+            },
+            {
+              "kind": "repeat",
+              "action": {
+                "kind": "havoc",
+                "glyph": "hope"
+              },
+              "until": {
+                "kind": "target"
+              }
+            }
+          ],
+          "description": "固定添加顺序／开槽顺序"
+        },
+        "intrinsic": {
+          "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+          "decision": "ABANDONED",
+          "reason": "BELOW_MINIMUM_SUCCESS",
+          "evaluatedThroughStage": 2,
+          "probabilityMeaning": "PREFIX_SURVIVAL_UPPER_BOUND",
+          "fpMeaning": "PREFIX_GIVEN_PREFIX_SURVIVAL",
+          "minimumSuccess": 0.15,
+          "maximumSuccessFp": 65,
+          "stages": [
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            },
+            {
+              "successfulFpMoment": {
+                "lower": 0,
+                "upper": 0
+              }
+            }
+          ],
+          "residualProbabilityBound": 0,
+          "nonTerminatingStates": 1,
+          "successfulFpLowerBound": null,
+          "auxiliaryTotalsAvailable": false
+        },
+        "evaluationStatus": "BOUNDED_NUMERICAL",
+        "score": {
+          "lower": 0,
+          "upper": 0
+        },
+        "scoreEstimate": 0,
+        "expectedFpGivenSuccess": null,
+        "expectedFp": {
+          "lower": 0,
+          "upper": 0
+        },
+        "failedFpWaste": {
+          "lower": 0,
+          "upper": 0
+        },
+        "curve": [],
+        "quantiles": null,
+        "successQuantiles": null,
+        "consumption": [],
+        "attemptsByMacro": [],
+        "macroStatistics": [],
+        "failureReasons": [
+          {
+            "reason": "NON_TERMINATING_MACRO",
+            "probability": {
+              "lower": 0,
+              "upper": 1
+            }
+          }
+        ],
+        "states": 1
+      }
+    ],
+    "abandonedCount": 7,
+    "abandonmentSummary": {
+      "NO_SUCCESS_EXIT": 1,
+      "BELOW_MINIMUM_SUCCESS": 6
+    },
+    "unresolvedRoutes": 0,
+    "searchStatus": "COMPLETE",
+    "optimality": "NOT_PROVEN",
+    "samplingGuarantee": null,
+    "search": {
+      "grammar": "EXAMPLE_GUIDED_ROUND2_WITH_EXPERIMENTAL_CONVERSION_V1",
+      "macroStages": 12,
+      "librarySize": 0,
+      "candidateUpperBound": "12",
+      "evaluatedRoutes": 12,
+      "exactRoutes": 12,
+      "estimatedRoutes": 0,
+      "unevaluatedRoutes": 0,
+      "skippedDuplicates": 0,
+      "certifiedPrunedPrefixes": 6,
+      "elapsedMilliseconds": 38,
+      "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+      "paretoRouteIds": [
+        "r-85f20e34371615c0",
+        "r-52dbdd9ff1eb79ab",
+        "r-f517a1a68570c40a",
+        "r-7b017beda5c86c59"
+      ]
+    },
+    "conventions": {
+      "fpDomain": [],
+      "weights": [],
+      "materials": "UNLIMITED",
+      "fixedRoute": true,
+      "rngModel": "ANY_EQUIPMENT_ALL_CLASSES_EQUAL_POSITIVE_UNION_V1"
+    },
+    "qualification": "未指定部位，采用全装备普通候选并集的等权参考池；不代表全装备平均值或具体装备的真实词条池。成功率假设FP持续充足，只计操作NG；费用门槛65只统计最终成功路径。整件完成率另以起始48FP结算，包含耗尽保留及最后一次制作。模板及分支预先固定；上层标签只路由，数值保留ID、阶数、原生顺序和费用联合核。15%／65等号通过；区间跨阈或执行预算不足保留未完成。已搜索范围不代表任意长度策略全局最优。普通填充采用预先声明的合法碎片顺序，不宣称所有填充ID均等价。"
+  }
+}

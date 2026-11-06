@@ -28,6 +28,8 @@ Worker返回主推荐、最多32条放弃见证，以及全部放弃数量与原
 
 [22例生产／详细输入](../research/program-release-validation.json)、[完整ID蒙特卡洛](../research/program-release-monte-carlo.json)、[本地14例实际UI／Worker复算](../research/ui-validation/programs-local-parity.json)。180项TypeScript、30项Python回归；三例达到人工及更强下限，24个保留验证例继续通过。有限文法完成不代表全局最优。
 
+最终规范版本已通过[公网14例实算](../research/ui-validation/programs-public-parity.json)，包括全部8个新增参考组合、2个详细真实权重例、3个人工例和实验目标双勾选。渲染指标／标签、完整主报告及48FP结果与Node复算一致；测试后原输入已恢复。8个静态文件与发布构建相同。
+
 | 原人工例（无实验） | 成功率 | 成功路径FP | 48FP完成率 |
 |---|---:|---:|---:|
 | 7710 | 100.00% | 48.80 | 68.34% |

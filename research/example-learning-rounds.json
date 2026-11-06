@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+  "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
   "status": "TRAINING_TARGETS_MET",
   "method": "EXAMPLE_GUIDED_PROGRAM_SYNTHESIS",
   "probabilityModelTrained": false,
@@ -12,7 +12,7 @@
     {
       "caseId": "7710-new-prefixes",
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -372,7 +372,7 @@
     {
       "caseId": "7732-new-split",
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -856,7 +856,7 @@
     {
       "caseId": "7271-owned-prefix2",
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -3213,7 +3213,7 @@
   "validation": [
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -3720,7 +3720,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -4227,7 +4227,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -4937,7 +4937,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -5647,7 +5647,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -6317,7 +6317,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -7001,7 +7001,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -7446,7 +7446,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -7891,7 +7891,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -8386,7 +8386,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -8881,7 +8881,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -9377,7 +9377,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -9671,7 +9671,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -10178,7 +10178,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -10888,7 +10888,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -11375,7 +11375,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -11882,7 +11882,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -12592,7 +12592,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "1:0",
@@ -13087,7 +13087,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "4:0",
@@ -13594,7 +13594,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "4:0",
@@ -14304,7 +14304,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_EQUAL",
         "item": {
           "baseId": "4:0",
@@ -14799,7 +14799,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_ANY_EQUAL",
         "item": {
           "baseId": "reference:any-equipment",
@@ -15306,7 +15306,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_ANY_EQUAL",
         "item": {
           "baseId": "reference:any-equipment",
@@ -16016,7 +16016,7 @@
     },
     {
       "input": {
-        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
+        "modelId": "le-1.5.3-iid-a925bc35e78eed9f",
         "inputModel": "FORGEABLE_ANY_EQUAL",
         "item": {
           "baseId": "reference:any-equipment",
@@ -16511,12 +16511,12 @@
     }
   ],
   "sources": {
-    "src/generated/model.json": "de7ddb05de3e9437fac232509a04ad59acee88f664d86279633cf416c0fb0c98",
+    "src/generated/model.json": "85cf8b2bf971939b77769d8c86d573c298c63e66391379ee9e43457a7c4fc386",
     "src/research/learning-cases.ts": "1dc44c8f43f09f193a5eee1998d228f0c55fb87caa658e92387c7ba8e3cfe0c1",
-    "src/core/program-search.ts": "9a8351e92c85f2b6fbf67eac8a676412c08686195b93c5ea80e8b591a7f483a2",
-    "src/core/program-compact.ts": "96801d8c661f34186746ebdffd5ee5287380a93e701ca4037cc38e549fd2377f",
-    "src/research/learning-solver.ts": "31e7602ef467796ac5c86d63f8270e90ed42aef1ca158814e42f747cfedcf66c",
-    "src/research/compact-program.ts": "53deb68ded897262b79633b3d00952b7f842a240ad6c727498712ee493ade5a6",
+    "src/core/program-search.ts": "0d19e2d64cbcc69cfe96ad94a4d8af9adc192ffa36798e07dea2edcb457d1be4",
+    "src/core/program-compact.ts": "de3fd01f6bb3eab1c360bb227a859a9885953fa9650f60bcbc58aeffe4ce8129",
+    "src/research/learning-solver.ts": "ad586a162a07ffa56a8b857e3f3c045292981aefaae65ff3ca8ba1c234e50aee",
+    "src/research/compact-program.ts": "891dffd5cd8e423cfb3b901dcf8e9c0243be7c96bcffa517b6a85db9b0b5b798",
     "scripts/train_route_programs.ts": "7322f04e701acca431874ccaac4664e0963d9871a698165c647acce908f843e3"
   },
   "qualification": "Research training harness for the shared production program generator. Three NORMAL chest examples guide grammar revisions. Held-out inputs are not read by the generator. Within this bounded grammar all generated candidates are evaluated; unresolved numerical cases remain explicit. Does not establish global optimality or correctness of all crafting mechanisms. Passing a ranking target need not improve every reported metric."

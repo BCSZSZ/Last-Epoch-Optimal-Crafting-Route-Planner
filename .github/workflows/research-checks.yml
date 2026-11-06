@@ -49,6 +49,6 @@ jobs:
       - run: npx tsx scripts/check_capacity_ui.ts --public --historical --verify-only
       - run: npx tsx scripts/verify_program_release.ts --verify-only
       - run: npx tsx scripts/crosscheck_program_sampling.ts --verify-only
-      - run: npx tsx scripts/check_program_ui.ts --verify-only
+      - run: npx tsx scripts/check_program_ui.ts --historical --verify-only
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/desktop-baseline.json --historical
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/public-normal.json --historical

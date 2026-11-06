@@ -48,6 +48,12 @@
       "sha256": "31a35ef38b9ae5d9feec7daec4f5822ce26273e3d81e986cf5755517f64d9dc8",
       "metric": "INTRINSIC_V2",
       "purpose": "Historical localized UI release before production program search and experimental-prefix conversion."
+    },
+    "le-1.5.3-iid-479c4ba59a034b7d": {
+      "file": "research/runtime-model-archive/le-1.5.3-iid-479c4ba59a034b7d.json",
+      "sha256": "de7ddb05de3e9437fac232509a04ad59acee88f664d86279633cf416c0fb0c98",
+      "metric": "INTRINSIC_V2",
+      "purpose": "Pre-release local UI and performance observations before normalizing new Windows source line endings; same program logic, never a public release."
     }
   }
 }

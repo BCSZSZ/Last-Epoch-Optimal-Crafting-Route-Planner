@@ -15,9 +15,11 @@ const context=process.argv.includes('--public')?'public':'local',root='research/
 const bytes=readFileSync(root+`detailed-${context}-observations.json`),observations=JSON.parse(bytes.toString('utf8'));
 assert.equal(observations.modelId,MODEL_ID);
 const snap=(id:string)=>{const value=observations.snapshots.find((row:{id:string})=>row.id===id);assert(value,id);return value;};
+const searchPrefix=context==='public'?'public-':'';
+assert.deepEqual(snap(searchPrefix+'english-search').options.map((row:{id:string})=>row.id),snap(searchPrefix+'chinese-search').options.map((row:{id:string})=>row.id));
+for(const row of snap(searchPrefix+'chinese-search').options)assert.match(row.name,/\p{Script=Han}/u);
+if(context==='public')for(const key of ['mode','part','tiers','comboboxes','resultText'])assert.deepEqual(snap('public-initial')[key],snap('public-input-restored')[key]);
 if(context==='local'){
-  assert.deepEqual(snap('english-search').options.map((row:{id:string})=>row.id),snap('chinese-search').options.map((row:{id:string})=>row.id));
-  for(const row of snap('chinese-search').options)assert.match(row.name,/\p{Script=Han}/u);
   for(const key of ['mode','part','tiers','comboboxes'])assert.deepEqual(snap('known-7710-ready')[key],snap('known-7710-refreshed')[key]);
   assert(snap('invalid-three-t7').alerts.some((text:string)=>text.includes('起始普通栏没有足够')));
   assert.equal(snap('edit-cancels-detail-job').resultText,null);

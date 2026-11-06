@@ -35,7 +35,7 @@
 
 ## 验证
 
-159项TypeScript回归、30项Python回归、112例分层对照通过。当前输入测试19项覆盖跨侧共享T7容量、封印排除、精确归属、只读计数、改阶／清空、v2唯一／歧义迁移、任意部位生产规划、并集权重、非法具体词条和快照不变。
+173项TypeScript回归、30项Python回归、112例分层对照通过。当前输入测试19项覆盖跨侧共享T7容量、封印排除、精确归属、只读计数、改阶／清空、v2唯一／歧义迁移、任意部位生产规划、并集权重、非法具体词条和快照不变。
 
 [当前本地静态UI／Worker核对](../research/ui-validation/capacity-local-parity.json)覆盖7271的84.50%／50.55%／55.68FP与具体槽位文案、两侧合计上限、封印排除、降低T7后的调整及跨侧分配。[上一版三份输入UI记录](../research/ui-validation/slot-targets-local-parity.json)保留勾选、只读统计、改阶、清空、刷新保留、可选词条搜索与选择、390px视口的历史证据，按[原模型归档](../research/runtime-model-archive/manifest.json)重放。
 

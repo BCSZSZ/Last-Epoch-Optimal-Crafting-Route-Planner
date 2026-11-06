@@ -16,6 +16,8 @@
 
 六个本地静态页面／Worker导出均与Node的完整主路线报告、48FP结果逐位一致：[实际核对](../research/ui-validation/detailed-local-parity.json)。
 
+新版已在GitHub Pages发布；公网实际操作完整指定7710、完整指定7271、部分通配目标三例，导出、显示指标及中文ID匹配均通过[公网复算](../research/ui-validation/detailed-public-parity.json)。中英文搜索返回相同ID，测试后恢复原输入。8个公网静态文件与构建字节相同；[发布记录](../research/deployment-detailed-locale.json)保留实际提交、工作流及版本。
+
 | 输入 | 操作成功率 | 48FP整件完成率 | 成功路径平均FP |
 |---|---:|---:|---:|
 | 完整指定7710 | 100.00% | 68.34% | 48.80 |

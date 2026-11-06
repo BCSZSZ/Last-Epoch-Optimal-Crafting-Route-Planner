@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-05T15:24:52.835025+00:00",
+  "checkedAt": "2026-11-06T14:50:51.446284+00:00",
   "site": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/",
   "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
   "status": "PASS",
   "checks": [
     {
-      "file": "assets/index-CYzBrzXl.js",
-      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-CYzBrzXl.js",
+      "file": "assets/index-4IkFFuP3.js",
+      "url": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/assets/index-4IkFFuP3.js",
       "status": 200,
       "contentType": "application/javascript",
-      "bytes": 1199673,
-      "sha256": "6635f964aaf79dedad2283b2e0ffb8559a9fcc952dcdcef93ce95809c9cb1618"
+      "bytes": 1245755,
+      "sha256": "effd2aba16afec7b3da8f5b2cb241f8cf38628cd1c46e2f57b0c966d1ffb829b"
     },
     {
       "file": "assets/index-D5S-S99x.css",
@@ -67,7 +67,7 @@
       "status": 200,
       "contentType": "text/html",
       "bytes": 748,
-      "sha256": "554dc784b3c89a89e5f1ac418a1e6ba6e0f5533c848de85e3e059b01e9f19507"
+      "sha256": "9e793fc41bc4e35dabe531044b93276adeeb0dbd78c71f749ab775cab4fc40b6"
     }
   ],
   "qualification": "HTTP byte identity and repository subpath only. Actual UI and Worker behavior are checked separately in the browser."

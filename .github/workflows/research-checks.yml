@@ -45,6 +45,7 @@ jobs:
       - run: npx tsx scripts/research_7271_routes.ts --verify-only
       - run: npx tsx scripts/check_capacity_ui.ts --verify-only
       - run: npx tsx scripts/check_detailed_ui.ts --verify-only
+      - run: npx tsx scripts/check_detailed_ui.ts --public --verify-only
       - run: npx tsx scripts/check_capacity_ui.ts --public --verify-only
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/desktop-baseline.json --historical
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/public-normal.json --historical

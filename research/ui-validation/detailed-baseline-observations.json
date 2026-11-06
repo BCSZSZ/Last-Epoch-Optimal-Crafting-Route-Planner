@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "observedAt": "2026-11-06T14:34:31.256Z",
+  "snapshots": [
+    {
+      "id": "known-7271-result",
+      "alerts": [],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "Added Mana⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "Damage Dealt To Mana⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": null,
+          "value": "Damage Dealt To Mana⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀2词条",
+          "title": null,
+          "value": "Minion Health⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": "规划方案\n当前方案\n成功率\n84.50%\n整件完成率（48 FP）\n50.55%\n成功路径平均 FP\n55.68\n浩劫至前缀1为T1或T2\n封印\n\n前缀1（T1或T2）；封印失败即停止。\n\n添加词缀\n\nMinion Health\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（4）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T7"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T2"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T1"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2T7"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "id": "known-7271",
+      "file": "detailed-baseline-known-7271.json"
+    }
+  ]
+}

@@ -26,6 +26,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run model
+      - run: python -X utf8 scripts/build_affix_localization.py --verify-only
       - run: npm run check
       - run: npx tsx scripts/research_intrinsic_routes.ts --verify-only
       - run: npx tsx scripts/research_acquisition_order.ts --verify-only
@@ -43,6 +44,7 @@ jobs:
       - run: npx tsx scripts/check_slot_target_ui.ts --public --historical --verify-only
       - run: npx tsx scripts/research_7271_routes.ts --verify-only
       - run: npx tsx scripts/check_capacity_ui.ts --verify-only
+      - run: npx tsx scripts/check_detailed_ui.ts --verify-only
       - run: npx tsx scripts/check_capacity_ui.ts --public --verify-only
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/desktop-baseline.json --historical
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/public-normal.json --historical

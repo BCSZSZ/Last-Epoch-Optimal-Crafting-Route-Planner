@@ -1,5 +1,7 @@
 # Last Epoch Optimal Crafting Route Planner
 
+**中文与详细版核对**：1156个词缀按ID显示中文，保留中英文搜索；详细身份、通配目标、刷新与取消均经过实际UI／Worker核对。计算Worker字节未变化，详细输入五次性能对照见[验证与性能记录](docs/detailed-ui-and-localization-20261106.md)。
+
 **三例驱动求解试验**：独立研究求解器经历0/3→2/3→3/3的改进，第2轮已达到7710、7732、7271人工方案及更强已知下限，另24个验证例全部通过。运行`npm run learn:routes -- --quiet`；[方法与结果](docs/example-guided-solver-20261106.md)。尚未替换线上生成器。
 
 **算法覆盖审查（2026-11-06）**：当前生成器仍漏掉有效组合；23节点和112例通过不能证明策略完整。本轮诊断在7732发现更优的交错补词＋联合封印窗口，生产生成器尚未重构。[问题、证据与改善方案](docs/algorithm-coverage-review-20261106.md)。

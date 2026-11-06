@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "input": {
+    "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+    "inputModel": "FORGEABLE_WEIGHTED",
+    "item": {
+      "baseId": "1:0",
+      "itemLevel": 100,
+      "fpType": "NORMAL",
+      "corrupted": false,
+      "affixes": [
+        {
+          "id": 34,
+          "tier": 1,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 1,
+          "tier": 7,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 7,
+          "tier": 7,
+          "slot": "ordinary",
+          "roll": null
+        }
+      ]
+    },
+    "craftingContext": {
+      "playerLevel": 100
+    },
+    "target": {
+      "requirements": [
+        {
+          "ids": [
+            1
+          ],
+          "minTier": 7,
+          "maxTier": 7,
+          "slot": "ordinary"
+        },
+        {
+          "ids": [
+            7
+          ],
+          "minTier": 7,
+          "maxTier": 7,
+          "slot": "ordinary"
+        }
+      ]
+    },
+    "constraints": {},
+    "scoring": {},
+    "search": {
+      "milliseconds": 12000,
+      "maxRoutes": 48,
+      "macroStages": 12,
+      "maxStates": 25000
+    }
+  },
+  "report": {
+    "metric": "INTRINSIC_V2",
+    "inputModel": "FORGEABLE_WEIGHTED",
+    "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+    "gameVersion": "1.5.3",
+    "completion": {
+      "routeId": "r-741638a568efd6f9",
+      "initialFp": 48,
+      "status": "COMPLETE",
+      "probability": {
+        "lower": 1,
+        "upper": 1
+      },
+      "recommendation": "RECOMMENDED",
+      "evaluation": "BOUNDED_NUMERICAL",
+      "states": 1,
+      "reason": null
+    },
+    "status": "RECOMMENDATION",
+    "primary": {
+      "route": {
+        "id": "r-741638a568efd6f9",
+        "macros": [],
+        "family": "DONE",
+        "upperNode": "DONE",
+        "description": "两个目标已经各为T7，无需制作"
+      },
+      "intrinsic": {
+        "metric": "OPERATION_SUCCESS_AND_SUCCESS_PATH_FP_V2",
+        "decision": "RETAINED",
+        "reason": null,
+        "evaluatedThroughStage": 0,
+        "probabilityMeaning": "FULL_ROUTE",
+        "fpMeaning": "FULL_ROUTE_GIVEN_SUCCESS",
+        "minimumSuccess": 0.15,
+        "maximumSuccessFp": 65,
+        "stages": [],
+        "residualProbabilityBound": 0,
+        "nonTerminatingStates": 0,
+        "successfulFpLowerBound": null,
+        "auxiliaryTotalsAvailable": true
+      },
+      "evaluationStatus": "BOUNDED_NUMERICAL",
+      "score": {
+        "lower": 1,
+        "upper": 1
+      },
+      "scoreEstimate": 1,
+      "expectedFpGivenSuccess": {
+        "lower": 0,
+        "upper": 0
+      },
+      "expectedFp": {
+        "lower": 0,
+        "upper": 0
+      },
+      "failedFpWaste": {
+        "lower": 0,
+        "upper": 0
+      },
+      "curve": [],
+      "quantiles": null,
+      "successQuantiles": null,
+      "consumption": [],
+      "attemptsByMacro": [],
+      "macroStatistics": [],
+      "failureReasons": [],
+      "states": 1
+    },
+    "issues": [],
+    "abandoned": [],
+    "unresolvedRoutes": 0,
+    "searchStatus": "COMPLETE",
+    "optimality": "NOT_PROVEN",
+    "samplingGuarantee": null,
+    "hierarchy": {
+      "structure": {
+        "node": {
+          "key": "220-N3-S0",
+          "group": "220",
+          "ordinaryCount": 3,
+          "sealedCount": 0,
+          "terminal": true,
+          "routeNode": "DONE",
+          "families": [
+            "DONE"
+          ]
+        },
+        "targetIds": [
+          1,
+          7
+        ],
+        "targetSides": [
+          1,
+          1
+        ],
+        "presentMask": 3,
+        "emptyBySide": [
+          1,
+          0
+        ],
+        "sealedIds": [],
+        "ordinary": [
+          {
+            "id": 34,
+            "tier": 1,
+            "side": 0,
+            "special": 0,
+            "nativeIndex": 0,
+            "target": false
+          },
+          {
+            "id": 1,
+            "tier": 7,
+            "side": 1,
+            "special": 0,
+            "nativeIndex": 1,
+            "target": true
+          },
+          {
+            "id": 7,
+            "tier": 7,
+            "side": 1,
+            "special": 0,
+            "nativeIndex": 2,
+            "target": true
+          }
+        ],
+        "refinements": [
+          "EMPTY_PREFIX_SUFFIX",
+          "TARGET_IDENTITY_AND_TIER",
+          "GARBAGE_TIER_AND_ELIGIBILITY",
+          "NATIVE_ORDER",
+          "SEALED_AND_EXTRA_ID_EXCLUSIONS",
+          "T6_REDEMPTION_PARTICIPATION",
+          "BASE_LEVEL_PROTECTION_ACTIONS"
+        ]
+      },
+      "upperLabels": 28,
+      "routeNodes": 23,
+      "generatedTemplates": 1,
+      "structurallyRejected": 0,
+      "preExcluded": [],
+      "workspaceCacheHits": 0
+    },
+    "search": {
+      "grammar": "HIERARCHICAL_FIXED_TEMPLATES_V2",
+      "macroStages": 12,
+      "librarySize": 0,
+      "candidateUpperBound": "1",
+      "evaluatedRoutes": 1,
+      "exactRoutes": 1,
+      "estimatedRoutes": 0,
+      "unevaluatedRoutes": 0,
+      "skippedDuplicates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "elapsedMilliseconds": 0,
+      "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+      "paretoRouteIds": [
+        "r-741638a568efd6f9"
+      ]
+    },
+    "conventions": {
+      "fpDomain": [],
+      "weights": [],
+      "materials": "UNLIMITED",
+      "fixedRoute": true,
+      "rngModel": "ITEM_TYPE_ALL_CLASSES_AUDITED_WEIGHTS_V1"
+    },
+    "qualification": "按可锻造前提、100级与该部位全职业通用池计算；已指定词条采用实际制作权重；通用池不冒充指定底材职业池。成功率假设FP持续充足，只计操作NG；费用门槛65只统计最终成功路径。整件完成率另以起始48FP结算，包含耗尽保留及最后一次制作。模板及分支预先固定；上层标签只路由，数值保留ID、阶数、原生顺序和费用联合核。15%／65等号通过；区间跨阈或执行预算不足保留未完成。已搜索范围不代表任意长度策略全局最优。普通填充采用预先声明的合法碎片顺序，不宣称所有填充ID均等价。"
+  }
+}

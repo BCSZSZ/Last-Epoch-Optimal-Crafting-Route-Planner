@@ -1,9 +1,8 @@
 import type { Catalog } from '../core/catalog';
 import type { Macro, Predicate, Requirement, Selector } from '../core/types';
+import chinese from '../generated/affix-names.zh-CN.json';
 
-const affixNames: Record<number, string> = { 1: '护甲', 2: '近战攻击速度', 4: '施法速度', 5: '暴击几率',
-  7: '虚空抗性', 8: '闪避值', 10: '腐化抗性', 26: '召唤物伤害',
-  501: '力量', 502: '智力', 503: '敏捷', 504: '协调', 505: '体质' };
+const affixNames: Readonly<Record<string, string>> = chinese.names;
 const typeNames: Record<number, string> = { 0: '头盔', 1: '胸甲', 2: '腰带', 3: '鞋子', 4: '手套', 5: '单手斧',
   6: '匕首', 7: '单手钉锤', 8: '权杖', 9: '单手剑', 10: '魔杖', 12: '双手斧', 13: '双手钉锤',
   14: '长矛', 15: '法杖', 16: '双手剑', 17: '箭袋', 18: '盾牌', 19: '法器', 20: '护身符', 21: '戒指', 22: '遗物', 23: '弓' };
@@ -15,6 +14,14 @@ export const typeName = (id: number, fallback: string) => typeNames[id] ?? fallb
 export type NameAliases = Readonly<Record<number, string>>;
 export const affixName = (catalog: Catalog, id: number, aliases: NameAliases = {}) => aliases[id] ?? affixNames[id] ?? (catalog.hasAffix(id) ? catalog.affix(id).name : `未知ID ${id}`);
 export const affixLabel = (catalog: Catalog, id: number) => `${affixName(catalog, id)} · #${id}`;
+const searchIndexes = new WeakMap<Catalog, Map<number, string>>();
+export function affixSearchText(catalog: Catalog, id: number): string {
+  let index = searchIndexes.get(catalog);
+  if (!index) { index = new Map(); searchIndexes.set(catalog, index); }
+  const found = index.get(id); if (found !== undefined) return found;
+  const text = `${id} ${affixName(catalog, id)} ${catalog.affix(id).name}`.toLowerCase();
+  index.set(id, text); return text;
+}
 
 function glyph(value: string): string { return value === 'order' ? '（秩序）' : value === 'none' ? '（不用希望）' : ''; }
 export function requirementText(requirement: Requirement, catalog: Catalog, aliases: NameAliases = {}): string {

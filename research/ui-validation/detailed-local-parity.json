@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "context": "local",
+  "sourceSha256": "954262bd08c88075bee972d41c5fc58caef7b6840801ab48e2432648caf8e1aa",
+  "checks": [
+    {
+      "id": "known-7710",
+      "sha256": "1cf15455b51ce8e22e8604923d34b24444fdae93f2f32af2473ee5cf79076745",
+      "success": {
+        "lower": 1,
+        "upper": 1
+      },
+      "meanFp": {
+        "lower": 48.804892289212226,
+        "upper": 48.804892289219154
+      },
+      "completion": {
+        "routeId": "r-7a0beecf4f14fe33",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.6834347795614808,
+          "upper": 0.6834347901919642
+        },
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 47,
+        "reason": null
+      },
+      "allSpecifiedUiNamesMatchIds": true,
+      "fullPrimaryAndCompletionBitIdentical": true
+    },
+    {
+      "id": "known-7732",
+      "sha256": "4dd2cc7ed07ca04b5b11331dfe958f7888ddd259ddd773a8f601945b8fd17fb1",
+      "success": {
+        "lower": 0.2506499999999976,
+        "upper": 0.2506500000000025
+      },
+      "meanFp": {
+        "lower": 57.228230361723924,
+        "upper": 57.22823036173316
+      },
+      "completion": {
+        "routeId": "r-727bd17d1c05c7b9",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.14485144915812645,
+          "upper": 0.1448514491644742
+        },
+        "recommendation": "NOT_RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 68,
+        "reason": null
+      },
+      "allSpecifiedUiNamesMatchIds": true,
+      "fullPrimaryAndCompletionBitIdentical": true
+    },
+    {
+      "id": "known-7271",
+      "sha256": "19bb7be324f853ee6f3578188d279a6c8e1f4067679d5edf6b439d03987309e2",
+      "success": {
+        "lower": 0.8449999999999956,
+        "upper": 0.8450000000000043
+      },
+      "meanFp": {
+        "lower": 55.68447760127968,
+        "upper": 55.684477601285494
+      },
+      "completion": {
+        "routeId": "r-42ab1cbb5b58ebb7",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.5055162472070336,
+          "upper": 0.5055162576516714
+        },
+        "recommendation": "NEUTRAL",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 60,
+        "reason": null
+      },
+      "allSpecifiedUiNamesMatchIds": true,
+      "fullPrimaryAndCompletionBitIdentical": true
+    },
+    {
+      "id": "wildcard-prefixes",
+      "sha256": "7ef8b8b8fc7efed259322bfabe79f94a5757d1be6220e53167eb4f8f976e9b5b",
+      "success": {
+        "lower": 1,
+        "upper": 1
+      },
+      "meanFp": {
+        "lower": 37.66966985294055,
+        "upper": 37.66966985294181
+      },
+      "completion": {
+        "routeId": "r-202dcc44458974d8",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.7827964755250082,
+          "upper": 0.7827964755250424
+        },
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 7,
+        "reason": null
+      },
+      "allSpecifiedUiNamesMatchIds": true,
+      "fullPrimaryAndCompletionBitIdentical": true
+    },
+    {
+      "id": "partial-wildcard",
+      "sha256": "a60477781e94b7f0abf2aa769c74d0a09c3676ba5562f12c3c880c271f867714",
+      "success": {
+        "lower": 1,
+        "upper": 1
+      },
+      "meanFp": {
+        "lower": 21.384376102940827,
+        "upper": 21.384376102941527
+      },
+      "completion": {
+        "routeId": "r-0f9ac6333dfe78af",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 0.9568681981105635,
+          "upper": 0.9568681981106034
+        },
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 10,
+        "reason": null
+      },
+      "allSpecifiedUiNamesMatchIds": true,
+      "fullPrimaryAndCompletionBitIdentical": true
+    },
+    {
+      "id": "already-complete",
+      "sha256": "cf8e633ea6e5a093c8583ed8f25e4e08e1ac290c114bf3d26371bd918f5f3127",
+      "success": {
+        "lower": 1,
+        "upper": 1
+      },
+      "meanFp": {
+        "lower": 0,
+        "upper": 0
+      },
+      "completion": {
+        "routeId": "r-741638a568efd6f9",
+        "initialFp": 48,
+        "status": "COMPLETE",
+        "probability": {
+          "lower": 1,
+          "upper": 1
+        },
+        "recommendation": "RECOMMENDED",
+        "evaluation": "BOUNDED_NUMERICAL",
+        "states": 1,
+        "reason": null
+      },
+      "allSpecifiedUiNamesMatchIds": true,
+      "fullPrimaryAndCompletionBitIdentical": true
+    }
+  ],
+  "beforeAfterBaselineMatches": true,
+  "qualification": "Actual detailed UI/Worker exports and observed labels compared with request IDs and Node evaluation. Local QA covers Chinese/English lookup, refresh, invalid input, wildcard semantics, cancellation and final route display refinements. Public QA uses released static assets. Not a complete strategy or low-end-device proof."
+}

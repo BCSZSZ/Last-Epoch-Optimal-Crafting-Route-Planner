@@ -1,0 +1,2521 @@
+{
+  "schemaVersion": 1,
+  "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "trials": 5,
+  "environment": {
+    "node": "v22.20.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "cases": [
+    {
+      "id": "known-7710",
+      "inputModel": "FORGEABLE_WEIGHTED",
+      "request": {
+        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "inputModel": "FORGEABLE_WEIGHTED",
+        "item": {
+          "baseId": "1:0",
+          "itemLevel": 100,
+          "fpType": "NORMAL",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 34,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 1,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                53
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                70
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "trials": [
+        {
+          "milliseconds": 445.19229999999993,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 1,
+          "route": "r-7a0beecf4f14fe33",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289212226,
+            "upper": 48.804892289219154
+          },
+          "completion": {
+            "routeId": "r-7a0beecf4f14fe33",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347795614808,
+              "upper": 0.6834347901919642
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 47,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 435.44230000000016,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 1,
+          "route": "r-7a0beecf4f14fe33",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289212226,
+            "upper": 48.804892289219154
+          },
+          "completion": {
+            "routeId": "r-7a0beecf4f14fe33",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347795614808,
+              "upper": 0.6834347901919642
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 47,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 439.6012999999998,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 1,
+          "route": "r-7a0beecf4f14fe33",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289212226,
+            "upper": 48.804892289219154
+          },
+          "completion": {
+            "routeId": "r-7a0beecf4f14fe33",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347795614808,
+              "upper": 0.6834347901919642
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 47,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 429.55740000000014,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 1,
+          "route": "r-7a0beecf4f14fe33",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289212226,
+            "upper": 48.804892289219154
+          },
+          "completion": {
+            "routeId": "r-7a0beecf4f14fe33",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347795614808,
+              "upper": 0.6834347901919642
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 47,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 429.2670000000003,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 1,
+          "route": "r-7a0beecf4f14fe33",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289212226,
+            "upper": 48.804892289219154
+          },
+          "completion": {
+            "routeId": "r-7a0beecf4f14fe33",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347795614808,
+              "upper": 0.6834347901919642
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 47,
+            "reason": null
+          }
+        }
+      ],
+      "equal": [
+        {
+          "milliseconds": 465.5133999999998,
+          "evaluated": 48,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289212226,
+            "upper": 48.804892289219154
+          },
+          "completion": {
+            "routeId": "r-7a0beecf4f14fe33",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347795614808,
+              "upper": 0.6834347901919642
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 47,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 461.21600000000035,
+          "evaluated": 48,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289212226,
+            "upper": 48.804892289219154
+          },
+          "completion": {
+            "routeId": "r-7a0beecf4f14fe33",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347795614808,
+              "upper": 0.6834347901919642
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 47,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 445.1341000000002,
+          "evaluated": 48,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289212226,
+            "upper": 48.804892289219154
+          },
+          "completion": {
+            "routeId": "r-7a0beecf4f14fe33",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347795614808,
+              "upper": 0.6834347901919642
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 47,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 459.8896000000004,
+          "evaluated": 48,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289212226,
+            "upper": 48.804892289219154
+          },
+          "completion": {
+            "routeId": "r-7a0beecf4f14fe33",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347795614808,
+              "upper": 0.6834347901919642
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 47,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 454.5056000000004,
+          "evaluated": 48,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289212226,
+            "upper": 48.804892289219154
+          },
+          "completion": {
+            "routeId": "r-7a0beecf4f14fe33",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347795614808,
+              "upper": 0.6834347901919642
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 47,
+            "reason": null
+          }
+        }
+      ],
+      "experimental": [
+        {
+          "milliseconds": 62.90549999999985,
+          "generated": 76,
+          "unresolved": 0,
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289213555,
+            "upper": 48.80489228921782
+          },
+          "completion": {
+            "routeId": "r-4bdb5cc0f1f46fac",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347844964269,
+              "upper": 0.6834347852570178
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 29,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 71.30259999999998,
+          "generated": 76,
+          "unresolved": 0,
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289213555,
+            "upper": 48.80489228921782
+          },
+          "completion": {
+            "routeId": "r-4bdb5cc0f1f46fac",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347844964269,
+              "upper": 0.6834347852570178
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 29,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 67.43499999999949,
+          "generated": 76,
+          "unresolved": 0,
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289213555,
+            "upper": 48.80489228921782
+          },
+          "completion": {
+            "routeId": "r-4bdb5cc0f1f46fac",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347844964269,
+              "upper": 0.6834347852570178
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 29,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 56.243899999999485,
+          "generated": 76,
+          "unresolved": 0,
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289213555,
+            "upper": 48.80489228921782
+          },
+          "completion": {
+            "routeId": "r-4bdb5cc0f1f46fac",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347844964269,
+              "upper": 0.6834347852570178
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 29,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 59.760699999999815,
+          "generated": 76,
+          "unresolved": 0,
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 48.804892289213555,
+            "upper": 48.80489228921782
+          },
+          "completion": {
+            "routeId": "r-4bdb5cc0f1f46fac",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.6834347844964269,
+              "upper": 0.6834347852570178
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 29,
+            "reason": null
+          }
+        }
+      ],
+      "productionMedianMs": 435.44230000000016,
+      "equalMedianMs": 459.8896000000004,
+      "experimentalMedianMs": 62.90549999999985
+    },
+    {
+      "id": "known-7732",
+      "inputModel": "FORGEABLE_WEIGHTED",
+      "request": {
+        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "inputModel": "FORGEABLE_WEIGHTED",
+        "item": {
+          "baseId": "1:0",
+          "itemLevel": 100,
+          "fpType": "NORMAL",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 34,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 53,
+              "tier": 3,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 1,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                70
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                8
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "trials": [
+        {
+          "milliseconds": 3702.8295,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 3,
+          "route": "r-727bd17d1c05c7b9",
+          "success": {
+            "lower": 0.2506499999999976,
+            "upper": 0.2506500000000025
+          },
+          "meanFp": {
+            "lower": 57.228230361723924,
+            "upper": 57.22823036173316
+          },
+          "completion": {
+            "routeId": "r-727bd17d1c05c7b9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.14485144915812645,
+              "upper": 0.1448514491644742
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 68,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 3632.6976000000013,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 3,
+          "route": "r-727bd17d1c05c7b9",
+          "success": {
+            "lower": 0.2506499999999976,
+            "upper": 0.2506500000000025
+          },
+          "meanFp": {
+            "lower": 57.228230361723924,
+            "upper": 57.22823036173316
+          },
+          "completion": {
+            "routeId": "r-727bd17d1c05c7b9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.14485144915812645,
+              "upper": 0.1448514491644742
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 68,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 4043.057700000001,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 3,
+          "route": "r-727bd17d1c05c7b9",
+          "success": {
+            "lower": 0.2506499999999976,
+            "upper": 0.2506500000000025
+          },
+          "meanFp": {
+            "lower": 57.228230361723924,
+            "upper": 57.22823036173316
+          },
+          "completion": {
+            "routeId": "r-727bd17d1c05c7b9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.14485144915812645,
+              "upper": 0.1448514491644742
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 68,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 3545.260900000001,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 3,
+          "route": "r-727bd17d1c05c7b9",
+          "success": {
+            "lower": 0.2506499999999976,
+            "upper": 0.2506500000000025
+          },
+          "meanFp": {
+            "lower": 57.228230361723924,
+            "upper": 57.22823036173316
+          },
+          "completion": {
+            "routeId": "r-727bd17d1c05c7b9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.14485144915812645,
+              "upper": 0.1448514491644742
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 68,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 3516.3075000000026,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 3,
+          "route": "r-727bd17d1c05c7b9",
+          "success": {
+            "lower": 0.2506499999999976,
+            "upper": 0.2506500000000025
+          },
+          "meanFp": {
+            "lower": 57.228230361723924,
+            "upper": 57.22823036173316
+          },
+          "completion": {
+            "routeId": "r-727bd17d1c05c7b9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.14485144915812645,
+              "upper": 0.1448514491644742
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 68,
+            "reason": null
+          }
+        }
+      ],
+      "equal": [
+        {
+          "milliseconds": 3522.4829999999965,
+          "evaluated": 48,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 0.2506499999999976,
+            "upper": 0.2506500000000025
+          },
+          "meanFp": {
+            "lower": 57.228230361723924,
+            "upper": 57.22823036173316
+          },
+          "completion": {
+            "routeId": "r-727bd17d1c05c7b9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.14485144915812645,
+              "upper": 0.1448514491644742
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 68,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 4011.117400000003,
+          "evaluated": 48,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 0.2506499999999976,
+            "upper": 0.2506500000000025
+          },
+          "meanFp": {
+            "lower": 57.228230361723924,
+            "upper": 57.22823036173316
+          },
+          "completion": {
+            "routeId": "r-727bd17d1c05c7b9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.14485144915812645,
+              "upper": 0.1448514491644742
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 68,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 3667.8614000000016,
+          "evaluated": 48,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 0.2506499999999976,
+            "upper": 0.2506500000000025
+          },
+          "meanFp": {
+            "lower": 57.228230361723924,
+            "upper": 57.22823036173316
+          },
+          "completion": {
+            "routeId": "r-727bd17d1c05c7b9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.14485144915812645,
+              "upper": 0.1448514491644742
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 68,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 3610.141899999995,
+          "evaluated": 48,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 0.2506499999999976,
+            "upper": 0.2506500000000025
+          },
+          "meanFp": {
+            "lower": 57.228230361723924,
+            "upper": 57.22823036173316
+          },
+          "completion": {
+            "routeId": "r-727bd17d1c05c7b9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.14485144915812645,
+              "upper": 0.1448514491644742
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 68,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 3611.014000000003,
+          "evaluated": 48,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 0.2506499999999976,
+            "upper": 0.2506500000000025
+          },
+          "meanFp": {
+            "lower": 57.228230361723924,
+            "upper": 57.22823036173316
+          },
+          "completion": {
+            "routeId": "r-727bd17d1c05c7b9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.14485144915812645,
+              "upper": 0.1448514491644742
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 68,
+            "reason": null
+          }
+        }
+      ],
+      "experimental": [
+        {
+          "milliseconds": 368.5656000000017,
+          "generated": 408,
+          "unresolved": 0,
+          "success": {
+            "lower": 0.42249999999999616,
+            "upper": 0.4225000000000038
+          },
+          "meanFp": {
+            "lower": 64.54632517611253,
+            "upper": 64.54632517612198
+          },
+          "completion": {
+            "routeId": "r-62eac969516c5dad",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.2030322140139298,
+              "upper": 0.2030322146750393
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 185,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 369.15819999999803,
+          "generated": 408,
+          "unresolved": 0,
+          "success": {
+            "lower": 0.42249999999999616,
+            "upper": 0.4225000000000038
+          },
+          "meanFp": {
+            "lower": 64.54632517611253,
+            "upper": 64.54632517612198
+          },
+          "completion": {
+            "routeId": "r-62eac969516c5dad",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.2030322140139298,
+              "upper": 0.2030322146750393
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 185,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 358.6151000000027,
+          "generated": 408,
+          "unresolved": 0,
+          "success": {
+            "lower": 0.42249999999999616,
+            "upper": 0.4225000000000038
+          },
+          "meanFp": {
+            "lower": 64.54632517611253,
+            "upper": 64.54632517612198
+          },
+          "completion": {
+            "routeId": "r-62eac969516c5dad",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.2030322140139298,
+              "upper": 0.2030322146750393
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 185,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 367.6758999999947,
+          "generated": 408,
+          "unresolved": 0,
+          "success": {
+            "lower": 0.42249999999999616,
+            "upper": 0.4225000000000038
+          },
+          "meanFp": {
+            "lower": 64.54632517611253,
+            "upper": 64.54632517612198
+          },
+          "completion": {
+            "routeId": "r-62eac969516c5dad",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.2030322140139298,
+              "upper": 0.2030322146750393
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 185,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 366.70790000000125,
+          "generated": 408,
+          "unresolved": 0,
+          "success": {
+            "lower": 0.42249999999999616,
+            "upper": 0.4225000000000038
+          },
+          "meanFp": {
+            "lower": 64.54632517611253,
+            "upper": 64.54632517612198
+          },
+          "completion": {
+            "routeId": "r-62eac969516c5dad",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.2030322140139298,
+              "upper": 0.2030322146750393
+            },
+            "recommendation": "NOT_RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 185,
+            "reason": null
+          }
+        }
+      ],
+      "productionMedianMs": 3632.6976000000013,
+      "equalMedianMs": 3611.014000000003,
+      "experimentalMedianMs": 367.6758999999947
+    },
+    {
+      "id": "known-7271",
+      "inputModel": "FORGEABLE_WEIGHTED",
+      "request": {
+        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "inputModel": "FORGEABLE_WEIGHTED",
+        "item": {
+          "baseId": "1:0",
+          "itemLevel": 100,
+          "fpType": "NORMAL",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 34,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 53,
+              "tier": 2,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 1,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                53
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                70
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "trials": [
+        {
+          "milliseconds": 9079.317299999995,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "TIME_BUDGET",
+          "evaluated": 23,
+          "unresolved": 14,
+          "route": "r-42ab1cbb5b58ebb7",
+          "success": {
+            "lower": 0.8449999999999956,
+            "upper": 0.8450000000000043
+          },
+          "meanFp": {
+            "lower": 55.68447760127968,
+            "upper": 55.684477601285494
+          },
+          "completion": {
+            "routeId": "r-42ab1cbb5b58ebb7",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162472070336,
+              "upper": 0.5055162576516714
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 60,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 9034.243799999997,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "TIME_BUDGET",
+          "evaluated": 23,
+          "unresolved": 14,
+          "route": "r-42ab1cbb5b58ebb7",
+          "success": {
+            "lower": 0.8449999999999956,
+            "upper": 0.8450000000000043
+          },
+          "meanFp": {
+            "lower": 55.68447760127968,
+            "upper": 55.684477601285494
+          },
+          "completion": {
+            "routeId": "r-42ab1cbb5b58ebb7",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162472070336,
+              "upper": 0.5055162576516714
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 60,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 9030.131900000008,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "TIME_BUDGET",
+          "evaluated": 23,
+          "unresolved": 14,
+          "route": "r-42ab1cbb5b58ebb7",
+          "success": {
+            "lower": 0.8449999999999956,
+            "upper": 0.8450000000000043
+          },
+          "meanFp": {
+            "lower": 55.68447760127968,
+            "upper": 55.684477601285494
+          },
+          "completion": {
+            "routeId": "r-42ab1cbb5b58ebb7",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162472070336,
+              "upper": 0.5055162576516714
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 60,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 9050.695300000007,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "TIME_BUDGET",
+          "evaluated": 23,
+          "unresolved": 14,
+          "route": "r-42ab1cbb5b58ebb7",
+          "success": {
+            "lower": 0.8449999999999956,
+            "upper": 0.8450000000000043
+          },
+          "meanFp": {
+            "lower": 55.68447760127968,
+            "upper": 55.684477601285494
+          },
+          "completion": {
+            "routeId": "r-42ab1cbb5b58ebb7",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162472070336,
+              "upper": 0.5055162576516714
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 60,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 9051.075499999992,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "TIME_BUDGET",
+          "evaluated": 23,
+          "unresolved": 14,
+          "route": "r-42ab1cbb5b58ebb7",
+          "success": {
+            "lower": 0.8449999999999956,
+            "upper": 0.8450000000000043
+          },
+          "meanFp": {
+            "lower": 55.68447760127968,
+            "upper": 55.684477601285494
+          },
+          "completion": {
+            "routeId": "r-42ab1cbb5b58ebb7",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162472070336,
+              "upper": 0.5055162576516714
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 60,
+            "reason": null
+          }
+        }
+      ],
+      "equal": [
+        {
+          "milliseconds": 9064.445399999997,
+          "evaluated": 23,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 0.8449999999999956,
+            "upper": 0.8450000000000043
+          },
+          "meanFp": {
+            "lower": 55.68447760127968,
+            "upper": 55.684477601285494
+          },
+          "completion": {
+            "routeId": "r-42ab1cbb5b58ebb7",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162472070336,
+              "upper": 0.5055162576516714
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 60,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 9044.790799999988,
+          "evaluated": 23,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 0.8449999999999956,
+            "upper": 0.8450000000000043
+          },
+          "meanFp": {
+            "lower": 55.68447760127968,
+            "upper": 55.684477601285494
+          },
+          "completion": {
+            "routeId": "r-42ab1cbb5b58ebb7",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162472070336,
+              "upper": 0.5055162576516714
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 60,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 9034.661299999978,
+          "evaluated": 23,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 0.8449999999999956,
+            "upper": 0.8450000000000043
+          },
+          "meanFp": {
+            "lower": 55.68447760127968,
+            "upper": 55.684477601285494
+          },
+          "completion": {
+            "routeId": "r-42ab1cbb5b58ebb7",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162472070336,
+              "upper": 0.5055162576516714
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 60,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 9069.074699999997,
+          "evaluated": 23,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 0.8449999999999956,
+            "upper": 0.8450000000000043
+          },
+          "meanFp": {
+            "lower": 55.68447760127968,
+            "upper": 55.684477601285494
+          },
+          "completion": {
+            "routeId": "r-42ab1cbb5b58ebb7",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162472070336,
+              "upper": 0.5055162576516714
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 60,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 9559.29210000002,
+          "evaluated": 23,
+          "searchStatus": "INCOMPLETE",
+          "success": {
+            "lower": 0.8449999999999956,
+            "upper": 0.8450000000000043
+          },
+          "meanFp": {
+            "lower": 55.68447760127968,
+            "upper": 55.684477601285494
+          },
+          "completion": {
+            "routeId": "r-42ab1cbb5b58ebb7",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162472070336,
+              "upper": 0.5055162576516714
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 60,
+            "reason": null
+          }
+        }
+      ],
+      "experimental": [
+        {
+          "milliseconds": 33.462200000009034,
+          "generated": 13,
+          "unresolved": 0,
+          "success": {
+            "lower": 0.8449999999999973,
+            "upper": 0.8450000000000026
+          },
+          "meanFp": {
+            "lower": 55.684477601280655,
+            "upper": 55.68447760128452
+          },
+          "completion": {
+            "routeId": "r-2dee36c3ef4f6abf",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162524290734,
+              "upper": 0.5055162524296316
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 40,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 30.658400000014808,
+          "generated": 13,
+          "unresolved": 0,
+          "success": {
+            "lower": 0.8449999999999973,
+            "upper": 0.8450000000000026
+          },
+          "meanFp": {
+            "lower": 55.684477601280655,
+            "upper": 55.68447760128452
+          },
+          "completion": {
+            "routeId": "r-2dee36c3ef4f6abf",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162524290734,
+              "upper": 0.5055162524296316
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 40,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 33.01789999997709,
+          "generated": 13,
+          "unresolved": 0,
+          "success": {
+            "lower": 0.8449999999999973,
+            "upper": 0.8450000000000026
+          },
+          "meanFp": {
+            "lower": 55.684477601280655,
+            "upper": 55.68447760128452
+          },
+          "completion": {
+            "routeId": "r-2dee36c3ef4f6abf",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162524290734,
+              "upper": 0.5055162524296316
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 40,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 25.692500000004657,
+          "generated": 13,
+          "unresolved": 0,
+          "success": {
+            "lower": 0.8449999999999973,
+            "upper": 0.8450000000000026
+          },
+          "meanFp": {
+            "lower": 55.684477601280655,
+            "upper": 55.68447760128452
+          },
+          "completion": {
+            "routeId": "r-2dee36c3ef4f6abf",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162524290734,
+              "upper": 0.5055162524296316
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 40,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 22.95120000001043,
+          "generated": 13,
+          "unresolved": 0,
+          "success": {
+            "lower": 0.8449999999999973,
+            "upper": 0.8450000000000026
+          },
+          "meanFp": {
+            "lower": 55.684477601280655,
+            "upper": 55.68447760128452
+          },
+          "completion": {
+            "routeId": "r-2dee36c3ef4f6abf",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.5055162524290734,
+              "upper": 0.5055162524296316
+            },
+            "recommendation": "NEUTRAL",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 40,
+            "reason": null
+          }
+        }
+      ],
+      "productionMedianMs": 9050.695300000007,
+      "equalMedianMs": 9064.445399999997,
+      "experimentalMedianMs": 30.658400000014808
+    },
+    {
+      "id": "wildcard-prefixes",
+      "inputModel": "FORGEABLE_WEIGHTED",
+      "request": {
+        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "inputModel": "FORGEABLE_WEIGHTED",
+        "item": {
+          "baseId": "1:0",
+          "itemLevel": 100,
+          "fpType": "NORMAL",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 34,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 1,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                34,
+                53,
+                70,
+                95,
+                96,
+                192,
+                331,
+                332,
+                333,
+                334,
+                336,
+                337,
+                338,
+                339,
+                340,
+                341,
+                342,
+                343,
+                344,
+                345,
+                346,
+                347,
+                348,
+                349,
+                350,
+                351,
+                352,
+                353,
+                354,
+                355,
+                356,
+                357,
+                358,
+                359,
+                360,
+                361,
+                362,
+                363,
+                364,
+                365,
+                366,
+                367,
+                368,
+                370,
+                371,
+                372,
+                373,
+                374,
+                375,
+                378,
+                379,
+                380,
+                381,
+                383,
+                384,
+                385,
+                386,
+                387,
+                388,
+                389,
+                390,
+                391,
+                392,
+                393,
+                394,
+                395,
+                396,
+                397,
+                398,
+                400,
+                401,
+                402,
+                404,
+                405,
+                406,
+                407,
+                408,
+                409,
+                410,
+                411,
+                412,
+                413,
+                414,
+                415,
+                416,
+                417,
+                418,
+                419,
+                420,
+                421,
+                422,
+                424,
+                435,
+                437,
+                439,
+                440,
+                442,
+                443,
+                446,
+                449,
+                451,
+                454,
+                459,
+                461,
+                463,
+                468,
+                471,
+                473,
+                475,
+                479,
+                487,
+                494,
+                498,
+                500,
+                501,
+                502,
+                503,
+                504,
+                505,
+                509,
+                511,
+                515,
+                517,
+                519,
+                521,
+                526,
+                528,
+                530,
+                532,
+                534,
+                536,
+                537,
+                541,
+                547,
+                549,
+                550,
+                551,
+                561,
+                563,
+                565,
+                567,
+                568,
+                571,
+                572,
+                574,
+                579,
+                581,
+                584,
+                586,
+                588,
+                593,
+                595,
+                597,
+                605,
+                607,
+                608,
+                609,
+                617,
+                618,
+                619,
+                621,
+                622,
+                626,
+                627,
+                630,
+                632,
+                637,
+                642,
+                646,
+                649,
+                652,
+                656,
+                660,
+                661,
+                663,
+                665,
+                667,
+                680,
+                687,
+                691,
+                693,
+                694,
+                695,
+                696,
+                706,
+                728,
+                729,
+                733,
+                748,
+                761,
+                762,
+                764,
+                765,
+                944,
+                1110,
+                1155,
+                1156
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                34,
+                53,
+                70,
+                95,
+                96,
+                192,
+                331,
+                332,
+                333,
+                334,
+                336,
+                337,
+                338,
+                339,
+                340,
+                341,
+                342,
+                343,
+                344,
+                345,
+                346,
+                347,
+                348,
+                349,
+                350,
+                351,
+                352,
+                353,
+                354,
+                355,
+                356,
+                357,
+                358,
+                359,
+                360,
+                361,
+                362,
+                363,
+                364,
+                365,
+                366,
+                367,
+                368,
+                370,
+                371,
+                372,
+                373,
+                374,
+                375,
+                378,
+                379,
+                380,
+                381,
+                383,
+                384,
+                385,
+                386,
+                387,
+                388,
+                389,
+                390,
+                391,
+                392,
+                393,
+                394,
+                395,
+                396,
+                397,
+                398,
+                400,
+                401,
+                402,
+                404,
+                405,
+                406,
+                407,
+                408,
+                409,
+                410,
+                411,
+                412,
+                413,
+                414,
+                415,
+                416,
+                417,
+                418,
+                419,
+                420,
+                421,
+                422,
+                424,
+                435,
+                437,
+                439,
+                440,
+                442,
+                443,
+                446,
+                449,
+                451,
+                454,
+                459,
+                461,
+                463,
+                468,
+                471,
+                473,
+                475,
+                479,
+                487,
+                494,
+                498,
+                500,
+                501,
+                502,
+                503,
+                504,
+                505,
+                509,
+                511,
+                515,
+                517,
+                519,
+                521,
+                526,
+                528,
+                530,
+                532,
+                534,
+                536,
+                537,
+                541,
+                547,
+                549,
+                550,
+                551,
+                561,
+                563,
+                565,
+                567,
+                568,
+                571,
+                572,
+                574,
+                579,
+                581,
+                584,
+                586,
+                588,
+                593,
+                595,
+                597,
+                605,
+                607,
+                608,
+                609,
+                617,
+                618,
+                619,
+                621,
+                622,
+                626,
+                627,
+                630,
+                632,
+                637,
+                642,
+                646,
+                649,
+                652,
+                656,
+                660,
+                661,
+                663,
+                665,
+                667,
+                680,
+                687,
+                691,
+                693,
+                694,
+                695,
+                696,
+                706,
+                728,
+                729,
+                733,
+                748,
+                761,
+                762,
+                764,
+                765,
+                944,
+                1110,
+                1155,
+                1156
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "trials": [
+        {
+          "milliseconds": 378.64300000001094,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 0,
+          "route": "r-202dcc44458974d8",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 37.66966985294055,
+            "upper": 37.66966985294181
+          },
+          "completion": {
+            "routeId": "r-202dcc44458974d8",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.7827964755250082,
+              "upper": 0.7827964755250424
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 7,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 414.1609999999928,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 0,
+          "route": "r-202dcc44458974d8",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 37.66966985294055,
+            "upper": 37.66966985294181
+          },
+          "completion": {
+            "routeId": "r-202dcc44458974d8",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.7827964755250082,
+              "upper": 0.7827964755250424
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 7,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 390.7333000000217,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 0,
+          "route": "r-202dcc44458974d8",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 37.66966985294055,
+            "upper": 37.66966985294181
+          },
+          "completion": {
+            "routeId": "r-202dcc44458974d8",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.7827964755250082,
+              "upper": 0.7827964755250424
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 7,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 430.73730000000796,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 0,
+          "route": "r-202dcc44458974d8",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 37.66966985294055,
+            "upper": 37.66966985294181
+          },
+          "completion": {
+            "routeId": "r-202dcc44458974d8",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.7827964755250082,
+              "upper": 0.7827964755250424
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 7,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 386.3440999999875,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 0,
+          "route": "r-202dcc44458974d8",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 37.66966985294055,
+            "upper": 37.66966985294181
+          },
+          "completion": {
+            "routeId": "r-202dcc44458974d8",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.7827964755250082,
+              "upper": 0.7827964755250424
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 7,
+            "reason": null
+          }
+        }
+      ],
+      "equal": [],
+      "experimental": [],
+      "productionMedianMs": 390.7333000000217,
+      "equalMedianMs": null,
+      "experimentalMedianMs": null
+    },
+    {
+      "id": "partial-wildcard",
+      "inputModel": "FORGEABLE_WEIGHTED",
+      "request": {
+        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "inputModel": "FORGEABLE_WEIGHTED",
+        "item": {
+          "baseId": "1:0",
+          "itemLevel": 100,
+          "fpType": "NORMAL",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 34,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 1,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                53
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                1,
+                7,
+                8,
+                10,
+                13,
+                17,
+                19,
+                22,
+                24,
+                25,
+                31,
+                45,
+                52,
+                59,
+                80,
+                382,
+                715
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "trials": [
+        {
+          "milliseconds": 489.96770000000834,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 1,
+          "route": "r-0f9ac6333dfe78af",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 21.384376102940827,
+            "upper": 21.384376102941527
+          },
+          "completion": {
+            "routeId": "r-0f9ac6333dfe78af",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.9568681981105635,
+              "upper": 0.9568681981106034
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 10,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 522.7927999999956,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 1,
+          "route": "r-0f9ac6333dfe78af",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 21.384376102940827,
+            "upper": 21.384376102941527
+          },
+          "completion": {
+            "routeId": "r-0f9ac6333dfe78af",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.9568681981105635,
+              "upper": 0.9568681981106034
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 10,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 499.24930000002496,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 1,
+          "route": "r-0f9ac6333dfe78af",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 21.384376102940827,
+            "upper": 21.384376102941527
+          },
+          "completion": {
+            "routeId": "r-0f9ac6333dfe78af",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.9568681981105635,
+              "upper": 0.9568681981106034
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 10,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 501.7752999999793,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 1,
+          "route": "r-0f9ac6333dfe78af",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 21.384376102940827,
+            "upper": 21.384376102941527
+          },
+          "completion": {
+            "routeId": "r-0f9ac6333dfe78af",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.9568681981105635,
+              "upper": 0.9568681981106034
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 10,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 505.06200000000536,
+          "searchStatus": "INCOMPLETE",
+          "stopReason": "ROUTE_BUDGET",
+          "evaluated": 48,
+          "unresolved": 1,
+          "route": "r-0f9ac6333dfe78af",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 21.384376102940827,
+            "upper": 21.384376102941527
+          },
+          "completion": {
+            "routeId": "r-0f9ac6333dfe78af",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 0.9568681981105635,
+              "upper": 0.9568681981106034
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 10,
+            "reason": null
+          }
+        }
+      ],
+      "equal": [],
+      "experimental": [],
+      "productionMedianMs": 501.7752999999793,
+      "equalMedianMs": null,
+      "experimentalMedianMs": null
+    },
+    {
+      "id": "already-complete",
+      "inputModel": "FORGEABLE_WEIGHTED",
+      "request": {
+        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "inputModel": "FORGEABLE_WEIGHTED",
+        "item": {
+          "baseId": "1:0",
+          "itemLevel": 100,
+          "fpType": "NORMAL",
+          "corrupted": false,
+          "affixes": [
+            {
+              "id": 34,
+              "tier": 1,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 1,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            },
+            {
+              "id": 7,
+              "tier": 7,
+              "slot": "ordinary",
+              "roll": null
+            }
+          ]
+        },
+        "craftingContext": {
+          "playerLevel": 100
+        },
+        "target": {
+          "requirements": [
+            {
+              "ids": [
+                1
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            },
+            {
+              "ids": [
+                7
+              ],
+              "minTier": 7,
+              "maxTier": 7,
+              "slot": "ordinary"
+            }
+          ]
+        },
+        "constraints": {},
+        "scoring": {},
+        "search": {
+          "milliseconds": 12000,
+          "maxRoutes": 48,
+          "macroStages": 12,
+          "maxStates": 25000
+        }
+      },
+      "trials": [
+        {
+          "milliseconds": 0.452900000003865,
+          "searchStatus": "COMPLETE",
+          "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+          "evaluated": 1,
+          "unresolved": 0,
+          "route": "r-741638a568efd6f9",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 0,
+            "upper": 0
+          },
+          "completion": {
+            "routeId": "r-741638a568efd6f9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 1,
+              "upper": 1
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 1,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 0.40190000002621673,
+          "searchStatus": "COMPLETE",
+          "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+          "evaluated": 1,
+          "unresolved": 0,
+          "route": "r-741638a568efd6f9",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 0,
+            "upper": 0
+          },
+          "completion": {
+            "routeId": "r-741638a568efd6f9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 1,
+              "upper": 1
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 1,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 0.37780000001657754,
+          "searchStatus": "COMPLETE",
+          "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+          "evaluated": 1,
+          "unresolved": 0,
+          "route": "r-741638a568efd6f9",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 0,
+            "upper": 0
+          },
+          "completion": {
+            "routeId": "r-741638a568efd6f9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 1,
+              "upper": 1
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 1,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 0.33609999998589046,
+          "searchStatus": "COMPLETE",
+          "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+          "evaluated": 1,
+          "unresolved": 0,
+          "route": "r-741638a568efd6f9",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 0,
+            "upper": 0
+          },
+          "completion": {
+            "routeId": "r-741638a568efd6f9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 1,
+              "upper": 1
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 1,
+            "reason": null
+          }
+        },
+        {
+          "milliseconds": 0.3322000000043772,
+          "searchStatus": "COMPLETE",
+          "stopReason": "TEMPLATE_SCOPE_EXHAUSTED",
+          "evaluated": 1,
+          "unresolved": 0,
+          "route": "r-741638a568efd6f9",
+          "success": {
+            "lower": 1,
+            "upper": 1
+          },
+          "meanFp": {
+            "lower": 0,
+            "upper": 0
+          },
+          "completion": {
+            "routeId": "r-741638a568efd6f9",
+            "initialFp": 48,
+            "status": "COMPLETE",
+            "probability": {
+              "lower": 1,
+              "upper": 1
+            },
+            "recommendation": "RECOMMENDED",
+            "evaluation": "BOUNDED_NUMERICAL",
+            "states": 1,
+            "reason": null
+          }
+        }
+      ],
+      "equal": [],
+      "experimental": [],
+      "productionMedianMs": 0.37780000001657754,
+      "equalMedianMs": null,
+      "experimentalMedianMs": null
+    }
+  ],
+  "qualification": "Sequential same-host Node timings, one warm-up per case. Default production48-candidate/12s limits; experimental minimum-vacancy grammar excludes Chaos/Redemption and is not an equivalent search scope. Physical model and production solver code are unchanged by UI localization. Not browser latency or low-end-device evidence."
+}

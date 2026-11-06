@@ -12,7 +12,7 @@ export interface RouteStep {
 }
 type Knowledge = Map<number, boolean | null>;
 const sameSelector = (a: Selector, b: Selector) => JSON.stringify({ ...a, side: undefined }) === JSON.stringify({ ...b, side: undefined });
-interface SlotFacts { ids: number[]; tiers: number[] }
+interface SlotFacts { ids: number[]; tiers: number[]; exactTiers?: Readonly<Record<number,number>> }
 
 function tierText(tiers: readonly number[]): string {
   if (tiers.length === 1) return `T${tiers[0]}`;
@@ -81,11 +81,13 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
   const candidates = (selector: Selector, facts: SlotFacts): number[] => facts.ids.filter(id =>
     (!selector.ids || selector.ids.includes(id)) && !selector.excludedIds?.includes(id) &&
     (selector.side === undefined || catalog.side(id) === selector.side));
-  const describe = (selector: Selector, facts: SlotFacts | null): { subject: string; tiers: string } | null => {
+  const describe = (selector: Selector, facts: SlotFacts | null, afterHavoc = false): { subject: string; tiers: string } | null => {
     if (!facts) return null;
-    const selected = candidates(selector, facts);
+    const selected = candidates(selector, facts).filter(id => afterHavoc || !facts.exactTiers ||
+      facts.exactTiers[id] >= (selector.minTier ?? 1) && facts.exactTiers[id] <= (selector.maxTier ?? 8));
     if (!selected.length) return null;
-    const tiers = facts.tiers.filter(tier => tier >= (selector.minTier ?? 1) && tier <= (selector.maxTier ?? 8) &&
+    const support = !afterHavoc && facts.exactTiers ? [...new Set(selected.map(id => facts.exactTiers![id]))].sort((a,b)=>a-b) : facts.tiers;
+    const tiers = support.filter(tier => tier >= (selector.minTier ?? 1) && tier <= (selector.maxTier ?? 8) &&
       (!selector.sealable || tier <= 4));
     if (!tiers.length) return null;
     return { subject: selected.map(id => slots.get(id) ?? affixName(catalog, id, aliases)).join('／'), tiers: tierText(tiers) };
@@ -134,10 +136,16 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
         continue;
       }
       if (macro.kind === 'fill' && count.value === 4) continue;
+      if (macro.kind === 'repeat' && macro.action.kind === 'havoc' && macro.until.kind === 'exists' && layout.value &&
+        candidates(macro.until.selector, layout.value).length === 0) {
+        // Havoc cannot create an identity. This local condition can never exit, so only the global goal/FP stop is reachable.
+        steps.push({ title: '浩劫直至目标达成', condition: '' });
+        return steps;
+      }
       unchanged.value = false;
       let text = macroText(macro, catalog, aliases);
       if (macro.kind === 'repeat' && macro.action.kind === 'havoc' && macro.until.kind === 'exists') {
-        const selected = describe(macro.until.selector, layout.value);
+        const selected = describe(macro.until.selector, layout.value, true);
         if (selected) text = { title: `浩劫至${selected.subject}${selected.subject.includes('／') ? '中至少一条' : ''}为${selected.tiers}`, condition: '' };
       } else if (macro.kind === 'seal' || macro.kind === 'removal') {
         const selected = describe(macro.kind === 'seal' ? macro.selector : macro.accepted, layout.value);
@@ -160,7 +168,9 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
         } else if (macro.kind === 'once' && macro.action.kind === 'seal') {
           const removed = macro.action.id;
           layout.value = { ...facts, ids: facts.ids.filter(id => id !== removed) };
-        } else if (!((macro.kind === 'once' || macro.kind === 'repeat') && macro.action.kind === 'havoc')) layout.value = null;
+        } else if ((macro.kind === 'once' || macro.kind === 'repeat') && macro.action.kind === 'havoc') {
+          layout.value = { ids: facts.ids, tiers: facts.tiers };
+        } else layout.value = null;
       }
       if (macro.kind === 'once' && macro.action.kind === 'add') { known.set(macro.action.id, true); if (count.value !== null) count.value++; }
       else if (macro.kind === 'fill') { count.value = 4; for (const id of ids) if (known.get(id) === false && macro.ids.includes(id)) known.set(id, null); }
@@ -184,5 +194,6 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
   };
   return walk(macros, initial, { value: request.item.affixes.filter((row) => row.slot === 'ordinary').length }, { value: true },
     { value: { ids: request.item.affixes.filter(row => row.slot === 'ordinary').map(row => row.id),
+      exactTiers: Object.fromEntries(request.item.affixes.filter(row=>row.slot==='ordinary').map(row=>[row.id,row.tier])),
       tiers: [...new Set(request.item.affixes.filter(row => row.slot === 'ordinary').map(row => row.tier))].sort((a, b) => a - b) } });
 }

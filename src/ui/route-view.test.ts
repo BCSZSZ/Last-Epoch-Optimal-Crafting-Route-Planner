@@ -45,6 +45,13 @@ it('names the original garbage prefix and only reachable tiers for the 7271 prep
   expect(steps[1].condition).toBe('仅接受前缀1（T1或T2）；剥歪即停止。');
 });
 
+it('names only the current low-tier garbage for an initial 7732 removal', () => {
+  const {request,catalog,aliases}=fixture();
+  const step=routeSteps([{kind:'removal',glyph:'hope',accepted:{excludedIds:request.target.requirements.flatMap(row=>row.ids),
+    minTier:1,maxTier:6,eligibleAction:'removal'}}],request,catalog,aliases)[0];
+  expect(step.condition).toBe('仅接受前缀2／后缀2（T2或T3）；剥歪即停止。');
+});
+
 it('keeps a multiple-slot stop explicit and drops original slot facts after Redemption', () => {
   const { request: source, catalog } = fixture();
   const request = { ...source, item: { ...source.item, affixes: source.item.affixes.map((row, index) => ({ ...row, tier: [7, 7, 3, 2][index] })) } };
@@ -54,6 +61,13 @@ it('keeps a multiple-slot stop explicit and drops original slot facts after Rede
   const changed = routeSteps([{ kind: 'once', action: { kind: 'redemption', glyph: 'hope' } }, prepare], request, catalog);
   expect(changed[1].title).not.toContain('前缀1');
   expect(changed[1].title).toContain('T1–T6');
+});
+
+it('shows only the global goal stop when an impossible Havoc-local identity check makes the tail unreachable', () => {
+  const {request,catalog}=fixture(), excluded=request.item.affixes.map(row=>row.id);
+  const prepare: Macro={kind:'repeat',action:{kind:'havoc',glyph:'hope'},until:{kind:'exists',selector:{excludedIds:excluded,minTier:1,maxTier:1}}};
+  const tail: Macro={kind:'seal',selector:{minTier:1,maxTier:1,sealable:true}};
+  expect(routeSteps([prepare,tail],request,catalog)).toEqual([{title:'浩劫直至目标达成',condition:''}]);
 });
 
 it('renders the actual vacancy-aware controller as five concise steps with no repeated Hope or redundant fill', () => {

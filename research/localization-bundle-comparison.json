@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "6c138195fefbcb07fc915de11b76a8f5c54c7886",
+  "before": {
+    "main": "index-CYzBrzXl.js",
+    "mainBytes": 1199673,
+    "mainGzipBytes": 167045,
+    "mainSha256": "6635f964aaf79dedad2283b2e0ffb8559a9fcc952dcdcef93ce95809c9cb1618",
+    "workerSha256": "99eefb97c61c2a7a22a8ab601dfe72621da9514549f1c9be93b77d5cf8e4e6cd"
+  },
+  "after": {
+    "main": "index-4IkFFuP3.js",
+    "mainBytes": 1245755,
+    "mainGzipBytes": 180129,
+    "mainSha256": "effd2aba16afec7b3da8f5b2cb241f8cf38628cd1c46e2f57b0c966d1ffb829b",
+    "workerSha256": "99eefb97c61c2a7a22a8ab601dfe72621da9514549f1c9be93b77d5cf8e4e6cd"
+  },
+  "workerByteIdentical": true,
+  "extraMainGzipBytes": 13084,
+  "qualification": "Baseline eight-file public build verified before UI editing. Same Python zlib level6 for both gzip sizes. UI data/display only; production Worker bytes and mathematical model are unchanged. Sizes are not measured network load latency."
+}

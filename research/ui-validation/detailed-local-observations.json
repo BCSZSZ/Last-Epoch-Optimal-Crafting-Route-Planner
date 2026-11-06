@@ -1,0 +1,1569 @@
+{
+  "schemaVersion": 1,
+  "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "observedAt": "2026-11-06T14:37:04.690Z",
+  "snapshots": [
+    {
+      "id": "english-search",
+      "alerts": [],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标前缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标前缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [
+        {
+          "id": null,
+          "name": "不指定词条✓",
+          "title": null
+        },
+        {
+          "id": "393",
+          "name": "暴击时施放火焰光环几率（每秒至多3次）",
+          "title": "Chance to Cast Fire Aura on Critical Strike (up to 3 times per second) · #393"
+        },
+        {
+          "id": "394",
+          "name": "提高火焰光环伤害",
+          "title": "Mage Increased Fire Aura Damage · #394"
+        },
+        {
+          "id": "396",
+          "name": "几率施放火焰光环于被击中时（每秒至多3次）",
+          "title": "Mage Chance To Cast Fire Aura When Hit · #396"
+        },
+        {
+          "id": "398",
+          "name": "火焰技能击杀时施放火焰光环几率（每秒至多3次）",
+          "title": "Chance To Cast Fire Aura On Kill Fire Skills (up to 3 times per second) · #398"
+        }
+      ],
+      "part": "胸甲",
+      "resultText": null,
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2空"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1空"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2空"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1不限"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2不限"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "id": "chinese-search",
+      "alerts": [],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀1词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始后缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标前缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标前缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [
+        {
+          "id": null,
+          "name": "不指定词条✓",
+          "title": null
+        },
+        {
+          "id": "393",
+          "name": "暴击时施放火焰光环几率（每秒至多3次）",
+          "title": "Chance to Cast Fire Aura on Critical Strike (up to 3 times per second) · #393"
+        },
+        {
+          "id": "394",
+          "name": "提高火焰光环伤害",
+          "title": "Mage Increased Fire Aura Damage · #394"
+        },
+        {
+          "id": "396",
+          "name": "几率施放火焰光环于被击中时（每秒至多3次）",
+          "title": "Mage Chance To Cast Fire Aura When Hit · #396"
+        },
+        {
+          "id": "398",
+          "name": "火焰技能击杀时施放火焰光环几率（每秒至多3次）",
+          "title": "Chance To Cast Fire Aura On Kill Fire Skills (up to 3 times per second) · #398"
+        }
+      ],
+      "part": "胸甲",
+      "resultText": null,
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2空"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1空"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2空"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1不限"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2不限"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "id": "known-7710-ready",
+      "alerts": [],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀2词条",
+          "title": "Minion Health · #70",
+          "value": "召唤物生命⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": null,
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2空"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T7"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2T7"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "id": "known-7710-refreshed",
+      "alerts": [],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀2词条",
+          "title": "Minion Health · #70",
+          "value": "召唤物生命⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": null,
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2空"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T7"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2T7"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "id": "invalid-three-t7",
+      "alerts": [
+        "起始普通栏没有足够的T6以上阶数；当前操作不能凭空生成它们"
+      ],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀2词条",
+          "title": "Minion Health · #70",
+          "value": "召唤物生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": null,
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2空"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T7"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2T7"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1T7"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "id": "known-7710-result",
+      "alerts": [],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀2词条",
+          "title": "Minion Health · #70",
+          "value": "召唤物生命⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": "规划方案\n推荐\n成功率\n100.00%\n整件完成率（48 FP）\n68.34%\n成功路径平均 FP\n48.80\n添加词缀\n\n伤害由魔力优先承受而非生命\n\n浩劫至前缀1为T1\n封印\n\n前缀1（T1）；封印失败即停止。\n\n添加词缀\n\n召唤物生命\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（23）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2空"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T7"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2T7"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "id": "known-7732-result",
+      "alerts": [],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Minion Health · #70",
+          "value": "召唤物生命⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标前缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标后缀1词条",
+          "title": "Added Dodge Rating · #8",
+          "value": "增加躲避值⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": "规划方案\n不推荐\n成功率\n25.07%\n整件完成率（48 FP）\n14.49%\n成功路径平均 FP\n57.23\n剥离\n\n仅接受前缀2／后缀2（T2或T3）；剥歪即停止。\n\n添加词缀\n\n先补入剥离空槽对应的目标词缀。\n\n封印\n\n剩余非目标普通词缀（T1–T4）\n\n添加词缀\n\n补入另一条目标词缀。\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（36）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T7"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T3"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T2"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2不限"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1T7"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "id": "known-7271-result",
+      "alerts": [],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀2词条",
+          "title": "Minion Health · #70",
+          "value": "召唤物生命⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": "规划方案\n当前方案\n成功率\n84.50%\n整件完成率（48 FP）\n50.55%\n成功路径平均 FP\n55.68\n浩劫至前缀1为T1或T2\n封印\n\n前缀1（T1或T2）；封印失败即停止。\n\n添加词缀\n\n召唤物生命\n\n浩劫直至两项目标均为T7\n导出报告\n已放弃方案（4）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T7"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T2"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T1"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2T7"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "id": "wildcard-prefixes-result",
+      "alerts": [],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": "规划方案\n推荐\n成功率\n100.00%\n整件完成率（48 FP）\n78.28%\n成功路径平均 FP\n37.67\n添加词缀\n\n召唤物生命\n\n浩劫直至目标达成\n导出报告\n已放弃方案（45）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2空"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T7"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2T7"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "id": "partial-wildcard-result",
+      "alerts": [],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标前缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": "规划方案\n推荐\n成功率\n100.00%\n整件完成率（48 FP）\n95.69%\n成功路径平均 FP\n21.38\n添加词缀\n\n伤害由魔力优先承受而非生命\n\n浩劫直至目标达成\n导出报告\n已放弃方案（45）\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2空"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T7"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2不限"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1T7"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "id": "already-complete-result",
+      "alerts": [],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始前缀2词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标前缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标前缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": "规划方案\n推荐\n成功率\n100.00%\n整件完成率（48 FP）\n100.00%\n成功路径平均 FP\n0.00\n\n目标已经达成，无需制作。\n\n导出报告\n计算说明",
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T1"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2空"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T7"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1不限"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2不限"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1T7"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2T7"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "id": "edit-cancels-detail-job",
+      "alerts": [],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标前缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": null,
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T7"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T2"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T1"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2不限"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    },
+    {
+      "id": "after-cancel-settled",
+      "alerts": [],
+      "clientWidth": 1265,
+      "comboboxes": [
+        {
+          "disabled": false,
+          "label": "起始前缀1词条",
+          "title": "Added Mana · #34",
+          "value": "魔力⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始前缀2词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀1词条",
+          "title": "Armor · #1",
+          "value": "提高护甲⌄"
+        },
+        {
+          "disabled": false,
+          "label": "起始后缀2词条",
+          "title": "Void Resistance · #7",
+          "value": "虚空抗性⌄"
+        },
+        {
+          "disabled": true,
+          "label": "起始封印词条",
+          "title": null,
+          "value": "不指定词条⌄"
+        },
+        {
+          "disabled": false,
+          "label": "目标前缀1词条",
+          "title": "Damage Dealt To Mana · #53",
+          "value": "伤害由魔力优先承受而非生命⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标前缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀1词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标后缀2词条",
+          "title": null,
+          "value": "任意词条⌄"
+        },
+        {
+          "disabled": true,
+          "label": "目标封印词条",
+          "title": null,
+          "value": "任意词条⌄"
+        }
+      ],
+      "mode": "详细目标",
+      "options": [],
+      "part": "胸甲",
+      "resultText": null,
+      "scrollWidth": 1265,
+      "tiers": [
+        {
+          "label": "起始前缀1T级",
+          "selected": "起始前缀1T7"
+        },
+        {
+          "label": "起始前缀2T级",
+          "selected": "起始前缀2T2"
+        },
+        {
+          "label": "起始后缀1T级",
+          "selected": "起始后缀1T7"
+        },
+        {
+          "label": "起始后缀2T级",
+          "selected": "起始后缀2T1"
+        },
+        {
+          "label": "起始封印T级",
+          "selected": "起始封印空"
+        },
+        {
+          "label": "目标前缀1T级",
+          "selected": "目标前缀1T7"
+        },
+        {
+          "label": "目标前缀2T级",
+          "selected": "目标前缀2不限"
+        },
+        {
+          "label": "目标后缀1T级",
+          "selected": "目标后缀1不限"
+        },
+        {
+          "label": "目标后缀2T级",
+          "selected": "目标后缀2不限"
+        },
+        {
+          "label": "目标封印T级",
+          "selected": "目标封印不限"
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "id": "known-7710",
+      "file": "detailed-local-known-7710.json"
+    },
+    {
+      "id": "known-7732",
+      "file": "detailed-local-known-7732.json"
+    },
+    {
+      "id": "known-7271",
+      "file": "detailed-local-known-7271.json"
+    },
+    {
+      "id": "wildcard-prefixes",
+      "file": "detailed-local-wildcard-prefixes.json"
+    },
+    {
+      "id": "partial-wildcard",
+      "file": "detailed-local-partial-wildcard.json"
+    },
+    {
+      "id": "already-complete",
+      "file": "detailed-local-already-complete.json"
+    }
+  ]
+}

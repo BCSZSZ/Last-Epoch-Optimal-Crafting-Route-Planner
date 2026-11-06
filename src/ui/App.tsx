@@ -10,7 +10,7 @@ import { REFERENCE_FP } from '../core/policy';
 import type { CompletionReport } from '../core/completion';
 import { completionPercent } from './completion-view';
 import { BrowserPlanner } from '../execution/browser';
-import { affixName, fpNames, typeName } from './labels';
+import { affixName, affixSearchText, fpNames, typeName } from './labels';
 import { routeSteps } from './route-view';
 import type { RouteStep } from './route-view';
 
@@ -38,7 +38,10 @@ function AffixDropdown({ value, pool, disabled, label, target, onChange }: {
 }) {
   const id = useId(), root = useRef<HTMLDivElement>(null), search = useRef<HTMLInputElement>(null);
   const [open, setOpen] = useState(false), [query, setQuery] = useState(''), [active, setActive] = useState(0);
-  const visible = useMemo(() => pool.filter((entry) => !query || `${entry} ${affixName(catalog, entry)} ${catalog.affix(entry).name}`.toLowerCase().includes(query.toLowerCase())), [pool, query]);
+  const visible = useMemo(() => {
+    const needle = query.trim().toLowerCase();
+    return needle ? pool.filter(entry => affixSearchText(catalog, entry).includes(needle)) : pool;
+  }, [pool, query]);
   const options: readonly (number | null)[] = [null, ...visible];
   const blank = target ? '任意词条' : '不指定词条';
   const choose = (entry: number | null) => { onChange(entry); setOpen(false); };
@@ -54,6 +57,7 @@ function AffixDropdown({ value, pool, disabled, label, target, onChange }: {
   return <div className="affix-dropdown" ref={root}>
     <button type="button" className={`affix-trigger ${value === null ? 'placeholder' : ''}`} role="combobox" aria-label={label}
       aria-haspopup="listbox" aria-expanded={open} aria-controls={`${id}-list`} disabled={disabled}
+      title={value === null ? undefined : `${catalog.affix(value).name} · #${value}`}
       onClick={() => { setOpen(!open); setQuery(''); setActive(0); }} onKeyDown={(event) => {
         if (event.key === 'ArrowDown' || event.key === 'ArrowUp') { event.preventDefault(); setOpen(true); setQuery(''); setActive(0); }
       }}><span>{value === null ? blank : affixName(catalog, value)}</span><span aria-hidden="true">⌄</span></button>
@@ -67,6 +71,7 @@ function AffixDropdown({ value, pool, disabled, label, target, onChange }: {
         }} />
       <div id={`${id}-list`} role="listbox" aria-label={`${label}候选`} className="affix-options">
         {options.map((entry, index) => <button type="button" role="option" id={`${id}-option-${index}`} key={entry ?? 'blank'}
+          data-affix-id={entry === null ? undefined : entry} title={entry === null ? undefined : `${catalog.affix(entry).name} · #${entry}`}
           aria-selected={entry === value} className={index === active ? 'highlight' : ''} onPointerMove={() => setActive(index)} onClick={() => choose(entry)}>
           {entry === null ? blank : affixName(catalog, entry)}{entry === value && <span aria-hidden="true">✓</span>}
         </button>)}

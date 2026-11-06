@@ -60,9 +60,9 @@ const evidence = { schemaVersion: 1, modelId: MODEL_ID, status: 'TRAINING_TARGET
   selectedRound, selectionRule: 'FIRST_ROUND_MEETING_ALL_TRAINING_TEACHERS_AND_STRONGEST_REFERENCES',
   training: training.map(row => ({ caseId: row.item.id, input: row.item.request, teacher: row.teacher, reference: row.reference,
     teacherCompletion: evaluateCompletion(row.engine, row.item.request, row.teacher.route) })), rounds, validation,
-  sources: Object.fromEntries(['src/generated/model.json', 'src/research/learning-cases.ts', 'src/research/learning-solver.ts', 'src/research/compact-program.ts', 'scripts/train_route_programs.ts']
+  sources: Object.fromEntries(['src/generated/model.json', 'src/research/learning-cases.ts', 'src/core/program-search.ts', 'src/core/program-compact.ts', 'src/research/learning-solver.ts', 'src/research/compact-program.ts', 'scripts/train_route_programs.ts']
     .map(path => [path, createHash('sha256').update(readFileSync(path)).digest('hex')])),
-  qualification: 'Research-only solver, not used by the public Worker. Three NORMAL chest examples guide grammar revisions. Held-out inputs are not read by the generator. Within this bounded grammar all generated candidates are evaluated; unresolved numerical cases remain explicit. Does not establish global optimality or correctness of all crafting mechanisms. Passing a ranking target need not improve every reported metric.' };
+  qualification: 'Research training harness for the shared production program generator. Three NORMAL chest examples guide grammar revisions. Held-out inputs are not read by the generator. Within this bounded grammar all generated candidates are evaluated; unresolved numerical cases remain explicit. Does not establish global optimality or correctness of all crafting mechanisms. Passing a ranking target need not improve every reported metric.' };
 const filename = process.argv.includes('--training-only') ? 'research/example-learning-training.json' : 'research/example-learning-rounds.json';
 const encoded = JSON.stringify(evidence, null, 2) + '\n';
 if (process.argv.includes('--verify-only')) assert.equal(readFileSync(filename, 'utf8'), encoded); else writeFileSync(filename, encoded);

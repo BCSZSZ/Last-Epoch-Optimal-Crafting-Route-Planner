@@ -42,6 +42,12 @@
       "sha256": "4d94b990e229be3df4fd1a62d71f14934728633eb90350bd8bca980797040b47",
       "metric": "INTRINSIC_V2",
       "purpose": "Historical released explicit-slot-target UI before combined-tier seal preparation and shared T7 goal capacity."
+    },
+    "le-1.5.3-iid-b46d3015a01bbdb7": {
+      "file": "research/runtime-model-archive/le-1.5.3-iid-b46d3015a01bbdb7.json",
+      "sha256": "31a35ef38b9ae5d9feec7daec4f5822ce26273e3d81e986cf5755517f64d9dc8",
+      "metric": "INTRINSIC_V2",
+      "purpose": "Historical localized UI release before production program search and experimental-prefix conversion."
     }
   }
 }

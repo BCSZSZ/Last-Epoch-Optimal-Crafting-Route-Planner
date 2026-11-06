@@ -107,7 +107,7 @@ export type Macro =
   | { readonly kind: 'once'; readonly action: AtomicAction }
   | { readonly kind: 'seal'; readonly selector: Selector }
   | { readonly kind: 'removal'; readonly accepted: Selector; readonly glyph: 'hope' | 'none' }
-  | { readonly kind: 'repeat'; readonly action: AtomicAction; readonly until: Predicate }
+  | { readonly kind: 'repeat'; readonly action: AtomicAction; readonly until: Predicate; readonly onUnreachable?:'ABORT' }
   | { readonly kind: 'upgrade'; readonly id: number; readonly tier: number; readonly glyph: Glyph }
   | { readonly kind: 'chaos'; readonly selector: Selector; readonly until: Requirement;
       readonly onExhausted?: 'ABORT' | 'CONTINUE'; readonly prepareWithHavoc?: boolean };

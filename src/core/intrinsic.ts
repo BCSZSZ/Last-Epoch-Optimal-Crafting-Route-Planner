@@ -8,6 +8,7 @@ import type { DemandDistribution } from './rules';
 import { targetReached } from './target';
 import { redemptionCertificate } from './redemption-bound';
 import { MAXIMUM_SUCCESS_FP, maximumSuccessFp } from './policy';
+import { programProjection } from './program-projection';
 import type { Item, Macro, PlanRequest, Route } from './types';
 
 type Bounds = { readonly lower: number; readonly upper: number };
@@ -43,13 +44,14 @@ export class IntrinsicWorkspace {
   readonly atoms = new Map<string, DemandDistribution>();
   readonly results = new Map<string, IntrinsicReport>();
   cacheHits = 0;
-  constructor(readonly engine: RuleEngine, readonly request: PlanRequest) {}
-  atom(item: Item, action: Parameters<RuleEngine['demandTransition']>[1]): DemandDistribution {
-    const key = `${itemKey(item)}|${JSON.stringify(action)}`;
+  constructor(readonly engine: RuleEngine, readonly request: PlanRequest, readonly identityProjection=true) {}
+  atom(item: Item, action: Parameters<RuleEngine['demandTransition']>[1], projection?:{key:string;project:(item:Item)=>Item}): DemandDistribution {
+    const key = `${itemKey(item)}|${JSON.stringify(action)}${projection?'|quotient:'+projection.key:''}`;
     const cached = this.atoms.get(key);
     if (cached) { this.cacheHits++; return cached; }
     const value = this.engine.demandTransition(item, action, this.request.craftingContext, {
       constraints: this.request.constraints, trackRolls: this.request.target.requirements.some((row) => row.minRollByte !== undefined),
+      projectItem:projection?.project,
       maxOutcomes: Math.min(200000, Math.max(1000, this.request.search.maxStates * 64)),
     });
     if (this.atoms.size >= 4096) this.atoms.delete(this.atoms.keys().next().value!);
@@ -73,9 +75,10 @@ function compile(macros: readonly Macro[]): { instructions: Instruction[]; entry
 
 function buildGraph(workspace: IntrinsicWorkspace, route: Route, prefix: boolean, shouldStop?: () => boolean): Node[] {
   const { engine, request } = workspace;
-  const program = compile(route.macros);
+  const program = compile(route.macros), projection=workspace.identityProjection?programProjection(request,route,engine.catalog):null;
   const nodes: Node[] = [], keys = new Map<string, number>();
   const intern = (item: Item, pc: number, left: number | undefined): number => {
+    if(projection && (pc<0 || program.instructions[pc].stage>projection.afterStage))item=projection.project(item);
     const key = `${pc}|${left ?? '*'}|${itemKey(item)}`;
     const found = keys.get(key); if (found !== undefined) return found;
     if (nodes.length >= request.search.maxStates) throw new EvaluationLimitError('达到无余额状态预算，尚未完成评价');
@@ -104,7 +107,9 @@ function buildGraph(workspace: IntrinsicWorkspace, route: Route, prefix: boolean
     if (step === 'INAPPLICABLE' || node.left === 0) {
       node.terminal = 'FAILURE'; node.reason = step === 'INAPPLICABLE' ? 'INAPPLICABLE_NEXT_STAGE' : 'OPERATION_LIMIT'; continue;
     }
-    const distribution = workspace.atom(node.item, step.action);
+    const nextPc=step.advance?instruction.next:node.pc;
+    const after=projection&&(nextPc<0||program.instructions[nextPc].stage>projection.afterStage);
+    const distribution = workspace.atom(node.item, step.action,after?projection:undefined);
     if (distribution.issues.length) { node.terminal = 'FAILURE'; node.reason = distribution.issues[0].code; continue; }
     if ((macro.kind === 'repeat' || macro.kind === 'chaos') && step.action.kind === 'havoc' && node.left === undefined) {
       const indices = node.item.affixes.flatMap((row, i) => row.slot === 'ordinary' ? [i] : []);
@@ -119,11 +124,17 @@ function buildGraph(workspace: IntrinsicWorkspace, route: Route, prefix: boolean
       for (const goal of goals) node.edges.push({ to: intern(goal, macro.kind === 'chaos' ? node.pc : instruction.next, undefined), p: exact(1).div(exact(goals.length)),
         cost: fee.mul(exact(attempts)).div(exact(goals.length)), attempts });
     } else {
-      for (const outcome of distribution.outcomes) node.edges.push({
+      const edges=new Map<number,Edge>();
+      for (const outcome of distribution.outcomes) {
+        const edge={
         to: outcome.abort ? failure(outcome.item, outcome.abort, instruction.stage) : intern(outcome.item, step.advance ? instruction.next : node.pc,
           node.left === undefined ? undefined : node.left - 1),
         p: new Interval(outcome.probability.lower, outcome.probability.upper), cost: new Interval(outcome.fpMoment.lower, outcome.fpMoment.upper), attempts: 1,
-      });
+        };
+        if(!projection){node.edges.push(edge);continue;}
+        const previous=edges.get(edge.to);edges.set(edge.to,previous?{...edge,p:previous.p.add(edge.p),cost:previous.cost.add(edge.cost)}:edge);
+      }
+      node.edges.push(...edges.values());
     }
     edgeCount += node.edges.length;
     if (edgeCount > Math.min(2000000, request.search.maxStates * 128)) throw new EvaluationLimitError('达到无余额转移预算，尚未完成评价');
@@ -212,6 +223,15 @@ function certainlySucceeds(nodes: readonly Node[]): boolean {
   return seen.size === nodes.length;
 }
 
+/** Failure-only acyclic branches terminate too; success reachability alone cannot detect loops. */
+function nonTerminatingCount(nodes:readonly Node[]):number{
+  const reverse=nodes.map(()=>[] as number[]);
+  nodes.forEach((node,i)=>node.edges.forEach(edge=>{if(edge.p.upper>0)reverse[edge.to].push(i);}));
+  const queue=nodes.flatMap((node,i)=>node.terminal?[i]:[]),seen=new Set(queue);
+  for(let at=0;at<queue.length;at++)for(const previous of reverse[queue[at]])if(!seen.has(previous)){seen.add(previous);queue.push(previous);}
+  return nodes.filter((node,i)=>node.reason==='NON_TERMINATING_MACRO'||!node.terminal&&!seen.has(i)).length;
+}
+
 /** Monotone finite-horizon reward bound; future costs are zero. No assumption of a geometric Redemption hit rate. */
 function expensiveRepeatCertificate(nodes: readonly Node[], limit: number, shouldStop?: () => boolean): number | null {
   let values = new Float64Array(nodes.length);
@@ -277,7 +297,9 @@ function calculate(workspace: IntrinsicWorkspace, route: Route, prefix: boolean,
     fpMeaning: prefix ? 'PREFIX_GIVEN_PREFIX_SURVIVAL' : reason === 'ABOVE_MAXIMUM_SUCCESS_FP' && evaluatedThroughStage < route.macros.length ?
       'LOWER_BOUND_GIVEN_FINAL_SUCCESS' : 'FULL_ROUTE_GIVEN_SUCCESS',
     minimumSuccess: 0.15, maximumSuccessFp: limit, stages, residualProbabilityBound: probability.residual * (sys.h[0] ?? 0),
-    nonTerminatingStates: nodes.filter((node, index) => node.reason === 'NON_TERMINATING_MACRO' || (!node.terminal && !sys.allowed.has(index))).length,
+    // Archived pre-program models retain their original auxiliary-report contract for replay.
+    nonTerminatingStates: 'src/core/program-search.ts' in workspace.engine.catalog.model.implementationHashes ? nonTerminatingCount(nodes) :
+      nodes.filter((node, index) => node.reason === 'NON_TERMINATING_MACRO' || (!node.terminal && !sys.allowed.has(index))).length,
     successfulFpLowerBound: partialCost ? fp?.lower ?? null : null,
     auxiliaryTotalsAvailable: false,
   };

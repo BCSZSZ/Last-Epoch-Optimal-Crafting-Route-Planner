@@ -75,6 +75,21 @@ function selectorEligibility(item: Item, selector: Selector, request: PlanReques
     (selector.eligibleAction !== 'removal' || engine.catalog.affix(affix.id).special === 0);
 }
 
+const havocReachability=new WeakMap<RuleEngine,WeakMap<PlanRequest,Map<string,boolean>>>();
+/** A declared preparation stops as NG if its current identity/tier orbit has no exit. */
+function havocCanExit(item:Item,until:Predicate,request:PlanRequest,engine:RuleEngine):boolean{
+  let contexts=havocReachability.get(engine);if(!contexts){contexts=new WeakMap();havocReachability.set(engine,contexts);}
+  let cache=contexts.get(request);if(!cache){cache=new Map();contexts.set(request,cache);}
+  const indices=item.affixes.flatMap((row,i)=>row.slot==='ordinary'?[i]:[]),tiers=ordinary(item).map(row=>row.tier);
+  const key=item.affixes.map(row=>`${row.id}:${row.slot}:${row.slot==='ordinary'?'*':row.tier}:${row.roll??'*'}`).join(',')+'|'+[...tiers].sort().join(',')+'|'+JSON.stringify(until);
+  const found=cache.get(key);if(found!==undefined)return found;
+  const value=tierPermutations(tiers).some(layout=>{
+    const affixes=[...item.affixes];indices.forEach((index,i)=>{affixes[index]={...affixes[index],tier:layout[i]};});
+    const candidate={...item,affixes};return targetReached(candidate,request.target)||predicateReached(candidate,until,request,engine);
+  });
+  if(cache.size>=4096)cache.delete(cache.keys().next().value!);cache.set(key,value);return value;
+}
+
 export function macroStep(macro: Macro, item: Item, request: PlanRequest, engine: RuleEngine):
   { action: AtomicAction; advance: boolean } | 'SKIP' | 'INAPPLICABLE' {
   if (macro.kind === 'conditional') return 'INAPPLICABLE'; // Compiled by the intrinsic program evaluator.
@@ -92,7 +107,11 @@ export function macroStep(macro: Macro, item: Item, request: PlanRequest, engine
     const index = select(item, selector, engine.catalog, selectorEligibility(item, selector, request, engine));
     return index === undefined ? 'INAPPLICABLE' : { action: { kind: 'seal', id: item.affixes[index].id }, advance: true };
   }
-  if (macro.kind === 'repeat') return predicateReached(item, macro.until, request, engine) ? 'SKIP' : { action: macro.action, advance: false };
+  if (macro.kind === 'repeat') {
+    if(predicateReached(item,macro.until,request,engine))return 'SKIP';
+    if(macro.action.kind==='havoc'&&macro.onUnreachable==='ABORT'&&!havocCanExit(item,macro.until,request,engine))return 'INAPPLICABLE';
+    return {action:macro.action,advance:false};
+  }
   if (macro.kind === 'upgrade') {
     const affix = item.affixes.find((row) => row.id === macro.id && row.slot === 'ordinary');
     return !affix ? 'INAPPLICABLE' : affix.tier >= macro.tier ? 'SKIP' :

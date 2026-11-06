@@ -103,7 +103,8 @@ describe('pruning, coverage and execution limits', () => {
     const request = hierarchyFixtures().find((row) => row.label === '200-N4-S1')!.request;
     const report = await plan(request, { now: () => 0 });
     expect(report.primary!.scoreEstimate).toBeCloseTo(1 / 6, 10);
-    expect(report.primary!.route.description).toContain('连续剥离');
+    const risks=report.primary!.route.macros.filter(m=>m.kind==='removal'||m.kind==='once'&&m.action.kind==='add');
+    expect(risks.slice(0,2).map(m=>m.kind)).toEqual(['removal','removal']);
   });
   it('reports execution limits as incomplete, not abandoned', async () => {
     const request = { ...exampleRequest(), search: { ...exampleRequest().search, maxStates: 1, maxRoutes: 1 } };

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
   "date": "2026-11-03",
   "rows": [
     {
@@ -881,7 +881,7 @@
   },
   "qualification": "Research nominal arithmetic under the declared iid rule model; not a finite-budget completion probability, client measurement or global dominance proof. Havoc uses its changed-layout symmetry. Fixed one-shot actions preserve joint outcome and FP costs.",
   "sourceHashes": {
-    "src/generated/model.json": "31a35ef38b9ae5d9feec7daec4f5822ce26273e3d81e986cf5755517f64d9dc8",
+    "src/generated/model.json": "de7ddb05de3e9437fac232509a04ad59acee88f664d86279633cf416c0fb0c98",
     "research/redemption-intrinsic.json": "0c4e3807d085bcc9fc4958f065ffa4a93b8c086e3300a576ab3c0499fc0654ad",
     "scripts/research_intrinsic_routes.ts": "4b284fd600007fb4f289ccf9fcb461d3f248b29f27d60cbc329cac1c804a5105"
   }

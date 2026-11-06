@@ -88,19 +88,22 @@ function SlotEditor({ slots, part, target = false, markTargets = false, onChange
   const update = (key: keyof DraftSlots, slot: DraftSlot, confirmedSide?: 0 | 1) => onChange({ ...slots, [key]: slot }, confirmedSide);
   return <div className="slots">{DRAFT_SLOTS.map((descriptor) => {
     const slot = slots[descriptor.key], label = `${target ? '目标' : '起始'}${descriptor.label}`;
-    const pool = draftAffixPool(catalog, part, descriptor.side, slot.tier);
+    const experimental = Boolean(slot.isExperimental || slot.id !== null && catalog.affix(slot.id).special === 1);
+    const pool = draftAffixPool(catalog, part, descriptor.side, slot.tier, target ? undefined : descriptor.key === 'prefix2' ? experimental : false);
     return <div className={`slot-card ${descriptor.slot === 'sealed' ? 'sealed-slot' : ''}`} key={descriptor.key}>
-      <div className="slot-heading"><span>{descriptor.label}</span>{markTargets && descriptor.side !== null ?
+      <div className="slot-heading"><span>{descriptor.label}</span><div className="slot-flags">{descriptor.key === 'prefix2' && !target &&
+        <label className={`target-check ${!slot.tier ? 'disabled' : ''}`}><input type="checkbox" checked={experimental} disabled={!slot.tier}
+          aria-label={`${label}实验词缀`} onChange={(event) => update(descriptor.key, { ...slot, id: null, isExperimental: event.target.checked })} />实验词缀</label>}{markTargets && descriptor.side !== null ?
         <label className={`target-check ${!slot.tier ? 'disabled' : ''}`}><input type="checkbox" checked={Boolean(slot.isTarget)} disabled={!slot.tier}
           aria-label={`${label}已是目标词缀`} onChange={(event) => update(descriptor.key, { ...slot, isTarget: event.target.checked }, descriptor.side)} />已是目标词缀</label> :
-        <small>{slot.tier || (target ? '不限制' : '空槽')}</small>}</div>
+        <small>{slot.tier || (target ? '不限制' : '空槽')}</small>}</div></div>
       <div className="tier-row" role="group" aria-label={`${label}T级`}>{Array.from({ length: 8 }, (_, tier) => <button type="button" key={tier}
         aria-label={`${label}${tier ? `T${tier}` : target ? '不限' : '空'}`} aria-pressed={slot.tier === tier}
         className={slot.tier === tier ? `selected ${tier === 7 ? 'tier-seven' : ''}` : ''}
         onClick={() => update(descriptor.key, { tier, id: tier && slot.id !== null && draftAffixPool(catalog, part, descriptor.side, tier).includes(slot.id) ? slot.id : null,
-          isTarget: tier > 0 && Boolean(slot.isTarget) })}>{tier || (target ? '不限' : '空')}</button>)}</div>
+          isTarget: tier > 0 && Boolean(slot.isTarget), ...(descriptor.key === 'prefix2' && !target ? { isExperimental: tier > 0 && experimental } : {}) })}>{tier || (target ? '不限' : '空')}</button>)}</div>
       <AffixDropdown value={slot.id} pool={pool} disabled={!slot.tier} label={`${label}词条`} target={target}
-        onChange={(id) => update(descriptor.key, { ...slot, id })} />
+        onChange={(id) => update(descriptor.key, { ...slot, id, ...(descriptor.key === 'prefix2' && !target ? { isExperimental: id === null ? experimental : catalog.affix(id).special === 1 } : {}) })} />
     </div>;
   })}</div>;
 }
@@ -151,6 +154,7 @@ function saveJson(value: unknown, name: string) {
 
 interface ScenarioResult { readonly scenario: DraftScenario; readonly report: PlanReport }
 function ScenarioResults({ scenario, report }: ScenarioResult) {
+  const [showAbandoned,setShowAbandoned]=useState(false);
   const primary = report.primary as IntrinsicReport | null;
   const abandoned = [...report.abandoned ?? []].sort((a, b) => b.scoreEstimate - a.scoreEstimate || (a.expectedFpGivenSuccess?.lower ?? Infinity) - (b.expectedFpGivenSuccess?.lower ?? Infinity));
   const shown = primary ?? abandoned[0];
@@ -164,7 +168,7 @@ function ScenarioResults({ scenario, report }: ScenarioResult) {
       {!primary && <p className="abandon-note">已放弃 · 已算至第 {shown.intrinsic.evaluatedThroughStage} 步 · {shown.intrinsic.reason === 'ABOVE_MAXIMUM_SUCCESS_FP' ? `成功路径平均 FP 已超过 ${shown.intrinsic.maximumSuccessFp}` : shown.intrinsic.reason === 'NO_SUCCESS_EXIT' ? '该模板没有成功出口' : '成功率已低于 15%'}</p>}</>}
     {!shown && <p className="helper">当前计算范围尚未得到可用结果。</p>}
     <div className="result-tools"><button type="button" className="text-button" onClick={() => saveJson({ schemaVersion: 1, input: scenario.request, report }, 'last-epoch-crafting-report.json')}>导出报告</button>
-      {abandoned.length > 0 && <details><summary>已放弃方案（{abandoned.length}）</summary><div className="abandoned-list">{abandoned.map((row, index) => <details key={row.route.id}><summary>已放弃 · 方案 {index + 1} · 已算至第 {row.intrinsic.evaluatedThroughStage} 阶段</summary><RouteMetrics row={row} /><RouteSteps row={row} scenario={scenario} /></details>)}</div></details>}
+      {abandoned.length > 0 && <details onToggle={event=>setShowAbandoned(event.currentTarget.open)}><summary>已放弃方案（{report.abandonedCount??abandoned.length}）</summary>{showAbandoned&&<div className="abandoned-list">{abandoned.length<(report.abandonedCount??abandoned.length)&&<p>展示其中{abandoned.length}项；导出报告包含各类放弃数量。</p>}{abandoned.map((row, index) => <details key={row.route.id}><summary>已放弃 · 方案 {index + 1} · 已算至第 {row.intrinsic.evaluatedThroughStage} 阶段</summary><RouteMetrics row={row} /><RouteSteps row={row} scenario={scenario} /></details>)}</div>}</details>}
     </div>
     <details className="search-scope"><summary>计算说明</summary><p>已计算 {report.search.evaluatedRoutes} 个模板。{report.searchStatus === 'INCOMPLETE' ? '部分候选尚未完成，未证明最优。' : '本次模板范围已完成，不代表全局最优。'}</p>
       <p>成功率不计FP耗尽；整件完成率按起始{REFERENCE_FP}FP完整结算。整件完成率低于25%标不推荐，高于65%标推荐，等于门槛时不额外标记。</p>

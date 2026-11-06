@@ -2,7 +2,6 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
-import { MODEL_ID } from '../src/core/catalog';
 import { evaluateCompletion } from '../src/core/completion';
 import { catalogForInputModel } from '../src/core/input-model';
 import { evaluateIntrinsic, IntrinsicWorkspace } from '../src/core/intrinsic';
@@ -10,10 +9,11 @@ import { RuleEngine } from '../src/core/rules';
 import { detailedFixtures } from '../src/test-support/detailed-fixtures';
 import { affixName } from '../src/ui/labels';
 import type { DraftSlots, DraftSlotKey } from '../src/core/draft';
+import {recordCatalog} from './runtime_model_archive';
 
 const context=process.argv.includes('--public')?'public':'local',root='research/ui-validation/';
 const bytes=readFileSync(root+`detailed-${context}-observations.json`),observations=JSON.parse(bytes.toString('utf8'));
-assert.equal(observations.modelId,MODEL_ID);
+const original=recordCatalog(observations.modelId,process.argv.includes('--historical'));
 const snap=(id:string)=>{const value=observations.snapshots.find((row:{id:string})=>row.id===id);assert(value,id);return value;};
 const searchPrefix=context==='public'?'public-':'';
 assert.deepEqual(snap(searchPrefix+'english-search').options.map((row:{id:string})=>row.id),snap(searchPrefix+'chinese-search').options.map((row:{id:string})=>row.id));
@@ -32,9 +32,11 @@ for(const row of observations.reports){
   assert.match(row.file,new RegExp(`^detailed-${context}-[\\w-]+\\.json$`));
   const raw=readFileSync(root+row.file),record=JSON.parse(raw.toString('utf8'));
   const fixture=detailedFixtures().find(item=>item.id===row.id);assert(fixture,row.id);
-  assert.deepEqual(record.input,fixture.request);
-  assert.equal(record.report.modelId,MODEL_ID);assert.equal(record.input.inputModel,'FORGEABLE_WEIGHTED');
-  const engine=new RuleEngine(catalogForInputModel(record.input.inputModel));
+  // Archived UI requests retain their former48-route budget; replay their recorded scope.
+  assert([48,4096].includes(record.input.search.maxRoutes));
+  assert.deepEqual(record.input,{...fixture.request,modelId:observations.modelId,search:{...fixture.request.search,maxRoutes:record.input.search.maxRoutes}});
+  assert.equal(record.report.modelId,observations.modelId);assert.equal(record.input.inputModel,'FORGEABLE_WEIGHTED');
+  const engine=new RuleEngine(catalogForInputModel(record.input.inputModel,original.model));
   const primary=record.report.primary,completion=record.report.completion;assert(primary);
   assert.deepEqual(evaluateIntrinsic(new IntrinsicWorkspace(engine,record.input),primary.route),primary);
   assert.deepEqual(evaluateCompletion(engine,record.input,primary.route),completion);
@@ -69,7 +71,7 @@ if(context==='local'){
   assert.deepEqual(baseline.input,current.input);assert.deepEqual(baseline.report.primary,current.report.primary);
   assert.deepEqual(baseline.report.completion,current.report.completion);
 }
-const result={schemaVersion:1,status:'PASS',modelId:MODEL_ID,context,sourceSha256:createHash('sha256').update(bytes).digest('hex'),checks,
+const result={schemaVersion:1,status:'PASS',modelId:observations.modelId,context,sourceSha256:createHash('sha256').update(bytes).digest('hex'),checks,
   beforeAfterBaselineMatches:context==='local',
   qualification:'Actual detailed UI/Worker exports and observed labels compared with request IDs and Node evaluation. Local QA covers Chinese/English lookup, refresh, invalid input, wildcard semantics, cancellation and final route display refinements. Public QA uses released static assets. Not a complete strategy or low-end-device proof.'};
 const output=JSON.stringify(result,null,2)+'\n',path=root+`detailed-${context}-parity.json`;

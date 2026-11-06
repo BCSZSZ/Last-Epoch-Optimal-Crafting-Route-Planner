@@ -1,11 +1,11 @@
 import { exact, Interval } from './interval';
-import { macroStep, quantilesFromCdf } from './evaluation';
+import { macroStep, predicateReached, quantilesFromCdf } from './evaluation';
 import type { CurvePoint, RouteReport } from './evaluation';
 import { seededRandom } from './random';
 import type { Draw } from './random';
 import { RuleEngine } from './rules';
 import { targetReached } from './target';
-import type { PlanRequest, Route } from './types';
+import type { Macro, PlanRequest, Route } from './types';
 
 export class SamplingInterruptedError extends Error {}
 
@@ -26,41 +26,57 @@ export interface Trajectory {
   readonly reached: readonly boolean[];
   readonly spentByMacro: readonly number[];
 }
+interface SampleInstruction {macro:Macro;next:number;yes:number;no:number;stage:number}
+const samplePrograms=new WeakMap<Route,{entry:number;nodes:SampleInstruction[]}>();
+function sampleProgram(route:Route){
+  const found=samplePrograms.get(route);if(found)return found;
+  const nodes:SampleInstruction[]=[];
+  const sequence=(values:readonly Macro[],next:number,outer?:number):number=>{
+    for(let i=values.length-1;i>=0;i--){const macro=values[i],stage=outer??i;
+      const yes=macro.kind==='conditional'?sequence(macro.then,next,stage):-1,no=macro.kind==='conditional'?sequence(macro.otherwise??[],next,stage):-1;
+      nodes.push({macro,next,yes,no,stage});next=nodes.length-1;
+    }return next;
+  };
+  const value={entry:sequence(route.macros,-1),nodes};samplePrograms.set(route,value);return value;
+}
 
 /** Execute one fixed macro sequence; no draw can trigger a fresh route search. */
 export function simulateRoute(engine: RuleEngine, request: PlanRequest, route: Route, initialFp: number, draw: Draw,
-  attemptGuard = 1024): Trajectory {
+  attemptGuard = 1024,unlimitedFp=false): Trajectory {
   let item = request.item;
   let fp = initialFp;
-  let stage = 0;
+  const program=sampleProgram(route);let pc=program.entry,totalSpent=0;
   let count = 0;
   const attempts = Array<number>(route.macros.length).fill(0);
   const reached = Array<boolean>(route.macros.length).fill(false);
   const spentByMacro = Array<number>(route.macros.length).fill(0);
   const trackRolls = request.target.requirements.some((row) => row.minRollByte !== undefined) ||
     request.constraints.protected?.some((row) => row.roll) || false;
-  const finish = (success: boolean, reason: string): Trajectory => ({ success, spent: initialFp - fp, reason, attempts, reached, spentByMacro });
+  const finish = (success: boolean, reason: string): Trajectory => ({ success, spent: unlimitedFp?totalSpent:initialFp - fp, reason, attempts, reached, spentByMacro });
   while (true) {
     if (targetReached(item, request.target)) return finish(true, 'SUCCESS');
-    if (stage >= route.macros.length) return finish(false, 'ROUTE_EXHAUSTED');
+    if (pc<0) return finish(false, 'ROUTE_EXHAUSTED');
+    const instruction=program.nodes[pc],stage=instruction.stage;
     reached[stage] = true;
-    const step = macroStep(route.macros[stage], item, request, engine);
-    if (step === 'SKIP') { stage++; continue; }
+    if(instruction.macro.kind==='conditional'){pc=predicateReached(item,instruction.macro.when,request,engine)?instruction.yes:instruction.no;continue;}
+    const step = macroStep(instruction.macro, item, request, engine);
+    if (step === 'SKIP') { pc=instruction.next; continue; }
     if (step === 'INAPPLICABLE') return finish(false, 'INAPPLICABLE_NEXT_STAGE');
     if (fp <= 0) return finish(false, 'FP_EXHAUSTED');
     if (request.constraints.maxAttempts !== undefined && count >= request.constraints.maxAttempts) return finish(false, 'OPERATION_LIMIT');
     if (count >= attemptGuard) throw new SamplingInterruptedError('抽样轨迹达到计算保护上限；未将其计为制作失败');
-    const sampled = engine.sample(item, fp, step.action, request.craftingContext, draw,
+    const before=unlimitedFp?63:fp;
+    const sampled = engine.sample(item, before, step.action, request.craftingContext, draw,
       { constraints: request.constraints, trackRolls, maxOutcomes: request.search.maxStates });
     if (!sampled.outcome) return finish(false, sampled.issues[0]?.code ?? 'INAPPLICABLE_ACTION');
     count++;
     attempts[stage]++;
     item = sampled.outcome.item;
-    spentByMacro[stage] += fp - sampled.outcome.fp;
-    fp = sampled.outcome.fp;
+    spentByMacro[stage] += before - sampled.outcome.fp;totalSpent+=before-sampled.outcome.fp;
+    fp = unlimitedFp?63:sampled.outcome.fp;
     // Policy failure is applied after full native settlement and before incidental target success.
     if (sampled.outcome.abort) return finish(false, sampled.outcome.abort);
-    if (step.advance) stage++;
+    if (step.advance) pc=instruction.next;
   }
 }
 

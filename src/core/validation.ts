@@ -72,6 +72,9 @@ export function validateRequest(request: PlanRequest, catalog: Catalog): Issue[]
     if (requirement.ids.every((id) => catalog.affix(id).tiers.length < requirement.minTier)) {
       issues.push({ code: 'TARGET_TIER_UNAVAILABLE', message: '目标词缀定义没有所需阶数' });
     }
+    if(requirement.ids.every(id=>catalog.affix(id).special===1&&!request.item.affixes.some(row=>row.id===id))){
+      issues.push({code:'UNREACHABLE_EXPERIMENTAL_TARGET',message:'目标实验词缀需已在起始装备上；当前操作不能新增实验词缀'});
+    }
     if (requirement.ids.every((id) => !catalog.canRollOn(id, request.item.baseId) && !request.item.affixes.some((row) => row.id === id))) {
       issues.push({ code: 'UNREACHABLE_AFFIX_BASE', message: '目标词缀不符合底材或职业，且起始装备上也不存在该ID' });
     }

@@ -69,7 +69,7 @@ describe('minimal draft input and fixed slots', () => {
 
   it('runs tier-only 7710 through the production planner and recovers the independent FP reference', async () => {
     const request = compileDraft(source7710()).scenarios[0].request;
-    const report = await plan({ ...request, search: { ...request.search, maxRoutes: 4 } }, { now: () => 0 });
+    const report = await plan({ ...request, search: { ...request.search, maxRoutes: 4096 } }, { now: () => 0 });
     expect(report.status).toBe('RECOMMENDATION');
     expect(report.inputModel).toBe('FORGEABLE_EQUAL');
     expect(report.primary!.scoreEstimate).toBeCloseTo(1, 10);
@@ -131,7 +131,7 @@ describe('minimal draft input and fixed slots', () => {
     expect(compiled.inputModel).toBe('FORGEABLE_ANY_EQUAL');
     expect(compiled.scenarios[0].request.item.baseId).toBe(ANY_BASE_ID);
     const request = compiled.scenarios[0].request;
-    const report = await plan({ ...request, search: { ...request.search, maxRoutes: 4 } }, { now: () => 0 });
+    const report = await plan({ ...request, search: { ...request.search, maxRoutes: 4096 } }, { now: () => 0 });
     expect(report.primary!.scoreEstimate).toBeCloseTo(1, 10);
     expect(report.completion!.probability!.lower).toBeGreaterThan(.65);
   }, 30000);

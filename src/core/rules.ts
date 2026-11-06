@@ -22,6 +22,8 @@ export interface TransitionOptions {
   /** Expand byte draws only when roll predicates/protection require their values. */
   readonly trackRolls?: boolean;
   readonly maxOutcomes?: number;
+  /** Internal, proved suffix equivalence only; never supplied in Worker messages. */
+  readonly projectItem?: (item:Item)=>Item;
 }
 
 export interface DemandDistribution {
@@ -189,9 +191,10 @@ export class RuleEngine {
     const fee = this.#cost(item, 63, action).reduce((value, row) => value.add(row.bounds.mul(exact(63 - row.value))), ZERO);
     const exits = new Map<string, { item: Item; abort: AtomicOutcome['abort']; probability: Interval; fpMoment: Interval }>();
     for (const state of states) {
-      const key = `${state.abort ?? '-'}|${itemKey(state.item)}`;
+      const item=options.projectItem?.(state.item)??state.item;
+      const key = `${state.abort ?? '-'}|${itemKey(item)}`;
       const previous = exits.get(key);
-      exits.set(key, { item: state.item, abort: state.abort,
+      exits.set(key, { item, abort: state.abort,
         probability: (previous?.probability ?? ZERO).add(state.weight),
         fpMoment: (previous?.fpMoment ?? ZERO).add(state.critical ? ZERO : state.weight.mul(fee)) });
     }
@@ -214,9 +217,10 @@ export class RuleEngine {
     const refunded: BalanceKernel = Array.from({ length: maximumFp + 1 }, (_, fp) => [{ value: fp, bounds: ONE }]);
     const grouped = new Map<string, { item: Item; abort: AtomicOutcome['abort']; probability: Interval; balances: BalanceKernel }>();
     for (const state of states) {
-      const key = `${itemKey(state.item)}|${state.abort ?? '-'}|${Number(state.critical)}`;
+      const item=options.projectItem?.(state.item)??state.item;
+      const key = `${itemKey(item)}|${state.abort ?? '-'}|${Number(state.critical)}`;
       const previous = grouped.get(key);
-      grouped.set(key, { item: state.item, abort: state.abort, probability: (previous?.probability ?? ZERO).add(state.weight),
+      grouped.set(key, { item, abort: state.abort, probability: (previous?.probability ?? ZERO).add(state.weight),
         balances: state.critical ? refunded : paid });
     }
     return { outcomes: [...grouped.values()].map(row => ({ ...row, probability: row.probability.report() })), issues: [] };

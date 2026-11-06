@@ -6,6 +6,7 @@ import type { CompletionRecommendation } from './policy';
 import { tierPermutations } from './probability';
 import type { BalanceKernel, RuleEngine } from './rules';
 import { targetReached } from './target';
+import { programProjection } from './program-projection';
 import type { Item, Macro, PlanRequest, Route } from './types';
 
 export interface CompletionReport {
@@ -18,29 +19,32 @@ export interface CompletionReport {
   readonly states: number;
   readonly reason: string | null;
 }
-interface Instruction { macro: Macro; next: number; yes: number; no: number }
+interface Instruction { macro: Macro; next: number; yes: number; no: number; stage:number }
 interface Edge { to: number; p: Interval }
 interface Group { balances: BalanceKernel; edges: Edge[]; values: Interval[] }
 interface Node { item: Item; pc: number; left: number | undefined; terminal: 'SUCCESS' | 'FAILURE' | null; groups: Group[] }
 
 function compile(macros: readonly Macro[]) {
   const instructions: Instruction[] = [];
-  const sequence = (values: readonly Macro[], next: number): number => {
+  const sequence = (values: readonly Macro[], next: number, outer?:number): number => {
     for (let i = values.length - 1; i >= 0; i--) {
       const macro = values[i];
-      const yes = macro.kind === 'conditional' ? sequence(macro.then, next) : -1;
-      const no = macro.kind === 'conditional' ? sequence(macro.otherwise ?? [], next) : -1;
-      instructions.push({ macro, next, yes, no }); next = instructions.length - 1;
+      const stage=outer??i;
+      const yes = macro.kind === 'conditional' ? sequence(macro.then, next,stage) : -1;
+      const no = macro.kind === 'conditional' ? sequence(macro.otherwise ?? [], next,stage) : -1;
+      instructions.push({ macro, next, yes, no,stage }); next = instructions.length - 1;
     }
     return next;
   };
   return { instructions, entry: sequence(macros, -1) };
 }
 
-function graph(engine: RuleEngine, request: PlanRequest, route: Route, maximum: number, stop?: () => boolean): Node[] {
-  const program = compile(route.macros), nodes: Node[] = [], indices = new Map<string, number>();
+function graph(engine: RuleEngine, request: PlanRequest, route: Route, maximum: number, stop?: () => boolean,identityProjection=true): Node[] {
+  const program = compile(route.macros), projection=identityProjection?programProjection(request,route,engine.catalog):null;
+  const nodes: Node[] = [], indices = new Map<string, number>();
   const free: BalanceKernel = Array.from({ length: maximum + 1 }, (_, fp) => [{ value: fp, bounds: ONE }]);
   const intern = (item: Item, pc: number, left: number | undefined): number => {
+    if(projection&&(pc<0 || program.instructions[pc].stage>projection.afterStage))item=projection.project(item);
     const key = `${pc}|${left ?? '*'}|${itemKey(item)}`;
     const found = indices.get(key); if (found !== undefined) return found;
     if (nodes.length >= request.search.maxStates) throw new EvaluationLimitError('达到48FP评价状态预算');
@@ -58,7 +62,9 @@ function graph(engine: RuleEngine, request: PlanRequest, route: Route, maximum: 
     if (p.upper === 0) return;
     let group = node.groups.find(row => row.balances === balances);
     if (!group) { group = { balances, edges: [], values: [] }; node.groups.push(group); }
-    group.edges.push({ to, p }); edgeCount++;
+    const previous=projection?group.edges.find(edge=>edge.to===to):undefined;
+    if(previous)group.edges[group.edges.indexOf(previous)]={to,p:previous.p.add(p)};
+    else{group.edges.push({ to, p }); edgeCount++;}
     if (edgeCount > Math.min(2000000, request.search.maxStates * 128)) throw new EvaluationLimitError('达到48FP评价转移预算');
   };
   for (let i = 0; i < nodes.length; i++) {
@@ -72,6 +78,7 @@ function graph(engine: RuleEngine, request: PlanRequest, route: Route, maximum: 
     if (step === 'SKIP') { add(node, intern(node.item, instruction.next, node.left), ONE, free); continue; }
     if (step === 'INAPPLICABLE' || node.left === 0) { node.terminal = 'FAILURE'; continue; }
     const kernel = engine.budgetTransition(node.item, step.action, request.craftingContext, maximum, {
+      projectItem:projection&&(step.advance?(instruction.next<0||program.instructions[instruction.next].stage>projection.afterStage):instruction.stage>projection.afterStage)?projection.project:undefined,
       constraints: request.constraints, trackRolls: request.target.requirements.some(row => row.minRollByte !== undefined),
       maxOutcomes: Math.min(200000, Math.max(1000, request.search.maxStates * 64)),
     });
@@ -145,14 +152,14 @@ function prepare(nodes: readonly Node[], stop?: () => boolean) {
 }
 
 export function evaluateCompletion(engine: RuleEngine, request: PlanRequest, route: Route, stop?: () => boolean,
-  initialFp = engine.catalog.model.practicalPolicy?.referenceFp ?? REFERENCE_FP): CompletionReport {
+  initialFp = engine.catalog.model.practicalPolicy?.referenceFp ?? REFERENCE_FP,identityProjection=true): CompletionReport {
   if (!Number.isInteger(initialFp) || initialFp < 0 || initialFp > engine.catalog.model.fpMaximum) throw new RangeError('参考FP超出模型范围');
   if (initialFp === 0) {
     const p = Number(targetReached(request.item, request.target));
     return { routeId: route.id, initialFp, status: 'COMPLETE', probability: { lower: p, upper: p },
       recommendation: completionRecommendation({ lower: p, upper: p }, engine.catalog.model.practicalPolicy), evaluation: 'BOUNDED_NUMERICAL', states: 1, reason: null };
   }
-  const nodes = graph(engine, request, route, initialFp, stop), sys = prepare(nodes, stop);
+  const nodes = graph(engine, request, route, initialFp, stop,identityProjection), sys = prepare(nodes, stop);
   let bounds = nodes.map(node => node.terminal === 'SUCCESS' ? ONE : ZERO);
   const project = (fp: number) => nodes.forEach(node => node.groups.forEach(group => {
     group.values[fp] = group.edges.reduce((sum, edge) => sum.add(edge.p.mul(bounds[edge.to])), ZERO).clamp(0, 1);

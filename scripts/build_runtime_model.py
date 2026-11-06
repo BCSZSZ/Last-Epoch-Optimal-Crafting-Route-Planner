@@ -55,6 +55,7 @@ def compile_model() -> dict:
              'rngModel': 'DISPLAY_PARAMETERS_INDEPENDENT_DRAWS_V1',
              'qualification': 'Audited native control flow, binary64 representations of nominal displayed thresholds, normalized current craft weights and uniform changed Havoc layouts; not client PRNG replay.',
              'materials': 'UNLIMITED', 'fpMaximum': 63,
+             'programSemantics': 'ABORT_UNREACHABLE_HAVOC_WHEN_DECLARED_V1',
              'practicalPolicy': read(ROOT / 'src/core/policy.json'),
              'legacyForgeIds': legacy['rule']['existingAttributeOverrideIds'],
              'parameters': {'hope': 0.25, 'ice': 0.3, 'critical': 0.12, 'blood': 0.3,

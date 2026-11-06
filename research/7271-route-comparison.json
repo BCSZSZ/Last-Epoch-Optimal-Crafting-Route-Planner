@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
   "qualification": "Full fixed-route evaluation, with prefix/certificate pruning disabled for this comparison. Source visible order P7,P2(owned),S7,S1; anonymous chest equal-positive pool. The last two rows test the literal target-prefix seal and the garbage-prefix seal separately. No client gameplay measurement or global optimality claim.",
   "request": {
-    "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+    "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
     "inputModel": "FORGEABLE_EQUAL",
     "item": {
       "baseId": "1:0",
@@ -64,7 +64,7 @@
     "scoring": {},
     "search": {
       "milliseconds": 12000,
-      "maxRoutes": 48,
+      "maxRoutes": 4096,
       "macroStages": 12,
       "maxStates": 25000
     }

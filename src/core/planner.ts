@@ -7,7 +7,7 @@ import { sampleRoute, SamplingInterruptedError } from './sampling';
 import { targetReached } from './target';
 import { parsePlanRequest } from './request';
 import type { Issue, Macro, PlanRequest, Route } from './types';
-import { compileTemplates } from './hierarchy';
+import { compileTemplates, classifyStructure } from './hierarchy';
 import type { Structure } from './hierarchy';
 import { evaluateIntrinsic, IntrinsicWorkspace } from './intrinsic';
 import type { IntrinsicReport } from './intrinsic';
@@ -16,6 +16,7 @@ import { maximumSuccessFp } from './policy';
 import { evaluateCompletion } from './completion';
 import type { CompletionReport } from './completion';
 import { REFERENCE_FP } from './policy';
+import { productionPrograms } from './program-search';
 
 export interface PlanProgress {
   readonly phase: 'VALIDATION' | 'SEARCH' | 'REFINEMENT' | 'DONE';
@@ -39,6 +40,8 @@ export interface PlanReport {
     readonly workspaceCacheHits: number;
   };
   readonly abandoned?: readonly IntrinsicReport[];
+  readonly abandonedCount?:number;
+  readonly abandonmentSummary?:Readonly<Record<string,number>>;
   readonly unresolvedRoutes?: number;
   readonly modelId: string;
   readonly gameVersion: string;
@@ -269,12 +272,13 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
   const stopped = () => Boolean(options.signal?.aborted) || elapsed() >= request.search.milliseconds;
   const searchStopped = () => Boolean(options.signal?.aborted) || elapsed() >= request.search.milliseconds * 0.75;
   if (options.signal?.aborted) throw new PlanningCancelledError();
-  const compiled = compileTemplates(request, engine), workspace = new IntrinsicWorkspace(engine, request);
+  const programs = options.intrinsicRoutes || options.seedRoutes ? null : productionPrograms(request,engine);
+  const compiled = programs ? null : compileTemplates(request, engine), structure=compiled?.structure??classifyStructure(request,engine), workspace = new IntrinsicWorkspace(engine, request);
   const terminal = !compiled && !options.intrinsicRoutes && !options.seedRoutes && targetReached(request.item, request.target);
-  const seeds = options.intrinsicRoutes ?? options.seedRoutes ?? (compiled?.templates ?? (terminal ? [{ id: routeId([]), macros: [], description: '目标已经达成' }] : commonRoutes(request, engine)));
-  const library = compiled || terminal || options.intrinsicRoutes ? [] : macroLibrary(request, engine, seeds);
+  const seeds = options.intrinsicRoutes ?? options.seedRoutes ?? programs ?? (compiled?.templates ?? (terminal ? [{ id: routeId([]), macros: [], description: '目标已经达成' }] : commonRoutes(request, engine)));
+  const library = programs || compiled || terminal || options.intrinsicRoutes ? [] : macroLibrary(request, engine, seeds);
   const general = routeSpace(library, request.search.macroStages, searchStopped);
-  const routes = function* () { yield* seeds; if (!compiled && !terminal && !options.intrinsicRoutes) yield* general.routes; };
+  const routes = function* () { yield* seeds; if (!programs && !compiled && !terminal && !options.intrinsicRoutes) yield* general.routes; };
   const seen = new Set<string>(), abandoned: IntrinsicReport[] = [], retained: IntrinsicReport[] = [];
   let primary: IntrinsicReport | null = null, evaluated = 0, unresolved = 0, exhausted = true, duplicates = 0;
   let stopReason = 'TEMPLATE_SCOPE_EXHAUSTED';
@@ -324,15 +328,18 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
     other.expectedFpGivenSuccess!.upper < row.expectedFpGivenSuccess!.lower));
   return {
     metric: 'INTRINSIC_V2', inputModel: request.inputModel ?? 'AUDITED', modelId: engine.catalog.model.modelId, gameVersion: engine.catalog.model.gameVersion, completion,
-    status: primary ? 'RECOMMENDATION' : 'NO_ROUTE_FOUND_IN_SCOPE', primary, issues: [], abandoned, unresolvedRoutes: unresolved,
+    status: primary ? 'RECOMMENDATION' : 'NO_ROUTE_FOUND_IN_SCOPE', primary, issues: [],
+    abandoned:programs?[...abandoned].sort((a,b)=>b.scoreEstimate-a.scoreEstimate||
+      (a.expectedFpGivenSuccess?.lower??a.intrinsic.successfulFpLowerBound??Infinity)-(b.expectedFpGivenSuccess?.lower??b.intrinsic.successfulFpLowerBound??Infinity)).slice(0,32):abandoned,
+    abandonedCount:abandoned.length,abandonmentSummary:abandoned.reduce<Record<string,number>>((r,a)=>{const key=a.intrinsic.reason??'UNKNOWN';r[key]=(r[key]??0)+1;return r;},{}),unresolvedRoutes: unresolved,
     searchStatus: exhausted && unresolved === 0 ? 'COMPLETE' : 'INCOMPLETE', optimality: 'NOT_PROVEN', samplingGuarantee: null,
-    hierarchy: compiled ? { structure: compiled.structure, upperLabels: 28, routeNodes: 23, generatedTemplates: compiled.templates.length,
-      structurallyRejected: compiled.rejected.length,
-      preExcluded: compiled.rejected.flatMap((row) => row.probabilityUpperBound === undefined ? [] : [{ ...row, probabilityUpperBound: row.probabilityUpperBound }]),
+    hierarchy: structure ? { structure, upperLabels: 28, routeNodes: 23, generatedTemplates: programs?.length??compiled?.templates.length??0,
+      structurallyRejected: compiled?.rejected.length??0,
+      preExcluded: compiled?.rejected.flatMap((row) => row.probabilityUpperBound === undefined ? [] : [{ ...row, probabilityUpperBound: row.probabilityUpperBound }])??[],
       workspaceCacheHits: workspace.cacheHits } : undefined,
-    search: { grammar: options.intrinsicRoutes ? 'EXPLICIT_FIXED_INTRINSIC_ROUTES' : compiled?.grammar ?? 'GENERAL_FIXED_GRAMMAR_INTRINSIC_V2',
+    search: { grammar: options.intrinsicRoutes ? 'EXPLICIT_FIXED_INTRINSIC_ROUTES' : programs ? 'EXAMPLE_GUIDED_ROUND2_WITH_EXPERIMENTAL_CONVERSION_V1' : compiled?.grammar ?? 'GENERAL_FIXED_GRAMMAR_INTRINSIC_V2',
       macroStages: request.search.macroStages, librarySize: compiled ? new Set(compiled.templates.flatMap((row) => row.macros.map((macro) => JSON.stringify(macro)))).size : library.length,
-      candidateUpperBound: String(options.intrinsicRoutes?.length ?? compiled?.templates.length ?? general.candidateUpperBound),
+      candidateUpperBound: String(options.intrinsicRoutes?.length ?? programs?.length ?? compiled?.templates.length ?? general.candidateUpperBound),
       evaluatedRoutes: evaluated, exactRoutes: evaluated - unresolved, estimatedRoutes: 0, unevaluatedRoutes: unresolved,
       skippedDuplicates: duplicates, certifiedPrunedPrefixes: abandoned.filter((row) => row.intrinsic.probabilityMeaning === 'PREFIX_SURVIVAL_UPPER_BOUND').length,
       elapsedMilliseconds: elapsed(), stopReason, paretoRouteIds: pareto.map((row) => row.route.id) },

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+  "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
   "metric": "INTRINSIC_V2",
   "status": "PASS",
   "upperInputLabels": 28,
@@ -492,7 +492,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -554,20 +554,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-6d349806eeacba82",
+      "primaryRouteId": "r-29e8dc851eeadc31",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.0854464558808,
-        "upper": 43.08544645588391
+        "lower": 43.08544645588145,
+        "upper": 43.08544645588325
       },
-      "generatedTemplates": 162,
-      "evaluatedTemplates": 162,
-      "abandonedTemplates": 150,
-      "certifiedPrunedPrefixes": 110,
-      "primaryStates": 22,
+      "generatedTemplates": 2,
+      "evaluatedTemplates": 2,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 14,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -577,7 +577,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -645,20 +645,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-6d349806eeacba82",
+      "primaryRouteId": "r-29e8dc851eeadc31",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.0854464558808,
-        "upper": 43.08544645588391
+        "lower": 43.08544645588145,
+        "upper": 43.08544645588325
       },
-      "generatedTemplates": 22,
-      "evaluatedTemplates": 22,
-      "abandonedTemplates": 18,
-      "certifiedPrunedPrefixes": 16,
-      "primaryStates": 22,
+      "generatedTemplates": 2,
+      "evaluatedTemplates": 2,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 14,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -668,7 +668,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -736,20 +736,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-32e2603f38468323",
+      "primaryRouteId": "r-7e7fd4d2a7914356",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 48.804892289212226,
-        "upper": 48.804892289219154
+        "lower": 48.804892289213555,
+        "upper": 48.80489228921782
       },
-      "generatedTemplates": 170,
-      "evaluatedTemplates": 170,
-      "abandonedTemplates": 104,
-      "certifiedPrunedPrefixes": 104,
-      "primaryStates": 47,
+      "generatedTemplates": 76,
+      "evaluatedTemplates": 76,
+      "abandonedTemplates": 32,
+      "certifiedPrunedPrefixes": 36,
+      "primaryStates": 29,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -759,7 +759,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -833,20 +833,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-dca8aa4fb06dcfeb",
+      "primaryRouteId": "r-410894bc617ae548",
       "operationSuccess": {
-        "lower": 0.3333333333333312,
-        "upper": 0.3333333333333354
+        "lower": 0.3333333333333319,
+        "upper": 0.3333333333333347
       },
       "successfulMeanFp": {
-        "lower": 51.12896208087863,
-        "upper": 51.12896208088608
+        "lower": 51.12896208087985,
+        "upper": 51.12896208088486
       },
-      "generatedTemplates": 22,
-      "evaluatedTemplates": 22,
-      "abandonedTemplates": 14,
-      "certifiedPrunedPrefixes": 14,
-      "primaryStates": 24,
+      "generatedTemplates": 12,
+      "evaluatedTemplates": 12,
+      "abandonedTemplates": 6,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 16,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -856,7 +856,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -930,20 +930,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-12994b19f49d3f1d",
+      "primaryRouteId": "r-39525f95afa9f4b1",
       "operationSuccess": {
-        "lower": 0.42249999999999505,
-        "upper": 0.4225000000000049
+        "lower": 0.42249999999999754,
+        "upper": 0.42250000000000243
       },
       "successfulMeanFp": {
-        "lower": 56.56136523379975,
-        "upper": 56.56136523381938
+        "lower": 56.561365233804324,
+        "upper": 56.56136523381481
       },
-      "generatedTemplates": 146,
-      "evaluatedTemplates": 146,
-      "abandonedTemplates": 66,
-      "certifiedPrunedPrefixes": 54,
-      "primaryStates": 107,
+      "generatedTemplates": 198,
+      "evaluatedTemplates": 198,
+      "abandonedTemplates": 32,
+      "certifiedPrunedPrefixes": 58,
+      "primaryStates": 70,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -953,7 +953,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1033,20 +1033,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-1fc2e3861c7177a2",
+      "primaryRouteId": "r-56258a37fbd29e1b",
       "operationSuccess": {
-        "lower": 0.16666666666666433,
-        "upper": 0.166666666666669
+        "lower": 0.1666666666666653,
+        "upper": 0.16666666666666802
       },
       "successfulMeanFp": {
-        "lower": 59.17247770587313,
-        "upper": 59.17247770589159
+        "lower": 59.1724777058771,
+        "upper": 59.172477705887616
       },
-      "generatedTemplates": 16,
-      "evaluatedTemplates": 16,
+      "generatedTemplates": 14,
+      "evaluatedTemplates": 14,
       "abandonedTemplates": 12,
-      "certifiedPrunedPrefixes": 12,
-      "primaryStates": 26,
+      "certifiedPrunedPrefixes": 4,
+      "primaryStates": 19,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -1056,7 +1056,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1124,20 +1124,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-80192c74d19365a0",
+      "primaryRouteId": "r-9baccd36f4667182",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 37.669669852940146,
-        "upper": 37.66966985294221
+        "lower": 37.66966985294055,
+        "upper": 37.66966985294181
       },
-      "generatedTemplates": 10,
-      "evaluatedTemplates": 10,
-      "abandonedTemplates": 4,
-      "certifiedPrunedPrefixes": 4,
-      "primaryStates": 11,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 7,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -1147,7 +1147,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1221,20 +1221,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-80192c74d19365a0",
+      "primaryRouteId": "r-9baccd36f4667182",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 37.669669852940146,
-        "upper": 37.66966985294221
+        "lower": 37.66966985294055,
+        "upper": 37.66966985294181
       },
-      "generatedTemplates": 3,
-      "evaluatedTemplates": 3,
-      "abandonedTemplates": 1,
-      "certifiedPrunedPrefixes": 1,
-      "primaryStates": 11,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 7,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -1244,7 +1244,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1318,20 +1318,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-2baad93b3dbeb0cf",
+      "primaryRouteId": "r-12900d02ddd993ae",
       "operationSuccess": {
-        "lower": 0.6899999999999977,
-        "upper": 0.6900000000000024
+        "lower": 0.6899999999999984,
+        "upper": 0.6900000000000017
       },
       "successfulMeanFp": {
-        "lower": 42.82762439839401,
-        "upper": 42.82762439839743
+        "lower": 42.827624398394505,
+        "upper": 42.82762439839694
       },
-      "generatedTemplates": 8,
-      "evaluatedTemplates": 8,
-      "abandonedTemplates": 1,
-      "certifiedPrunedPrefixes": 0,
-      "primaryStates": 13,
+      "generatedTemplates": 12,
+      "evaluatedTemplates": 12,
+      "abandonedTemplates": 5,
+      "certifiedPrunedPrefixes": 3,
+      "primaryStates": 9,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -1341,7 +1341,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1421,20 +1421,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-117f6f3bf12838af",
+      "primaryRouteId": "r-ea9d7b67b2f499e3",
       "operationSuccess": {
-        "lower": 0.2499999999999983,
-        "upper": 0.2500000000000017
+        "lower": 0.24999999999999886,
+        "upper": 0.25000000000000117
       },
       "successfulMeanFp": {
-        "lower": 45.713185477937685,
-        "upper": 45.71318547794468
+        "lower": 45.71318547793874,
+        "upper": 45.71318547794362
       },
       "generatedTemplates": 2,
       "evaluatedTemplates": 2,
-      "abandonedTemplates": 0,
+      "abandonedTemplates": 1,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 13,
+      "primaryStates": 9,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -1444,7 +1444,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1518,20 +1518,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-35c31b58e079a1bc",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -1541,7 +1541,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1621,20 +1621,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-35c31b58e079a1bc",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -1644,7 +1644,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1706,20 +1706,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-80192c74d19365a0",
+      "primaryRouteId": "r-b05683e2ad282d26",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.08544645588102,
-        "upper": 43.08544645588369
+        "lower": 43.08544645588124,
+        "upper": 43.08544645588347
       },
-      "generatedTemplates": 10,
-      "evaluatedTemplates": 10,
-      "abandonedTemplates": 3,
-      "certifiedPrunedPrefixes": 3,
-      "primaryStates": 20,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 19,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -1729,7 +1729,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1797,20 +1797,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-80192c74d19365a0",
+      "primaryRouteId": "r-b05683e2ad282d26",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.08544645588102,
-        "upper": 43.08544645588369
+        "lower": 43.08544645588124,
+        "upper": 43.08544645588347
       },
-      "generatedTemplates": 3,
-      "evaluatedTemplates": 3,
-      "abandonedTemplates": 1,
-      "certifiedPrunedPrefixes": 1,
-      "primaryStates": 20,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 19,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -1820,7 +1820,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1888,20 +1888,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-54a76475201aba49",
+      "primaryRouteId": "r-e756fd41be2d6f2d",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 48.80489228921272,
-        "upper": 48.80489228921865
+        "lower": 48.80489228921321,
+        "upper": 48.80489228921817
       },
-      "generatedTemplates": 10,
-      "evaluatedTemplates": 10,
-      "abandonedTemplates": 3,
-      "certifiedPrunedPrefixes": 3,
-      "primaryStates": 44,
+      "generatedTemplates": 14,
+      "evaluatedTemplates": 14,
+      "abandonedTemplates": 7,
+      "certifiedPrunedPrefixes": 6,
+      "primaryStates": 32,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -1911,7 +1911,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -1985,20 +1985,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-117f6f3bf12838af",
+      "primaryRouteId": "r-331d958940b1b3b5",
       "operationSuccess": {
-        "lower": 0.3333333333333313,
-        "upper": 0.3333333333333353
+        "lower": 0.33333333333333176,
+        "upper": 0.33333333333333487
       },
       "successfulMeanFp": {
-        "lower": 51.12896208087893,
-        "upper": 51.12896208088579
+        "lower": 51.12896208087952,
+        "upper": 51.128962080885195
       },
-      "generatedTemplates": 2,
-      "evaluatedTemplates": 2,
-      "abandonedTemplates": 0,
+      "generatedTemplates": 3,
+      "evaluatedTemplates": 3,
+      "abandonedTemplates": 1,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 22,
+      "primaryStates": 21,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -2008,7 +2008,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2082,20 +2082,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-46030deb358db9f7",
+      "primaryRouteId": "r-0fd217e1b75833a5",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 44.61212193627288,
-        "upper": 44.612121936276154
+        "lower": 44.61212193627365,
+        "upper": 44.61212193627537
       },
-      "generatedTemplates": 8,
-      "evaluatedTemplates": 8,
-      "abandonedTemplates": 1,
-      "certifiedPrunedPrefixes": 0,
-      "primaryStates": 16,
+      "generatedTemplates": 12,
+      "evaluatedTemplates": 12,
+      "abandonedTemplates": 7,
+      "certifiedPrunedPrefixes": 3,
+      "primaryStates": 10,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -2105,7 +2105,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2185,20 +2185,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-117f6f3bf12838af",
+      "primaryRouteId": "r-ea9d7b67b2f499e3",
       "operationSuccess": {
-        "lower": 0.2499999999999983,
-        "upper": 0.2500000000000017
+        "lower": 0.24999999999999886,
+        "upper": 0.25000000000000117
       },
       "successfulMeanFp": {
-        "lower": 48.352304227937665,
-        "upper": 48.35230422794469
+        "lower": 48.35230422793872,
+        "upper": 48.352304227943634
       },
       "generatedTemplates": 2,
       "evaluatedTemplates": 2,
-      "abandonedTemplates": 0,
+      "abandonedTemplates": 1,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 15,
+      "primaryStates": 11,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -2208,7 +2208,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2299,7 +2299,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2396,7 +2396,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2470,20 +2470,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-35c31b58e079a1bc",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -2493,7 +2493,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2573,20 +2573,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-35c31b58e079a1bc",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -2596,7 +2596,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2681,7 +2681,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2772,7 +2772,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2863,7 +2863,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -2960,7 +2960,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3057,7 +3057,7 @@
         5
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3160,7 +3160,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3222,20 +3222,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-3e7afa78239de844",
+      "primaryRouteId": "r-1ca03ecbecd62aa7",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.0854464558808,
-        "upper": 43.08544645588391
+        "lower": 43.08544645588145,
+        "upper": 43.08544645588325
       },
-      "generatedTemplates": 162,
-      "evaluatedTemplates": 162,
-      "abandonedTemplates": 148,
-      "certifiedPrunedPrefixes": 110,
-      "primaryStates": 22,
+      "generatedTemplates": 2,
+      "evaluatedTemplates": 2,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 14,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -3245,7 +3245,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3313,20 +3313,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-3e7afa78239de844",
+      "primaryRouteId": "r-1ca03ecbecd62aa7",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.0854464558808,
-        "upper": 43.08544645588391
+        "lower": 43.08544645588145,
+        "upper": 43.08544645588325
       },
-      "generatedTemplates": 22,
-      "evaluatedTemplates": 22,
-      "abandonedTemplates": 18,
-      "certifiedPrunedPrefixes": 16,
-      "primaryStates": 22,
+      "generatedTemplates": 2,
+      "evaluatedTemplates": 2,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 14,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -3336,7 +3336,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3404,20 +3404,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-be37cc0b41c1987f",
+      "primaryRouteId": "r-cad15bc44d7de088",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 48.09683603921276,
-        "upper": 48.096836039218616
+        "lower": 48.09683603921391,
+        "upper": 48.096836039217465
       },
-      "generatedTemplates": 153,
-      "evaluatedTemplates": 153,
-      "abandonedTemplates": 101,
-      "certifiedPrunedPrefixes": 101,
-      "primaryStates": 76,
+      "generatedTemplates": 71,
+      "evaluatedTemplates": 71,
+      "abandonedTemplates": 32,
+      "certifiedPrunedPrefixes": 32,
+      "primaryStates": 49,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -3427,7 +3427,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3501,20 +3501,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-6cee92033babfc8f",
+      "primaryRouteId": "r-e4cd277b45aada1f",
       "operationSuccess": {
-        "lower": 0.3333333333333312,
-        "upper": 0.3333333333333354
+        "lower": 0.33333333333333176,
+        "upper": 0.33333333333333487
       },
       "successfulMeanFp": {
-        "lower": 51.12896208087863,
-        "upper": 51.12896208088608
+        "lower": 51.12896208087954,
+        "upper": 51.12896208088517
       },
       "generatedTemplates": 19,
       "evaluatedTemplates": 19,
-      "abandonedTemplates": 14,
-      "certifiedPrunedPrefixes": 14,
-      "primaryStates": 24,
+      "abandonedTemplates": 12,
+      "certifiedPrunedPrefixes": 2,
+      "primaryStates": 18,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -3524,7 +3524,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3598,20 +3598,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-2110af2fcdd40493",
+      "primaryRouteId": "r-9f590f79f5ede3cd",
       "operationSuccess": {
-        "lower": 0.4953499999999937,
-        "upper": 0.49535000000000623
+        "lower": 0.4849999999999961,
+        "upper": 0.4850000000000039
       },
       "successfulMeanFp": {
-        "lower": 62.610036167840875,
-        "upper": 62.6100361678546
+        "lower": 62.804227293683894,
+        "upper": 62.80422729369231
       },
-      "generatedTemplates": 140,
-      "evaluatedTemplates": 140,
-      "abandonedTemplates": 64,
-      "certifiedPrunedPrefixes": 59,
-      "primaryStates": 201,
+      "generatedTemplates": 408,
+      "evaluatedTemplates": 408,
+      "abandonedTemplates": 32,
+      "certifiedPrunedPrefixes": 175,
+      "primaryStates": 129,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -3621,7 +3621,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3701,20 +3701,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-1e572611863bdf9d",
+      "primaryRouteId": "r-3410e707167c6b13",
       "operationSuccess": {
-        "lower": 0.16666666666666433,
-        "upper": 0.166666666666669
+        "lower": 0.1666666666666653,
+        "upper": 0.16666666666666802
       },
       "successfulMeanFp": {
-        "lower": 59.17247770587313,
-        "upper": 59.17247770589159
+        "lower": 59.1724777058771,
+        "upper": 59.172477705887616
       },
-      "generatedTemplates": 16,
-      "evaluatedTemplates": 16,
-      "abandonedTemplates": 12,
-      "certifiedPrunedPrefixes": 12,
-      "primaryStates": 26,
+      "generatedTemplates": 34,
+      "evaluatedTemplates": 34,
+      "abandonedTemplates": 30,
+      "certifiedPrunedPrefixes": 20,
+      "primaryStates": 19,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -3724,7 +3724,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3792,20 +3792,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-7030e71ae2df02e6",
+      "primaryRouteId": "r-fa2ff7b0aec54b8c",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 37.669669852940146,
-        "upper": 37.66966985294221
+        "lower": 37.66966985294055,
+        "upper": 37.66966985294181
       },
-      "generatedTemplates": 10,
-      "evaluatedTemplates": 10,
-      "abandonedTemplates": 4,
-      "certifiedPrunedPrefixes": 4,
-      "primaryStates": 11,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 7,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -3815,7 +3815,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3889,20 +3889,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-7030e71ae2df02e6",
+      "primaryRouteId": "r-fa2ff7b0aec54b8c",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 37.669669852940146,
-        "upper": 37.66966985294221
+        "lower": 37.66966985294055,
+        "upper": 37.66966985294181
       },
-      "generatedTemplates": 3,
-      "evaluatedTemplates": 3,
-      "abandonedTemplates": 1,
-      "certifiedPrunedPrefixes": 1,
-      "primaryStates": 11,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 7,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -3912,7 +3912,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -3986,20 +3986,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-e26c75636cc5b15f",
+      "primaryRouteId": "r-cdb599e5e93ad4c1",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 56.41305943627229,
-        "upper": 56.413059436276725
+        "lower": 56.413059436273116,
+        "upper": 56.413059436275915
       },
-      "generatedTemplates": 8,
-      "evaluatedTemplates": 8,
-      "abandonedTemplates": 0,
-      "certifiedPrunedPrefixes": 0,
-      "primaryStates": 61,
+      "generatedTemplates": 12,
+      "evaluatedTemplates": 12,
+      "abandonedTemplates": 4,
+      "certifiedPrunedPrefixes": 3,
+      "primaryStates": 41,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -4009,7 +4009,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4089,20 +4089,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-1d6eff52c31b72ae",
+      "primaryRouteId": "r-788090121662aace",
       "operationSuccess": {
-        "lower": 0.24999999999999742,
-        "upper": 0.2500000000000026
+        "lower": 0.24999999999999886,
+        "upper": 0.25000000000000117
       },
       "successfulMeanFp": {
-        "lower": 45.71318547793584,
-        "upper": 45.71318547794652
+        "lower": 45.71318547793874,
+        "upper": 45.71318547794362
       },
       "generatedTemplates": 2,
       "evaluatedTemplates": 2,
-      "abandonedTemplates": 0,
+      "abandonedTemplates": 1,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 15,
+      "primaryStates": 9,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -4112,7 +4112,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4186,20 +4186,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-b3539cc2b73e31e6",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -4209,7 +4209,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4289,20 +4289,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-b3539cc2b73e31e6",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -4312,7 +4312,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4374,20 +4374,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-7030e71ae2df02e6",
+      "primaryRouteId": "r-8790a57a6d74363e",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.08544645588102,
-        "upper": 43.08544645588369
+        "lower": 43.08544645588124,
+        "upper": 43.08544645588347
       },
-      "generatedTemplates": 10,
-      "evaluatedTemplates": 10,
-      "abandonedTemplates": 3,
-      "certifiedPrunedPrefixes": 3,
-      "primaryStates": 20,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 19,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -4397,7 +4397,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4465,20 +4465,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-7030e71ae2df02e6",
+      "primaryRouteId": "r-8790a57a6d74363e",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.08544645588102,
-        "upper": 43.08544645588369
+        "lower": 43.08544645588124,
+        "upper": 43.08544645588347
       },
-      "generatedTemplates": 3,
-      "evaluatedTemplates": 3,
-      "abandonedTemplates": 1,
-      "certifiedPrunedPrefixes": 1,
-      "primaryStates": 20,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 19,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -4488,7 +4488,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4556,20 +4556,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-7030e71ae2df02e6",
+      "primaryRouteId": "r-fa2ff7b0aec54b8c",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 37.669669852940146,
-        "upper": 37.66966985294221
+        "lower": 37.66966985294055,
+        "upper": 37.66966985294181
       },
-      "generatedTemplates": 11,
-      "evaluatedTemplates": 11,
-      "abandonedTemplates": 3,
-      "certifiedPrunedPrefixes": 3,
-      "primaryStates": 11,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 7,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -4579,7 +4579,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4653,20 +4653,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-7030e71ae2df02e6",
+      "primaryRouteId": "r-fa2ff7b0aec54b8c",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 37.669669852940146,
-        "upper": 37.66966985294221
+        "lower": 37.66966985294055,
+        "upper": 37.66966985294181
       },
-      "generatedTemplates": 3,
-      "evaluatedTemplates": 3,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 11,
+      "primaryStates": 7,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -4676,7 +4676,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4750,20 +4750,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-650a432b9490a2b7",
+      "primaryRouteId": "r-371ef117405ff13b",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 44.61212193627288,
-        "upper": 44.612121936276154
+        "lower": 44.61212193627365,
+        "upper": 44.61212193627537
       },
-      "generatedTemplates": 9,
-      "evaluatedTemplates": 9,
-      "abandonedTemplates": 0,
-      "certifiedPrunedPrefixes": 0,
-      "primaryStates": 16,
+      "generatedTemplates": 12,
+      "evaluatedTemplates": 12,
+      "abandonedTemplates": 4,
+      "certifiedPrunedPrefixes": 3,
+      "primaryStates": 10,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -4773,7 +4773,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4853,20 +4853,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-1d6eff52c31b72ae",
+      "primaryRouteId": "r-788090121662aace",
       "operationSuccess": {
-        "lower": 0.49999999999999706,
-        "upper": 0.500000000000003
+        "lower": 0.4999999999999986,
+        "upper": 0.5000000000000014
       },
       "successfulMeanFp": {
-        "lower": 47.032744852938066,
-        "upper": 47.03274485294428
+        "lower": 47.03274485293961,
+        "upper": 47.03274485294274
       },
       "generatedTemplates": 2,
       "evaluatedTemplates": 2,
-      "abandonedTemplates": 0,
+      "abandonedTemplates": 1,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 27,
+      "primaryStates": 18,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -4876,7 +4876,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -4967,7 +4967,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5064,7 +5064,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5138,20 +5138,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-b3539cc2b73e31e6",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -5161,7 +5161,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5241,20 +5241,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-b3539cc2b73e31e6",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -5264,7 +5264,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5349,7 +5349,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5440,7 +5440,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5531,7 +5531,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5628,7 +5628,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5725,7 +5725,7 @@
         7
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5828,7 +5828,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5890,20 +5890,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-3e7afa78239de844",
+      "primaryRouteId": "r-1ca03ecbecd62aa7",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.0854464558808,
-        "upper": 43.08544645588391
+        "lower": 43.08544645588145,
+        "upper": 43.08544645588325
       },
-      "generatedTemplates": 162,
-      "evaluatedTemplates": 162,
-      "abandonedTemplates": 148,
-      "certifiedPrunedPrefixes": 110,
-      "primaryStates": 22,
+      "generatedTemplates": 2,
+      "evaluatedTemplates": 2,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 14,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -5913,7 +5913,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -5981,20 +5981,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-3e7afa78239de844",
+      "primaryRouteId": "r-1ca03ecbecd62aa7",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.0854464558808,
-        "upper": 43.08544645588391
+        "lower": 43.08544645588145,
+        "upper": 43.08544645588325
       },
-      "generatedTemplates": 22,
-      "evaluatedTemplates": 22,
-      "abandonedTemplates": 18,
-      "certifiedPrunedPrefixes": 16,
-      "primaryStates": 22,
+      "generatedTemplates": 2,
+      "evaluatedTemplates": 2,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 14,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -6004,7 +6004,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6072,20 +6072,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-926110cbedeab3ff",
+      "primaryRouteId": "r-e18b94c4b80b7588",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 48.09683603921276,
-        "upper": 48.096836039218616
+        "lower": 48.09683603921391,
+        "upper": 48.096836039217465
       },
-      "generatedTemplates": 153,
-      "evaluatedTemplates": 153,
-      "abandonedTemplates": 101,
-      "certifiedPrunedPrefixes": 101,
-      "primaryStates": 76,
+      "generatedTemplates": 71,
+      "evaluatedTemplates": 71,
+      "abandonedTemplates": 32,
+      "certifiedPrunedPrefixes": 32,
+      "primaryStates": 49,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -6095,7 +6095,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6169,20 +6169,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-9b9d9a8bcb9d7b37",
+      "primaryRouteId": "r-dd9656635c8ee5c7",
       "operationSuccess": {
-        "lower": 0.3333333333333312,
-        "upper": 0.3333333333333354
+        "lower": 0.33333333333333176,
+        "upper": 0.33333333333333487
       },
       "successfulMeanFp": {
-        "lower": 51.12896208087863,
-        "upper": 51.12896208088608
+        "lower": 51.12896208087954,
+        "upper": 51.12896208088517
       },
       "generatedTemplates": 19,
       "evaluatedTemplates": 19,
-      "abandonedTemplates": 14,
-      "certifiedPrunedPrefixes": 14,
-      "primaryStates": 24,
+      "abandonedTemplates": 12,
+      "certifiedPrunedPrefixes": 2,
+      "primaryStates": 18,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -6192,7 +6192,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6266,20 +6266,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-1c3c88414850ded5",
+      "primaryRouteId": "r-1597fd49336aeb3d",
       "operationSuccess": {
-        "lower": 0.49534999999999524,
-        "upper": 0.4953500000000047
+        "lower": 0.4849999999999961,
+        "upper": 0.4850000000000039
       },
       "successfulMeanFp": {
-        "lower": 62.61003616784259,
-        "upper": 62.6100361678529
+        "lower": 62.804227293683894,
+        "upper": 62.80422729369231
       },
-      "generatedTemplates": 140,
-      "evaluatedTemplates": 140,
-      "abandonedTemplates": 64,
-      "certifiedPrunedPrefixes": 59,
-      "primaryStates": 199,
+      "generatedTemplates": 408,
+      "evaluatedTemplates": 408,
+      "abandonedTemplates": 32,
+      "certifiedPrunedPrefixes": 175,
+      "primaryStates": 129,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -6289,7 +6289,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6369,20 +6369,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-114cb69988001a45",
+      "primaryRouteId": "r-911a218436ebdd28",
       "operationSuccess": {
-        "lower": 0.16666666666666433,
-        "upper": 0.166666666666669
+        "lower": 0.16666666666666516,
+        "upper": 0.16666666666666816
       },
       "successfulMeanFp": {
-        "lower": 59.17247770587313,
-        "upper": 59.17247770589159
+        "lower": 59.17247770587675,
+        "upper": 59.17247770588796
       },
-      "generatedTemplates": 16,
-      "evaluatedTemplates": 16,
-      "abandonedTemplates": 12,
-      "certifiedPrunedPrefixes": 12,
-      "primaryStates": 26,
+      "generatedTemplates": 34,
+      "evaluatedTemplates": 34,
+      "abandonedTemplates": 30,
+      "certifiedPrunedPrefixes": 20,
+      "primaryStates": 22,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -6392,7 +6392,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6460,20 +6460,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-7f1fc7703f9b0744",
+      "primaryRouteId": "r-79186e630dc5ebff",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 37.669669852940146,
-        "upper": 37.66966985294221
+        "lower": 37.66966985294055,
+        "upper": 37.66966985294181
       },
-      "generatedTemplates": 10,
-      "evaluatedTemplates": 10,
-      "abandonedTemplates": 4,
-      "certifiedPrunedPrefixes": 4,
-      "primaryStates": 11,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 7,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -6483,7 +6483,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6557,20 +6557,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-7f1fc7703f9b0744",
+      "primaryRouteId": "r-79186e630dc5ebff",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 37.669669852940146,
-        "upper": 37.66966985294221
+        "lower": 37.66966985294055,
+        "upper": 37.66966985294181
       },
-      "generatedTemplates": 3,
-      "evaluatedTemplates": 3,
-      "abandonedTemplates": 1,
-      "certifiedPrunedPrefixes": 1,
-      "primaryStates": 11,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 7,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -6580,7 +6580,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6654,20 +6654,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-e853a7438013f2ff",
+      "primaryRouteId": "r-78aa0b8c80f2ba10",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 56.41305943627229,
-        "upper": 56.413059436276725
+        "lower": 56.413059436273116,
+        "upper": 56.413059436275915
       },
-      "generatedTemplates": 8,
-      "evaluatedTemplates": 8,
-      "abandonedTemplates": 0,
-      "certifiedPrunedPrefixes": 0,
-      "primaryStates": 61,
+      "generatedTemplates": 12,
+      "evaluatedTemplates": 12,
+      "abandonedTemplates": 4,
+      "certifiedPrunedPrefixes": 3,
+      "primaryStates": 41,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -6677,7 +6677,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6757,20 +6757,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-463296ee0ba1020a",
+      "primaryRouteId": "r-74e9c5c8a14874e4",
       "operationSuccess": {
-        "lower": 0.24999999999999742,
-        "upper": 0.2500000000000026
+        "lower": 0.24999999999999886,
+        "upper": 0.25000000000000117
       },
       "successfulMeanFp": {
-        "lower": 45.71318547793584,
-        "upper": 45.71318547794652
+        "lower": 45.71318547793874,
+        "upper": 45.71318547794362
       },
       "generatedTemplates": 2,
       "evaluatedTemplates": 2,
-      "abandonedTemplates": 0,
+      "abandonedTemplates": 1,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 15,
+      "primaryStates": 9,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -6780,7 +6780,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6854,20 +6854,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-b3539cc2b73e31e6",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -6877,7 +6877,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -6957,20 +6957,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-b3539cc2b73e31e6",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -6980,7 +6980,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7042,20 +7042,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-7f1fc7703f9b0744",
+      "primaryRouteId": "r-e153fb1720a84d03",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.08544645588102,
-        "upper": 43.08544645588369
+        "lower": 43.08544645588124,
+        "upper": 43.08544645588347
       },
-      "generatedTemplates": 10,
-      "evaluatedTemplates": 10,
-      "abandonedTemplates": 3,
-      "certifiedPrunedPrefixes": 3,
-      "primaryStates": 20,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 19,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -7065,7 +7065,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7133,20 +7133,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-7f1fc7703f9b0744",
+      "primaryRouteId": "r-e153fb1720a84d03",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.08544645588102,
-        "upper": 43.08544645588369
+        "lower": 43.08544645588124,
+        "upper": 43.08544645588347
       },
-      "generatedTemplates": 3,
-      "evaluatedTemplates": 3,
-      "abandonedTemplates": 1,
-      "certifiedPrunedPrefixes": 1,
-      "primaryStates": 20,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 19,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -7156,7 +7156,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7224,20 +7224,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-e853a7438013f2ff",
+      "primaryRouteId": "r-7b7927967fee5642",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 48.0968360392132,
-        "upper": 48.096836039218175
+        "lower": 48.09683603921362,
+        "upper": 48.096836039217756
       },
-      "generatedTemplates": 10,
-      "evaluatedTemplates": 10,
-      "abandonedTemplates": 3,
-      "certifiedPrunedPrefixes": 3,
-      "primaryStates": 73,
+      "generatedTemplates": 14,
+      "evaluatedTemplates": 14,
+      "abandonedTemplates": 7,
+      "certifiedPrunedPrefixes": 6,
+      "primaryStates": 52,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -7247,7 +7247,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7321,20 +7321,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-aff9dedb1ca2a29f",
+      "primaryRouteId": "r-43383ea2b0ac6506",
       "operationSuccess": {
-        "lower": 0.3333333333333313,
-        "upper": 0.3333333333333353
+        "lower": 0.33333333333333176,
+        "upper": 0.33333333333333487
       },
       "successfulMeanFp": {
-        "lower": 51.12896208087893,
-        "upper": 51.12896208088579
+        "lower": 51.12896208087952,
+        "upper": 51.128962080885195
       },
-      "generatedTemplates": 2,
-      "evaluatedTemplates": 2,
-      "abandonedTemplates": 0,
+      "generatedTemplates": 3,
+      "evaluatedTemplates": 3,
+      "abandonedTemplates": 1,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 22,
+      "primaryStates": 21,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -7344,7 +7344,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7418,20 +7418,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-074f3225739cb2e9",
+      "primaryRouteId": "r-08cab52d35534d71",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 44.61212193627288,
-        "upper": 44.612121936276154
+        "lower": 44.61212193627365,
+        "upper": 44.61212193627537
       },
-      "generatedTemplates": 8,
-      "evaluatedTemplates": 8,
-      "abandonedTemplates": 0,
-      "certifiedPrunedPrefixes": 0,
-      "primaryStates": 16,
+      "generatedTemplates": 12,
+      "evaluatedTemplates": 12,
+      "abandonedTemplates": 4,
+      "certifiedPrunedPrefixes": 3,
+      "primaryStates": 10,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -7441,7 +7441,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7521,20 +7521,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-463296ee0ba1020a",
+      "primaryRouteId": "r-74e9c5c8a14874e4",
       "operationSuccess": {
-        "lower": 0.24999999999999742,
-        "upper": 0.2500000000000026
+        "lower": 0.24999999999999886,
+        "upper": 0.25000000000000117
       },
       "successfulMeanFp": {
-        "lower": 48.35230422793581,
-        "upper": 48.35230422794655
+        "lower": 48.35230422793872,
+        "upper": 48.352304227943634
       },
       "generatedTemplates": 2,
       "evaluatedTemplates": 2,
-      "abandonedTemplates": 0,
+      "abandonedTemplates": 1,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 17,
+      "primaryStates": 11,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -7544,7 +7544,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7635,7 +7635,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7732,7 +7732,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7806,20 +7806,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-b3539cc2b73e31e6",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -7829,7 +7829,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -7909,20 +7909,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-b3539cc2b73e31e6",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -7932,7 +7932,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8017,7 +8017,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8108,7 +8108,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8199,7 +8199,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8296,7 +8296,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8393,7 +8393,7 @@
         4
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8496,7 +8496,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8558,20 +8558,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-87ec0cdf8bc830a3",
+      "primaryRouteId": "r-501c0df2a390042e",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.0854464558808,
-        "upper": 43.08544645588391
+        "lower": 43.08544645588145,
+        "upper": 43.08544645588325
       },
-      "generatedTemplates": 162,
-      "evaluatedTemplates": 162,
-      "abandonedTemplates": 150,
-      "certifiedPrunedPrefixes": 110,
-      "primaryStates": 22,
+      "generatedTemplates": 2,
+      "evaluatedTemplates": 2,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 14,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -8581,7 +8581,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8649,20 +8649,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-87ec0cdf8bc830a3",
+      "primaryRouteId": "r-501c0df2a390042e",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.0854464558808,
-        "upper": 43.08544645588391
+        "lower": 43.08544645588145,
+        "upper": 43.08544645588325
       },
-      "generatedTemplates": 22,
-      "evaluatedTemplates": 22,
-      "abandonedTemplates": 18,
-      "certifiedPrunedPrefixes": 16,
-      "primaryStates": 22,
+      "generatedTemplates": 2,
+      "evaluatedTemplates": 2,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 14,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -8672,7 +8672,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8740,20 +8740,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-4aaf9e859fd09891",
+      "primaryRouteId": "r-224986abd35d7437",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 48.804892289212226,
-        "upper": 48.804892289219154
+        "lower": 48.804892289213555,
+        "upper": 48.80489228921782
       },
-      "generatedTemplates": 170,
-      "evaluatedTemplates": 170,
-      "abandonedTemplates": 104,
-      "certifiedPrunedPrefixes": 104,
-      "primaryStates": 47,
+      "generatedTemplates": 76,
+      "evaluatedTemplates": 76,
+      "abandonedTemplates": 32,
+      "certifiedPrunedPrefixes": 36,
+      "primaryStates": 29,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -8763,7 +8763,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8837,20 +8837,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-9b0aa8340890d608",
+      "primaryRouteId": "r-42b8b95dcd148c09",
       "operationSuccess": {
-        "lower": 0.3333333333333312,
-        "upper": 0.3333333333333354
+        "lower": 0.3333333333333319,
+        "upper": 0.3333333333333347
       },
       "successfulMeanFp": {
-        "lower": 51.12896208087863,
-        "upper": 51.12896208088608
+        "lower": 51.12896208087985,
+        "upper": 51.12896208088486
       },
-      "generatedTemplates": 22,
-      "evaluatedTemplates": 22,
-      "abandonedTemplates": 14,
-      "certifiedPrunedPrefixes": 14,
-      "primaryStates": 24,
+      "generatedTemplates": 12,
+      "evaluatedTemplates": 12,
+      "abandonedTemplates": 6,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 16,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -8860,7 +8860,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -8934,20 +8934,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-8273fdb45cbd5090",
+      "primaryRouteId": "r-0e1f06dcd67bdb28",
       "operationSuccess": {
-        "lower": 0.42249999999999505,
-        "upper": 0.4225000000000049
+        "lower": 0.42249999999999754,
+        "upper": 0.42250000000000243
       },
       "successfulMeanFp": {
-        "lower": 56.56136523379975,
-        "upper": 56.56136523381938
+        "lower": 56.561365233804324,
+        "upper": 56.56136523381481
       },
-      "generatedTemplates": 146,
-      "evaluatedTemplates": 146,
-      "abandonedTemplates": 66,
-      "certifiedPrunedPrefixes": 54,
-      "primaryStates": 107,
+      "generatedTemplates": 198,
+      "evaluatedTemplates": 198,
+      "abandonedTemplates": 32,
+      "certifiedPrunedPrefixes": 58,
+      "primaryStates": 70,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -8957,7 +8957,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9037,20 +9037,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-08181609b86f65fd",
+      "primaryRouteId": "r-53eef0de75df8c6a",
       "operationSuccess": {
-        "lower": 0.16666666666666433,
-        "upper": 0.166666666666669
+        "lower": 0.1666666666666653,
+        "upper": 0.16666666666666802
       },
       "successfulMeanFp": {
-        "lower": 59.17247770587313,
-        "upper": 59.17247770589159
+        "lower": 59.1724777058771,
+        "upper": 59.172477705887616
       },
-      "generatedTemplates": 16,
-      "evaluatedTemplates": 16,
+      "generatedTemplates": 14,
+      "evaluatedTemplates": 14,
       "abandonedTemplates": 12,
-      "certifiedPrunedPrefixes": 12,
-      "primaryStates": 26,
+      "certifiedPrunedPrefixes": 4,
+      "primaryStates": 19,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -9060,7 +9060,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9128,20 +9128,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-4a9148276e0a25a3",
+      "primaryRouteId": "r-0f9b0fca008ff836",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 37.669669852940146,
-        "upper": 37.66966985294221
+        "lower": 37.66966985294055,
+        "upper": 37.66966985294181
       },
-      "generatedTemplates": 10,
-      "evaluatedTemplates": 10,
-      "abandonedTemplates": 4,
-      "certifiedPrunedPrefixes": 4,
-      "primaryStates": 11,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 7,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -9151,7 +9151,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9225,20 +9225,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-4a9148276e0a25a3",
+      "primaryRouteId": "r-0f9b0fca008ff836",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 37.669669852940146,
-        "upper": 37.66966985294221
+        "lower": 37.66966985294055,
+        "upper": 37.66966985294181
       },
-      "generatedTemplates": 3,
-      "evaluatedTemplates": 3,
-      "abandonedTemplates": 1,
-      "certifiedPrunedPrefixes": 1,
-      "primaryStates": 11,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 7,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -9248,7 +9248,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9322,20 +9322,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-fb34049669cf5cca",
+      "primaryRouteId": "r-425cfd43df8f36c7",
       "operationSuccess": {
-        "lower": 0.6899999999999977,
-        "upper": 0.6900000000000024
+        "lower": 0.6899999999999984,
+        "upper": 0.6900000000000017
       },
       "successfulMeanFp": {
-        "lower": 42.82762439839401,
-        "upper": 42.82762439839743
+        "lower": 42.827624398394505,
+        "upper": 42.82762439839694
       },
-      "generatedTemplates": 8,
-      "evaluatedTemplates": 8,
-      "abandonedTemplates": 1,
-      "certifiedPrunedPrefixes": 0,
-      "primaryStates": 13,
+      "generatedTemplates": 12,
+      "evaluatedTemplates": 12,
+      "abandonedTemplates": 5,
+      "certifiedPrunedPrefixes": 3,
+      "primaryStates": 9,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -9345,7 +9345,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9425,20 +9425,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-3cc10c64bb0e6a18",
+      "primaryRouteId": "r-8920b3e17622c94d",
       "operationSuccess": {
-        "lower": 0.24999999999999742,
-        "upper": 0.2500000000000026
+        "lower": 0.24999999999999886,
+        "upper": 0.25000000000000117
       },
       "successfulMeanFp": {
-        "lower": 45.71318547793584,
-        "upper": 45.71318547794652
+        "lower": 45.71318547793874,
+        "upper": 45.71318547794362
       },
       "generatedTemplates": 2,
       "evaluatedTemplates": 2,
-      "abandonedTemplates": 0,
+      "abandonedTemplates": 1,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 15,
+      "primaryStates": 9,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -9448,7 +9448,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9522,20 +9522,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-8b0f128fe6965c53",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -9545,7 +9545,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9625,20 +9625,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-8b0f128fe6965c53",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -9648,7 +9648,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9710,20 +9710,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-4a9148276e0a25a3",
+      "primaryRouteId": "r-bcb0529da16a1b01",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.08544645588102,
-        "upper": 43.08544645588369
+        "lower": 43.08544645588124,
+        "upper": 43.08544645588347
       },
-      "generatedTemplates": 10,
-      "evaluatedTemplates": 10,
-      "abandonedTemplates": 4,
-      "certifiedPrunedPrefixes": 3,
-      "primaryStates": 20,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 19,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -9733,7 +9733,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9801,20 +9801,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-4a9148276e0a25a3",
+      "primaryRouteId": "r-bcb0529da16a1b01",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 43.08544645588102,
-        "upper": 43.08544645588369
+        "lower": 43.08544645588124,
+        "upper": 43.08544645588347
       },
-      "generatedTemplates": 3,
-      "evaluatedTemplates": 3,
-      "abandonedTemplates": 1,
-      "certifiedPrunedPrefixes": 1,
-      "primaryStates": 20,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 19,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -9824,7 +9824,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9892,20 +9892,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-4a9148276e0a25a3",
+      "primaryRouteId": "r-0f9b0fca008ff836",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 37.669669852940146,
-        "upper": 37.66966985294221
+        "lower": 37.66966985294055,
+        "upper": 37.66966985294181
       },
-      "generatedTemplates": 10,
-      "evaluatedTemplates": 10,
-      "abandonedTemplates": 4,
-      "certifiedPrunedPrefixes": 4,
-      "primaryStates": 11,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 7,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -9915,7 +9915,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -9989,20 +9989,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-4a9148276e0a25a3",
+      "primaryRouteId": "r-0f9b0fca008ff836",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 37.669669852940146,
-        "upper": 37.66966985294221
+        "lower": 37.66966985294055,
+        "upper": 37.66966985294181
       },
-      "generatedTemplates": 3,
-      "evaluatedTemplates": 3,
-      "abandonedTemplates": 1,
-      "certifiedPrunedPrefixes": 1,
-      "primaryStates": 11,
+      "generatedTemplates": 1,
+      "evaluatedTemplates": 1,
+      "abandonedTemplates": 0,
+      "certifiedPrunedPrefixes": 0,
+      "primaryStates": 7,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -10012,7 +10012,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10086,20 +10086,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-fb34049669cf5cca",
+      "primaryRouteId": "r-425cfd43df8f36c7",
       "operationSuccess": {
-        "lower": 0.6899999999999977,
-        "upper": 0.6900000000000024
+        "lower": 0.6899999999999984,
+        "upper": 0.6900000000000017
       },
       "successfulMeanFp": {
-        "lower": 42.82762439839401,
-        "upper": 42.82762439839743
+        "lower": 42.827624398394505,
+        "upper": 42.82762439839694
       },
-      "generatedTemplates": 8,
-      "evaluatedTemplates": 8,
-      "abandonedTemplates": 1,
-      "certifiedPrunedPrefixes": 0,
-      "primaryStates": 13,
+      "generatedTemplates": 12,
+      "evaluatedTemplates": 12,
+      "abandonedTemplates": 5,
+      "certifiedPrunedPrefixes": 3,
+      "primaryStates": 9,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -10109,7 +10109,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10189,20 +10189,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-3cc10c64bb0e6a18",
+      "primaryRouteId": "r-8920b3e17622c94d",
       "operationSuccess": {
-        "lower": 0.24999999999999742,
-        "upper": 0.2500000000000026
+        "lower": 0.24999999999999886,
+        "upper": 0.25000000000000117
       },
       "successfulMeanFp": {
-        "lower": 45.71318547793584,
-        "upper": 45.71318547794652
+        "lower": 45.71318547793874,
+        "upper": 45.71318547794362
       },
       "generatedTemplates": 2,
       "evaluatedTemplates": 2,
-      "abandonedTemplates": 0,
+      "abandonedTemplates": 1,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 15,
+      "primaryStates": 9,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -10212,7 +10212,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10303,7 +10303,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10400,7 +10400,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10474,20 +10474,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-8b0f128fe6965c53",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -10497,7 +10497,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10577,20 +10577,20 @@
       },
       "status": "RECOMMENDATION",
       "searchStatus": "COMPLETE",
-      "primaryRouteId": "r-8b0f128fe6965c53",
+      "primaryRouteId": "r-f5f04e6842bf1044",
       "operationSuccess": {
         "lower": 1,
         "upper": 1
       },
       "successfulMeanFp": {
-        "lower": 35.402812499999435,
-        "upper": 35.40281250000057
+        "lower": 35.402812499999804,
+        "upper": 35.4028125000002
       },
       "generatedTemplates": 1,
       "evaluatedTemplates": 1,
       "abandonedTemplates": 0,
       "certifiedPrunedPrefixes": 0,
-      "primaryStates": 4,
+      "primaryStates": 3,
       "pruningMatchesCompleteEvaluation": true
     },
     {
@@ -10600,7 +10600,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10685,7 +10685,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10776,7 +10776,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10867,7 +10867,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -10964,7 +10964,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -11061,7 +11061,7 @@
         10
       ],
       "request": {
-        "modelId": "le-1.5.3-iid-b46d3015a01bbdb7",
+        "modelId": "le-1.5.3-iid-479c4ba59a034b7d",
         "item": {
           "baseId": "4:0",
           "itemLevel": 100,
@@ -11198,14 +11198,14 @@
   ],
   "qualification": "All raw labels in four side contexts, real legal catalog IDs. Coverage fixtures explicitly constrain actions to add/havoc/seal/removal for a complete inexpensive pruning baseline. Chaos, all three FP types, dynamic Redemption, fixed branches and numerical boundary cases have separate production tests. This is not all game states, all arbitrary controllers, a physical device test, or global optimality.",
   "sourceSha256": {
-    "src/generated/model.json": "31a35ef38b9ae5d9feec7daec4f5822ce26273e3d81e986cf5755517f64d9dc8",
+    "src/generated/model.json": "de7ddb05de3e9437fac232509a04ad59acee88f664d86279633cf416c0fb0c98",
     "src/core/hierarchy.ts": "30a97b3fe345406a2dfacc0ed78806b9e31e4d4e8ea4a7d03b1ef2f5693eadbc",
     "src/core/hierarchy-fixtures.ts": "e39a00ca1095876b6152529b958bc5695a521ba591af2727e6e9cad3ebe38dc1",
-    "src/core/intrinsic.ts": "0370dc63c0920867569f94a0659b88552d2ce4e127c3259efa0d9ad51f7a4cb0",
-    "src/core/planner.ts": "48bfc9ee42893e6959579d1157c852c790f84cb4aa4410110c6e0f1a306e0626",
-    "src/core/rules.ts": "fd851784c8cb5ec8096a54e1455467f76ce7affb3481c5961c5dca13b21ce096",
-    "src/core/evaluation.ts": "292c9920fb64143f070d1b6a47e1a8b6504064e7ecffe016e03f8816dd1c3544",
-    "src/core/types.ts": "e3f084dcba1f6657d9bd0ac9e3fce27b237bc008df5fde1f01d5132c41f0fa2e",
+    "src/core/intrinsic.ts": "b63d9ac950d0d29348904bfc277094001d0fde9a4513ca76715ebd2cb6c7e17c",
+    "src/core/planner.ts": "28400886fb3e784f68f45d0dfb8a7c0755650fc7e313401d0030931306a33974",
+    "src/core/rules.ts": "f1984e1404b3a6f81300cf6876890d30615e1311f585c2eae348b45cf2263f9d",
+    "src/core/evaluation.ts": "23b03de56bb8345672870c2776e3e543a709930cf26e791caa7a8c51b660c1c6",
+    "src/core/types.ts": "ea064e6b79f6a2fc2dc5229accb5389b66bedf5c1cdc46ab676aedc660ab17de",
     "scripts/validate_hierarchy.ts": "62babaa2d185510e29196779da2036636034aa80bef3278c5a8d84e5cfe0b418"
   }
 }

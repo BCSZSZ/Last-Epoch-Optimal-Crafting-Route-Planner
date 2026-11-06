@@ -76,6 +76,7 @@
     "research/deployment-capacity-seal.json": "3386cf0ce5bf227cf1622077fbbc62f3373bdcb707f18b10a252c52453974b98",
     "research/deployment-completion48.json": "b0b395b5bc855d59c704754d59976d1e7d381ed32bc9f3d9eef6e5db85e28349",
     "research/deployment-detailed-locale.json": "f9a32a98449e956405abcf42f54f78a8a7d98ac03ea68d5a2e6d519e2c1e47eb",
+    "research/deployment-programs-experimental.json": "d0d1beb09a53f28cdb3583ecc01c11aa7f8fea3f235ee076f057ae9492954e05",
     "research/deployment-slot-targets.json": "fe44d42f8d53093d8b62e75555eef930f576f1efcfc25860db3ef8b7d152a0c7",
     "research/detailed-performance.json": "c773cfcf0bfe50584600488eea94ec5aae44d325aca9f2d019bb09cc0d888004",
     "research/device-validation/desktop-baseline-validation.json": "6620e9cc830ead68d58559e241dd0c909dd92cbef301bebbf57dad315e4e314b",
@@ -95,7 +96,7 @@
     "research/program-release-validation.json": "100f1b3a890e445d2c2e0ceaad61f6b2659e911488db8cd6b29d3cdb93900a26",
     "research/reference-calculators.json": "fbbd966f057c2ed97ecca0ad8d2036eab93ac721cb506c993417c7faddbd831e",
     "research/runtime-model-archive/manifest.json": "7285a7c670961d4ef351a420230a93addd79a8d833f53ad221ef916bcdd70436",
-    "research/static-deployment.json": "04191280d7fa70e24ac23d04507c9d8ddf85fc466ba77fabd046f150c28528cf",
+    "research/static-deployment.json": "04db5a424b4fc82949a0b6e47004c0a66a557322d0bec465178ffcb6e6ada14a",
     "research/ui-validation/capacity-local-parity.json": "0d77e79ceebfcec2f502c062d0a65f13f93c0be6819d12144872fcc8ac68e72f",
     "research/ui-validation/capacity-public-parity.json": "667cf3abd34c3c6b19af24b45d5763f7c3429d79e9ba6fe12a4c139a6f99662c",
     "research/ui-validation/completion48-parity.json": "3649126334fcd3af0cd7fe44542fd398b5c97a83c0892eaa25057fa2da9f9e62",
@@ -186,7 +187,7 @@
   "remainingAcceptance": [
     "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "3032402ff1a9fe9b53384306b750207829f66c86f55a609f029094397dadcbf7",
+  "researchRevision": "8687fce726f61a237987e77e4e4954b081123fd9f56df9f3c483ee23eeb75536",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 2,
   "steamBuildId": 26087601,

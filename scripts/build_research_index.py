@@ -55,7 +55,8 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                 "research/ui-validation/detailed-local-parity.json", "research/ui-validation/detailed-public-parity.json",
                 "research/deployment-detailed-locale.json", "research/program-release-validation.json",
                 "research/program-release-performance.json", "research/program-release-monte-carlo.json",
-                "research/ui-validation/programs-local-parity.json", "research/ui-validation/programs-public-parity.json")
+                "research/ui-validation/programs-local-parity.json", "research/ui-validation/programs-public-parity.json",
+                "research/deployment-programs-experimental.json")
     model = {"schemaVersion": 2, "modelId": "le-1.5.3-26087601-r13-programs-experimental",
              "phase": "PUBLIC_PREVIEW", "productionReady": False,
              "productionModelId": load_json(root / "src/generated/model.json")["modelId"],

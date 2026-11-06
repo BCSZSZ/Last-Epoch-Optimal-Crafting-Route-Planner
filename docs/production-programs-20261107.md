@@ -24,6 +24,8 @@
 
 Worker返回主推荐、最多32条放弃见证，以及全部放弃数量与原因汇总；放弃列表按需展开，避免数百个长程序占据传输与DOM。
 
+CI完整重算有限的新文法时关闭墙钟截断，仍保留候选及状态上限，避免机器速度改变验证范围。旧补充通配搜索明确未穷尽，CI复算其已保存完整路线；实际搜索计数与耗时保留为观测，不作为跨机器相同的断言。线上12秒预算保持。
+
 ## 验收
 
 [22例生产／详细输入](../research/program-release-validation.json)、[完整ID蒙特卡洛](../research/program-release-monte-carlo.json)、[本地14例实际UI／Worker复算](../research/ui-validation/programs-local-parity.json)。180项TypeScript、30项Python回归；三例达到人工及更强下限，24个保留验证例继续通过。有限文法完成不代表全局最优。

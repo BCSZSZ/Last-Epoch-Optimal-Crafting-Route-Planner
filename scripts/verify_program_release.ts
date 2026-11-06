@@ -13,10 +13,19 @@ import {trainingCases} from '../src/research/learning-cases';
 const verify=process.argv.includes('--verify-only'),proofOnly=process.argv.includes('--evidence-only'),trials=verify||proofOnly?1:5;
 const cases=[...experimentalFixtures().map(f=>({...f,id:'reference-'+f.id})),...experimentalFixtures(4,true).map(f=>({...f,id:'detailed-'+f.id})),...detailedFixtures()];
 const results=[],performanceRows:{id:string;times:number[]}[]=[];
+const saved=verify?JSON.parse(readFileSync('research/program-release-validation.json','utf8')):null;
 for(const fixture of cases){
+  // Fallback wildcard search is explicitly incomplete and wall-clock dependent.
+  // Replay its measured witness; the finite new grammar below is fully regenerated.
+  if(verify&&['wildcard-prefixes','partial-wildcard'].includes(fixture.id)){
+    const row=saved.cases.find((r:{id:string})=>r.id===fixture.id);assert(row);assert.deepEqual(row.input,fixture.request);assert(row.primary);
+    const engine=new RuleEngine(catalogForInputModel(fixture.request.inputModel));
+    assert.deepEqual(evaluateIntrinsic(new IntrinsicWorkspace(engine,fixture.request),row.primary.route),row.primary);
+    assert.deepEqual(evaluateCompletion(engine,fixture.request,row.primary.route),row.completion);results.push(row);continue;
+  }
   const times:number[]=[];let report:Awaited<ReturnType<typeof plan>>|undefined;
   for(let n=verify||proofOnly?0:-1;n<trials;n++){
-    const start=performance.now();const next=await plan(fixture.request);if(n>=0)times.push(performance.now()-start);
+    const start=performance.now();const next=await plan(fixture.request,verify?{now:()=>0}:{});if(n>=0)times.push(performance.now()-start);
     if(report){assert.equal(next.primary?.route.id,report.primary?.route.id);assert.deepEqual(next.primary,report.primary);assert.deepEqual(next.completion,report.completion);}
     report=next;
   }
@@ -51,9 +60,9 @@ for(const fixture of trainingCases()){
 }
 const sources=Object.fromEntries(['src/core/program-search.ts','src/core/program-compact.ts','src/core/program-projection.ts','src/core/draft.ts','src/core/planner.ts','src/core/intrinsic.ts','src/core/completion.ts','src/core/rules.ts'].map(path=>[path,createHash('sha256').update(readFileSync(path)).digest('hex')]));
 const evidence={schemaVersion:1,status:'PASS',modelId:cases[0].request.modelId,solverRevision:'EXAMPLE_GUIDED_ROUND2_WITH_EXPERIMENTAL_CONVERSION_V1',cases:results,teachers,sources,
-  qualification:'Eight user experimental-prefix2 patterns in unspecified-equipment equal reference and eight full-ID glove cases using actual craft weights, plus six detailed UI patterns. Complete means the declared finite program grammar only. No global optimality or low-end-device claim.'};
+  qualification:'Eight user experimental-prefix2 patterns in unspecified-equipment equal reference and eight full-ID glove cases using actual craft weights, plus six detailed UI patterns. Verification regenerates the finite new grammar without wall-clock cutoff; explicitly incomplete fallback wildcard searches replay their saved full numeric witnesses. Measured timings are separate. No global optimality or low-end-device claim.'};
 const bytes=JSON.stringify(evidence,null,2)+'\n',path='research/program-release-validation.json';
-if(verify)assert.equal(readFileSync(path,'utf8'),bytes);else{
+if(verify)assert.deepEqual(JSON.parse(readFileSync(path,'utf8')),evidence);else{
   writeFileSync(path,bytes);if(!proofOnly)writeFileSync('research/program-release-performance.json',JSON.stringify({schemaVersion:1,modelId:evidence.modelId,trials,warmups:1,environment:{node:process.version,platform:process.platform,arch:process.arch},cases:performanceRows,
     qualification:'Same desktop sequential Node timings, five trials after one warmup; includes planning and48FP evaluation. Not browser latency or low-end-device evidence.'},null,2)+'\n');
 }

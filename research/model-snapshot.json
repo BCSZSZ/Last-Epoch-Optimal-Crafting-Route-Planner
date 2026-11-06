@@ -92,7 +92,7 @@
     "research/math-fixtures.json": "2e8f761032a1fb9710be3bdfe80d361982297d3cbf6663140f77bc517e6a978a",
     "research/program-release-monte-carlo.json": "731df0baafb016426710a4e1aae358bfb2f6d133cbe403bc38e4bb056582ad79",
     "research/program-release-performance.json": "17332788a0b64625e97031c6d5792dfde67a2b42a03c711708f8b29f72e2dca6",
-    "research/program-release-validation.json": "a691843cce523bf751ebaac104607acfa269fc75a062be57cd9f8ba37639d3d0",
+    "research/program-release-validation.json": "100f1b3a890e445d2c2e0ceaad61f6b2659e911488db8cd6b29d3cdb93900a26",
     "research/reference-calculators.json": "fbbd966f057c2ed97ecca0ad8d2036eab93ac721cb506c993417c7faddbd831e",
     "research/runtime-model-archive/manifest.json": "7285a7c670961d4ef351a420230a93addd79a8d833f53ad221ef916bcdd70436",
     "research/static-deployment.json": "04191280d7fa70e24ac23d04507c9d8ddf85fc466ba77fabd046f150c28528cf",
@@ -186,7 +186,7 @@
   "remainingAcceptance": [
     "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "821cbaa236f1446d421a7bef08045caaaebf48015a1c96a027c281a045853de7",
+  "researchRevision": "3032402ff1a9fe9b53384306b750207829f66c86f55a609f029094397dadcbf7",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 2,
   "steamBuildId": 26087601,

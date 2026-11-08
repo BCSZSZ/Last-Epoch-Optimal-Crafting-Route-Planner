@@ -5,12 +5,12 @@ import type { CompiledDraft, CraftingDraft, DraftScenario, DraftSlot, DraftSlots
 import { catalogForInputModel } from '../core/input-model';
 import type { IntrinsicReport } from '../core/intrinsic';
 import type { PlanProgress, PlanReport } from '../core/planner';
-import { MAXIMUM_SUCCESS_FP } from '../core/policy';
 import { REFERENCE_FP } from '../core/policy';
 import type { CompletionReport } from '../core/completion';
 import { completionPercent } from './completion-view';
 import { BrowserPlanner } from '../execution/browser';
-import { affixName, affixSearchText, fpNames, typeName } from './labels';
+import { affixName, affixSearchText, typeName } from './labels';
+import { FiniteResults } from './finite-results';
 import { routeSteps } from './route-view';
 import type { RouteStep } from './route-view';
 
@@ -155,6 +155,8 @@ function saveJson(value: unknown, name: string) {
 interface ScenarioResult { readonly scenario: DraftScenario; readonly report: PlanReport }
 function ScenarioResults({ scenario, report }: ScenarioResult) {
   const [showAbandoned,setShowAbandoned]=useState(false);
+  if (report.finiteProfiles) return <FiniteResults report={report.finiteProfiles} scenario={scenario}
+    onExport={() => saveJson({ schemaVersion: 2, input: scenario.request, report }, 'last-epoch-crafting-report.json')} />;
   const primary = report.primary as IntrinsicReport | null;
   const abandoned = [...report.abandoned ?? []].sort((a, b) => b.scoreEstimate - a.scoreEstimate || (a.expectedFpGivenSuccess?.lower ?? Infinity) - (b.expectedFpGivenSuccess?.lower ?? Infinity));
   const shown = primary ?? abandoned[0];
@@ -219,7 +221,7 @@ export function App() {
             <button type="button" aria-pressed={draft.part === null} className={draft.part === null ? 'selected' : ''} onClick={() => changePart(null)}>任意</button>
             {parts.map(part => <button type="button" key={part} aria-pressed={draft.part === part} className={draft.part === part ? 'selected' : ''}
               onClick={() => changePart(part)}>{typeName(part, String(part))}</button>)}</div></fieldset>
-          <div className="fp-row" role="group" aria-label="潜能类型">{(['NORMAL', 'ICE', 'BLOOD'] as const).map((fpType) => <button type="button" key={fpType} aria-pressed={draft.fpType === fpType} className={draft.fpType === fpType ? 'selected' : ''} onClick={() => edit({ ...draft, fpType })}>{fpNames[fpType]}</button>)}</div>
+          <p className="helper fp-row">统一从48FP计算：单独希望、冰＋希望、血＋希望，分别选路。</p>
           <SlotEditor slots={draft.slots} part={draft.part} markTargets={draft.targetMode === 'COUNTS'}
             onChange={(slots, side) => edit(withDraftSlots(draft, slots, side))} />
         </section>
@@ -230,14 +232,14 @@ export function App() {
         </section>
       </div>
       <section className="planning-controls" aria-label="规划控制"><button type="button" className="plan-button" disabled={busy} onClick={() => void run()}>{busy ? '正在规划…' : '开始规划'}<span aria-hidden="true">↗</span></button>
-        {busy && <div className="planning-status" role="status"><span className="spinner" /><span>{progress ? `正在比较路线，已计算 ${progress.evaluatedRoutes} 个方案…` : '正在加载计算模块…'}</span><button type="button" className="text-button" onClick={() => controller.current?.abort()}>取消</button></div>}
+        {busy && <div className="planning-status" role="status"><span className="spinner" /><span>{progress?.message ?? '正在加载计算模块…'}</span><button type="button" className="text-button" onClick={() => controller.current?.abort()}>取消</button></div>}
         {message && <p role="alert" className="error-message">{message}</p>}
       </section>
       {results.length > 0 && compiled && <section className="results" aria-label="规划结果" aria-live="polite">
         <div className="results-heading"><h2>规划结果</h2><span className="badge">{compiled.inputModel === 'FORGEABLE_ANY_EQUAL' ? '通用等权参考' : compiled.inputModel === 'FORGEABLE_EQUAL' ? '等权参考' : '实际词条权重 · 通用池'}</span></div>
         {results.map((result) => <ScenarioResults key={result.scenario.key} {...result} />)}
-        <p className="result-conventions">成功率假设 FP 持续充足；整件完成率按起始 {REFERENCE_FP} FP。剥离失手或必要封印失败即停止。FP 均值只统计最终成功路线，超过 {MAXIMUM_SUCCESS_FP} FP 放弃。材料无限。</p>
-        <details className="assumptions"><summary>计算假设</summary>{compiled.assumptions.map((assumption) => <p key={assumption}>{assumption}</p>)}<p>独立随机参考模型；已搜索的模板范围不代表全局最优。</p><p className="model-id">{MODEL_ID}</p></details>
+        <p className="result-conventions">三种条件分别从48FP出发，分别选路及判断。低于25%显示不推荐，结果仍保留。封印用绝望、混沌用混沌；其他可用希望的操作采用希望。未达标且FP耗尽才停止，仍合法的失手分支可以继续。</p>
+        <details className="assumptions"><summary>计算假设</summary>{compiled.assumptions.map((assumption) => <p key={assumption}>{assumption}</p>)}<p>独立随机参考模型；完整条件策略与固定候选结果分别说明覆盖范围，未算完不记为0%。</p><p className="model-id">{MODEL_ID}</p></details>
       </section>}
     </main>
     <footer><span>Last Epoch {catalog.model.gameVersion}<br />默认希望雕文；封印用绝望，混沌用混沌。</span><a href="https://github.com/BCSZSZ/Last-Epoch-Optimal-Crafting-Route-Planner" target="_blank" rel="noreferrer">研究与源代码 ↗</a></footer>

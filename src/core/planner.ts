@@ -17,6 +17,10 @@ import { evaluateCompletion } from './completion';
 import type { CompletionReport } from './completion';
 import { REFERENCE_FP } from './policy';
 import { productionPrograms } from './program-search';
+import { planFiniteProfiles } from './finite-planner';
+import type { FiniteProfilesReport } from './finite-policy';
+import { PlanningCancelledError } from './planning-errors';
+export { PlanningCancelledError } from './planning-errors';
 
 export interface PlanProgress {
   readonly phase: 'VALIDATION' | 'SEARCH' | 'REFINEMENT' | 'DONE';
@@ -27,9 +31,10 @@ export interface PlanProgress {
 }
 
 export interface PlanReport {
+  readonly finiteProfiles?: FiniteProfilesReport;
   readonly completion?: CompletionReport | null;
   readonly inputModel?: PlanRequest['inputModel'];
-  readonly metric?: 'INTRINSIC_V2' | 'FINITE_FP_V1';
+  readonly metric?: 'INTRINSIC_V2' | 'FINITE_FP_V1' | 'FINITE_48_PROFILES_V3';
   readonly hierarchy?: {
     readonly structure: Structure;
     readonly upperLabels: 28;
@@ -75,13 +80,15 @@ export interface PlanReport {
     readonly fpDomain: readonly number[];
     readonly weights: readonly number[];
     readonly materials: 'UNLIMITED';
-    readonly fixedRoute: true;
+    readonly fixedRoute: boolean;
     readonly rngModel: string;
   };
   readonly qualification: string;
 }
 
 export interface PlanningOptions {
+  /** Explicit historical-policy replay; never used by the production UI. */
+  readonly legacy?: boolean;
   readonly intrinsicRoutes?: readonly Route[];
   readonly signal?: { readonly aborted: boolean };
   readonly onProgress?: (progress: PlanProgress) => void;
@@ -94,10 +101,6 @@ export interface PlanningOptions {
   readonly library?: readonly Macro[];
   readonly seedRoutes?: readonly Route[];
   readonly disableCertifiedPruning?: boolean;
-}
-
-export class PlanningCancelledError extends Error {
-  constructor() { super('规划任务已取消'); this.name = 'AbortError'; }
 }
 
 function midpoint(value: { lower: number; upper: number } | null, fallback = Infinity): number {
@@ -261,8 +264,8 @@ export async function planFiniteBaseline(input: unknown, options: PlanningOption
     space.pruned(), exhausted && unevaluated === 0 ? 'COMPLETE' : 'INCOMPLETE');
 }
 
-/** Production entry: hierarchical complete templates, joint intrinsic rewards, certified practical thresholds. */
-export async function plan(input: unknown, options: PlanningOptions = {}): Promise<PlanReport> {
+/** Historical fixed-program/theoretical-policy implementation for archived reports. */
+export async function planLegacy(input: unknown, options: PlanningOptions = {}): Promise<PlanReport> {
   // The explicit Cartesian seam is retained only for the independent finite-FP regression baseline.
   if (options.library) return planFiniteBaseline(input, options);
   const engine = new RuleEngine(catalogForInputModel(readInputModel(input))), parsed = parsePlanRequest(input, engine.catalog);
@@ -350,4 +353,10 @@ export async function plan(input: unknown, options: PlanningOptions = {}): Promi
       `模板及分支预先固定；上层标签只路由，数值保留ID、阶数、原生顺序和费用联合核。15%／${maximumSuccessFp(engine.catalog.model)}等号通过；区间跨阈或执行预算不足保留未完成。` +
       '已搜索范围不代表任意长度策略全局最优。普通填充采用预先声明的合法碎片顺序，不宣称所有填充ID均等价。',
   };
+}
+
+/** Production: three independently optimized finite48FP results, no screening. */
+export async function plan(input: unknown, options: PlanningOptions = {}): Promise<PlanReport> {
+  if (options.legacy || options.library || options.intrinsicRoutes || options.seedRoutes) return planLegacy(input, options);
+  return planFiniteProfiles(input, options);
 }

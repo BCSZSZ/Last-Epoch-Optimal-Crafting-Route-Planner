@@ -9,6 +9,8 @@ import { benchmarkMatrix } from '../src/diagnostics/cases';
 import type { DeviceBenchmarkRecord } from '../src/diagnostics/record';
 import { evaluateIntrinsic, IntrinsicWorkspace } from '../src/core/intrinsic';
 import { recordCatalog } from './runtime_model_archive';
+import type { FiniteProfileResult } from '../src/core/finite-policy';
+import { replayFiniteProfile } from '../src/core/finite-replay';
 
 const inputPath = process.argv[2];
 if (!inputPath) throw new Error('用法：npx tsx scripts/check_device_benchmark.ts <完整JSON记录> [--output <验证JSON>] [--allow-partial]');
@@ -53,6 +55,14 @@ for (const [index, entry] of record.entries.entries()) {
   const parsed = parsePlanRequest(entry.request, catalog);
   if (!parsed.request || entry.report.modelId !== record.modelId) throw new Error(`案例输入或模型无效：${index}`);
   if (!Number.isFinite(entry.adapterWallMilliseconds) || entry.adapterWallMilliseconds < 0 || !Number.isFinite(entry.report.search.elapsedMilliseconds) || entry.report.search.elapsedMilliseconds < 0) throw new Error(`案例计时无效：${index}`);
+  if (entry.report.finiteProfiles) {
+    if (entry.report.finiteProfiles.profiles.map((row: FiniteProfileResult) => row.fpType).join(',') !== 'NORMAL,ICE,BLOOD') throw new Error('Missing three profiles');
+    const profiles = [];
+    for (const profile of entry.report.finiteProfiles.profiles) profiles.push(await replayFiniteProfile(parsed.request, catalog, profile));
+    checks.push({ id: entry.id, fpType: entry.fpType, comparison: 'THREE_EXPORTED_POLICIES_REPLAYED_AT48FP', profiles,
+      adapterMilliseconds: entry.adapterWallMilliseconds, searchStatus: entry.report.searchStatus });
+    continue;
+  }
   const primary = entry.report.primary;
   if (!primary) {
     noRecommendation++;
@@ -75,7 +85,7 @@ const result = { status: noRecommendation ? 'RETURNED_ROUTES_VERIFIED_WITH_MISSI
   declaredDeviceClass: record.declaredDeviceClass, deviceLabel: record.deviceLabel, physicalDeviceClassCertifiedByThisChecker: false,
   foregroundThroughout: record.visibility.every((entry) => entry.state === 'visible'), totalCases: matrix.length,
   completedCases: record.entries.length, noRecommendation, checks,
-  qualification: 'Same chosen fixed routes; search coverage and elapsed time are reported separately. Historical records replay with their pinned model in the retained finite evaluator and do not certify current performance. Comparison tolerance is 1e-14 absolute plus 1e-12 relative, with bit identity reported separately. Kernel parity is not independent mechanics validation or proof of physical device class.' };
+  qualification: 'Current three-profile reports replay their submitted decisions at48FP, including recommendation and actual FP rewards. Legacy reports replay the same chosen fixed routes; search coverage and elapsed time are reported separately. Historical records replay with their pinned model in the retained finite evaluator and do not certify current performance. Comparison tolerance is 1e-14 absolute plus 1e-12 relative, with bit identity reported separately. Kernel parity is not independent mechanics validation or proof of physical device class.' };
 const outputIndex = process.argv.indexOf('--output');
 if (outputIndex >= 0) writeFileSync(process.argv[outputIndex + 1], JSON.stringify(result, null, 2) + '\n');
 console.log(JSON.stringify(result));

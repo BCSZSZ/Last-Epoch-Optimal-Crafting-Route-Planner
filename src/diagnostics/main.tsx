@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { MODEL_ID } from '../core/catalog';
 import type { PlanProgress } from '../core/planner';
-import { MAXIMUM_SUCCESS_FP } from '../core/policy';
 import { BrowserPlanner } from '../execution/browser';
 import { benchmarkMatrix } from './cases';
 import { deviceSummary } from './record';
@@ -10,7 +9,7 @@ import type { DeviceBenchmarkRecord, DeviceCaseRecord } from './record';
 import './styles.css';
 
 const fpNames = { NORMAL: '普通', ICE: '冰', BLOOD: '血' };
-const qualification = `固定验收装备、默认12秒/48模板，操作成功率与成功路径平均FP，15%／${MAXIMUM_SUCCESS_FP}FP门槛；结果只在本机生成。矩阵完成表示已执行全部规划请求，不表示模板穷尽或全局最优。设备类别由测试者声明，低性能物理设备验收保留待办。此页不测Worker内存。`;
+const qualification = `固定验收装备、每输入分别返回普通／冰／血三个48FP内完成率；低于25%不推荐，没有概率／FP均值过滤；结果只在本机生成。矩阵完成表示已执行全部规划请求，不表示模板穷尽或全局最优。设备类别由测试者声明，低性能物理设备验收保留待办。此页不测Worker内存。`;
 
 function DeviceCheck() {
   const [mode, setMode] = useState<DeviceBenchmarkRecord['mode']>('FULL');
@@ -77,10 +76,10 @@ function DeviceCheck() {
   const title = record?.status === 'COMPLETE' ? '矩阵已完成' : record?.status === 'CANCELLED' ? '已取消，保留完成项' : record?.status === 'ERROR' ? '验证发生错误' : busy ? '正在验证' : '准备设备验证';
   return <main>
     <header><div><p className="eyebrow">LAST EPOCH · DEVICE VALIDATION</p><h1>设备性能与结果验证</h1></div><a href="../">返回制作路线规划</a></header>
-    <section><h2>同一套规则，一键运行固定案例</h2><p>覆盖双T7重排、7710封印补词、7713准备、剥离补词和稀有救赎。完整模式运行三类潜能共15例；每例规划预算12秒，可随时取消并导出已完成记录。</p>
+    <section><h2>同一套规则，一键运行固定案例</h2><p>覆盖双T7重排、7710封印补词、7713准备、剥离补词和稀有救赎。完整模式保留三类输入共15例，每例均返回三种潜能结果；每例规划预算12秒，可随时取消并导出已完成记录。</p>
       <div className="fields"><label>设备型号（可选）<input value={label} maxLength={120} disabled={busy} onChange={(event) => setLabel(event.target.value)} placeholder="例如：旧笔记本或手机型号" /></label>
         <label>测试者声明的设备类别<select value={deviceClass} disabled={busy} onChange={(event) => setDeviceClass(event.target.value as DeviceBenchmarkRecord['declaredDeviceClass'])}><option value="UNSPECIFIED">尚未说明</option><option value="DESKTOP_BASELINE">普通电脑基线</option><option value="LOW_PERFORMANCE">低性能实机</option></select></label>
-        <label>运行范围<select value={mode} disabled={busy} onChange={(event) => setMode(event.target.value as DeviceBenchmarkRecord['mode'])}><option value="FULL">完整矩阵：五类 × 三种潜能</option><option value="NORMAL_ONLY">快速检查：五类普通潜能</option></select></label></div>
+        <label>运行范围<select value={mode} disabled={busy} onChange={(event) => setMode(event.target.value as DeviceBenchmarkRecord['mode'])}><option value="FULL">完整矩阵：五类 × 三种潜能</option><option value="NORMAL_ONLY">快速检查：五类输入（各三种结果）</option></select></label></div>
       <div className="actions"><button disabled={busy} onClick={run}>开始设备验证</button><button disabled={!busy} onClick={() => controller.current?.abort()}>取消验证</button><button disabled={!record} onClick={download}>下载完整记录</button></div>
       <p className="note">请保持此页在前台。后台切换会记入结果，便于识别计时环境变化。首例耗时包含Worker启动，后续复用同一Worker；每例同时保留规划器内部耗时。</p>
     </section>
@@ -88,8 +87,8 @@ function DeviceCheck() {
       {current && <p>当前：{current.label} · {fpNames[current.fpType]}潜能{progress && `，已评价${progress.evaluatedRoutes}条候选`}</p>}
       {record?.error && <p className="warning">{record.error}</p>}
       {record && !record.visibility.every((entry) => entry.state === 'visible') && <p className="warning">记录包含后台时段，耗时需按该环境解释。</p>}
-      <div className="table-wrap"><table><caption>已完成案例，搜索完成状态独立于矩阵进度</caption><thead><tr><th>案例</th><th>潜能</th><th>总耗时</th><th>内部耗时</th><th>候选</th><th>操作成功率</th><th>精度</th><th>搜索</th></tr></thead><tbody>
-        {record?.entries.map((entry) => <tr key={`${entry.id}-${entry.fpType}`}><th>{entry.label}</th><td>{fpNames[entry.fpType]}</td><td>{(entry.adapterWallMilliseconds / 1000).toFixed(3)}s</td><td>{(entry.report.search.elapsedMilliseconds / 1000).toFixed(3)}s</td><td>{entry.report.search.evaluatedRoutes}</td><td>{entry.report.primary ? `${(entry.report.primary.scoreEstimate * 100).toFixed(2)}%` : '预算内未找到'}</td><td>{entry.report.primary?.evaluationStatus === 'ESTIMATED' ? '采样区间' : entry.report.primary ? '算术区间' : '无推荐'}</td><td>{entry.report.searchStatus === 'COMPLETE' ? '范围内完成' : '未完成'}</td></tr>)}
+      <div className="table-wrap"><table><caption>已完成案例，搜索完成状态独立于矩阵进度</caption><thead><tr><th>案例</th><th>潜能</th><th>总耗时</th><th>内部耗时</th><th>候选</th><th>48FP完成率：普通／冰／血</th><th>精度</th><th>搜索</th></tr></thead><tbody>
+        {record?.entries.map((entry) => <tr key={`${entry.id}-${entry.fpType}`}><th>{entry.label}</th><td>{fpNames[entry.fpType]}</td><td>{(entry.adapterWallMilliseconds / 1000).toFixed(3)}s</td><td>{(entry.report.search.elapsedMilliseconds / 1000).toFixed(3)}s</td><td>{entry.report.search.evaluatedRoutes}</td><td>{entry.report.finiteProfiles?.profiles.map(row => row.probability ? `${((row.probability.lower + row.probability.upper) * 50).toFixed(3)}%` : '未算完').join(' / ') ?? '无结果'}</td><td>{entry.report.finiteProfiles ? '数值区间' : '无结果'}</td><td>{entry.report.searchStatus === 'COMPLETE' ? '范围内完成' : '未完成'}</td></tr>)}
       </tbody></table></div>
       <p className="note">{qualification}</p>
     </section>

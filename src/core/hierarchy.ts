@@ -77,7 +77,7 @@ export function macroStages(macros: readonly Macro[]): number {
 const identity = (id: number, maxTier = 8): Predicate => ({ kind: 'identity', requirement: { ids: [id], minTier: 1, maxTier, slot: 'ordinary' } });
 
 /** A finite, reviewable controller grammar; no Cartesian permutation of an atomic-action library. */
-export function compileTemplates(request: PlanRequest, engine: RuleEngine): TemplateCompilation | null {
+export function compileTemplates(request: PlanRequest, engine: RuleEngine, keepLowProbability = false): TemplateCompilation | null {
   const structure = classifyStructure(request, engine);
   if (!structure) return null;
   const templates: StrategyTemplate[] = [];
@@ -101,7 +101,7 @@ export function compileTemplates(request: PlanRequest, engine: RuleEngine): Temp
     seen.add(key);
     if (macroStages(macros) > request.search.macroStages) { rejected.push({ templateId: id, reason: 'DECLARED_MACRO_STAGE_SCOPE' }); return; }
     if (macros.some((macro) => !allowedMacro(macro, request))) { rejected.push({ templateId: id, reason: 'ACTION_DISABLED' }); return; }
-    if (probabilityUpperBound !== undefined && probabilityUpperBound < 0.15) {
+    if (!keepLowProbability && probabilityUpperBound !== undefined && probabilityUpperBound < 0.15) {
       rejected.push({ templateId: id, reason: 'CERTIFIED_SUCCESS_BELOW_15_PERCENT', probabilityUpperBound }); return;
     }
     // Only prove a first-step rejection on the actual entry. Never extrapolate it past a random preparation.
@@ -198,7 +198,7 @@ export function compileTemplates(request: PlanRequest, engine: RuleEngine): Temp
             // Two T7s + two Standard garbage slots: seal→remove <= .15/3; remove→seal <= (2/4)*.15.
             // This is a probability threshold certificate, NOT a universal seal-vs-removal dominance claim.
             for (const [macros, bound] of [[sealFirst, t4Cap.div(exact(3)).upper], [removalFirst, t4Cap.mul(exact(0.5)).upper]] as const) {
-              if (bound < 0.15) rejected.push({ templateId: routeId(macros), reason: 'CERTIFIED_SUCCESS_BELOW_15_PERCENT', probabilityUpperBound: bound });
+              if (!keepLowProbability && bound < 0.15) rejected.push({ templateId: routeId(macros), reason: 'CERTIFIED_SUCCESS_BELOW_15_PERCENT', probabilityUpperBound: bound });
               else append(macros, 'SEAL', 'T4封印与剥离开位后补A/B');
             }
           } else {

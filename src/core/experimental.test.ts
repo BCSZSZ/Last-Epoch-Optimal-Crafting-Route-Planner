@@ -5,7 +5,7 @@ import {catalogForInputModel} from './input-model';
 import {evaluateIntrinsic,IntrinsicWorkspace} from './intrinsic';
 import {evaluateCompletion} from './completion';
 import {productionPrograms,compareLearningReports} from './program-search';
-import {plan} from './planner';
+import {planLegacy as plan} from './planner';
 import {RuleEngine} from './rules';
 import {experimentalFixtures} from '../test-support/experimental-fixtures';
 import {trainingCases} from '../research/learning-cases';

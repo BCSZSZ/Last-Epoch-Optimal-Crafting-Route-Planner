@@ -3,7 +3,7 @@ import { Catalog, snapshot } from './catalog';
 import { compileDraft, DRAFT_SLOTS, draftAffixPool, emptyDraft, maximumGoalCount, ownedGoalCounts, readDraft, withDraftSlots } from './draft';
 import type { CraftingDraft } from './draft';
 import { ANY_BASE_ID, catalogForInputModel } from './input-model';
-import { plan } from './planner';
+import { planLegacy as plan } from './planner';
 import { parsePlanRequest } from './request';
 import { targetReached } from './target';
 

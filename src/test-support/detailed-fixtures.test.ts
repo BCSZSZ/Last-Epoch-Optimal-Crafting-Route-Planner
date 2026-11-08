@@ -1,7 +1,7 @@
 import { expect, it } from 'vitest';
 import { compileDraft, emptyDraft } from '../core/draft';
 import { catalogForInputModel } from '../core/input-model';
-import { plan } from '../core/planner';
+import { planLegacy as plan } from '../core/planner';
 import { targetReached } from '../core/target';
 import { detailedFixtures } from './detailed-fixtures';
 

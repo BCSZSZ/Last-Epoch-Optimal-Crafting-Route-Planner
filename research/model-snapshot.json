@@ -36,7 +36,7 @@
   "deviceValidation": {
     "archivedRecordsCertifyCurrentRelease": false,
     "archivedRecordsModelId": "le-1.5.3-iid-f58515921fd9cbcc",
-    "currentNodeBenchmark": "research/program-release-performance.json",
+    "currentNodeBenchmark": null,
     "desktopMatrixCases": 15,
     "desktopRecord": "research/device-validation/desktop-baseline.json",
     "page": "https://bcszsz.github.io/Last-Epoch-Optimal-Crafting-Route-Planner/device-check/",
@@ -45,15 +45,84 @@
     "publicRecord": "research/device-validation/public-normal.json"
   },
   "fpDomain": {
-    "defaultScoringDomain": [],
+    "defaultScoringDomain": [
+      48
+    ],
     "maximum": 63,
     "minimum": 0,
     "naturalDropDistribution": false,
-    "weighting": "NOT_USED_IN_INTRINSIC_V2"
+    "weighting": "SINGLE_ACTUAL48_BALANCE"
   },
   "gameVersion": "1.5.3",
+  "historicalIntrinsicPolicy": {
+    "policies": {
+      "adaptiveReoptimization": false,
+      "commonPatternsPrioritizedNotExclusive": true,
+      "failedRequiredSeal": "ABORT_AFTER_COMPLETE_NATIVE_SETTLEMENT",
+      "finiteFpExhaustionInCompletion": true,
+      "finiteFpExhaustionOnlyInHistoricalBaseline": false,
+      "fixedMacroOrder": true,
+      "inventoryInputSupported": false,
+      "macroStageLimitDraft": 12,
+      "macroStatistics": "JOINT_FP_MOMENTS_CONDITIONAL_ON_FINAL_SUCCESS",
+      "mandatoryConformanceCases": [
+        "direct_prefix_targets",
+        "opposite_side_preparation",
+        "EXISTING_A_DIRECT_X1_TO_X7",
+        "EXISTING_A_PREPARE_X1_TO_X7",
+        "X0_REQUIRES_FOUR_ORDINARY_SLOTS",
+        "TARGET_IDENTITIES_AT_T3_T2_7732",
+        "ALL_TARGETS_ABSENT_7732_REDEMPTION_WITNESS"
+      ],
+      "materialAccountingDiagnosticOnly": true,
+      "materialCostInObjective": false,
+      "materialUsageLimitsSupported": false,
+      "materialsAvailability": "UNLIMITED",
+      "patternSearchPriority": [
+        "TARGET_IDENTITIES_ALREADY_PRESENT",
+        "ONE_TARGET_ALREADY_T7_771X",
+        "MISSING_BOTH_TARGETS_7710",
+        "OTHER_LEGAL_INPUTS"
+      ],
+      "policyAbortBeforeIncidentalSuccess": true,
+      "samplingCoverage": "NO_PRODUCTION_SAMPLING_IN_INTRINSIC_V2",
+      "tieBreakers": [
+        "SUCCESS_CONDITIONAL_FP_MEAN",
+        "STABLE_ROUTE_ID"
+      ],
+      "unacceptedRemoval": "ABORT_AFTER_COMPLETE_NATIVE_SETTLEMENT",
+      "unassessedPatternStatus": "UNASSESSED",
+      "uncompletedSearchStatus": "INCOMPLETE"
+    },
+    "productionMetric": {
+      "completionMetric": {
+        "includesOperationNgAndFpExhaustion": true,
+        "initialFp": 48,
+        "method": "CERTIFIED_FINITE_BALANCE_RECURRENCE",
+        "notRecommendedBelow": 0.25,
+        "rankingUnchanged": true,
+        "recommendedAbove": 0.65,
+        "strictBoundaries": true
+      },
+      "conditionalOnFinalSuccess": true,
+      "finiteFpBoundaryBenefitsApplied": false,
+      "kind": "INTRINSIC_V2",
+      "maximumSuccessfulMeanFp": 65,
+      "minimumSuccess": 0.15,
+      "preflightCertificates": [
+        "STANDARD_T4_SEAL_REMOVAL",
+        "PURE_SINGLE_CAST_DOUBLE_HIT",
+        "PURE_UNLIMITED_DOUBLE_HIT_SUCCESS_FP"
+      ],
+      "preflightDoesNotBlacklistAllRedemptionOrHighTierSources": true,
+      "upperInputLabels": 28,
+      "upperRouteNodes": 23,
+      "vacancyAwareInterleavedAcquisition": true
+    }
+  },
   "inputs": {
     "data/game/1.5.3/manifest.json": "f1127461629a61b3d0a6970ab26ccc2032491bceed849298849a6b842f2251b9",
+    "docs/finite48-three-profiles-20261108.md": "001482b89481f1be2566ea92e0a9e51a91f0abd4a35b348362fe133d6dfa0910",
     "research/7271-route-comparison.json": "4b4f1ed71da48ece635dad96a348e48f179ab6d691f78c475e5f65fcbc8cb4b3",
     "research/7710-7721-completion.json": "92d1b9a30ebb66efaf787a8b371a3fc134487870989ea5f2112aaeefeeb00238",
     "research/7710-monte-carlo.json": "20c81665d0c4a9f4755027baa625b09605bd4ff1777f12eed903e7a4cc49424a",
@@ -83,6 +152,7 @@
     "research/device-validation/desktop-baseline.json": "2f36d16385723bfffc82440ce1315af7aecc92425fad0a5e729bd25c62f65ea9",
     "research/device-validation/public-normal-validation.json": "bf6c6eef88459e05361d821f9e6b83b1d0443acc0e4185dbb7e839ac0424578d",
     "research/device-validation/public-normal.json": "3dee7539ad446fa250bb1037e5cfd13a3ef79d71d12863c19d47d1ce140d09f4",
+    "research/fixtures/finite48-three-profiles-99.json": "ddc0e99b30e0b0e8d7f8fc9e45e71e840d4223cf5c09ca0fb845eb4fc094851b",
     "research/forge-fp-claims.json": "618e6d5fa1db4b8db683b7fdefdfd3c4b70c17363634a36b99eb2e1cd914770c",
     "research/fp-examples.json": "ff72db932924dcd374e4c8a42af47525b34fb37c4e5e2aecda9173f85d49713e",
     "research/fp65-budget48.json": "947b857232b987c6783e1e1594fd450022569fde760c6e012228d8692ffe0224",
@@ -95,13 +165,14 @@
     "research/program-release-performance.json": "17332788a0b64625e97031c6d5792dfde67a2b42a03c711708f8b29f72e2dca6",
     "research/program-release-validation.json": "100f1b3a890e445d2c2e0ceaad61f6b2659e911488db8cd6b29d3cdb93900a26",
     "research/reference-calculators.json": "fbbd966f057c2ed97ecca0ad8d2036eab93ac721cb506c993417c7faddbd831e",
-    "research/runtime-model-archive/manifest.json": "7285a7c670961d4ef351a420230a93addd79a8d833f53ad221ef916bcdd70436",
+    "research/runtime-model-archive/manifest.json": "8fa4a16654d2b87e01c38528bb6cf26495210e7e4f89fd21bd5416d3144fd88b",
     "research/static-deployment.json": "04db5a424b4fc82949a0b6e47004c0a66a557322d0bec465178ffcb6e6ada14a",
     "research/ui-validation/capacity-local-parity.json": "0d77e79ceebfcec2f502c062d0a65f13f93c0be6819d12144872fcc8ac68e72f",
     "research/ui-validation/capacity-public-parity.json": "667cf3abd34c3c6b19af24b45d5763f7c3429d79e9ba6fe12a4c139a6f99662c",
     "research/ui-validation/completion48-parity.json": "3649126334fcd3af0cd7fe44542fd398b5c97a83c0892eaa25057fa2da9f9e62",
     "research/ui-validation/detailed-local-parity.json": "13424b403e787fce3c9f01bf652adc9c1e3b4b473cc0d3480ea9edc1e8d6c360",
     "research/ui-validation/detailed-public-parity.json": "aa99b6f68ace7fc8c87bf74350390d3a113019536ff26eff88bf7103f15c9294",
+    "research/ui-validation/finite48-local-parity.json": "d0769d4be63c2e1737bc7d33a19ff6d3ccb00cf7bd60158c6b015706b1c06e03",
     "research/ui-validation/parity.json": "9e93e052977677f40421aeb31ce7d13291c1e1c5a30b3f1128408f149fb7c922",
     "research/ui-validation/programs-local-parity.json": "4b863af7aebd19dc83069355808a8ac9a02888ffa63b75b3797e890dacf5e257",
     "research/ui-validation/programs-public-parity.json": "2594cee0921a834f5798cf91226125d68a7fcdbdd82c05fc32b31a5e6fdb0b45",
@@ -109,20 +180,20 @@
     "research/ui-validation/slot-targets-local-parity.json": "8f477cdcbf7c2bcf04a29d2147d2eba82e79323dfcdb89a14cfe04b2c8f73416",
     "research/ui-validation/slot-targets-public-parity.json": "2ab6c4befaa5f0a9d22a6e8cd8ca221db9e1bb642feb44b78ae0866bca73a468",
     "src/core/policy.json": "8917aad6d1077eff2b043ff68a3b8ff8b54257cf4105cf3bc9fdf8bbd03fa1cb",
-    "src/generated/model.json": "85cf8b2bf971939b77769d8c86d573c298c63e66391379ee9e43457a7c4fc386"
+    "src/generated/model.json": "0548f9724d73cf60e5a4ca7bd9e43e60e270c30f721e1758c13228cf99b5e11f"
   },
-  "modelId": "le-1.5.3-26087601-r13-programs-experimental",
+  "modelId": "le-1.5.3-26087601-r14-finite48-three-profiles",
   "phase": "PUBLIC_PREVIEW",
   "policies": {
-    "adaptiveReoptimization": false,
+    "adaptiveReoptimization": true,
     "commonPatternsPrioritizedNotExclusive": true,
-    "failedRequiredSeal": "ABORT_AFTER_COMPLETE_NATIVE_SETTLEMENT",
+    "failedRequiredSeal": "CONTINUE_WHEN_LEGAL",
     "finiteFpExhaustionInCompletion": true,
     "finiteFpExhaustionOnlyInHistoricalBaseline": false,
-    "fixedMacroOrder": true,
+    "fixedMacroOrder": false,
     "inventoryInputSupported": false,
     "macroStageLimitDraft": 12,
-    "macroStatistics": "JOINT_FP_MOMENTS_CONDITIONAL_ON_FINAL_SUCCESS",
+    "macroStatistics": "ACTUAL_FINITE48_COST_AND_SUCCESS_CONDITIONAL_COST",
     "mandatoryConformanceCases": [
       "direct_prefix_targets",
       "opposite_side_preparation",
@@ -142,42 +213,33 @@
       "MISSING_BOTH_TARGETS_7710",
       "OTHER_LEGAL_INPUTS"
     ],
-    "policyAbortBeforeIncidentalSuccess": true,
-    "samplingCoverage": "NO_PRODUCTION_SAMPLING_IN_INTRINSIC_V2",
+    "policyAbortBeforeIncidentalSuccess": false,
+    "samplingCoverage": "NO_PRODUCTION_SAMPLING",
     "tieBreakers": [
-      "SUCCESS_CONDITIONAL_FP_MEAN",
-      "STABLE_ROUTE_ID"
+      "STABLE_ACTION_ORDER_WITHIN_NUMERICAL_TOLERANCE"
     ],
-    "unacceptedRemoval": "ABORT_AFTER_COMPLETE_NATIVE_SETTLEMENT",
+    "unacceptedRemoval": "CONTINUE_WHEN_LEGAL",
     "unassessedPatternStatus": "UNASSESSED",
     "uncompletedSearchStatus": "INCOMPLETE"
   },
   "productionMetric": {
-    "completionMetric": {
-      "includesOperationNgAndFpExhaustion": true,
-      "initialFp": 48,
-      "method": "CERTIFIED_FINITE_BALANCE_RECURRENCE",
-      "notRecommendedBelow": 0.25,
-      "rankingUnchanged": true,
-      "recommendedAbove": 0.65,
-      "strictBoundaries": true
-    },
-    "conditionalOnFinalSuccess": true,
-    "finiteFpBoundaryBenefitsApplied": false,
-    "kind": "INTRINSIC_V2",
-    "maximumSuccessfulMeanFp": 65,
-    "minimumSuccess": 0.15,
-    "preflightCertificates": [
-      "STANDARD_T4_SEAL_REMOVAL",
-      "PURE_SINGLE_CAST_DOUBLE_HIT",
-      "PURE_UNLIMITED_DOUBLE_HIT_SUCCESS_FP"
+    "boundaryIntervalUnresolved": true,
+    "filteringThresholds": null,
+    "independentlyOptimized": true,
+    "initialFp": 48,
+    "kind": "FINITE_48_PROFILES_V3",
+    "method": "STATE_FP_BELLMAN_OR_EXPLICIT_FIXED_SCOPE",
+    "notRecommendedBelow": 0.25,
+    "ordinaryEqualTwoT7Domain": "FULL_LEGAL_STATE_POLICY",
+    "otherInputs": "FIXED_CANDIDATES_NOT_GLOBALLY_OPTIMAL",
+    "profiles": [
+      "NORMAL",
+      "ICE",
+      "BLOOD"
     ],
-    "preflightDoesNotBlacklistAllRedemptionOrHighTierSources": true,
-    "upperInputLabels": 28,
-    "upperRouteNodes": 23,
-    "vacancyAwareInterleavedAcquisition": true
+    "recommendedAtLeast": 0.25
   },
-  "productionModelId": "le-1.5.3-iid-a925bc35e78eed9f",
+  "productionModelId": "le-1.5.3-iid-694926ac2d8f8f4c",
   "productionReady": false,
   "referenceExampleModels": [
     "INDEPENDENT_NORMALIZED_WEIGHTS_AND_UNIFORM_PERMUTATIONS",
@@ -187,7 +249,7 @@
   "remainingAcceptance": [
     "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "8687fce726f61a237987e77e4e4954b081123fd9f56df9f3c483ee23eeb75536",
+  "researchRevision": "7a1e3141b1b1dda447a0dbd526b2336ca6339e8a538286c6abb9fce59b61ad14",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 2,
   "steamBuildId": 26087601,
@@ -202,14 +264,16 @@
     "bothReferencePoolsAllClassesPerItemType": true,
     "contract": "docs/minimal-ui.md",
     "countsSplitByPrefixSuffix": true,
+    "currentUiEvidence": "research/ui-validation/finite48-local-parity.json",
     "defaultAnonymousPool": "FORGEABLE_EQUAL",
     "defaultEquipmentPart": "ANY_UNSPECIFIED",
     "experimentalAndTargetIndependent": true,
     "experimentalPrefix2": true,
     "explicitStartingSlotOwnership": true,
+    "historicalLocalProgramUiWorkerParity": "research/ui-validation/programs-local-parity.json",
+    "historicalProgramUiWorkerParity": "research/ui-validation/programs-public-parity.json",
     "historicalPublicUiWorkerParity": "research/ui-validation/public-completion48-parity.json",
     "knownIdentityPool": "FORGEABLE_WEIGHTED",
-    "localUiWorkerParity": "research/ui-validation/programs-local-parity.json",
     "locale": "zh-CN",
     "localizationEvidence": "research/affix-localization.json",
     "localizedAffixes": 1156,
@@ -217,7 +281,6 @@
     "ownedCountersReadOnly": true,
     "savedDraftVersion": 3,
     "totalT7GoalsBoundedByOrdinarySourceT7": true,
-    "uiWorkerParity": "research/ui-validation/programs-public-parity.json",
     "unspecifiedEquipmentModel": "FORGEABLE_ANY_EQUAL"
   },
   "validationNotClaimed": [

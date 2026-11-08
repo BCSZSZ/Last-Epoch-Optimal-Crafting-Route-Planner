@@ -3,7 +3,7 @@ import { classifyStructure, compileTemplates, UPPER_NODES } from './hierarchy';
 import { hierarchyFixtures } from './hierarchy-fixtures';
 import { exampleRequest } from './examples';
 import { IntrinsicWorkspace, evaluateIntrinsic } from './intrinsic';
-import { plan } from './planner';
+import { planLegacy as plan } from './planner';
 import { RuleEngine } from './rules';
 import { parsePlanRequest } from './request';
 import { Catalog } from './catalog';

@@ -57,7 +57,7 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                 "research/program-release-performance.json", "research/program-release-monte-carlo.json",
                 "research/ui-validation/programs-local-parity.json", "research/ui-validation/programs-public-parity.json",
                 "research/deployment-programs-experimental.json")
-    model = {"schemaVersion": 2, "modelId": "le-1.5.3-26087601-r13-programs-experimental",
+    model = {"schemaVersion": 2, "modelId": "le-1.5.3-26087601-r14-finite48-three-profiles",
              "phase": "PUBLIC_PREVIEW", "productionReady": False,
              "productionModelId": load_json(root / "src/generated/model.json")["modelId"],
              "userInput": {"contract": "docs/minimal-ui.md", "assumeForgeable": True,
@@ -135,6 +135,28 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
              "validationNotClaimed": ["UNBOUNDED_GLOBAL_OPTIMALITY", "PHYSICAL_LOW_END_DEVICE", "BROWSER_INSTANTANEOUS_ALLOCATION_PEAK",
                                       "GAME_CLIENT_CRAFTING_FREQUENCIES", "ONLINE_SERVER_PARITY"],
              "inputs": {path: hashlib.sha256((root / path).read_bytes()).hexdigest() for path in required}}
+    # Retain former release policy as historical data, never as current UI truth.
+    model["historicalIntrinsicPolicy"] = {"productionMetric": model["productionMetric"], "policies": model["policies"]}
+    model["productionMetric"] = {"kind": "FINITE_48_PROFILES_V3", "initialFp": 48,
+                                 "profiles": ["NORMAL", "ICE", "BLOOD"], "independentlyOptimized": True,
+                                 "filteringThresholds": None, "recommendedAtLeast": .25,
+                                 "notRecommendedBelow": .25, "boundaryIntervalUnresolved": True,
+                                 "method": "STATE_FP_BELLMAN_OR_EXPLICIT_FIXED_SCOPE",
+                                 "ordinaryEqualTwoT7Domain": "FULL_LEGAL_STATE_POLICY",
+                                 "otherInputs": "FIXED_CANDIDATES_NOT_GLOBALLY_OPTIMAL"}
+    model["policies"] = {**model["policies"], "failedRequiredSeal": "CONTINUE_WHEN_LEGAL",
+                         "unacceptedRemoval": "CONTINUE_WHEN_LEGAL", "fixedMacroOrder": False,
+                         "adaptiveReoptimization": True, "policyAbortBeforeIncidentalSuccess": False,
+                         "tieBreakers": ["STABLE_ACTION_ORDER_WITHIN_NUMERICAL_TOLERANCE"],
+                         "macroStatistics": "ACTUAL_FINITE48_COST_AND_SUCCESS_CONDITIONAL_COST",
+                         "samplingCoverage": "NO_PRODUCTION_SAMPLING"}
+    model["fpDomain"] = {**model["fpDomain"], "defaultScoringDomain": [48], "weighting": "SINGLE_ACTUAL48_BALANCE"}
+    model["deviceValidation"]["currentNodeBenchmark"] = None
+    model["userInput"]["historicalProgramUiWorkerParity"] = model["userInput"].pop("uiWorkerParity")
+    model["userInput"]["historicalLocalProgramUiWorkerParity"] = model["userInput"].pop("localUiWorkerParity")
+    model["userInput"]["currentUiEvidence"] = "research/ui-validation/finite48-local-parity.json"
+    extra = ["research/fixtures/finite48-three-profiles-99.json", "docs/finite48-three-profiles-20261108.md", "research/ui-validation/finite48-local-parity.json"]
+    model["inputs"].update({path: hashlib.sha256((root / path).read_bytes()).hexdigest() for path in extra})
     model["researchRevision"] = hashlib.sha256(encode_json(model)).hexdigest()
     return {"research/evidence-matrix.json": encode_json(matrix), "research/model-snapshot.json": encode_json(model)}
 

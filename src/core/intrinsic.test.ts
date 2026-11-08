@@ -4,7 +4,7 @@ import { macroStep } from './evaluation';
 import { IntrinsicWorkspace, evaluateIntrinsic, practicalDecision } from './intrinsic';
 import { hierarchyFixtures } from './hierarchy-fixtures';
 import { compileTemplates } from './hierarchy';
-import { plan } from './planner';
+import { planLegacy as plan } from './planner';
 import { seededRandom } from './random';
 import { RuleEngine } from './rules';
 import type { DemandDistribution } from './rules';

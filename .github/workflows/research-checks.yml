@@ -6,11 +6,13 @@ on:
 permissions:
   contents: read
 jobs:
-  research:
+  historical-research:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: 38399c2bd4d39051d74c6eac3351380231fd57e0
       - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
@@ -53,3 +55,24 @@ jobs:
       - run: npx tsx scripts/check_program_ui.ts --public --verify-only
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/desktop-baseline.json --historical
       - run: npx tsx scripts/check_device_benchmark.ts research/device-validation/public-normal.json --historical
+
+  current-finite48:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: python -X utf8 scripts/validate_research.py
+      - run: python -X utf8 -m unittest discover -s tests -v
+      - run: npm run model
+      - run: npm run check
+      - run: npm test
+      - run: npx tsx scripts/check_program_ui.ts --historical --verify-only
+      - run: npx tsx scripts/check_program_ui.ts --public --historical --verify-only

@@ -46,6 +46,7 @@ export function deviceSummary(record: DeviceBenchmarkRecord) {
       candidates: entry.report.search.evaluatedRoutes, searchStatus: entry.report.searchStatus,
       recommendation: entry.report.primary?.route.id ?? null,
       metric: entry.report.metric ?? 'FINITE_FP_V1',
+      finiteProfiles: entry.report.finiteProfiles?.profiles.map(row => ({ fpType: row.fpType, probability: row.probability, recommendation: row.recommendation, status: row.status, strategyKind: row.strategyKind, firstAction: row.firstAction })) ?? null,
       successfulMeanFp: entry.report.primary?.expectedFpGivenSuccess ?? null,
       wholeCompletion: entry.report.completion?.probability ?? null,
       completionFp: entry.report.completion?.initialFp ?? null,

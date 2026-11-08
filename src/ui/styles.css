@@ -690,3 +690,24 @@ footer a {
   }
 }
 .slot-flags { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: .65rem; }
+
+.finite-profile-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:20px 0; }
+.finite-profile-card { min-width:0; border:1px solid var(--line); border-radius:12px; padding:20px; background:var(--panel); }
+.finite-profile-heading { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:18px; }
+.finite-profile-heading h3 { margin:0; font-size:16px; }
+.finite-probability { display:block; font-size:clamp(28px,3.4vw,42px); letter-spacing:-1px; font-variant-numeric:tabular-nums; }
+.finite-metric-caption { margin:4px 0 20px; font-size:12px; color:var(--muted); }
+.finite-first-action { font-size:14px; line-height:1.7; }
+.finite-route, .finite-decisions { margin:16px 0; font-size:13px; line-height:1.8; }
+.finite-route summary, .finite-decisions summary { cursor:pointer; font-weight:600; }
+.finite-route ol { padding-left:20px; }
+.finite-route li { margin-bottom:10px; overflow-wrap:anywhere; }
+.finite-policy-filters { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0; }
+.finite-policy-filters label { display:grid; gap:4px; font-size:12px; flex:1; min-width:90px; }
+.finite-policy-filters input, .finite-policy-filters select { width:100%; padding:7px; box-sizing:border-box; border:1px solid var(--line); background:#101817; color:inherit; border-radius:5px; }
+.finite-table-scroll { overflow:auto; max-height:460px; }
+.finite-table-scroll table { width:100%; border-collapse:collapse; font-size:11px; }
+.finite-table-scroll th, .finite-table-scroll td { text-align:left; padding:8px 5px; border-bottom:1px solid var(--line); vertical-align:top; }
+.finite-table-scroll th { position:sticky; top:0; background:#203129; }
+.finite-table-scroll td:nth-child(3) { min-width:60px; max-width:110px; overflow-wrap:anywhere; }
+@media(max-width:1050px) { .finite-profile-grid { grid-template-columns:1fr; } .finite-probability { font-size:38px; } }

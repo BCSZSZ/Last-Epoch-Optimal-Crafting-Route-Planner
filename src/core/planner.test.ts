@@ -3,7 +3,7 @@ import { commonRoutes, macroLibrary, routeId, routeSpace } from './candidates';
 import { exampleRequest } from './examples';
 import { macroStep, predicateReached, reportRoute } from './evaluation';
 import { MODEL_ID } from './catalog';
-import { plan, planFiniteBaseline, PlanningCancelledError } from './planner';
+import { planLegacy as plan, planFiniteBaseline, PlanningCancelledError } from './planner';
 import { parsePlanRequest } from './request';
 import { RuleEngine } from './rules';
 import type { Macro, PlanRequest, Route } from './types';

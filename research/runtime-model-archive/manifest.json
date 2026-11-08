@@ -78,6 +78,12 @@
       "sha256": "5a613bf3f8431f51ea4dc4fa1794a2c2c533b26e012daa6df1d1fc5e544ee7bf",
       "metric": "FINITE_48_PROFILES_V3",
       "purpose": "Before universal fixed-route FP rewards and user-selected initial FP; original reports retain their IDs."
+    },
+    "le-1.5.3-iid-b793528294bd547f": {
+      "sha256": "036459e055803c17480dbce8d664965de0ee0524a11f504768b77215f462e756",
+      "metric": "FINITE_48_PROFILES_V3",
+      "purpose": "Before public default changed from48FP to the natural exalted70th percentile44FP; explicit48FP baselines remain preserved.",
+      "file": "research/runtime-model-archive/le-1.5.3-iid-b793528294bd547f.json"
     }
   }
 }

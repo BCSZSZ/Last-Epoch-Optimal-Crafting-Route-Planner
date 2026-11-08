@@ -1,3 +1,4 @@
+import { DEFAULT_INITIAL_FP } from './initial-fp';
 import { boundedCostKernel } from './probability';
 import { COMPACT_KERNELS, CompactGraph, FiniteStateLimit } from './finite-state';
 import type { FpType } from './types';
@@ -21,7 +22,7 @@ export interface FiniteSolveHooks {
 }
 type CostParameters = Parameters<typeof boundedCostKernel>[4];
 
-export function compactCosts(profile: FpType, parameters: CostParameters, maximumFp = 48): readonly (readonly (readonly FiniteBalance[])[])[] {
+export function compactCosts(profile: FpType, parameters: CostParameters, maximumFp = DEFAULT_INITIAL_FP): readonly (readonly (readonly FiniteBalance[])[])[] {
   return COMPACT_KERNELS.map(([upper, hope]) => Array.from({ length: maximumFp + 1 }, (_, fp) => upper ?
     boundedCostKernel(fp, upper, profile, hope, parameters).map(row => ({ fp: row.value, p: row.bounds.midpoint, lo: Math.max(0, row.bounds.lower), hi: row.bounds.upper })) :
     [{ fp, p: 1, lo: 1, hi: 1 }]));
@@ -32,7 +33,7 @@ export function compactCosts(profile: FpType, parameters: CostParameters, maximu
  * residual/rounding and lower-balance errors give an a-posteriori uniform bound
  * for both optimal values and the exported greedy policy (not residual alone).
  */
-export async function solveCompactGraph(graph: CompactGraph, profile: FpType, parameters: CostParameters, hooks: FiniteSolveHooks, fixedPolicies?: readonly Int16Array[], maximumFp = 48): Promise<CompactSolution> {
+export async function solveCompactGraph(graph: CompactGraph, profile: FpType, parameters: CostParameters, hooks: FiniteSolveHooks, fixedPolicies?: readonly Int16Array[], maximumFp = DEFAULT_INITIAL_FP): Promise<CompactSolution> {
   const candidates = (s: number, fp: number): number[] => fixedPolicies ? (fixedPolicies[fp][s] < 0 ? [] : [fixedPolicies[fp][s]]) : graph.actions[s].map((_, a) => a);
   const n = graph.states.length, costs = compactCosts(profile, parameters, maximumFp), values: Float64Array[] = [new Float64Array(n)],
     policies: Int16Array[] = [new Int16Array(n).fill(-1)], actualCosts: Float64Array[] = [new Float64Array(n)],

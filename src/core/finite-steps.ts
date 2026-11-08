@@ -1,3 +1,4 @@
+import { DEFAULT_INITIAL_FP } from './initial-fp';
 import type { CompactGraph, CompactState, CompactAction } from './finite-state';
 import type { CompactSolution } from './finite-solver';
 import { tierPermutations } from './probability';
@@ -7,7 +8,7 @@ export interface FinitePlanStep {
   readonly id: number;
   readonly operation: string;
   readonly criterion: string;
-  /** Actual48FP-policy cost per entry into this phase, including repeats until
+  /** Actual finite-FP policy cost per entry into this phase, including repeats until
    * acceptance, switching phase, or termination. Not a sampled FP difference. */
   readonly expectedFp: number;
   readonly expectedEntries: number;
@@ -73,7 +74,7 @@ function layoutCriterion(state: CompactState, exits: ReadonlySet<string>): strin
 /** Forward occupation measure of the submitted optimal policy. Each phase's
  * contribution includes every branch and re-entry. Same-FP free loops are a
  * convergent Neumann sum; no chosen success example supplies these costs. */
-export function buildFiniteSteps(graph: CompactGraph, solution: CompactSolution, root: number, maximumFp = 48): FiniteStepPlan {
+export function buildFiniteSteps(graph: CompactGraph, solution: CompactSolution, root: number, maximumFp = DEFAULT_INITIAL_FP): FiniteStepPlan {
   if (root < 2 || maximumFp === 0) return { steps: [], main: [], costMeaning: 'ACTUAL_FP_PHASE_COST_PER_ENTRY', totalExpectedFp: 0 };
   interface Phase { state: CompactState; action: CompactAction; entries: number; cost: number; exits: Map<number, Set<string>>; next: Map<number, number>; successNext: Map<number, number>; layouts: Map<string, Set<boolean>> }
   const phases: Phase[] = [], ids = new Map<string, number>(), n = graph.states.length;

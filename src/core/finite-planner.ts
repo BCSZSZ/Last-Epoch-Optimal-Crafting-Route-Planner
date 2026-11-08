@@ -12,10 +12,10 @@ import { OutcomeLimitError, RuleEngine } from './rules';
 import { targetReached } from './target';
 import type { PlanningOptions, PlanReport } from './planner';
 import type { FpType, PlanRequest, Route } from './types';
-import { initialFp } from './initial-fp';
+import { DEFAULT_INITIAL_FP, initialFp } from './initial-fp';
 
 /** Generic inputs retain fixed-route capabilities; every generated candidate is
- * evaluated at the actual48FP, without intrinsic15%/65FP screening. */
+ * evaluated at the selected starting FP, without intrinsic15%/65FP screening. */
 async function fixedProfile(request: PlanRequest, profile: FpType, options: PlanningOptions, stopped: () => boolean): Promise<FiniteProfileResult> {
   const budget = initialFp(request), input = { ...request, item: { ...request.item, fpType: profile } }, engine = new RuleEngine(catalogForInputModel(input.inputModel));
   const compiled = compileTemplates(input, engine, true), candidates = targetReached(input.item, input.target) ?
@@ -59,7 +59,7 @@ async function fixedProfile(request: PlanRequest, profile: FpType, options: Plan
 
 export async function planFiniteProfiles(input: unknown, options: PlanningOptions = {}): Promise<PlanReport> {
   const catalog = catalogForInputModel(readInputModel(input)), parsed = parsePlanRequest(input, catalog), now = options.now ?? Date.now, start = now();
-  const elapsed = () => Math.max(0, now() - start), budget=parsed.request?initialFp(parsed.request):48;
+  const elapsed = () => Math.max(0, now() - start), budget=parsed.request?initialFp(parsed.request):DEFAULT_INITIAL_FP;
   const common = { metric: 'FINITE_48_PROFILES_V3' as const, modelId: catalog.model.modelId, gameVersion: catalog.model.gameVersion,
     primary: null, samplingGuarantee: null, conventions: { fpDomain: [budget], weights: [1], materials: 'UNLIMITED' as const, fixedRoute: false, rngModel: catalog.model.rngModel } };
   if (!parsed.request) return { ...common, status: 'INVALID_INPUT', issues: parsed.issues, searchStatus: 'NOT_STARTED', optimality: 'NOT_PROVEN',

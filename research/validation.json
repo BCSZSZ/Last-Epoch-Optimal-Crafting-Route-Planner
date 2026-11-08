@@ -203,7 +203,7 @@
       "affixes": 1156,
       "bases": 923,
       "bytes": 1051631,
-      "modelId": "le-1.5.3-iid-b793528294bd547f",
+      "modelId": "le-1.5.3-iid-c3ccb12755bdac80",
       "verifiedOnly": true
     },
     "user7710": {
@@ -238,14 +238,14 @@
   "claimedProductionSolverTest": false,
   "documents": {
     "bootstrapUnchanged": true,
-    "localLinks": 412,
+    "localLinks": 416,
     "requiredDocuments": 11
   },
   "inputs": {
     "scripts/analyze_precomputation.py": "e0fa5fd398e503639c294b3a2d704e4de02b6994191d8825b24465134b0fac65",
     "scripts/analyze_upper_state_projection.py": "311893d0599c680e87d1141270ecdc2c76c2d2764e95d6da6c3cf3513b1802e4",
     "scripts/build_affix_localization.py": "836d454506924c625bab2f66fabe2d7b6c0e738735a064373fba20f5686776c7",
-    "scripts/build_research_index.py": "4de4a83a6c0bd089e545aff6652be639d97c1b7cf80518e8ecd1a9beaef54bab",
+    "scripts/build_research_index.py": "9c7ce0faf25ffbee25187678ea4be3de057035ee323571ed8f513b914e30164f",
     "scripts/build_runtime_model.py": "4f5e3518a3b32d10aaf6e722db0691cc921bfff2f34e081bcfae3ba93dc83f4b",
     "scripts/check_7710_monte_carlo.py": "d7e40b9aed16910123b55dd75346dad6d8abe429d0198202f8388dcc796814b9",
     "scripts/check_7710_routes.py": "2cd2b15df713b53a5c6da9e4b9c2a1b25a6a266545aea72e12a7856b2d9c9dc8",
@@ -265,6 +265,7 @@
     "scripts/register_audited_build.py": "11f4fc697b2cb0f041ee5f830793000415adcac9a7612a41617b193f0ff98a34",
     "scripts/render_7710_7721_completion.py": "64adf4cffff5cfe41cd4978e3d3cc9ea4eff4167d11772884d22e0d62cbcb592",
     "scripts/research_fp_generation_20261103.py": "b46a3a5b3c7d94e65230b348ecbf89a7dcb92914fc1cd644da52eac7411fe82c",
+    "scripts/research_natural_fp_percentile_20261108.py": "5cb32c8396447036b6fcdfb6b103a2aa153a4c2083ddef623ee914810e33e6ee",
     "scripts/research_redemption_7272_independent.py": "0838132cdc899c98d33cf04ac4da72ee310f704cad995b274c275e8614d62cb4",
     "scripts/research_redemption_average.py": "dd58695d83f1cfc97efb15cc7e3bf89c5c104bd052a493b08dd838afe3c1380a",
     "scripts/research_redemption_intrinsic.py": "9c0c24a84fa63209378d1c8ee322c307d774e1751ebbaeefc97efb9f19ce5499",

@@ -1,0 +1,2065 @@
+{
+  "status": "PASS_CURRENT154_NATURAL_FP",
+  "gameVersion": "1.5.4",
+  "dllSHA256": "794b95e2619edfed76b1c2a9e0acbf9c349b43e2cf1fde8bc7b21d192fbe9875",
+  "metadataSHA256": "a44a117e4908b8ffd74df59455b2054059714cb4c209f5ef093b39cc3a06e088",
+  "cpp2ilDescriptorSHA256": "f50e2d19c3561639293b06c0460b1254d89a53643b6c6852813432bb8d56bd51",
+  "methods": [
+    {
+      "name": "rollForgingPotential",
+      "rva": "0x11d78e0",
+      "length": 665,
+      "sha256": "6663ffd3983c8d3ea33c4b542142abe87eb34608523cae68051d92964104b2a8",
+      "instructionCount": 189,
+      "oldRva": "0x11d1360",
+      "normalizedEntireBodyMatches153": true,
+      "constants": [
+        {
+          "instruction": "0x11d7ae0",
+          "rva": "0x473876c",
+          "float32": 0.10999999940395355
+        }
+      ],
+      "calls": [
+        {
+          "instruction": "0x11d7906",
+          "offset": "0x26",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11d7912",
+          "offset": "0x32",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11d7940",
+          "offset": "0x60",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11d7949",
+          "offset": "0x69",
+          "target": "0x1234b40"
+        },
+        {
+          "instruction": "0x11d79ff",
+          "offset": "0x11f",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11d7a60",
+          "offset": "0x180",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11d7ac1",
+          "offset": "0x1e1",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11d7aeb",
+          "offset": "0x20b",
+          "target": "0xf6e9c0"
+        },
+        {
+          "instruction": "0x11d7b07",
+          "offset": "0x227",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11d7b34",
+          "offset": "0x254",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11d7b74",
+          "offset": "0x294",
+          "target": "0x2f2ed0"
+        }
+      ]
+    },
+    {
+      "name": "GenerateAffixes",
+      "rva": "0x11c72c0",
+      "length": 2383,
+      "sha256": "92e07eff5954a1cf0a48fb5fcee712066364495a871729cf1bb675f69db7f7ff",
+      "instructionCount": 517,
+      "oldRva": "0x11c0d40",
+      "normalizedEntireBodyMatches153": true,
+      "constants": [
+        {
+          "instruction": "0x11c7919",
+          "rva": "0x457d0c8",
+          "float32": 0.33000001311302185
+        },
+        {
+          "instruction": "0x11c7abd",
+          "rva": "0x457d0c8",
+          "float32": 0.33000001311302185
+        }
+      ],
+      "calls": [
+        {
+          "instruction": "0x11c72fe",
+          "offset": "0x3e",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c730a",
+          "offset": "0x4a",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c7316",
+          "offset": "0x56",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c7322",
+          "offset": "0x62",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c732e",
+          "offset": "0x6e",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c733a",
+          "offset": "0x7a",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c7346",
+          "offset": "0x86",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c7352",
+          "offset": "0x92",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c735e",
+          "offset": "0x9e",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c736a",
+          "offset": "0xaa",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c7376",
+          "offset": "0xb6",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c7382",
+          "offset": "0xc2",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c738e",
+          "offset": "0xce",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c739a",
+          "offset": "0xda",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c73a6",
+          "offset": "0xe6",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c73b2",
+          "offset": "0xf2",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c73be",
+          "offset": "0xfe",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c73ca",
+          "offset": "0x10a",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c73d6",
+          "offset": "0x116",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c7411",
+          "offset": "0x151",
+          "target": "0x2f2e80"
+        },
+        {
+          "instruction": "0x11c741e",
+          "offset": "0x15e",
+          "target": "0x3d2050"
+        },
+        {
+          "instruction": "0x11c743c",
+          "offset": "0x17c",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11c7465",
+          "offset": "0x1a5",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11c7498",
+          "offset": "0x1d8",
+          "target": "0x1218030"
+        },
+        {
+          "instruction": "0x11c74b6",
+          "offset": "0x1f6",
+          "target": "0x1218320"
+        },
+        {
+          "instruction": "0x11c74e3",
+          "offset": "0x223",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11c74ed",
+          "offset": "0x22d",
+          "target": "0x12774b0"
+        },
+        {
+          "instruction": "0x11c755a",
+          "offset": "0x29a",
+          "target": "0x11c3d80"
+        },
+        {
+          "instruction": "0x11c759e",
+          "offset": "0x2de",
+          "target": "0x2f2e80"
+        },
+        {
+          "instruction": "0x11c75b6",
+          "offset": "0x2f6",
+          "target": "0xa7f490"
+        },
+        {
+          "instruction": "0x11c75d1",
+          "offset": "0x311",
+          "target": "0xa30870"
+        },
+        {
+          "instruction": "0x11c75e0",
+          "offset": "0x320",
+          "target": "0x869960"
+        },
+        {
+          "instruction": "0x11c7620",
+          "offset": "0x360",
+          "target": "0x2f1f40"
+        },
+        {
+          "instruction": "0x11c7643",
+          "offset": "0x383",
+          "target": "0x2f1ea0"
+        },
+        {
+          "instruction": "0x11c7668",
+          "offset": "0x3a8",
+          "target": "0x2f1ee0"
+        },
+        {
+          "instruction": "0x11c7693",
+          "offset": "0x3d3",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11c76b2",
+          "offset": "0x3f2",
+          "target": "0x2f1ea0"
+        },
+        {
+          "instruction": "0x11c76ce",
+          "offset": "0x40e",
+          "target": "0x2f1ee0"
+        },
+        {
+          "instruction": "0x11c76f9",
+          "offset": "0x439",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11c7724",
+          "offset": "0x464",
+          "target": "0x2f1ea0"
+        },
+        {
+          "instruction": "0x11c773b",
+          "offset": "0x47b",
+          "target": "0x2f1ee0"
+        },
+        {
+          "instruction": "0x11c775e",
+          "offset": "0x49e",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11c777a",
+          "offset": "0x4ba",
+          "target": "0x2f1ea0"
+        },
+        {
+          "instruction": "0x11c7791",
+          "offset": "0x4d1",
+          "target": "0x2f1ee0"
+        },
+        {
+          "instruction": "0x11c77b4",
+          "offset": "0x4f4",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11c77d3",
+          "offset": "0x513",
+          "target": "0x2f1ea0"
+        },
+        {
+          "instruction": "0x11c77ea",
+          "offset": "0x52a",
+          "target": "0x2f1ee0"
+        },
+        {
+          "instruction": "0x11c780d",
+          "offset": "0x54d",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11c781f",
+          "offset": "0x55f",
+          "target": "0x2a62c00"
+        },
+        {
+          "instruction": "0x11c7837",
+          "offset": "0x577",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11c7841",
+          "offset": "0x581",
+          "target": "0x3fa2db0"
+        },
+        {
+          "instruction": "0x11c7866",
+          "offset": "0x5a6",
+          "target": "0x2f1ea0"
+        },
+        {
+          "instruction": "0x11c7888",
+          "offset": "0x5c8",
+          "target": "0x2f1ea0"
+        },
+        {
+          "instruction": "0x11c78a7",
+          "offset": "0x5e7",
+          "target": "0x2f1ea0"
+        },
+        {
+          "instruction": "0x11c78c1",
+          "offset": "0x601",
+          "target": "0x2a62da0"
+        },
+        {
+          "instruction": "0x11c78d9",
+          "offset": "0x619",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11c78e3",
+          "offset": "0x623",
+          "target": "0x3fa24a0"
+        },
+        {
+          "instruction": "0x11c798f",
+          "offset": "0x6cf",
+          "target": "0x11ccc20"
+        },
+        {
+          "instruction": "0x11c79ca",
+          "offset": "0x70a",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11c79ef",
+          "offset": "0x72f",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11c7a0c",
+          "offset": "0x74c",
+          "target": "0x2f2e80"
+        },
+        {
+          "instruction": "0x11c7a24",
+          "offset": "0x764",
+          "target": "0x9d45e0"
+        },
+        {
+          "instruction": "0x11c7a50",
+          "offset": "0x790",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11c7a62",
+          "offset": "0x7a2",
+          "target": "0x84c580"
+        },
+        {
+          "instruction": "0x11c7b22",
+          "offset": "0x862",
+          "target": "0x11ccc20"
+        },
+        {
+          "instruction": "0x11c7b52",
+          "offset": "0x892",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11c7b5b",
+          "offset": "0x89b",
+          "target": "0x10eab00"
+        },
+        {
+          "instruction": "0x11c7b76",
+          "offset": "0x8b6",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11c7b92",
+          "offset": "0x8d2",
+          "target": "0x11d78e0"
+        },
+        {
+          "instruction": "0x11c7ba4",
+          "offset": "0x8e4",
+          "target": "0x12103e0"
+        },
+        {
+          "instruction": "0x11c7bae",
+          "offset": "0x8ee",
+          "target": "0x2f2ed0"
+        },
+        {
+          "instruction": "0x11c7bb4",
+          "offset": "0x8f4",
+          "target": "0x2f27b0"
+        },
+        {
+          "instruction": "0x11c7bbe",
+          "offset": "0x8fe",
+          "target": "0x2f2e90"
+        },
+        {
+          "instruction": "0x11c7bc4",
+          "offset": "0x904",
+          "target": "0x2f27b0"
+        },
+        {
+          "instruction": "0x11c7bce",
+          "offset": "0x90e",
+          "target": "0x2f2e90"
+        },
+        {
+          "instruction": "0x11c7bd4",
+          "offset": "0x914",
+          "target": "0x2f27b0"
+        },
+        {
+          "instruction": "0x11c7bde",
+          "offset": "0x91e",
+          "target": "0x2f2e90"
+        },
+        {
+          "instruction": "0x11c7be4",
+          "offset": "0x924",
+          "target": "0x2f27b0"
+        },
+        {
+          "instruction": "0x11c7bee",
+          "offset": "0x92e",
+          "target": "0x2f2e90"
+        },
+        {
+          "instruction": "0x11c7bf4",
+          "offset": "0x934",
+          "target": "0x2f27b0"
+        },
+        {
+          "instruction": "0x11c7bfe",
+          "offset": "0x93e",
+          "target": "0x2f2e90"
+        },
+        {
+          "instruction": "0x11c7c04",
+          "offset": "0x944",
+          "target": "0x2f2ec0"
+        },
+        {
+          "instruction": "0x11c7c0a",
+          "offset": "0x94a",
+          "target": "0x2f2ed0"
+        }
+      ]
+    },
+    {
+      "name": "RollAffixes",
+      "rva": "0x11ccc20",
+      "length": 4549,
+      "sha256": "141dc5376ceed22a36a0d02d4aa2ff27844a45fc1eb43e35a448b822b8d7a4a1",
+      "instructionCount": 983,
+      "oldRva": "0x11c66a0",
+      "normalizedEntireBodyMatches153": true,
+      "constants": [
+        {
+          "instruction": "0x11cd939",
+          "rva": "0x457d270",
+          "float32": 0.699999988079071
+        }
+      ],
+      "calls": [
+        {
+          "instruction": "0x11ccc64",
+          "offset": "0x44",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccc70",
+          "offset": "0x50",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccc7c",
+          "offset": "0x5c",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccc88",
+          "offset": "0x68",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccc94",
+          "offset": "0x74",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccca0",
+          "offset": "0x80",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11cccac",
+          "offset": "0x8c",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11cccb8",
+          "offset": "0x98",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11cccc4",
+          "offset": "0xa4",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11cccd0",
+          "offset": "0xb0",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11cccdc",
+          "offset": "0xbc",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccce8",
+          "offset": "0xc8",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11cccf4",
+          "offset": "0xd4",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd00",
+          "offset": "0xe0",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd0c",
+          "offset": "0xec",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd18",
+          "offset": "0xf8",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd24",
+          "offset": "0x104",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd30",
+          "offset": "0x110",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd3c",
+          "offset": "0x11c",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd48",
+          "offset": "0x128",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd54",
+          "offset": "0x134",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd60",
+          "offset": "0x140",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd6c",
+          "offset": "0x14c",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd78",
+          "offset": "0x158",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd84",
+          "offset": "0x164",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd90",
+          "offset": "0x170",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccd9c",
+          "offset": "0x17c",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccda8",
+          "offset": "0x188",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccdb4",
+          "offset": "0x194",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccdc0",
+          "offset": "0x1a0",
+          "target": "0x2f2c80"
+        },
+        {
+          "instruction": "0x11ccdfb",
+          "offset": "0x1db",
+          "target": "0x2f2e80"
+        },
+        {
+          "instruction": "0x11cce08",
+          "offset": "0x1e8",
+          "target": "0x3d2050"
+        },
+        {
+          "instruction": "0x11cce29",
+          "offset": "0x209",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11cce39",
+          "offset": "0x219",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11cce5d",
+          "offset": "0x23d",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11cce7e",
+          "offset": "0x25e",
+          "target": "0x12180d0"
+        },
+        {
+          "instruction": "0x11cce9b",
+          "offset": "0x27b",
+          "target": "0x18b2200"
+        },
+        {
+          "instruction": "0x11cceb7",
+          "offset": "0x297",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11ccede",
+          "offset": "0x2be",
+          "target": "0xf6e9c0"
+        },
+        {
+          "instruction": "0x11ccf11",
+          "offset": "0x2f1",
+          "target": "0xa62820"
+        },
+        {
+          "instruction": "0x11ccf4d",
+          "offset": "0x32d",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11ccf56",
+          "offset": "0x336",
+          "target": "0x12347f0"
+        },
+        {
+          "instruction": "0x11ccf84",
+          "offset": "0x364",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11ccf8d",
+          "offset": "0x36d",
+          "target": "0x1234a70"
+        },
+        {
+          "instruction": "0x11ccfbb",
+          "offset": "0x39b",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11ccfc4",
+          "offset": "0x3a4",
+          "target": "0x1218580"
+        },
+        {
+          "instruction": "0x11ccfe0",
+          "offset": "0x3c0",
+          "target": "0x1218370"
+        },
+        {
+          "instruction": "0x11cd029",
+          "offset": "0x409",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cd036",
+          "offset": "0x416",
+          "target": "0x1231430"
+        },
+        {
+          "instruction": "0x11cd056",
+          "offset": "0x436",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cd081",
+          "offset": "0x461",
+          "target": "0xf6e9c0"
+        },
+        {
+          "instruction": "0x11cd0ab",
+          "offset": "0x48b",
+          "target": "0x122dcb0"
+        },
+        {
+          "instruction": "0x11cd0e0",
+          "offset": "0x4c0",
+          "target": "0x2f2e80"
+        },
+        {
+          "instruction": "0x11cd0f2",
+          "offset": "0x4d2",
+          "target": "0xa332b0"
+        },
+        {
+          "instruction": "0x11cd102",
+          "offset": "0x4e2",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11cd12c",
+          "offset": "0x50c",
+          "target": "0x122c4d0"
+        },
+        {
+          "instruction": "0x11cd141",
+          "offset": "0x521",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cd148",
+          "offset": "0x528",
+          "target": "0x1234700"
+        },
+        {
+          "instruction": "0x11cd179",
+          "offset": "0x559",
+          "target": "0x122c040"
+        },
+        {
+          "instruction": "0x11cd189",
+          "offset": "0x569",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11cd1b8",
+          "offset": "0x598",
+          "target": "0x2f2e80"
+        },
+        {
+          "instruction": "0x11cd1cf",
+          "offset": "0x5af",
+          "target": "0xa332b0"
+        },
+        {
+          "instruction": "0x11cd202",
+          "offset": "0x5e2",
+          "target": "0xa33650"
+        },
+        {
+          "instruction": "0x11cd21a",
+          "offset": "0x5fa",
+          "target": "0x11a4730"
+        },
+        {
+          "instruction": "0x11cd235",
+          "offset": "0x615",
+          "target": "0x3b0700"
+        },
+        {
+          "instruction": "0x11cd28a",
+          "offset": "0x66a",
+          "target": "0x2f2e80"
+        },
+        {
+          "instruction": "0x11cd297",
+          "offset": "0x677",
+          "target": "0x3d2050"
+        },
+        {
+          "instruction": "0x11cd2b0",
+          "offset": "0x690",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11cd2c4",
+          "offset": "0x6a4",
+          "target": "0x84d5c0"
+        },
+        {
+          "instruction": "0x11cd2ff",
+          "offset": "0x6df",
+          "target": "0x11a8080"
+        },
+        {
+          "instruction": "0x11cd317",
+          "offset": "0x6f7",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cd334",
+          "offset": "0x714",
+          "target": "0x2f2e80"
+        },
+        {
+          "instruction": "0x11cd351",
+          "offset": "0x731",
+          "target": "0x9d45e0"
+        },
+        {
+          "instruction": "0x11cd377",
+          "offset": "0x757",
+          "target": "0x2f2e80"
+        },
+        {
+          "instruction": "0x11cd38f",
+          "offset": "0x76f",
+          "target": "0x9d45e0"
+        },
+        {
+          "instruction": "0x11cd39f",
+          "offset": "0x77f",
+          "target": "0x2f1ec0"
+        },
+        {
+          "instruction": "0x11cd3d7",
+          "offset": "0x7b7",
+          "target": "0x90f0e0"
+        },
+        {
+          "instruction": "0x11cd456",
+          "offset": "0x836",
+          "target": "0x11d1210"
+        },
+        {
+          "instruction": "0x11cd512",
+          "offset": "0x8f2",
+          "target": "0x3b0700"
+        },
+        {
+          "instruction": "0x11cd52a",
+          "offset": "0x90a",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cd54b",
+          "offset": "0x92b",
+          "target": "0xf6e3d0"
+        },
+        {
+          "instruction": "0x11cd596",
+          "offset": "0x976",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cd59f",
+          "offset": "0x97f",
+          "target": "0x10eac70"
+        },
+        {
+          "instruction": "0x11cd5ac",
+          "offset": "0x98c",
+          "target": "0x10eab00"
+        },
+        {
+          "instruction": "0x11cd5dd",
+          "offset": "0x9bd",
+          "target": "0x2f2e80"
+        },
+        {
+          "instruction": "0x11cd609",
+          "offset": "0x9e9",
+          "target": "0x121d0e0"
+        },
+        {
+          "instruction": "0x11cd628",
+          "offset": "0xa08",
+          "target": "0x3b0700"
+        },
+        {
+          "instruction": "0x11cd660",
+          "offset": "0xa40",
+          "target": "0x11c33c0"
+        },
+        {
+          "instruction": "0x11cd674",
+          "offset": "0xa54",
+          "target": "0x1217f10"
+        },
+        {
+          "instruction": "0x11cd6a1",
+          "offset": "0xa81",
+          "target": "0x1214c30"
+        },
+        {
+          "instruction": "0x11cd6d3",
+          "offset": "0xab3",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cd70f",
+          "offset": "0xaef",
+          "target": "0x90c270"
+        },
+        {
+          "instruction": "0x11cd73a",
+          "offset": "0xb1a",
+          "target": "0x1214c30"
+        },
+        {
+          "instruction": "0x11cd798",
+          "offset": "0xb78",
+          "target": "0xa31050"
+        },
+        {
+          "instruction": "0x11cd7df",
+          "offset": "0xbbf",
+          "target": "0xcb80d0"
+        },
+        {
+          "instruction": "0x11cd7fc",
+          "offset": "0xbdc",
+          "target": "0x3d4560"
+        },
+        {
+          "instruction": "0x11cd822",
+          "offset": "0xc02",
+          "target": "0x3d2f40"
+        },
+        {
+          "instruction": "0x11cd83b",
+          "offset": "0xc1b",
+          "target": "0x3d2f40"
+        },
+        {
+          "instruction": "0x11cd856",
+          "offset": "0xc36",
+          "target": "0x3d2f40"
+        },
+        {
+          "instruction": "0x11cd899",
+          "offset": "0xc79",
+          "target": "0x1217d80"
+        },
+        {
+          "instruction": "0x11cd903",
+          "offset": "0xce3",
+          "target": "0xa31050"
+        },
+        {
+          "instruction": "0x11cd950",
+          "offset": "0xd30",
+          "target": "0xcb80d0"
+        },
+        {
+          "instruction": "0x11cd971",
+          "offset": "0xd51",
+          "target": "0x3d4560"
+        },
+        {
+          "instruction": "0x11cd99d",
+          "offset": "0xd7d",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cd9c2",
+          "offset": "0xda2",
+          "target": "0xf6e9c0"
+        },
+        {
+          "instruction": "0x11cd9de",
+          "offset": "0xdbe",
+          "target": "0x3d2f40"
+        },
+        {
+          "instruction": "0x11cd9f2",
+          "offset": "0xdd2",
+          "target": "0x3d2f40"
+        },
+        {
+          "instruction": "0x11cda05",
+          "offset": "0xde5",
+          "target": "0x3d2f40"
+        },
+        {
+          "instruction": "0x11cda47",
+          "offset": "0xe27",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cda83",
+          "offset": "0xe63",
+          "target": "0x90c270"
+        },
+        {
+          "instruction": "0x11cdab6",
+          "offset": "0xe96",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cdabd",
+          "offset": "0xe9d",
+          "target": "0x11a8180"
+        },
+        {
+          "instruction": "0x11cdad6",
+          "offset": "0xeb6",
+          "target": "0x11a4730"
+        },
+        {
+          "instruction": "0x11cdb41",
+          "offset": "0xf21",
+          "target": "0xa31050"
+        },
+        {
+          "instruction": "0x11cdb8f",
+          "offset": "0xf6f",
+          "target": "0xcb80d0"
+        },
+        {
+          "instruction": "0x11cdbb0",
+          "offset": "0xf90",
+          "target": "0x3d4560"
+        },
+        {
+          "instruction": "0x11cdbcf",
+          "offset": "0xfaf",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cdbd6",
+          "offset": "0xfb6",
+          "target": "0x11a8180"
+        },
+        {
+          "instruction": "0x11cdbf7",
+          "offset": "0xfd7",
+          "target": "0x11a4730"
+        },
+        {
+          "instruction": "0x11cdc4b",
+          "offset": "0x102b",
+          "target": "0x3d2f40"
+        },
+        {
+          "instruction": "0x11cdc5c",
+          "offset": "0x103c",
+          "target": "0x3d2f40"
+        },
+        {
+          "instruction": "0x11cdc72",
+          "offset": "0x1052",
+          "target": "0x3d2f40"
+        },
+        {
+          "instruction": "0x11cdcc0",
+          "offset": "0x10a0",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cdcfc",
+          "offset": "0x10dc",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cdd31",
+          "offset": "0x1111",
+          "target": "0x11c9480"
+        },
+        {
+          "instruction": "0x11cdd44",
+          "offset": "0x1124",
+          "target": "0xf6e9c0"
+        },
+        {
+          "instruction": "0x11cdd5f",
+          "offset": "0x113f",
+          "target": "0x2f2f60"
+        },
+        {
+          "instruction": "0x11cdd6b",
+          "offset": "0x114b",
+          "target": "0x10eab00"
+        },
+        {
+          "instruction": "0x11cdda7",
+          "offset": "0x1187",
+          "target": "0x2f2ed0"
+        },
+        {
+          "instruction": "0x11cddad",
+          "offset": "0x118d",
+          "target": "0x2f2ed0"
+        },
+        {
+          "instruction": "0x11cddb3",
+          "offset": "0x1193",
+          "target": "0x2e3930"
+        },
+        {
+          "instruction": "0x11cddb9",
+          "offset": "0x1199",
+          "target": "0x2f2ed0"
+        },
+        {
+          "instruction": "0x11cddbe",
+          "offset": "0x119e",
+          "target": "0x2f2ed0"
+        },
+        {
+          "instruction": "0x11cddc4",
+          "offset": "0x11a4",
+          "target": "0x2e3930"
+        },
+        {
+          "instruction": "0x11cddca",
+          "offset": "0x11aa",
+          "target": "0x2f2ed0"
+        },
+        {
+          "instruction": "0x11cddcf",
+          "offset": "0x11af",
+          "target": "0x2f2ed0"
+        },
+        {
+          "instruction": "0x11cddd4",
+          "offset": "0x11b4",
+          "target": "0x2f2ed0"
+        },
+        {
+          "instruction": "0x11cddda",
+          "offset": "0x11ba",
+          "target": "0x2e3930"
+        },
+        {
+          "instruction": "0x11cdde0",
+          "offset": "0x11c0",
+          "target": "0x2f2ec0"
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "generationLevel": 85,
+      "ordinaryAffixCount": "1-2",
+      "hasUncraftable": true,
+      "a": 43,
+      "b": 48,
+      "minimum": 28,
+      "mean": 35.775,
+      "quantiles": {
+        "10": 29,
+        "25": 32,
+        "50": 36,
+        "70": 39,
+        "75": 40,
+        "90": 42,
+        "95": 43,
+        "99": 47
+      },
+      "probabilityAbove48": 0.0,
+      "cdf43": 0.9738095238095238,
+      "cdf44": 0.979047619047619,
+      "pmf": {
+        "28": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "29": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "30": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "31": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "32": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "33": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "34": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "35": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "36": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "37": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "38": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "39": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "40": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "41": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "42": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "43": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "44": {
+          "probability": 0.005238095238095238,
+          "fraction": "11/2100"
+        },
+        "45": {
+          "probability": 0.005238095238095238,
+          "fraction": "11/2100"
+        },
+        "46": {
+          "probability": 0.005238095238095238,
+          "fraction": "11/2100"
+        },
+        "47": {
+          "probability": 0.005238095238095238,
+          "fraction": "11/2100"
+        },
+        "48": {
+          "probability": 0.005238095238095238,
+          "fraction": "11/2100"
+        }
+      }
+    },
+    {
+      "generationLevel": 85,
+      "ordinaryAffixCount": "3-4",
+      "hasUncraftable": true,
+      "a": 46,
+      "b": 54,
+      "minimum": 30,
+      "mean": 38.44,
+      "quantiles": {
+        "10": 31,
+        "25": 34,
+        "50": 38,
+        "70": 42,
+        "75": 43,
+        "90": 45,
+        "95": 46,
+        "99": 52
+      },
+      "probabilityAbove48": 0.0264,
+      "cdf43": 0.7945411764705882,
+      "cdf44": 0.8512941176470589,
+      "pmf": {
+        "30": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "31": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "32": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "33": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "34": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "35": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "36": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "37": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "38": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "39": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "40": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "41": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "42": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "43": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "44": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "45": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "46": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "47": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "48": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "49": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "50": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "51": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "52": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "53": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "54": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        }
+      }
+    },
+    {
+      "generationLevel": 90,
+      "ordinaryAffixCount": "1-2",
+      "hasUncraftable": true,
+      "a": 44,
+      "b": 49,
+      "minimum": 28,
+      "mean": 36.275,
+      "quantiles": {
+        "10": 29,
+        "25": 32,
+        "50": 36,
+        "70": 40,
+        "75": 41,
+        "90": 43,
+        "95": 44,
+        "99": 47
+      },
+      "probabilityAbove48": 0.005,
+      "cdf43": 0.9176470588235294,
+      "cdf44": 0.975,
+      "pmf": {
+        "28": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "29": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "30": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "31": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "32": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "33": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "34": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "35": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "36": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "37": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "38": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "39": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "40": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "41": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "42": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "43": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "44": {
+          "probability": 0.057352941176470586,
+          "fraction": "39/680"
+        },
+        "45": {
+          "probability": 0.005,
+          "fraction": "1/200"
+        },
+        "46": {
+          "probability": 0.005,
+          "fraction": "1/200"
+        },
+        "47": {
+          "probability": 0.005,
+          "fraction": "1/200"
+        },
+        "48": {
+          "probability": 0.005,
+          "fraction": "1/200"
+        },
+        "49": {
+          "probability": 0.005,
+          "fraction": "1/200"
+        }
+      }
+    },
+    {
+      "generationLevel": 90,
+      "ordinaryAffixCount": "3-4",
+      "hasUncraftable": true,
+      "a": 47,
+      "b": 55,
+      "minimum": 30,
+      "mean": 38.94,
+      "quantiles": {
+        "10": 31,
+        "25": 34,
+        "50": 39,
+        "70": 43,
+        "75": 43,
+        "90": 46,
+        "95": 47,
+        "99": 53
+      },
+      "probabilityAbove48": 0.029615384615384616,
+      "cdf43": 0.7514529914529915,
+      "cdf44": 0.8051282051282052,
+      "pmf": {
+        "30": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "31": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "32": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "33": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "34": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "35": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "36": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "37": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "38": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "39": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "40": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "41": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "42": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "43": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "44": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "45": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "46": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "47": {
+          "probability": 0.053675213675213676,
+          "fraction": "157/2925"
+        },
+        "48": {
+          "probability": 0.004230769230769231,
+          "fraction": "11/2600"
+        },
+        "49": {
+          "probability": 0.004230769230769231,
+          "fraction": "11/2600"
+        },
+        "50": {
+          "probability": 0.004230769230769231,
+          "fraction": "11/2600"
+        },
+        "51": {
+          "probability": 0.004230769230769231,
+          "fraction": "11/2600"
+        },
+        "52": {
+          "probability": 0.004230769230769231,
+          "fraction": "11/2600"
+        },
+        "53": {
+          "probability": 0.004230769230769231,
+          "fraction": "11/2600"
+        },
+        "54": {
+          "probability": 0.004230769230769231,
+          "fraction": "11/2600"
+        },
+        "55": {
+          "probability": 0.004230769230769231,
+          "fraction": "11/2600"
+        }
+      }
+    },
+    {
+      "generationLevel": 100,
+      "ordinaryAffixCount": "1-2",
+      "hasUncraftable": true,
+      "a": 45,
+      "b": 50,
+      "minimum": 30,
+      "mean": 37.775,
+      "quantiles": {
+        "10": 31,
+        "25": 34,
+        "50": 38,
+        "70": 41,
+        "75": 42,
+        "90": 44,
+        "95": 45,
+        "99": 49
+      },
+      "probabilityAbove48": 0.010476190476190476,
+      "cdf43": 0.8520833333333333,
+      "cdf44": 0.9129464285714286,
+      "pmf": {
+        "30": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "31": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "32": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "33": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "34": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "35": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "36": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "37": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "38": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "39": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "40": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "41": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "42": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "43": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "44": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "45": {
+          "probability": 0.06086309523809524,
+          "fraction": "409/6720"
+        },
+        "46": {
+          "probability": 0.005238095238095238,
+          "fraction": "11/2100"
+        },
+        "47": {
+          "probability": 0.005238095238095238,
+          "fraction": "11/2100"
+        },
+        "48": {
+          "probability": 0.005238095238095238,
+          "fraction": "11/2100"
+        },
+        "49": {
+          "probability": 0.005238095238095238,
+          "fraction": "11/2100"
+        },
+        "50": {
+          "probability": 0.005238095238095238,
+          "fraction": "11/2100"
+        }
+      }
+    },
+    {
+      "generationLevel": 100,
+      "ordinaryAffixCount": "3-4",
+      "hasUncraftable": true,
+      "a": 48,
+      "b": 56,
+      "minimum": 32,
+      "mean": 40.44,
+      "quantiles": {
+        "10": 33,
+        "25": 36,
+        "50": 40,
+        "70": 44,
+        "75": 45,
+        "90": 47,
+        "95": 48,
+        "99": 54
+      },
+      "probabilityAbove48": 0.0352,
+      "cdf43": 0.6810352941176471,
+      "cdf44": 0.7377882352941176,
+      "pmf": {
+        "32": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "33": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "34": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "35": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "36": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "37": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "38": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "39": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "40": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "41": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "42": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "43": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "44": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "45": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "46": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "47": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "48": {
+          "probability": 0.05675294117647059,
+          "fraction": "603/10625"
+        },
+        "49": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "50": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "51": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "52": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "53": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "54": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "55": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        },
+        "56": {
+          "probability": 0.0044,
+          "fraction": "11/2500"
+        }
+      }
+    }
+  ],
+  "naturalLevel100Primary": {
+    "generationLevel": 100,
+    "ordinaryAffixCount": "3-4",
+    "hasUncraftable": true,
+    "a": 48,
+    "b": 56,
+    "minimum": 32,
+    "mean": 40.44,
+    "quantiles": {
+      "10": 33,
+      "25": 36,
+      "50": 40,
+      "70": 44,
+      "75": 45,
+      "90": 47,
+      "95": 48,
+      "99": 54
+    },
+    "probabilityAbove48": 0.0352,
+    "cdf43": 0.6810352941176471,
+    "cdf44": 0.7377882352941176,
+    "pmf": {
+      "32": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "33": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "34": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "35": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "36": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "37": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "38": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "39": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "40": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "41": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "42": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "43": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "44": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "45": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "46": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "47": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "48": {
+        "probability": 0.05675294117647059,
+        "fraction": "603/10625"
+      },
+      "49": {
+        "probability": 0.0044,
+        "fraction": "11/2500"
+      },
+      "50": {
+        "probability": 0.0044,
+        "fraction": "11/2500"
+      },
+      "51": {
+        "probability": 0.0044,
+        "fraction": "11/2500"
+      },
+      "52": {
+        "probability": 0.0044,
+        "fraction": "11/2500"
+      },
+      "53": {
+        "probability": 0.0044,
+        "fraction": "11/2500"
+      },
+      "54": {
+        "probability": 0.0044,
+        "fraction": "11/2500"
+      },
+      "55": {
+        "probability": 0.0044,
+        "fraction": "11/2500"
+      },
+      "56": {
+        "probability": 0.0044,
+        "fraction": "11/2500"
+      }
+    }
+  },
+  "clientExperiment": false,
+  "model": "Nominal independent discrete draws; not Gaussian; finite RNG grid changes only negligible decimals"
+}

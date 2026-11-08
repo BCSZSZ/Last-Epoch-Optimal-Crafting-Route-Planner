@@ -1,0 +1,461 @@
+{
+  "status": "PASS_DEFAULT44_AND_EXPLICIT_FP",
+  "modelId": "le-1.5.3-iid-c3ccb12755bdac80",
+  "cases": 9,
+  "profiles": 27,
+  "checks": [
+    {
+      "case": "dagger-default",
+      "fp": 44,
+      "status": "PASS_THREE_EXPORTED_PROFILES"
+    },
+    {
+      "case": "dagger-12",
+      "fp": 12,
+      "status": "PASS_THREE_EXPORTED_PROFILES"
+    },
+    {
+      "case": "simple-default",
+      "fp": 44,
+      "status": "PASS_THREE_EXPORTED_PROFILES"
+    },
+    {
+      "case": "simple-12",
+      "fp": 12,
+      "status": "PASS_THREE_EXPORTED_PROFILES"
+    },
+    {
+      "case": "simple-48",
+      "fp": 48,
+      "status": "PASS_THREE_EXPORTED_PROFILES"
+    },
+    {
+      "case": "simple-63",
+      "fp": 63,
+      "status": "PASS_THREE_EXPORTED_PROFILES"
+    },
+    {
+      "case": "simple-1",
+      "fp": 1,
+      "status": "PASS_THREE_EXPORTED_PROFILES"
+    },
+    {
+      "case": "simple-0",
+      "fp": 0,
+      "status": "PASS_THREE_EXPORTED_PROFILES"
+    },
+    {
+      "case": "ring-17",
+      "fp": 17,
+      "status": "PASS_THREE_EXPORTED_PROFILES"
+    }
+  ],
+  "observations": {
+    "status": "PASS_ALL_INPUT_FP_AND_CUSTOM_BUDGET",
+    "base": "http://127.0.0.1:4174/Last-Epoch-Optimal-Crafting-Route-Planner/",
+    "tag": "local",
+    "observations": [
+      {
+        "id": "dagger-default",
+        "fp": 44,
+        "file": "E:/Code/LE-filter/最后纪元概率学101/第三课/制作资料/概率与核对/求解器默认44FP复核20261108/local-dagger-default.json",
+        "sha256": "61d8b2835c33bb7575018eee9a8c9c259bacd5e03d742164d9451d8affcba5cd",
+        "modelId": "le-1.5.3-iid-c3ccb12755bdac80",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.09410413166788686,
+            "mean": 16.071539275737777,
+            "kind": "FIXED_ROUTE"
+          },
+          {
+            "type": "ICE",
+            "p": 0.15221385032746448,
+            "mean": 12.80132653840316,
+            "kind": "FIXED_ROUTE"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.09760764508415273,
+            "mean": 15.722706328565826,
+            "kind": "FIXED_ROUTE"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 8.04",
+          "期望消耗 FP 5.10",
+          "期望消耗 FP 10.04",
+          "期望消耗 FP 4.19",
+          "期望消耗 FP 4.54",
+          "期望消耗 FP 12.28",
+          "期望消耗 FP 5.63",
+          "期望消耗 FP 3.57",
+          "期望消耗 FP 7.34",
+          "期望消耗 FP 2.99",
+          "期望消耗 FP 3.38",
+          "期望消耗 FP 13.03",
+          "期望消耗 FP 8.04",
+          "期望消耗 FP 3.57",
+          "期望消耗 FP 10.39",
+          "期望消耗 FP 4.21",
+          "期望消耗 FP 3.21",
+          "期望消耗 FP 13.31"
+        ],
+        "wallMs": 12888
+      },
+      {
+        "id": "dagger-12",
+        "fp": 12,
+        "file": "E:/Code/LE-filter/最后纪元概率学101/第三课/制作资料/概率与核对/求解器默认44FP复核20261108/local-dagger-12.json",
+        "sha256": "9d7f32f789d909526e5948b40c70f4c53beadaa9a1d1f6fb560b80c840871acb",
+        "modelId": "le-1.5.3-iid-c3ccb12755bdac80",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.004675745220859392,
+            "mean": 7.582286799032512,
+            "kind": "FIXED_ROUTE"
+          },
+          {
+            "type": "ICE",
+            "p": 0.02320194548592293,
+            "mean": 6.131781233899933,
+            "kind": "FIXED_ROUTE"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.006613804748866607,
+            "mean": 7.5638439634065815,
+            "kind": "FIXED_ROUTE"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 6.12",
+          "期望消耗 FP 3.54",
+          "期望消耗 FP 4.48",
+          "期望消耗 FP 3.01",
+          "期望消耗 FP 2.17",
+          "期望消耗 FP 3.43",
+          "期望消耗 FP 4.29",
+          "期望消耗 FP 2.77",
+          "期望消耗 FP 4.04",
+          "期望消耗 FP 2.38",
+          "期望消耗 FP 1.94",
+          "期望消耗 FP 4.21",
+          "期望消耗 FP 6.12",
+          "期望消耗 FP 2.48",
+          "期望消耗 FP 4.86",
+          "期望消耗 FP 3.06",
+          "期望消耗 FP 1.57",
+          "期望消耗 FP 3.72"
+        ],
+        "wallMs": 12295
+      },
+      {
+        "id": "simple-default",
+        "fp": 44,
+        "file": "E:/Code/LE-filter/最后纪元概率学101/第三课/制作资料/概率与核对/求解器默认44FP复核20261108/local-simple-default.json",
+        "sha256": "7072d6a21d1b5212e730479c331413d6388bb7d262a3220fe54a5a202cde999f",
+        "modelId": "le-1.5.3-iid-c3ccb12755bdac80",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.298957200078749,
+            "mean": 39.71356960631439,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "ICE",
+            "p": 0.4501983128188612,
+            "mean": 35.91726823956321,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.29895720007874904,
+            "mean": 39.7135696063144,
+            "kind": "STATE_POLICY"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 31.72",
+          "期望消耗 FP 15.89",
+          "期望消耗 FP 27.21",
+          "期望消耗 FP 13.76",
+          "期望消耗 FP 31.72",
+          "期望消耗 FP 15.89"
+        ],
+        "wallMs": 6190
+      },
+      {
+        "id": "simple-12",
+        "fp": 12,
+        "file": "E:/Code/LE-filter/最后纪元概率学101/第三课/制作资料/概率与核对/求解器默认44FP复核20261108/local-simple-12.json",
+        "sha256": "ca7450a4649a301a3be8c426cea10cb67bf435bec91014c3b4a88b2366de8f51",
+        "modelId": "le-1.5.3-iid-c3ccb12755bdac80",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.059261231346606005,
+            "mean": 11.830164833622263,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "ICE",
+            "p": 0.11551640509627371,
+            "mean": 11.490931366722139,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.05926123134660607,
+            "mean": 11.830164833622264,
+            "kind": "STATE_POLICY"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 10.85",
+          "期望消耗 FP 5.90",
+          "期望消耗 FP 10.03",
+          "期望消耗 FP 5.80",
+          "期望消耗 FP 10.85",
+          "期望消耗 FP 5.90"
+        ],
+        "wallMs": 268
+      },
+      {
+        "id": "simple-48",
+        "fp": 48,
+        "file": "E:/Code/LE-filter/最后纪元概率学101/第三课/制作资料/概率与核对/求解器默认44FP复核20261108/local-simple-48.json",
+        "sha256": "f8c681ea602811f0d02a580b8a8e2d77db6dc40a52db1270d6f9a8ffcc75a998",
+        "modelId": "le-1.5.3-iid-c3ccb12755bdac80",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.3303892999907479,
+            "mean": 42.66702248558927,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "ICE",
+            "p": 0.48766177377737835,
+            "mean": 38.230363426780016,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.33038929999074795,
+            "mean": 42.66702248558929,
+            "kind": "STATE_POLICY"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 33.65",
+          "期望消耗 FP 16.88",
+          "期望消耗 FP 28.62",
+          "期望消耗 FP 14.47",
+          "期望消耗 FP 33.65",
+          "期望消耗 FP 16.88"
+        ],
+        "wallMs": 5624
+      },
+      {
+        "id": "simple-63",
+        "fp": 63,
+        "file": "E:/Code/LE-filter/最后纪元概率学101/第三课/制作资料/概率与核对/求解器默认44FP复核20261108/local-simple-63.json",
+        "sha256": "277eab9d42edf4cc0f11bc46c046311cbf3ad59ff83b661176261f2922ff0b4b",
+        "modelId": "le-1.5.3-iid-c3ccb12755bdac80",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.4427514212372293,
+            "mean": 52.628964115645495,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "ICE",
+            "p": 0.6120147100217366,
+            "mean": 45.58904133217539,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.4427514212372293,
+            "mean": 52.6289641156455,
+            "kind": "STATE_POLICY"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 39.89",
+          "期望消耗 FP 20.11",
+          "期望消耗 FP 32.94",
+          "期望消耗 FP 16.67",
+          "期望消耗 FP 39.89",
+          "期望消耗 FP 20.11"
+        ],
+        "wallMs": 7700
+      },
+      {
+        "id": "simple-1",
+        "fp": 1,
+        "file": "E:/Code/LE-filter/最后纪元概率学101/第三课/制作资料/概率与核对/求解器默认44FP复核20261108/local-simple-1.json",
+        "sha256": "5157745723cec01837f0540a1dfbfca1b60845899616ec878d8da103f59dce04",
+        "modelId": "le-1.5.3-iid-c3ccb12755bdac80",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.008258928571428492,
+            "mean": 0.9979352678571376,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "ICE",
+            "p": 0.027374963006805773,
+            "mean": 0.9869968925716759,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.008258928571428566,
+            "mean": 0.9979352678571423,
+            "kind": "STATE_POLICY"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 0.97",
+          "期望消耗 FP 0.94",
+          "期望消耗 FP 0.92",
+          "期望消耗 FP 0.85",
+          "期望消耗 FP 0.97",
+          "期望消耗 FP 0.94"
+        ],
+        "wallMs": 192
+      },
+      {
+        "id": "simple-0",
+        "fp": 0,
+        "file": "E:/Code/LE-filter/最后纪元概率学101/第三课/制作资料/概率与核对/求解器默认44FP复核20261108/local-simple-0.json",
+        "sha256": "d889ef57218e18fa564c1711e3c83d429f980e02ab890f6ba2a04f2514de9be3",
+        "modelId": "le-1.5.3-iid-c3ccb12755bdac80",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0,
+            "mean": 0,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "ICE",
+            "p": 0,
+            "mean": 0,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0,
+            "mean": 0,
+            "kind": "STATE_POLICY"
+          }
+        ],
+        "stepTexts": [],
+        "wallMs": 190
+      },
+      {
+        "id": "ring-17",
+        "fp": 17,
+        "file": "E:/Code/LE-filter/最后纪元概率学101/第三课/制作资料/概率与核对/求解器默认44FP复核20261108/local-ring-17.json",
+        "sha256": "b4d6f709143a246ba854001115d2ee7457befdb109e3131537dbd88c2eadd2a8",
+        "modelId": "le-1.5.3-iid-c3ccb12755bdac80",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.12541032635593646,
+            "mean": 16.66301208975362,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "ICE",
+            "p": 0.28541552253242075,
+            "mean": 15.576049028879208,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.15876356463215022,
+            "mean": 16.50997723665223,
+            "kind": "STATE_POLICY"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 5.09",
+          "期望消耗 FP 5.41",
+          "期望消耗 FP 3.90",
+          "期望消耗 FP 3.17",
+          "期望消耗 FP 5.36",
+          "期望消耗 FP 1.95",
+          "期望消耗 FP 6.76",
+          "期望消耗 FP 0.89",
+          "期望消耗 FP 3.93",
+          "期望消耗 FP 6.78",
+          "期望消耗 FP 7.04",
+          "期望消耗 FP 4.77",
+          "期望消耗 FP 6.96",
+          "期望消耗 FP 6.36",
+          "期望消耗 FP 7.71",
+          "期望消耗 FP 6.98",
+          "期望消耗 FP 7.34",
+          "期望消耗 FP 6.53",
+          "期望消耗 FP 1.01",
+          "期望消耗 FP 1.01",
+          "期望消耗 FP 3.57",
+          "期望消耗 FP 3.78",
+          "期望消耗 FP 2.70",
+          "期望消耗 FP 2.62",
+          "期望消耗 FP 6.27",
+          "期望消耗 FP 4.78",
+          "期望消耗 FP 2.72",
+          "期望消耗 FP 0.95",
+          "期望消耗 FP 5.50",
+          "期望消耗 FP 4.35",
+          "期望消耗 FP 1.16",
+          "期望消耗 FP 2.06",
+          "期望消耗 FP 4.97",
+          "期望消耗 FP 4.67",
+          "期望消耗 FP 5.99",
+          "期望消耗 FP 4.94",
+          "期望消耗 FP 5.17",
+          "期望消耗 FP 4.42",
+          "期望消耗 FP 2.07",
+          "期望消耗 FP 3.57",
+          "期望消耗 FP 5.28",
+          "期望消耗 FP 4.04",
+          "期望消耗 FP 2.30",
+          "期望消耗 FP 6.00",
+          "期望消耗 FP 1.49",
+          "期望消耗 FP 6.77",
+          "期望消耗 FP 1.22",
+          "期望消耗 FP 4.10",
+          "期望消耗 FP 7.14",
+          "期望消耗 FP 6.47",
+          "期望消耗 FP 6.95",
+          "期望消耗 FP 6.77",
+          "期望消耗 FP 7.78",
+          "期望消耗 FP 7.62",
+          "期望消耗 FP 7.33",
+          "期望消耗 FP 6.86",
+          "期望消耗 FP 1.62"
+        ],
+        "wallMs": 3088
+      }
+    ],
+    "mobile": {
+      "client": 390,
+      "scroll": 390
+    },
+    "errors": [],
+    "invalidInputPreservesDraft": true,
+    "blankRestoresDefault": true
+  },
+  "tests": 199,
+  "original48FpReferenceComparisons": 297
+}

@@ -1,5 +1,6 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { MODEL_ID } from '../core/catalog';
+import { DEFAULT_INITIAL_FP } from '../core/initial-fp';
 import { compileDraft, DRAFT_SLOTS, draftAffixPool, emptyDraft, maximumGoalCount, ownedGoalCounts, readDraft, withDraftSlots } from '../core/draft';
 import type { CompiledDraft, CraftingDraft, DraftScenario, DraftSlot, DraftSlots } from '../core/draft';
 import { catalogForInputModel } from '../core/input-model';
@@ -223,11 +224,11 @@ export function App() {
             <button type="button" aria-pressed={draft.part === null} className={draft.part === null ? 'selected' : ''} onClick={() => changePart(null)}>任意</button>
             {parts.map(part => <button type="button" key={part} aria-pressed={draft.part === part} className={draft.part === part ? 'selected' : ''}
               onClick={() => changePart(part)}>{typeName(part, String(part))}</button>)}</div></fieldset>
-          <label className="starting-fp">起始FP<input aria-label="起始FP" type="number" min={0} max={catalog.model.fpMaximum} step={1} placeholder="48" value={fpText} aria-invalid={Boolean(fpError)} onChange={event=>{
+          <label className="starting-fp">起始FP<input aria-label="起始FP" type="number" min={0} max={catalog.model.fpMaximum} step={1} placeholder={String(DEFAULT_INITIAL_FP)} value={fpText} aria-invalid={Boolean(fpError)} onChange={event=>{
             const text=event.currentTarget.value,n=event.currentTarget.valueAsNumber;setFpText(text);
             if(text===''||Number.isInteger(n)&&n>=0&&n<=catalog.model.fpMaximum){setFpError('');edit({...draft,initialFp:text===''?undefined:n});}
             else{edit({...draft});setFpError(`FP需为0–${catalog.model.fpMaximum}的整数`);}
-          }}/><span>{fpError||'留空按48计算'}</span></label>
+          }}/><span>{fpError||`留空按${DEFAULT_INITIAL_FP}计算`}</span></label>
           <p className="helper fp-row">普通、冰、血三种条件，分别选路。</p>
           <SlotEditor slots={draft.slots} part={draft.part} markTargets={draft.targetMode === 'COUNTS'}
             onChange={(slots, side) => edit(withDraftSlots(draft, slots, side))} />

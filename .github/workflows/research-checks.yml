@@ -72,6 +72,7 @@ jobs:
       - run: python -X utf8 scripts/validate_research.py
       - run: python -X utf8 -m unittest discover -s tests -v
       - run: npm run model
+      - run: python -X utf8 scripts/research_natural_fp_percentile_20261108.py --verify-only
       - run: npm run check
       - run: npm test
       - run: npx tsx scripts/check_program_ui.ts --historical --verify-only

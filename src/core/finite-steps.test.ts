@@ -8,7 +8,7 @@ import type { PlanRequest } from './types';
 import { replayFiniteProfile } from './finite-replay';
 
 it('shows one repeat phase for87.590% ice Havoc, with20.80 actual expected FP', async () => {
-  const input = exampleRequest('7732-ready'), report = await plan(input, { now: () => 0 });
+  const input = {...exampleRequest('7732-ready'),initialFp:48}, report = await plan(input, { now: () => 0 });
   const row = report.finiteProfiles!.profiles[1];
   expect(row.estimate).toBeCloseTo(.8758957816592063, 10);
   expect(row.fixedFp).toBeDefined();
@@ -20,7 +20,7 @@ it('shows one repeat phase for87.590% ice Havoc, with20.80 actual expected FP', 
 
 it('partitions real repeat-stage occupation costs rather than subtracting a chosen example balance', async () => {
   const source = JSON.parse(readFileSync(new URL('../../research/fixtures/finite48-three-profiles-99.json', import.meta.url), 'utf8')).rows[0].request as PlanRequest;
-  const catalog = catalogForInputModel(source.inputModel), input = { ...source, modelId: catalog.model.modelId };
+  const catalog = catalogForInputModel(source.inputModel), input = { ...source, modelId: catalog.model.modelId, initialFp:48 };
   const row = (await solveCompactProfile(input, catalog, 'ICE', { stopped: () => false }))!;
   const steps = row.stepPlan!.steps;
   expect(steps.map(step => step.operation)).toEqual(['救赎', '浩劫']);
@@ -33,7 +33,7 @@ it('partitions real repeat-stage occupation costs rather than subtracting a chos
 
 it('preparation acceptance describes the next seal rather than unioning unrelated low-FP exits', async () => {
   const source = JSON.parse(readFileSync(new URL('../../research/fixtures/finite48-three-profiles-99.json', import.meta.url), 'utf8')).rows[2].request as PlanRequest;
-  const catalog = catalogForInputModel(source.inputModel), row = (await solveCompactProfile({ ...source, modelId: catalog.model.modelId }, catalog, 'ICE', { stopped: () => false }))!;
+  const catalog = catalogForInputModel(source.inputModel), row = (await solveCompactProfile({ ...source, modelId: catalog.model.modelId, initialFp:48 }, catalog, 'ICE', { stopped: () => false }))!;
   const preparation = row.stepPlan!.steps.find(s => row.stepPlan!.main.includes(s.id) && s.operation === '浩劫' && s.key !== 'havoc:finish')!;
   expect(preparation.criterion).toContain('后缀1为T1');
   expect(preparation.criterion).not.toContain('前缀1为T1或T7');

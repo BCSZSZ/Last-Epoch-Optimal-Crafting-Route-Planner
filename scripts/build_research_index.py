@@ -137,7 +137,7 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
              "inputs": {path: hashlib.sha256((root / path).read_bytes()).hexdigest() for path in required}}
     # Retain former release policy as historical data, never as current UI truth.
     model["historicalIntrinsicPolicy"] = {"productionMetric": model["productionMetric"], "policies": model["policies"]}
-    model["productionMetric"] = {"kind": "FINITE_48_PROFILES_V3", "initialFp": 48,
+    model["productionMetric"] = {"kind": "FINITE_48_PROFILES_V3", "initialFp": 44,
                                  "profiles": ["NORMAL", "ICE", "BLOOD"], "independentlyOptimized": True,
                                  "filteringThresholds": None, "recommendedAtLeast": .25,
                                  "notRecommendedBelow": .25, "boundaryIntervalUnresolved": True,
@@ -150,17 +150,20 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
                          "tieBreakers": ["STABLE_ACTION_ORDER_WITHIN_NUMERICAL_TOLERANCE"],
                          "macroStatistics": "ACTUAL_FINITE48_COST_AND_SUCCESS_CONDITIONAL_COST",
                          "samplingCoverage": "NO_PRODUCTION_SAMPLING"}
-    model["fpDomain"] = {**model["fpDomain"], "defaultScoringDomain": [48], "weighting": "SINGLE_ACTUAL48_BALANCE"}
+    model["fpDomain"] = {**model["fpDomain"], "defaultScoringDomain": [44], "weighting": "SINGLE_USER_SELECTED_BALANCE"}
     model["deviceValidation"]["currentNodeBenchmark"] = None
     model["userInput"]["historicalProgramUiWorkerParity"] = model["userInput"].pop("uiWorkerParity")
     model["userInput"]["historicalLocalProgramUiWorkerParity"] = model["userInput"].pop("localUiWorkerParity")
-    model["userInput"]["currentUiEvidence"] = "research/ui-validation/all-input-custom-fp-local.json"
+    model["userInput"]["currentUiEvidence"] = "research/ui-validation/natural-fp-q70-local.json"
     extra = ["research/fixtures/finite48-three-profiles-99.json", "docs/finite48-three-profiles-20261108.md", "research/ui-validation/finite48-local-parity.json", "research/ui-validation/finite48-steps-local-parity.json", "docs/step-instructions-20261108.md"]
     model["inputs"].update({path: hashlib.sha256((root / path).read_bytes()).hexdigest() for path in extra})
-    model["userInput"]["initialFp"] = {"optional": True, "default": 48, "minimum": 0, "maximum": 63, "savedDraftVersion": 3}
+    model["userInput"]["initialFp"] = {"optional": True, "default": 44, "minimum": 0, "maximum": 63, "savedDraftVersion": 3}
     model["productionMetric"]["userSelectedInitialFp"] = True
     model["productionMetric"]["fixedRouteFpRewards"] = "ALL_INPUT_MODELS_AND_EQUIPMENT_TYPES"
     for path in ["docs/custom-fp-all-inputs-20261108.md", "research/ui-validation/all-input-custom-fp-local.json", "research/fixtures/manual-dagger7471-20261108.json"]:
+        model["inputs"][path] = hashlib.sha256((root / path).read_bytes()).hexdigest()
+    model["userInput"]["initialFp"]["defaultBasis"] = "NATURAL_LEVEL100_EXALTED_3_4_ORDINARY_AFFIXES_Q70"
+    for path in ["docs/natural-fp-default44-20261108.md", "research/natural-fp-percentile-20261108.json", "research/natural-fp-native154-20261108.json", "research/ui-validation/natural-fp-q70-local.json"]:
         model["inputs"][path] = hashlib.sha256((root / path).read_bytes()).hexdigest()
     model["researchRevision"] = hashlib.sha256(encode_json(model)).hexdigest()
     return {"research/evidence-matrix.json": encode_json(matrix), "research/model-snapshot.json": encode_json(model)}

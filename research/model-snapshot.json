@@ -46,12 +46,12 @@
   },
   "fpDomain": {
     "defaultScoringDomain": [
-      48
+      44
     ],
     "maximum": 63,
     "minimum": 0,
     "naturalDropDistribution": false,
-    "weighting": "SINGLE_ACTUAL48_BALANCE"
+    "weighting": "SINGLE_USER_SELECTED_BALANCE"
   },
   "gameVersion": "1.5.3",
   "historicalIntrinsicPolicy": {
@@ -122,8 +122,9 @@
   },
   "inputs": {
     "data/game/1.5.3/manifest.json": "f1127461629a61b3d0a6970ab26ccc2032491bceed849298849a6b842f2251b9",
-    "docs/custom-fp-all-inputs-20261108.md": "d5448ce80afeb58a98a8fa17cb3a369c6eac34cf5f11f4cb0f4a886f114c5c31",
+    "docs/custom-fp-all-inputs-20261108.md": "7f0aa86a666f605980beaf7af41d008dd7a3cb481b1e3404cef1b9b679c05526",
     "docs/finite48-three-profiles-20261108.md": "001482b89481f1be2566ea92e0a9e51a91f0abd4a35b348362fe133d6dfa0910",
+    "docs/natural-fp-default44-20261108.md": "ab92eb052991f221c0ff5e1444b5e1881a7390bef0e8d18a4c0f91ffda2a8ed5",
     "docs/step-instructions-20261108.md": "9b8a7bd646e616e82e792c4c39cf69adb6c27c2933eb5d9639d89ce7a932a124",
     "research/7271-route-comparison.json": "4b4f1ed71da48ece635dad96a348e48f179ab6d691f78c475e5f65fcbc8cb4b3",
     "research/7710-7721-completion.json": "92d1b9a30ebb66efaf787a8b371a3fc134487870989ea5f2112aaeefeeb00238",
@@ -164,11 +165,13 @@
     "research/legacy-forge-compatibility.json": "f750857451068cd7470aa0b1802fcdff12b5d6ee8a997b144e34e858b34fdba0",
     "research/localization-bundle-comparison.json": "8f33b21e5648f663d7fbc6b568938eca9a5b58328186b52b552deee2767c0e67",
     "research/math-fixtures.json": "2e8f761032a1fb9710be3bdfe80d361982297d3cbf6663140f77bc517e6a978a",
+    "research/natural-fp-native154-20261108.json": "8473c2ecb762bc19d96bb69b1e4fa23bee6b7b0487c64deb2014e4c64dafb4da",
+    "research/natural-fp-percentile-20261108.json": "e42d12d171511f0a9a8276c27c5de4944e844d00482ce61ffdfa045c048e9479",
     "research/program-release-monte-carlo.json": "731df0baafb016426710a4e1aae358bfb2f6d133cbe403bc38e4bb056582ad79",
     "research/program-release-performance.json": "17332788a0b64625e97031c6d5792dfde67a2b42a03c711708f8b29f72e2dca6",
     "research/program-release-validation.json": "100f1b3a890e445d2c2e0ceaad61f6b2659e911488db8cd6b29d3cdb93900a26",
     "research/reference-calculators.json": "fbbd966f057c2ed97ecca0ad8d2036eab93ac721cb506c993417c7faddbd831e",
-    "research/runtime-model-archive/manifest.json": "8b96850dbeda06aa50cc7edb91c404b9d3b42630d9e26a4355428a33ec9cfb63",
+    "research/runtime-model-archive/manifest.json": "e40e5f54ff86dfacbb7f5139e008d3aaf89aafbcce341adb1d85d60302ec9933",
     "research/static-deployment.json": "04db5a424b4fc82949a0b6e47004c0a66a557322d0bec465178ffcb6e6ada14a",
     "research/ui-validation/all-input-custom-fp-local.json": "71adf4a49d5a1dab64923038ec48fc69b3a6758161d0c247f0a73f2872d3bb7d",
     "research/ui-validation/capacity-local-parity.json": "0d77e79ceebfcec2f502c062d0a65f13f93c0be6819d12144872fcc8ac68e72f",
@@ -178,6 +181,7 @@
     "research/ui-validation/detailed-public-parity.json": "aa99b6f68ace7fc8c87bf74350390d3a113019536ff26eff88bf7103f15c9294",
     "research/ui-validation/finite48-local-parity.json": "d0769d4be63c2e1737bc7d33a19ff6d3ccb00cf7bd60158c6b015706b1c06e03",
     "research/ui-validation/finite48-steps-local-parity.json": "0f861a84e1b580a394f34aab33f91d659231fcbb11defa6668771cf1984ae19c",
+    "research/ui-validation/natural-fp-q70-local.json": "c455d9aa49ab1df5da028289bac63ffcb57a031455c2e4d32e0f493ea8935073",
     "research/ui-validation/parity.json": "9e93e052977677f40421aeb31ce7d13291c1e1c5a30b3f1128408f149fb7c922",
     "research/ui-validation/programs-local-parity.json": "4b863af7aebd19dc83069355808a8ac9a02888ffa63b75b3797e890dacf5e257",
     "research/ui-validation/programs-public-parity.json": "2594cee0921a834f5798cf91226125d68a7fcdbdd82c05fc32b31a5e6fdb0b45",
@@ -185,7 +189,7 @@
     "research/ui-validation/slot-targets-local-parity.json": "8f477cdcbf7c2bcf04a29d2147d2eba82e79323dfcdb89a14cfe04b2c8f73416",
     "research/ui-validation/slot-targets-public-parity.json": "2ab6c4befaa5f0a9d22a6e8cd8ca221db9e1bb642feb44b78ae0866bca73a468",
     "src/core/policy.json": "8917aad6d1077eff2b043ff68a3b8ff8b54257cf4105cf3bc9fdf8bbd03fa1cb",
-    "src/generated/model.json": "036459e055803c17480dbce8d664965de0ee0524a11f504768b77215f462e756"
+    "src/generated/model.json": "c2f21802c2578240dffa9e9b301a0b734ddec01aae2824cc2a4cc45ce7f4bf58"
   },
   "modelId": "le-1.5.3-26087601-r14-finite48-three-profiles",
   "phase": "PUBLIC_PREVIEW",
@@ -232,7 +236,7 @@
     "filteringThresholds": null,
     "fixedRouteFpRewards": "ALL_INPUT_MODELS_AND_EQUIPMENT_TYPES",
     "independentlyOptimized": true,
-    "initialFp": 48,
+    "initialFp": 44,
     "kind": "FINITE_48_PROFILES_V3",
     "method": "STATE_FP_BELLMAN_OR_EXPLICIT_FIXED_SCOPE",
     "notRecommendedBelow": 0.25,
@@ -246,7 +250,7 @@
     "recommendedAtLeast": 0.25,
     "userSelectedInitialFp": true
   },
-  "productionModelId": "le-1.5.3-iid-b793528294bd547f",
+  "productionModelId": "le-1.5.3-iid-c3ccb12755bdac80",
   "productionReady": false,
   "referenceExampleModels": [
     "INDEPENDENT_NORMALIZED_WEIGHTS_AND_UNIFORM_PERMUTATIONS",
@@ -256,7 +260,7 @@
   "remainingAcceptance": [
     "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "9764619296f0cf8aae94304667d2bc9697737bf6ab602f2ff510aa4640e027aa",
+  "researchRevision": "530f49222b9a3d7e8e612948d5d8bc6f409f069ba9b0e586df4c7a459fa65b80",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 2,
   "steamBuildId": 26087601,
@@ -271,7 +275,7 @@
     "bothReferencePoolsAllClassesPerItemType": true,
     "contract": "docs/minimal-ui.md",
     "countsSplitByPrefixSuffix": true,
-    "currentUiEvidence": "research/ui-validation/all-input-custom-fp-local.json",
+    "currentUiEvidence": "research/ui-validation/natural-fp-q70-local.json",
     "defaultAnonymousPool": "FORGEABLE_EQUAL",
     "defaultEquipmentPart": "ANY_UNSPECIFIED",
     "experimentalAndTargetIndependent": true,
@@ -281,7 +285,8 @@
     "historicalProgramUiWorkerParity": "research/ui-validation/programs-public-parity.json",
     "historicalPublicUiWorkerParity": "research/ui-validation/public-completion48-parity.json",
     "initialFp": {
-      "default": 48,
+      "default": 44,
+      "defaultBasis": "NATURAL_LEVEL100_EXALTED_3_4_ORDINARY_AFFIXES_Q70",
       "maximum": 63,
       "minimum": 0,
       "optional": true,

@@ -7,6 +7,7 @@ import { replayFiniteProfile } from './finite-replay';
 import { parsePlanRequest } from './request';
 import type { PlanRequest } from './types';
 import { plan } from './planner';
+import { DEFAULT_INITIAL_FP, initialFp } from './initial-fp';
 
 it('preserves a blank default and custom starting FP in both draft modes and saved drafts',()=>{
   const base=emptyDraft();
@@ -40,4 +41,19 @@ it('0FP cannot perform another action but an already satisfied target is still s
   const no=await plan(base,{now:()=>0});expect(no.finiteProfiles!.profiles.every(p=>p.estimate===0&&p.actualMeanFp===0)).toBe(true);
   const done={...base,item:{...base.item,affixes:base.target.requirements.map(r=>({id:r.ids[0],tier:7,slot:'ordinary' as const,roll:null}))}};
   expect((await plan(done,{now:()=>0})).finiteProfiles!.profiles.every(p=>p.estimate===1&&p.actualMeanFp===0)).toBe(true);
+},30000);
+
+it('defaults omitted starting FP to the natural exalted70th percentile, preserving explicit48FP',async()=>{
+  const distribution=JSON.parse(readFileSync(new URL('../../research/natural-fp-percentile-20261108.json',import.meta.url),'utf8'));
+  expect(DEFAULT_INITIAL_FP).toBe(distribution.recommendedDefaultFp);expect(DEFAULT_INITIAL_FP).toBe(44);
+  expect(initialFp({})).toBe(44);expect(initialFp({initialFp:48})).toBe(48);
+  const source=JSON.parse(readFileSync(new URL('../../research/fixtures/finite48-three-profiles-99.json',import.meta.url),'utf8')).rows[0].request as PlanRequest;
+  const catalog=catalogForInputModel(source.inputModel),input={...source,modelId:catalog.model.modelId};
+  const report=await plan(input,{now:()=>0});
+  expect(report.finiteProfiles!.initialFp).toBe(44);
+  for(const row of report.finiteProfiles!.profiles){
+    const explicit=await solveCompactProfile({...input,initialFp:44},catalog,row.fpType,{stopped:()=>false});
+    expect(row.initialFp).toBe(44);expect(row.estimate).toBeCloseTo(explicit!.estimate!,10);
+    expect(row.actualMeanFp!).toBeLessThanOrEqual(44);
+  }
 },30000);

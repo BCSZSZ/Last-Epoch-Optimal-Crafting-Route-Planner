@@ -15,7 +15,7 @@ const baseline = JSON.parse(readFileSync(new URL('../../research/fixtures/finite
 };
 function request(index = 0): PlanRequest {
   const row = baseline.rows[index].request, catalog = catalogForInputModel(row.inputModel);
-  return { ...row, modelId: catalog.model.modelId };
+  return { ...row, modelId: catalog.model.modelId, initialFp:48 };
 }
 
 describe('production finite48 three-profile policy', () => {
@@ -41,7 +41,7 @@ describe('production finite48 three-profile policy', () => {
     expect(recommendations).toEqual([78, 97, 80]); expect([bloodBetter, bloodEqual]).toEqual([96, 3]);
   }, 120000);
 
-  it('default entry returns three independently labelled48FP results, preserving low-probability routes', async () => {
+  it('explicit48FP entry returns three independently labelled results, preserving low-probability routes', async () => {
     const report = await plan(request(15), { now: () => 0 });
     expect(report.metric).toBe('FINITE_48_PROFILES_V3'); expect(report.finiteProfiles?.filteringThresholds).toBeNull();
     expect(report.finiteProfiles?.profiles.map(row => row.fpType)).toEqual(['NORMAL', 'ICE', 'BLOOD']);

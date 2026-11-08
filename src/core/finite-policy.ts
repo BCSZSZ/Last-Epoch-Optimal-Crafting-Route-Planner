@@ -6,11 +6,11 @@ import type { CompactSolution, FiniteSolveHooks } from './finite-solver';
 import type { FpType, PlanRequest, Route } from './types';
 import { buildFiniteSteps } from './finite-steps';
 import type { FixedFpReport } from './fixed-fp';
-import { initialFp } from './initial-fp';
+import { DEFAULT_INITIAL_FP, initialFp } from './initial-fp';
 import type { FiniteStepPlan } from './finite-steps';
 
 export const FINITE_POLICY_VERSION = 'FINITE48_THREE_PROFILES_V1';
-export const FINITE_INITIAL_FP = 48;
+export const FINITE_INITIAL_FP = DEFAULT_INITIAL_FP;
 export const FINITE_RECOMMENDATION_THRESHOLD = .25;
 export type FiniteRecommendation = 'RECOMMENDED' | 'NOT_RECOMMENDED' | 'UNRESOLVED';
 export const FINITE_PROFILE_LABELS: Readonly<Record<FpType, string>> = { NORMAL: '单独希望', ICE: '冰＋希望', BLOOD: '血＋希望' };

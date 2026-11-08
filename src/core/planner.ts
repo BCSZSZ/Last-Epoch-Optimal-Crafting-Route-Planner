@@ -11,7 +11,7 @@ import { compileTemplates, classifyStructure } from './hierarchy';
 import type { Structure } from './hierarchy';
 import { evaluateIntrinsic, IntrinsicWorkspace } from './intrinsic';
 import type { IntrinsicReport } from './intrinsic';
-import { catalogForInputModel, readInputModel } from './input-model';
+import { catalogForInputModel, isConcreteModel, readInputModel } from './input-model';
 import { maximumSuccessFp } from './policy';
 import { evaluateCompletion } from './completion';
 import type { CompletionReport } from './completion';
@@ -347,7 +347,9 @@ export async function planLegacy(input: unknown, options: PlanningOptions = {}):
       skippedDuplicates: duplicates, certifiedPrunedPrefixes: abandoned.filter((row) => row.intrinsic.probabilityMeaning === 'PREFIX_SURVIVAL_UPPER_BOUND').length,
       elapsedMilliseconds: elapsed(), stopReason, paretoRouteIds: pareto.map((row) => row.route.id) },
     conventions: { fpDomain: [], weights: [], materials: 'UNLIMITED', fixedRoute: true, rngModel: engine.catalog.model.rngModel },
-    qualification: (request.inputModel === 'FORGEABLE_ANY_EQUAL' ? '未指定部位，采用全装备普通候选并集的等权参考池；不代表全装备平均值或具体装备的真实词条池。' : request.inputModel && request.inputModel !== 'AUDITED' ? '按可锻造前提、100级与该部位全职业通用池计算；' +
+    qualification: (isConcreteModel(request.inputModel) ?
+      (request.inputModel === 'CONCRETE_EQUAL' ? '使用实际底材和职业资格，合法词缀按等权参考。' : '使用实际底材和职业资格及实际制作权重。') :
+      request.inputModel === 'FORGEABLE_ANY_EQUAL' ? '未指定部位，采用全装备普通候选并集的等权参考池；不代表全装备平均值或具体装备的真实词条池。' : request.inputModel && request.inputModel !== 'AUDITED' ? '按可锻造前提、100级与该部位全职业通用池计算；' +
       (request.inputModel === 'FORGEABLE_EQUAL' ? '未指定词条采用等权正权重候选池，仅为简化参考，不是未知真实词条的精确概率。' : '已指定词条采用实际制作权重；通用池不冒充指定底材职业池。') : '') +
       `成功率假设FP持续充足，只计操作NG；费用门槛${maximumSuccessFp(engine.catalog.model)}只统计最终成功路径。整件完成率另以起始${REFERENCE_FP}FP结算，包含耗尽保留及最后一次制作。` +
       `模板及分支预先固定；上层标签只路由，数值保留ID、阶数、原生顺序和费用联合核。15%／${maximumSuccessFp(engine.catalog.model)}等号通过；区间跨阈或执行预算不足保留未完成。` +

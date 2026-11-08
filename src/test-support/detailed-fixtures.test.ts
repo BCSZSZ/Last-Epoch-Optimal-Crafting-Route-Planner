@@ -7,7 +7,7 @@ import { detailedFixtures } from './detailed-fixtures';
 
 it('binds every specified detailed identity to its exact ID and actual crafting weights', () => {
   for (const fixture of detailedFixtures().filter(row => row.id.startsWith('known-'))) {
-    expect(fixture.request.inputModel).toBe('FORGEABLE_WEIGHTED');
+    expect(fixture.request.inputModel).toBe('CONCRETE_WEIGHTED');
     const catalog = catalogForInputModel(fixture.request.inputModel);
     for (const key of ['prefix1','prefix2','suffix1','suffix2'] as const) {
       const row=fixture.draft.slots[key];

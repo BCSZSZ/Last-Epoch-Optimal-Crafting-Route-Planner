@@ -4,9 +4,13 @@ import type { InputModel } from './types';
 
 const derived = new Map<InputModel, Catalog>();
 export const ANY_BASE_ID = 'reference:any-equipment';
+export function isConcreteModel(mode: unknown): mode is 'CONCRETE_EQUAL' | 'CONCRETE_WEIGHTED' {
+  return mode === 'CONCRETE_EQUAL' || mode === 'CONCRETE_WEIGHTED';
+}
+
 export function readInputModel(value: unknown): InputModel {
   const mode = value && typeof value === 'object' && 'inputModel' in value ? value.inputModel : undefined;
-  return mode === 'FORGEABLE_WEIGHTED' || mode === 'FORGEABLE_EQUAL' || mode === 'FORGEABLE_ANY_EQUAL' ? mode : 'AUDITED';
+  return isConcreteModel(mode) || mode === 'FORGEABLE_WEIGHTED' || mode === 'FORGEABLE_EQUAL' || mode === 'FORGEABLE_ANY_EQUAL' ? mode : 'AUDITED';
 }
 
 /** Explicit user-input assumptions; audited snapshot remains immutable and is never relabelled as an exact item pool. */
@@ -29,14 +33,17 @@ export function catalogForInputModel(mode: InputModel = 'AUDITED', source: Model
     };
     const catalog = new Catalog(model); if (source === snapshot) derived.set(mode, catalog); return catalog;
   }
+  const equal = mode === 'FORGEABLE_EQUAL' || mode === 'CONCRETE_EQUAL';
   const model: Model = { ...source,
-    bases: source.bases.map((base) => ({ ...base, classRequirement: 31 })),
-    affixes: mode === 'FORGEABLE_EQUAL' ? source.affixes.map((row) => ({ ...row,
+    bases: isConcreteModel(mode) ? source.bases : source.bases.map((base) => ({ ...base, classRequirement: 31 })),
+    affixes: equal ? source.affixes.map((row) => ({ ...row,
       weight: row.weight > 0 ? 1 : 0,
       overrides: row.overrides.map((entry) => ({ ...entry, weight: entry.weight > 0 ? 1 : 0 })),
     })) : source.affixes,
-    rngModel: mode === 'FORGEABLE_EQUAL' ? 'ITEM_TYPE_ALL_CLASSES_EQUAL_POSITIVE_CANDIDATES_V1' : 'ITEM_TYPE_ALL_CLASSES_AUDITED_WEIGHTS_V1',
-    qualification: 'Assume forgeable, player/item level100, all-class item-type pool; anonymous input uses equal positive candidate weights. Not an exact unknown item pool.',
+    rngModel: isConcreteModel(mode) ? (equal ? 'CONCRETE_BASE_EQUAL_POSITIVE_CANDIDATES_V1' : source.rngModel) :
+      (equal ? 'ITEM_TYPE_ALL_CLASSES_EQUAL_POSITIVE_CANDIDATES_V1' : 'ITEM_TYPE_ALL_CLASSES_AUDITED_WEIGHTS_V1'),
+    qualification: isConcreteModel(mode) ? 'Concrete base and class eligibility at L100; named identities retain native weights.' :
+      'Historical reference: all-class item-type pool; anonymous input uses equal positive candidate weights.',
   };
   const catalog = new Catalog(model); if (source === snapshot) derived.set(mode, catalog); return catalog;
 }

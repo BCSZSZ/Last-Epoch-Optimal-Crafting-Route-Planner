@@ -1,11 +1,13 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { MODEL_ID } from '../core/catalog';
 import { DEFAULT_INITIAL_FP } from '../core/initial-fp';
-import { compileDraft, DRAFT_SLOTS, draftAffixPool, emptyDraft, maximumGoalCount, ownedGoalCounts, readDraft, withDraftSlots } from '../core/draft';
+import { compileDraft, DRAFT_SLOTS, draftSlotPool, emptyDraft, maximumGoalCount, ownedGoalCounts, readDraft, withDraftSlots } from '../core/draft';
 import type { CompiledDraft, CraftingDraft, DraftScenario, DraftSlot, DraftSlots } from '../core/draft';
 import { catalogForInputModel } from '../core/input-model';
 import type { IntrinsicReport } from '../core/intrinsic';
-import type { PlanProgress, PlanReport } from '../core/planner';
+import type { PlanProgress } from '../core/planner';
+import { summarizeDraftResults } from '../core/draft-summary';
+import type { ScenarioResult } from '../core/draft-summary';
 import { REFERENCE_FP } from '../core/policy';
 import type { CompletionReport } from '../core/completion';
 import { completionPercent } from './completion-view';
@@ -15,7 +17,7 @@ import { FiniteResults } from './finite-results';
 import { routeSteps } from './route-view';
 import type { RouteStep } from './route-view';
 
-const catalog = catalogForInputModel('FORGEABLE_WEIGHTED');
+const catalog = catalogForInputModel('CONCRETE_WEIGHTED');
 const STORAGE = 'le-crafting-draft-v2';
 const parts = [...new Set(catalog.model.bases.filter((row) => row.ordinaryEquipment && !row.corrupted && !row.obsolete && !row.legacy).map((row) => row.baseType))].sort((a, b) => a - b);
 const number = (value: { lower: number; upper: number } | null | undefined) => !value ? '—' : value.upper - value.lower < 0.02 ? ((value.lower + value.upper) / 2).toFixed(2) : `${value.lower.toFixed(1)}–${value.upper.toFixed(1)}`;
@@ -58,7 +60,7 @@ function AffixDropdown({ value, pool, disabled, label, target, onChange }: {
   return <div className="affix-dropdown" ref={root}>
     <button type="button" className={`affix-trigger ${value === null ? 'placeholder' : ''}`} role="combobox" aria-label={label}
       aria-haspopup="listbox" aria-expanded={open} aria-controls={`${id}-list`} disabled={disabled}
-      title={value === null ? undefined : `${catalog.affix(value).name} · #${value}`}
+      title={value === null ? undefined : `${affixName(catalog, value)} · #${value}`}
       onClick={() => { setOpen(!open); setQuery(''); setActive(0); }} onKeyDown={(event) => {
         if (event.key === 'ArrowDown' || event.key === 'ArrowUp') { event.preventDefault(); setOpen(true); setQuery(''); setActive(0); }
       }}><span>{value === null ? blank : affixName(catalog, value)}</span><span aria-hidden="true">⌄</span></button>
@@ -82,15 +84,15 @@ function AffixDropdown({ value, pool, disabled, label, target, onChange }: {
   </div>;
 }
 
-function SlotEditor({ slots, part, target = false, markTargets = false, onChange }: {
-  slots: DraftSlots; part: number | null; target?: boolean; markTargets?: boolean;
+function SlotEditor({ slots, draft, target = false, markTargets = false, onChange }: {
+  slots: DraftSlots; draft: CraftingDraft; target?: boolean; markTargets?: boolean;
   onChange: (slots: DraftSlots, confirmedSide?: 0 | 1) => void;
 }) {
   const update = (key: keyof DraftSlots, slot: DraftSlot, confirmedSide?: 0 | 1) => onChange({ ...slots, [key]: slot }, confirmedSide);
   return <div className="slots">{DRAFT_SLOTS.map((descriptor) => {
     const slot = slots[descriptor.key], label = `${target ? '目标' : '起始'}${descriptor.label}`;
-    const experimental = Boolean(slot.isExperimental || slot.id !== null && catalog.affix(slot.id).special === 1);
-    const pool = draftAffixPool(catalog, part, descriptor.side, slot.tier, target ? undefined : descriptor.key === 'prefix2' ? experimental : false);
+    const experimental = Boolean(slot.isExperimental || slot.id !== null && catalog.hasAffix(slot.id) && catalog.affix(slot.id).special === 1);
+    const pool = slot.tier ? draftSlotPool(draft, descriptor.key, target) : [];
     return <div className={`slot-card ${descriptor.slot === 'sealed' ? 'sealed-slot' : ''}`} key={descriptor.key}>
       <div className="slot-heading"><span>{descriptor.label}</span><div className="slot-flags">{descriptor.key === 'prefix2' && !target &&
         <label className={`target-check ${!slot.tier ? 'disabled' : ''}`}><input type="checkbox" checked={experimental} disabled={!slot.tier}
@@ -101,7 +103,7 @@ function SlotEditor({ slots, part, target = false, markTargets = false, onChange
       <div className="tier-row" role="group" aria-label={`${label}T级`}>{Array.from({ length: 8 }, (_, tier) => <button type="button" key={tier}
         aria-label={`${label}${tier ? `T${tier}` : target ? '不限' : '空'}`} aria-pressed={slot.tier === tier}
         className={slot.tier === tier ? `selected ${tier === 7 ? 'tier-seven' : ''}` : ''}
-        onClick={() => update(descriptor.key, { tier, id: tier && slot.id !== null && draftAffixPool(catalog, part, descriptor.side, tier).includes(slot.id) ? slot.id : null,
+        onClick={() => update(descriptor.key, { tier, id: tier ? slot.id : null,
           isTarget: tier > 0 && Boolean(slot.isTarget), ...(descriptor.key === 'prefix2' && !target ? { isExperimental: tier > 0 && experimental } : {}) })}>{tier || (target ? '不限' : '空')}</button>)}</div>
       <AffixDropdown value={slot.id} pool={pool} disabled={!slot.tier} label={`${label}词条`} target={target}
         onChange={(id) => update(descriptor.key, { ...slot, id, ...(descriptor.key === 'prefix2' && !target ? { isExperimental: id === null ? experimental : catalog.affix(id).special === 1 } : {}) })} />
@@ -153,7 +155,6 @@ function saveJson(value: unknown, name: string) {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
-interface ScenarioResult { readonly scenario: DraftScenario; readonly report: PlanReport }
 function ScenarioResults({ scenario, report }: ScenarioResult) {
   const [showAbandoned,setShowAbandoned]=useState(false);
   if (report.finiteProfiles) return <FiniteResults report={report.finiteProfiles} scenario={scenario}
@@ -181,6 +182,39 @@ function ScenarioResults({ scenario, report }: ScenarioResult) {
   </section>;
 }
 
+function ScenarioDetail({ row }: { row: ScenarioResult }) {
+  const [open, setOpen] = useState(false);
+  const base = catalog.base(row.scenario.request.item.baseId);
+  return <details className="scenario-detail" onToggle={event => setOpen(event.currentTarget.open)}>
+    <summary>{base.name}等{row.scenario.baseIds.length}个底材</summary>
+    {open && <ScenarioResults {...row} />}
+  </details>;
+}
+
+function DraftSummary({ results, initialFp }: { results: readonly ScenarioResult[]; initialFp: number }) {
+  const summary = useMemo(() => summarizeDraftResults(results), [results]);
+  const cells = (profiles: typeof summary.profiles) => profiles.map(row =>
+    <td key={row.fpType}>{row.probability ? row.probability.upper - row.probability.lower <= 1e-6
+      ? `${((row.probability.lower + row.probability.upper) * 50).toFixed(3)}%`
+      : percent(row.probability) : '未算完'}{row.probability && !row.complete && <small> 已找到路线</small>}</td>);
+  return <section className="result-card" aria-label="部位等权汇总">
+    <div className="result-heading"><h2>部位等权完成率</h2><span className="badge neutral">初始{initialFp}FP</span></div>
+    <div className="finite-table-scroll"><table>
+      <thead><tr><th scope="col">兼容部位</th><th scope="col">普通</th><th scope="col">冰</th><th scope="col">血</th></tr></thead>
+      <tbody>{summary.parts.map(part => <tr key={part.part}><th scope="row">{typeName(part.part, String(part.part))}（{part.baseCount}个底材）</th>{cells(part.profiles)}</tr>)}</tbody>
+      <tfoot><tr><th scope="row">部位等权平均</th>{cells(summary.profiles)}</tr></tfoot>
+    </table></div>
+    <p className="helper">每个兼容部位占同样权重，部位内按兼容底材等权。下方可查看各自路线。</p>
+    {summary.parts.map(part => <section className="part-scenarios" key={part.part}>
+      <h3>{typeName(part.part, String(part.part))}</h3>
+      {part.rows.map(row => <ScenarioDetail key={row.scenario.key} row={row} />)}
+    </section>)}
+    <button type="button" className="text-button" onClick={() => saveJson({
+      schemaVersion: 3, weighting: 'EQUAL_PARTS_THEN_EQUAL_COMPATIBLE_BASES', initialFp, ...summary,
+    }, 'last-epoch-crafting-part-average.json')}>导出部位均值与全部路线</button>
+  </section>;
+}
+
 export function App() {
   const [draft, setDraft] = useState<CraftingDraft>(initialDraft), [compiled, setCompiled] = useState<CompiledDraft | null>(null);
   const [results, setResults] = useState<readonly ScenarioResult[]>([]), [busy, setBusy] = useState(false), [message, setMessage] = useState('');
@@ -193,11 +227,7 @@ export function App() {
   const edit = (next: CraftingDraft) => {
     generation.current++; controller.current?.abort(); setBusy(false); setProgress(null); setResults([]); setCompiled(null); setMessage(''); setDraft(next);
   };
-  const changePart = (part: number | null) => {
-    const clean = (slots: DraftSlots): DraftSlots => Object.fromEntries(DRAFT_SLOTS.map(slot => [slot.key, { ...slots[slot.key],
-      id: slots[slot.key].id !== null && draftAffixPool(catalog, part, slot.side, slots[slot.key].tier).includes(slots[slot.key].id!) ? slots[slot.key].id : null }])) as unknown as DraftSlots;
-    edit({ ...draft, part, slots: clean(draft.slots), targetSlots: clean(draft.targetSlots) });
-  };
+  const changePart = (part: number | null) => edit({ ...draft, part });
   const run = async () => {
     if(fpError){setMessage(fpError);return;}
     controller.current?.abort(); const job = ++generation.current, abort = new AbortController(); controller.current = abort;
@@ -206,12 +236,13 @@ export function App() {
     setBusy(true);
     try {
       const completed: ScenarioResult[] = [];
-      for (const scenario of value.scenarios) {
+      for (const [index, scenario] of value.scenarios.entries()) {
         const report = await planner.current!.plan(scenario.request, { signal: abort.signal,
-          onProgress: (update) => { if (generation.current === job) setProgress(update); } });
+          onProgress: (update) => { if (generation.current === job) setProgress({ ...update, message: `${index + 1}/${value.scenarios.length} ${typeName(scenario.part, String(scenario.part))}　${update.message}` }); } });
         if (generation.current !== job) return;
-        completed.push({ scenario, report }); setResults([...completed]);
+        completed.push({ scenario, report });
       }
+      setResults(completed);
     } catch (error) { if (generation.current === job) setMessage(error instanceof Error && error.name === 'AbortError' ? '已取消规划。' : error instanceof Error ? error.message : '计算失败，请重试。'); }
     finally { if (generation.current === job) { setBusy(false); setProgress(null); } }
   };
@@ -230,13 +261,13 @@ export function App() {
             else{edit({...draft});setFpError(`FP需为0–${catalog.model.fpMaximum}的整数`);}
           }}/><span>{fpError||`留空按${DEFAULT_INITIAL_FP}计算`}</span></label>
           <p className="helper fp-row">普通、冰、血三种条件，分别选路。</p>
-          <SlotEditor slots={draft.slots} part={draft.part} markTargets={draft.targetMode === 'COUNTS'}
+          <SlotEditor slots={draft.slots} draft={draft} markTargets={draft.targetMode === 'COUNTS'}
             onChange={(slots, side) => edit(withDraftSlots(draft, slots, side))} />
         </section>
         <section className="panel target-panel" aria-label="目标装备"><div className="panel-title"><span className="panel-index">02</span><h2>目标装备</h2></div>
           <div className="mode-tabs" role="group" aria-label="目标填写方式">{([{ key: 'COUNTS', text: '简易目标' }, { key: 'SLOTS', text: '详细目标' }] as const).map((mode) => <button type="button" key={mode.key} aria-pressed={draft.targetMode === mode.key} className={draft.targetMode === mode.key ? 'selected' : ''} onClick={() => edit({ ...draft, targetMode: mode.key })}>{mode.text}</button>)}</div>
           {draft.targetMode === 'COUNTS' ? <CountGoals draft={draft} onChange={(counts) => edit({ ...draft, counts })} /> :
-            <><p className="helper target-helper">留空的槽位不限制；只选 T 级表示至少达到该阶，不限具体词条。</p><SlotEditor slots={draft.targetSlots} part={draft.part} target onChange={(targetSlots) => edit({ ...draft, targetSlots })} /></>}
+            <><p className="helper target-helper">留空的槽位不限制；只选 T 级表示至少达到该阶，不限具体词条。</p><SlotEditor slots={draft.targetSlots} draft={draft} target onChange={(targetSlots) => edit({ ...draft, targetSlots })} /></>}
         </section>
       </div>
       <section className="planning-controls" aria-label="规划控制"><button type="button" className="plan-button" disabled={busy} onClick={() => void run()}>{busy ? '正在规划…' : '开始规划'}<span aria-hidden="true">↗</span></button>
@@ -244,8 +275,10 @@ export function App() {
         {message && <p role="alert" className="error-message">{message}</p>}
       </section>
       {results.length > 0 && compiled && <section className="results" aria-label="规划结果" aria-live="polite">
-        <div className="results-heading"><h2>规划结果</h2><span className="badge">{compiled.inputModel === 'FORGEABLE_ANY_EQUAL' ? '通用等权参考' : compiled.inputModel === 'FORGEABLE_EQUAL' ? '等权参考' : '实际词条权重 · 通用池'}</span></div>
-        {results.map((result) => <ScenarioResults key={result.scenario.key} {...result} />)}
+        <div className="results-heading"><h2>规划结果</h2><span className="badge">{compiled.inputModel === 'CONCRETE_EQUAL' ? '兼容底材 · 词缀等权参考' : '兼容底材 · 实际制作权重'}</span></div>
+        {draft.part === null || results.length > 1
+          ? <DraftSummary results={results} initialFp={draft.initialFp ?? DEFAULT_INITIAL_FP} />
+          : <ScenarioResults {...results[0]} />}
         <p className="result-conventions">三种条件分别从所设起始FP出发，分别选路及判断。低于25%显示不推荐，结果仍保留。封印用绝望、混沌用混沌；其他可用希望的操作采用希望。未达标且FP耗尽才停止，仍合法的失手分支可以继续。</p>
         <details className="assumptions"><summary>计算假设</summary>{compiled.assumptions.map((assumption) => <p key={assumption}>{assumption}</p>)}<p>独立随机参考模型；完整条件策略与固定候选结果分别说明覆盖范围，未算完不记为0%。</p><p className="model-id">{MODEL_ID}</p></details>
       </section>}

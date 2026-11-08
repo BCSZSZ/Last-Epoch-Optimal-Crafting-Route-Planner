@@ -1,5 +1,6 @@
 import type { Catalog } from './catalog';
 import { ordinary } from './catalog';
+import { isConcreteModel } from './input-model';
 import { exact, Interval, ONE, ZERO, ratio } from './interval';
 import { tierPermutations } from './probability';
 import type { ActionKind, FpType, PlanRequest } from './types';
@@ -11,6 +12,7 @@ export interface CompactEdge { readonly to: number; readonly kernel: number; rea
 export interface CompactChoice { readonly action: CompactAction; readonly edges: readonly CompactEdge[] }
 export interface CompactDomain {
   readonly poolSizes: readonly number[];
+  readonly experimentalRole?: number;
   readonly goalSides: readonly number[];
   readonly targetIds: readonly number[];
   readonly initial: CompactState;
@@ -20,37 +22,42 @@ export interface CompactDomain {
 
 /** Exact exchangeability domain: ordinary, forgeable uniform pools atL100.
  * The UI's eight digits are only a display; pool exclusions and sealed IDs are
- * retained as counts. Mixed weights/special identities use the generic path.
+ * retained as counts, with one distinct experimental identity where applicable.
  */
 export function compactDomain(request: PlanRequest, catalog: Catalog): CompactDomain | null {
   const goals = request.target.requirements.filter(row => !row.optional);
+  const experiments = request.item.affixes.filter(row => catalog.affix(row.id).special === 1);
+  if (experiments.length > 1 || experiments.some(row => !isConcreteModel(request.inputModel) || row.slot !== 'ordinary' ||
+      catalog.hasShard(row.id) || !catalog.canRollOn(row.id, request.item.baseId))) return null;
+  const experimentalId = experiments[0]?.id;
   if (goals.length !== 2 || request.target.requirements.length !== 2 || goals.some(row => row.ids.length !== 1 ||
       row.slot !== 'ordinary' || row.minTier !== 7 || row.maxTier !== 7 || row.minRollByte !== undefined) ||
       request.item.corrupted || request.item.itemLevel !== 100 || request.craftingContext.playerLevel !== 100 ||
       request.constraints.maxAttempts !== undefined || request.constraints.protected?.length ||
-      request.item.affixes.some(row => !['ordinary', 'sealed'].includes(row.slot) || catalog.affix(row.id).special !== 0 ||
+      request.item.affixes.some(row => !['ordinary', 'sealed'].includes(row.slot) || (catalog.affix(row.id).special !== 0 && row.id !== experimentalId) ||
         row.slot === 'ordinary' && ![1, 2, 3, 4, 5, 7].includes(row.tier)) || ordinary(request.item).filter(row => row.tier === 7).length !== 2) return null;
   const targetIds = goals.map(row => row.ids[0]);
   if (targetIds[0] === targetIds[1]) return null;
+  const experimentalRole = experimentalId === undefined ? undefined : (targetIds.indexOf(experimentalId) + 1 || 4);
   const goalSides = targetIds.map(id => catalog.side(id));
   if (goalSides.some(side => side > 1) || request.item.affixes.some(row => row.slot === 'sealed' && targetIds.includes(row.id))) return null;
   const pools = [0, 1].map(side => catalog.model.affixes.filter(row => row.special === 0 && row.side === side &&
     catalog.canRollOn(row.id, request.item.baseId) && catalog.craftWeight(row.id, request.item.baseId) > 0));
   if (pools.some(pool => pool.length < 4 || pool.some(row => !catalog.hasShard(row.id) || row.tiers.length < 7) ||
       pool.some(row => catalog.craftWeight(row.id, request.item.baseId) !== catalog.craftWeight(pool[0].id, request.item.baseId)))) return null;
-  if (request.item.affixes.some(row => !pools[catalog.side(row.id)].some(candidate => candidate.id === row.id)) ||
-      targetIds.some((id, i) => !pools[goalSides[i]].some(row => row.id === id))) return null;
+  if (request.item.affixes.some(row => row.id !== experimentalId && !pools[catalog.side(row.id)].some(candidate => candidate.id === row.id)) ||
+      targetIds.some((id, i) => id !== experimentalId && !pools[goalSides[i]].some(row => row.id === id))) return null;
   const roles: number[] = [], tiers: number[] = [];
   for (const side of [0, 1]) {
     const rows = ordinary(request.item).filter(row => catalog.side(row.id) === side);
-    for (const row of rows) { roles.push(targetIds.includes(row.id) ? targetIds.indexOf(row.id) + 1 : 3); tiers.push(row.tier); }
+    for (const row of rows) { roles.push(targetIds.includes(row.id) ? targetIds.indexOf(row.id) + 1 : row.id === experimentalId ? 4 : 3); tiers.push(row.tier); }
     for (let i = rows.length; i < 2; i++) { roles.push(0); tiers.push(0); }
   }
   const sealed = request.item.affixes.find(row => row.slot === 'sealed');
   const allowed = new Set<ActionKind>(request.constraints.allowedActions ?? ['add', 'upgrade', 'seal', 'chaos', 'havoc', 'redemption', 'removal']);
   const poolSizes = pools.map(pool => pool.length);
-  return { poolSizes, goalSides, targetIds, initial: { roles, tiers, sealed: sealed ? 3 + 16 * catalog.side(sealed.id) : 0 }, allowed,
-    key: JSON.stringify([catalog.model.modelId, poolSizes, goalSides, [...allowed].sort()]) };
+  return { poolSizes, goalSides, targetIds, experimentalRole, initial: { roles, tiers, sealed: sealed ? 3 + 16 * catalog.side(sealed.id) : 0 }, allowed,
+    key: JSON.stringify([catalog.model.modelId, poolSizes, goalSides, experimentalRole, [...allowed].sort()]) };
 }
 
 type WeightedState = { roles: number[]; p: Interval };
@@ -70,6 +77,8 @@ export class CompactGraph {
   }
   private readonly sealMultipliers: readonly number[];
   intern(roles: readonly number[], tiers: readonly number[], sealed: number): number {
+    const experiment = this.domain.experimentalRole;
+    if ((experiment === 1 || experiment === 2) && !roles.some((role, i) => role === experiment && tiers[i])) return 0;
     if (tiers.filter(t => t === 7).length < 2) return 0;
     if ([1, 2].every(role => roles.some((id, i) => id === role && tiers[i] === 7))) return 1;
     const ids = roles.map((role, i) => tiers[i] ? role : 0), ts = [...tiers];
@@ -88,12 +97,16 @@ export class CompactGraph {
     }
     return root;
   }
+  private isExperimental(role: number): boolean {
+    return role === this.domain.experimentalRole;
+  }
   private reroll(roles: readonly number[], tiers: readonly number[], sealed: number, slot: number): WeightedState[] {
     const side = slot >> 1, counts = [0, 0, 0, 0];
-    roles.forEach((role, i) => { if (tiers[i] && (i >> 1) === side) counts[role]++; });
+    roles.forEach((role, i) => { if (tiers[i] && (i >> 1) === side && !this.isExperimental(role)) counts[role]++; });
     if (sealed && Math.floor(sealed / 16) === side) counts[3]++;
-    const totals = [0, Number(this.domain.goalSides[0] === side), Number(this.domain.goalSides[1] === side),
-      this.domain.poolSizes[side] - this.domain.goalSides.filter(s => s === side).length];
+    const first = Number(this.domain.goalSides[0] === side && !this.isExperimental(1));
+    const second = Number(this.domain.goalSides[1] === side && !this.isExperimental(2));
+    const totals = [0, first, second, this.domain.poolSizes[side] - first - second];
     const total = totals.reduce((v, x, i) => v + x - counts[i], 0);
     if (!total) return [];
     return [1, 2, 3].flatMap(role => {
@@ -130,11 +143,11 @@ export class CompactGraph {
     for (let slot = 0; slot < 4; slot++) {
       const side = slot >> 1;
       if (!tiers[slot]) {
-        const available = [3, 1, 2].filter(role => role < 3 ? this.domain.goalSides[role - 1] === side && !roles.includes(role) :
-          this.domain.poolSizes[side] - this.domain.goalSides.filter(s => s === side).length > roles.filter((r, i) => r === 3 && tiers[i] && (i >> 1) === side).length + Number(sealed > 0 && Math.floor(sealed / 16) === side));
+        const available = [3, 1, 2].filter(role => role < 3 ? this.domain.goalSides[role - 1] === side && !roles.includes(role) && !this.isExperimental(role) :
+          this.domain.poolSizes[side] - this.domain.goalSides.filter((s, i) => s === side && !this.isExperimental(i + 1)).length > roles.filter((r, i) => r === 3 && tiers[i] && (i >> 1) === side).length + Number(sealed > 0 && Math.floor(sealed / 16) === side));
         for (const role of available) { const ids = [...roles], ts = [...tiers]; ids[slot] = role; ts[slot] = 1; append({ kind: 'add', slot, role }, craft(ids, ts, sealed, slot, 3)); }
       }
-      if (tiers[slot] > 0 && tiers[slot] < 5) {
+      if (tiers[slot] > 0 && tiers[slot] < 5 && !this.isExperimental(roles[slot])) {
         const ts = [...tiers]; ts[slot]++;
         append({ kind: 'upgrade', slot }, craft(roles, ts, sealed, slot, kernelForTier(tiers[slot], true)));
         if (!sealed && roles[slot] === 3) {
@@ -148,7 +161,11 @@ export class CompactGraph {
       }
     }
     const occupied = tiers.flatMap((t, i) => t ? [i] : []);
-    if (occupied.length > 2) append({ kind: 'removal' }, occupied.map(slot => { const ts = [...tiers]; ts[slot] = 0; return { roles, tiers: ts, sealed, p: ratio(1, occupied.length), kernel: 5 }; }));
+    const removable = occupied.filter(slot => !this.isExperimental(roles[slot]));
+    if (occupied.length > 2) append({ kind: 'removal' }, removable.map(slot => {
+      const ts = [...tiers]; ts[slot] = 0;
+      return { roles, tiers: ts, sealed, p: ratio(1, removable.length), kernel: 5 };
+    }));
     if (occupied.length === 4) {
       const permutations = tierPermutations(tiers).filter(ts => ts.some((t, i) => t !== tiers[i]));
       if (permutations.length) append({ kind: 'havoc' }, permutations.map(ts => ({ roles, tiers: ts, sealed, p: ratio(1, permutations.length), kernel: 4 })));

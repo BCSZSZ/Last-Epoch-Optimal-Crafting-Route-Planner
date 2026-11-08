@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { Catalog, snapshot } from './catalog';
-import { compileDraft, DRAFT_SLOTS, draftAffixPool, emptyDraft, maximumGoalCount, ownedGoalCounts, readDraft, withDraftSlots } from './draft';
+import { compileDraft, DRAFT_SLOTS, draftSlotPool, emptyDraft, maximumGoalCount, ownedGoalCounts, readDraft, withDraftSlots } from './draft';
 import type { CraftingDraft } from './draft';
 import { ANY_BASE_ID, catalogForInputModel } from './input-model';
 import { planLegacy as plan } from './planner';
@@ -49,7 +49,7 @@ describe('minimal draft input and fixed slots', () => {
   it('compiles anonymous 7710 with correct prefix goals and explicit equal-weight assumptions', () => {
     const compiled = compileDraft(source7710());
     expect(compiled.issues).toEqual([]);
-    expect(compiled.inputModel).toBe('FORGEABLE_EQUAL');
+    expect(compiled.inputModel).toBe('CONCRETE_EQUAL');
     expect(compiled.scenarios).toHaveLength(1);
     const { request, aliases } = compiled.scenarios[0];
     expect(request.item.affixes.map((row) => row.tier)).toEqual([1, 7, 7]);
@@ -71,7 +71,7 @@ describe('minimal draft input and fixed slots', () => {
     const request = compileDraft(source7710()).scenarios[0].request;
     const report = await plan({ ...request, search: { ...request.search, maxRoutes: 4096 } }, { now: () => 0 });
     expect(report.status).toBe('RECOMMENDATION');
-    expect(report.inputModel).toBe('FORGEABLE_EQUAL');
+    expect(report.inputModel).toBe('CONCRETE_EQUAL');
     expect(report.primary!.scoreEstimate).toBeCloseTo(1, 10);
     const mean = report.primary!.expectedFpGivenSuccess!;
     expect((mean.lower + mean.upper) / 2).toBeCloseTo(48.8048922892, 7);
@@ -125,16 +125,15 @@ describe('minimal draft input and fixed slots', () => {
     expect(compileDraft(confirmed).scenarios).toHaveLength(1);
   });
 
-  it('runs unspecified equipment without selecting a hidden real part', async () => {
-    const draft = { ...source7710(), part: null }, compiled = compileDraft(draft);
+  it('includes all compatible actual parts and counts each compatible base once', () => {
+    const compiled = compileDraft({ ...source7710(), part: null });
     expect(compiled.issues).toEqual([]);
-    expect(compiled.inputModel).toBe('FORGEABLE_ANY_EQUAL');
-    expect(compiled.scenarios[0].request.item.baseId).toBe(ANY_BASE_ID);
-    const request = compiled.scenarios[0].request;
-    const report = await plan({ ...request, search: { ...request.search, maxRoutes: 4096 } }, { now: () => 0 });
-    expect(report.primary!.scoreEstimate).toBeCloseTo(1, 10);
-    expect(report.completion!.probability!.lower).toBeGreaterThan(.65);
-  }, 30000);
+    expect(compiled.inputModel).toBe('CONCRETE_EQUAL');
+    expect(new Set(compiled.scenarios.map(s => s.part)).size).toBe(23);
+    const represented = compiled.scenarios.flatMap(s => s.baseIds);
+    expect(new Set(represented).size).toBe(represented.length);
+    expect(compiled.scenarios.every(s => s.baseIds.includes(s.request.item.baseId))).toBe(true);
+  });
 
   it('keeps ordinary counts independent from an occupied seal', () => {
     const draft = source7710(), compiled = compileDraft({ ...draft, slots: { ...draft.slots, sealed: { tier: 1, id: null } } });
@@ -162,20 +161,20 @@ describe('minimal draft input and fixed slots', () => {
     const draft = source7710(), anonymous = compileDraft(draft).scenarios[0].request.item.affixes;
     const knownSlots = { ...draft.slots, prefix1: { tier: 1, id: anonymous[0].id }, suffix1: { tier: 7, id: anonymous[1].id }, suffix2: { tier: 7, id: anonymous[2].id } };
     const compiled = compileDraft({ ...draft, slots: knownSlots, targetMode: 'SLOTS', targetSlots: { ...draft.targetSlots, suffix1: { tier: 7, id: anonymous[1].id } } });
-    expect(compiled.inputModel).toBe('FORGEABLE_WEIGHTED');
+    expect(compiled.inputModel).toBe('CONCRETE_WEIGHTED');
     expect(compiled.issues).toEqual([]);
     expect(compiled.scenarios[0].request.target.requirements[0].ids).toEqual([anonymous[1].id]);
   });
 
   it('never assigns an anonymous source the identity of an explicitly named missing goal', () => {
-    const draft = source7710(), id = draftAffixPool(catalog, 19, 0, 7).find((id) => catalog.hasShard(id))!;
+    const draft = source7710(), id = draftSlotPool({ ...draft, targetMode: 'SLOTS', targetSlots: { ...draft.targetSlots, prefix1: { tier: 7, id: null } } }, 'prefix1', true).find(id => catalog.hasShard(id))!;
     const compiled = compileDraft({ ...draft, targetMode: 'SLOTS', targetSlots: { ...draft.targetSlots, prefix1: { tier: 7, id } } });
     expect(compiled.issues).toEqual([]);
     expect(compiled.scenarios[0].request.item.affixes.some((row) => row.id === id)).toBe(false);
   });
 
   it('rejects wrong-side or wrong-part identities rather than silently discarding them', () => {
-    const draft = source7710(), suffix = draftAffixPool(catalog, 19, 1, 7)[0];
+    const draft = source7710(), suffix = draftSlotPool(draft, 'suffix1')[0];
     expect(compileDraft({ ...draft, slots: { ...draft.slots, prefix1: { tier: 1, id: suffix } } }).scenarios).toHaveLength(0);
   });
 });

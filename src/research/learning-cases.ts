@@ -50,7 +50,8 @@ export function learningCase(id: string, tiers: readonly number[], marked: reado
   const slots = { ...draft.slots };
   keys.forEach((key, index) => { slots[key] = { tier: tiers[index], id: null, isTarget: marked.includes(index) }; });
   const compiled = compileDraft({ ...draft, part, fpType, slots, counts: [{ desired: desired[0] }, { desired: desired[1] }] });
-  if (compiled.issues.length || compiled.scenarios.length !== 1) throw new Error(`Bad learning input ${id}: ${JSON.stringify(compiled.issues)}`);
+  if (compiled.issues.length || !compiled.scenarios.length) throw new Error(`Bad learning input ${id}: ${JSON.stringify(compiled.issues)}`);
+  // A training demonstration targets one concrete representative; the UI solves all groups.
   const input = compiled.scenarios[0].request;
   const request: PlanRequest = { ...input, constraints: { allowedActions: ['add', 'havoc', 'seal', 'removal'] },
     search: { milliseconds: 60000, maxRoutes: 100000, macroStages: 64, maxStates: 5000 } };

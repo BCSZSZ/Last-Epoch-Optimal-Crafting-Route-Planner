@@ -2,6 +2,7 @@ import { Catalog, ordinary } from './catalog';
 import type { CraftingContext, Issue, Item, PlanRequest, Requirement } from './types';
 import { targetReached } from './target';
 import { matches } from './target';
+import { isConcreteModel } from './input-model';
 
 export function validateItem(item: Item, context: CraftingContext, catalog: Catalog): Issue[] {
   const issues: Issue[] = [];
@@ -54,6 +55,10 @@ function validateRequirement(row: Requirement, index: number, catalog: Catalog):
 
 export function validateRequest(request: PlanRequest, catalog: Catalog): Issue[] {
   const issues = validateItem(request.item, request.craftingContext, catalog);
+  if (isConcreteModel(request.inputModel) && catalog.hasBase(request.item.baseId) &&
+      request.item.affixes.some(row => catalog.hasAffix(row.id) && !catalog.canRollOn(row.id, request.item.baseId))) {
+    issues.push({ code: 'INCOMPATIBLE_AFFIX_BASE', message: '起始词缀不符合该实际底材或职业资格' });
+  }
   if (request.modelId !== catalog.model.modelId) issues.push({ code: 'MODEL_MISMATCH', message: '请求与计算模块的机制版本不一致' });
   if ((request.item.corrupted || (catalog.hasBase(request.item.baseId) && catalog.base(request.item.baseId).corrupted)) &&
       !targetReached(request.item, request.target)) {

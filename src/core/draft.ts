@@ -1,6 +1,5 @@
 import { MODEL_ID } from './catalog';
-import type { Catalog } from './catalog';
-import { ANY_BASE_ID, catalogForInputModel } from './input-model';
+import { catalogForInputModel } from './input-model';
 import { parsePlanRequest } from './request';
 import type { Affix, FpType, InputModel, Issue, PlanRequest, Requirement } from './types';
 
@@ -29,6 +28,8 @@ export interface CraftingDraft {
 export interface DraftScenario {
   readonly key: string;
   readonly condition: string;
+  readonly part: number;
+  readonly baseIds: readonly string[];
   readonly aliases: Readonly<Record<number, string>>;
   readonly request: PlanRequest;
 }
@@ -47,15 +48,65 @@ export function emptyDraft(): CraftingDraft {
   return { version: 3, part: null, fpType: 'NORMAL', slots: emptyDraftSlots(), targetMode: 'COUNTS',
     counts: [{ desired: 0 }, { desired: 0 }], targetSlots: emptyDraftSlots() };
 }
-export function draftBase(catalog: Catalog, part: number | null): string | null {
-  if (part === null) return ANY_BASE_ID;
-  return catalog.model.bases.find((base) => base.baseType === part && base.ordinaryEquipment && !base.corrupted && !base.obsolete && !base.legacy)?.id ?? null;
+const concreteCatalog = catalogForInputModel('CONCRETE_WEIGHTED');
+const playerLevel = 100;
+type BaseGroup = { part: number; baseId: string; baseIds: string[] };
+const grouped = new Map<string, BaseGroup>();
+for (const base of concreteCatalog.model.bases) {
+  if (!base.ordinaryEquipment || base.corrupted || base.obsolete || base.legacy || base.levelRequirement > playerLevel) continue;
+  // Below the assumed crafting level, subtypes with the same eligibility share all transitions.
+  const key = JSON.stringify([base.baseType, base.equipmentType, base.classRequirement, base.maxAffixes,
+    [29, 30].includes(base.equipmentType) ? base.subType : null]);
+  const entry = grouped.get(key);
+  if (entry) entry.baseIds.push(base.id);
+  else grouped.set(key, { part: base.baseType, baseId: base.id, baseIds: [base.id] });
 }
-export function draftAffixPool(catalog: Catalog, part: number | null, side: 0 | 1 | null, tier = 1, experimental?: boolean): readonly number[] {
-  const source = part === null ? catalogForInputModel('FORGEABLE_ANY_EQUAL') : catalog;
-  const base = draftBase(source, part); if (!base) return [];
-  return source.model.affixes.filter((row) => [0, 1, 2].includes(row.special) && (experimental === undefined || (row.special === 1) === experimental) && row.side < 2 && (side === null || row.side === side) &&
-    row.tiers.length >= Math.max(1, tier) && source.canRollOn(row.id, base)).map((row) => row.id);
+const baseGroups = [...grouped.values()].sort((a, b) => a.part - b.part);
+const eligibleByBase = new Map<string, readonly number[]>();
+
+function eligibleIds(baseId: string): readonly number[] {
+  let ids = eligibleByBase.get(baseId);
+  if (!ids) {
+    ids = concreteCatalog.model.affixes.filter(a => a.side < 2 && [0, 1, 2].includes(a.special) &&
+      concreteCatalog.canRollOn(a.id, baseId)).map(a => a.id);
+    eligibleByBase.set(baseId, ids);
+  }
+  return ids;
+}
+
+function matchesSlot(id: number, side: 0 | 1 | null, tier: number, experimental?: boolean): boolean {
+  const a = concreteCatalog.affix(id);
+  return (side === null || a.side === side) && a.tiers.length >= Math.max(1, tier) &&
+    (experimental === undefined || (a.special === 1) === experimental);
+}
+
+function activeSlots(draft: CraftingDraft) {
+  return (draft.targetMode === 'SLOTS' ? [false, true] : [false]).flatMap(target =>
+    DRAFT_SLOTS.map(descriptor => ({ descriptor, target, row: (target ? draft.targetSlots : draft.slots)[descriptor.key] })))
+    .filter(({ row }) => row.tier > 0);
+}
+
+function compatibleGroups(draft: CraftingDraft, slots = activeSlots(draft)): BaseGroup[] {
+  return baseGroups.filter(group => (draft.part === null || draft.part === group.part) && slots.every(({ row, descriptor, target }) => {
+    const { baseId } = group;
+    if (row.id !== null) return eligibleIds(baseId).includes(row.id) && matchesSlot(row.id, descriptor.side, row.tier);
+    if (!target && row.isExperimental) return eligibleIds(baseId).some(id => matchesSlot(id, descriptor.side, row.tier, true));
+    return true;
+  }));
+}
+
+/** The picker projects the still-compatible real bases, without locking the slot being edited. */
+export function draftSlotPool(draft: CraftingDraft, key: DraftSlotKey, target = false): readonly number[] {
+  const descriptor = DRAFT_SLOTS.find(s => s.key === key)!;
+  const row = (target ? draft.targetSlots : draft.slots)[key];
+  const rest = activeSlots(draft).filter(s => s.descriptor.key !== key || s.target !== target);
+  const occupied = new Set(rest.filter(s => s.target === target).map(s => s.row.id));
+  const existing = new Set(activeSlots(draft).filter(s => !s.target).map(s => s.row.id));
+  const ids = new Set(compatibleGroups(draft, rest).flatMap(b => eligibleIds(b.baseId)));
+  return [...ids].filter(id => !occupied.has(id) && matchesSlot(id, descriptor.side, row.tier,
+    target ? undefined : key === 'prefix2' && Boolean(row.isExperimental ||
+      row.id !== null && concreteCatalog.hasAffix(row.id) && concreteCatalog.affix(row.id).special === 1)) &&
+    (!target || concreteCatalog.affix(id).special === 0 || existing.has(id))).sort((a, b) => a - b);
 }
 
 export function readDraft(value: unknown): CraftingDraft | null {
@@ -130,91 +181,94 @@ export function withDraftSlots(draft: CraftingDraft, slots: DraftSlots, confirme
     { desired: Math.max(draft.counts[1].desired, ownedGoalCounts(next, 1).owned) }], ...(pending.length ? { legacyOwnership: pending } : {}) };
 }
 
-/** UI contract: no base/level controls, optional identities, explicit reference model and finite role ambiguities. */
-export function compileDraft(draft: CraftingDraft): CompiledDraft {
-  const parsedDraft = readDraft(draft);
-  if (!parsedDraft) return { scenarios: [], issues: [{ code: 'DRAFT_INPUT', message: '输入格式无效。' }], inputModel: 'FORGEABLE_EQUAL', assumptions: [] };
-  draft = parsedDraft;
-  const catalog = catalogForInputModel(draft.part === null ? 'FORGEABLE_ANY_EQUAL' : 'FORGEABLE_WEIGHTED'), baseId = draftBase(catalog, draft.part);
-  const issues: Issue[] = [], scenarios: DraftScenario[] = [];
+/** Compile one executable request per equivalent group of compatible real bases. */
+export function compileDraft(input: CraftingDraft): CompiledDraft {
+  const draft = readDraft(input), issues: Issue[] = [], scenarios: DraftScenario[] = [];
   const fail = (message: string, path?: string) => issues.push({ code: 'DRAFT_INPUT', message, path });
-  const anonymous = DRAFT_SLOTS.some(({ key }) => draft.slots[key].tier > 0 && draft.slots[key].id === null);
-  const mode: InputModel = draft.part === null ? 'FORGEABLE_ANY_EQUAL' : draft.targetMode === 'COUNTS' || anonymous ? 'FORGEABLE_EQUAL' : 'FORGEABLE_WEIGHTED';
-  const assumptions = ['按可锻造前提计算；无需填写底材、角色等级或物品等级。',
-    draft.part === null ? '未指定装备：候选按全装备词条并集等权处理，不是全装备平均概率；指定部位后使用该部位词条池。' : '词条池按所选部位的全职业通用范围；顺序采用前缀1、前缀2、后缀1、后缀2。',
-    '未指定的起始词条按合法普通词条表示；详细目标中的指定身份视为尚未拥有，除非起始处明确填写。',
-    mode !== 'FORGEABLE_WEIGHTED' ? '未指定词条使用等权正权重候选池，结果为简化参考。' : '已填写的词条按实际制作权重计算；通用池不等于指定职业底材池。'];
+  const slots = draft ? activeSlots(draft) : [];
+  const known = new Set(slots.flatMap(({ row }) => row.id === null ? [] : [row.id]));
+  const mode = known.size ? 'CONCRETE_WEIGHTED' : 'CONCRETE_EQUAL';
+  const assumptions = ['按角色和物品等级100计算。底材、职业和词缀资格贯穿整条路线。',
+    '同一部位内按兼容底材等权，再对兼容部位等权。相同资格的底材合并求解。',
+    known.size ? '有明确词缀时，重抽保留实际制作权重。未指定的起始身份以该底材的合法词缀作代表。' :
+      '完全匿名时使用该底材合法正权重词缀的等权参考。'];
   const result = (): CompiledDraft => ({ scenarios, issues, inputModel: mode, assumptions });
-  if (!baseId) { fail('请选择装备部位。', 'part'); return result(); }
-  const specificGoals = draft.targetMode === 'SLOTS' ? DRAFT_SLOTS.flatMap(({ key }) => draft.targetSlots[key].tier && draft.targetSlots[key].id !== null ? [draft.targetSlots[key].id!] : []) : [];
-  for (const [source, slots] of [['起始', draft.slots], ['目标', draft.targetSlots]] as const) {
-    if (source === '目标' && draft.targetMode !== 'SLOTS') continue;
-    for (const descriptor of DRAFT_SLOTS) {
-      const row = slots[descriptor.key]; if (!row.tier || row.id === null) continue;
-      if (!draftAffixPool(catalog, draft.part, descriptor.side, row.tier).includes(row.id)) fail(`${source}${descriptor.label}的词条不适用于该部位或T级。`);
-      if (row.isExperimental !== undefined && row.isExperimental !== (catalog.affix(row.id).special === 1)) fail(`${source}${descriptor.label}的实验标记与具体词条不一致。`);
-      if(source==='起始'&&catalog.affix(row.id).special===1&&descriptor.key!=='prefix2')fail('起始实验词缀请填写在前缀2。');
+  if (!draft) { fail('输入格式无效。'); return result(); }
+  for (const { descriptor, row, target } of slots) {
+    if (row.id === null) continue;
+    const path = `${target ? '目标' : '起始'}${descriptor.label}`;
+    if (!concreteCatalog.hasAffix(row.id) || ![0, 1, 2].includes(concreteCatalog.affix(row.id).special) ||
+        concreteCatalog.side(row.id) > 1 || !matchesSlot(row.id, descriptor.side, row.tier)) {
+      fail(`${path}的词条不符合栏位或T级。`);
+      continue;
+    }
+    const experiment = concreteCatalog.affix(row.id).special === 1;
+    if (row.isExperimental !== undefined && row.isExperimental !== experiment) fail(`${path}的实验标记与具体词条不一致。`);
+    if (!target && experiment && descriptor.key !== 'prefix2') fail('起始实验词缀请填写在前缀2。');
+  }
+  if (draft.targetMode === 'SLOTS') {
+    if (!slots.some(s => s.target)) fail('请至少设置一项目标T级。');
+  } else {
+    if (!draft.counts.some(row => row.desired)) fail('请设置所需的目标前缀数或后缀数。');
+    if (draft.legacyOwnership?.length) fail('旧输入未明确已有目标的位置，请在左侧勾选确认目标词缀。');
+    const sourceT7s = slots.filter(s => !s.target && s.descriptor.slot === 'ordinary' && s.row.tier === 7).length;
+    if (draft.counts[0].desired + draft.counts[1].desired > sourceT7s) fail(`目标T7合计不能超过起始普通栏的${sourceT7s}条T7；封印词缀不计入。`);
+    for (const side of [0, 1] as const) if (ownedGoalCounts(draft, side).owned > draft.counts[side].desired) {
+      fail(`${side === 0 ? '前缀' : '后缀'}目标T7数不能少于左侧勾选的目标词缀数。`);
     }
   }
   if (issues.length) return result();
-  const known = DRAFT_SLOTS.flatMap(({ key }) => draft.slots[key].tier && draft.slots[key].id !== null ? [draft.slots[key].id!] : []);
-  if (draft.part === null && known.length + specificGoals.length > 0) {
-    const concrete = catalogForInputModel('FORGEABLE_WEIGHTED'), ids = [...known, ...specificGoals];
-    if (!concrete.model.bases.some(base => base.ordinaryEquipment && !base.corrupted && !base.obsolete && !base.legacy && ids.every(id => concrete.canRollOn(id, base.id)))) {
-      fail('所选具体词条无法同时出现在同一装备部位，请调整词条或指定装备部位。'); return result();
+
+  const catalog = catalogForInputModel(mode), failures: Issue[] = [];
+  for (const { baseId, baseIds, part } of compatibleGroups(draft, slots)) {
+    const reserved = new Set(known), pool = eligibleIds(baseId);
+    const fresh = (side: 0 | 1 | null, tier: number, experimental = false) => pool.find(id =>
+      !reserved.has(id) && matchesSlot(id, side, tier, experimental) &&
+      (experimental || catalog.affix(id).special === 0 && catalog.hasShard(id) && catalog.craftWeight(id, baseId) > 0));
+    const affixes: Affix[] = [], owned: number[][] = [[], []], aliases: Record<number, string> = {};
+    for (const { descriptor, row, target } of slots) {
+      if (target) continue;
+      const id = row.id ?? fresh(descriptor.side, row.tier, row.isExperimental);
+      if (id === undefined) break;
+      reserved.add(id);
+      affixes.push({ id, tier: row.tier, slot: descriptor.slot, roll: null });
+      if (row.id === null) aliases[id] = `未指定${row.isExperimental ? '实验' : ''}${descriptor.label}词条`;
+      if (row.isTarget && descriptor.side !== null) owned[descriptor.side].push(id);
     }
-  }
-  const reserved = new Set([...known, ...specificGoals]);
-  const fresh = (side: 0 | 1 | null, tier: number, used: Set<number>): number | undefined => draftAffixPool(catalog, draft.part, side, tier)
-    .find((id) => !used.has(id) && catalog.affix(id).special === 0 && catalog.hasShard(id) && catalog.craftWeight(id, baseId) > 0);
-  const affixes: Affix[] = [], slotIndex = new Map<DraftSlotKey, number>(), aliases: Record<number, string> = {};
-  for (const descriptor of DRAFT_SLOTS) {
-    const slot = draft.slots[descriptor.key]; if (!slot.tier) continue;
-    const id = slot.id ?? (slot.isExperimental ? draftAffixPool(catalog, draft.part, 0, slot.tier, true).find(id => !reserved.has(id)) : fresh(descriptor.side, slot.tier, reserved));
-    if (id === undefined) { fail(`无法为${descriptor.label}建立合法的未指定词条。`); return result(); }
-    reserved.add(id); slotIndex.set(descriptor.key, affixes.length);
-    affixes.push({ id, tier: slot.tier, slot: descriptor.slot, roll: null });
-    if (slot.id === null) aliases[id] = `未指定${slot.isExperimental ? '实验' : ''}${descriptor.label}词条`;
-  }
-  const addScenario = (requirements: readonly Requirement[], names: Record<number, string>, condition: string, key: string) => {
-    const request: PlanRequest = { modelId: MODEL_ID, inputModel: mode, ...(draft.initialFp === undefined ? {} : { initialFp: draft.initialFp }),
-      item: { baseId, itemLevel: 100, fpType: draft.fpType, corrupted: false, affixes }, craftingContext: { playerLevel: 100 },
-      target: { requirements }, constraints: {}, scoring: {}, search: { milliseconds: 12000, maxRoutes: 4096, macroStages: 12, maxStates: 25000 } };
-    const parsed = parsePlanRequest(request, catalogForInputModel(mode));
-    if (!parsed.request) { issues.push(...parsed.issues); return; }
-    scenarios.push({ key, condition, aliases: names, request });
-  };
-  if (draft.targetMode === 'SLOTS') {
-    const requirements = DRAFT_SLOTS.flatMap((descriptor): Requirement[] => {
-      const slot = draft.targetSlots[descriptor.key]; if (!slot.tier) return [];
-      return [{ ids: slot.id === null ? draftAffixPool(catalog, draft.part, descriptor.side, slot.tier) : [slot.id], minTier: slot.tier,
-        ...(slot.tier === 7 ? { maxTier: 7 } : {}), slot: descriptor.slot }];
-    });
-    if (!requirements.length) fail('请至少设置一项目标T级。', 'targetSlots');
-    else addScenario(requirements, { ...aliases }, '', 'detailed');
-  } else {
-    if (!draft.counts.some((row) => row.desired > 0)) { fail('请设置所需的目标前缀数或后缀数。', 'counts'); return result(); }
-    if (draft.legacyOwnership?.length) { fail('旧输入未明确已有目标的位置，请在左侧勾选确认目标词缀。'); return result(); }
-    const selected = ([0, 1] as const).map(side => DRAFT_SLOTS.filter(row => row.side === side && draft.slots[row.key].tier > 0 && draft.slots[row.key].isTarget)
-      .map(row => slotIndex.get(row.key)!));
-    const sourceT7s = DRAFT_SLOTS.filter(row => row.slot === 'ordinary' && draft.slots[row.key].tier === 7).length;
-    if (draft.counts[0].desired + draft.counts[1].desired > sourceT7s) fail(`目标T7合计不能超过起始普通栏的${sourceT7s}条T7；封印词缀不计入。`);
-    for (const side of [0, 1] as const) if (selected[side].length > draft.counts[side].desired) fail(`${side === 0 ? '前缀' : '后缀'}目标T7数不能少于左侧勾选的目标词缀数。`);
-    if (issues.length) return result();
-    {
-      const used = new Set(affixes.map((row) => row.id)), names = { ...aliases }, requirements: Requirement[] = [];
+    if (affixes.length !== slots.filter(s => !s.target).length) continue;
+    const requirements: Requirement[] = [];
+    if (draft.targetMode === 'SLOTS') {
+      for (const { descriptor, row, target } of slots) {
+        if (!target) continue;
+        const ids = row.id !== null ? [row.id] : pool.filter(id => matchesSlot(id, descriptor.side, row.tier) &&
+          (catalog.affix(id).special === 0 || affixes.some(a => a.id === id)));
+        requirements.push({ ids, minTier: row.tier, ...(row.tier === 7 ? { maxTier: 7 } : {}), slot: descriptor.slot });
+      }
+    } else {
       for (const side of [0, 1] as const) {
         const label = side === 0 ? '前缀' : '后缀';
         for (let goal = 0; goal < draft.counts[side].desired; goal++) {
-          const index = selected[side][goal], id = index === undefined ? fresh(side, 7, used) : affixes[index].id;
-          if (id === undefined) { fail('该部位没有足够的合法目标词条。'); return result(); }
-          used.add(id); names[id] = `${index === undefined ? '待补' : '已有'}目标${label}${goal + 1}`;
+          const existing = owned[side][goal], id = existing ?? fresh(side, 7);
+          if (id === undefined) break;
+          reserved.add(id);
+          aliases[id] = `${existing === undefined ? '待补' : '已有'}目标${label}${goal + 1}`;
           requirements.push({ ids: [id], minTier: 7, maxTier: 7, slot: 'ordinary' });
         }
       }
-      addScenario(requirements, names, '', `count-${selected[0].join('-')}-${selected[1].join('-')}`);
+      if (requirements.length !== draft.counts[0].desired + draft.counts[1].desired) continue;
     }
+    // Experimental states track the surviving identity in addition to four ordinary tiers.
+    const milliseconds = mode === 'CONCRETE_EQUAL' && affixes.some(a => catalog.affix(a.id).special === 1) ? 90000 : 12000;
+    const request: PlanRequest = { modelId: MODEL_ID, inputModel: mode, ...(draft.initialFp === undefined ? {} : { initialFp: draft.initialFp }),
+      item: { baseId, itemLevel: 100, fpType: draft.fpType, corrupted: false, affixes }, craftingContext: { playerLevel },
+      target: { requirements }, constraints: {}, scoring: {}, search: { milliseconds, maxRoutes: 4096, macroStages: 12, maxStates: 25000 } };
+    const parsed = parsePlanRequest(request, catalog);
+    if (parsed.request) scenarios.push({ key: baseId, condition: '', part, baseIds, aliases, request: parsed.request });
+    else if (!failures.length) failures.push(...parsed.issues);
   }
-  if (issues.length) return { ...result(), scenarios: [] };
+  if (!scenarios.length) {
+    if (failures.length) issues.push(...failures);
+    else fail('找不到能同时满足这些词条与栏位的同一装备，请调整部位或词条。');
+  }
   return result();
 }

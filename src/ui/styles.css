@@ -728,3 +728,11 @@ footer a {
 .starting-fp { display:flex; align-items:center; gap:12px; flex-wrap:wrap; font-size:13px; margin:16px 0 4px; }
 .starting-fp input { width:88px; border:1px solid var(--line); border-radius:6px; background:#101817; color:inherit; padding:8px 10px; }
 .starting-fp span { color:var(--muted); font-size:12px; }
+
+.part-scenarios { margin: 16px 0; }
+.part-scenarios h3 { margin: 0 0 6px; }
+.scenario-detail { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.scenario-detail > summary { cursor: pointer; }
+.scenario-detail > .result-card { margin-top: 10px; }
+.finite-table-scroll tfoot th { position: static; }
+.finite-table-scroll tfoot td { font-weight: 700; }

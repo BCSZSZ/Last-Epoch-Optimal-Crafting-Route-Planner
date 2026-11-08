@@ -26,7 +26,7 @@ export function detailedFixtures(): readonly DetailedFixture[] {
     }
     const draft: CraftingDraft={...base,slots,targetMode:'SLOTS',targetSlots:targets};
     const compiled=compileDraft(draft);
-    if(compiled.issues.length || compiled.scenarios.length!==1) throw new Error('Invalid detailed fixture '+spec.id+JSON.stringify(compiled.issues));
+    if(compiled.issues.length || !compiled.scenarios.length) throw new Error('Invalid detailed fixture '+spec.id+JSON.stringify(compiled.issues));
     return {id:spec.id,draft,request:compiled.scenarios[0].request};
   });
   const base=results[0].draft;

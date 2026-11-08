@@ -134,7 +134,7 @@ export async function solveCompactProfile(request: PlanRequest, catalog: Catalog
       firstAction: root === 1 ? '目标已满足，无需操作' : maximumFp===0 ? 'FP已耗尽，无法继续打造' : a < 0 ? '停止：当前动作范围内无法完成目标' : compactActionText(graph.states[root]!, graph.actions[root][a].action),
       actualMeanFp: solution.actualCosts[maximumFp][root], successActualMeanFp: p > 0 ? solution.successfulCosts[maximumFp][root] / p : null,
       ...policy, ...(hooks.includeSteps === false ? {} : { stepPlan: buildFiniteSteps(graph, solution, root, maximumFp) }), states: graph.states.length, optimalityGapUpper: 2 * error, maximumResidual: solution.maximumResidual,
-      scope: '100级可锻造普通等权池、两条普通T7来源、两条指定普通T7目标；完整合法动作及失败后继续', note: null };
+      scope: '100级等权合法词缀池、两条普通栏T7来源、两条指定T7目标。按完整状态与剩余FP选择下一步。', note: null };
   } catch (error) {
     cache.delete(key); if (error instanceof FiniteStateLimit) return null; throw error;
   }

@@ -34,7 +34,9 @@ export function compactCosts(profile: FpType, parameters: CostParameters, maximu
  * for both optimal values and the exported greedy policy (not residual alone).
  */
 export async function solveCompactGraph(graph: CompactGraph, profile: FpType, parameters: CostParameters, hooks: FiniteSolveHooks, fixedPolicies?: readonly Int16Array[], maximumFp = DEFAULT_INITIAL_FP): Promise<CompactSolution> {
-  const candidates = (s: number, fp: number): number[] => fixedPolicies ? (fixedPolicies[fp][s] < 0 ? [] : [fixedPolicies[fp][s]]) : graph.actions[s].map((_, a) => a);
+  const choices = graph.actions.map(actions => actions.map((_, index) => index));
+  const candidates = (s: number, fp: number): readonly number[] =>
+    fixedPolicies ? (fixedPolicies[fp][s] < 0 ? [] : [fixedPolicies[fp][s]]) : choices[s];
   const n = graph.states.length, costs = compactCosts(profile, parameters, maximumFp), values: Float64Array[] = [new Float64Array(n)],
     policies: Int16Array[] = [new Int16Array(n).fill(-1)], actualCosts: Float64Array[] = [new Float64Array(n)],
     successfulCosts: Float64Array[] = [new Float64Array(n)], errors = [0];

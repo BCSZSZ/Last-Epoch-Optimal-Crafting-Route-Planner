@@ -32,7 +32,7 @@ export function parsePlanRequest(value: unknown, catalog = new Catalog()): { req
   if (!object(value, 'request', ['modelId', 'inputModel', 'initialFp', 'item', 'craftingContext', 'target', 'constraints', 'scoring', 'search'])) return { request: null, issues };
   if (value.initialFp !== undefined) number(value.initialFp, 'initialFp', 0, catalog.model.fpMaximum);
   if (!text(value.modelId)) fail('modelId', '需要模型版本字符串');
-  if (value.inputModel !== undefined) enumeration(value.inputModel, 'inputModel', ['AUDITED', 'FORGEABLE_WEIGHTED', 'FORGEABLE_EQUAL', 'FORGEABLE_ANY_EQUAL']);
+  if (value.inputModel !== undefined) enumeration(value.inputModel, 'inputModel', ['AUDITED', 'FORGEABLE_WEIGHTED', 'FORGEABLE_EQUAL', 'FORGEABLE_ANY_EQUAL', 'CONCRETE_EQUAL', 'CONCRETE_WEIGHTED']);
   if (object(value.item, 'item', ['baseId', 'itemLevel', 'fpType', 'corrupted', 'affixes'])) {
     const item = value.item;
     if (!text(item.baseId)) fail('item.baseId', '需要底材ID字符串');

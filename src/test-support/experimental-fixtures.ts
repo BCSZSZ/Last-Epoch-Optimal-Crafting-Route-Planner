@@ -11,7 +11,7 @@ export function experimentalFixtures(part:number|null=null,detailed=false){
       for(const key of keys)if(slots[key].tier)slots[key]={...slots[key],id:anonymous.item.affixes[index++].id};
       draft={...draft,slots,targetMode:'SLOTS',targetSlots:{...source.targetSlots,prefix1:{tier:7,id:anonymous.target.requirements[0].ids[0]},prefix2:{tier:7,id:anonymous.target.requirements[1].ids[0]}}};
     }
-    const compiled=compileDraft(draft);if(compiled.issues.length||compiled.scenarios.length!==1)throw new Error(JSON.stringify(compiled.issues));
+    const compiled=compileDraft(draft);if(compiled.issues.length||!compiled.scenarios.length)throw new Error(JSON.stringify(compiled.issues));
     return {id:pattern+'-owned'+Number(owned),draft,request:compiled.scenarios[0].request};
   }));
 }

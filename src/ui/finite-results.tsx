@@ -50,6 +50,7 @@ function ProfileCard({ row, scenario }: { row: FiniteProfileResult; scenario: Dr
     <strong className="finite-probability">{percentage(row)}</strong>
     <p className="finite-metric-caption">48FP内完成目标</p>
     {row.status === 'INCOMPLETE' && <p className="helper">尚未全部算完；{row.probability ? '此数值对应已找到的路线。' : '结果保留待定，不记为0%。'}</p>}
+    {row.stepPlan && row.stepPlan.steps.length > row.stepPlan.main.length && <p className="helper">主步骤；其他结果按条件分支处理。</p>}
     <div className="finite-step-list">
       {row.stepPlan ? row.stepPlan.main.map(id => {
         const step = row.stepPlan!.steps.find(s => s.id === id)!;

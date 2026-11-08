@@ -66,6 +66,12 @@
       "sha256": "0548f9724d73cf60e5a4ca7bd9e43e60e270c30f721e1758c13228cf99b5e11f",
       "metric": "FINITE_48_PROFILES_V3",
       "purpose": "Historical three-profile release before direct operation/acceptance step cards and actual per-step FP occupation rewards."
+    },
+    "le-1.5.3-iid-c745a09df862efe0": {
+      "file": "research/runtime-model-archive/le-1.5.3-iid-c745a09df862efe0.json",
+      "sha256": "26ce40cefe0ca11803adacefedfdece4037e1e626a2b8de7e49000c4de805bb8",
+      "metric": "FINITE_48_PROFILES_V3",
+      "purpose": "Initial direct step-card release, before tightening preparation acceptance to the displayed next branch."
     }
   }
 }

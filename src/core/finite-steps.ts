@@ -75,7 +75,7 @@ function layoutCriterion(state: CompactState, exits: ReadonlySet<string>): strin
  * convergent Neumann sum; no chosen success example supplies these costs. */
 export function buildFiniteSteps(graph: CompactGraph, solution: CompactSolution, root: number): FiniteStepPlan {
   if (root < 2) return { steps: [], main: [], costMeaning: 'ACTUAL48_PHASE_COST_PER_ENTRY', totalExpectedFp: 0 };
-  interface Phase { state: CompactState; action: CompactAction; entries: number; cost: number; exits: Set<string>; next: Map<number, number>; successNext: Map<number, number>; fpSensitive: boolean; layouts: Map<string, Set<boolean>> }
+  interface Phase { state: CompactState; action: CompactAction; entries: number; cost: number; exits: Map<number, Set<string>>; next: Map<number, number>; successNext: Map<number, number>; layouts: Map<string, Set<boolean>> }
   const phases: Phase[] = [], ids = new Map<string, number>(), n = graph.states.length;
   const phaseIndex = Array.from({ length: 49 }, () => new Int16Array(n).fill(-2));
   const sameFp = solution.costs.map(() => new Float64Array(49));
@@ -85,7 +85,7 @@ export function buildFiniteSteps(graph: CompactGraph, solution: CompactSolution,
     if (phaseIndex[fp][s] !== -2) return phaseIndex[fp][s];
     const a = solution.policies[fp][s]; if (a < 0) { phaseIndex[fp][s] = -1; return -1; }
     const state = graph.states[s]!, action = graph.actions[s][a].action, k = key(state, action); let id = ids.get(k);
-    if (id === undefined) { id = phases.length; ids.set(k, id); phases.push({ state, action, entries: 0, cost: 0, exits: new Set(), next: new Map(), successNext: new Map(), fpSensitive: false, layouts: new Map() }); }
+    if (id === undefined) { id = phases.length; ids.set(k, id); phases.push({ state, action, entries: 0, cost: 0, exits: new Map(), next: new Map(), successNext: new Map(), layouts: new Map() }); }
     phaseIndex[fp][s] = id; return id;
   };
   const first = phaseAt(root, 48); if (first < 0) return { steps: [], main: [], costMeaning: 'ACTUAL48_PHASE_COST_PER_ENTRY', totalExpectedFp: 0 };
@@ -120,7 +120,7 @@ export function buildFiniteSteps(graph: CompactGraph, solution: CompactSolution,
         if (phase.action.kind === 'havoc' && e.to >= 2 && b.fp > 0 && solution.values[b.fp][e.to] > 0) {
           const layout = graph.states[e.to]!.tiers.join(''), exit = to >= 0 && to !== id;
           if (!phase.layouts.has(layout)) phase.layouts.set(layout, new Set()); phase.layouts.get(layout)!.add(exit);
-          if (exit) phase.exits.add(layout);
+          if (exit) { if (!phase.exits.has(to)) phase.exits.set(to, new Set()); phase.exits.get(to)!.add(layout); }
         }
       }
     }
@@ -130,7 +130,10 @@ export function buildFiniteSteps(graph: CompactGraph, solution: CompactSolution,
     if (action.kind === 'havoc') {
       if (state.roles.includes(1) && state.roles.includes(2)) return '目标A、目标B均为T7';
       const sensitive = [...phase.layouts.values()].some(values => values.size > 1);
-      return layoutCriterion(state, phase.exits) + (sensitive ? '；剩余FP对应的分支见条件路线' : '');
+      const next = [...phase.successNext.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
+      // Describe the displayed next step, not the union of every possible exit.
+      // Combining low-FP Redemption exits with seal exits can make a tautology.
+      return layoutCriterion(state, phase.exits.get(next) ?? new Set()) + (sensitive ? '；其他FP分支见条件路线' : '');
     }
     if (action.kind === 'redemption') {
       const missing = [1, 2].filter(r => !state.roles.includes(r));

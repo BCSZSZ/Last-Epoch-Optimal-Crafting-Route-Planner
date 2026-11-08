@@ -31,3 +31,11 @@ it('partitions real repeat-stage occupation costs rather than subtracting a chos
   expect(row.stepPlan!.main).toEqual([1, 2]);
   const replay = await replayFiniteProfile(input, catalog, row); expect(replay.actualMeanFp).toBeCloseTo(row.actualMeanFp!, 8);
 }, 30000);
+
+it('preparation acceptance describes the next seal rather than unioning unrelated low-FP exits', async () => {
+  const source = JSON.parse(readFileSync(new URL('../../research/fixtures/finite48-three-profiles-99.json', import.meta.url), 'utf8')).rows[2].request as PlanRequest;
+  const catalog = catalogForInputModel(source.inputModel), row = (await solveCompactProfile({ ...source, modelId: catalog.model.modelId }, catalog, 'ICE', { stopped: () => false }))!;
+  const preparation = row.stepPlan!.steps.find(s => row.stepPlan!.main.includes(s.id) && s.operation === '浩劫' && s.key !== 'havoc:finish')!;
+  expect(preparation.criterion).toContain('后缀1为T1');
+  expect(preparation.criterion).not.toContain('前缀1为T1或T7');
+}, 30000);

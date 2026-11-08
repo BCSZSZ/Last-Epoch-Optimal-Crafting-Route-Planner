@@ -1,6 +1,6 @@
 {
   "status": "PASS_OPERATION_ACCEPTANCE_STEP_FP",
-  "modelId": "le-1.5.3-iid-c745a09df862efe0",
+  "modelId": "le-1.5.3-iid-cbdc55aee42009a7",
   "observations": {
     "status": "PASS_REAL_BROWSER_WORKER_EXPORT",
     "base": "http://127.0.0.1:4174/Last-Epoch-Optimal-Crafting-Route-Planner/",
@@ -25,9 +25,9 @@
             "badge": "推荐"
           }
         ],
-        "elapsedMs": 2731,
+        "elapsedMs": 2726,
         "file": "local-READY.json",
-        "sha256": "50f717f8a0fad6c179a547599b0b509b7196d3e366082f33097462c5ee323ffe",
+        "sha256": "470b908337d43f9493feb0744624aeeab77d9105152fefdb6f2fa21d7398f568",
         "desktop": {
           "width": 1440,
           "scroll": 1440
@@ -36,7 +36,7 @@
           "width": 390,
           "scroll": 390
         },
-        "modelId": "le-1.5.3-iid-c745a09df862efe0"
+        "modelId": "le-1.5.3-iid-cbdc55aee42009a7"
       },
       {
         "caseId": "C001",
@@ -57,9 +57,9 @@
             "badge": "推荐"
           }
         ],
-        "elapsedMs": 6798,
+        "elapsedMs": 6272,
         "file": "local-C001.json",
-        "sha256": "9c5e1f93ee3b2eb8fd3ac5bc462979af2fee65c0639f3fa9fb9bace0b953a686",
+        "sha256": "d96eda2051552382774d2db8800cf23bf16df108efccb6c01bd9eb4f686f5a89",
         "desktop": {
           "width": 1440,
           "scroll": 1440
@@ -68,7 +68,7 @@
           "width": 390,
           "scroll": 390
         },
-        "modelId": "le-1.5.3-iid-c745a09df862efe0"
+        "modelId": "le-1.5.3-iid-cbdc55aee42009a7"
       },
       {
         "caseId": "C003",
@@ -89,9 +89,9 @@
             "badge": "不推荐"
           }
         ],
-        "elapsedMs": 6852,
+        "elapsedMs": 6845,
         "file": "local-C003.json",
-        "sha256": "1928a12df9b631cf776771e2b87ffbef43264cdabb485af287056d0656f1b9a6",
+        "sha256": "d3ed5d2c816288f11984f8a85dc127a02d5dad05e456c8f7ce62835aa8aa9059",
         "desktop": {
           "width": 1440,
           "scroll": 1440
@@ -100,7 +100,7 @@
           "width": 390,
           "scroll": 390
         },
-        "modelId": "le-1.5.3-iid-c745a09df862efe0"
+        "modelId": "le-1.5.3-iid-cbdc55aee42009a7"
       },
       {
         "caseId": "C087",
@@ -121,9 +121,9 @@
             "badge": "推荐"
           }
         ],
-        "elapsedMs": 6317,
+        "elapsedMs": 6847,
         "file": "local-C087.json",
-        "sha256": "f0ab192c3b224eee8f7a277057d11115c50997a6d461b9721cb311774bc9e68c",
+        "sha256": "d815fd4aae9eda7eb39b4e76f0d7a5e1e84ab770022efe7dca29c019fbaef167",
         "desktop": {
           "width": 1440,
           "scroll": 1440
@@ -132,7 +132,7 @@
           "width": 390,
           "scroll": 390
         },
-        "modelId": "le-1.5.3-iid-c745a09df862efe0"
+        "modelId": "le-1.5.3-iid-cbdc55aee42009a7"
       }
     ],
     "errors": [],
@@ -141,7 +141,7 @@
   "replays": [
     {
       "status": "PASS_THREE_EXPORTED_PROFILES",
-      "modelId": "le-1.5.3-iid-c745a09df862efe0",
+      "modelId": "le-1.5.3-iid-cbdc55aee42009a7",
       "checks": [
         {
           "fpType": "NORMAL",
@@ -168,7 +168,7 @@
     },
     {
       "status": "PASS_THREE_EXPORTED_PROFILES",
-      "modelId": "le-1.5.3-iid-c745a09df862efe0",
+      "modelId": "le-1.5.3-iid-cbdc55aee42009a7",
       "checks": [
         {
           "fpType": "NORMAL",
@@ -195,7 +195,7 @@
     },
     {
       "status": "PASS_THREE_EXPORTED_PROFILES",
-      "modelId": "le-1.5.3-iid-c745a09df862efe0",
+      "modelId": "le-1.5.3-iid-cbdc55aee42009a7",
       "checks": [
         {
           "fpType": "NORMAL",
@@ -222,7 +222,7 @@
     },
     {
       "status": "PASS_THREE_EXPORTED_PROFILES",
-      "modelId": "le-1.5.3-iid-c745a09df862efe0",
+      "modelId": "le-1.5.3-iid-cbdc55aee42009a7",
       "checks": [
         {
           "fpType": "NORMAL",
@@ -249,8 +249,9 @@
     }
   ],
   "tests": {
-    "typescript": 190,
+    "typescript": 191,
     "probabilityBaselineCases": 297
   },
-  "qualification": "Real browser/Worker, bare operations and acceptance criteria, default Hope omitted, per-phase actual FP rewards replayed in Node. Finite48 probability and recommendation baseline unchanged."
+  "qualification": "Real browser/Worker, bare operations and acceptance criteria, default Hope omitted, per-phase actual FP rewards replayed in Node. Finite48 probability and recommendation baseline unchanged.",
+  "preparationCriterionTest": "C003 ICE: 后缀1为T1; not unioned with low-FP Redemption exits"
 }

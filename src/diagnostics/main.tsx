@@ -1,3 +1,4 @@
+import { DEFAULT_INITIAL_FP } from '../core/initial-fp';
 import { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { MODEL_ID } from '../core/catalog';
@@ -9,7 +10,7 @@ import type { DeviceBenchmarkRecord, DeviceCaseRecord } from './record';
 import './styles.css';
 
 const fpNames = { NORMAL: '普通', ICE: '冰', BLOOD: '血' };
-const qualification = `固定验收装备、每输入分别返回普通／冰／血三个48FP内完成率；低于25%不推荐，没有概率／FP均值过滤；结果只在本机生成。矩阵完成表示已执行全部规划请求，不表示模板穷尽或全局最优。设备类别由测试者声明，低性能物理设备验收保留待办。此页不测Worker内存。`;
+const qualification = `固定验收装备、每输入分别返回普通／冰／血三个${DEFAULT_INITIAL_FP}FP内完成率；低于25%不推荐，没有概率／FP均值过滤；结果只在本机生成。矩阵完成表示已执行全部规划请求，不表示模板穷尽或全局最优。设备类别由测试者声明，低性能物理设备验收保留待办。此页不测Worker内存。`;
 
 function DeviceCheck() {
   const [mode, setMode] = useState<DeviceBenchmarkRecord['mode']>('FULL');
@@ -87,7 +88,7 @@ function DeviceCheck() {
       {current && <p>当前：{current.label} · {fpNames[current.fpType]}潜能{progress && `，已评价${progress.evaluatedRoutes}条候选`}</p>}
       {record?.error && <p className="warning">{record.error}</p>}
       {record && !record.visibility.every((entry) => entry.state === 'visible') && <p className="warning">记录包含后台时段，耗时需按该环境解释。</p>}
-      <div className="table-wrap"><table><caption>已完成案例，搜索完成状态独立于矩阵进度</caption><thead><tr><th>案例</th><th>潜能</th><th>总耗时</th><th>内部耗时</th><th>候选</th><th>48FP完成率：普通／冰／血</th><th>精度</th><th>搜索</th></tr></thead><tbody>
+      <div className="table-wrap"><table><caption>已完成案例，搜索完成状态独立于矩阵进度</caption><thead><tr><th>案例</th><th>潜能</th><th>总耗时</th><th>内部耗时</th><th>候选</th><th>{DEFAULT_INITIAL_FP}FP完成率：普通／冰／血</th><th>精度</th><th>搜索</th></tr></thead><tbody>
         {record?.entries.map((entry) => <tr key={`${entry.id}-${entry.fpType}`}><th>{entry.label}</th><td>{fpNames[entry.fpType]}</td><td>{(entry.adapterWallMilliseconds / 1000).toFixed(3)}s</td><td>{(entry.report.search.elapsedMilliseconds / 1000).toFixed(3)}s</td><td>{entry.report.search.evaluatedRoutes}</td><td>{entry.report.finiteProfiles?.profiles.map(row => row.probability ? `${((row.probability.lower + row.probability.upper) * 50).toFixed(3)}%` : '未算完').join(' / ') ?? '无结果'}</td><td>{entry.report.finiteProfiles ? '数值区间' : '无结果'}</td><td>{entry.report.searchStatus === 'COMPLETE' ? '范围内完成' : '未完成'}</td></tr>)}
       </tbody></table></div>
       <p className="note">{qualification}</p>

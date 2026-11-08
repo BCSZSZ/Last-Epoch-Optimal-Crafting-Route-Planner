@@ -154,8 +154,8 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
     model["deviceValidation"]["currentNodeBenchmark"] = None
     model["userInput"]["historicalProgramUiWorkerParity"] = model["userInput"].pop("uiWorkerParity")
     model["userInput"]["historicalLocalProgramUiWorkerParity"] = model["userInput"].pop("localUiWorkerParity")
-    model["userInput"]["currentUiEvidence"] = "research/ui-validation/finite48-local-parity.json"
-    extra = ["research/fixtures/finite48-three-profiles-99.json", "docs/finite48-three-profiles-20261108.md", "research/ui-validation/finite48-local-parity.json"]
+    model["userInput"]["currentUiEvidence"] = "research/ui-validation/finite48-steps-local-parity.json"
+    extra = ["research/fixtures/finite48-three-profiles-99.json", "docs/finite48-three-profiles-20261108.md", "research/ui-validation/finite48-local-parity.json", "research/ui-validation/finite48-steps-local-parity.json", "docs/step-instructions-20261108.md"]
     model["inputs"].update({path: hashlib.sha256((root / path).read_bytes()).hexdigest() for path in extra})
     model["researchRevision"] = hashlib.sha256(encode_json(model)).hexdigest()
     return {"research/evidence-matrix.json": encode_json(matrix), "research/model-snapshot.json": encode_json(model)}

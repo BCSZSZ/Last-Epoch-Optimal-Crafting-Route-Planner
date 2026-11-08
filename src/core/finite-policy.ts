@@ -4,6 +4,8 @@ import type { CompactAction, CompactDomain } from './finite-state';
 import { solveCompactGraph } from './finite-solver';
 import type { CompactSolution, FiniteSolveHooks } from './finite-solver';
 import type { FpType, PlanRequest, Route } from './types';
+import { buildFiniteSteps } from './finite-steps';
+import type { FiniteStepPlan } from './finite-steps';
 
 export const FINITE_POLICY_VERSION = 'FINITE48_THREE_PROFILES_V1';
 export const FINITE_INITIAL_FP = 48;
@@ -27,6 +29,7 @@ export interface FiniteProfileResult {
   readonly decisions: readonly FiniteDecision[]; readonly example: readonly FiniteExampleStep[];
   readonly states: number; readonly optimalityGapUpper: number | null; readonly maximumResidual: number | null;
   readonly scope: string; readonly note: string | null; readonly fixedRoute?: Route;
+  readonly stepPlan?: FiniteStepPlan;
 }
 export interface FiniteProfilesReport {
   readonly version: typeof FINITE_POLICY_VERSION; readonly initialFp: 48; readonly recommendationThreshold: .25;
@@ -127,7 +130,7 @@ export async function solveCompactProfile(request: PlanRequest, catalog: Catalog
       strategyId: identifier(JSON.stringify([FINITE_POLICY_VERSION, key, domain.targetIds, domain.initial, profile])),
       firstAction: root === 1 ? '目标已满足，无需操作' : a < 0 ? '停止：当前动作范围内无法完成目标' : compactActionText(graph.states[root]!, graph.actions[root][a].action),
       actualMeanFp: solution.actualCosts[48][root], successActualMeanFp: p > 0 ? solution.successfulCosts[48][root] / p : null,
-      ...policy, states: graph.states.length, optimalityGapUpper: 2 * error, maximumResidual: solution.maximumResidual,
+      ...policy, ...(hooks.includeSteps === false ? {} : { stepPlan: buildFiniteSteps(graph, solution, root) }), states: graph.states.length, optimalityGapUpper: 2 * error, maximumResidual: solution.maximumResidual,
       scope: '100级可锻造普通等权池、两条普通T7来源、两条指定普通T7目标；完整合法动作及失败后继续', note: null };
   } catch (error) {
     cache.delete(key); if (error instanceof FiniteStateLimit) return null; throw error;

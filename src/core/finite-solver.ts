@@ -13,6 +13,8 @@ export interface CompactSolution {
   readonly maximumResidual: number;
 }
 export interface FiniteSolveHooks {
+  /** Numeric baseline callers may omit the independent presentation rewards. */
+  readonly includeSteps?: boolean;
   readonly stopped: () => boolean;
   readonly yieldControl?: () => Promise<void>;
   readonly progress?: (fp: number, states: number) => void;

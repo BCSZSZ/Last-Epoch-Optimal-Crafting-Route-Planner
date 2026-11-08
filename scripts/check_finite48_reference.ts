@@ -11,7 +11,7 @@ const selected = process.argv.includes('--all') ? data.rows : data.rows.filter(r
 let checks = 0, maxError = 0; const start = performance.now();
 for (const row of selected) for (const profile of ['NORMAL', 'ICE', 'BLOOD'] as const) {
   const catalog = catalogForInputModel(row.request.inputModel), request = { ...row.request, modelId: catalog.model.modelId };
-  const result = await solveCompactProfile(request, catalog, profile, { stopped: () => false });
+  const result = await solveCompactProfile(request, catalog, profile, { stopped: () => false, includeSteps: false });
   assert(result, `${row.caseId}: compact domain unavailable`);
   const expected = row.expected[profile].probability, error = Math.abs(result.estimate! - expected);
   assert(error < 1e-9, `${row.caseId}/${profile}: ${result.estimate} vs${expected}`);

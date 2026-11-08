@@ -5,6 +5,8 @@ import type { FiniteProfileResult } from './finite-policy';
 import { CompactGraph, compactActionText, compactCode, compactDomain } from './finite-state';
 import { solveCompactGraph } from './finite-solver';
 import { RuleEngine } from './rules';
+import { buildFiniteSteps } from './finite-steps';
+import { finishStep } from './finish-step';
 import type { PlanRequest } from './types';
 
 /** Replay the exported choices, not a fresh optimization which might silently
@@ -21,6 +23,11 @@ export async function replayFiniteProfile(request: PlanRequest, catalog: Catalog
     const result = evaluateCompletion(new RuleEngine(catalog), input, report.fixedRoute, undefined, 48);
     if (!result.probability || result.status !== 'COMPLETE') throw new Error('Exported fixed route did not finish replay');
     p = (result.probability.lower + result.probability.upper) / 2;
+    if (report.stepPlan) {
+      const step = finishStep(input, report.fixedRoute, catalog);
+      if (!step || Math.abs(step.mean - report.stepPlan.totalExpectedFp) > 1e-7) throw new Error('Exported fixed step FP differs');
+      mean = step.mean; successMean = step.successMean;
+    }
   } else {
     const domain = compactDomain(input, catalog); if (!domain) throw new Error('Exported policy is outside compact domain');
     const graph = new CompactGraph(domain, report.fpType, catalog.model.parameters, input.search.maxStates, () => false);
@@ -51,6 +58,15 @@ export async function replayFiniteProfile(request: PlanRequest, catalog: Catalog
     }
     const result = await solveCompactGraph(graph, report.fpType, catalog.model.parameters, { stopped: () => false }, policies);
     p = result.values[48][root]; mean = result.actualCosts[48][root]; successMean = p > 0 ? result.successfulCosts[48][root] / p : null;
+    if (report.stepPlan) {
+      const replay = buildFiniteSteps(graph, result, root), keys = new Map(replay.steps.map(step => [step.key, step]));
+      if (report.stepPlan.steps.length !== keys.size || Math.abs(report.stepPlan.totalExpectedFp - replay.totalExpectedFp) > 1e-7) throw new Error('Exported step total differs');
+      for (const step of report.stepPlan.steps) {
+        const expected = keys.get(step.key);
+        if (!expected || Math.abs(expected.expectedFp - step.expectedFp) > 1e-6 || Math.abs(expected.expectedEntries - step.expectedEntries) > 1e-7 ||
+          Math.abs(expected.totalFpContribution - step.totalFpContribution) > 1e-7) throw new Error('Exported per-step FP differs');
+      }
+    }
     if (report.actualMeanFp === null || Math.abs(report.actualMeanFp - mean) > 1e-7 ||
       (successMean !== null && (report.successActualMeanFp === null || Math.abs(report.successActualMeanFp - successMean) > 1e-6))) throw new Error('Exported FP reward differs');
   }

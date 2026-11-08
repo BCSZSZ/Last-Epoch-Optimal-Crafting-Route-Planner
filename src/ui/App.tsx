@@ -221,7 +221,7 @@ export function App() {
             <button type="button" aria-pressed={draft.part === null} className={draft.part === null ? 'selected' : ''} onClick={() => changePart(null)}>任意</button>
             {parts.map(part => <button type="button" key={part} aria-pressed={draft.part === part} className={draft.part === part ? 'selected' : ''}
               onClick={() => changePart(part)}>{typeName(part, String(part))}</button>)}</div></fieldset>
-          <p className="helper fp-row">统一从48FP计算：单独希望、冰＋希望、血＋希望，分别选路。</p>
+          <p className="helper fp-row">统一从48FP计算：普通、冰、血三种条件，分别选路。</p>
           <SlotEditor slots={draft.slots} part={draft.part} markTargets={draft.targetMode === 'COUNTS'}
             onChange={(slots, side) => edit(withDraftSlots(draft, slots, side))} />
         </section>

@@ -123,6 +123,7 @@
   "inputs": {
     "data/game/1.5.3/manifest.json": "f1127461629a61b3d0a6970ab26ccc2032491bceed849298849a6b842f2251b9",
     "docs/finite48-three-profiles-20261108.md": "001482b89481f1be2566ea92e0a9e51a91f0abd4a35b348362fe133d6dfa0910",
+    "docs/step-instructions-20261108.md": "9b8a7bd646e616e82e792c4c39cf69adb6c27c2933eb5d9639d89ce7a932a124",
     "research/7271-route-comparison.json": "4b4f1ed71da48ece635dad96a348e48f179ab6d691f78c475e5f65fcbc8cb4b3",
     "research/7710-7721-completion.json": "92d1b9a30ebb66efaf787a8b371a3fc134487870989ea5f2112aaeefeeb00238",
     "research/7710-monte-carlo.json": "20c81665d0c4a9f4755027baa625b09605bd4ff1777f12eed903e7a4cc49424a",
@@ -165,7 +166,7 @@
     "research/program-release-performance.json": "17332788a0b64625e97031c6d5792dfde67a2b42a03c711708f8b29f72e2dca6",
     "research/program-release-validation.json": "100f1b3a890e445d2c2e0ceaad61f6b2659e911488db8cd6b29d3cdb93900a26",
     "research/reference-calculators.json": "fbbd966f057c2ed97ecca0ad8d2036eab93ac721cb506c993417c7faddbd831e",
-    "research/runtime-model-archive/manifest.json": "8fa4a16654d2b87e01c38528bb6cf26495210e7e4f89fd21bd5416d3144fd88b",
+    "research/runtime-model-archive/manifest.json": "e2267b0705ef619b7f58debe8194390a4e07512a87a9931979e5c754047d2bdc",
     "research/static-deployment.json": "04db5a424b4fc82949a0b6e47004c0a66a557322d0bec465178ffcb6e6ada14a",
     "research/ui-validation/capacity-local-parity.json": "0d77e79ceebfcec2f502c062d0a65f13f93c0be6819d12144872fcc8ac68e72f",
     "research/ui-validation/capacity-public-parity.json": "667cf3abd34c3c6b19af24b45d5763f7c3429d79e9ba6fe12a4c139a6f99662c",
@@ -173,6 +174,7 @@
     "research/ui-validation/detailed-local-parity.json": "13424b403e787fce3c9f01bf652adc9c1e3b4b473cc0d3480ea9edc1e8d6c360",
     "research/ui-validation/detailed-public-parity.json": "aa99b6f68ace7fc8c87bf74350390d3a113019536ff26eff88bf7103f15c9294",
     "research/ui-validation/finite48-local-parity.json": "d0769d4be63c2e1737bc7d33a19ff6d3ccb00cf7bd60158c6b015706b1c06e03",
+    "research/ui-validation/finite48-steps-local-parity.json": "8d123cc0d58922759692805ac0cdabea7c01d2e22bac84bbbfc3ea54815a28ba",
     "research/ui-validation/parity.json": "9e93e052977677f40421aeb31ce7d13291c1e1c5a30b3f1128408f149fb7c922",
     "research/ui-validation/programs-local-parity.json": "4b863af7aebd19dc83069355808a8ac9a02888ffa63b75b3797e890dacf5e257",
     "research/ui-validation/programs-public-parity.json": "2594cee0921a834f5798cf91226125d68a7fcdbdd82c05fc32b31a5e6fdb0b45",
@@ -180,7 +182,7 @@
     "research/ui-validation/slot-targets-local-parity.json": "8f477cdcbf7c2bcf04a29d2147d2eba82e79323dfcdb89a14cfe04b2c8f73416",
     "research/ui-validation/slot-targets-public-parity.json": "2ab6c4befaa5f0a9d22a6e8cd8ca221db9e1bb642feb44b78ae0866bca73a468",
     "src/core/policy.json": "8917aad6d1077eff2b043ff68a3b8ff8b54257cf4105cf3bc9fdf8bbd03fa1cb",
-    "src/generated/model.json": "0548f9724d73cf60e5a4ca7bd9e43e60e270c30f721e1758c13228cf99b5e11f"
+    "src/generated/model.json": "26ce40cefe0ca11803adacefedfdece4037e1e626a2b8de7e49000c4de805bb8"
   },
   "modelId": "le-1.5.3-26087601-r14-finite48-three-profiles",
   "phase": "PUBLIC_PREVIEW",
@@ -239,7 +241,7 @@
     ],
     "recommendedAtLeast": 0.25
   },
-  "productionModelId": "le-1.5.3-iid-694926ac2d8f8f4c",
+  "productionModelId": "le-1.5.3-iid-c745a09df862efe0",
   "productionReady": false,
   "referenceExampleModels": [
     "INDEPENDENT_NORMALIZED_WEIGHTS_AND_UNIFORM_PERMUTATIONS",
@@ -249,7 +251,7 @@
   "remainingAcceptance": [
     "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "7a1e3141b1b1dda447a0dbd526b2336ca6339e8a538286c6abb9fce59b61ad14",
+  "researchRevision": "e343913fc32dc1d089b089db9de4d509705cfc930fc2a35158cdb491a37b9a3f",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 2,
   "steamBuildId": 26087601,
@@ -264,7 +266,7 @@
     "bothReferencePoolsAllClassesPerItemType": true,
     "contract": "docs/minimal-ui.md",
     "countsSplitByPrefixSuffix": true,
-    "currentUiEvidence": "research/ui-validation/finite48-local-parity.json",
+    "currentUiEvidence": "research/ui-validation/finite48-steps-local-parity.json",
     "defaultAnonymousPool": "FORGEABLE_EQUAL",
     "defaultEquipmentPart": "ANY_UNSPECIFIED",
     "experimentalAndTargetIndependent": true,

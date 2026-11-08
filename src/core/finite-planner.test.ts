@@ -24,7 +24,7 @@ describe('production finite48 three-profile policy', () => {
     for (const [index, row] of baseline.rows.entries()) {
       const ps: number[] = [];
       for (const [mode, profile] of (['NORMAL', 'ICE', 'BLOOD'] as const).entries()) {
-        const input = request(index), result = await solveCompactProfile(input, catalogForInputModel(input.inputModel), profile, { stopped: () => false });
+        const input = request(index), result = await solveCompactProfile(input, catalogForInputModel(input.inputModel), profile, { stopped: () => false, includeSteps: false });
         expect(result, row.caseId).not.toBeNull(); const p = row.expected[profile].probability;
         expect(result!.estimate!, `${row.caseId}/${profile}`).toBeCloseTo(p, 10);
         expect(result!.probability!.lower).toBeLessThanOrEqual(p); expect(result!.probability!.upper).toBeGreaterThanOrEqual(p);

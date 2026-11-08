@@ -60,6 +60,12 @@
       "sha256": "85cf8b2bf971939b77769d8c86d573c298c63e66391379ee9e43457a7c4fc386",
       "metric": "INTRINSIC_V2",
       "purpose": "Historical production-program release before finite48 three-profile adaptive policies; archived reports retain their original IDs."
+    },
+    "le-1.5.3-iid-694926ac2d8f8f4c": {
+      "file": "research/runtime-model-archive/le-1.5.3-iid-694926ac2d8f8f4c.json",
+      "sha256": "0548f9724d73cf60e5a4ca7bd9e43e60e270c30f721e1758c13228cf99b5e11f",
+      "metric": "FINITE_48_PROFILES_V3",
+      "purpose": "Historical three-profile release before direct operation/acceptance step cards and actual per-step FP occupation rewards."
     }
   }
 }

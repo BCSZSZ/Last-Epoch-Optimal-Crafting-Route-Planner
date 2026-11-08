@@ -1,0 +1,256 @@
+{
+  "status": "PASS_OPERATION_ACCEPTANCE_STEP_FP",
+  "modelId": "le-1.5.3-iid-c745a09df862efe0",
+  "observations": {
+    "status": "PASS_REAL_BROWSER_WORKER_EXPORT",
+    "base": "http://127.0.0.1:4174/Last-Epoch-Optimal-Crafting-Route-Planner/",
+    "tag": "local",
+    "observations": [
+      {
+        "caseId": "READY",
+        "cards": [
+          {
+            "profile": "NORMAL",
+            "probability": "79.003%",
+            "badge": "推荐"
+          },
+          {
+            "profile": "ICE",
+            "probability": "87.590%",
+            "badge": "推荐"
+          },
+          {
+            "profile": "BLOOD",
+            "probability": "79.003%",
+            "badge": "推荐"
+          }
+        ],
+        "elapsedMs": 2731,
+        "file": "local-READY.json",
+        "sha256": "50f717f8a0fad6c179a547599b0b509b7196d3e366082f33097462c5ee323ffe",
+        "desktop": {
+          "width": 1440,
+          "scroll": 1440
+        },
+        "mobile": {
+          "width": 390,
+          "scroll": 390
+        },
+        "modelId": "le-1.5.3-iid-c745a09df862efe0"
+      },
+      {
+        "caseId": "C001",
+        "cards": [
+          {
+            "profile": "NORMAL",
+            "probability": "33.039%",
+            "badge": "推荐"
+          },
+          {
+            "profile": "ICE",
+            "probability": "48.766%",
+            "badge": "推荐"
+          },
+          {
+            "profile": "BLOOD",
+            "probability": "33.039%",
+            "badge": "推荐"
+          }
+        ],
+        "elapsedMs": 6798,
+        "file": "local-C001.json",
+        "sha256": "9c5e1f93ee3b2eb8fd3ac5bc462979af2fee65c0639f3fa9fb9bace0b953a686",
+        "desktop": {
+          "width": 1440,
+          "scroll": 1440
+        },
+        "mobile": {
+          "width": 390,
+          "scroll": 390
+        },
+        "modelId": "le-1.5.3-iid-c745a09df862efe0"
+      },
+      {
+        "caseId": "C003",
+        "cards": [
+          {
+            "profile": "NORMAL",
+            "probability": "19.952%",
+            "badge": "不推荐"
+          },
+          {
+            "profile": "ICE",
+            "probability": "31.405%",
+            "badge": "推荐"
+          },
+          {
+            "profile": "BLOOD",
+            "probability": "20.758%",
+            "badge": "不推荐"
+          }
+        ],
+        "elapsedMs": 6852,
+        "file": "local-C003.json",
+        "sha256": "1928a12df9b631cf776771e2b87ffbef43264cdabb485af287056d0656f1b9a6",
+        "desktop": {
+          "width": 1440,
+          "scroll": 1440
+        },
+        "mobile": {
+          "width": 390,
+          "scroll": 390
+        },
+        "modelId": "le-1.5.3-iid-c745a09df862efe0"
+      },
+      {
+        "caseId": "C087",
+        "cards": [
+          {
+            "profile": "NORMAL",
+            "probability": "69.772%",
+            "badge": "推荐"
+          },
+          {
+            "profile": "ICE",
+            "probability": "82.948%",
+            "badge": "推荐"
+          },
+          {
+            "profile": "BLOOD",
+            "probability": "71.017%",
+            "badge": "推荐"
+          }
+        ],
+        "elapsedMs": 6317,
+        "file": "local-C087.json",
+        "sha256": "f0ab192c3b224eee8f7a277057d11115c50997a6d461b9721cb311774bc9e68c",
+        "desktop": {
+          "width": 1440,
+          "scroll": 1440
+        },
+        "mobile": {
+          "width": 390,
+          "scroll": 390
+        },
+        "modelId": "le-1.5.3-iid-c745a09df862efe0"
+      }
+    ],
+    "errors": [],
+    "cancellation": true
+  },
+  "replays": [
+    {
+      "status": "PASS_THREE_EXPORTED_PROFILES",
+      "modelId": "le-1.5.3-iid-c745a09df862efe0",
+      "checks": [
+        {
+          "fpType": "NORMAL",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.7900323174165336,
+          "actualMeanFp": 26.407397251392876,
+          "successActualMeanFp": 20.66870952922964
+        },
+        {
+          "fpType": "ICE",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.8758957816592063,
+          "actualMeanFp": 20.798186498975767,
+          "successActualMeanFp": 16.944006729321217
+        },
+        {
+          "fpType": "BLOOD",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.7900323174165336,
+          "actualMeanFp": 26.407397251392876,
+          "successActualMeanFp": 20.66870952922964
+        }
+      ]
+    },
+    {
+      "status": "PASS_THREE_EXPORTED_PROFILES",
+      "modelId": "le-1.5.3-iid-c745a09df862efe0",
+      "checks": [
+        {
+          "fpType": "NORMAL",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.33038929999072864,
+          "actualMeanFp": 42.66702248558851,
+          "successActualMeanFp": 31.858504150828296
+        },
+        {
+          "fpType": "ICE",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.48766177377730635,
+          "actualMeanFp": 38.230363426773515,
+          "successActualMeanFp": 27.966367883316764
+        },
+        {
+          "fpType": "BLOOD",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.33038929999072864,
+          "actualMeanFp": 42.66702248558851,
+          "successActualMeanFp": 31.858504150828296
+        }
+      ]
+    },
+    {
+      "status": "PASS_THREE_EXPORTED_PROFILES",
+      "modelId": "le-1.5.3-iid-c745a09df862efe0",
+      "checks": [
+        {
+          "fpType": "NORMAL",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.19951888631591239,
+          "actualMeanFp": 25.82915064134683,
+          "successActualMeanFp": 37.47329383588774
+        },
+        {
+          "fpType": "ICE",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.3140460943179393,
+          "actualMeanFp": 21.414377499861168,
+          "successActualMeanFp": 31.152291039378564
+        },
+        {
+          "fpType": "BLOOD",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.2075756909839199,
+          "actualMeanFp": 25.314427518930202,
+          "successActualMeanFp": 36.58208242999951
+        }
+      ]
+    },
+    {
+      "status": "PASS_THREE_EXPORTED_PROFILES",
+      "modelId": "le-1.5.3-iid-c745a09df862efe0",
+      "checks": [
+        {
+          "fpType": "NORMAL",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.6977218272142478,
+          "actualMeanFp": 35.555816454637586,
+          "successActualMeanFp": 30.166353739485434
+        },
+        {
+          "fpType": "ICE",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.8294847620772738,
+          "actualMeanFp": 28.22355516092413,
+          "successActualMeanFp": 24.159741585401875
+        },
+        {
+          "fpType": "BLOOD",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.7101727931871674,
+          "actualMeanFp": 34.32108866676758,
+          "successActualMeanFp": 28.752512460885402
+        }
+      ]
+    }
+  ],
+  "tests": {
+    "typescript": 190,
+    "probabilityBaselineCases": 297
+  },
+  "qualification": "Real browser/Worker, bare operations and acceptance criteria, default Hope omitted, per-phase actual FP rewards replayed in Node. Finite48 probability and recommendation baseline unchanged."
+}

@@ -12,6 +12,7 @@ import { OutcomeLimitError, RuleEngine } from './rules';
 import { targetReached } from './target';
 import type { PlanningOptions, PlanReport } from './planner';
 import type { FpType, PlanRequest, Route } from './types';
+import { finishStep } from './finish-step';
 
 /** Generic inputs retain fixed-route capabilities; every generated candidate is
  * evaluated at the actual48FP, without intrinsic15%/65FP screening. */
@@ -43,11 +44,13 @@ async function fixedProfile(request: PlanRequest, profile: FpType, options: Plan
     if (!(evaluated % 8)) await options.yieldControl?.();
   }
   if (options.signal?.aborted) throw new PlanningCancelledError();
+  const finish = best ? finishStep(input, best.route, engine.catalog) : null;
+  if (finish && best && Math.abs(finish.p - (best.probability.lower + best.probability.upper) / 2) > 1e-8) throw new Error('Havoc step differs from finite route');
   return { fpType: profile, label: FINITE_PROFILE_LABELS[profile], initialFp: 48, probability: best?.probability ?? null,
     estimate: best ? (best.probability.lower + best.probability.upper) / 2 : null, recommendation: finiteRecommendation(best?.probability ?? null),
     status: incomplete ? 'INCOMPLETE' : 'COMPLETE', strategyKind: 'FIXED_ROUTE', strategyId: best?.route.id ?? `pending-${profile}`,
-    firstAction: best?.route.description ?? '未在本次预算内得到完整路线', actualMeanFp: best?.route.macros.length === 0 ? 0 : null,
-    successActualMeanFp: best?.route.macros.length === 0 ? 0 : null, decisions: [], example: [], states: best?.states ?? 0,
+    firstAction: best?.route.description ?? '未在本次预算内得到完整路线', actualMeanFp: finish?.mean ?? (best?.route.macros.length === 0 ? 0 : null),
+    successActualMeanFp: finish?.successMean ?? (best?.route.macros.length === 0 ? 0 : null), ...(finish ? { stepPlan: finish.stepPlan } : {}), decisions: [], example: [], states: best?.states ?? 0,
     optimalityGapUpper: null, maximumResidual: null, scope: `当前合法固定候选内按48FP比较，已评价${evaluated}项；未证明任意条件策略最优`,
     note: incomplete ? '部分候选未完成；显示的是已找到路线的完成率，不将未算候选记作0。' : '此输入使用固定候选内最优，未采用普通等权双T7状态合并。',
     ...(best ? { fixedRoute: best.route } : {}) };

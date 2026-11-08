@@ -127,6 +127,7 @@ export interface SearchBudget {
 }
 
 export interface PlanRequest {
+  readonly initialFp?: number;
   readonly modelId: string;
   readonly inputModel?: InputModel;
   readonly item: Item;

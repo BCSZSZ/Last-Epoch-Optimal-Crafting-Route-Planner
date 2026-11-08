@@ -154,9 +154,14 @@ def build_indexes(root: Path = ROOT) -> dict[str, bytes]:
     model["deviceValidation"]["currentNodeBenchmark"] = None
     model["userInput"]["historicalProgramUiWorkerParity"] = model["userInput"].pop("uiWorkerParity")
     model["userInput"]["historicalLocalProgramUiWorkerParity"] = model["userInput"].pop("localUiWorkerParity")
-    model["userInput"]["currentUiEvidence"] = "research/ui-validation/finite48-steps-local-parity.json"
+    model["userInput"]["currentUiEvidence"] = "research/ui-validation/all-input-custom-fp-local.json"
     extra = ["research/fixtures/finite48-three-profiles-99.json", "docs/finite48-three-profiles-20261108.md", "research/ui-validation/finite48-local-parity.json", "research/ui-validation/finite48-steps-local-parity.json", "docs/step-instructions-20261108.md"]
     model["inputs"].update({path: hashlib.sha256((root / path).read_bytes()).hexdigest() for path in extra})
+    model["userInput"]["initialFp"] = {"optional": True, "default": 48, "minimum": 0, "maximum": 63, "savedDraftVersion": 3}
+    model["productionMetric"]["userSelectedInitialFp"] = True
+    model["productionMetric"]["fixedRouteFpRewards"] = "ALL_INPUT_MODELS_AND_EQUIPMENT_TYPES"
+    for path in ["docs/custom-fp-all-inputs-20261108.md", "research/ui-validation/all-input-custom-fp-local.json", "research/fixtures/manual-dagger7471-20261108.json"]:
+        model["inputs"][path] = hashlib.sha256((root / path).read_bytes()).hexdigest()
     model["researchRevision"] = hashlib.sha256(encode_json(model)).hexdigest()
     return {"research/evidence-matrix.json": encode_json(matrix), "research/model-snapshot.json": encode_json(model)}
 

@@ -6,6 +6,7 @@ import { affixName, macroText, predicateText } from './labels';
 import type { NameAliases } from './labels';
 
 export interface RouteStep {
+  readonly sourcePaths?: readonly string[];
   readonly title: string;
   readonly condition: string;
   readonly branches?: readonly { readonly label: string; readonly steps: readonly RouteStep[] }[];
@@ -21,7 +22,7 @@ function tierText(tiers: readonly number[]): string {
   return tiers.map(tier => `T${tier}`).join('或');
 }
 
-function minimumSealSteps(macro: Macro, expectedSide?: number): readonly RouteStep[] | null {
+function minimumSealSteps(macro: Macro, expectedSide?: number, path=''): readonly RouteStep[] | null {
   if (macro.kind !== 'conditional' || macro.when.kind !== 'exists' || macro.when.selector.side !== undefined ||
     macro.when.selector.ids !== undefined || macro.when.selector.excludedIds !== undefined || macro.when.selector.sealable !== undefined || macro.when.selector.eligibleAction !== undefined ||
     macro.when.selector.minTier !== 1 || macro.when.selector.maxTier !== 1 || macro.then.length !== 2 || macro.otherwise?.length !== 2) return null;
@@ -36,12 +37,12 @@ function minimumSealSteps(macro: Macro, expectedSide?: number): readonly RouteSt
     if (firstSelector && JSON.stringify(firstSelector) !== JSON.stringify(structure)) return null;
     firstSelector = structure;
   }
-  return [{ title: '浩劫直至最低阶落在无关词缀', condition: '有T1时用T1；补词暴击后没有T1时改用T2。' },
-    { title: '封印', condition: '封印该无关词缀。' }];
+  return [{ sourcePaths:[`${path}.then.0`,`${path}.otherwise.0`], title: '浩劫直至最低阶落在无关词缀', condition: '有T1时用T1；补词暴击后没有T1时改用T2。' },
+    { sourcePaths:[`${path}.then.1`,`${path}.otherwise.1`], title: '封印', condition: '封印该无关词缀。' }];
 }
 
 /** Present the two symmetric vacancy branches once; original controller data remains in the exported report. */
-function vacancySteps(macro: Extract<Macro, { kind: 'conditional' }>, catalog: Catalog, aliases: NameAliases): readonly RouteStep[] | null {
+function vacancySteps(macro: Extract<Macro, { kind: 'conditional' }>, catalog: Catalog, aliases: NameAliases, path=''): readonly RouteStep[] | null {
   const yes = macro.then, no = macro.otherwise ?? [], first = yes[0], other = no[0], last = yes.at(-1), otherLast = no.at(-1);
   if (macro.when.kind !== 'count' || macro.when.minimum !== 2 || macro.when.selector.side === undefined ||
     Object.entries(macro.when.selector).some(([key, value]) => key !== 'side' && value !== undefined) || yes.length !== no.length || yes.length < 3 ||
@@ -49,26 +50,27 @@ function vacancySteps(macro: Extract<Macro, { kind: 'conditional' }>, catalog: C
     last?.kind !== 'once' || last.action.kind !== 'add' || otherLast?.kind !== 'once' || otherLast.action.kind !== 'add' ||
     first.action.id !== otherLast.action.id || other.action.id !== last.action.id ||
     catalog.side(first.action.id) === macro.when.selector.side || catalog.side(other.action.id) !== macro.when.selector.side) return null;
-  const steps: RouteStep[] = [{ title: '添加词缀', condition: '先补入剥离空槽对应的目标词缀。' }];
+  const steps: RouteStep[] = [{ sourcePaths:[`${path}.then.0`,`${path}.otherwise.0`], title: '添加词缀', condition: '先补入剥离空槽对应的目标词缀。' }];
   for (let i = 1; i < yes.length - 1; i++) {
     const a = yes[i], b = no[i];
     if (a.kind === 'seal' && b.kind === 'seal' && a.selector.side === catalog.side(last.action.id) &&
       b.selector.side === catalog.side(otherLast.action.id) && sameSelector(a.selector, b.selector)) {
-      steps.push({ title: '封印', condition: `剩余${macroText({ ...a, selector: { ...a.selector, side: undefined } }, catalog, aliases).condition}` });
+      steps.push({ sourcePaths:[`${path}.then.${i}`,`${path}.otherwise.${i}`], title: '封印', condition: `剩余${macroText({ ...a, selector: { ...a.selector, side: undefined } }, catalog, aliases).condition}` });
     } else if (a.kind === 'repeat' && b.kind === 'repeat' && a.action.kind === 'havoc' && b.action.kind === 'havoc' &&
       a.until.kind === 'exists' && b.until.kind === 'exists' && a.until.selector.side === catalog.side(last.action.id) &&
       b.until.selector.side === catalog.side(otherLast.action.id) && sameSelector(a.until.selector, b.until.selector)) {
-      steps.push(macroText({ ...a, until: { kind: 'exists', selector: { ...a.until.selector, side: undefined } } }, catalog, aliases));
+      steps.push({...macroText({ ...a, until: { kind: 'exists', selector: { ...a.until.selector, side: undefined } } }, catalog, aliases),sourcePaths:[`${path}.then.${i}`,`${path}.otherwise.${i}`]});
     } else if (minimumSealSteps(a, catalog.side(last.action.id)) && minimumSealSteps(b, catalog.side(otherLast.action.id))) {
-      steps.push(...minimumSealSteps(a, catalog.side(last.action.id))!);
+      const left=minimumSealSteps(a,catalog.side(last.action.id),`${path}.then.${i}`)!,right=minimumSealSteps(b,catalog.side(otherLast.action.id),`${path}.otherwise.${i}`)!;
+      steps.push(...left.map((step,j)=>({...step,sourcePaths:[...step.sourcePaths!,...right[j].sourcePaths!]})));
     } else return null;
   }
-  steps.push({ title: '添加词缀', condition: '补入另一条目标词缀。' });
+  steps.push({ sourcePaths:[`${path}.then.${yes.length-1}`,`${path}.otherwise.${no.length-1}`], title: '添加词缀', condition: '补入另一条目标词缀。' });
   return steps;
 }
 
 /** Only identity facts guaranteed on continuing paths are used to remove redundant UI checks. */
-export function routeSteps(macros: readonly Macro[], request: PlanRequest, catalog: Catalog, aliases: NameAliases = {}): readonly RouteStep[] {
+export function routeSteps(macros: readonly Macro[], request: PlanRequest, catalog: Catalog, aliases: NameAliases = {}, trackPaths=false): readonly RouteStep[] {
   const ids = new Set(request.target.requirements.flatMap((row) => row.ids));
   const initial: Knowledge = new Map([...ids].map((id) => [id, request.item.affixes.some((row) => row.id === id && row.slot === 'ordinary')]));
   const engine = new RuleEngine(catalog);
@@ -104,32 +106,33 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
     }
     return null;
   };
-  const walk = (values: readonly Macro[], known: Knowledge, count: { value: number | null }, unchanged: { value: boolean }, layout: { value: SlotFacts | null }): RouteStep[] => {
+  const walk = (values: readonly Macro[], known: Knowledge, count: { value: number | null }, unchanged: { value: boolean }, layout: { value: SlotFacts | null }, prefix=''): RouteStep[] => {
     const steps: RouteStep[] = [];
     const unknown = () => { for (const id of ids) known.set(id, null); };
-    for (const macro of values) {
+    for (const [index,macro] of values.entries()) {
+      const path=prefix?`${prefix}.${index}`:String(index);
       if (macro.kind === 'repeat' && identityReached(macro.until, known) === true) continue;
       if (unchanged.value && macro.kind !== 'conditional' && macroStep(macro, request.item, request, engine) === 'SKIP') continue;
       if (macro.kind === 'conditional') {
         if (unchanged.value) {
-          steps.push(...walk(predicateReached(request.item, macro.when, request, engine) ? macro.then : macro.otherwise ?? [], known, count, unchanged, layout)); continue;
+          steps.push(...walk(predicateReached(request.item, macro.when, request, engine) ? macro.then : macro.otherwise ?? [], known, count, unchanged, layout,`${path}.${predicateReached(request.item, macro.when, request, engine)?'then':'otherwise'}`)); continue;
         }
         const predicate = macro.when, requirement = predicate.kind === 'identity' ? predicate.requirement : null;
         const id = requirement?.ids.length === 1 ? requirement.ids[0] : undefined;
         const fact = id === undefined ? undefined : known.get(id);
         if (requirement && requirement.slot === 'ordinary' && requirement.minTier === 1 && (requirement.maxTier ?? 8) === 8 &&
           requirement.minRollByte === undefined && (fact === true || fact === false)) {
-          steps.push(...walk(fact ? macro.then : macro.otherwise ?? [], known, count, unchanged, layout)); continue;
+          steps.push(...walk(fact ? macro.then : macro.otherwise ?? [], known, count, unchanged, layout,`${path}.${fact===true?'then':'otherwise'}`)); continue;
         }
         const left = new Map(known), right = new Map(known), leftCount = { value: count.value }, rightCount = { value: count.value };
         const leftUnchanged = { value: unchanged.value }, rightUnchanged = { value: unchanged.value };
         const leftLayout = { value: layout.value }, rightLayout = { value: layout.value };
-        const yes = walk(macro.then, left, leftCount, leftUnchanged, leftLayout), no = walk(macro.otherwise ?? [], right, rightCount, rightUnchanged, rightLayout);
+        const yes = walk(macro.then, left, leftCount, leftUnchanged, leftLayout,`${path}.then`), no = walk(macro.otherwise ?? [], right, rightCount, rightUnchanged, rightLayout,`${path}.otherwise`);
         layout.value = JSON.stringify(leftLayout.value) === JSON.stringify(rightLayout.value) ? leftLayout.value : null;
         unchanged.value = leftUnchanged.value && rightUnchanged.value;
         for (const entry of ids) known.set(entry, left.get(entry) === right.get(entry) ? left.get(entry)! : null);
         count.value = leftCount.value === rightCount.value ? leftCount.value : null;
-        const merged = minimumSealSteps(macro) ?? vacancySteps(macro, catalog, aliases);
+        const merged = minimumSealSteps(macro,undefined,path) ?? vacancySteps(macro, catalog, aliases,path);
         if (merged) steps.push(...merged);
         else steps.push({ title: requirement && id !== undefined ? macro.then.length === 0 ? `补齐${affixName(catalog, id, aliases)}` : '补齐剩余目标词缀' : '按词缀情况分支', condition: '',
           branches: [{ label: `${predicateText(macro.when, catalog, aliases)}时`, steps: yes }, { label: '否则', steps: no }] });
@@ -139,7 +142,7 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
       if (macro.kind === 'repeat' && macro.action.kind === 'havoc' && macro.until.kind === 'exists' && layout.value &&
         candidates(macro.until.selector, layout.value).length === 0) {
         // Havoc cannot create an identity. This local condition can never exit, so only the global goal/FP stop is reachable.
-        steps.push({ title: '浩劫直至目标达成', condition: '' });
+        steps.push({ sourcePaths:[path],title: '浩劫直至目标达成', condition: '' });
         return steps;
       }
       unchanged.value = false;
@@ -154,8 +157,8 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
       }
       if (macro.kind === 'repeat' && macro.action.kind === 'havoc' && macro.until.kind === 'target' &&
         request.target.requirements.length === 2 && request.target.requirements.every((row) => row.ids.length === 1 && row.minTier === 7 && row.maxTier === 7)) {
-        steps.push({ ...text, title: '浩劫直至两项目标均为T7' });
-      } else steps.push(text);
+        steps.push({ ...text, sourcePaths:[path],title: '浩劫直至两项目标均为T7' });
+      } else steps.push({...text,sourcePaths:[path]});
       if (layout.value) {
         const facts = layout.value;
         if (macro.kind === 'once' && macro.action.kind === 'add') {
@@ -192,8 +195,11 @@ export function routeSteps(macros: readonly Macro[], request: PlanRequest, catal
     }
     return steps;
   };
-  return walk(macros, initial, { value: request.item.affixes.filter((row) => row.slot === 'ordinary').length }, { value: true },
+  const result=walk(macros, initial, { value: request.item.affixes.filter((row) => row.slot === 'ordinary').length }, { value: true },
     { value: { ids: request.item.affixes.filter(row => row.slot === 'ordinary').map(row => row.id),
       exactTiers: Object.fromEntries(request.item.affixes.filter(row=>row.slot==='ordinary').map(row=>[row.id,row.tier])),
       tiers: [...new Set(request.item.affixes.filter(row => row.slot === 'ordinary').map(row => row.tier))].sort((a, b) => a - b) } });
+  const strip=(rows:readonly RouteStep[]):readonly RouteStep[]=>rows.map(({sourcePaths:_paths,...row})=>({...row,...(row.branches?{branches:row.branches.map(b=>({...b,steps:strip(b.steps)}))}:{})}));
+  return trackPaths?result:strip(result);
+
 }

@@ -1,0 +1,600 @@
+{
+  "status": "PASS_ALL_INPUT_FP_AND_CUSTOM_BUDGET",
+  "modelId": "le-1.5.3-iid-b793528294bd547f",
+  "observations": {
+    "status": "PASS_ALL_INPUT_FP_AND_CUSTOM_BUDGET",
+    "base": "http://127.0.0.1:4174/Last-Epoch-Optimal-Crafting-Route-Planner/",
+    "tag": "local",
+    "observations": [
+      {
+        "id": "dagger-default",
+        "fp": 48,
+        "file": "local-dagger-default.json",
+        "sha256": "a2c4ad8f08fd514d2522453124a93ffc7521bfccf27fa412887bc75ece39c1ec",
+        "modelId": "le-1.5.3-iid-b793528294bd547f",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.10876070158722859,
+            "mean": 16.74594573303949,
+            "kind": "FIXED_ROUTE"
+          },
+          {
+            "type": "ICE",
+            "p": 0.1762451701942647,
+            "mean": 34.15324446695137,
+            "kind": "FIXED_ROUTE"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.11108319639490175,
+            "mean": 16.34172587794439,
+            "kind": "FIXED_ROUTE"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 8.04",
+          "期望消耗 FP 5.10",
+          "期望消耗 FP 10.32",
+          "期望消耗 FP 4.24",
+          "期望消耗 FP 4.69",
+          "期望消耗 FP 13.67",
+          "期望消耗 FP 20.80",
+          "期望消耗 FP 5.24",
+          "期望消耗 FP 3.34",
+          "期望消耗 FP 11.45",
+          "期望消耗 FP 2.86",
+          "期望消耗 FP 3.16",
+          "期望消耗 FP 11.73",
+          "期望消耗 FP 8.04",
+          "期望消耗 FP 3.57",
+          "期望消耗 FP 10.65",
+          "期望消耗 FP 4.26",
+          "期望消耗 FP 3.31",
+          "期望消耗 FP 14.78"
+        ],
+        "wallMs": 13247
+      },
+      {
+        "id": "dagger-12",
+        "fp": 12,
+        "file": "local-dagger-12.json",
+        "sha256": "d410bf5318670957aabd3045077d32a02a33fd310861b092689b6469a3a34c1e",
+        "modelId": "le-1.5.3-iid-b793528294bd547f",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.004675745220859392,
+            "mean": 7.582286799032512,
+            "kind": "FIXED_ROUTE"
+          },
+          {
+            "type": "ICE",
+            "p": 0.02320194548592293,
+            "mean": 6.131781233899933,
+            "kind": "FIXED_ROUTE"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.006613804748866607,
+            "mean": 7.5638439634065815,
+            "kind": "FIXED_ROUTE"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 6.12",
+          "期望消耗 FP 3.54",
+          "期望消耗 FP 4.48",
+          "期望消耗 FP 3.01",
+          "期望消耗 FP 2.17",
+          "期望消耗 FP 3.43",
+          "期望消耗 FP 4.29",
+          "期望消耗 FP 2.77",
+          "期望消耗 FP 4.04",
+          "期望消耗 FP 2.38",
+          "期望消耗 FP 1.94",
+          "期望消耗 FP 4.21",
+          "期望消耗 FP 6.12",
+          "期望消耗 FP 2.48",
+          "期望消耗 FP 4.86",
+          "期望消耗 FP 3.06",
+          "期望消耗 FP 1.57",
+          "期望消耗 FP 3.72"
+        ],
+        "wallMs": 12332
+      },
+      {
+        "id": "simple-default",
+        "fp": 48,
+        "file": "local-simple-default.json",
+        "sha256": "843d32e79b632239f8fc6d4dc76faae6c373881a47bbdc5337f5849eae2e323b",
+        "modelId": "le-1.5.3-iid-b793528294bd547f",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.3303892999907479,
+            "mean": 42.66702248558927,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "ICE",
+            "p": 0.48766177377737835,
+            "mean": 38.230363426780016,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.33038929999074795,
+            "mean": 42.66702248558929,
+            "kind": "STATE_POLICY"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 33.65",
+          "期望消耗 FP 16.88",
+          "期望消耗 FP 28.62",
+          "期望消耗 FP 14.47",
+          "期望消耗 FP 33.65",
+          "期望消耗 FP 16.88"
+        ],
+        "wallMs": 7744
+      },
+      {
+        "id": "simple-12",
+        "fp": 12,
+        "file": "local-simple-12.json",
+        "sha256": "44e7973271397bddd4141772b8648bca4ac1c8a8397f22c2e833680b536778f6",
+        "modelId": "le-1.5.3-iid-b793528294bd547f",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.059261231346606005,
+            "mean": 11.830164833622263,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "ICE",
+            "p": 0.11551640509627371,
+            "mean": 11.490931366722139,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.05926123134660607,
+            "mean": 11.830164833622264,
+            "kind": "STATE_POLICY"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 10.85",
+          "期望消耗 FP 5.90",
+          "期望消耗 FP 10.03",
+          "期望消耗 FP 5.80",
+          "期望消耗 FP 10.85",
+          "期望消耗 FP 5.90"
+        ],
+        "wallMs": 300
+      },
+      {
+        "id": "simple-63",
+        "fp": 63,
+        "file": "local-simple-63.json",
+        "sha256": "57dfbe14c00753f23984b9205ca8e92afcab3350b6ac3361459fc67a7eb93c50",
+        "modelId": "le-1.5.3-iid-b793528294bd547f",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.4427514212372293,
+            "mean": 52.628964115645495,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "ICE",
+            "p": 0.6120147100217366,
+            "mean": 45.58904133217539,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.4427514212372293,
+            "mean": 52.6289641156455,
+            "kind": "STATE_POLICY"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 39.89",
+          "期望消耗 FP 20.11",
+          "期望消耗 FP 32.94",
+          "期望消耗 FP 16.67",
+          "期望消耗 FP 39.89",
+          "期望消耗 FP 20.11"
+        ],
+        "wallMs": 8728
+      },
+      {
+        "id": "simple-1",
+        "fp": 1,
+        "file": "local-simple-1.json",
+        "sha256": "5c4fba9f84607d4da05d4814395d75c525c6f9ef89e81c52eee579298f72646a",
+        "modelId": "le-1.5.3-iid-b793528294bd547f",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.008258928571428492,
+            "mean": 0.9979352678571376,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "ICE",
+            "p": 0.027374963006805773,
+            "mean": 0.9869968925716759,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.008258928571428566,
+            "mean": 0.9979352678571423,
+            "kind": "STATE_POLICY"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 0.97",
+          "期望消耗 FP 0.94",
+          "期望消耗 FP 0.92",
+          "期望消耗 FP 0.85",
+          "期望消耗 FP 0.97",
+          "期望消耗 FP 0.94"
+        ],
+        "wallMs": 228
+      },
+      {
+        "id": "simple-0",
+        "fp": 0,
+        "file": "local-simple-0.json",
+        "sha256": "a1ba8608bb576d0966a78145bc59b1ce7842e56e2de303be50b0665ab58dce9c",
+        "modelId": "le-1.5.3-iid-b793528294bd547f",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0,
+            "mean": 0,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "ICE",
+            "p": 0,
+            "mean": 0,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0,
+            "mean": 0,
+            "kind": "STATE_POLICY"
+          }
+        ],
+        "stepTexts": [],
+        "wallMs": 198
+      },
+      {
+        "id": "ring-17",
+        "fp": 17,
+        "file": "local-ring-17.json",
+        "sha256": "e60b5bab3672e7c1c9cd5c4d5864ed94702a6661cd8a13222fadbac6162477dd",
+        "modelId": "le-1.5.3-iid-b793528294bd547f",
+        "profiles": [
+          {
+            "type": "NORMAL",
+            "p": 0.12541032635593646,
+            "mean": 16.66301208975362,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "ICE",
+            "p": 0.28541552253242075,
+            "mean": 15.576049028879208,
+            "kind": "STATE_POLICY"
+          },
+          {
+            "type": "BLOOD",
+            "p": 0.15876356463215022,
+            "mean": 16.50997723665223,
+            "kind": "STATE_POLICY"
+          }
+        ],
+        "stepTexts": [
+          "期望消耗 FP 5.09",
+          "期望消耗 FP 5.41",
+          "期望消耗 FP 3.90",
+          "期望消耗 FP 3.17",
+          "期望消耗 FP 5.36",
+          "期望消耗 FP 1.95",
+          "期望消耗 FP 6.76",
+          "期望消耗 FP 0.89",
+          "期望消耗 FP 3.93",
+          "期望消耗 FP 6.78",
+          "期望消耗 FP 7.04",
+          "期望消耗 FP 4.77",
+          "期望消耗 FP 6.96",
+          "期望消耗 FP 6.36",
+          "期望消耗 FP 7.71",
+          "期望消耗 FP 6.98",
+          "期望消耗 FP 7.34",
+          "期望消耗 FP 6.53",
+          "期望消耗 FP 1.01",
+          "期望消耗 FP 1.01",
+          "期望消耗 FP 3.57",
+          "期望消耗 FP 3.78",
+          "期望消耗 FP 2.70",
+          "期望消耗 FP 2.62",
+          "期望消耗 FP 6.27",
+          "期望消耗 FP 4.78",
+          "期望消耗 FP 2.72",
+          "期望消耗 FP 0.95",
+          "期望消耗 FP 5.50",
+          "期望消耗 FP 4.35",
+          "期望消耗 FP 1.16",
+          "期望消耗 FP 2.06",
+          "期望消耗 FP 4.97",
+          "期望消耗 FP 4.67",
+          "期望消耗 FP 5.99",
+          "期望消耗 FP 4.94",
+          "期望消耗 FP 5.17",
+          "期望消耗 FP 4.42",
+          "期望消耗 FP 2.07",
+          "期望消耗 FP 3.57",
+          "期望消耗 FP 5.28",
+          "期望消耗 FP 4.04",
+          "期望消耗 FP 2.30",
+          "期望消耗 FP 6.00",
+          "期望消耗 FP 1.49",
+          "期望消耗 FP 6.77",
+          "期望消耗 FP 1.22",
+          "期望消耗 FP 4.10",
+          "期望消耗 FP 7.14",
+          "期望消耗 FP 6.47",
+          "期望消耗 FP 6.95",
+          "期望消耗 FP 6.77",
+          "期望消耗 FP 7.78",
+          "期望消耗 FP 7.62",
+          "期望消耗 FP 7.33",
+          "期望消耗 FP 6.86",
+          "期望消耗 FP 1.62"
+        ],
+        "wallMs": 3640
+      }
+    ],
+    "mobile": {
+      "client": 390,
+      "scroll": 390
+    },
+    "errors": [],
+    "invalidInputPreservesDraft": true,
+    "blankRestoresDefault": true
+  },
+  "replays": [
+    {
+      "status": "PASS_THREE_EXPORTED_PROFILES",
+      "modelId": "le-1.5.3-iid-b793528294bd547f",
+      "checks": [
+        {
+          "fpType": "NORMAL",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.10876070158722859,
+          "actualMeanFp": 16.74594573303949,
+          "successActualMeanFp": 37.206691592713895
+        },
+        {
+          "fpType": "ICE",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.1762451701942647,
+          "actualMeanFp": 34.15324446695137,
+          "successActualMeanFp": 34.30224475265662
+        },
+        {
+          "fpType": "BLOOD",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.11108319639490175,
+          "actualMeanFp": 16.34172587794439,
+          "successActualMeanFp": 36.200109741110204
+        }
+      ]
+    },
+    {
+      "status": "PASS_THREE_EXPORTED_PROFILES",
+      "modelId": "le-1.5.3-iid-b793528294bd547f",
+      "checks": [
+        {
+          "fpType": "NORMAL",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.004675745220859392,
+          "actualMeanFp": 7.582286799032512,
+          "successActualMeanFp": 10.545231609046006
+        },
+        {
+          "fpType": "ICE",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.02320194548592293,
+          "actualMeanFp": 6.131781233899933,
+          "successActualMeanFp": 8.922266362041357
+        },
+        {
+          "fpType": "BLOOD",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.006613804748866607,
+          "actualMeanFp": 7.5638439634065815,
+          "successActualMeanFp": 10.403573245753611
+        }
+      ]
+    },
+    {
+      "status": "PASS_THREE_EXPORTED_PROFILES",
+      "modelId": "le-1.5.3-iid-b793528294bd547f",
+      "checks": [
+        {
+          "fpType": "NORMAL",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.33038929999072864,
+          "actualMeanFp": 42.66702248558851,
+          "successActualMeanFp": 31.858504150828296
+        },
+        {
+          "fpType": "ICE",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.48766177377730635,
+          "actualMeanFp": 38.230363426773515,
+          "successActualMeanFp": 27.966367883316764
+        },
+        {
+          "fpType": "BLOOD",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.33038929999072864,
+          "actualMeanFp": 42.66702248558851,
+          "successActualMeanFp": 31.858504150828296
+        }
+      ]
+    },
+    {
+      "status": "PASS_THREE_EXPORTED_PROFILES",
+      "modelId": "le-1.5.3-iid-b793528294bd547f",
+      "checks": [
+        {
+          "fpType": "NORMAL",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.05926123134660165,
+          "actualMeanFp": 11.830164833621922,
+          "successActualMeanFp": 9.13412694068199
+        },
+        {
+          "fpType": "ICE",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.11551640509625569,
+          "actualMeanFp": 11.490931366720233,
+          "successActualMeanFp": 7.593105300874451
+        },
+        {
+          "fpType": "BLOOD",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.05926123134660165,
+          "actualMeanFp": 11.830164833621922,
+          "successActualMeanFp": 9.13412694068199
+        }
+      ]
+    },
+    {
+      "status": "PASS_THREE_EXPORTED_PROFILES",
+      "modelId": "le-1.5.3-iid-b793528294bd547f",
+      "checks": [
+        {
+          "fpType": "NORMAL",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.44275142123720385,
+          "actualMeanFp": 52.628964115644564,
+          "successActualMeanFp": 39.57593993628724
+        },
+        {
+          "fpType": "ICE",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.6120147100216451,
+          "actualMeanFp": 45.58904133216915,
+          "successActualMeanFp": 34.55140492094796
+        },
+        {
+          "fpType": "BLOOD",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.44275142123720385,
+          "actualMeanFp": 52.628964115644564,
+          "successActualMeanFp": 39.57593993628724
+        }
+      ]
+    },
+    {
+      "status": "PASS_THREE_EXPORTED_PROFILES",
+      "modelId": "le-1.5.3-iid-b793528294bd547f",
+      "checks": [
+        {
+          "fpType": "NORMAL",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.00825892857142722,
+          "actualMeanFp": 0.9979352678570564,
+          "successActualMeanFp": 0.7499999999646025
+        },
+        {
+          "fpType": "ICE",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.027374963006800916,
+          "actualMeanFp": 0.9869968925712282,
+          "successActualMeanFp": 0.5249999999767974
+        },
+        {
+          "fpType": "BLOOD",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.00825892857142722,
+          "actualMeanFp": 0.9979352678570564,
+          "successActualMeanFp": 0.7499999999646025
+        }
+      ]
+    },
+    {
+      "status": "PASS_THREE_EXPORTED_PROFILES",
+      "modelId": "le-1.5.3-iid-b793528294bd547f",
+      "checks": [
+        {
+          "fpType": "NORMAL",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0,
+          "actualMeanFp": 0,
+          "successActualMeanFp": null
+        },
+        {
+          "fpType": "ICE",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0,
+          "actualMeanFp": 0,
+          "successActualMeanFp": null
+        },
+        {
+          "fpType": "BLOOD",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0,
+          "actualMeanFp": 0,
+          "successActualMeanFp": null
+        }
+      ]
+    },
+    {
+      "status": "PASS_THREE_EXPORTED_PROFILES",
+      "modelId": "le-1.5.3-iid-b793528294bd547f",
+      "checks": [
+        {
+          "fpType": "NORMAL",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.12541032635593571,
+          "actualMeanFp": 16.663012089753536,
+          "successActualMeanFp": 14.369877234575327
+        },
+        {
+          "fpType": "ICE",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.2854155225323792,
+          "actualMeanFp": 15.57604902887866,
+          "successActualMeanFp": 12.012303840466325
+        },
+        {
+          "fpType": "BLOOD",
+          "status": "PASS_EXPORTED_POLICY_REPLAY",
+          "probability": 0.15876356463213653,
+          "actualMeanFp": 16.50997723665182,
+          "successActualMeanFp": 14.012628911692325
+        }
+      ]
+    }
+  ],
+  "tests": {
+    "typescript": 198,
+    "equipmentTypes": 23,
+    "profilesPerType": 3,
+    "originalProbabilityBaseline": 297
+  },
+  "qualification": "Production browser/Worker, blank and0/1/12/17/48/63FP, both input modes, weighted multi-step route, save/restore, invalid input,24 exported profiles replayed. Not client crafting or low-end hardware certification."
+}

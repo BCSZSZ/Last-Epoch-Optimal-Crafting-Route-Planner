@@ -17,7 +17,7 @@ export interface FinitePlanStep {
 export interface FiniteStepPlan {
   readonly steps: readonly FinitePlanStep[];
   readonly main: readonly number[];
-  readonly costMeaning: 'ACTUAL48_PHASE_COST_PER_ENTRY';
+  readonly costMeaning: 'ACTUAL48_PHASE_COST_PER_ENTRY' | 'ACTUAL_FP_PHASE_COST_PER_ENTRY';
   readonly totalExpectedFp: number;
 }
 const names = ['前缀1', '前缀2', '后缀1', '后缀2'];
@@ -73,13 +73,13 @@ function layoutCriterion(state: CompactState, exits: ReadonlySet<string>): strin
 /** Forward occupation measure of the submitted optimal policy. Each phase's
  * contribution includes every branch and re-entry. Same-FP free loops are a
  * convergent Neumann sum; no chosen success example supplies these costs. */
-export function buildFiniteSteps(graph: CompactGraph, solution: CompactSolution, root: number): FiniteStepPlan {
-  if (root < 2) return { steps: [], main: [], costMeaning: 'ACTUAL48_PHASE_COST_PER_ENTRY', totalExpectedFp: 0 };
+export function buildFiniteSteps(graph: CompactGraph, solution: CompactSolution, root: number, maximumFp = 48): FiniteStepPlan {
+  if (root < 2 || maximumFp === 0) return { steps: [], main: [], costMeaning: 'ACTUAL_FP_PHASE_COST_PER_ENTRY', totalExpectedFp: 0 };
   interface Phase { state: CompactState; action: CompactAction; entries: number; cost: number; exits: Map<number, Set<string>>; next: Map<number, number>; successNext: Map<number, number>; layouts: Map<string, Set<boolean>> }
   const phases: Phase[] = [], ids = new Map<string, number>(), n = graph.states.length;
-  const phaseIndex = Array.from({ length: 49 }, () => new Int16Array(n).fill(-2));
-  const sameFp = solution.costs.map(() => new Float64Array(49));
-  for (let k = 0; k < solution.costs.length; k++) for (let fp = 1; fp <= 48; fp++) sameFp[k][fp] = solution.costs[k][fp].find(b => b.fp === fp)?.p ?? 0;
+  const phaseIndex = Array.from({ length: maximumFp + 1 }, () => new Int16Array(n).fill(-2));
+  const sameFp = solution.costs.map(() => new Float64Array(maximumFp + 1));
+  for (let k = 0; k < solution.costs.length; k++) for (let fp = 1; fp <= maximumFp; fp++) sameFp[k][fp] = solution.costs[k][fp].find(b => b.fp === fp)?.p ?? 0;
   const phaseAt = (s: number, fp: number): number => {
     if (s < 2 || !fp) return -1;
     if (phaseIndex[fp][s] !== -2) return phaseIndex[fp][s];
@@ -88,10 +88,10 @@ export function buildFiniteSteps(graph: CompactGraph, solution: CompactSolution,
     if (id === undefined) { id = phases.length; ids.set(k, id); phases.push({ state, action, entries: 0, cost: 0, exits: new Map(), next: new Map(), successNext: new Map(), layouts: new Map() }); }
     phaseIndex[fp][s] = id; return id;
   };
-  const first = phaseAt(root, 48); if (first < 0) return { steps: [], main: [], costMeaning: 'ACTUAL48_PHASE_COST_PER_ENTRY', totalExpectedFp: 0 };
+  const first = phaseAt(root, maximumFp); if (first < 0) return { steps: [], main: [], costMeaning: 'ACTUAL_FP_PHASE_COST_PER_ENTRY', totalExpectedFp: 0 };
   phases[first].entries = 1;
-  const incoming = Array.from({ length: 49 }, () => new Float64Array(n)); incoming[48][root] = 1;
-  for (let fp = 48; fp > 0; fp--) {
+  const incoming = Array.from({ length: maximumFp + 1 }, () => new Float64Array(n)); incoming[maximumFp][root] = 1;
+  for (let fp = maximumFp; fp > 0; fp--) {
     let wave = incoming[fp]; const visits = new Float64Array(n);
     for (let iteration = 0; iteration < 128; iteration++) {
       const next = new Float64Array(n); let mass = 0;
@@ -151,10 +151,10 @@ export function buildFiniteSteps(graph: CompactGraph, solution: CompactSolution,
     current = [...phases[current].successNext.entries()].filter(([to, mass]) => !seen.has(to) && mass > 1e-15).sort((a, b) => b[1] - a[1])[0]?.[0];
   }
   const total = phases.reduce((sum, phase) => sum + phase.cost, 0);
-  if (Math.abs(total - solution.actualCosts[48][root]) > 1e-7) throw new Error('Step costs do not sum to whole-policy FP');
+  if (Math.abs(total - solution.actualCosts[maximumFp][root]) > 1e-7) throw new Error('Step costs do not sum to whole-policy FP');
   const order = [...main.map(id => id - 1), ...phases.map((_, id) => id).filter(id => !seen.has(id))];
   const remap = new Map(order.map((id, index) => [id, index + 1]));
-  return { costMeaning: 'ACTUAL48_PHASE_COST_PER_ENTRY', main: main.map(id => remap.get(id - 1)!), totalExpectedFp: total, steps: order.map(id => {
+  return { costMeaning: 'ACTUAL_FP_PHASE_COST_PER_ENTRY', main: main.map(id => remap.get(id - 1)!), totalExpectedFp: total, steps: order.map(id => {
     const phase = phases[id]; return {
       key: key(phase.state, phase.action), id: remap.get(id)!, operation: operation(phase.state, phase.action), criterion: criterion(phase), expectedFp: phase.entries > 0 ? phase.cost / phase.entries : 0,
       expectedEntries: phase.entries, totalFpContribution: phase.cost, next: [...phase.next.entries()].sort((a, b) => b[1] - a[1]).map(([to]) => remap.get(to)!),

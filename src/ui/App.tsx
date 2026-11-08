@@ -183,6 +183,7 @@ function ScenarioResults({ scenario, report }: ScenarioResult) {
 export function App() {
   const [draft, setDraft] = useState<CraftingDraft>(initialDraft), [compiled, setCompiled] = useState<CompiledDraft | null>(null);
   const [results, setResults] = useState<readonly ScenarioResult[]>([]), [busy, setBusy] = useState(false), [message, setMessage] = useState('');
+  const [fpText,setFpText]=useState(()=>draft.initialFp===undefined?'':String(draft.initialFp)),[fpError,setFpError]=useState('');
   const [progress, setProgress] = useState<PlanProgress | null>(null);
   const planner = useRef<BrowserPlanner | null>(null), controller = useRef<AbortController | null>(null), generation = useRef(0);
   if (!planner.current) planner.current = new BrowserPlanner();
@@ -197,6 +198,7 @@ export function App() {
     edit({ ...draft, part, slots: clean(draft.slots), targetSlots: clean(draft.targetSlots) });
   };
   const run = async () => {
+    if(fpError){setMessage(fpError);return;}
     controller.current?.abort(); const job = ++generation.current, abort = new AbortController(); controller.current = abort;
     const value = compileDraft(draft); setCompiled(value); setResults([]); setMessage(''); setProgress(null);
     if (value.issues.length) { setMessage(value.issues.map((issue) => issue.message).join(' ')); return; }
@@ -221,7 +223,12 @@ export function App() {
             <button type="button" aria-pressed={draft.part === null} className={draft.part === null ? 'selected' : ''} onClick={() => changePart(null)}>任意</button>
             {parts.map(part => <button type="button" key={part} aria-pressed={draft.part === part} className={draft.part === part ? 'selected' : ''}
               onClick={() => changePart(part)}>{typeName(part, String(part))}</button>)}</div></fieldset>
-          <p className="helper fp-row">统一从48FP计算：普通、冰、血三种条件，分别选路。</p>
+          <label className="starting-fp">起始FP<input aria-label="起始FP" type="number" min={0} max={catalog.model.fpMaximum} step={1} placeholder="48" value={fpText} aria-invalid={Boolean(fpError)} onChange={event=>{
+            const text=event.currentTarget.value,n=event.currentTarget.valueAsNumber;setFpText(text);
+            if(text===''||Number.isInteger(n)&&n>=0&&n<=catalog.model.fpMaximum){setFpError('');edit({...draft,initialFp:text===''?undefined:n});}
+            else{edit({...draft});setFpError(`FP需为0–${catalog.model.fpMaximum}的整数`);}
+          }}/><span>{fpError||'留空按48计算'}</span></label>
+          <p className="helper fp-row">普通、冰、血三种条件，分别选路。</p>
           <SlotEditor slots={draft.slots} part={draft.part} markTargets={draft.targetMode === 'COUNTS'}
             onChange={(slots, side) => edit(withDraftSlots(draft, slots, side))} />
         </section>
@@ -238,7 +245,7 @@ export function App() {
       {results.length > 0 && compiled && <section className="results" aria-label="规划结果" aria-live="polite">
         <div className="results-heading"><h2>规划结果</h2><span className="badge">{compiled.inputModel === 'FORGEABLE_ANY_EQUAL' ? '通用等权参考' : compiled.inputModel === 'FORGEABLE_EQUAL' ? '等权参考' : '实际词条权重 · 通用池'}</span></div>
         {results.map((result) => <ScenarioResults key={result.scenario.key} {...result} />)}
-        <p className="result-conventions">三种条件分别从48FP出发，分别选路及判断。低于25%显示不推荐，结果仍保留。封印用绝望、混沌用混沌；其他可用希望的操作采用希望。未达标且FP耗尽才停止，仍合法的失手分支可以继续。</p>
+        <p className="result-conventions">三种条件分别从所设起始FP出发，分别选路及判断。低于25%显示不推荐，结果仍保留。封印用绝望、混沌用混沌；其他可用希望的操作采用希望。未达标且FP耗尽才停止，仍合法的失手分支可以继续。</p>
         <details className="assumptions"><summary>计算假设</summary>{compiled.assumptions.map((assumption) => <p key={assumption}>{assumption}</p>)}<p>独立随机参考模型；完整条件策略与固定候选结果分别说明覆盖范围，未算完不记为0%。</p><p className="model-id">{MODEL_ID}</p></details>
       </section>}
     </main>

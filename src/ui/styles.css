@@ -724,3 +724,7 @@ footer a {
 .finite-step-branches .finite-step { margin-top:10px; }
 .finite-whole-fp { font-size:12px; color:var(--muted); margin:14px 0; }
 .finite-whole-fp strong { color:var(--mint); margin-left:5px; }
+
+.starting-fp { display:flex; align-items:center; gap:12px; flex-wrap:wrap; font-size:13px; margin:16px 0 4px; }
+.starting-fp input { width:88px; border:1px solid var(--line); border-radius:6px; background:#101817; color:inherit; padding:8px 10px; }
+.starting-fp span { color:var(--muted); font-size:12px; }

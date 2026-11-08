@@ -5,6 +5,7 @@ import type { FiniteDecision, FiniteProfileResult, FiniteProfilesReport } from '
 import { catalogForInputModel } from '../core/input-model';
 import { routeSteps } from './route-view';
 import type { RouteStep } from './route-view';
+import type { FixedFpReport } from '../core/fixed-fp';
 import { affixName } from './labels';
 
 export function plainAction(text: string): string { return text.replace(/[＋+]\s*希望/g, '').replace(/（绝望）/g, ''); }
@@ -13,13 +14,15 @@ export function instruction(title: string, condition: string): { operation: stri
   if (match) return { operation: match[1], criterion: condition || match[2] };
   return { operation: text, criterion: plainAction(condition) || '完成该操作后，按当前词缀进入下一步' };
 }
-function FixedInstruction({ step, number }: { step: RouteStep; number: string }) {
+function FixedInstruction({ step, number, stats }: { step: RouteStep; number: string; stats?:FixedFpReport }) {
   const description = instruction(step.title, step.condition);
+  const paths=[...new Set(step.sourcePaths??[])], entries=paths.reduce((sum,p)=>sum+(stats?.macros[p]?.expectedEntries??0),0), cost=paths.reduce((sum,p)=>sum+(stats?.macros[p]?.totalFpContribution??0),0);
+  const fp=stats?(entries>0?cost/entries:0):null;
   return <div className="finite-step"><span className="finite-step-number">Step {number}</span><h4>{description.operation}</h4>
     <p className="finite-step-criterion">{description.criterion}</p>
     {step.branches?.map((branch, index) => <details key={index}><summary>{plainAction(branch.label)}</summary>
-      {branch.steps.map((child, i) => <FixedInstruction key={i} step={child} number={`${number}.${index + 1}.${i + 1}`} />)}</details>)}
-    <p className="finite-step-fp">期望消耗 FP <span>未计算</span></p></div>;
+      {branch.steps.map((child, i) => <FixedInstruction key={i} step={child} number={`${number}.${index + 1}.${i + 1}`} stats={stats} />)}</details>)}
+    <p className="finite-step-fp">期望消耗 FP {fp===null?<span>计算未完成</span>:<strong>{fp.toFixed(2)}</strong>}</p></div>;
 }
 function percentage(row: FiniteProfileResult): string {
   if (!row.probability) return '未算完';
@@ -43,12 +46,12 @@ function ProfileCard({ row, scenario }: { row: FiniteProfileResult; scenario: Dr
       (wantedFp === null || r.fp.includes(wantedFp)) && (sealed === '全部' || r.sealed === sealed));
   }, [open, row.decisions, query, fp, sealed]);
   const badge = row.recommendation === 'RECOMMENDED' ? '推荐' : row.recommendation === 'NOT_RECOMMENDED' ? '不推荐' : '待确定';
-  const steps = row.fixedRoute ? routeSteps(row.fixedRoute.macros, { ...scenario.request, item: { ...scenario.request.item, fpType: row.fpType } },
-    catalogForInputModel(scenario.request.inputModel), scenario.aliases) : [];
+  const steps = row.initialFp>0&&row.fixedRoute ? routeSteps(row.fixedRoute.macros, { ...scenario.request, item: { ...scenario.request.item, fpType: row.fpType } },
+    catalogForInputModel(scenario.request.inputModel), scenario.aliases,true) : [];
   return <article className="finite-profile-card" data-fp-type={row.fpType}>
     <div className="finite-profile-heading"><h3>{row.fpType === 'NORMAL' ? '普通' : row.fpType === 'ICE' ? '冰' : '血'}</h3><span className={`badge ${row.recommendation === 'NOT_RECOMMENDED' ? 'amber' : row.recommendation === 'UNRESOLVED' ? 'neutral' : ''}`}>{badge}</span></div>
     <strong className="finite-probability">{percentage(row)}</strong>
-    <p className="finite-metric-caption">48FP内完成目标</p>
+    <p className="finite-metric-caption">{row.initialFp}FP内完成目标</p>
     {row.status === 'INCOMPLETE' && <p className="helper">尚未全部算完；{row.probability ? '此数值对应已找到的路线。' : '结果保留待定，不记为0%。'}</p>}
     {row.stepPlan && row.stepPlan.steps.length > row.stepPlan.main.length && <p className="helper">主步骤；其他结果按条件分支处理。</p>}
     <div className="finite-step-list">
@@ -56,7 +59,7 @@ function ProfileCard({ row, scenario }: { row: FiniteProfileResult; scenario: Dr
         const step = row.stepPlan!.steps.find(s => s.id === id)!;
         return <div className="finite-step" key={id}><span className="finite-step-number">Step {id}</span><h4>{step.operation}</h4>
           <p className="finite-step-criterion">{step.criterion}</p><p className="finite-step-fp">期望消耗 FP <strong>{step.expectedFp.toFixed(2)}</strong></p></div>;
-      }) : steps.map((step, index) => <FixedInstruction key={index} step={step} number={String(index + 1)} />)}
+      }) : steps.map((step, index) => <FixedInstruction key={index} step={step} number={String(index + 1)} stats={row.fixedFp} />)}
       {!row.stepPlan?.steps.length && !steps.length && <p className="helper">{plainAction(row.firstAction)}</p>}
     </div>
     {row.stepPlan && row.stepPlan.steps.some(step => !row.stepPlan!.main.includes(step.id)) && <details className="finite-step-branches"><summary>其他条件分支</summary>
@@ -64,11 +67,11 @@ function ProfileCard({ row, scenario }: { row: FiniteProfileResult; scenario: Dr
         <span className="finite-step-number">Step {step.id}</span><h4>{step.operation}</h4><p className="finite-step-criterion">{step.criterion}</p>
         <p className="finite-step-fp">期望消耗 FP <strong>{step.expectedFp.toFixed(2)}</strong></p></div>)}
     </details>}
-    {row.actualMeanFp !== null && (row.stepPlan?.steps.length !== 1) && <p className="finite-whole-fp">全程期望消耗 FP <strong>{row.actualMeanFp.toFixed(2)}</strong></p>}
+    {row.actualMeanFp !== null && ((row.stepPlan?.steps.length??steps.length) !== 1) && <p className="finite-whole-fp">全程期望消耗 FP <strong>{row.actualMeanFp.toFixed(2)}</strong></p>}
     {row.decisions.length > 0 && <details className="finite-decisions" onToggle={event => setOpen(event.currentTarget.open)}><summary>完整条件路线（{row.decisions.length}项）</summary>
       {open && <><p className="helper">有序T级／目标标记：前缀1、前缀2、后缀1、后缀2；1为目标身份。封印额外读取。</p>
         <div className="finite-policy-filters"><label>状态<input value={query} placeholder="如7171 / 0101" onChange={e => { setQuery(e.target.value); setLimit(100); }} /></label>
-          <label>剩余FP<input type="number" min={1} max={48} value={fp} placeholder="全部" onChange={e => { setFp(e.target.value); setLimit(100); }} /></label>
+          <label>剩余FP<input type="number" min={1} max={row.initialFp} value={fp} placeholder="全部" onChange={e => { setFp(e.target.value); setLimit(100); }} /></label>
           <label>封印<select value={sealed} onChange={e => setSealed(e.target.value)}>{['全部', '无', '前缀非目标', '后缀非目标'].map(x => <option key={x}>{x}</option>)}</select></label></div>
         <div className="finite-table-scroll"><table><thead><tr><th>状态</th><th>封印</th><th>剩余FP</th><th>下一步</th></tr></thead><tbody>{filtered.slice(0, limit).map((r, i) =>
           <tr key={i}><td><code>{r.tiers} / {r.targets}</code></td><td>{r.sealed}</td><td>{fpRanges(r.fp)}</td><td>{plainAction(r.action)}</td></tr>)}</tbody></table></div>
@@ -80,7 +83,7 @@ function ProfileCard({ row, scenario }: { row: FiniteProfileResult; scenario: Dr
 }
 
 export function FiniteResults({ report, scenario, onExport }: { report: FiniteProfilesReport; scenario: DraftScenario; onExport: () => void }) {
-  return <section className="result-card finite-results"><div className="result-heading"><h2>{scenario.condition || '三种条件，分别选路'}</h2><span className="badge neutral">初始48FP</span></div>
+  return <section className="result-card finite-results"><div className="result-heading"><h2>{scenario.condition || '三种条件，分别选路'}</h2><span className="badge neutral">初始{report.initialFp}FP</span></div>
     <div className="finite-profile-grid">{report.profiles.map(row => <ProfileCard key={row.fpType} row={row} scenario={scenario} />)}</div>
     <p className="helper">{scenario.request.target.requirements.filter(row => !row.optional).map((goal, index) =>
       `目标${String.fromCharCode(65 + index)}：${goal.ids.length === 1 ? scenario.aliases[goal.ids[0]] ?? affixName(catalogForInputModel(scenario.request.inputModel), goal.ids[0]) : '所填候选范围'}`).join('；')}</p>

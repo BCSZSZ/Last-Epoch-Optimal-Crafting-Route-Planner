@@ -11,11 +11,10 @@ it('shows one repeat phase for87.590% ice Havoc, with20.80 actual expected FP', 
   const input = exampleRequest('7732-ready'), report = await plan(input, { now: () => 0 });
   const row = report.finiteProfiles!.profiles[1];
   expect(row.estimate).toBeCloseTo(.8758957816592063, 10);
-  expect(row.stepPlan!.steps).toHaveLength(1);
-  expect(row.stepPlan!.steps[0].operation).toBe('浩劫');
-  expect(row.stepPlan!.steps[0].criterion).toBe('目标A、目标B均为T7');
-  expect(row.stepPlan!.steps[0].expectedFp).toBeCloseTo(20.798186498975767, 8);
-  expect(row.stepPlan!.steps[0].expectedFp).not.toBeCloseTo(row.successActualMeanFp!, 1);
+  expect(row.fixedFp).toBeDefined();
+  expect(row.fixedFp!.totalExpectedFp).toBeCloseTo(20.798186498975767,8);
+  expect(Object.values(row.fixedFp!.macros).reduce((sum,stat)=>sum+stat.totalFpContribution,0)).toBeCloseTo(20.798186498975767,8);
+  expect(row.fixedFp!.totalExpectedFp).not.toBeCloseTo(row.successActualMeanFp!,1);
   expect((await replayFiniteProfile(input, catalogForInputModel(input.inputModel), row)).actualMeanFp).toBeCloseTo(20.798186498975767, 8);
 }, 30000);
 

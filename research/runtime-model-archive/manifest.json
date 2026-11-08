@@ -72,6 +72,12 @@
       "sha256": "26ce40cefe0ca11803adacefedfdece4037e1e626a2b8de7e49000c4de805bb8",
       "metric": "FINITE_48_PROFILES_V3",
       "purpose": "Initial direct step-card release, before tightening preparation acceptance to the displayed next branch."
+    },
+    "le-1.5.3-iid-cbdc55aee42009a7": {
+      "file": "research/runtime-model-archive/le-1.5.3-iid-cbdc55aee42009a7.json",
+      "sha256": "5a613bf3f8431f51ea4dc4fa1794a2c2c533b26e012daa6df1d1fc5e544ee7bf",
+      "metric": "FINITE_48_PROFILES_V3",
+      "purpose": "Before universal fixed-route FP rewards and user-selected initial FP; original reports retain their IDs."
     }
   }
 }

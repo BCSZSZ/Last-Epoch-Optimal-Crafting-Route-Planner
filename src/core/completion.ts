@@ -8,8 +8,10 @@ import type { BalanceKernel, RuleEngine } from './rules';
 import { targetReached } from './target';
 import { programProjection } from './program-projection';
 import type { Item, Macro, PlanRequest, Route } from './types';
+import type { FixedFpReport } from './fixed-fp';
 
 export interface CompletionReport {
+  readonly fpStats?: FixedFpReport;
   readonly routeId: string;
   readonly initialFp: number;
   readonly status: 'COMPLETE' | 'INCOMPLETE';
@@ -19,20 +21,21 @@ export interface CompletionReport {
   readonly states: number;
   readonly reason: string | null;
 }
-interface Instruction { macro: Macro; next: number; yes: number; no: number; stage:number }
+interface Instruction { macro: Macro; next: number; yes: number; no: number; stage:number; path:string }
 interface Edge { to: number; p: Interval }
 interface Group { balances: BalanceKernel; edges: Edge[]; values: Interval[] }
-interface Node { item: Item; pc: number; left: number | undefined; terminal: 'SUCCESS' | 'FAILURE' | null; groups: Group[] }
+interface Node { item: Item; pc: number; left: number | undefined; terminal: 'SUCCESS' | 'FAILURE' | null; groups: Group[]; path:string; action:boolean }
 
 function compile(macros: readonly Macro[]) {
   const instructions: Instruction[] = [];
-  const sequence = (values: readonly Macro[], next: number, outer?:number): number => {
+  const sequence = (values: readonly Macro[], next: number, outer?:number, prefix=''): number => {
     for (let i = values.length - 1; i >= 0; i--) {
       const macro = values[i];
       const stage=outer??i;
-      const yes = macro.kind === 'conditional' ? sequence(macro.then, next,stage) : -1;
-      const no = macro.kind === 'conditional' ? sequence(macro.otherwise ?? [], next,stage) : -1;
-      instructions.push({ macro, next, yes, no,stage }); next = instructions.length - 1;
+      const path = prefix ? `${prefix}.${i}` : String(i);
+      const yes = macro.kind === 'conditional' ? sequence(macro.then, next,stage,`${path}.then`) : -1;
+      const no = macro.kind === 'conditional' ? sequence(macro.otherwise ?? [], next,stage,`${path}.otherwise`) : -1;
+      instructions.push({ macro, next, yes, no,stage,path }); next = instructions.length - 1;
     }
     return next;
   };
@@ -49,13 +52,13 @@ function graph(engine: RuleEngine, request: PlanRequest, route: Route, maximum: 
     const found = indices.get(key); if (found !== undefined) return found;
     if (nodes.length >= request.search.maxStates) throw new EvaluationLimitError('达到48FP评价状态预算');
     const index = nodes.length; indices.set(key, index);
-    nodes.push({ item, pc, left, terminal: targetReached(item, request.target) ? 'SUCCESS' : pc < 0 ? 'FAILURE' : null, groups: [] });
+    nodes.push({ item, pc, left, terminal: targetReached(item, request.target) ? 'SUCCESS' : pc < 0 ? 'FAILURE' : null, groups: [], path:pc<0?'':program.instructions[pc].path,action:false });
     return index;
   };
   intern(request.item, program.entry, request.constraints.maxAttempts);
   let failure = -1, edgeCount = 0;
   const failed = () => {
-    if (failure < 0) { failure = nodes.length; nodes.push({ item: request.item, pc: -1, left: 0, terminal: 'FAILURE', groups: [] }); }
+    if (failure < 0) { failure = nodes.length; nodes.push({ item: request.item, pc: -1, left: 0, terminal: 'FAILURE', groups: [],path:'',action:false }); }
     return failure;
   };
   const add = (node: Node, to: number, p: Interval, balances: BalanceKernel) => {
@@ -83,6 +86,7 @@ function graph(engine: RuleEngine, request: PlanRequest, route: Route, maximum: 
       maxOutcomes: Math.min(200000, Math.max(1000, request.search.maxStates * 64)),
     });
     if (kernel.issues.length) { node.terminal = 'FAILURE'; continue; }
+    node.action = true;
     if ((macro.kind === 'repeat' || macro.kind === 'chaos') && step.action.kind === 'havoc' && node.left === undefined) {
       const slots = node.item.affixes.flatMap((row, index) => row.slot === 'ordinary' ? [index] : []);
       const layouts = tierPermutations(ordinary(node.item).map(row => row.tier));
@@ -152,12 +156,13 @@ function prepare(nodes: readonly Node[], stop?: () => boolean) {
 }
 
 export function evaluateCompletion(engine: RuleEngine, request: PlanRequest, route: Route, stop?: () => boolean,
-  initialFp = engine.catalog.model.practicalPolicy?.referenceFp ?? REFERENCE_FP,identityProjection=true): CompletionReport {
+  initialFp = request.initialFp ?? engine.catalog.model.practicalPolicy?.referenceFp ?? REFERENCE_FP,identityProjection=true,includeFp=false): CompletionReport {
   if (!Number.isInteger(initialFp) || initialFp < 0 || initialFp > engine.catalog.model.fpMaximum) throw new RangeError('参考FP超出模型范围');
   if (initialFp === 0) {
     const p = Number(targetReached(request.item, request.target));
     return { routeId: route.id, initialFp, status: 'COMPLETE', probability: { lower: p, upper: p },
-      recommendation: completionRecommendation({ lower: p, upper: p }, engine.catalog.model.practicalPolicy), evaluation: 'BOUNDED_NUMERICAL', states: 1, reason: null };
+      recommendation: completionRecommendation({ lower: p, upper: p }, engine.catalog.model.practicalPolicy), evaluation: 'BOUNDED_NUMERICAL', states: 1, reason: null,
+      ...(includeFp ? { fpStats:{initialFp,totalExpectedFp:0,successExpectedFp:p?0:null,macros:{}} } : {}) };
   }
   const nodes = graph(engine, request, route, initialFp, stop,identityProjection), sys = prepare(nodes, stop);
   let bounds = nodes.map(node => node.terminal === 'SUCCESS' ? ONE : ZERO);
@@ -195,5 +200,61 @@ export function evaluateCompletion(engine: RuleEngine, request: PlanRequest, rou
   }
   const probability = bounds[0].report();
   return { routeId: route.id, initialFp, status: 'COMPLETE', probability, recommendation: completionRecommendation(probability, engine.catalog.model.practicalPolicy),
-    evaluation: 'BOUNDED_NUMERICAL', states: nodes.length, reason: null };
+    evaluation: 'BOUNDED_NUMERICAL', states: nodes.length, reason: null,
+    ...(includeFp ? { fpStats:fixedRewards(nodes,initialFp,(probability.lower+probability.upper)/2,stop) } : {}) };
+}
+
+/** Occupation rewards reuse the very same joint state/cost graph as completion.
+ * Deterministic branch/skip nodes are collapsed before summing free loops. */
+function fixedRewards(nodes: readonly Node[], maximum: number, probability: number, stop?:()=>boolean): FixedFpReport {
+  const n=nodes.length, resolved=new Int32Array(n).fill(-1);
+  const resolve=(s:number):number=>{
+    if(resolved[s]>=0)return resolved[s]; const chain:number[]=[];let t=s;
+    while(!nodes[t].terminal&&!nodes[t].action){
+      if(resolved[t]>=0){t=resolved[t];break;}
+      if(chain.includes(t)||nodes[t].groups.length!==1||nodes[t].groups[0].edges.length!==1)throw new EvaluationLimitError('非制作分支无法解析');
+      chain.push(t);t=nodes[t].groups[0].edges[0].to;
+    }
+    resolved[t]=t;for(const k of chain)resolved[k]=t;resolved[s]=t;return t;
+  };
+  const entries=new Map<string,number>(), costs=new Map<string,number>();
+  const groups=nodes.map(node=>node.groups.map(group=>({balances:group.balances,values:group.values,
+    mass:group.edges.reduce((sum,e)=>sum+e.p.midpoint,0),
+    free:Array.from({length:maximum+1},(_,fp)=>group.balances[fp].find(b=>b.value===fp)?.bounds.midpoint??0),
+    edges:group.edges.map(e=>({to:resolve(e.to),p:e.p.midpoint}))})));
+  const active=nodes.flatMap((node,s)=>node.action&&!node.terminal?[s]:[]);
+  const incoming=Array.from({length:maximum+1},()=>new Float64Array(n));const root=resolve(0);
+  if(maximum>0&&!nodes[root].terminal){incoming[maximum][root]=1;entries.set(nodes[root].path,1);}
+  let successMoment=0;
+  for(let fp=maximum;fp>0;fp--){
+    if(stop?.())throw new EvaluationInterruptedError('FP统计已取消');
+    let wave=incoming[fp];const visits=new Float64Array(n);
+    for(let iteration=0;iteration<256;iteration++){
+      const next=new Float64Array(n);let mass=0;
+      for(const s of active)if(wave[s]>0){
+        visits[s]+=wave[s];for(const g of groups[s])for(const e of g.edges)if(!nodes[e.to].terminal){const w=wave[s]*g.free[fp]*e.p;next[e.to]+=w;mass+=w;}
+      }
+      if(mass<1e-14)break;wave=next;
+      if(iteration===255)throw new EvaluationLimitError('FP免费回路统计未收敛');
+    }
+    for(const s of active)if(visits[s]>0){
+      const path=nodes[s].path;
+      for(const g of groups[s])for(const b of g.balances[fp]){
+        const w=visits[s]*b.bounds.midpoint,spent=fp-b.value;
+        costs.set(path,(costs.get(path)??0)+w*spent*g.mass);
+        successMoment+=w*spent*g.values[b.value].midpoint;
+        for(const e of g.edges)if(!nodes[e.to].terminal&&b.value>0){
+          const amount=w*e.p;
+          if(b.value<fp)incoming[b.value][e.to]+=amount;
+          const to=nodes[e.to].path;if(to!==path)entries.set(to,(entries.get(to)??0)+amount);
+        }
+      }
+    }
+  }
+  const total=[...costs.values()].reduce((a,b)=>a+b,0);
+  if(total>maximum+1e-6)throw new EvaluationLimitError('实际FP消耗超过初始FP');
+  const macros=Object.fromEntries([...new Set([...costs.keys(),...entries.keys()])].map(path=>{
+    const entered=entries.get(path)??0,cost=costs.get(path)??0;return[path,{expectedEntries:entered,totalFpContribution:cost,expectedFp:entered?cost/entered:0}];
+  }));
+  return{initialFp:maximum,totalExpectedFp:total,successExpectedFp:probability>0?successMoment/probability:null,macros};
 }

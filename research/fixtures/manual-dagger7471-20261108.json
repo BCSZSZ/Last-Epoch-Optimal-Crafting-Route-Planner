@@ -1,0 +1,581 @@
+{
+  "source": "User screenshot: dagger7471, all identities entered, two specified prefixT7 goals",
+  "input": {
+    "modelId": "le-1.5.3-iid-cbdc55aee42009a7",
+    "inputModel": "FORGEABLE_WEIGHTED",
+    "item": {
+      "baseId": "6:0",
+      "itemLevel": 100,
+      "fpType": "NORMAL",
+      "corrupted": false,
+      "affixes": [
+        {
+          "id": 79,
+          "tier": 7,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 23,
+          "tier": 4,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 85,
+          "tier": 7,
+          "slot": "ordinary",
+          "roll": null
+        },
+        {
+          "id": 724,
+          "tier": 1,
+          "slot": "ordinary",
+          "roll": null
+        }
+      ]
+    },
+    "craftingContext": {
+      "playerLevel": 100
+    },
+    "target": {
+      "requirements": [
+        {
+          "ids": [
+            943
+          ],
+          "minTier": 7,
+          "maxTier": 7,
+          "slot": "ordinary"
+        },
+        {
+          "ids": [
+            18
+          ],
+          "minTier": 7,
+          "maxTier": 7,
+          "slot": "ordinary"
+        }
+      ]
+    },
+    "constraints": {},
+    "scoring": {},
+    "search": {
+      "milliseconds": 12000,
+      "maxRoutes": 4096,
+      "macroStages": 12,
+      "maxStates": 25000
+    }
+  },
+  "profiles": [
+    {
+      "fpType": "NORMAL",
+      "expectedProbability": 0.10876070158722859,
+      "route": {
+        "id": "r-4769229f3a624ff3",
+        "macros": [
+          {
+            "kind": "removal",
+            "accepted": {
+              "excludedIds": [
+                943,
+                18
+              ],
+              "minTier": 1,
+              "maxTier": 6,
+              "eligibleAction": "removal",
+              "side": 0
+            },
+            "glyph": "hope"
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 943,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "exists",
+              "selector": {
+                "excludedIds": [
+                  943,
+                  18
+                ],
+                "side": 0,
+                "minTier": 1,
+                "maxTier": 2,
+                "sealable": true
+              }
+            }
+          },
+          {
+            "kind": "seal",
+            "selector": {
+              "excludedIds": [
+                943,
+                18
+              ],
+              "side": 0,
+              "minTier": 1,
+              "maxTier": 2,
+              "sealable": true
+            }
+          },
+          {
+            "kind": "once",
+            "action": {
+              "kind": "add",
+              "id": 18,
+              "glyph": "hope"
+            }
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ],
+        "description": "固定添加顺序／开槽顺序"
+      }
+    },
+    {
+      "fpType": "ICE",
+      "expectedProbability": 0.16527222583386159,
+      "route": {
+        "id": "r-2e8952f6559b6632",
+        "macros": [
+          {
+            "kind": "conditional",
+            "when": {
+              "kind": "identity",
+              "requirement": {
+                "ids": [
+                  943
+                ],
+                "minTier": 1,
+                "maxTier": 8,
+                "slot": "ordinary"
+              }
+            },
+            "then": [],
+            "otherwise": [
+              {
+                "kind": "removal",
+                "accepted": {
+                  "side": 0,
+                  "excludedIds": [
+                    943,
+                    18
+                  ],
+                  "minTier": 1,
+                  "maxTier": 6,
+                  "eligibleAction": "removal"
+                },
+                "glyph": "hope"
+              },
+              {
+                "kind": "once",
+                "action": {
+                  "kind": "add",
+                  "id": 943,
+                  "glyph": "hope"
+                }
+              }
+            ]
+          },
+          {
+            "kind": "conditional",
+            "when": {
+              "kind": "identity",
+              "requirement": {
+                "ids": [
+                  18
+                ],
+                "minTier": 1,
+                "maxTier": 8,
+                "slot": "ordinary"
+              }
+            },
+            "then": [],
+            "otherwise": [
+              {
+                "kind": "fill",
+                "ids": [
+                  2,
+                  4,
+                  5,
+                  6,
+                  12,
+                  16,
+                  20,
+                  23,
+                  30,
+                  44,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  68,
+                  69,
+                  72,
+                  76,
+                  77,
+                  78,
+                  79,
+                  85,
+                  86,
+                  89,
+                  91,
+                  428,
+                  717,
+                  718,
+                  719,
+                  720,
+                  721,
+                  722,
+                  723,
+                  724,
+                  725
+                ],
+                "glyph": "hope"
+              },
+              {
+                "kind": "repeat",
+                "action": {
+                  "kind": "havoc",
+                  "glyph": "hope"
+                },
+                "until": {
+                  "kind": "exists",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      943,
+                      18
+                    ],
+                    "minTier": 1,
+                    "maxTier": 2,
+                    "sealable": true
+                  }
+                }
+              },
+              {
+                "kind": "seal",
+                "selector": {
+                  "side": 0,
+                  "excludedIds": [
+                    943,
+                    18
+                  ],
+                  "minTier": 1,
+                  "maxTier": 2,
+                  "sealable": true
+                }
+              },
+              {
+                "kind": "once",
+                "action": {
+                  "kind": "add",
+                  "id": 18,
+                  "glyph": "hope"
+                }
+              }
+            ]
+          },
+          {
+            "kind": "fill",
+            "ids": [
+              2,
+              4,
+              5,
+              6,
+              12,
+              16,
+              20,
+              23,
+              30,
+              44,
+              54,
+              55,
+              56,
+              57,
+              58,
+              60,
+              61,
+              62,
+              63,
+              64,
+              68,
+              69,
+              72,
+              76,
+              77,
+              78,
+              79,
+              85,
+              86,
+              89,
+              91,
+              428,
+              717,
+              718,
+              719,
+              720,
+              721,
+              722,
+              723,
+              724,
+              725
+            ],
+            "glyph": "hope"
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ],
+        "family": "PREPARE_SEAL",
+        "upperNode": "200-N4-S0",
+        "description": "剥离垃圾取得#943 → 补栏浩劫准备后封T1至T2取得#18 → 收尾"
+      }
+    },
+    {
+      "fpType": "BLOOD",
+      "expectedProbability": 0.11108319639490175,
+      "route": {
+        "id": "r-2e8952f6559b6632",
+        "macros": [
+          {
+            "kind": "conditional",
+            "when": {
+              "kind": "identity",
+              "requirement": {
+                "ids": [
+                  943
+                ],
+                "minTier": 1,
+                "maxTier": 8,
+                "slot": "ordinary"
+              }
+            },
+            "then": [],
+            "otherwise": [
+              {
+                "kind": "removal",
+                "accepted": {
+                  "side": 0,
+                  "excludedIds": [
+                    943,
+                    18
+                  ],
+                  "minTier": 1,
+                  "maxTier": 6,
+                  "eligibleAction": "removal"
+                },
+                "glyph": "hope"
+              },
+              {
+                "kind": "once",
+                "action": {
+                  "kind": "add",
+                  "id": 943,
+                  "glyph": "hope"
+                }
+              }
+            ]
+          },
+          {
+            "kind": "conditional",
+            "when": {
+              "kind": "identity",
+              "requirement": {
+                "ids": [
+                  18
+                ],
+                "minTier": 1,
+                "maxTier": 8,
+                "slot": "ordinary"
+              }
+            },
+            "then": [],
+            "otherwise": [
+              {
+                "kind": "fill",
+                "ids": [
+                  2,
+                  4,
+                  5,
+                  6,
+                  12,
+                  16,
+                  20,
+                  23,
+                  30,
+                  44,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  68,
+                  69,
+                  72,
+                  76,
+                  77,
+                  78,
+                  79,
+                  85,
+                  86,
+                  89,
+                  91,
+                  428,
+                  717,
+                  718,
+                  719,
+                  720,
+                  721,
+                  722,
+                  723,
+                  724,
+                  725
+                ],
+                "glyph": "hope"
+              },
+              {
+                "kind": "repeat",
+                "action": {
+                  "kind": "havoc",
+                  "glyph": "hope"
+                },
+                "until": {
+                  "kind": "exists",
+                  "selector": {
+                    "side": 0,
+                    "excludedIds": [
+                      943,
+                      18
+                    ],
+                    "minTier": 1,
+                    "maxTier": 2,
+                    "sealable": true
+                  }
+                }
+              },
+              {
+                "kind": "seal",
+                "selector": {
+                  "side": 0,
+                  "excludedIds": [
+                    943,
+                    18
+                  ],
+                  "minTier": 1,
+                  "maxTier": 2,
+                  "sealable": true
+                }
+              },
+              {
+                "kind": "once",
+                "action": {
+                  "kind": "add",
+                  "id": 18,
+                  "glyph": "hope"
+                }
+              }
+            ]
+          },
+          {
+            "kind": "fill",
+            "ids": [
+              2,
+              4,
+              5,
+              6,
+              12,
+              16,
+              20,
+              23,
+              30,
+              44,
+              54,
+              55,
+              56,
+              57,
+              58,
+              60,
+              61,
+              62,
+              63,
+              64,
+              68,
+              69,
+              72,
+              76,
+              77,
+              78,
+              79,
+              85,
+              86,
+              89,
+              91,
+              428,
+              717,
+              718,
+              719,
+              720,
+              721,
+              722,
+              723,
+              724,
+              725
+            ],
+            "glyph": "hope"
+          },
+          {
+            "kind": "repeat",
+            "action": {
+              "kind": "havoc",
+              "glyph": "hope"
+            },
+            "until": {
+              "kind": "target"
+            }
+          }
+        ],
+        "family": "PREPARE_SEAL",
+        "upperNode": "200-N4-S0",
+        "description": "剥离垃圾取得#943 → 补栏浩劫准备后封T1至T2取得#18 → 收尾"
+      }
+    }
+  ]
+}

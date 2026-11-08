@@ -16,6 +16,7 @@ export interface DraftSlot { readonly tier: number; readonly id: number | null; 
 export type DraftSlots = Readonly<Record<DraftSlotKey, DraftSlot>>;
 export interface GoalCounts { readonly desired: number; readonly owned: number; readonly ownedT7: number }
 export interface CraftingDraft {
+  readonly initialFp?: number;
   readonly version: 3;
   readonly part: number | null;
   readonly fpType: FpType;
@@ -62,6 +63,7 @@ export function readDraft(value: unknown): CraftingDraft | null {
   const count = (x: unknown, upper: number) => typeof x === 'number' && Number.isInteger(x) && x >= 0 && x <= upper;
   if (!object(value) || value.version !== 2 && value.version !== 3 || (value.part !== null && !count(value.part, 42)) ||
     !['NORMAL', 'ICE', 'BLOOD'].includes(String(value.fpType)) || !['COUNTS', 'SLOTS'].includes(String(value.targetMode))) return null;
+  if (value.initialFp !== undefined && !count(value.initialFp, 63)) return null;
   for (const slots of [value.slots, value.targetSlots]) {
     if (!object(slots)) return null;
     for (const descriptor of DRAFT_SLOTS) {
@@ -101,6 +103,7 @@ export function readDraft(value: unknown): CraftingDraft | null {
     }
   }
   return { version: 3, part: value.part as number | null, fpType: value.fpType as FpType,
+    ...(value.initialFp === undefined ? {} : { initialFp: value.initialFp as number }),
     slots, targetMode: value.targetMode as CraftingDraft['targetMode'], counts: [{ desired: value.counts[0].desired }, { desired: value.counts[1].desired }],
     targetSlots: copySlots(value.targetSlots), ...(pending.length ? { legacyOwnership: pending } : {}) };
 }
@@ -174,7 +177,7 @@ export function compileDraft(draft: CraftingDraft): CompiledDraft {
     if (slot.id === null) aliases[id] = `未指定${slot.isExperimental ? '实验' : ''}${descriptor.label}词条`;
   }
   const addScenario = (requirements: readonly Requirement[], names: Record<number, string>, condition: string, key: string) => {
-    const request: PlanRequest = { modelId: MODEL_ID, inputModel: mode,
+    const request: PlanRequest = { modelId: MODEL_ID, inputModel: mode, ...(draft.initialFp === undefined ? {} : { initialFp: draft.initialFp }),
       item: { baseId, itemLevel: 100, fpType: draft.fpType, corrupted: false, affixes }, craftingContext: { playerLevel: 100 },
       target: { requirements }, constraints: {}, scoring: {}, search: { milliseconds: 12000, maxRoutes: 4096, macroStages: 12, maxStates: 25000 } };
     const parsed = parsePlanRequest(request, catalogForInputModel(mode));

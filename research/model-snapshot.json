@@ -122,6 +122,7 @@
   },
   "inputs": {
     "data/game/1.5.3/manifest.json": "f1127461629a61b3d0a6970ab26ccc2032491bceed849298849a6b842f2251b9",
+    "docs/custom-fp-all-inputs-20261108.md": "d5448ce80afeb58a98a8fa17cb3a369c6eac34cf5f11f4cb0f4a886f114c5c31",
     "docs/finite48-three-profiles-20261108.md": "001482b89481f1be2566ea92e0a9e51a91f0abd4a35b348362fe133d6dfa0910",
     "docs/step-instructions-20261108.md": "9b8a7bd646e616e82e792c4c39cf69adb6c27c2933eb5d9639d89ce7a932a124",
     "research/7271-route-comparison.json": "4b4f1ed71da48ece635dad96a348e48f179ab6d691f78c475e5f65fcbc8cb4b3",
@@ -154,6 +155,7 @@
     "research/device-validation/public-normal-validation.json": "bf6c6eef88459e05361d821f9e6b83b1d0443acc0e4185dbb7e839ac0424578d",
     "research/device-validation/public-normal.json": "3dee7539ad446fa250bb1037e5cfd13a3ef79d71d12863c19d47d1ce140d09f4",
     "research/fixtures/finite48-three-profiles-99.json": "ddc0e99b30e0b0e8d7f8fc9e45e71e840d4223cf5c09ca0fb845eb4fc094851b",
+    "research/fixtures/manual-dagger7471-20261108.json": "19f73d5939c2cab53b0e35fc698d86526db2275657201dce3c8924465717cc8f",
     "research/forge-fp-claims.json": "618e6d5fa1db4b8db683b7fdefdfd3c4b70c17363634a36b99eb2e1cd914770c",
     "research/fp-examples.json": "ff72db932924dcd374e4c8a42af47525b34fb37c4e5e2aecda9173f85d49713e",
     "research/fp65-budget48.json": "947b857232b987c6783e1e1594fd450022569fde760c6e012228d8692ffe0224",
@@ -166,8 +168,9 @@
     "research/program-release-performance.json": "17332788a0b64625e97031c6d5792dfde67a2b42a03c711708f8b29f72e2dca6",
     "research/program-release-validation.json": "100f1b3a890e445d2c2e0ceaad61f6b2659e911488db8cd6b29d3cdb93900a26",
     "research/reference-calculators.json": "fbbd966f057c2ed97ecca0ad8d2036eab93ac721cb506c993417c7faddbd831e",
-    "research/runtime-model-archive/manifest.json": "ec11bd1409b3a8a6190ed210c269df86e27b818fd9bbb4c236297db07d494775",
+    "research/runtime-model-archive/manifest.json": "8b96850dbeda06aa50cc7edb91c404b9d3b42630d9e26a4355428a33ec9cfb63",
     "research/static-deployment.json": "04db5a424b4fc82949a0b6e47004c0a66a557322d0bec465178ffcb6e6ada14a",
+    "research/ui-validation/all-input-custom-fp-local.json": "71adf4a49d5a1dab64923038ec48fc69b3a6758161d0c247f0a73f2872d3bb7d",
     "research/ui-validation/capacity-local-parity.json": "0d77e79ceebfcec2f502c062d0a65f13f93c0be6819d12144872fcc8ac68e72f",
     "research/ui-validation/capacity-public-parity.json": "667cf3abd34c3c6b19af24b45d5763f7c3429d79e9ba6fe12a4c139a6f99662c",
     "research/ui-validation/completion48-parity.json": "3649126334fcd3af0cd7fe44542fd398b5c97a83c0892eaa25057fa2da9f9e62",
@@ -182,7 +185,7 @@
     "research/ui-validation/slot-targets-local-parity.json": "8f477cdcbf7c2bcf04a29d2147d2eba82e79323dfcdb89a14cfe04b2c8f73416",
     "research/ui-validation/slot-targets-public-parity.json": "2ab6c4befaa5f0a9d22a6e8cd8ca221db9e1bb642feb44b78ae0866bca73a468",
     "src/core/policy.json": "8917aad6d1077eff2b043ff68a3b8ff8b54257cf4105cf3bc9fdf8bbd03fa1cb",
-    "src/generated/model.json": "5a613bf3f8431f51ea4dc4fa1794a2c2c533b26e012daa6df1d1fc5e544ee7bf"
+    "src/generated/model.json": "036459e055803c17480dbce8d664965de0ee0524a11f504768b77215f462e756"
   },
   "modelId": "le-1.5.3-26087601-r14-finite48-three-profiles",
   "phase": "PUBLIC_PREVIEW",
@@ -227,6 +230,7 @@
   "productionMetric": {
     "boundaryIntervalUnresolved": true,
     "filteringThresholds": null,
+    "fixedRouteFpRewards": "ALL_INPUT_MODELS_AND_EQUIPMENT_TYPES",
     "independentlyOptimized": true,
     "initialFp": 48,
     "kind": "FINITE_48_PROFILES_V3",
@@ -239,9 +243,10 @@
       "ICE",
       "BLOOD"
     ],
-    "recommendedAtLeast": 0.25
+    "recommendedAtLeast": 0.25,
+    "userSelectedInitialFp": true
   },
-  "productionModelId": "le-1.5.3-iid-cbdc55aee42009a7",
+  "productionModelId": "le-1.5.3-iid-b793528294bd547f",
   "productionReady": false,
   "referenceExampleModels": [
     "INDEPENDENT_NORMALIZED_WEIGHTS_AND_UNIFORM_PERMUTATIONS",
@@ -251,7 +256,7 @@
   "remainingAcceptance": [
     "PHYSICAL_LOW_END_DEVICE"
   ],
-  "researchRevision": "460e676d9e31af201b170f9dbaad580a14423a3d6e686514ba3080346c71e01f",
+  "researchRevision": "9764619296f0cf8aae94304667d2bc9697737bf6ab602f2ff510aa4640e027aa",
   "rngQualification": "Audited native control flow, binary64 nominal thresholds, current normalized craft weights, independent draws and uniform changed Havoc layouts. Arithmetic enclosures do not enclose all differences from native seeded-client RNG.",
   "schemaVersion": 2,
   "steamBuildId": 26087601,
@@ -266,7 +271,7 @@
     "bothReferencePoolsAllClassesPerItemType": true,
     "contract": "docs/minimal-ui.md",
     "countsSplitByPrefixSuffix": true,
-    "currentUiEvidence": "research/ui-validation/finite48-steps-local-parity.json",
+    "currentUiEvidence": "research/ui-validation/all-input-custom-fp-local.json",
     "defaultAnonymousPool": "FORGEABLE_EQUAL",
     "defaultEquipmentPart": "ANY_UNSPECIFIED",
     "experimentalAndTargetIndependent": true,
@@ -275,6 +280,13 @@
     "historicalLocalProgramUiWorkerParity": "research/ui-validation/programs-local-parity.json",
     "historicalProgramUiWorkerParity": "research/ui-validation/programs-public-parity.json",
     "historicalPublicUiWorkerParity": "research/ui-validation/public-completion48-parity.json",
+    "initialFp": {
+      "default": 48,
+      "maximum": 63,
+      "minimum": 0,
+      "optional": true,
+      "savedDraftVersion": 3
+    },
     "knownIdentityPool": "FORGEABLE_WEIGHTED",
     "locale": "zh-CN",
     "localizationEvidence": "research/affix-localization.json",

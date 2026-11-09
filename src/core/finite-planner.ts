@@ -3,7 +3,7 @@ import { evaluateCompletion } from './completion';
 import { EvaluationInterruptedError, EvaluationLimitError } from './evaluation';
 import { compileTemplates } from './hierarchy';
 import { catalogForInputModel, readInputModel } from './input-model';
-import { FINITE_POLICY_VERSION, FINITE_PROFILE_LABELS, finiteRecommendation, solveCompactProfile } from './finite-policy';
+import { FINITE_POLICY_VERSION, FINITE_PROFILE_LABELS, FINITE_RECOMMENDATION_CAPTION, FINITE_RECOMMENDATION_THRESHOLDS, finiteRecommendation, solveCompactProfile } from './finite-policy';
 import type { FiniteProfileResult } from './finite-policy';
 import { PlanningCancelledError } from './planning-errors';
 import { productionPrograms } from './program-search';
@@ -83,11 +83,13 @@ export async function planFiniteProfiles(input: unknown, options: PlanningOption
   const complete = profiles.every(row => row.status === 'COMPLETE'), states = profiles.reduce((sum, row) => sum + row.states, 0);
   options.onProgress?.({ phase: 'DONE', evaluatedRoutes: states, elapsedMilliseconds: elapsed(), bestScore: null, message: `三个${budget}FP结果已分别计算` });
   return { ...common, inputModel: request.inputModel, status: 'RECOMMENDATION', issues: [],
-    finiteProfiles: { version: FINITE_POLICY_VERSION, initialFp: budget, recommendationThreshold: .25, filteringThresholds: null, profiles },
+    finiteProfiles: { version: FINITE_POLICY_VERSION, initialFp: budget,
+      recommendationThreshold: FINITE_RECOMMENDATION_THRESHOLDS.notRecommendedBelow,
+      recommendationThresholds: FINITE_RECOMMENDATION_THRESHOLDS, filteringThresholds: null, profiles },
     searchStatus: complete ? 'COMPLETE' : 'INCOMPLETE',
     optimality: complete && profiles.every(row => row.strategyKind === 'STATE_POLICY' && row.optimalityGapUpper !== null && row.optimalityGapUpper < 1e-7) ? 'PROVEN_WITHIN_DECLARED_SCOPE' : 'NOT_PROVEN',
     search: { grammar: 'FINITE48_THREE_STATE_OR_FIXED_SCOPES_V1', macroStages: request.search.macroStages, librarySize: states,
       candidateUpperBound: String(states), evaluatedRoutes: states, exactRoutes: states, estimatedRoutes: 0, unevaluatedRoutes: complete ? 0 : 1,
       skippedDuplicates: 0, certifiedPrunedPrefixes: 0, elapsedMilliseconds: elapsed(), stopReason: complete ? 'DECLARED_SCOPE_COMPLETE' : 'RESOURCE_LIMIT', paretoRouteIds: profiles.map(row => row.strategyId) },
-    qualification: '三个条件分别从所设初始FP出发并独立选路。没有概率或理论FP均值过滤；低于25%只标不推荐。封印用绝望、混沌用混沌，其他可用希望的动作采用希望。低FP保留、末次耗尽达标及合法失败后继续均按真实联合结果计算；等权池不冒充未指定真实词缀的精确权重。' };
+    qualification: `三个条件分别从所设初始FP出发并独立选路。没有概率或理论FP均值过滤。${FINITE_RECOMMENDATION_CAPTION}封印用绝望、混沌用混沌，其他可用希望的动作采用希望。低FP保留、末次耗尽达标及合法失败后继续均按真实联合结果计算；等权池不冒充未指定真实词缀的精确权重。` };
 }

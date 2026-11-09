@@ -29,21 +29,22 @@ describe('production finite48 three-profile policy', () => {
         expect(result!.estimate!, `${row.caseId}/${profile}`).toBeCloseTo(p, 10);
         expect(result!.probability!.lower).toBeLessThanOrEqual(p); expect(result!.probability!.upper).toBeGreaterThanOrEqual(p);
         expect(result!.probability!.upper - result!.probability!.lower).toBeLessThan(1e-7);
-        expect(result!.recommendation).toBe(p >= .25 ? 'RECOMMENDED' : 'NOT_RECOMMENDED');
+        expect(result!.recommendation).toBe(p < .25 ? 'NOT_RECOMMENDED' : p > .60 ? 'RECOMMENDED' : 'NEUTRAL');
         expect(result!.actualMeanFp).toBeCloseTo(row.expected[profile].meanActualFp, 6);
         expect(result!.successActualMeanFp).toBeCloseTo(row.expected[profile].successMeanActualFp, 5);
         expect(result!.actualMeanFp).toBeGreaterThanOrEqual(0); expect(result!.actualMeanFp).toBeLessThanOrEqual(48);
         expect(result!.successActualMeanFp).toBeGreaterThanOrEqual(0); expect(result!.successActualMeanFp).toBeLessThanOrEqual(48);
-        if (p >= .25) recommendations[mode]++; ps.push(result!.estimate!);
+        if (result!.recommendation === 'RECOMMENDED') recommendations[mode]++; ps.push(result!.estimate!);
       }
       if (ps[2] > ps[0] + 1e-10) bloodBetter++; else if (Math.abs(ps[2] - ps[0]) < 1e-10) bloodEqual++;
     }
-    expect(recommendations).toEqual([78, 97, 80]); expect([bloodBetter, bloodEqual]).toEqual([96, 3]);
+    expect(recommendations).toEqual([42, 58, 44]); expect([bloodBetter, bloodEqual]).toEqual([96, 3]);
   }, 120000);
 
   it('explicit48FP entry returns three independently labelled results, preserving low-probability routes', async () => {
     const report = await plan(request(15), { now: () => 0 });
     expect(report.metric).toBe('FINITE_48_PROFILES_V3'); expect(report.finiteProfiles?.filteringThresholds).toBeNull();
+    expect(report.finiteProfiles?.recommendationThresholds).toEqual({ notRecommendedBelow: .25, recommendedAbove: .60 });
     expect(report.finiteProfiles?.profiles.map(row => row.fpType)).toEqual(['NORMAL', 'ICE', 'BLOOD']);
     expect(report.finiteProfiles?.profiles.map(row => row.recommendation)).toEqual(['NOT_RECOMMENDED', 'NOT_RECOMMENDED', 'NOT_RECOMMENDED']);
     expect(report.finiteProfiles!.profiles.every(row => row.probability !== null && row.decisions.length > 0)).toBe(true);
@@ -71,10 +72,14 @@ describe('production finite48 three-profile policy', () => {
     expect(row!.decisions.some(decision => decision.choice?.kind === 'add')).toBe(true);
   }, 30000);
 
-  it('threshold is25%, independently of profile and with an unresolved numerical boundary', () => {
-    expect(finiteRecommendation({ lower: .25, upper: .25 })).toBe('RECOMMENDED');
+  it('uses strict 25% and 60% badge boundaries, with a neutral middle', () => {
     expect(finiteRecommendation({ lower: .249, upper: .2499 })).toBe('NOT_RECOMMENDED');
+    expect(finiteRecommendation({ lower: .25, upper: .25 })).toBe('NEUTRAL');
+    expect(finiteRecommendation({ lower: .5, upper: .5 })).toBe('NEUTRAL');
+    expect(finiteRecommendation({ lower: .6, upper: .6 })).toBe('NEUTRAL');
+    expect(finiteRecommendation({ lower: .600001, upper: .61 })).toBe('RECOMMENDED');
     expect(finiteRecommendation({ lower: .249999, upper: .250001 })).toBe('UNRESOLVED');
+    expect(finiteRecommendation({ lower: .599999, upper: .600001 })).toBe('UNRESOLVED');
     expect(finiteRecommendation(null)).toBe('UNRESOLVED');
   });
 

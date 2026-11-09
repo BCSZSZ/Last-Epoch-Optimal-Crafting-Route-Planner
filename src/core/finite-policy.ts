@@ -7,12 +7,15 @@ import type { FpType, PlanRequest, Route } from './types';
 import { buildFiniteSteps } from './finite-steps';
 import type { FixedFpReport } from './fixed-fp';
 import { DEFAULT_INITIAL_FP, initialFp } from './initial-fp';
+import { completionRecommendation } from './policy';
+import type { CompletionRecommendation } from './policy';
 import type { FiniteStepPlan } from './finite-steps';
 
 export const FINITE_POLICY_VERSION = 'FINITE48_THREE_PROFILES_V1';
 export const FINITE_INITIAL_FP = DEFAULT_INITIAL_FP;
-export const FINITE_RECOMMENDATION_THRESHOLD = .25;
-export type FiniteRecommendation = 'RECOMMENDED' | 'NOT_RECOMMENDED' | 'UNRESOLVED';
+export const FINITE_RECOMMENDATION_THRESHOLDS = { notRecommendedBelow: .25, recommendedAbove: .60 } as const;
+export const FINITE_RECOMMENDATION_CAPTION = '低于25%显示不推荐，高于60%显示推荐。25%到60%不显示标签。';
+export type FiniteRecommendation = CompletionRecommendation;
 export const FINITE_PROFILE_LABELS: Readonly<Record<FpType, string>> = { NORMAL: '单独希望', ICE: '冰＋希望', BLOOD: '血＋希望' };
 export interface FiniteDecision {
   readonly tiers: string; readonly targets: string; readonly sealed: string; readonly roles: readonly number[];
@@ -35,15 +38,15 @@ export interface FiniteProfileResult {
   readonly fixedFp?: FixedFpReport;
 }
 export interface FiniteProfilesReport {
-  readonly version: typeof FINITE_POLICY_VERSION; readonly initialFp: number; readonly recommendationThreshold: .25;
+  readonly version: typeof FINITE_POLICY_VERSION; readonly initialFp: number;
+  /** Lower cutoff retained for readers of earlier exports. */
+  readonly recommendationThreshold: typeof FINITE_RECOMMENDATION_THRESHOLDS.notRecommendedBelow;
+  readonly recommendationThresholds: typeof FINITE_RECOMMENDATION_THRESHOLDS;
   readonly filteringThresholds: null; readonly profiles: readonly FiniteProfileResult[];
 }
 
 export function finiteRecommendation(probability: { lower: number; upper: number } | null): FiniteRecommendation {
-  if (!probability) return 'UNRESOLVED';
-  if (probability.upper < FINITE_RECOMMENDATION_THRESHOLD) return 'NOT_RECOMMENDED';
-  if (probability.lower >= FINITE_RECOMMENDATION_THRESHOLD) return 'RECOMMENDED';
-  return 'UNRESOLVED';
+  return probability ? completionRecommendation(probability, FINITE_RECOMMENDATION_THRESHOLDS) : 'UNRESOLVED';
 }
 export function fpRanges(values: readonly number[]): string {
   const xs = [...new Set(values)].sort((a, b) => a - b), parts: string[] = [];

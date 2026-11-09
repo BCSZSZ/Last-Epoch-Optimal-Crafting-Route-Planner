@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import type { DraftScenario } from '../core/draft';
-import { fpRanges } from '../core/finite-policy';
+import { FINITE_RECOMMENDATION_CAPTION, fpRanges } from '../core/finite-policy';
 import type { FiniteDecision, FiniteProfileResult, FiniteProfilesReport } from '../core/finite-policy';
 import { catalogForInputModel } from '../core/input-model';
 import { routeSteps } from './route-view';
@@ -45,11 +45,11 @@ function ProfileCard({ row, scenario }: { row: FiniteProfileResult; scenario: Dr
     return mergeRows(row.decisions).filter(r => (!code || `${r.tiers}/${r.targets}`.includes(code)) &&
       (wantedFp === null || r.fp.includes(wantedFp)) && (sealed === '全部' || r.sealed === sealed));
   }, [open, row.decisions, query, fp, sealed]);
-  const badge = row.recommendation === 'RECOMMENDED' ? '推荐' : row.recommendation === 'NOT_RECOMMENDED' ? '不推荐' : '待确定';
+  const badge = row.recommendation === 'RECOMMENDED' ? '推荐' : row.recommendation === 'NOT_RECOMMENDED' ? '不推荐' : null;
   const steps = row.initialFp>0&&row.fixedRoute ? routeSteps(row.fixedRoute.macros, { ...scenario.request, item: { ...scenario.request.item, fpType: row.fpType } },
     catalogForInputModel(scenario.request.inputModel), scenario.aliases,true) : [];
   return <article className="finite-profile-card" data-fp-type={row.fpType}>
-    <div className="finite-profile-heading"><h3>{row.fpType === 'NORMAL' ? '普通' : row.fpType === 'ICE' ? '冰' : '血'}</h3><span className={`badge ${row.recommendation === 'NOT_RECOMMENDED' ? 'amber' : row.recommendation === 'UNRESOLVED' ? 'neutral' : ''}`}>{badge}</span></div>
+    <div className="finite-profile-heading"><h3>{row.fpType === 'NORMAL' ? '普通' : row.fpType === 'ICE' ? '冰' : '血'}</h3>{badge && <span className={row.recommendation === 'NOT_RECOMMENDED' ? 'badge amber' : 'badge'}>{badge}</span>}</div>
     <strong className="finite-probability">{percentage(row)}</strong>
     <p className="finite-metric-caption">{row.initialFp}FP内完成目标</p>
     {row.status === 'INCOMPLETE' && <p className="helper">尚未全部算完；{row.probability ? '此数值对应已找到的路线。' : '结果保留待定，不记为0%。'}</p>}
@@ -78,7 +78,7 @@ function ProfileCard({ row, scenario }: { row: FiniteProfileResult; scenario: Dr
         <p className="helper">共{filtered.length}项符合条件。导出报告包含全部分支。</p>{filtered.length > limit && <button type="button" className="text-button" onClick={() => setLimit(limit + 200)}>显示更多</button>}</>}
     </details>}
     <details className="search-scope"><summary>计算范围</summary><p>{row.scope}</p>{row.note && <p>{row.note}</p>}
-      <p>低于25%显示不推荐；达到25%显示推荐。没有概率或FP均值过滤。</p><p>希望默认用于所有允许使用的操作。每步FP为平均每次进入该步后，到验收、转分支或FP耗尽的实际消耗，包含重复操作。条件分支不一定依次执行。</p></details>
+      <p>{FINITE_RECOMMENDATION_CAPTION}没有概率或FP均值过滤。</p><p>希望默认用于所有允许使用的操作。每步FP为平均每次进入该步后，到验收、转分支或FP耗尽的实际消耗，包含重复操作。条件分支不一定依次执行。</p></details>
   </article>;
 }
 

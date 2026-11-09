@@ -1,6 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { MODEL_ID } from '../core/catalog';
 import { DEFAULT_INITIAL_FP } from '../core/initial-fp';
+import { FINITE_RECOMMENDATION_CAPTION } from '../core/finite-policy';
 import { compileDraft, DRAFT_SLOTS, draftSlotPool, emptyDraft, maximumGoalCount, ownedGoalCounts, readDraft, withDraftSlots } from '../core/draft';
 import type { CompiledDraft, CraftingDraft, DraftScenario, DraftSlot, DraftSlots } from '../core/draft';
 import { catalogForInputModel } from '../core/input-model';
@@ -279,7 +280,7 @@ export function App() {
         {results.length > 1
           ? <DraftSummary results={results} initialFp={draft.initialFp ?? DEFAULT_INITIAL_FP} />
           : <ScenarioResults {...results[0]} />}
-        <p className="result-conventions">三种条件分别从所设起始FP出发，分别选路及判断。低于25%显示不推荐，结果仍保留。封印用绝望、混沌用混沌；其他可用希望的操作采用希望。未达标且FP耗尽才停止，仍合法的失手分支可以继续。</p>
+        <p className="result-conventions">三种条件分别从所设起始FP出发，分别选路及判断。{FINITE_RECOMMENDATION_CAPTION}封印用绝望、混沌用混沌；其他可用希望的操作采用希望。未达标且FP耗尽才停止，仍合法的失手分支可以继续。</p>
         <details className="assumptions"><summary>计算假设</summary>{compiled.assumptions.map((assumption) => <p key={assumption}>{assumption}</p>)}<p>独立随机参考模型；完整条件策略与固定候选结果分别说明覆盖范围，未算完不记为0%。</p><p className="model-id">{MODEL_ID}</p></details>
       </section>}
     </main>

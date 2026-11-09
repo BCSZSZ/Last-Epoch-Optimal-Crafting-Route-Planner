@@ -1,4 +1,5 @@
 import { DEFAULT_INITIAL_FP } from '../core/initial-fp';
+import { FINITE_RECOMMENDATION_CAPTION } from '../core/finite-policy';
 import { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { MODEL_ID } from '../core/catalog';
@@ -10,7 +11,7 @@ import type { DeviceBenchmarkRecord, DeviceCaseRecord } from './record';
 import './styles.css';
 
 const fpNames = { NORMAL: '普通', ICE: '冰', BLOOD: '血' };
-const qualification = `固定验收装备、每输入分别返回普通／冰／血三个${DEFAULT_INITIAL_FP}FP内完成率；低于25%不推荐，没有概率／FP均值过滤；结果只在本机生成。矩阵完成表示已执行全部规划请求，不表示模板穷尽或全局最优。设备类别由测试者声明，低性能物理设备验收保留待办。此页不测Worker内存。`;
+const qualification = `固定验收装备、每输入分别返回普通／冰／血三个${DEFAULT_INITIAL_FP}FP内完成率；${FINITE_RECOMMENDATION_CAPTION}没有概率或FP均值过滤，结果只在本机生成。矩阵完成表示已执行全部规划请求，不表示模板穷尽或全局最优。设备类别由测试者声明，低性能物理设备验收保留待办。此页不测Worker内存。`;
 
 function DeviceCheck() {
   const [mode, setMode] = useState<DeviceBenchmarkRecord['mode']>('FULL');

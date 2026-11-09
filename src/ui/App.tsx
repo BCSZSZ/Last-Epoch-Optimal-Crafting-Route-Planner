@@ -238,7 +238,7 @@ export function App() {
       const completed: ScenarioResult[] = [];
       for (const [index, scenario] of value.scenarios.entries()) {
         const report = await planner.current!.plan(scenario.request, { signal: abort.signal,
-          onProgress: (update) => { if (generation.current === job) setProgress({ ...update, message: `${index + 1}/${value.scenarios.length} ${typeName(scenario.part, String(scenario.part))}　${update.message}` }); } });
+          onProgress: (update) => { if (generation.current === job) setProgress({ ...update, message: `${value.scenarios.length > 1 ? `${index + 1}/${value.scenarios.length} ${typeName(scenario.part, String(scenario.part))}　` : ''}${update.message}` }); } });
         if (generation.current !== job) return;
         completed.push({ scenario, report });
       }
@@ -260,7 +260,7 @@ export function App() {
             if(text===''||Number.isInteger(n)&&n>=0&&n<=catalog.model.fpMaximum){setFpError('');edit({...draft,initialFp:text===''?undefined:n});}
             else{edit({...draft});setFpError(`FP需为0–${catalog.model.fpMaximum}的整数`);}
           }}/><span>{fpError||`留空按${DEFAULT_INITIAL_FP}计算`}</span></label>
-          <p className="helper fp-row">普通、冰、血三种条件，分别选路。</p>
+          <p className="helper fp-row">{draft.part === null ? '任意使用单一参考池快速估算。' : '普通、冰、血三种条件，分别选路。'}</p>
           <SlotEditor slots={draft.slots} draft={draft} markTargets={draft.targetMode === 'COUNTS'}
             onChange={(slots, side) => edit(withDraftSlots(draft, slots, side))} />
         </section>
@@ -275,8 +275,8 @@ export function App() {
         {message && <p role="alert" className="error-message">{message}</p>}
       </section>
       {results.length > 0 && compiled && <section className="results" aria-label="规划结果" aria-live="polite">
-        <div className="results-heading"><h2>规划结果</h2><span className="badge">{compiled.inputModel === 'CONCRETE_EQUAL' ? '兼容底材 · 词缀等权参考' : '兼容底材 · 实际制作权重'}</span></div>
-        {draft.part === null || results.length > 1
+        <div className="results-heading"><h2>规划结果</h2><span className="badge">{compiled.inputModel === 'AVERAGE_EQUAL' ? '平均词缀池近似' : compiled.inputModel === 'CONCRETE_EQUAL' ? '兼容底材 · 词缀等权参考' : '兼容底材 · 实际制作权重'}</span></div>
+        {results.length > 1
           ? <DraftSummary results={results} initialFp={draft.initialFp ?? DEFAULT_INITIAL_FP} />
           : <ScenarioResults {...results[0]} />}
         <p className="result-conventions">三种条件分别从所设起始FP出发，分别选路及判断。低于25%显示不推荐，结果仍保留。封印用绝望、混沌用混沌；其他可用希望的操作采用希望。未达标且FP耗尽才停止，仍合法的失手分支可以继续。</p>

@@ -1,6 +1,6 @@
 /** Data-only contracts. No React, browser, Worker, network, or storage dependencies. */
 export type FpType = 'NORMAL' | 'ICE' | 'BLOOD';
-export type InputModel = 'AUDITED' | 'FORGEABLE_WEIGHTED' | 'FORGEABLE_EQUAL' | 'FORGEABLE_ANY_EQUAL' | 'CONCRETE_EQUAL' | 'CONCRETE_WEIGHTED';
+export type InputModel = 'AUDITED' | 'FORGEABLE_WEIGHTED' | 'FORGEABLE_EQUAL' | 'FORGEABLE_ANY_EQUAL' | 'CONCRETE_EQUAL' | 'CONCRETE_WEIGHTED' | 'AVERAGE_EQUAL';
 export type Slot = 'ordinary' | 'sealed' | 'primordial' | 'corrupted';
 export type Side = 0 | 1 | 2;
 export type Glyph = 'hope' | 'order' | 'none';

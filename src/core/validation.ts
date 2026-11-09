@@ -55,7 +55,7 @@ function validateRequirement(row: Requirement, index: number, catalog: Catalog):
 
 export function validateRequest(request: PlanRequest, catalog: Catalog): Issue[] {
   const issues = validateItem(request.item, request.craftingContext, catalog);
-  if (isConcreteModel(request.inputModel) && catalog.hasBase(request.item.baseId) &&
+  if ((isConcreteModel(request.inputModel) || request.inputModel === 'AVERAGE_EQUAL') && catalog.hasBase(request.item.baseId) &&
       request.item.affixes.some(row => catalog.hasAffix(row.id) && !catalog.canRollOn(row.id, request.item.baseId))) {
     issues.push({ code: 'INCOMPATIBLE_AFFIX_BASE', message: '起始词缀不符合该实际底材或职业资格' });
   }

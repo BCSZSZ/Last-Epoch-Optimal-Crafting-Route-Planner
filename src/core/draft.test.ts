@@ -125,11 +125,12 @@ describe('minimal draft input and fixed slots', () => {
     expect(compileDraft(confirmed).scenarios).toHaveLength(1);
   });
 
-  it('includes all compatible actual parts and counts each compatible base once', () => {
-    const compiled = compileDraft({ ...source7710(), part: null });
+  it('includes each compatible real base once for a specified part', () => {
+    const compiled = compileDraft({ ...source7710(), part: 0 });
     expect(compiled.issues).toEqual([]);
     expect(compiled.inputModel).toBe('CONCRETE_EQUAL');
-    expect(new Set(compiled.scenarios.map(s => s.part)).size).toBe(23);
+    expect(new Set(compiled.scenarios.map(s => s.part))).toEqual(new Set([0]));
+    expect(compiled.scenarios.length).toBeGreaterThan(1);
     const represented = compiled.scenarios.flatMap(s => s.baseIds);
     expect(new Set(represented).size).toBe(represented.length);
     expect(compiled.scenarios.every(s => s.baseIds.includes(s.request.item.baseId))).toBe(true);

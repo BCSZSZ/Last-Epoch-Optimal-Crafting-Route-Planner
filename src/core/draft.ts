@@ -1,5 +1,7 @@
 import { MODEL_ID } from './catalog';
-import { catalogForInputModel } from './input-model';
+import { AVERAGE_BASE_ID, AVERAGE_EXPERIMENT_BASE_ID, catalogForInputModel, closestPoolGroup, ordinaryBaseGroups, poolSizes } from './input-model';
+import type { Catalog } from './catalog';
+import type { BaseGroup } from './input-model';
 import { parsePlanRequest } from './request';
 import type { Affix, FpType, InputModel, Issue, PlanRequest, Requirement } from './types';
 
@@ -50,18 +52,7 @@ export function emptyDraft(): CraftingDraft {
 }
 const concreteCatalog = catalogForInputModel('CONCRETE_WEIGHTED');
 const playerLevel = 100;
-type BaseGroup = { part: number; baseId: string; baseIds: string[] };
-const grouped = new Map<string, BaseGroup>();
-for (const base of concreteCatalog.model.bases) {
-  if (!base.ordinaryEquipment || base.corrupted || base.obsolete || base.legacy || base.levelRequirement > playerLevel) continue;
-  // Below the assumed crafting level, subtypes with the same eligibility share all transitions.
-  const key = JSON.stringify([base.baseType, base.equipmentType, base.classRequirement, base.maxAffixes,
-    [29, 30].includes(base.equipmentType) ? base.subType : null]);
-  const entry = grouped.get(key);
-  if (entry) entry.baseIds.push(base.id);
-  else grouped.set(key, { part: base.baseType, baseId: base.id, baseIds: [base.id] });
-}
-const baseGroups = [...grouped.values()].sort((a, b) => a.part - b.part);
+const baseGroups = ordinaryBaseGroups(concreteCatalog);
 const eligibleByBase = new Map<string, readonly number[]>();
 
 function eligibleIds(baseId: string): readonly number[] {
@@ -74,8 +65,8 @@ function eligibleIds(baseId: string): readonly number[] {
   return ids;
 }
 
-function matchesSlot(id: number, side: 0 | 1 | null, tier: number, experimental?: boolean): boolean {
-  const a = concreteCatalog.affix(id);
+function matchesSlot(id: number, side: 0 | 1 | null, tier: number, experimental?: boolean, catalog: Catalog = concreteCatalog): boolean {
+  const a = catalog.affix(id);
   return (side === null || a.side === side) && a.tiers.length >= Math.max(1, tier) &&
     (experimental === undefined || (a.special === 1) === experimental);
 }
@@ -181,17 +172,20 @@ export function withDraftSlots(draft: CraftingDraft, slots: DraftSlots, confirme
     { desired: Math.max(draft.counts[1].desired, ownedGoalCounts(next, 1).owned) }], ...(pending.length ? { legacyOwnership: pending } : {}) };
 }
 
-/** Compile one executable request per equivalent group of compatible real bases. */
+/** Any uses one reference; explicit parts retain their compatible concrete groups. */
 export function compileDraft(input: CraftingDraft): CompiledDraft {
   const draft = readDraft(input), issues: Issue[] = [], scenarios: DraftScenario[] = [];
   const fail = (message: string, path?: string) => issues.push({ code: 'DRAFT_INPUT', message, path });
   const slots = draft ? activeSlots(draft) : [];
   const known = new Set(slots.flatMap(({ row }) => row.id === null ? [] : [row.id]));
-  const mode = known.size ? 'CONCRETE_WEIGHTED' : 'CONCRETE_EQUAL';
-  const assumptions = ['按角色和物品等级100计算。底材、职业和词缀资格贯穿整条路线。',
-    '同一部位内按兼容底材等权，再对兼容部位等权。相同资格的底材合并求解。',
+  const any = draft?.part === null;
+  const mode = known.size ? 'CONCRETE_WEIGHTED' : any ? 'AVERAGE_EQUAL' : 'CONCRETE_EQUAL';
+  const assumptions = ['按角色和物品等级100计算。',
+    mode === 'AVERAGE_EQUAL' ? '兼容范围内先按部位内底材等权，再按部位等权求池大小。前后缀数量各自取整，使用一个等权虚拟池估算。' :
+      any ? '在满足已填词缀和职业条件的实际底材中，选择前后缀池大小最接近兼容范围均值的一组求解。' :
+        '按该部位内兼容底材等权汇总。相同资格的底材合并求解。',
     known.size ? '有明确词缀时，重抽保留实际制作权重。未指定的起始身份以该底材的合法词缀作代表。' :
-      '完全匿名时使用该底材合法正权重词缀的等权参考。'];
+      '完全匿名时对池内合法候选等权。'];
   const result = (): CompiledDraft => ({ scenarios, issues, inputModel: mode, assumptions });
   if (!draft) { fail('输入格式无效。'); return result(); }
   for (const { descriptor, row, target } of slots) {
@@ -220,10 +214,16 @@ export function compileDraft(input: CraftingDraft): CompiledDraft {
   if (issues.length) return result();
 
   const catalog = catalogForInputModel(mode), failures: Issue[] = [];
-  for (const { baseId, baseIds, part } of compatibleGroups(draft, slots)) {
-    const reserved = new Set(known), pool = eligibleIds(baseId);
+  const experiment = slots.some(s => !s.target && s.row.isExperimental);
+  const averageBase = experiment ? AVERAGE_EXPERIMENT_BASE_ID : AVERAGE_BASE_ID;
+  const groups = mode === 'AVERAGE_EQUAL' ? (catalog.hasBase(averageBase) ? [{ baseId: averageBase, baseIds: [averageBase], part: -1 }] : []) :
+    compatibleGroups(draft, slots);
+  for (const { baseId, baseIds, part } of groups) {
+    const reserved = new Set(known);
+    const pool = mode === 'AVERAGE_EQUAL' ? catalog.model.affixes.filter(a => catalog.canRollOn(a.id, baseId)).map(a => a.id) :
+      eligibleIds(baseId);
     const fresh = (side: 0 | 1 | null, tier: number, experimental = false) => pool.find(id =>
-      !reserved.has(id) && matchesSlot(id, side, tier, experimental) &&
+      !reserved.has(id) && matchesSlot(id, side, tier, experimental, catalog) &&
       (experimental || catalog.affix(id).special === 0 && catalog.hasShard(id) && catalog.craftWeight(id, baseId) > 0));
     const affixes: Affix[] = [], owned: number[][] = [[], []], aliases: Record<number, string> = {};
     for (const { descriptor, row, target } of slots) {
@@ -240,7 +240,7 @@ export function compileDraft(input: CraftingDraft): CompiledDraft {
     if (draft.targetMode === 'SLOTS') {
       for (const { descriptor, row, target } of slots) {
         if (!target) continue;
-        const ids = row.id !== null ? [row.id] : pool.filter(id => matchesSlot(id, descriptor.side, row.tier) &&
+        const ids = row.id !== null ? [row.id] : pool.filter(id => matchesSlot(id, descriptor.side, row.tier, undefined, catalog) &&
           (catalog.affix(id).special === 0 || affixes.some(a => a.id === id)));
         requirements.push({ ids, minTier: row.tier, ...(row.tier === 7 ? { maxTier: 7 } : {}), slot: descriptor.slot });
       }
@@ -258,13 +258,25 @@ export function compileDraft(input: CraftingDraft): CompiledDraft {
       if (requirements.length !== draft.counts[0].desired + draft.counts[1].desired) continue;
     }
     // Experimental states track the surviving identity in addition to four ordinary tiers.
-    const milliseconds = mode === 'CONCRETE_EQUAL' && affixes.some(a => catalog.affix(a.id).special === 1) ? 90000 : 12000;
+    const milliseconds = mode !== 'CONCRETE_WEIGHTED' && experiment ? 90000 : 12000;
     const request: PlanRequest = { modelId: MODEL_ID, inputModel: mode, ...(draft.initialFp === undefined ? {} : { initialFp: draft.initialFp }),
       item: { baseId, itemLevel: 100, fpType: draft.fpType, corrupted: false, affixes }, craftingContext: { playerLevel },
       target: { requirements }, constraints: {}, scoring: {}, search: { milliseconds, maxRoutes: 4096, macroStages: 12, maxStates: 25000 } };
     const parsed = parsePlanRequest(request, catalog);
-    if (parsed.request) scenarios.push({ key: baseId, condition: '', part, baseIds, aliases, request: parsed.request });
-    else if (!failures.length) failures.push(...parsed.issues);
+    if (parsed.request) {
+      let condition = '';
+      if (mode === 'AVERAGE_EQUAL') {
+        const [prefix, suffix] = poolSizes(catalog, baseId);
+        condition = `任意 · 平均词缀池（前缀${prefix}／后缀${suffix}）`;
+      } else if (any) condition = `任意 · 兼容底材参考（${catalog.base(baseId).name}）`;
+      scenarios.push({ key: baseId, condition, part, baseIds, aliases, request: parsed.request });
+    } else if (!failures.length) failures.push(...parsed.issues);
+  }
+  if (any && mode === 'CONCRETE_WEIGHTED' && scenarios.length > 1) {
+    const valid = new Set(scenarios.map(scenario => scenario.key));
+    const closest = closestPoolGroup(catalog, groups.filter(group => valid.has(group.baseId)))!;
+    const chosen = scenarios.find(scenario => scenario.key === closest.baseId)!;
+    scenarios.splice(0, scenarios.length, chosen);
   }
   if (!scenarios.length) {
     if (failures.length) issues.push(...failures);

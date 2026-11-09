@@ -6,16 +6,15 @@ import { RuleEngine } from './rules';
 import { solveCompactProfile } from './finite-policy';
 import { summarizeDraftResults } from './draft-summary';
 
-it('compiles the 7372 experiment against only compatible concrete parts', () => {
+it('validates explicit parts against the 7372 experimental identity requirement', () => {
   const draft = emptyDraft();
-  const compiled = compileDraft({ ...draft, counts: [{ desired: 0 }, { desired: 2 }], slots: {
+  const input = { ...draft, counts: [{ desired: 0 }, { desired: 2 }] as const, slots: {
     ...draft.slots, prefix1: { tier: 7, id: null }, prefix2: { tier: 3, id: null, isExperimental: true },
     suffix1: { tier: 7, id: null }, suffix2: { tier: 2, id: null },
-  } });
+  } };
   const catalog = new Catalog();
-  expect(compiled.issues).toEqual([]);
-  expect(compiled.scenarios.every(s => catalog.hasBase(s.request.item.baseId))).toBe(true);
-  expect([...new Set(compiled.scenarios.map(s => catalog.base(s.request.item.baseId).baseType))]).toEqual([2, 3, 4]);
+  const parts = [...new Set(catalog.model.bases.filter(b => b.ordinaryEquipment && !b.obsolete && !b.legacy && !b.corrupted).map(b => b.baseType))];
+  expect(parts.filter(part => compileDraft({ ...input, part }).scenarios.length)).toEqual([2, 3, 4]);
 });
 
 it('keeps an amulet-only anchor fixed in both random identity actions', () => {
@@ -63,13 +62,14 @@ it('preserves real crafting weights for a named target with a blank unrelated st
 });
 it('solves the three 7372 normal policies and averages by part', async () => {
   const draft = emptyDraft();
-  const compiled = compileDraft({ ...draft, initialFp: 44, counts: [{ desired: 0 }, { desired: 2 }], slots: {
+  const input = { ...draft, initialFp: 44, counts: [{ desired: 0 }, { desired: 2 }] as const, slots: {
     ...draft.slots, prefix1: { tier: 7, id: null }, prefix2: { tier: 3, id: null, isExperimental: true },
     suffix1: { tier: 7, id: null }, suffix2: { tier: 2, id: null },
-  } });
+  } };
+  const scenarios = [2, 3, 4].flatMap(part => compileDraft({ ...input, part }).scenarios);
   const probabilities = [.17742502830173376, .20307710958891503, .1703693622145293];
   const results = [];
-  for (const [index, scenario] of compiled.scenarios.entries()) {
+  for (const [index, scenario] of scenarios.entries()) {
     const catalog = catalogForInputModel(scenario.request.inputModel);
     const normal = await solveCompactProfile(scenario.request, catalog, 'NORMAL', { stopped: () => false });
     expect(normal?.estimate).toBeCloseTo(probabilities[index], 10);

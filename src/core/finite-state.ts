@@ -27,7 +27,7 @@ export interface CompactDomain {
 export function compactDomain(request: PlanRequest, catalog: Catalog): CompactDomain | null {
   const goals = request.target.requirements.filter(row => !row.optional);
   const experiments = request.item.affixes.filter(row => catalog.affix(row.id).special === 1);
-  if (experiments.length > 1 || experiments.some(row => !isConcreteModel(request.inputModel) || row.slot !== 'ordinary' ||
+  if (experiments.length > 1 || experiments.some(row => (!isConcreteModel(request.inputModel) && request.inputModel !== 'AVERAGE_EQUAL') || row.slot !== 'ordinary' ||
       catalog.hasShard(row.id) || !catalog.canRollOn(row.id, request.item.baseId))) return null;
   const experimentalId = experiments[0]?.id;
   if (goals.length !== 2 || request.target.requirements.length !== 2 || goals.some(row => row.ids.length !== 1 ||
